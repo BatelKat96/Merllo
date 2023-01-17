@@ -64,7 +64,6 @@
                     "archivedAt": null,
                     "labelIds": ["l104"],
                     "dueDate": 1674837381,
-                    "isDone": false,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
@@ -91,7 +90,6 @@
                     "archivedAt": null,
                     "labelIds": ["l103"],
                     "dueDate": 1674664581,
-                    "isDone": false,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
@@ -114,7 +112,6 @@
                     "archivedAt": null,
                     "labelIds": ["l101", "l103"],
                     "dueDate": 1674491781,
-                    "isDone": false,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
@@ -131,7 +128,6 @@
                     "archivedAt": null,
                     "labelIds": ["l102"],
                     "dueDate": 1674578181,
-                    "isDone": false,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
@@ -174,7 +170,6 @@
                     "archivedAt": null,
                     "labelIds": ["l103"],
                     "dueDate": 1674664581,
-                    "isDone": false,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
@@ -211,7 +206,6 @@
                     "archivedAt": null,
                     "labelIds": ["l105"],
                     "dueDate": 1674837381,
-                    "isDone": false,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
@@ -248,7 +242,6 @@
                     "archivedAt": null,
                     "labelIds": ["l101", "l103"],
                     "dueDate": 1674146181,
-                    "isDone": true,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
@@ -266,7 +259,6 @@
                     "archivedAt": null,
                     "labelIds": ["l101", "l104"],
                     "dueDate": 1675010181,
-                    "isDone": true,
                     "byMember": {
                         "_id": "u103",
                         "username": "Dror",
