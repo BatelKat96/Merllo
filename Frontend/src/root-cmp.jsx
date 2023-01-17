@@ -9,7 +9,7 @@ import { HomePage } from './pages/home-page'
 import { AboutUs } from './pages/about-us'
 import { Workspace } from './pages/workspace'
 import { Board } from './pages/board'
-import { TaskDetails } from './pages/task-edit'
+import { TaskDetails } from './pages/task-details'
 
 export function RootCmp() {
 
