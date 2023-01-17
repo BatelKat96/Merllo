@@ -1,7 +1,5 @@
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
 ::selection {
@@ -10,15 +8,13 @@
 }
 
 html {
-    font-family: montserrat;
-    line-height: 1.6;
-    color: $clr2;
+    padding: 0;
+        margin: 0;
 }
+    
 
 body {
     font-size: rem(18px);
-    margin: 0;
-    max-width: 1024px;
     margin: auto;
 }
 
@@ -28,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: caveat;
+    font-family: charlie-bold;
     margin: 0 0 0.6em;
     line-height: 1;
 }
@@ -45,7 +41,7 @@ img {
 }
 
 p {
-    margin: 0 0 1em;
+    margin: 0;
 }
 
 a {
@@ -53,5 +49,5 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }

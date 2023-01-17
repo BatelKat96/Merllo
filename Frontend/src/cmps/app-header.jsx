@@ -5,39 +5,57 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { login, logout, signup } from '../store/user.actions.js'
 import { LoginSignup } from './login-signup.jsx'
 
-export function AppHeader() {
-    const user = useSelector(storeState => storeState.userModule.user)
+import logo from '../assets/img/merllo-logo.png'
 
-    async function onLogin(credentials) {
-        try {
-            const user = await login(credentials)
-            showSuccessMsg(`Welcome: ${user.fullname}`)
-        } catch (err) {
-            showErrorMsg('Cannot login')
-        }
-    }
-    async function onSignup(credentials) {
-        try {
-            const user = await signup(credentials)
-            showSuccessMsg(`Welcome new user: ${user.fullname}`)
-        } catch (err) {
-            showErrorMsg('Cannot signup')
-        }
-    }
-    async function onLogout() {
-        try {
-            await logout()
-            showSuccessMsg(`Bye now`)
-        } catch (err) {
-            showErrorMsg('Cannot logout')
-        }
-    }
+export function AppHeader() {
+    // const user = useSelector(storeState => storeState.userModule.user)
+
+    // async function onLogin(credentials) {
+    //     try {
+    //         const user = await login(credentials)
+    //         showSuccessMsg(`Welcome: ${user.fullname}`)
+    //     } catch (err) {
+    //         showErrorMsg('Cannot login')
+    //     }
+    // }
+    // async function onSignup(credentials) {
+    //     try {
+    //         const user = await signup(credentials)
+    //         showSuccessMsg(`Welcome new user: ${user.fullname}`)
+    //     } catch (err) {
+    //         showErrorMsg('Cannot signup')
+    //     }
+    // }
+    // async function onLogout() {
+    //     try {
+    //         await logout()
+    //         showSuccessMsg(`Bye now`)
+    //     } catch (err) {
+    //         showErrorMsg('Cannot logout')
+    //     }
+    // }
 
     return (
-        <header className="app-header full">
-            <nav>
+        <header className="app-header">
 
-                {user &&
+            <NavLink to="/" className="homepage-header-logo">
+                <img src={logo} alt="logo" />
+                <h1>Merllo</h1>
+            </NavLink>
+
+            <nav>
+                <button className="login-btn">
+                    Log in
+                </button>
+
+                <button className="singup-btn">
+                    Get Merllo for free
+                </button>
+
+            </nav>
+
+
+            {/* {user &&
                     <span className="user-info">
                         <Link to={`user/${user._id}`}>
                             {user.imgUrl && <img src={user.imgUrl} />}
@@ -51,9 +69,8 @@ export function AppHeader() {
                     <section className="user-info">
                         <LoginSignup onLogin={onLogin} onSignup={onSignup} />
                     </section>
-                }
-            </nav>
-            <h1>My App</h1>
+                } */}
+
         </header>
     )
 }
