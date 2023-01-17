@@ -1,9 +1,9 @@
 import { ImgUploader } from '../cmps/img-uploader';
 
-export function TaskEdit() {
+export function TaskDetails() {
     return <section className='task-edit'>
         <div>
-            <h1>TaskEdit</h1>
+            <h1>TaskDetails</h1>
             <ImgUploader />
         </div>
     </section>

@@ -9,7 +9,7 @@ import { HomePage } from './pages/home-page'
 import { AboutUs } from './pages/about-us'
 import { Workspace } from './pages/workspace'
 import { Board } from './pages/board'
-import { TaskEdit } from './pages/task-edit'
+import { TaskDetails } from './pages/task-edit'
 
 export function RootCmp() {
 
@@ -23,7 +23,8 @@ export function RootCmp() {
                     <Route element={<Workspace />} path="/workspace" />
                     <Route element={<Board />} path="/board/:boardId" />
                     {/* cmp- groplist=> tasklist=>task preview=> || page==taskedit */}
-                    <Route element={<TaskEdit />} path="/board/:boardId/:taskId" />
+                    {/* <Route element={<TaskEdit />} path="/board/:boardId/:taskId" /> */}
+                    <Route element={<TaskDetails />} path="/board/:boardId/:taskId" />
                     {/* <Route element={<UserDetails />} path="/user/:id" /> */}
                 </Routes>
             </main>

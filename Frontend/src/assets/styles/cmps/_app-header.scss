@@ -7,7 +7,7 @@
         // background-color: $clr2;
         // padding: 2px 8px;
         padding-left: 100px;
-        color: $clr1;
+        // color: $clr1;
 
         .score {
             background-color: $clr2;
@@ -41,13 +41,13 @@
     }
 
     nav a:not(:first-child) {
-        border-top: 1px solid $clr1;
+        border-top: 1px solid;
         padding: 0 5px;
         margin: 10px;
     }
 
     nav .active {
-        color: $clr1;
+        // color: $clr1;
     }
 
 }
