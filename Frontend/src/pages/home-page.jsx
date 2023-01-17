@@ -7,12 +7,11 @@ import { AppFooter } from '../cmps/app-footer'
 export function HomePage() {
 
 
-    return (
-        <section>
-            <h1>hello home page</h1>
+    return <section className='home-page'>
+        <h1>hello home page</h1>
 
-            <Link to="/workspace"> Start demo</Link>
-            <AppFooter />
-        </section >
-    )
+        <Link to="/workspace"> Start demo</Link>
+        <AppFooter />
+    </section >
+
 }

@@ -14,9 +14,9 @@ import { TaskEdit } from './pages/task-edit'
 export function RootCmp() {
 
     return (
-        <div>
+        <div className="main-container app">
             <AppHeader />
-            <main>
+            <main className="full main-section main-container">
                 <Routes>
                     <Route element={<HomePage />} path="/" />
                     <Route element={<AboutUs />} path="/about" />

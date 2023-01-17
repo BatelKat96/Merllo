@@ -57,7 +57,7 @@ export function Board() {
     // }
 
     return (
-        <div>
+        <section className='board'>
             <h3>Your board</h3>
             <GroupList />
             {/* <main>
@@ -80,6 +80,6 @@ export function Board() {
                     }
                 </ul>
             </main> */}
-        </div>
+        </section>
     )
 }
