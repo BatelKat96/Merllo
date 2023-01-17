@@ -1,14 +1,39 @@
 // Colors
-$clr1: #ce2e6c;
-$clr2: #4f3a65;
-$clr3: #574f7d;
-$clr4: #95adbe;
-$clr5: #dff0ea;
-$clr6: #fff;
-$clr7: #222;
+// Homepage Header
+$h-bg1: #0079bf;
+$h-txt1: #ffffff;
+
+// Workspace
+$w-bg1: #F9FBFC;
+
+$w-txt1: #172B4D;
+$w-txt2: #0079bf;
+$w-txt3: #5E6C84;
+
+$w-icon1: #43516E;
+
+$w-hover1: #EAECF0;
+
+// Board
+$b-txt1: #172B4D;
+$b-txt2: #ffffff;
+$b-txt3: #5E6C84;
+
+// Task
+
+$t-bg1: #EAECF0;
+$t-bg2: #ffffff;
+$t-bg3: #F3F5F7;
+
+
+$t-txt1: #172B4D;
+$t-txt2: #5E6C84;
+
+$t-hover1: #EAECF0;
+$t-hover2: #E1E4E9;
 
 
 // Breakpoints
-$mobile-breakpoint: 460px;
-$narrow-breakpoint: 720px;
+// $mobile-breakpoint: 460px;
+$narrow-breakpoint: 600px;
 $normal-breakpoint: 960px;
