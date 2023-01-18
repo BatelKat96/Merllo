@@ -64,63 +64,66 @@ export function TaskDetails() {
 
 
     if (!task) return <h1 className='loading'>Loadings....</h1>
-    return <section className='task-details'>
-        <div className='task-title-container'>
+    return <section className='task-details-section'>
+        <div className='task-details-container'>
 
-            <img className='icon ' src={taskTitle} />
-            {/* <img className='icon ' src={require({ plus })} /> */}
-            {/* <img className='icon ' src={taskTitle} /> */}
-            <form onSubmit={onSaveEdit}>
-                <textarea type="text"
-                    className='title'
-                    name="title"
-                    id="title"
-                    onChange={handleChange}
-                    defaultValue={task.title}
-                />
-            </form >
-            <p>in line development</p>
-        </div>
-        <div className='task-members-container'>
-            <h3 className='small-headline'>Members</h3>
-            <ul className='members-list clean-list'>
-                {memberIds && memberIds.map(member =>
-                    <li key={member}>
-                        <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt={member} title={member} />
+            <div className='task-title-container'>
+
+                <img className='icon ' src={taskTitle} />
+                {/* <img className='icon ' src={require({ plus })} /> */}
+                {/* <img className='icon ' src={taskTitle} /> */}
+                <form onSubmit={onSaveEdit}>
+                    <textarea type="text"
+                        className='title'
+                        name="title"
+                        id="title"
+                        onChange={handleChange}
+                        defaultValue={task.title}
+                    />
+                </form >
+                <p>in line development</p>
+            </div>
+            <div className='task-members-container'>
+                <h3 className='small-headline'>Members</h3>
+                <ul className='members-list clean-list'>
+                    {memberIds && memberIds.map(member =>
+                        <li key={member}>
+                            <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt={member} title={member} />
+                        </li>
+
+                    )}
+
+                    <li key="add-more" className='add-member' title="Add another member" onClick={() => { '#' }} >
+                        <img className='icon plus' src={plus} />
+                        {/* NOGAAAAAAAAA */}
                     </li>
 
-                )}
+                    {/* <img src={byMember.imgUrl} alt={byMember.username} /> onclick to add memeber */}
+                </ul>
+            </div>
+            <br />
 
-                <li key="add-more" className='add-member' title="Add another member" onClick={() => { '#' }} >
-                    <img className='icon plus' src={plus} />
-                    {/* NOGAAAAAAAAA */}
-                </li>
 
-                {/* <img src={byMember.imgUrl} alt={byMember.username} /> onclick to add memeber */}
-            </ul>
+            <br />
+            <form onSubmit={onSaveEdit}>
+                <label htmlFor="description" className='medium-headline'>Description:</label>
+                <textarea
+                    name="description"
+                    id="description"
+                    onChange={handleChange}
+                    defaultValue={task.description}
+                ></textarea>
+                <br />
+
+
+                <br />
+
+                <button className='btn clean-btn'>Save</button>
+                <Link to="/toy" className="btn">Back to List</Link>
+
+            </form >
+            <ImgUploader />
+
         </div>
-        <br />
-
-
-        <br />
-        <form onSubmit={onSaveEdit}>
-            <label htmlFor="description" className='medium-headline'>Description:</label>
-            <textarea
-                name="description"
-                id="description"
-                onChange={handleChange}
-                defaultValue={task.description}
-            ></textarea>
-            <br />
-
-
-            <br />
-
-            <button className='btn clean-btn'>Save</button>
-            <Link to="/toy" className="btn">Back to List</Link>
-
-        </form >
-        <ImgUploader />
-
     </section>
 }
