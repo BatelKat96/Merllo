@@ -1,47 +1,58 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+
 import { Link } from 'react-router-dom'
 import { HomePageHeader } from '../cmps/home-page-header'
 import { HomePageFooter } from '../cmps/home-page-footer'
 
-import firstPng from '../assets/img/TrelloUICollage_4x.png'
-import secondPng from '../assets/img/Carousel_Image_Boards_2x.png'
+import heroPng from '../assets/img/TrelloUICollage_4x.png'
+import productivityPng from '../assets/img/Carousel_Image_Boards_2x.png'
 
 export function HomePage() {
 
     return (
+        <>
     <section className="home-page">
-        {/* <HomePageHeader /> */}
+                <HomePageHeader />
 
-        <div className="first-div">
+                <div className="bg-gradient-hero">
 
-            <div className="text">
-                <h1>Trello brings all your tasks, teammates, and tools together</h1>
+                    <section className="hero-secrion">
 
-                <p>Keep everything in the same place—even if your team isn't.</p>
+                        <div className="text">
+                            <h1>Trello brings all your tasks, teammates, and tools together</h1>
 
-                <button className="start-demo-btn">
-                    <Link to="/workspace">Start demo - it's free!</Link>
-                </button>
-            </div>
+                            <p>Keep everything in the same place—even if your team isn't.</p>
 
-            <div className="img">
-                <img src={firstPng} alt="firstPng" />
-            </div>
-        </div>
+                            <button className="start-demo-btn">
+                                <Link to="/workspace">Start demo - it's free!</Link>
+                            </button>
+                        </div>
 
-        <div className="second-div">
-            <h5>Trello 101</h5>
+                        <div className="img">
+                            <img src={heroPng} alt="firstPng" />
+                        </div>
 
-            <h2>A productivity powerhouse</h2>
+                    </section>
+                </div>
 
-            <p>Simple, flexible, and powerful. All it takes are boards, lists, and cards to get a clear view of who's doing what and what needs to get done. Learn more in our guide for getting started.</p>
+                <div className="bg-gradient-101">
 
-            <img src={secondPng} alt="secondPng" />
-        </div>
+                    <section className="prod-section">
+
+                        <h5>Merllo 101</h5>
+
+                        <h2>A productivity powerhouse</h2>
+
+                        <p>Simple, flexible, and powerful. All it takes are boards, lists, and cards to get a clear view of who's doing what and what needs to get done. Learn more in our guide for getting started.</p>
+
+                        <img src={productivityPng} alt="secondPng" />
+
+                    </section>
+                </div>
 
         <HomePageFooter />
     </section >
+        </>
     )
 
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
 
-// import { HomePageHeader } from './cmps/home-page-header'
+import { HomePageHeader } from './cmps/home-page-header'
 // import { UserDetails } from './pages/user-details'
 import { MainHeader } from './cmps/main-header'
 
@@ -15,7 +15,7 @@ export function RootCmp() {
 	return (
 		<section>
 			{/* <HomePageHeader /> */}
-			<MainHeader />
+			{/* <MainHeader /> */}
 			{/* <div className="main-container app full"> */}
 			<div>
 				{/* <main className="full main-section main-container"> */}
