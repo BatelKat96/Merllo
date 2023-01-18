@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import { HomePageHeader } from '../cmps/home-page-header'
 import { HomePageFooter } from '../cmps/home-page-footer'
 
 import heroPng from '../assets/img/TrelloUICollage_4x.png'
@@ -11,8 +10,7 @@ export function HomePage() {
 
     return (
         <>
-    <section className="home-page">
-                <HomePageHeader />
+            <section className="home-page">
 
                 <div className="bg-gradient-hero">
 

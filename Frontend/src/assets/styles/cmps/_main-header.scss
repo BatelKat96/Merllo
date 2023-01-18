@@ -1,5 +1,5 @@
 .main-header {
-    height: 60px;
+    height: 44px;
     width: 100vw;
 
     display: flex;
@@ -18,12 +18,13 @@
         justify-content: center;
 
         font-family: segoe_ui;
-        padding: 4px;
-        font-size: 0.8rem;
+        margin: 0 4px;
+        padding: 0 5px;
+        font-size: 0.9rem;
         color: $wh-txt1;  
 
         &.create-btn {
-            padding: 10px;
+            padding: 8px;
             background-color: $wh-bg2;
             border-radius: 3px;
         }
@@ -31,14 +32,25 @@
         &.create-btn:hover {
             background-color: $wh-bg1;
         }
+
+    }
+
+    button:hover, button:active {
+        padding: 8px;
+        border-radius: 3px;
+        background-color: $wh-bg2;
     }
 
     svg {
-        height: 40px;
-        width: 40px;
-        vertical-align:top;
-        justify-content:center;
-        align-items:center;
+        height: 20px;
+        width: 20px;
+        border-radius: 3px;
+        border: 0;
+        align-items: center;
+        background-color: transparent;
+        margin: 0 4px;
+        white-space: nowrap;
+        color: $wh-txt1;
 
         path {
             fill: $wh-txt1;  
@@ -46,30 +58,47 @@
         
     }
 
-    .right {
+    .right-nav {
         display: flex;
         align-items: center;
+        margin-left: 4px;
 
         .header-logo {
             display: flex;
             align-items: center;
-    
-            padding: 10px;
+            padding: 0 6px;
     
             h1 {
                 font-size: 1.2rem;
+                font-family: charlie-semibold;
+                letter-spacing: 0.03rem;
                 color: $wh-txt1;  
             }
         }
-    
-        &.header-logo:active {
-            color: $wh-txt1;
-        }
     }
 
-    .left {
+    .left-nav {
         display: flex;
         align-items: center;
+        margin-right: 4px;
+
+        .search {
+            height: 32px;
+            width: 100%;
+            width: 200px;
+            padding: 0px 2px 0px 30px;
+            border-radius: 3px;
+            font-size: 1rem;
+            line-height: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: $wh-txt1;
+            justify-content: flex-start;
+        }
+
+        .search:active, .search:focus {
+            cursor: text;
+            background-color: rgba(255, 255, 255, 0.525);
+        }
     }
 
 }

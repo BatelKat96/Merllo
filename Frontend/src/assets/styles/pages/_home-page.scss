@@ -42,11 +42,12 @@
                 font-family: charlie-semibold;
                 font-size: 3rem;
                 line-height: 1.25;
+                margin-bottom: 1.2rem;
             }
 
             p {
                 font-size: 1.3rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
                 margin-top: 0px;
             }
 
@@ -54,6 +55,7 @@
                 border-radius: 0.3rem;
                 border: none;
                 padding: 0.7rem 1rem 0.8rem;
+                margin-bottom: 1rem;
 
                 font-family: charlie-regular;
                 background-color: $h-btn1;
@@ -93,7 +95,7 @@
     .bg-gradient-101 {
         display: block;
         height: fit-content;
-        color: $h-txt2;
+        color: $h-txt3;
 
         background: linear-gradient(0deg, rgb(230, 252, 255), rgb(255, 255, 255)) 0% 0% / auto repeat scroll padding-box border-box rgb(178, 212, 255);
         background-blend-mode: normal;
@@ -114,7 +116,7 @@
             font-size: 1rem;
             line-height: 1.25;
             text-transform: uppercase;
-            font-family: charlie-regular;
+            font-family: charlie-semibold;
         }
 
         h2 {
