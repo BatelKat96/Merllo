@@ -5,8 +5,8 @@
 html {
     padding: 0;
     margin: 0;
-// <<<<<<< HEAD
-// =======
+<<<<<<< HEAD
+=======
 }
 
 // ::selection {
@@ -18,12 +18,14 @@ html {
     font-family: montserrat;
     line-height: 1.6;
     color: $clr2;
-// >>>>>>> f4f192fef6b9d5522fbe1403429e31f9631cf2dd
+>>>>>>> f4f192fef6b9d5522fbe1403429e31f9631cf2dd
 }
 
 body {
     font-size: rem(18px);
     margin: auto;
+    font-family: 'Segoe UI';
+    max-height: 100vh;    
 }
 
 h1,
@@ -32,7 +34,19 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: charlie-bold;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 img {
