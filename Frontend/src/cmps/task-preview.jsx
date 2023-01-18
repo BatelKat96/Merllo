@@ -6,7 +6,7 @@ export function TaskPreview({ task }) {
 
             {task.title}
 
-        <Link to="/board/:boardId/:taskId"> Edit task</Link>
+            <Link to="/board/:boardId/:groupId/:taskId"> Edit task</Link>
 
         </section>)
 }

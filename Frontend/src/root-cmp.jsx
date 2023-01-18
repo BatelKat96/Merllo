@@ -25,7 +25,7 @@ export function RootCmp() {
 						<Route element={<Board />} path="/board/:boardId" />
 						{/* cmp- groplist=> tasklist=>task preview=> || page==taskedit */}
 						{/* <Route element={<TaskEdit />} path="/board/:boardId/:taskId" /> */}
-						<Route element={<TaskDetails />} path="/board/:boardId/:taskId" />
+						<Route element={<TaskDetails />} path="/board/:boardId/:groupId/:taskId" />
 						{/* <Route element={<UserDetails />} path="/user/:id" /> */}
 					</Routes>
 				</main>
