@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { boardService } from '../services/board.service'
-import { loadBoards } from '../store/board.actions'
+import { loadBoard } from '../store/board.actions'
+
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 // import { loadCars, addCar, updateCar, removeCar } from '../store/car.actions.js'
 
@@ -11,23 +12,13 @@ import { GroupList } from '../cmps/group-list'
 export function Board() {
 	// const { boardId } = useParams()
 	const boardId = 'b101'
-	const [board, setBoard] = useState(null)
-	const boards = useSelector((storeState) => storeState.boardModule.boards)
+	const board = useSelector((storeState) => storeState.boardModule.board)
 
 	useEffect(() => {
-		loadBoard()
+		loadBoard(boardId)
 	}, [])
 
-	async function loadBoard() {
-		try {
-			const board = await boardService.getById(boardId)
-			setBoard(board)
-		} catch (err) {
-			console.log('board cmp - failed to loaf board', err)
-			throw err
-		}
-	}
-	console.log('board ', board)
+	console.log('board cmp', board)
 
 	// useEffect(() => {
 	// 	loadGroups('b101')
@@ -76,6 +67,8 @@ export function Board() {
 
 	if (!board) return <h1>loadings....</h1>
 	const groups = board.groups
+	console.log('board', board)
+	console.log('groups', groups)
 
 	return (
 		<section className="board">
@@ -89,7 +82,7 @@ export function Board() {
 				<button>...</button>
 			</div>
 			<div className="board-main-content">
-				<GroupList groups={groups} onRemoveGroup={onRemoveGroup} />
+				<GroupList onRemoveGroup={onRemoveGroup} />
 			</div>
 			{/* <main>
                 <button onClick={onAddCar}>Add Car ⛐</button>

@@ -3,10 +3,10 @@ import { userService } from '../services/user.service.js'
 import { store } from './store.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import {
+	// SET_BOARDS,
+	SET_BOARD,
 	ADD_BOARD,
 	REMOVE_BOARD,
-	SET_BOARDS,
-	UNDO_REMOVE_BOARD,
 	UPDATE_BOARD,
 } from './board.reducer.js'
 
@@ -27,55 +27,149 @@ export function getActionAddBoard(board) {
 
 export function getActionUpdateBoard(board) {
 	return {
-		type: UPDATE_BOARD,
+		type: SET_BOARD,
 		board,
 	}
 }
 
-export async function loadBoards() {
+// * board actions
+// export async function loadBoards() {
+// 	try {
+// 		const boards = await boardService.query()
+// 		console.log('Boards from local storage:', boards)
+// 		store.dispatch({
+// 			type: SET_BOARDS,
+// 			boards,
+// 		})
+// 	} catch (err) {
+// 		console.log('Cannot load boards', err)
+// 		throw err
+// 	}
+// }
+
+// export async function removeBoard(boardId) {
+// 	try {
+// 		await boardService.remove(boardId)
+// 		store.dispatch(getActionRemoveBoard(boardId))
+// 	} catch (err) {
+// 		console.log('Cannot remove board', err)
+// 		throw err
+// 	}
+// }
+
+// export async function addBoard(board) {
+// 	try {
+// 		const savedBoard = await boardService.save(board)
+// 		console.log('Added Board', savedBoard)
+// 		store.dispatch(getActionAddBoard(savedBoard))
+// 		return savedBoard
+// 	} catch (err) {
+// 		console.log('Cannot add board', err)
+// 		throw err
+// 	}
+// }
+
+// export async function updateBoard(board) {
+// 	try {
+// 		const savedBoard = await boardService.save(board)
+// 		console.log('Updated Board:', savedBoard)
+// 		store.dispatch(getActionUpdateBoard(savedBoard))
+// 		return savedBoard
+// 	} catch (err) {
+// 		console.log('Cannot save board', err)
+// 		throw err
+// 	}
+// }
+
+export async function loadBoard(boardId) {
+	console.log('loadBoard', boardId)
 	try {
-		const boards = await boardService.query()
-		console.log('Boards from local storage:', boards)
+		const board = await boardService.getById(boardId)
 		store.dispatch({
-			type: SET_BOARDS,
-			boards,
+			type: SET_BOARD,
+			board,
 		})
+		return board
 	} catch (err) {
-		console.log('Cannot load boards', err)
+		console.log('board cmp - failed to load board', err)
 		throw err
 	}
 }
 
-export async function removeBoard(boardId) {
-	try {
-		await boardService.remove(boardId)
-		store.dispatch(getActionRemoveBoard(boardId))
-	} catch (err) {
-		console.log('Cannot remove board', err)
-		throw err
-	}
-}
+// * group actions
+// export async function loadGroups(boardId) {
+// 	try {
+// 		const groups = await boardService.queryGroups(boardId)
+// 		console.log('Groups from local storage:', groups)
+// 		return groups
+// 	} catch (err) {
+// 		console.log('Cannot load groups', err)
+// 		throw err
+// 	}
+// }
 
-export async function addBoard(board) {
+export async function removeGroup(groupId, boardId) {
 	try {
-		const savedBoard = await boardService.save(board)
-		console.log('Added Board', savedBoard)
-		store.dispatch(getActionAddBoard(savedBoard))
-		return savedBoard
-	} catch (err) {
-		console.log('Cannot add board', err)
-		throw err
-	}
-}
-
-export async function updateBoard(board) {
-	try {
-		const savedBoard = await boardService.save(board)
-		console.log('Updated Board:', savedBoard)
+		let savedBoard = await boardService.removeGroup(groupId, boardId)
 		store.dispatch(getActionUpdateBoard(savedBoard))
-		return savedBoard
+		return groupId
 	} catch (err) {
-		console.log('Cannot save board', err)
+		console.log('Cannot remove group', err)
+		throw err
+	}
+}
+
+export async function saveGroup(group, boardId) {
+	try {
+		const savedBoard = await boardService.saveGroup(group, boardId)
+		store.dispatch(getActionUpdateBoard(savedBoard))
+		return group
+	} catch (err) {
+		console.log('Cannot save group', err)
+		throw err
+	}
+}
+
+// * task actions
+export async function loadTasks(groupId, boardId) {
+	try {
+		const tasks = await boardService.queryTasks(groupId, boardId)
+		console.log('Tasks from local storage:', tasks)
+		return tasks
+	} catch (err) {
+		console.log('Cannot load tasks', err)
+		throw err
+	}
+}
+
+export async function loadTask(taskId, groupId, boardId) {
+	try {
+		const task = await boardService.getTaskById(taskId, groupId, boardId)
+		return task
+	} catch (err) {
+		console.log('Failed to load task', err)
+		throw err
+	}
+}
+
+export async function removeTask(taskId, groupId, boardId) {
+	try {
+		let savedBoard = await boardService.removeTask(taskId, groupId, boardId)
+		store.dispatch(getActionUpdateBoard(savedBoard))
+		return taskId
+	} catch (err) {
+		console.log('Cannot remove task', err)
+		throw err
+	}
+}
+
+export async function saveTask(task, groupId, boardId) {
+	try {
+		const savedBoard = await boardService.saveTask(task, groupId, boardId)
+		store.dispatch(getActionUpdateBoard(savedBoard))
+		return task
+	} catch (err) {
+		console.log('Cannot save task', err)
 		throw err
 	}
 }

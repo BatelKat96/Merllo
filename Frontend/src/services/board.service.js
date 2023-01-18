@@ -12,11 +12,16 @@ export const boardService = {
 	save,
 	remove,
 	getEmptyBoard,
-	queryGroup,
+	queryGroups,
 	getGroupById,
 	saveGroup,
 	removeGroup,
 	getEmptyGroup,
+	queryTasks,
+	getTaskById,
+	removeTask,
+	saveTask,
+	getEmptyTask,
 }
 window.cs = boardService
 
@@ -385,35 +390,141 @@ function _createBoards() {
 }
 
 // * group functions
-async function queryGroup(boardId) {
-	let board = await getById(boardId)
-	let groups = board.groups
-	// here we will add filters
-	return groups
-}
-
-async function getGroupById(groupId) {
-	return await storageService.get(STORAGE_KEY, groupId)
-}
-
-async function removeGroup(groupId) {
-	await storageService.remove(STORAGE_KEY, groupId)
-}
-async function saveGroup(group) {
-	var savedGroup
-	if (group._id) {
-		savedGroup = await storageService.put(STORAGE_KEY, group)
-	} else {
-		// Later, owner is set by the backend
-		// board.owner = userService.getLoggedinUser()
-		savedGroup = await storageService.post(STORAGE_KEY, group)
+async function queryGroups(boardId) {
+	try {
+		let board = await getById(boardId)
+		let groups = board.groups
+		return groups
+	} catch (err) {
+		console.log('Failed to get groups', err)
+		throw err
 	}
-	return savedGroup
+}
+
+async function getGroupById(groupId, boardId) {
+	try {
+		const groups = await queryGroups(boardId)
+		const group = groups.find((group) => {
+			return group.id === groupId
+		})
+		return group
+	} catch (err) {
+		console.log('Failed to get group', err)
+		throw err
+	}
+}
+
+async function removeGroup(groupId, boardId) {
+	try {
+		let board = await getById(boardId)
+		board.groups.filter((group) => group.id !== groupId)
+		return save(board)
+	} catch (err) {
+		console.log('Failed to remove group', err)
+		throw err
+	}
+}
+
+async function saveGroup(group, boardId) {
+	try {
+		let board = await getById(boardId)
+		if (group.id) {
+			const idx = board.groups.findIndex(
+				(currGroup) => currGroup.id === group.id
+			)
+			if (idx < 0)
+				throw new Error(`Update failed, cannot find group with id: ${group.id}`)
+			board.groups.splice(idx, 1, group)
+		} else {
+			group.id = utilService.makeId()
+			board.groups.push(group)
+		}
+		return save(board)
+	} catch (err) {
+		console.log('Failed to save group', err)
+		throw err
+	}
 }
 
 function getEmptyGroup() {
 	return {
 		title: 'New group',
 		tasks: [],
+	}
+}
+
+// * tasks functions
+async function queryTasks(groupId, boardId) {
+	try {
+		let group = await getGroupById(groupId, boardId)
+		let tasks = group.tasks
+		return tasks
+	} catch (err) {
+		console.log('Failed to get tasks', err)
+		throw err
+	}
+}
+
+async function getTaskById(taskId, groupId, boardId) {
+	try {
+		const tasks = await queryTasks(groupId, boardId)
+		const task = tasks.find((task) => task.id === taskId)
+		return task
+	} catch (err) {
+		console.log('Failed to get task', err)
+		throw err
+	}
+}
+
+async function removeTask(taskId, groupId, boardId) {
+	try {
+		let group = await getGroupById(groupId, boardId)
+		console.log('group before', group)
+		let updatedTasks = group.tasks.filter((task) => task.id !== taskId)
+		group.tasks = updatedTasks
+		console.log('group after', group)
+		return await saveGroup(group, boardId)
+	} catch (err) {
+		console.log('Failed to remove task', err)
+		throw err
+	}
+}
+
+async function saveTask(task, groupId, boardId) {
+	try {
+		let group = await getGroupById(groupId, boardId)
+		if (task.id) {
+			const idx = group.tasks.findIndex((currTask) => currTask.id === task.id)
+			if (idx < 0)
+				throw new Error(`Update failed, cannot find task with id: ${task.id}`)
+			group.tasks.splice(idx, 1, task)
+		} else {
+			task.id = utilService.makeId()
+			group.tasks.push(task)
+		}
+		return await saveGroup(group, boardId)
+	} catch (err) {
+		console.log('Failed to save group', err)
+		throw err
+	}
+}
+
+function getEmptyTask() {
+	return {
+		title: 'New task',
+		archivedAt: null,
+		labelIds: [],
+		dueDate: 1674837381,
+		byMember: {
+			_id: '',
+			username: '',
+			fullname: '',
+			imgUrl: '',
+		},
+		memberIds: [],
+		comments: [],
+		style: {},
+		attachments: [],
+		checklists: [],
 	}
 }

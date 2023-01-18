@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { boardService } from '../services/board.service'
 
 import { TaskList } from './task-list'
 
-export function GroupList({ groups, onRemoveGroup }) {
-	console.log('group-list groups', groups)
+export function GroupList({ onRemoveGroup }) {
+	const board = useSelector((storeState) => storeState.boardModule.board)
+	const groups = board.groups
 
 	function onAddTask() {
 		console.log('add new task to group')
 	}
+
+	if (!groups) return <h1>loadings....</h1>
 
 	return (
 		<section className="group-list-container">
