@@ -83,7 +83,9 @@ export function Board() {
 				{/* <BoardTopMenu /> */}
 				<h1>Demo</h1>
 				<button>Star</button>
+				<span></span>
 				<button>Filter</button>
+				<span></span>
 				<button>...</button>
 			</div>
 			<div className="board-main-content">
