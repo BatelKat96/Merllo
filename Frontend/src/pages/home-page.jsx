@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { AppFooter } from '../cmps/app-footer'
+import { HomePageFooter } from '../cmps/home-page-footer'
 
 import firstPng from '../assets/img/TrelloUICollage_4x.png'
+import secondPng from '../assets/img/Carousel_Image_Boards_2x.png'
 
 export function HomePage() {
-
 
     return (
     <section className="home-page">
@@ -28,7 +28,17 @@ export function HomePage() {
             </div>
         </div>
 
-        <AppFooter />
+        <div className="second-div">
+            <h5>Trello 101</h5>
+
+            <h2>A productivity powerhouse</h2>
+
+            <p>Simple, flexible, and powerful. All it takes are boards, lists, and cards to get a clear view of who's doing what and what needs to get done. Learn more in our guide for getting started.</p>
+
+            <img src={secondPng} alt="secondPng" />
+        </div>
+
+        <HomePageFooter />
     </section >
     )
 

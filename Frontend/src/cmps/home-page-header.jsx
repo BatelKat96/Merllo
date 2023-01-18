@@ -7,7 +7,7 @@ import { LoginSignup } from './login-signup.jsx'
 
 import logo from '../assets/img/merllo-logo.png'
 
-export function AppHeader() {
+export function HomePageHeader() {
     // const user = useSelector(storeState => storeState.userModule.user)
 
     // async function onLogin(credentials) {
