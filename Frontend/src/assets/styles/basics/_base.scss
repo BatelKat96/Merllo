@@ -5,8 +5,21 @@
 html {
     padding: 0;
     margin: 0;
+<<<<<<< HEAD
+=======
 }
-    
+
+// ::selection {
+//     // background-color: $clr1;
+//     color: $clr6;
+// }
+
+html {
+    font-family: montserrat;
+    line-height: 1.6;
+    color: $clr2;
+>>>>>>> f4f192fef6b9d5522fbe1403429e31f9631cf2dd
+}
 
 body {
     font-size: rem(18px);
