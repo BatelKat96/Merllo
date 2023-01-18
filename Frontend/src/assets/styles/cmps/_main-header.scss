@@ -23,6 +23,9 @@
         font-size: 0.9rem;
         color: $wh-txt1;  
 
+        padding: 8px;
+        border-radius: 3px;
+
         &.create-btn {
             padding: 8px;
             background-color: $wh-bg2;
@@ -36,8 +39,6 @@
     }
 
     button:hover, button:active {
-        padding: 8px;
-        border-radius: 3px;
         background-color: $wh-bg2;
     }
 

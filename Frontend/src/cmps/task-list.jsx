@@ -4,7 +4,7 @@ export function TaskList({ tasks }) {
 
 
     return (
-        <section>
+        <section className="task-lis1">
 
             <ul className="task-list clean-list">
                 {tasks.map(task =>
