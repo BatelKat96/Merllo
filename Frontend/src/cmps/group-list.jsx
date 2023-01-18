@@ -15,8 +15,8 @@ export function GroupList({ groups, onRemoveGroup }) {
 			<ul className="group-list clean-list">
 				{groups.map((group) => (
 					<li className="group-wrapper" key={group.id}>
-						<div className="group-name">
-							<p>{group.title}</p>
+						<div className="group-top">
+							<h2 className="group-title">{group.title}</h2>
 							<button
 								onClick={() => {
 									onRemoveGroup(group.id)
@@ -28,7 +28,7 @@ export function GroupList({ groups, onRemoveGroup }) {
 						<TaskList group={group} />
 						<div className="group-bottom">
 							<button className="add-card">+ Add a card</button>
-							<button>copy</button>
+							<button>template</button>
 						</div>
 					</li>
 				))}

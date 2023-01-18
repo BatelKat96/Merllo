@@ -15,13 +15,22 @@
         display: flex;
         flex-direction: column;
 
-        .group-name {
+        .group-top {
             height: 40px;
             padding: 10px 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
+        h2 {
+            font-family: 'Segoe UI';
+            margin: 0 0 8px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
 
         
         .group-bottom {
