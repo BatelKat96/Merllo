@@ -14,12 +14,14 @@
         // scroll-behavior: auto;
         overflow-x: scroll;
         height: 77vh;
+        padding-left: 16px;
     }
     
     .board-top-menu {
         margin: 5px;
         display: flex;
         align-items: center;
+        padding-left: 32px;
         button {
             color: $b-txt1;
             border-radius: 3px;

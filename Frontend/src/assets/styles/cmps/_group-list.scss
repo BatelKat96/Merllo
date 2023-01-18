@@ -8,7 +8,7 @@
     
     .group-wrapper {
         width: 272px;
-        height: fit-content;
+        // height: fit-content;
         background-color: #ebecf0;
         border-radius: 3px;
         // margin: 5px;
@@ -20,10 +20,34 @@
             padding: 10px 8px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+
+        
+        .group-bottom {
+            height: 38px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .add-card {
+            width: 212px;
+            height: 28px;
+            padding: 4px 8px;
+            margin: 2px 0 8px 8px;
+            border-radius: 3px;
+            border: none;
+            text-align: left;
+            background-color: unset;
+            }
+
+            .add-card:hover{
+                background-color:#dadbe2;
+                color: #42526e;
+            }
         }
 
         button {
-            font-weight: 700;
             color: black;
         }
     }

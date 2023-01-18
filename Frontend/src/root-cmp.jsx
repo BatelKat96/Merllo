@@ -12,30 +12,26 @@ import { Board } from './pages/board'
 import { TaskDetails } from './pages/task-details'
 
 export function RootCmp() {
-
-    return (
-        <selection>
-            {/* <HomePageHeader /> */}
-            <MainHeader />
-            {/* <div className="main-container app full"> */}
-                <div>
-                {/* <main className="full main-section main-container"> */}
-                <main>
-                    <Routes>
-                        <Route element={<HomePage />} path="/" />
-                        <Route element={<About />} path="/about" />
-                        <Route element={<Workspace />} path="/workspace" />
-                        <Route element={<Board />} path="/board/:boardId" />
-                        {/* cmp- groplist=> tasklist=>task preview=> || page==taskedit */}
-                        {/* <Route element={<TaskEdit />} path="/board/:boardId/:taskId" /> */}
-                        <Route element={<TaskDetails />} path="/board/:boardId/:taskId" />
-                        {/* <Route element={<UserDetails />} path="/user/:id" /> */}
-                    </Routes>
-                </main>
-
-            </div>
-        </selection>
-    )
+	return (
+		<section>
+			{/* <HomePageHeader /> */}
+			<MainHeader />
+			{/* <div className="main-container app full"> */}
+			<div>
+				{/* <main className="full main-section main-container"> */}
+				<main>
+					<Routes>
+						<Route element={<HomePage />} path="/" />
+						<Route element={<About />} path="/about" />
+						<Route element={<Workspace />} path="/workspace" />
+						<Route element={<Board />} path="/board/:boardId" />
+						{/* cmp- groplist=> tasklist=>task preview=> || page==taskedit */}
+						{/* <Route element={<TaskEdit />} path="/board/:boardId/:taskId" /> */}
+						<Route element={<TaskDetails />} path="/board/:boardId/:taskId" />
+						{/* <Route element={<UserDetails />} path="/user/:id" /> */}
+					</Routes>
+				</main>
+			</div>
+		</section>
+	)
 }
-
-
