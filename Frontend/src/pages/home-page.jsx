@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { HomePageHeader } from '../cmps/home-page-header'
 import { HomePageFooter } from '../cmps/home-page-footer'
 
 import firstPng from '../assets/img/TrelloUICollage_4x.png'
@@ -10,6 +11,7 @@ export function HomePage() {
 
     return (
     <section className="home-page">
+        {/* <HomePageHeader /> */}
 
         <div className="first-div">
 
