@@ -1,1 +1,30 @@
-.group-list {}
+.group-list {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, 272px)/repeat(auto-fill, 272px);
+    grid-auto-flow: column;
+    // grid-auto-flow: column dense;
+
+    
+    .group-wrapper {
+        width: 272px;
+        height: fit-content;
+        background-color: #ebecf0;
+        border-radius: 3px;
+        // margin: 5px;
+        display: flex;
+        flex-direction: column;
+
+        .group-name {
+            height: 40px;
+            padding: 10px 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            font-weight: 700;
+            color: black;
+        }
+    }
+}

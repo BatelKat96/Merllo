@@ -1,4 +1,21 @@
-.borad {
+.board {
+    // display: grid;
+    // grid-template-columns: 260px 1fr;
+    background-color: $b-txt3;
+    color: $b-txt1;
+    
+    .board-main-content {
+        // scroll-behavior: auto;
+        overflow-x: scroll;
+        height: 77vh;
+    }
+    
+    .board-top-menu {
+        margin: 5px;
+        display: flex;
+        button {
+            color: black;
+        }
+    }
 
-    h3 {}
 }
