@@ -58,3 +58,8 @@
     }
   }
 }
+
+@mixin margin-titles-task {
+  margin-inline-end: 8px;
+  margin-block-end: 4px;
+}

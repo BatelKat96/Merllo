@@ -1,7 +1,18 @@
 import { TaskPreview } from './task-preview';
 
-export function TaskList() {
-    return <section className='task-list'>
-        <TaskPreview />
-    </section>
+export function TaskList({ tasks }) {
+
+
+    return (
+        <section>
+
+            <ul className="task-list clean-list">
+                {tasks.map(task =>
+
+                    <li key={task.id}>
+                        <TaskPreview task={task} />
+                    </li>)}
+            </ul>
+
+        </section>)
 }

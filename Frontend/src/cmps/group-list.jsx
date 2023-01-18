@@ -25,7 +25,7 @@ export function GroupList({ groups, onRemoveGroup }) {
 								remove
 							</button>
 						</div>
-						<TaskList group={group} />
+						<TaskList tasks={group.tasks} />
 						<div className="group-bottom">
 							<button className="add-card">+ Add a card</button>
 							<button>template</button>
