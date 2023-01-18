@@ -20,11 +20,13 @@
 @import "pages/user-details";
 
 // Components
-@import "cmps/app-header";
+// @import "cmps/app-header";
+@import "cmps/homepage-app-header";
+@import "cmps/main-header";
 @import "cmps/login-signup";
 @import "cmps/img-uploader";
 @import "cmps/group-list";
 @import "cmps/task-list";
 @import "cmps/task-preview";
 @import "cmps/user-msg";
-@import "cmps/app-footer";
+@import "cmps/homepage-footer";

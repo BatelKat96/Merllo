@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-::selection {
-    // background-color: $clr1;
-    color: $clr6;
-}
-
 html {
     padding: 0;
         margin: 0;
@@ -25,23 +20,10 @@ h4,
 h5,
 h6 {
     font-family: charlie-bold;
-    margin: 0 0 0.6em;
-    line-height: 1;
-}
-
-
-section,
-main,
-footer {
-    padding: 5px;
 }
 
 img {
     width: 100%;
-}
-
-p {
-    margin: 0;
 }
 
 a {

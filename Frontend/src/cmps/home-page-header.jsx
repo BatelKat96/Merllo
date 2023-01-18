@@ -7,7 +7,7 @@ import { LoginSignup } from './login-signup.jsx'
 
 import logo from '../assets/img/merllo-logo.png'
 
-export function AppHeader() {
+export function HomePageHeader() {
     // const user = useSelector(storeState => storeState.userModule.user)
 
     // async function onLogin(credentials) {
@@ -36,11 +36,11 @@ export function AppHeader() {
     // }
 
     return (
-        <header className="app-header">
+        <header className="homepage-header">
 
             <NavLink to="/" className="homepage-header-logo">
                 <img src={logo} alt="logo" />
-                <h1>Merllo</h1>
+                <h1 className="merllo-logo">Merllo</h1>
             </NavLink>
 
             <nav>
