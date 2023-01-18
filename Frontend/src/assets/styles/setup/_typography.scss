@@ -2,7 +2,11 @@
     font-family: charlie-regular;
         src: url(../setup/fonts/Charlie/CharlieDisplay-Regular.ttf);
     }
-    
+
+        @font-face {
+                    font-family: charlie-semibold;
+                    src: url(../setup/fonts/Charlie/CharlieDisplay-Semibold.ttf);
+                }
     @font-face {
         font-family: charlie-bold;
         src: url(../setup/fonts/Charlie/CharlieDisplay-Bold.ttf);

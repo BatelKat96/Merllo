@@ -1,1 +1,92 @@
-.home-page {}
+.home-page {
+    font-family: charlie-regular;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .first-div {
+        display: block;
+        height: fit-content;
+        color: $h-txt1;
+        padding-bottom: 50px;
+
+        background: url(//images.ctfassets.net/rz1oowkt5gyp/7lTGeXbBRNRLaVk2MdBjtJ/99c266e…/white-wave-bg.svg) center
+                bottom -0.5px / 100% 14% no-repeat scroll padding-box border-box,
+            linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% / auto repeat scroll padding-box
+                border-box rgb(82, 67, 170);
+        background-blend-mode: normal;
+
+
+        .text {
+            float: left;
+            width: 50%;
+            padding: 20px;
+
+            h1 {
+                font-size: 3rem;
+                line-height: 1.25;
+            }
+
+            p {
+                font-size: 1.3rem;
+                margin-bottom: 1.2rem;
+            }
+
+            button {
+                border-radius: 0.3rem;
+                border: none;
+                padding: 0.7rem 1rem 0.8rem;
+
+                font-family: charlie-regular;
+                background-color: $h-btn1;
+                color: $h-txt1;
+            }
+
+            a {
+                color: $h-txt1;
+            }
+        }
+
+        .img {
+            float: right;
+            width: 50%;
+            padding: 1rem;
+            display: block;
+
+            img {
+                position: relative;
+                top: 8rem;
+                right: -3rem;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .second-div {
+        display: block;
+        height: fit-content;
+        color: $h-txt2;
+
+        background: linear-gradient(0deg, rgb(230, 252, 255), rgb(255, 255, 255)) 0% 0% / auto repeat scroll padding-box border-box rgb(178, 212, 255);
+        background-blend-mode: normal;
+
+        h5 {
+            text-transform: uppercase;
+            padding: 0px 20px;
+        }
+
+        h2 {
+            padding: 0px 20px;
+            font-size: 2.2rem;
+        }
+
+        p {
+            padding: 0px 20px;
+        }
+
+        img {
+            padding: 0px 120px;
+            padding-bottom: 20px;
+        }
+    }
+}

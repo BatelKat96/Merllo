@@ -1,4 +1,48 @@
-.borad {
+.board {
+    // display: grid;
+    // grid-template-columns: 260px 1fr;
+    background-color: $b-txt3;
+    color: $b-txt1;
 
-    h3 {}
+    h1 {
+        font-size: 18px;
+        line-height: 32px;
+        padding: 0 12px;
+    }
+    
+    .board-main-content {
+        // scroll-behavior: auto;
+        overflow-x: scroll;
+        height: 77vh;
+        padding-left: 16px;
+    }
+    
+    .board-top-menu {
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        padding-left: 32px;
+        button {
+            color: $b-txt1;
+            border-radius: 3px;
+            border: none;
+            // float: left;
+            font-size: 14px;
+            height: 32px;
+            line-height: 32px;
+            margin: 0 4px 4px 0;
+            max-width: 400px;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            text-overflow: ellipsis;
+        };
+        span {
+            border-left: 1px solid $b-txt1;
+            float: left;
+            height: 16px;
+            margin: 8px 8px 12px 4px;
+        }
+    }
+
 }
