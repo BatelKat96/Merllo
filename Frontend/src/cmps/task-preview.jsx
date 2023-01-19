@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-import { taskService } from '../services/task.service'
+// import { taskService } from '../services/task.service'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit.svg'
@@ -19,17 +19,17 @@ export function TaskPreview({ task }) {
         setTask((prevToy) => ({ ...prevToy, [field]: value }))
     }
 
-    async function onSaveEdit(ev) {
-        ev.preventDefault()
-        try {
-            const savedTask = await taskService.save(updateTask)
-            showSuccessMsg(`Task edited (id: ${savedTask._id})`)
-            navigate('/board/:boardId')
-        } catch (err) {
-            showErrorMsg('Cannot update task ', err)
-            navigate('/board/:boardId')
-        }
-    }
+    // async function onSaveEdit(ev) {
+    //     ev.preventDefault()
+    //     try {
+    //         // const savedTask = await taskService.save(updateTask)
+    //         showSuccessMsg(`Task edited (id: ${savedTask._id})`)
+    //         navigate('/board/:boardId')
+    //     } catch (err) {
+    //         showErrorMsg('Cannot update task ', err)
+    //         navigate('/board/:boardId')
+    //     }
+    // }
 
 
     return (
