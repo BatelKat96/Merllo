@@ -1,7 +1,7 @@
 import { boardService } from '../services/board.service'
-import { userService } from '../services/user.service.js'
 import { store } from './store.js'
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
+// import { userService } from '../services/user.service.js'
+// import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import {
 	// SET_BOARDS,
 	SET_BOARD,
@@ -32,7 +32,7 @@ export function getActionUpdateBoard(board) {
 	}
 }
 
-// * board actions
+// * board actions (some to be used in the future)
 // export async function loadBoards() {
 // 	try {
 // 		const boards = await boardService.query()
@@ -131,26 +131,16 @@ export async function saveGroup(group, boardId) {
 }
 
 // * task actions
-export async function loadTasks(groupId, boardId) {
-	try {
-		const tasks = await boardService.queryTasks(groupId, boardId)
-		console.log('Tasks from local storage:', tasks)
-		return tasks
-	} catch (err) {
-		console.log('Cannot load tasks', err)
-		throw err
-	}
-}
-
-export async function loadTask(taskId, groupId, boardId) {
-	try {
-		const task = await boardService.getTaskById(taskId, groupId, boardId)
-		return task
-	} catch (err) {
-		console.log('Failed to load task', err)
-		throw err
-	}
-}
+// export async function loadTasks(groupId, boardId) {
+// 	try {
+// 		const tasks = await boardService.queryTasks(groupId, boardId)
+// 		console.log('Tasks from local storage:', tasks)
+// 		return tasks
+// 	} catch (err) {
+// 		console.log('Cannot load tasks', err)
+// 		throw err
+// 	}
+// }
 
 export async function removeTask(taskId, groupId, boardId) {
 	try {
