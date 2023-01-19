@@ -8,6 +8,27 @@ import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit
 
 export function TaskPreview({ task }) {
 
+    const [updateTask, setTask] = useState('')
+    const navigate = useNavigate()
+
+
+    function handleChange({ target }) {
+        let { value, type, name: field } = target
+        value = type === 'number' ? +value : value
+        setTask((prevToy) => ({ ...prevToy, [field]: value }))
+    }
+
+    // async function onSaveEdit(ev) {
+    //     ev.preventDefault()
+    //     try {
+    //         // const savedTask = await taskService.save(updateTask)
+    //         showSuccessMsg(`Task edited (id: ${savedTask._id})`)
+    //         navigate('/board/:boardId')
+    //     } catch (err) {
+    //         showErrorMsg('Cannot update task ', err)
+    //         navigate('/board/:boardId')
+    //     }
+    // }
 
 
     return (
