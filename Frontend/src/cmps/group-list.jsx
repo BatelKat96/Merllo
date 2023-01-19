@@ -38,7 +38,7 @@ export function GroupList({ onRemoveGroup }) {
 		console.log('add new task to group')
 	}
 
-	if (!groups) return <h1>loadings....</h1>
+	if (!groups) return <h1>Loading....</h1>
 
 	return (
 		<section className="group-list-container">
@@ -48,7 +48,7 @@ export function GroupList({ onRemoveGroup }) {
 						<div className="group-top">
 							<h2 className="group-title">{group.title}</h2>
 							<button
-								className="group-btn"
+								className="btn-group"
 								onClick={() => {
 									onRemoveGroup(group.id)
 								}}
@@ -58,8 +58,8 @@ export function GroupList({ onRemoveGroup }) {
 						</div>
 						<TaskList group={group} tasks={group.tasks} />
 						<div className="group-bottom">
-							<button className="group-btn add-card">+ Add a card</button>
-							<button className="group-btn">template</button>
+							<button className="btn-group add-card">+ Add a card</button>
+							<button className="btn-group">template</button>
 						</div>
 					</li>
 				))}
@@ -84,19 +84,12 @@ export function GroupList({ onRemoveGroup }) {
 							+ Add another list
 						</div>
 						<div className="add-group-controls">
-							{/* <input className="add-list-btn" type="submit" value="Add List" /> */}
-							<button
-								className="add-list-btn"
-								type="submit"
-								// onClick={() => {
-								// 	onAddList()
-								// }}
-							>
+							<button className="btn-add-list" type="submit">
 								Add list
 							</button>
 							<a
 								href="#"
-								className="cancel-list-btn"
+								className="btn-cancel-list"
 								onClick={() => {
 									onToggleAddCancelList()
 								}}

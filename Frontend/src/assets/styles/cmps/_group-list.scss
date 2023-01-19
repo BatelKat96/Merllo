@@ -31,12 +31,12 @@
                 line-height: 20px;
             }
 
-            .group-btn{
+            .btn-group{
                 border-radius: 3px;
                 border: none;
                 background-color: unset;
             }
-            .group-btn:hover{
+            .btn-group:hover{
                 background-color:#dadbe2;
                 color: #42526e;
             }
@@ -126,7 +126,6 @@
                 // }
 
                 input, textarea {
-                    -webkit-appearance: none;
                     background-color: #fafbfc;
                     border: none;
                     border-radius: 3px;
@@ -150,7 +149,7 @@
                     display: block;
                 }
 
-                .add-list-btn {
+                .btn-add-list {
                     background-color: #0079bf;
                     border: none;
                     box-shadow: none;
@@ -168,7 +167,7 @@
                     }
                 }
 
-                .cancel-list-btn {
+                .btn-cancel-list {
                     background-color: unset;
                     color: #42526e;
                     border: none;
