@@ -1,0 +1,34 @@
+.task-title-container {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    padding-top: 14px;
+    padding-bottom: 8px;
+    padding-inline-end: 40px;
+
+
+    .title-icon {}
+
+
+    .task-details-title {
+        line-height: 24px;
+        font-size: 20px;
+        height: 35px;
+        width: 618px;
+        font-family: segoe_ui;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: $t-txt1 ;
+        // padding-top: 12px;
+    }
+
+    p {
+        font-size: 14px;
+        color: $t-txt3;
+        margin: 0;
+        // padding: 2px;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+}
