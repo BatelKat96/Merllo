@@ -82,29 +82,34 @@ export function TaskDetails() {
 
 
     if (!task) return <h1 className='loading'>Loadings....</h1>
-    return <section className='task-details-section'>
-        <Link to={`/board/${boardId}`} className="btn-task-exit">
-            <IoClose className='icon exit-icon' />
-            {/* <img className='icon exit-icon' src={exit} /> */}
-        </Link>
 
-        <div className='task-details-main-section'>
-            <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={group} />
+    return <section className='task-details'>
+        <div onClick={() => navigate(`/board/${boardId}`)} className="black-screen"></div>
+        <div className='task-details-section'>
 
-            <div className='task-details-container'>
-                <div className='task-details-edit-section'>
-                    <TaskMember memberIds={memberIds} addMember={addMember} />
-                    <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
-                    <p>Checklist</p>
-                    <p>                        Activity-
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, inventore? Recusandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
-                    </p>
+            <Link to={`/board/${boardId}`} className="btn-task-exit">
+                <IoClose className='icon exit-icon' />
+                {/* <img className='icon exit-icon' src={exit} /> */}
+            </Link>
+
+            <div className='task-details-main-section'>
+                <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={group} />
+
+                <div className='task-details-container'>
+                    <div className='task-details-edit-section'>
+                        <TaskMember memberIds={memberIds} addMember={addMember} />
+                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                        <p>Checklist</p>
+                        <p>                        Activity-
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, inventore? Recusandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
+                        </p>
+
+                    </div>
+                    <TaskSideBar onRemoveTask={onRemoveTask} />
 
                 </div>
-                <TaskSideBar onRemoveTask={onRemoveTask} />
-
             </div>
-        </div>
 
+        </div>
     </section>
 }

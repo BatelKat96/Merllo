@@ -5,7 +5,7 @@
     .description-icon {}
 
     .task-description-title {
-        margin-bottom: 12px;
+        margin-bottom: 18px;
         display: inline-block;
     }
 
@@ -22,6 +22,7 @@
         padding-block: 12px;
         font-family: San_francisco_light;
         background-color: $t-bg5;
+        margin-inline-start: 40px;
 
         &:hover {
             background-color: $t-hover3;
@@ -37,6 +38,10 @@
             }
         }
 
+    }
+
+    .task-description-btn {
+        margin-inline-start: 40px;
     }
 
     .btn-description-save {

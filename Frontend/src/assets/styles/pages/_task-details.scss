@@ -1,16 +1,31 @@
+.task-details {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 100;
+    // overflow: auto;
+}
+
 .task-details-section {
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 40;
     font-family: segoe_ui;
     background-color: $t-bg1;
     border-radius: 5px;
     width: 768px;
     height: 901px;
-    margin: auto;
+    margin-inline: auto;
+    margin-block: 40px 80px;
     display: grid;
     grid-template-columns: 16px 1fr 16px;
-    // border: 4px black solid;
-    position: relative;
+    position: absolute;
+    padding-bottom: 32px;
     letter-spacing: 0.03em;
     font-size: 14px;
+
 
     .task-details-main-section {
         grid-column: 2;
