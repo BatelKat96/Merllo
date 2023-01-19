@@ -1,5 +1,4 @@
-import plus from '../../assets/img/icons-task-details/plus.svg'
-
+import { FiPlus } from "react-icons/fi";
 
 export function TaskMember({ memberIds, addMember }) {
 
@@ -13,7 +12,7 @@ export function TaskMember({ memberIds, addMember }) {
             )}
 
             <li key="add-more" className='add-member' title="Add another member" onClick={() => { '#' }} >
-                <img className='add-member-icon' src={plus} onClick={() => { addMember() }} />
+                <FiPlus className='add-member-icon' onClick={() => { addMember() }} />
             </li>
 
             {/* <img src={byMember.imgUrl} alt={byMember.username} /> onclick to add memeber */}

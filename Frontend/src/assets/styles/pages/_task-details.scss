@@ -8,12 +8,15 @@
     display: grid;
     grid-template-columns: 16px 1fr 16px;
     // border: 4px black solid;
+    position: relative;
+    letter-spacing: 0.03em;
+    font-size: 14px;
 
     .task-details-main-section {
         grid-column: 2;
         display: grid;
         grid-template-rows: 84.5px 1fr;
-        position: relative;
+
 
         .task-title-container {
             grid-row: 1/2;
@@ -23,32 +26,11 @@
             grid-row: 2/3;
         }
 
-        .btn-task-exit {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: 5px;
-            right: 0;
-            border-radius: 50%;
-            display: flex;
-
-            &:hover {
-                background-color: $t-hover3;
-            }
-
-            .exit-icon {
-                width: 20px;
-                height: 20px;
-                padding: 0;
-                margin: auto;
-            }
-
-        }
     }
 
     .task-details-container {
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 3fr minmax(0, max-content);
         gap: 16px;
 
         .task-details-edit-section {
@@ -63,26 +45,50 @@
     .task-details-edit-section {
         display: grid;
         grid-template-rows: repeat(4, minmax(0, max-content));
+        gap: 22px;
     }
 
 }
 
+.btn-task-exit {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 50%;
+    display: flex;
+    color: #42526e;
+
+    &:hover {
+        background-color: $t-hover3;
+
+    }
+
+    .exit-icon {
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: auto;
+    }
+}
 
 .small-headline {
     font-size: 12px;
-    color: $t-txt2;
+    color: #66748b;
     font-family: segoe_ui;
+    letter-spacing: 0.04em;
     width: fit-content;
-    letter-spacing: 0.03em;
     @include margin-titles-task
 }
 
 .medium-headline {
     font-size: 16px;
-    color: $t-txt1;
+    color: #2d3f5d;
     margin: 0;
     font-family: segoe_ui;
     font-weight: bold;
+    letter-spacing: 0.03em;
 }
 
 textarea,
@@ -94,6 +100,8 @@ input {
     border-radius: 3px;
     margin: 0px;
     padding: 5px;
+    color: $t-txt1;
+    letter-spacing: 0.03em;
 
     &:focus-visible {
         outline: none;
@@ -106,6 +114,17 @@ input {
     }
 }
 
+.btn-task-details {
+    padding-inline: 12px;
+    padding-block: 6px;
+    color: $t-txt1;
+    background-color: $t-bg5;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: $t-hover3;
+    }
+}
 
 .icon,
 img {

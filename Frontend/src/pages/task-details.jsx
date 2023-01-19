@@ -1,34 +1,37 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+
 
 import { boardService } from '../services/board.service'
-import { ImgUploader } from '../cmps/img-uploader'
-
-import exit from '../assets/img/icons-task-details/exit.svg'
-
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { IoClose } from "react-icons/io5";
 import { removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/taskTitle'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 
+
 export function TaskDetails() {
+    const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
     const { boardId, groupId, taskId } = useParams()
     const { byMember, labelIds, style, memberIds } = task
-    // const board = useSelector((storeState) => storeState.boardModule.board)
+
 
     const navigate = useNavigate()
-
-    // console.log('groupId:', groupId)
-    // console.log('taskId:', taskId)
-    // console.log('boardId:', boardId)
 
     useEffect(() => {
         loadTask(taskId, groupId, boardId)
     }, [])
+
+    let group = getGroup(groupId)
+
+    function getGroup(groupId) {
+        let groups = board.groups
+        let currGroup = groups.find((grp) => grp.id === groupId)
+        return currGroup
+    }
 
 
     async function loadTask(taskId, groupId, boardId) {
@@ -80,13 +83,13 @@ export function TaskDetails() {
 
     if (!task) return <h1 className='loading'>Loadings....</h1>
     return <section className='task-details-section'>
+        <Link to={`/board/${boardId}`} className="btn-task-exit">
+            <IoClose className='icon exit-icon' />
+            {/* <img className='icon exit-icon' src={exit} /> */}
+        </Link>
 
         <div className='task-details-main-section'>
-            <Link to={`/board/${boardId}`} className="btn-task-exit">
-                <img className='icon exit-icon' src={exit} />
-            </Link>
-
-            <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+            <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={group} />
 
             <div className='task-details-container'>
                 <div className='task-details-edit-section'>

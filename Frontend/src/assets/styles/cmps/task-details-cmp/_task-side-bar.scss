@@ -1,18 +1,11 @@
 .side-bar-menu {
-    .btn-task-exit {}
+
 
 
     .btn-side-bar {
         margin-top: 8px;
         display: block;
-        font-size: 14px;
-        padding-inline: 12px;
-        padding-block: 6px;
-        color: $t-txt1 ;
-        background-color: $t-bg5;
         width: 161.11px;
-        border-radius: 3px;
-        text-align: start;
         display: flex;
         align-items: center;
         // in response max-with 300px
@@ -26,6 +19,10 @@
 
     .btn-remove-side-bar {
         background: #b04632;
-        color: white;
+        color: $clr6;
+
+        &:hover {
+            background-color: #b04632;
+        }
     }
 }

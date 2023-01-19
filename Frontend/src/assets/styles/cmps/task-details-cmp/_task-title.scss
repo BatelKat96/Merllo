@@ -14,21 +14,29 @@
         font-size: 20px;
         height: 35px;
         width: 618px;
-        font-family: segoe_ui;
-        font-weight: 600;
-        letter-spacing: 0.03em;
-        color: $t-txt1 ;
-        // padding-top: 12px;
+        font-family: San_francisco_medium;
+
     }
 
     p {
-        font-size: 14px;
-        color: $t-txt3;
+        font-family: San_francisco_light;
+        color: $t-txt2;
         margin: 0;
-        // padding: 2px;
 
-        span {
+        a {
+            color: inherit;
             text-decoration: underline;
+
+            &:hover {
+                color: $t-txt1;
+            }
+
         }
+
+        .eye-icon {
+            margin-inline-start: 10px;
+            display: inline-block;
+        }
+
     }
 }
