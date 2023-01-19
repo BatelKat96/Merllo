@@ -31,7 +31,6 @@ export function boardReducer(state = initialState, action) {
 			// 	board._id === action.board._id ? action.board : board
 			// )
 			// newState = { ...state, boards }
-			newState = { ...state, board: action.board }
 			break
 		case SET_BOARD:
 			newState = { ...state, board: action.board }

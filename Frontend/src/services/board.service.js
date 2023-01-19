@@ -449,7 +449,7 @@ async function saveGroup(group, boardId) {
 
 function getEmptyGroup() {
 	return {
-		title: 'New group',
+		title: '',
 		tasks: [],
 	}
 }
@@ -512,7 +512,7 @@ async function saveTask(task, groupId, boardId) {
 
 function getEmptyTask() {
 	return {
-		title: 'New task',
+		title: '',
 		archivedAt: null,
 		labelIds: [],
 		dueDate: 1674837381,
