@@ -417,7 +417,8 @@ async function getGroupById(groupId, boardId) {
 async function removeGroup(groupId, boardId) {
 	try {
 		let board = await getById(boardId)
-		board.groups.filter((group) => group.id !== groupId)
+		const updatedGroups = board.groups.filter((group) => group.id !== groupId)
+		board.groups = updatedGroups
 		return save(board)
 	} catch (err) {
 		console.log('Failed to remove group', err)

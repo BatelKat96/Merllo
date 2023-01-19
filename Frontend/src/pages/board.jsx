@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { boardService } from '../services/board.service'
-import { loadBoard } from '../store/board.actions'
+import { loadBoard, removeGroup } from '../store/board.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 // import { loadCars, addCar, updateCar, removeCar } from '../store/car.actions.js'
@@ -18,8 +18,6 @@ export function Board() {
 		loadBoard(boardId)
 	}, [])
 
-	console.log('board cmp', board)
-
 	// useEffect(() => {
 	// 	loadGroups('b101')
 	// }, [])
@@ -34,13 +32,14 @@ export function Board() {
 	// }
 
 	async function onRemoveGroup(groupId) {
-		console.log('remove this group', groupId)
-		// try {
-		// 	await removeCar(carId)
-		// 	showSuccessMsg('Car removed')
-		// } catch (err) {
-		// 	showErrorMsg('Cannot remove car')
-		// }
+		try {
+			await removeGroup(groupId, boardId)
+			console.log('Group removed')
+			showSuccessMsg('Group removed')
+		} catch (err) {
+			console.log('Cannot remove group')
+			showErrorMsg('Cannot remove group')
+		}
 	}
 
 	// async function onAddCar() {
@@ -66,9 +65,6 @@ export function Board() {
 	// }
 
 	if (!board) return <h1>loadings....</h1>
-	const groups = board.groups
-	console.log('board', board)
-	console.log('groups', groups)
 
 	return (
 		<section className="board">
