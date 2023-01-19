@@ -1,0 +1,17 @@
+.task-description-container {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+
+    .description {
+        height: 40px;
+        width: 448px;
+
+
+        &:focus {
+            height: 108px;
+        }
+    }
+
+    .description-icon {}
+
+}

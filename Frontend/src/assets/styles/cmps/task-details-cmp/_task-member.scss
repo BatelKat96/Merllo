@@ -1,0 +1,36 @@
+.task-members-container {
+    padding-inline-start: 40px;
+
+    .members-list {
+        .member {
+            cursor: pointer;
+        }
+    }
+
+    .add-member {
+        background-color: $t-bg5;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $t-hover3;
+        }
+
+        .add-member-icon {
+            width: 14px;
+            height: 14px;
+            // color: $pls-clr;
+            // color: #8791a3;
+            margin: auto;
+            // color: #9da5b5;
+        }
+
+    }
+
+    li {
+        float: left;
+    }
+}
