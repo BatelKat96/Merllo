@@ -1,6 +1,6 @@
 import { TaskPreview } from './task-preview';
 
-export function TaskList({ tasks }) {
+export function TaskList({ group, tasks }) {
 
 
     return (
@@ -10,7 +10,7 @@ export function TaskList({ tasks }) {
                 {tasks.map(task =>
 
                     <li key={task.id}>
-                        <TaskPreview task={task} />
+                        <TaskPreview group={group} task={task} />
                     </li>)}
             </ul>
 
