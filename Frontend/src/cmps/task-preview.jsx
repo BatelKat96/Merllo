@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-import { taskService } from '../services/task.service'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit.svg'
@@ -9,33 +8,13 @@ import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit
 
 export function TaskPreview({ task }) {
 
-    const [updateTask, setTask] = useState('')
-    const navigate = useNavigate()
-
-
-    function handleChange({ target }) {
-        let { value, type, name: field } = target
-        value = type === 'number' ? +value : value
-        setTask((prevToy) => ({ ...prevToy, [field]: value }))
-    }
-
-    async function onSaveEdit(ev) {
-        ev.preventDefault()
-        try {
-            const savedTask = await taskService.save(updateTask)
-            showSuccessMsg(`Task edited (id: ${savedTask._id})`)
-            navigate('/board/:boardId')
-        } catch (err) {
-            showErrorMsg('Cannot update task ', err)
-            navigate('/board/:boardId')
-        }
-    }
 
 
     return (
         <section className="task-preview">
 
             <div className="task-label-container">
+
                 <button className="label"></button>
             </div>
 
@@ -55,7 +34,7 @@ export function TaskPreview({ task }) {
                 />
             </form > */}
 
-            <Link to="/board/:boardId/:groupId/:taskId">Edit task</Link>
+            <Link to={`/board/:boardId/:groupId/${task.id}`}>Edit task</Link>
 
         </section>)
 }
