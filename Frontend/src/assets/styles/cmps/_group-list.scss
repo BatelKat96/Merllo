@@ -1,171 +1,204 @@
-.group-list {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill, 272px)/repeat(auto-fill, 272px);
-    grid-auto-flow: column;
-    // grid-auto-flow: column dense;
+.group-list-container{
 
-    
-    .group-wrapper {
-        width: 272px;
-        // height: fit-content;
-        background-color: #ebecf0;
-        border-radius: 3px;
-        // margin: 5px;
-        display: flex;
-        flex-direction: column;
-
-        .group-top {
-            height: 40px;
-            padding: 10px 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        h2 {
-            font-family: 'Segoe UI';
-            margin: 0 0 8px;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 20px;
-        }
-
-        .group-btn{
-            border-radius: 3px;
-            border: none;
-            background-color: unset;
-        }
-        .group-btn:hover{
-            background-color:#dadbe2;
-            color: #42526e;
-        }
-
+    .group-list {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, 272px)/repeat(auto-fill, 272px);
+        grid-auto-flow: column;
         
-        .group-bottom {
-            height: 38px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .add-card {
-            width: 212px;
-            height: 28px;
-            padding: 4px 8px;
-            margin: 2px 0 8px 8px;
-            border-radius: 3px;
-            border: none;
-            text-align: left;
-            background-color: unset;
-            }
-
-            .add-card:hover{
-                background-color:#dadbe2;
-                color: #42526e;
-            }
-        }
-
-        button {
-            color: black;
-        }
-    }
-
-    .add-new-group {
-        &.closed {
-        width: 272px;
-        background-color: rgb(255 255 255 / 24%);
-        cursor: pointer;
-        border-radius: 3px;
-        height: fit-content;
-        min-height: 32px;
-        padding: 4px;
-        transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
-
-        form {
-            margin: 0 0;
-        }
-
-        input {
-            display: none;
-        }
-
-        .placeholder {
-            display: block;
-            font-size: 14px;
-            color: white;
-            padding: 6px 8px;
-            margin: 0;
-            transition: color 85ms ease-in;
-        }
-
-        .add-group-controls {
-            display: none;
-        }
-    }
-
-    &:hover {
-        background-color: rgb(255 255 255 / 30%);
-    }
-
-
-    &.open {
+        .group-wrapper {
             width: 272px;
+            // height: fit-content;
             background-color: #ebecf0;
             border-radius: 3px;
-            height: fit-content;
-            min-height: 32px;
-            padding: 4px;
-            transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+            // margin: 5px;
+            display: flex;
+            flex-direction: column;
 
-            form {
-                margin: 0 0;
-            }
-    
-            // input {
-            //     display: block;
-            // }
-
-            input, textarea {
-                -webkit-appearance: none;
-                background-color: #fafbfc;
-                border: none;
+            .btn-group {
                 border-radius: 3px;
-                box-shadow: inset 0 0 0 2px #dfe1e6;
-                box-sizing: border-box;
-                display: block;
-                line-height: 20px;
-                margin-bottom: 12px;
-                outline: none;
-                padding: 8px 12px;
-                transition-duration: 85ms;
-                transition-property: background-color,border-color,box-shadow;
-                transition-timing-function: ease;
-            }
-
-            .placeholder {
-                display: none;
-            }
-
-            .add-group-controls {
-                display: block;
-            }
-
-            .add-list-btn {
-                background-color: #0079bf;
                 border: none;
-                box-shadow: none;
-                color: #fff;
-                height: 32px;
-                padding-bottom: 4px;
-                padding-top: 4px;
-            }
-
-            .cancel-list-btn {
                 background-color: unset;
-                border: none;
+                &:hover{
+                    background-color:#dadbe2;
+                    color: #42526e;
+                }
+            }
 
+            .group-top {
+                height: 40px;
+                padding: 10px 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: fit-content;
+
+                textarea {
+                    width: 100%;
+                    font-family: inherit;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 20px;
+                    height: 28px;
+                    resize: none;
+                    overflow: hidden; 
+                    overflow-wrap: break-word;
+                    margin: -4px 0; 
+                    padding: 4px 8px;
+                    background-color: inherit;
+                    border: none;
+                    border-radius: 3px;
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+
+                    &:focus {
+                        border: none;
+                        box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
+                        background-color: $t-bg3;
+                        min-height: 20px; 
+                        max-height: 256px;
+                    }
+                }
+            }
+            
+            
+            .group-bottom {
+                height: 38px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .add-card {
+                width: 212px;
+                height: 28px;
+                padding: 4px 8px;
+                margin: 2px 0 8px 8px;
+                border-radius: 3px;
+                border: none;
+                text-align: left;
+                background-color: unset;
+                }
+
+                .add-card:hover{
+                    background-color:#dadbe2;
+                    color: #42526e;
+                }
+            }
+
+            button {
+                color: black;
+            }
+        }
+
+        .add-new-group {
+            width: 272px;
+
+            &.closed {
+                background-color: rgb(255 255 255 / 24%);
+                cursor: pointer;
+                border-radius: 3px;
+                height: fit-content;
+                min-height: 32px;
+                padding: 4px;
+                transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+
+                form {
+                    margin: 0 0;
+                }
+
+                input {
+                    display: none;
+                }
+
+                .placeholder {
+                    display: block;
+                    font-size: 14px;
+                    color: white;
+                    padding: 6px 8px;
+                    margin: 0;
+                    transition: color 85ms ease-in;
+                }
+
+                .add-group-controls {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                background-color: rgb(255 255 255 / 30%);
+            }
+
+
+            &.open {
+                background-color: #ebecf0;
+                border-radius: 3px;
+                height: fit-content;
+                min-height: 32px;
+                padding: 4px;
+                transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+
+                form {
+                    margin: 0 0;
+                }
+        
+                // input {
+                //     display: block;
+                // }
+
+                input, textarea {
+                    background-color: #fafbfc;
+                    border: none;
+                    border-radius: 3px;
+                    box-shadow: inset 0 0 0 2px #dfe1e6;
+                    box-sizing: border-box;
+                    display: block;
+                    line-height: 20px;
+                    margin-bottom: 12px;
+                    outline: none;
+                    padding: 8px 12px;
+                    transition-duration: 85ms;
+                    transition-property: background-color,border-color,box-shadow;
+                    transition-timing-function: ease;
+                }
+
+                .placeholder {
+                    display: none;
+                }
+
+                .add-group-controls {
+                    display: block;
+                }
+
+                .btn-add-list {
+                    background-color: #0079bf;
+                    border: none;
+                    box-shadow: none;
+                    border-radius: 3px;
+                    color: #fff;
+                    height: 32px;
+                    padding: 4px 12px;
+                    line-height: 20px;
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    &:hover {
+                        background-color: #026aa7;
+                        text-decoration: none;
+                    }
+                }
+
+                .btn-cancel-list {
+                    background-color: unset;
+                    color: #42526e;
+                    border: none;
+
+                    &:hover {
+                        color: #172b4d;
+                    }
+                }
             }
         }
     }
-    
 }

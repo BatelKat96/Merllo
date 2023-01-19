@@ -1,10 +1,9 @@
-import { storageService } from './async-storage.service.js'
-import { httpService } from './http.service.js'
 import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
+import { storageService } from './async-storage.service.js'
+// import { httpService } from './http.service.js'
+// import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'board'
-// const STORAGE_GROUPS_KEY = 'group'
 
 export const boardService = {
 	query,
@@ -27,7 +26,7 @@ window.cs = boardService
 
 _createBoards()
 
-// * board functions
+// * board service
 async function query(filterBy = { title: '' }) {
 	var boards = await storageService.query(STORAGE_KEY)
 	// here we will add filters
@@ -389,7 +388,7 @@ function _createBoards() {
 	}
 }
 
-// * group functions
+// * group service
 async function queryGroups(boardId) {
 	try {
 		let board = await getById(boardId)
@@ -404,8 +403,8 @@ async function queryGroups(boardId) {
 async function getGroupById(groupId, boardId) {
 	try {
 		const groups = await queryGroups(boardId)
-		const group = groups.find((group) => {
-			return group.id === groupId
+		const group = groups.find((grp) => {
+			return grp.id === groupId
 		})
 		return group
 	} catch (err) {
@@ -449,12 +448,12 @@ async function saveGroup(group, boardId) {
 
 function getEmptyGroup() {
 	return {
-		title: 'New group',
+		title: '',
 		tasks: [],
 	}
 }
 
-// * tasks functions
+// * tasks service
 async function queryTasks(groupId, boardId) {
 	try {
 		let group = await getGroupById(groupId, boardId)
@@ -512,7 +511,7 @@ async function saveTask(task, groupId, boardId) {
 
 function getEmptyTask() {
 	return {
-		title: 'New task',
+		title: '',
 		archivedAt: null,
 		labelIds: [],
 		dueDate: 1674837381,

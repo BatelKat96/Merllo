@@ -64,7 +64,7 @@ export function Board() {
 	//     }
 	// }
 
-	if (!board) return <h1>loadings....</h1>
+	if (!board) return <h1>Loading....</h1>
 
 	return (
 		<section className="board">
