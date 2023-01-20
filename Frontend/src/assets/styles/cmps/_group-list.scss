@@ -20,7 +20,7 @@
         
         .group-wrapper {
             width: 272px;
-            // height: fit-content;
+            height: fit-content;
             background-color: #ebecf0;
             border-radius: 3px;
             margin: 0 4px;
@@ -67,13 +67,14 @@
             }
             
             .group-bottom {
-                height: 38px;
+                height: fit-content;
+                min-height: 38px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 font-size: 14px;
                 
-                .add-task {
+                .add-a-task {
                     width: 212px;
                     height: 28px;
                     padding: 4px 8px;
@@ -95,6 +96,101 @@
                     &:hover{
                         background-color:#dadbe2;
                         color: #42526e;
+                    }
+                }
+
+                .task-composer {
+                    height: 105px;
+                    width: 98%;
+                    margin: auto;
+
+                    textarea {
+                        width: 100%;
+                        background-color: #fff;
+                        border: none;
+                        border-radius: 3px;
+                        resize: none;
+                        font-family: inherit;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 20px;
+                        height: 54px;
+                        max-height: 162px;
+                        overflow: hidden; 
+                        overflow-wrap: break-word;
+                        padding: 4px 8px;
+                        margin-top: 0;
+                        transition-duration: 85ms;
+                        transition-property: background-color,border-color,box-shadow;
+                        transition-timing-function: ease;
+
+                        &:hover {
+                            cursor: auto;
+                        }
+
+                        &:focus-visible {
+                            outline: none;
+                        }
+
+                        &:focus {
+                            border: none;
+                            box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
+                            background-color: $t-bg3;
+                            min-height: 20px; 
+                            max-height: 256px;
+                        }
+                    }
+
+                    .add-task-controls {
+                        display: flex;
+                        align-items: center;
+                    
+                        .btn-group.add-task{
+                            background-color: #0079bf;
+                            border: none;
+                            box-shadow: none;
+                            border-radius: 3px;
+                            color: #fff;
+                            height: 32px;
+                            padding: 4px 12px;
+                            line-height: 20px;
+                            font-size: 14px;
+                            font-weight: 400;
+                    
+                            &:hover {
+                                background-color: #026aa7;
+                                color: #fff;
+                                text-decoration: none;
+                            }
+                            
+                            &:active {
+                                background-color: #055a8c;
+                                color: #fff;
+                    
+                            }
+                        }
+                    
+                        .btn-group.cancel {
+                            background-color: unset;
+                            color: #42526e;
+                            border: none;
+                            margin: 0 2px;
+                            height: 32px;
+                            width: 32px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                    
+                            &:hover {
+                                cursor: pointer;
+                                color: #172b4d;
+                            }
+                    
+                            .icon-close {
+                                font-size: 28px;
+                                text-align: center;
+                            }
+                        }
                     }
                 }
             }
@@ -177,10 +273,6 @@
                     font-size: 14px;
                     height: 36px;
 
-                    // &:focus-visible {
-                    //     outline: none;
-                    // }
-
                     &:focus {
                         border: none;
                         box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
@@ -194,33 +286,51 @@
 
                 .add-group-controls {
                     display: block;
-                }
+                    display: flex;
+                    align-items: center;
 
-                .add-group {
-                    background-color: #0079bf;
-                    border: none;
-                    box-shadow: none;
-                    border-radius: 3px;
-                    color: #fff;
-                    height: 32px;
-                    padding: 4px 12px;
-                    line-height: 20px;
-                    font-size: 14px;
-                    font-weight: 400;
+                    .add-group{
+                        background-color: #0079bf;
+                        border: none;
+                        box-shadow: none;
+                        border-radius: 3px;
+                        color: #fff;
+                        height: 32px;
+                        padding: 4px 12px;
+                        line-height: 20px;
+                        font-size: 14px;
+                        font-weight: 400;
 
-                    &:hover {
-                        background-color: #026aa7;
-                        text-decoration: none;
+                        &:hover {
+                            background-color: #026aa7;
+                            text-decoration: none;
+                        }
+                        
+                        &:active {
+                            background-color: #055a8c;
+                        }
                     }
-                }
 
-                .cancel {
-                    background-color: unset;
-                    color: #42526e;
-                    border: none;
+                    .cancel {
+                        background-color: unset;
+                        color: #42526e;
+                        border: none;
+                        margin: 0 2px;
+                        height: 32px;
+                        width: 32px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
 
-                    &:hover {
-                        color: #172b4d;
+                        &:hover {
+                            cursor: pointer;
+                            color: #172b4d;
+                        }
+
+                        .icon-close {
+                            font-size: 28px;
+                            text-align: center;
+                        }
                     }
                 }
             }

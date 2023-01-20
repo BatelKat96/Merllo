@@ -12,7 +12,6 @@ import { TaskDetails } from './pages/task-details'
 export function RootCmp() {
 	return (
 		<section className="app">
-
 			<AppHeader />
 
 			{/* <div> */}

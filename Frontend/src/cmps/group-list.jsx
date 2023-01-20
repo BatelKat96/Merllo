@@ -1,15 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { IoClose } from 'react-icons/io5'
 import { boardService } from '../services/board.service'
-import { saveGroup } from '../store/board.actions'
+import { saveGroup, saveTask } from '../store/board.actions'
 import { TaskList } from './task-list'
 import { utilService } from '../services/util.service'
 
 export function GroupList({ onRemoveGroup }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
+	const [isAddNewTaskOpen, setIsAddNewTaskOpen] = useState(false)
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
+	const [taskToEdit, setTaskToEdit] = useState(boardService.getEmptyTask())
 	const groups = board.groups
 	const timeoutId = useRef(null)
 	// const elInputRef = useRef(null)
@@ -44,7 +47,7 @@ export function GroupList({ onRemoveGroup }) {
 		}
 	}
 
-	//  edit existing group
+	//  update existing group
 	function handleEditGroup({ target }) {
 		let currGroup = getGroupToEdit(target.id)
 		currGroup.title = target.value
@@ -54,6 +57,33 @@ export function GroupList({ onRemoveGroup }) {
 	function getGroupToEdit(groupId) {
 		const group = groups.find((grp) => grp.id === groupId)
 		return group
+	}
+
+	// create new task
+	let addNewTaskOpenClosed = isAddNewTaskOpen ? 'open' : 'closed'
+	function closeAddNewTask() {
+		setIsAddNewTaskOpen(false)
+		setGroupToEdit(boardService.getEmptyGroup())
+	}
+	function openAddNewTask() {
+		setIsAddNewTaskOpen(true)
+	}
+
+	function handleNewTask({ target }) {
+		let { value, name: field } = target
+		setTaskToEdit((prevTask) => ({ ...prevTask, [field]: value }))
+	}
+
+	async function onAddTask(ev) {
+		ev.preventDefault()
+		if (!taskToEdit.title) return
+		try {
+			await saveTask(taskToEdit, ev.target.id, board._id)
+			setTaskToEdit(boardService.getEmptyTask())
+			closeAddNewTask()
+		} catch (err) {
+			console.log('Failed to save new task', err)
+		}
 	}
 
 	if (!groups) return <h1>Loading....</h1>
@@ -84,10 +114,46 @@ export function GroupList({ onRemoveGroup }) {
 						</div>
 						<TaskList group={group} tasks={group.tasks} />
 						<div className="group-bottom">
-							<button className="btn-group add-task">
-								<AiOutlinePlus className="icon-plus" /> Add a card
-							</button>
-							<button className="btn-group template">template</button>
+							{/* <div>
+								<button
+									className="btn-group add-a-task"
+									onClick={() => openAddNewTask()}
+								>
+									<AiOutlinePlus className="icon-plus" /> Add a card
+								</button>
+								<button className="btn-group template">template</button>
+							</div> */}
+							<div className="task-composer">
+								<form>
+									<textarea
+										className="task-preview"
+										type="text"
+										name="title"
+										id={group.id}
+										placeholder="Enter a title for this card..."
+										maxLength="512"
+										value={taskToEdit.title}
+										onChange={handleNewTask}
+									></textarea>
+									<div className="add-task-controls">
+										<button
+											className="btn-group add-task"
+											id={group.id}
+											onClick={onAddTask}
+										>
+											Add Card
+										</button>
+										<a
+											className="btn-group cancel"
+											onClick={() => {
+												closeAddNewTask()
+											}}
+										>
+											<IoClose className="icon-close" />
+										</a>
+									</div>
+								</form>
+							</div>
 						</div>
 					</li>
 				))}
@@ -120,7 +186,7 @@ export function GroupList({ onRemoveGroup }) {
 									closeAddNewGroup()
 								}}
 							>
-								X
+								<IoClose className="icon-close" />
 							</a>
 						</div>
 					</form>
