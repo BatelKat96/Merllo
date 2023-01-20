@@ -1,10 +1,153 @@
 .task-list {
     height: 100%;
-    width: 268px;
-    margin: 2px;
+    width: 100%;
     vertical-align: top;
 
     border-radius: 3px;
     display: flex;
     flex-direction: column;
+    }
+                
+    .task-list-bottom {
+        height: fit-content;
+        min-height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+
+
+        .add-a-task-template {
+            width: 98%;
+            margin: 0px;
+            margin: auto;
+
+            .add-a-task {
+                width: 100%;
+                text-align: left;
+                border-radius: 3px;
+                margin: 2px 0px;
+                padding: 6px 8px;
+                font-family: segoe_ui;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                border: none;
+                color: #5E6C84;
+                background: transparent;
+                cursor: pointer;
+
+                .icon-plus {
+                    font-size: 12px;
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                &:hover {
+                    background-color: #091e4214;
+                    color: #172b4d;
+                }
+            }
+            
+        }
+                    
+
+        .task-composer {
+            height: 105px;
+            width: 98%;
+            margin: 0px;
+            margin: auto;
+    
+            .task-textarea {
+                width: 100%;
+                height: 54px;
+                padding: 4px 8px;
+                max-height: 162px;
+                color: #5E6C84;
+                background-color: #ffffff;
+                border: none;
+                border-radius: 3px;
+                resize: none;
+
+                font-family: segoe_ui;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+
+                overflow: hidden; 
+                overflow-wrap: break-word;
+                box-shadow: 0 1px 0 #091e4240;
+                transition-duration: 85ms;
+                transition-property: background-color,border-color,box-shadow;
+                transition-timing-function: ease;
+    
+                &:hover {
+                    cursor: auto;
+                }
+    
+                &:focus-visible {
+                    outline: none;
+                }
+    
+                &:focus {
+                    border: none;
+                    box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
+                    background-color: $t-bg3;
+                    min-height: 20px; 
+                    max-height: 256px;
+                }
+            }
+    
+            .add-task-controls {
+                display: flex;
+                align-items: center;
+                        
+                .add-task-btn {
+                    background-color: #0079bf;
+                    border: none;
+                    box-shadow: none;
+                    border-radius: 3px;
+                    color: #fff;
+                    height: 32px;
+                    padding: 4px 12px;
+                    line-height: 20px;
+                    font-size: 14px;
+                    font-weight: 400;
+                        
+                    &:hover {
+                        background-color: #026aa7;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                                
+                    &:active {
+                        background-color: #055a8c;
+                        color: #fff;
+                    }
+                }
+                        
+                .cancel-btn {
+                    background-color: unset;
+                    color: #5E6C84;
+                    border: none;
+                    margin: 0 6px;
+                    height: 24px;
+                    width: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                        
+                    &:hover {
+                        cursor: pointer;
+                        color: #172b4d;
+                    }
+                        
+                .icon-close {
+                    font-size: 28px;
+                    text-align: center;
+                }
+            }
+        }
+    } 
 }

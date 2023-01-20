@@ -28,6 +28,7 @@ export function TaskPreview({ group, task }) {
 	return (
 		<>
 			<section className="task-preview">
+				<Link to={`/board/${boardId}/${group.id}/${task.id}`}>
 				<div className="task-label-container">
 					<button className="label"></button>
 				</div>
@@ -61,6 +62,7 @@ export function TaskPreview({ group, task }) {
 					{/* </div> */}
 
 				</div>
+				</Link>
 			</section>
 		</>
 	)
