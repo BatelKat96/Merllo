@@ -33,7 +33,10 @@ export function BoardCreate({ closeBoardComposer }) {
 		<section className="create-board-composer">
 			<div className="create-board-composer-header">
 				<h2>Create board</h2>
-				<button className="btn-workspace close" onClick={closeBoardComposer}>
+				<button
+					className="btn-board-composer close"
+					onClick={closeBoardComposer}
+				>
 					<IoClose className="icon-close" />
 				</button>
 			</div>
@@ -46,7 +49,7 @@ export function BoardCreate({ closeBoardComposer }) {
 					value={boardToEdit.title}
 					onChange={handleNewBoard}
 				/>
-				<button className="btn-workspace create" onClick={onSaveBoard}>
+				<button className="btn-board-composer create" onClick={onSaveBoard}>
 					Create
 				</button>
 			</form>
