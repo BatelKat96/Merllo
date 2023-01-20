@@ -99,10 +99,10 @@ export function TaskDetails() {
                     <div className='task-details-edit-section'>
                         <TaskMember memberIds={memberIds} addMember={addMember} />
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
-                        <p>Checklist</p>
+                        {/* <p>Checklist</p>
                         <p>                        Activity-
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, inventore? Recusandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
-                        </p>
+                            Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
+                        </p> */}
 
                     </div>
                     <TaskSideBar onRemoveTask={onRemoveTask} />

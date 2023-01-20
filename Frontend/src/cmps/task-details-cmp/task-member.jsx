@@ -7,7 +7,7 @@ export function TaskMember({ memberIds, addMember }) {
         <ul className='members-list clean-list'>
             {memberIds && memberIds.map(member =>
                 <li key={member}>
-                    <img className='member' src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt={member} title={member} />
+                    <img className='member-img' src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt={member} title={member} />
                 </li>
             )}
 

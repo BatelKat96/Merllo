@@ -22,7 +22,7 @@
         width: 670px;
         font-family: San_francisco_medium;
         padding: 0 0 0 5px;
-        letter-spacing: 0.03em;
+        letter-spacing: 0.035em;
     }
 
     p {
@@ -30,13 +30,16 @@
         color: $t-txt2;
         margin: 0;
         padding-inline-start: 10px;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.04em;
         line-height: 10px;
+        font-size: 14px;
+        padding-block-start: 3px;
 
 
         a {
             color: inherit;
             text-decoration: underline;
+            letter-spacing: 0.045em;
 
             &:hover {
                 color: $t-txt1;
@@ -45,11 +48,11 @@
         }
 
         .eye-icon {
-            margin-inline-start: 8px;
-            margin-block-start: 3px;
-            // font-size: 16px;
-            // line-height: 14px;
-            // display: inline-block;
+            margin-inline-start: 12px;
+            margin-block-start: -3px;
+            position: absolute;
+            font-size: 16px;
+            line-height: 10px;
         }
 
     }

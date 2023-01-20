@@ -1,14 +1,24 @@
 .side-bar-menu {
 
-
+    h3 {
+        margin-top: 9px;
+        margin-bottom: 0px;
+        font-size: 12px;
+        word-spacing: -0.99px;
+    }
 
     .btn-side-bar {
-        margin-top: 8px;
+        margin-top: 6px;
         display: block;
-        width: 161.11px;
+        width: 168px;
         display: flex;
         align-items: center;
+        padding-inline-start: 6px;
+
         // in response max-with 300px
+        &:first-of-type {
+            margin-top: 3px;
+        }
     }
 
     .btn-side-bar-icon {

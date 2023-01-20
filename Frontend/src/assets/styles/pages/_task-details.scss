@@ -27,6 +27,7 @@
     font-size: 14px;
 
 
+
     .task-details-main-section {
         grid-column: 2;
         display: grid;
@@ -45,8 +46,8 @@
 
     .task-details-container {
         display: grid;
-        grid-template-columns: 3fr minmax(0, max-content);
-        gap: 16px;
+        grid-template-columns: 1fr 176px;
+        // gap: 16px;
 
         .task-details-edit-section {
             grid-column: 1/2;
@@ -60,9 +61,31 @@
     .task-details-edit-section {
         display: grid;
         grid-template-rows: repeat(4, minmax(0, max-content));
-        gap: 22px;
+        gap: 17px;
     }
 
+    textarea,
+    input {
+        font-family: inherit;
+        resize: none;
+        background-color: inherit;
+        border: none;
+        border-radius: 3px;
+        margin: 0px;
+
+        color: $t-txt1;
+        letter-spacing: 0.03em;
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &:focus {
+            border: none;
+            box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
+            background-color: $t-bg3;
+        }
+    }
 }
 
 .btn-task-exit {
@@ -98,6 +121,7 @@
     font-family: segoe_ui;
     letter-spacing: 0.04em;
     width: fit-content;
+
     @include margin-titles-task
 }
 
@@ -110,28 +134,6 @@
     letter-spacing: 0.03em;
 }
 
-textarea,
-input {
-    font-family: inherit;
-    resize: none;
-    background-color: inherit;
-    border: none;
-    border-radius: 3px;
-    margin: 0px;
-    padding: 5px;
-    color: $t-txt1;
-    letter-spacing: 0.03em;
-
-    &:focus-visible {
-        outline: none;
-    }
-
-    &:focus {
-        border: none;
-        box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
-        background-color: $t-bg3;
-    }
-}
 
 .btn-task-details {
     padding-inline: 12px;
@@ -145,12 +147,10 @@ input {
     }
 }
 
-.icon-task,
-img {
-    width: 32px;
-    height: 32px;
-}
+
 
 .icon-task {
     padding: 4px;
+    width: 32px;
+    height: 32px;
 }

@@ -1,28 +1,33 @@
 .task-description-container {
     display: grid;
     grid-template-columns: 40px 1fr;
+    // margin-top: ;
 
-    .description-icon {}
+    .description-icon {
+        padding-inline-start: 3px;
+        padding-block-start: 3px;
+    }
 
     .task-description-title {
-        margin-bottom: 18px;
+        margin-bottom: 14px;
         display: inline-block;
     }
 
     .btn-description-edit {
         width: 47.46px;
         display: inline-block;
-        margin-inline-start: 8px;
+        margin-inline-start: 5.5px;
     }
 
     .task-description-textarea {
         height: 56px;
         width: 512px;
-        padding-inline: 8px;
+        padding-inline: 12px;
         padding-block: 12px;
         font-family: San_francisco_light;
         background-color: $t-bg5;
         margin-inline-start: 40px;
+        letter-spacing: 0.07em;
 
         &:hover {
             background-color: $t-hover3;
@@ -42,6 +47,7 @@
 
     .task-description-btn {
         margin-inline-start: 40px;
+        margin-block-start: 8px;
     }
 
     .btn-description-save {
