@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { boardService } from '../services/board.service'
 import { loadBoard, removeGroup } from '../store/board.actions'
@@ -64,7 +64,7 @@ export function Board() {
 	//     }
 	// }
 
-	if (!board) return <h1>loadings....</h1>
+	if (!board) return <h1>Loading....</h1>
 
 	return (
 		<section className="board">
@@ -80,6 +80,7 @@ export function Board() {
 			<div className="board-main-content">
 				<GroupList onRemoveGroup={onRemoveGroup} />
 			</div>
+			<Outlet />
 			{/* <main>
                 <button onClick={onAddCar}>Add Car ⛐</button>
                 <ul className="car-list">

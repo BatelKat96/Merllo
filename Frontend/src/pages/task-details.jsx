@@ -1,33 +1,37 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+
 
 import { boardService } from '../services/board.service'
+import { IoClose } from "react-icons/io5";
+import { removeTask, saveTask } from '../store/board.actions'
+import { TaskTitle } from '../cmps/task-details-cmp/taskTitle'
+import { TaskMember } from '../cmps/task-details-cmp/task-member'
+import { TaskDescription } from '../cmps/task-details-cmp/task-description'
+import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 
-import { ImgUploader } from '../cmps/img-uploader'
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-// import { plus, taskTitle } from '../services/svg.service'
-// import { titleCard } from '../assets/img/icons-task-details/'
-import taskTitle from '../assets/img/icons-task-details/taskTitle.svg'
-import plus from '../assets/img/icons-task-details/plus.svg'
-import description from '../assets/img/icons-task-details/description.svg'
-import { saveTask } from '../store/board.actions'
 
 export function TaskDetails() {
+    const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
     const { boardId, groupId, taskId } = useParams()
     const { byMember, labelIds, style, memberIds } = task
-    // const board = useSelector((storeState) => storeState.boardModule.board)
+
 
     const navigate = useNavigate()
-
-    console.log('groupId:', groupId)
-    console.log('taskId:', taskId)
-    console.log('boardId:', boardId)
 
     useEffect(() => {
         loadTask(taskId, groupId, boardId)
     }, [])
+
+    let group = getGroup(groupId)
+
+    function getGroup(groupId) {
+        let groups = board.groups
+        let currGroup = groups.find((grp) => grp.id === groupId)
+        return currGroup
+    }
 
 
     async function loadTask(taskId, groupId, boardId) {
@@ -43,18 +47,31 @@ export function TaskDetails() {
     function handleChange({ target }) {
         let { value, type, name: field } = target
         value = type === 'number' ? +value : value
-        setTask((prevToy) => ({ ...prevToy, [field]: value }))
+        setTask((prevTask) => ({ ...prevTask, [field]: value }))
     }
 
+    async function onRemoveTask() {
+        try {
+            console.log('remove:')
+
+            const removedTask = await removeTask(taskId, groupId, boardId)
+            console.log('removedTask:', removedTask)
+
+            navigate(`/board/${boardId}`)
+            // showSuccessMsg(`Task edited (id: ${removedTask._id})`)
+        } catch (err) {
+            console.log('Cannot remove task ', err)
+            // showErrorMsg('Cannot update task ', err)
+        }
+    }
     async function onSaveEdit(ev) {
         ev.preventDefault()
         try {
             const savedTask = await saveTask(task, groupId, boardId)
-            showSuccessMsg(`Task edited (id: ${savedTask._id})`)
-            // navigate('/board/:boardId')
+            // showSuccessMsg(`Task edited (id: ${savedTask._id})`)
         } catch (err) {
-            showErrorMsg('Cannot update task ', err)
-            // navigate('/board/:boardId')
+            console.log('Cannot update task ', err)
+            // showErrorMsg('Cannot update task ', err)
         }
     }
 
@@ -62,71 +79,36 @@ export function TaskDetails() {
         console.log('add member:')
 
     }
-    console.log('task.byMember:', task)
 
 
     if (!task) return <h1 className='loading'>Loadings....</h1>
-    return <section className='task-details-section'>
-        <div className='task-details-container'>
 
-            <img className='icon title-icon' src={taskTitle} />
-            <div className='task-title-container'>
-                <form onBlurCapture={onSaveEdit}>
-                    <input type="text"
-                        className='title'
-                        name="title"
-                        id="title"
-                        onChange={handleChange}
-                        defaultValue={task.title}
-                    />
-                </form >
-                <p>in list <span>line development</span></p>
+    return <section className='task-details'>
+        <div onClick={() => navigate(`/board/${boardId}`)} className="black-screen"></div>
+        <div className='task-details-section'>
+
+            <Link to={`/board/${boardId}`} className="btn-task-exit">
+                <IoClose className='icon exit-icon' />
+                {/* <img className='icon exit-icon' src={exit} /> */}
+            </Link>
+
+            <div className='task-details-main-section'>
+                <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={group} />
+
+                <div className='task-details-container'>
+                    <div className='task-details-edit-section'>
+                        <TaskMember memberIds={memberIds} addMember={addMember} />
+                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                        <p>Checklist</p>
+                        <p>                        Activity-
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, inventore? Recusandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
+                        </p>
+
+                    </div>
+                    <TaskSideBar onRemoveTask={onRemoveTask} />
+
+                </div>
             </div>
-
-
-            <div className='task-members-container'>
-                <h3 className='small-headline'>Members</h3>
-                <ul className='members-list clean-list'>
-                    {memberIds && memberIds.map(member =>
-                        <li key={member}>
-                            <img className='member' src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png" alt={member} title={member} />
-                        </li>
-
-                    )}
-
-                    <li key="add-more" className='add-member' title="Add another member" onClick={() => { '#' }} >
-                        <img className='add-member-icon' src={plus} onClick={() => { addMember() }} />
-                    </li>
-
-                    {/* <img src={byMember.imgUrl} alt={byMember.username} /> onclick to add memeber */}
-                </ul>
-            </div>
-            <br />
-
-
-            {/* <div className='task-description-container'> */}
-            <img className='icon description-icon' src={description} />
-
-            <div className="task-description-input">
-                <form onSubmit={onSaveEdit}>
-                    <label htmlFor="description" className='medium-headline'>Description</label>
-                    <textarea
-                        name="description"
-                        className='description'
-                        id="description"
-                        onChange={handleChange}
-                        defaultValue={task.description}
-                        placeholder="Add a more detailed description..."
-                    ></textarea>
-
-
-                    {/* <button className='btn clean-btn'>Save</button>
-                    <Link to="/toy" className="btn">Back to List</Link> */}
-
-                </form >
-            </div>
-            {/* </div> */}
-            {/* <ImgUploader /> */}
 
         </div>
     </section>

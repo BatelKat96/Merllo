@@ -1,0 +1,42 @@
+.task-title-container {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    padding-top: 14px;
+    padding-bottom: 8px;
+    padding-inline-end: 40px;
+
+
+    .title-icon {}
+
+
+    .task-details-title {
+        line-height: 24px;
+        font-size: 20px;
+        height: 35px;
+        width: 618px;
+        font-family: San_francisco_medium;
+
+    }
+
+    p {
+        font-family: San_francisco_light;
+        color: $t-txt2;
+        margin: 0;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover {
+                color: $t-txt1;
+            }
+
+        }
+
+        .eye-icon {
+            margin-inline-start: 10px;
+            display: inline-block;
+        }
+
+    }
+}

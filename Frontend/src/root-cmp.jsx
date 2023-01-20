@@ -22,10 +22,11 @@ export function RootCmp() {
 						<Route element={<HomePage />} path="/" />
 						<Route element={<About />} path="/about" />
 						<Route element={<Workspace />} path="/workspace" />
-						<Route element={<Board />} path="/board/:boardId" />
-						{/* cmp- groplist=> tasklist=>task preview=> || page==taskedit */}
-						{/* <Route element={<TaskEdit />} path="/board/:boardId/:taskId" /> */}
-						<Route element={<TaskDetails />} path="/board/:boardId/:groupId/:taskId" />
+						<Route element={<Board />} path="/board/:boardId" >
+
+							<Route element={<TaskDetails />} path="/board/:boardId/:groupId/:taskId" />
+						</Route>
+
 						{/* <Route element={<UserDetails />} path="/user/:id" /> */}
 					</Routes>
 				</main>

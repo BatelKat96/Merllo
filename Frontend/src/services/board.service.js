@@ -403,8 +403,8 @@ async function queryGroups(boardId) {
 async function getGroupById(groupId, boardId) {
 	try {
 		const groups = await queryGroups(boardId)
-		const group = groups.find((group) => {
-			return group.id === groupId
+		const group = groups.find((grp) => {
+			return grp.id === groupId
 		})
 		return group
 	} catch (err) {

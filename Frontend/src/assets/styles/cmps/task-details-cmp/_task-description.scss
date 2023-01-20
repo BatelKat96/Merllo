@@ -1,0 +1,76 @@
+.task-description-container {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+
+    .description-icon {}
+
+    .task-description-title {
+        margin-bottom: 18px;
+        display: inline-block;
+    }
+
+    .btn-description-edit {
+        width: 47.46px;
+        display: inline-block;
+        margin-inline-start: 8px;
+    }
+
+    .task-description-textarea {
+        height: 56px;
+        width: 512px;
+        padding-inline: 8px;
+        padding-block: 12px;
+        font-family: San_francisco_light;
+        background-color: $t-bg5;
+        margin-inline-start: 40px;
+
+        &:hover {
+            background-color: $t-hover3;
+            cursor: pointer;
+        }
+
+        &:focus {
+            height: 108px;
+            background-color: $clr6;
+
+            &:hover {
+                background-color: none;
+            }
+        }
+
+    }
+
+    .task-description-btn {
+        margin-inline-start: 40px;
+    }
+
+    .btn-description-save {
+        background-color: $t-btn-bgc;
+        color: $clr6;
+        margin-inline-end: 4px;
+        width: 52.6px;
+
+        &:hover {
+            background-color: #026aa7;
+        }
+    }
+
+    .btn-description-cancel {
+        background-color: initial;
+        width: 64.9px;
+
+        &:hover {
+            background-color: $t-hover3;
+        }
+    }
+
+
+    .btn-description-save,
+    .btn-description-cancel,
+    .btn-description-edit {
+        height: 32px;
+
+    }
+
+
+}

@@ -1,54 +1,80 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { AiOutlinePlus } from 'react-icons/ai'
 import { boardService } from '../services/board.service'
 import { saveGroup } from '../store/board.actions'
-
 import { TaskList } from './task-list'
+import { utilService } from '../services/util.service'
 
 export function GroupList({ onRemoveGroup }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
-	const [isAddNewListOpen, setIsAddNewListOpen] = useState(false)
+	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
 	const groups = board.groups
+	const timeoutId = useRef(null)
+	// const elInputRef = useRef(null)
+	// useEffect(() => {
+	// 	elInputRef.current.focus()
+	// }, [])
 
-	let addNewListOpenClosed = isAddNewListOpen ? 'open' : 'closed'
-	function onToggleAddCancelList() {
-		setIsAddNewListOpen(!isAddNewListOpen)
+	//  create new group
+	let addNewGroupOpenClosed = isAddNewGroupOpen ? 'open' : 'closed'
+	function closeAddNewGroup() {
+		setIsAddNewGroupOpen(false)
+		setGroupToEdit(boardService.getEmptyGroup())
+	}
+	function openAddNewGroup() {
+		setIsAddNewGroupOpen(true)
 	}
 
-	function handleListChange({ target }) {
+	function handleNewGroup({ target }) {
 		let { value, name: field } = target
 		setGroupToEdit((prevGroup) => ({ ...prevGroup, [field]: value }))
 	}
 
-	async function onSubmit(ev) {
+	async function onSaveNewGroup(ev) {
 		ev.preventDefault()
+		if (!groupToEdit.title) return
 		try {
 			await saveGroup(groupToEdit, board._id)
-			onToggleAddCancelList()
+			closeAddNewGroup()
 			setGroupToEdit(boardService.getEmptyGroup())
 		} catch (err) {
-			console.log('Failed to save group', err)
+			console.log('Failed to save new group', err)
 		}
 	}
 
-	function onAddTask(ev) {
-		ev.preventDefault()
-		console.log('ev', ev)
-		console.log('add new task to group')
+	//  edit existing group
+	function handleEditGroup({ target }) {
+		let currGroup = getGroupToEdit(target.id)
+		currGroup.title = target.value
+		saveGroup(currGroup, board._id)
 	}
 
-	if (!groups) return <h1>loadings....</h1>
+	function getGroupToEdit(groupId) {
+		const group = groups.find((grp) => grp.id === groupId)
+		return group
+	}
 
+	if (!groups) return <h1>Loading....</h1>
 	return (
 		<section className="group-list-container">
 			<ul className="group-list clean-list">
 				{groups.map((group) => (
 					<li className="group-wrapper" key={group.id}>
 						<div className="group-top">
-							<h2 className="group-title">{group.title}</h2>
+							<form>
+								<textarea
+									name="title"
+									className="edit-group-title"
+									id={group.id}
+									maxLength="512"
+									defaultValue={group.title}
+									onChange={handleEditGroup}
+								></textarea>
+							</form>
 							<button
-								className="group-btn"
+								className="btn-group remove"
 								onClick={() => {
 									onRemoveGroup(group.id)
 								}}
@@ -58,47 +84,40 @@ export function GroupList({ onRemoveGroup }) {
 						</div>
 						<TaskList group={group} tasks={group.tasks} />
 						<div className="group-bottom">
-							<button className="group-btn add-card">+ Add a card</button>
-							<button className="group-btn">template</button>
+							<button className="btn-group add-task">
+								<AiOutlinePlus className="icon-plus" /> Add a card
+							</button>
+							<button className="btn-group template">template</button>
 						</div>
 					</li>
 				))}
 
-				<div className={`add-new-group ${addNewListOpenClosed}`}>
-					<form onSubmit={onSubmit}>
+				<div className={`add-new-group ${addNewGroupOpenClosed}`}>
+					<div
+						className="placeholder"
+						onClick={() => {
+							openAddNewGroup()
+						}}
+					>
+						<AiOutlinePlus className="icon-plus" /> Add another list
+					</div>
+					<form>
 						<input
 							type="text"
 							name="title"
-							id="title"
 							placeholder="Enter list title..."
 							maxLength="512"
 							value={groupToEdit.title}
-							onChange={handleListChange}
+							onChange={handleNewGroup}
 						/>
-						<div
-							className="placeholder"
-							onClick={() => {
-								onToggleAddCancelList()
-							}}
-						>
-							+ Add another list
-						</div>
 						<div className="add-group-controls">
-							{/* <input className="add-list-btn" type="submit" value="Add List" /> */}
-							<button
-								className="add-list-btn"
-								type="submit"
-								// onClick={() => {
-								// 	onAddList()
-								// }}
-							>
+							<button className="btn-group add-group" onClick={onSaveNewGroup}>
 								Add list
 							</button>
 							<a
-								href="#"
-								className="cancel-list-btn"
+								className="btn-group cancel"
 								onClick={() => {
-									onToggleAddCancelList()
+									closeAddNewGroup()
 								}}
 							>
 								X
