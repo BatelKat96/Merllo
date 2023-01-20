@@ -1,8 +1,68 @@
-.open-quick-task-edit {
+.quick-task-edit {
+    z-index: 200;
     position: fixed;
-    inset: 0;
     margin: 0;
-    z-index: 1;
+
+    .quick-task-edit-screen {
+        z-index: 210;
+        position: fixed;
+        inset: 0;
+        background-color: #1212126a;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.6s;
+        pointer-events: none;
+        max-height: 100%;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .open-task {
+        z-index: 220;
+        width: 248px;
+        position: fixed;
+
+        form {
+
+            .open-task-title {
+                font-family: segoe_ui;
+                text-align: left;
+                vertical-align: auto;
+                border: none;
+                background-color: #ffffff;
+                box-shadow: 0 8px 16px -4px #091e4240, 0 0 0 1px #091e4214;
+                padding: 8px 12px;
+                font-size: 0.875rem;
+                width: 100%;
+                min-height: 124px;
+                color: #172b4d;
+                outline: none;
+                border-radius: 3px;
+                resize: none;
+            }
+
+            button {
+                position: absolute;
+                top: cal(124px + 6px);
+                font-size: 14px;
+                background-color: #046AA7;
+                cursor: pointer;
+
+                background-color: #0079bf;
+                border: none;
+                box-shadow: none;
+                border-radius: 3px;
+                color: #fff;
+                height: 32px;
+                width: auto;
+                padding: 7px 24px;
+                line-height: 20px;
+                font-size: 14px;
+                font-weight: 400;
+              }
+            
+        }
+    }
 }
 
 .quick-edit-btns {

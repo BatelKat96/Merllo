@@ -29,6 +29,12 @@ export function TaskList({ group, tasks }) {
         setIsAddNewTaskOpen(true)
     }
 
+    function handleKeyPress(ev) {
+        if (ev.key === "Enter" && !ev.shiftKey) {
+            onAddTask(ev)
+        }
+    }
+
     async function onAddTask(ev) {
         ev.preventDefault()
         if (!taskToEdit.title) return
@@ -81,7 +87,9 @@ export function TaskList({ group, tasks }) {
                                     id={group.id}
                                     placeholder="Enter a title for this card..."
                                     maxLength="512"
+                                    spellCheck="false"
                                     value={taskToEdit.title}
+                                    onKeyDown={handleKeyPress}
                                     onChange={handleNewTask}
                                 ></textarea>
 
