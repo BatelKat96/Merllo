@@ -11,20 +11,20 @@ import { TaskDetails } from './pages/task-details'
 
 export function RootCmp() {
 	return (
-		<section>
-
+		<section className="app">
 			<AppHeader />
 
 			<div>
-
 				<main>
 					<Routes>
 						<Route element={<HomePage />} path="/" />
 						<Route element={<About />} path="/about" />
 						<Route element={<Workspace />} path="/workspace" />
-						<Route element={<Board />} path="/board/:boardId" >
-
-							<Route element={<TaskDetails />} path="/board/:boardId/:groupId/:taskId" />
+						<Route element={<Board />} path="/board/:boardId">
+							<Route
+								element={<TaskDetails />}
+								path="/board/:boardId/:groupId/:taskId"
+							/>
 						</Route>
 
 						{/* <Route element={<UserDetails />} path="/user/:id" /> */}
