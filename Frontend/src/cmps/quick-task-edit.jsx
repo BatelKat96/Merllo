@@ -8,13 +8,14 @@ import { saveTask } from '../store/board.actions'
 
 export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
     const navigate = useNavigate()
-    const [task, setTask] = useState('')
+    const [taskToEdit, setTaskToEdit] = useState()
+
 
 
     function handleChange({ target }) {
         let { value, type, name: field } = target
         value = type === 'number' ? +value : value
-        setTask((prevTask) => ({ ...prevTask, [field]: value }))
+        setTaskToEdit((prevTask) => ({ ...prevTask, [field]: value }))
     }
 
     function handleKeyPress(ev) {
@@ -23,8 +24,8 @@ export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
         }
     }
 
+
     async function onSaveEdit(ev) {
-        ev.stopPropagation()
         ev.preventDefault()
         try {
             const savedTask = await saveTask(taskId, groupId, boardId)
@@ -37,27 +38,31 @@ export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
         navigate(`/board/${boardId}/${groupId}/${taskId}`)
     }
 
+    function prevent(e) {
+        e.preventDefault();
+    } 
+
     return (
         <>
             <section className="quick-task-edit">
 
-                <div
-                    onClick={() => navigate(`/board/${boardId}`)}
-                    className="quick-task-edit-screen"></div>
+                <div className="quick-task-edit-screen">
+                </div>
 
                 <section className="open-task">
 
-                    <form onBlurCapture={onSaveEdit}>
-                        <textarea autofocus
+                    <form>
+                        <textarea
+                            onClick="prevent"
+                            autoFocus
                             type="text"
                             className="open-task-title"
                             name="title"
-                            id="title"
+                            id="taskId"
                             spellCheck="false"
                             onChange={handleChange}
                             onKeyDown={handleKeyPress}
-                            defaultValue={taskTitle}
-                        />
+                            defaultValue={taskTitle} />
                         <button onClick={onSaveEdit}>Save</button>
                     </form>
 

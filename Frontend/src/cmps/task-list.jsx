@@ -50,7 +50,7 @@ export function TaskList({ group, tasks }) {
 
     return (
         <>
-        <section className="task-lis1">
+            <section className="task-list-wraper">
 
             <ul className="task-list clean-list">
                 {tasks.map(task =>
@@ -59,6 +59,7 @@ export function TaskList({ group, tasks }) {
                         <TaskPreview group={group} task={task} />
                     </li>)}
             </ul>
+            </section>
 
                 <section className="task-list-bottom">
 
@@ -113,7 +114,6 @@ export function TaskList({ group, tasks }) {
                         </div>
                     }
 
-                </section>
             </section>
         </>)
 }

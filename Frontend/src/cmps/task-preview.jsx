@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { QuickTaskEdit } from './quick-task-edit'
+import { boardService } from '../services/board.service'
 
 import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit.svg'
 import { ReactComponent as descriptionSvg } from '../assets/img/icons-task-details/description.svg'
@@ -14,7 +15,6 @@ export function TaskPreview({ group, task }) {
 	const [quickTaskEdit, toggleQuickTaskEdit] = useState(false)
 
 	function onQuickTaskEdit(ev) {
-		console.log('onQuickTaskEdit');
 		ev.stopPropagation()
 		ev.preventDefault()
 		toggleQuickTaskEdit(!quickTaskEdit)
