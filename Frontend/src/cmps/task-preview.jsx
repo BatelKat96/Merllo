@@ -29,6 +29,18 @@ export function TaskPreview({ group, task }) {
 				<p className="task-title" onClick={onTask}>
 					{task.title}
 				</p>
+
+				<div className="task-preview-container">
+					<div className="date-container">
+						<button className="due-date-btn">
+							<EditSvg />
+						</button>
+						<span className="due-date-format">
+							22 Jan
+						</span>
+					</div>
+
+				</div>
 			</section>
 		</>
 	)
