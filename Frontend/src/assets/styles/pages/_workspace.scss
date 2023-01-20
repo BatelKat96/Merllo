@@ -1,33 +1,80 @@
 .workspace-section {
+    margin: 40px 98px 0 98px;
+    max-width: 825px;
+    min-width: 288px;
+    flex-grow: 1;
 
-    .starred-boards {
-        margin: auto;
-        // width: 300px;
-    }
+    .boards-section-header {
+        display: flex;
+        align-items: center;
+        height: 38px;
+        margin-left: 15px;
 
-    .recently-viewed-boards {
-        // width: 300px;
-        margin: auto;
+        .boards-section-header-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+
+        .boards-section-header-name {
+            padding-left: 10px;
+
+            h3 {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
     }
 
     .board-list {
-
         display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
 
         .board-preview {
-            height: 80px;
-            width: 160px;
-            border-radius: 5px;
-            margin: 10px;
+            height: 96px;
+            width: 178px;
+            border-radius: 3px;
+            margin: 0 10px;
+            padding: 8px;
+            margin: 8px;
             cursor: pointer;
             color: white;
-            padding: 5px;
+            font-weight: 700;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #0000007e;
+            }
+        }
+
+        .create-new-board {
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                color: #172b4d;
+                line-height: 20px;
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            &:hover {
+                background-color: #091e4214;
+            }
         }
 
         .board-b101 {
             background-color: $b-txt3;
         }
     }
-
-    h1 {}
 }
