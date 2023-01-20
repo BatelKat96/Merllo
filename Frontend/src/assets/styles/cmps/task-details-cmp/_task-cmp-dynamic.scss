@@ -1,0 +1,21 @@
+.task-cmp-dynamoic {}
+
+.task-cmp-dynamoic-container {
+    width: 304px;
+}
+
+hr {
+    border-top: 0.01em solid #dfe1e6;
+}
+
+.cmp-dynamoic-input {
+    box-shadow: inset 0 0 0 2px #dfe1e6;
+    padding-inline: 12px;
+    padding-block: 8px;
+    width: 280px;
+
+    &::placeholder {
+        color: $t-txt2;
+        font-family: San_francisco_light;
+    }
+}

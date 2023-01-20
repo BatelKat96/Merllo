@@ -14,23 +14,21 @@ export function RootCmp() {
 		<section className="app">
 			<AppHeader />
 
-			<div>
-				<main>
-					<Routes>
-						<Route element={<HomePage />} path="/" />
-						<Route element={<About />} path="/about" />
-						<Route element={<Workspace />} path="/workspace" />
-						<Route element={<Board />} path="/board/:boardId">
-							<Route
-								element={<TaskDetails />}
-								path="/board/:boardId/:groupId/:taskId"
-							/>
-						</Route>
+			{/* <div> */}
 
-						{/* <Route element={<UserDetails />} path="/user/:id" /> */}
-					</Routes>
-				</main>
-			</div>
+			<main className='app-main'>
+				<Routes>
+					<Route element={<HomePage />} path="/" />
+					<Route element={<About />} path="/about" />
+					<Route element={<Workspace />} path="/workspace" />
+					<Route element={<Board />} path="/board/:boardId" >
+						<Route element={<TaskDetails />} path="/board/:boardId/:groupId/:taskId" />
+					</Route>
+
+					{/* <Route element={<UserDetails />} path="/user/:id" /> */}
+				</Routes>
+			</main>
+			{/* </div> */}
 		</section>
 	)
 }
