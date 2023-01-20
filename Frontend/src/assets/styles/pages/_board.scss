@@ -19,22 +19,25 @@
         overflow-x: scroll;
         padding-left: 16px;
         flex-grow: 1;
+        // height: 100%;
+        max-height: calc(100vh - 100px);
+
     }
     
     .board-top-menu {
-        margin: 5px;
+        // margin: 5px;
+        height: 50px;
         display: flex;
         align-items: center;
+        padding: 8px 4px 4px 12px;
         padding-left: 32px;
         button {
             color: $b-txt1;
             border-radius: 3px;
             border: none;
-            // float: left;
             font-size: 14px;
             height: 32px;
             line-height: 32px;
-            margin: 0 4px 4px 0;
             max-width: 400px;
             overflow: hidden;
             position: relative;
@@ -45,7 +48,7 @@
             border-left: 1px solid $b-txt1;
             float: left;
             height: 16px;
-            margin: 8px 8px 12px 4px;
+            margin: 0 8px;
         }
     }
 
