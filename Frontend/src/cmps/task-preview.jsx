@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
+import { QuickTaskEdit } from './quick-task-edit'
+
 import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit.svg'
 import { ReactComponent as descriptionSvg } from '../assets/img/icons-task-details/description.svg'
 import { AiOutlineClockCircle } from 'react-icons/ai'
@@ -9,8 +11,14 @@ export function TaskPreview({ group, task }) {
 	const { boardId } = useParams()
 	const navigate = useNavigate()
 
-	function onEdit(ev) {
-		console.log(ev, 'edit')
+	const [quickTaskEdit, toggleQuickTaskEditor] = useState(false)
+
+
+	function onQuickTaskEdit(ev) {
+		console.log('QuickTaskEdit');
+		ev.stopPropagation()
+		ev.preventDefault()
+		toggleQuickTaskEditor(!quickTaskEdit)
 	}
 
 	const onTask = () => {
@@ -24,8 +32,13 @@ export function TaskPreview({ group, task }) {
 					<button className="label"></button>
 				</div>
 
-				<button className="edit-btn" onClick={onEdit}>
+				<button className="edit-btn" onClick={onQuickTaskEdit}>
 					<EditSvg />
+					{quickTaskEdit && <QuickTaskEdit taskId={task.id}
+						groupId={group.id}
+						boardId={boardId}
+						onEdit={onQuickTaskEdit}
+						quickTaskEdit={quickTaskEdit} />}
 				</button>
 
 				<p className="task-title" onClick={onTask}>
@@ -33,7 +46,7 @@ export function TaskPreview({ group, task }) {
 				</p>
 
 				<div className="task-preview-container">
-					<div className="date-container">
+					{/* <div className="date-container">
 						<button className="due-date-btn">
 							<AiOutlineClockCircle />
 						</button>
@@ -45,7 +58,7 @@ export function TaskPreview({ group, task }) {
 							<descriptionSvg />
 						</button> */}
 
-					</div>
+					{/* </div> */}
 
 				</div>
 			</section>
