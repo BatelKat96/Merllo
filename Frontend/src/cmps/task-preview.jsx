@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit.svg'
+import { ReactComponent as descriptionSvg } from '../assets/img/icons-task-details/description.svg'
+import { AiOutlineClockCircle } from 'react-icons/ai'
 
 export function TaskPreview({ group, task }) {
 	const { boardId } = useParams()
@@ -33,11 +35,16 @@ export function TaskPreview({ group, task }) {
 				<div className="task-preview-container">
 					<div className="date-container">
 						<button className="due-date-btn">
-							<EditSvg />
+							<AiOutlineClockCircle />
 						</button>
 						<span className="due-date-format">
 							22 Jan
 						</span>
+
+						{/* <button className="desc-btn">
+							<descriptionSvg />
+						</button> */}
+
 					</div>
 
 				</div>
