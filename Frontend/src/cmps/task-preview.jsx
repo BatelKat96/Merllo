@@ -11,42 +11,46 @@ export function TaskPreview({ group, task }) {
 	const { boardId } = useParams()
 	const navigate = useNavigate()
 
-	const [quickTaskEdit, toggleQuickTaskEditor] = useState(false)
-
+	const [quickTaskEdit, toggleQuickTaskEdit] = useState(false)
 
 	function onQuickTaskEdit(ev) {
-		console.log('QuickTaskEdit');
+		console.log('onQuickTaskEdit');
 		ev.stopPropagation()
 		ev.preventDefault()
-		toggleQuickTaskEditor(!quickTaskEdit)
+		toggleQuickTaskEdit(!quickTaskEdit)
 	}
 
 	const onTask = () => {
 		navigate(`/board/${boardId}/${group.id}/${task.id}`)
 	}
 
+	function onLabel(ev) {
+		ev.stopPropagation()
+	}
+
 	return (
 		<>
-			<section className="task-preview">
-				<Link to={`/board/${boardId}/${group.id}/${task.id}`}>
+			<section className="task-preview" onClick={onTask}>
+
 				<div className="task-label-container">
-					<button className="label"></button>
+					<button className="label" onClick={onLabel}></button>
 				</div>
 
-				<button className="edit-btn" onClick={onQuickTaskEdit}>
+				<a className="edit-btn" onClick={onQuickTaskEdit}>
 					<EditSvg />
 					{quickTaskEdit && <QuickTaskEdit taskId={task.id}
 						groupId={group.id}
 						boardId={boardId}
+						taskTitle={task.title}
 						onEdit={onQuickTaskEdit}
 						quickTaskEdit={quickTaskEdit} />}
-				</button>
+				</a>
 
 				<p className="task-title" onClick={onTask}>
 					{task.title}
 				</p>
 
-				<div className="task-preview-container">
+				{/* <div className="task-preview-container"> */}
 					{/* <div className="date-container">
 						<button className="due-date-btn">
 							<AiOutlineClockCircle />
@@ -61,8 +65,7 @@ export function TaskPreview({ group, task }) {
 
 					{/* </div> */}
 
-				</div>
-				</Link>
+				{/* </div> */}
 			</section>
 		</>
 	)
