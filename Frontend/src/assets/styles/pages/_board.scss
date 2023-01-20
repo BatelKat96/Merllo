@@ -3,6 +3,10 @@
     // grid-template-columns: 260px 1fr;
     background-color: $b-txt3;
     color: $b-txt1;
+    height: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
 
     h1 {
         font-size: 18px;
@@ -13,8 +17,8 @@
     .board-main-content {
         // scroll-behavior: auto;
         overflow-x: scroll;
-        height: 77vh;
         padding-left: 16px;
+        flex-grow: 1;
     }
     
     .board-top-menu {
