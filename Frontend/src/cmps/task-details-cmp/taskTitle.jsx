@@ -6,7 +6,7 @@ export function TaskTitle({ handleChange, onSaveEdit, task, group }) {
 
     return <section className='task-title-container'>
         <div>
-            <img className='icon title-icon' src={taskTitle} />
+            <img className='icon-task title-icon' src={taskTitle} />
         </div>
 
         <div>

@@ -1,27 +1,38 @@
 .task-title-container {
     display: grid;
-    grid-template-columns: 40px 1fr;
-    padding-top: 14px;
+    grid-template-columns: 33px 1fr;
+    padding-top: 19px;
     padding-bottom: 8px;
     padding-inline-end: 40px;
 
 
-    .title-icon {}
+    .title-icon {
+        width: 26px;
+        height: 28px;
+        margin-inline-start: 3px;
+        margin-block-start: 3px;
+
+    }
 
 
     .task-details-title {
         line-height: 24px;
         font-size: 20px;
         height: 35px;
-        width: 618px;
+        width: 670px;
         font-family: San_francisco_medium;
-
+        padding: 0 0 0 5px;
+        letter-spacing: 0.03em;
     }
 
     p {
         font-family: San_francisco_light;
         color: $t-txt2;
         margin: 0;
+        padding-inline-start: 10px;
+        letter-spacing: 0.05em;
+        line-height: 10px;
+
 
         a {
             color: inherit;
@@ -34,8 +45,11 @@
         }
 
         .eye-icon {
-            margin-inline-start: 10px;
-            display: inline-block;
+            margin-inline-start: 8px;
+            margin-block-start: 3px;
+            // font-size: 16px;
+            // line-height: 14px;
+            // display: inline-block;
         }
 
     }
