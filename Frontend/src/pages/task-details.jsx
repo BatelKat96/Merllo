@@ -88,8 +88,8 @@ export function TaskDetails() {
         <div className='task-details-section'>
 
             <Link to={`/board/${boardId}`} className="btn-task-exit">
-                <IoClose className='icon exit-icon' />
-                {/* <img className='icon exit-icon' src={exit} /> */}
+                <IoClose className='icon-task exit-icon' />
+                {/* <img className='icon-task exit-icon' src={exit} /> */}
             </Link>
 
             <div className='task-details-main-section'>
