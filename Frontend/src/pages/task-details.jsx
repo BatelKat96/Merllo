@@ -6,10 +6,11 @@ import { useEffect, useState } from 'react'
 import { boardService } from '../services/board.service'
 import { IoClose } from "react-icons/io5";
 import { removeTask, saveTask } from '../store/board.actions'
-import { TaskTitle } from '../cmps/task-details-cmp/taskTitle'
+import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
+import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic';
 
 
 export function TaskDetails() {
@@ -25,7 +26,6 @@ export function TaskDetails() {
         loadTask(taskId, groupId, boardId)
     }, [])
 
-    let group = getGroup(groupId)
 
     function getGroup(groupId) {
         let groups = board.groups
@@ -81,19 +81,17 @@ export function TaskDetails() {
     }
 
 
-    if (!task) return <h1 className='loading'>Loadings....</h1>
-
+    if (!task) return <h1 className='loading'></h1>
     return <section className='task-details'>
         <div onClick={() => navigate(`/board/${boardId}`)} className="black-screen"></div>
         <div className='task-details-section'>
 
             <Link to={`/board/${boardId}`} className="btn-task-exit">
                 <IoClose className='icon-task exit-icon' />
-                {/* <img className='icon-task exit-icon' src={exit} /> */}
             </Link>
 
             <div className='task-details-main-section'>
-                <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={group} />
+                {<TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />}
 
                 <div className='task-details-container'>
                     <div className='task-details-edit-section'>
@@ -108,8 +106,8 @@ export function TaskDetails() {
                     <TaskSideBar onRemoveTask={onRemoveTask} />
 
                 </div>
+                <TaskCmpDynamoic cmpType={'members'} />
             </div>
-
         </div>
     </section>
 }

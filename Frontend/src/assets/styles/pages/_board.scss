@@ -3,25 +3,31 @@
     // grid-template-columns: 260px 1fr;
     background-color: $b-txt3;
     color: $b-txt1;
+    display: grid;
+    flex-direction: column;
+    height: 100vh;
+    // padding-top: 44px;
 
     h1 {
         font-size: 18px;
         line-height: 32px;
         padding: 0 12px;
     }
-    
+
     .board-main-content {
         // scroll-behavior: auto;
         overflow-x: scroll;
-        height: 77vh;
+        // height: 77vh;
+        flex-grow: 1;
         padding-left: 16px;
     }
-    
+
     .board-top-menu {
         margin: 5px;
         display: flex;
         align-items: center;
         padding-left: 32px;
+
         button {
             color: $b-txt1;
             border-radius: 3px;
@@ -36,7 +42,10 @@
             position: relative;
             text-decoration: none;
             text-overflow: ellipsis;
-        };
+        }
+
+        ;
+
         span {
             border-left: 1px solid $b-txt1;
             float: left;

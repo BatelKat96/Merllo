@@ -8,7 +8,10 @@ export function TaskDescription({ handleChange, onSaveEdit, task }) {
         <div>
 
             <h3 className='medium-headline task-description-title'>Description</h3>
-            <button className='clean-btn btn-task-details btn-description-edit'>Edit</button>
+
+            <div className='btn-description-edit-container'>
+                <button className='clean-btn btn-task-details btn-description-edit'>Edit</button>
+            </div>
         </div>
         {/* <label htmlFor="description" className='medium-headline task-description-label'>Description</label> */}
         <form onSubmit={onSaveEdit}>

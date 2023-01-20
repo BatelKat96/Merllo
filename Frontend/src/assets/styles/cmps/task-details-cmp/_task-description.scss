@@ -13,11 +13,21 @@
         display: inline-block;
     }
 
-    .btn-description-edit {
-        width: 47.46px;
+    .btn-description-edit-container {
         display: inline-block;
-        margin-inline-start: 5.5px;
     }
+
+    .btn-description-edit {
+        display: block;
+        width: 47.46px;
+        margin-inline-start: 5.5px;
+        display: none;
+
+        .task-description-textarea:focus+.btn-description-edit {}
+
+    }
+
+
 
     .task-description-textarea {
         height: 56px;
@@ -38,6 +48,7 @@
             height: 108px;
             background-color: $clr6;
 
+
             &:hover {
                 background-color: none;
             }
@@ -45,9 +56,20 @@
 
     }
 
+    // .task-description-textarea:focus+.btn-description-edit {
+    //     opacity: 0;
+    // }
+
+
+    .task-description-textarea:focus+.task-description-btn {
+        display: block;
+    }
+
+
     .task-description-btn {
         margin-inline-start: 40px;
         margin-block-start: 8px;
+        display: none;
     }
 
     .btn-description-save {
@@ -55,6 +77,7 @@
         color: $clr6;
         margin-inline-end: 4px;
         width: 52.6px;
+
 
         &:hover {
             background-color: #026aa7;
@@ -64,6 +87,7 @@
     .btn-description-cancel {
         background-color: initial;
         width: 64.9px;
+
 
         &:hover {
             background-color: $t-hover3;
