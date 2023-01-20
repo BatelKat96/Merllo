@@ -2,23 +2,18 @@ import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { IoClose } from 'react-icons/io5'
+import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
+
 import { boardService } from '../services/board.service'
-import { saveGroup, saveTask } from '../store/board.actions'
+import { removeGroup, saveGroup, saveTask } from '../store/board.actions'
 import { TaskList } from './task-list'
 import { utilService } from '../services/util.service'
 
-export function GroupList({ onRemoveGroup }) {
+export function GroupList() {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
-	const [isAddNewTaskOpen, setIsAddNewTaskOpen] = useState(false)
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
-	const [taskToEdit, setTaskToEdit] = useState(boardService.getEmptyTask())
 	const groups = board.groups
-	const timeoutId = useRef(null)
-	// const elInputRef = useRef(null)
-	// useEffect(() => {
-	// 	elInputRef.current.focus()
-	// }, [])
 
 	//  create new group
 	let addNewGroupOpenClosed = isAddNewGroupOpen ? 'open' : 'closed'
@@ -59,32 +54,54 @@ export function GroupList({ onRemoveGroup }) {
 		return group
 	}
 
-	// create new task
-	let addNewTaskOpenClosed = isAddNewTaskOpen ? 'open' : 'closed'
-	function closeAddNewTask() {
-		setIsAddNewTaskOpen(false)
-		setGroupToEdit(boardService.getEmptyGroup())
-	}
-	function openAddNewTask() {
-		setIsAddNewTaskOpen(true)
-	}
-
-	function handleNewTask({ target }) {
-		let { value, name: field } = target
-		setTaskToEdit((prevTask) => ({ ...prevTask, [field]: value }))
-	}
-
-	async function onAddTask(ev) {
-		ev.preventDefault()
-		if (!taskToEdit.title) return
+	// remove group
+	async function onRemoveGroup(groupId) {
 		try {
-			await saveTask(taskToEdit, ev.target.id, board._id)
-			setTaskToEdit(boardService.getEmptyTask())
-			closeAddNewTask()
+			await removeGroup(groupId, board._id)
+			console.log('Group removed')
 		} catch (err) {
-			console.log('Failed to save new task', err)
+			console.log('Cannot remove group', err)
 		}
 	}
+
+	// duplicate group
+	async function onCopyGroup(group) {
+		let duplicatedGroup = { ...group }
+		duplicatedGroup.id = null
+		try {
+			await saveGroup(duplicatedGroup, board._id)
+			console.log('Group duplicated')
+		} catch (err) {
+			console.log('Cannot duplicate group', err)
+		}
+	}
+
+	// create new task
+	// let addNewTaskOpenClosed = isAddNewTaskOpen ? 'open' : 'closed'
+	// function closeAddNewTask() {
+	// 	setIsAddNewTaskOpen(false)
+	// 	setGroupToEdit(boardService.getEmptyGroup())
+	// }
+	// function openAddNewTask() {
+	// 	setIsAddNewTaskOpen(true)
+	// }
+
+	// function handleNewTask({ target }) {
+	// 	let { value, name: field } = target
+	// 	setTaskToEdit((prevTask) => ({ ...prevTask, [field]: value }))
+	// }
+
+	// async function onAddTask(ev) {
+	// 	ev.preventDefault()
+	// 	if (!taskToEdit.title) return
+	// 	try {
+	// 		await saveTask(taskToEdit, ev.target.id, board._id)
+	// 		setTaskToEdit(boardService.getEmptyTask())
+	// 		closeAddNewTask()
+	// 	} catch (err) {
+	// 		console.log('Failed to save new task', err)
+	// 	}
+	// }
 
 	if (!groups) return <h1>Loading....</h1>
 	return (
@@ -109,12 +126,20 @@ export function GroupList({ onRemoveGroup }) {
 									onRemoveGroup(group.id)
 								}}
 							>
-								remove
+								<MdDeleteOutline className="icon-remove" />
+							</button>
+							<button
+								className="btn-group copy"
+								onClick={() => {
+									onCopyGroup(group)
+								}}
+							>
+								<MdOutlineContentCopy className="icon-copy" />
 							</button>
 						</div>
 						<TaskList group={group} tasks={group.tasks} />
-						<div className="group-bottom">
-							{/* <div>
+						{/* <div className="group-bottom"> */}
+						{/* <div>
 								<button
 									className="btn-group add-a-task"
 									onClick={() => openAddNewTask()}
@@ -123,7 +148,7 @@ export function GroupList({ onRemoveGroup }) {
 								</button>
 								<button className="btn-group template">template</button>
 							</div> */}
-							<div className="task-composer">
+						{/* <div className="task-composer">
 								<form>
 									<textarea
 										className="task-preview"
@@ -153,8 +178,8 @@ export function GroupList({ onRemoveGroup }) {
 										</a>
 									</div>
 								</form>
-							</div>
-						</div>
+							</div> */}
+						{/* </div> */}
 					</li>
 				))}
 

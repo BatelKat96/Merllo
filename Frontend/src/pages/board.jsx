@@ -31,17 +31,6 @@ export function Board() {
 	// 	}
 	// }
 
-	async function onRemoveGroup(groupId) {
-		try {
-			await removeGroup(groupId, boardId)
-			console.log('Group removed')
-			showSuccessMsg('Group removed')
-		} catch (err) {
-			console.log('Cannot remove group')
-			showErrorMsg('Cannot remove group')
-		}
-	}
-
 	// async function onAddCar() {
 	//     const car = carService.getEmptyCar()
 	//     car.vendor = prompt('Vendor?')
@@ -78,7 +67,7 @@ export function Board() {
 				<button>...</button>
 			</div>
 			<div className="board-main-content">
-				<GroupList onRemoveGroup={onRemoveGroup} />
+				<GroupList />
 			</div>
 			<Outlet />
 			{/* <main>
