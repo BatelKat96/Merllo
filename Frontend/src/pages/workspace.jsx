@@ -1,12 +1,11 @@
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { addBoard, loadBoards } from '../store/board.actions'
+import { loadBoards } from '../store/board.actions'
 import { boardService } from '../services/board.service'
 
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { HiOutlineStar } from 'react-icons/hi2'
-import { IoClose } from 'react-icons/io5'
 import { BoardCreate } from '../cmps/board-create'
 
 export function Workspace() {
@@ -66,6 +65,7 @@ export function Workspace() {
 					<li
 						className="board-preview create-new-board"
 						onClick={openBoardComposer}
+						key="001"
 					>
 						<span>Create new board</span>
 					</li>

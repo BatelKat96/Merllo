@@ -1,16 +1,13 @@
-import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { addBoard, loadBoards } from '../store/board.actions'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { addBoard } from '../store/board.actions'
 import { boardService } from '../services/board.service'
 
-import { AiOutlineClockCircle } from 'react-icons/ai'
-import { HiOutlineStar } from 'react-icons/hi2'
 import { IoClose } from 'react-icons/io5'
 
 export function BoardCreate({ closeBoardComposer }) {
-	const [isBoardComposerOpen, setIsBoardComposerOpen] = useState(false)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
+	const navigate = useNavigate()
 
 	function handleNewBoard({ target }) {
 		let { value, name: field } = target

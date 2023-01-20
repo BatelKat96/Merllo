@@ -1,13 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { IoClose } from 'react-icons/io5'
 import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
 
 import { boardService } from '../services/board.service'
-import { removeGroup, saveGroup, saveTask } from '../store/board.actions'
+import { removeGroup, saveGroup } from '../store/board.actions'
 import { TaskList } from './task-list'
-import { utilService } from '../services/util.service'
 
 export function GroupList() {
 	const board = useSelector((storeState) => storeState.boardModule.board)

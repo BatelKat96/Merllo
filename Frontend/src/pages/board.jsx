@@ -1,14 +1,11 @@
-import { useEffect, useState } from 'react'
-import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { boardService } from '../services/board.service'
 import { loadBoard, removeBoard } from '../store/board.actions'
 
 import { HiOutlineStar } from 'react-icons/hi2'
 import { BsFilter } from 'react-icons/bs'
 import { MdDeleteOutline } from 'react-icons/md'
-
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 
 import { GroupList } from '../cmps/group-list'
 
