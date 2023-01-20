@@ -17,7 +17,7 @@ export function HomePage() {
                     <section className="hero-secrion">
 
                         <div className="text">
-                            <h1>Trello brings all your tasks, teammates, and tools together</h1>
+                            <h1>Merllo brings all your tasks, teammates, and tools together</h1>
 
                             <p>Keep everything in the same place—even if your team isn't.</p>
 
@@ -27,7 +27,7 @@ export function HomePage() {
                         </div>
 
                         <div className="img">
-                            <img src={heroPng} alt="firstPng" />
+                            <img className="hero-img" src={heroPng} alt="firstPng" />
                         </div>
 
                     </section>

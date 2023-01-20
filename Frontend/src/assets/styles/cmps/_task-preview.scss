@@ -80,6 +80,76 @@
     .edit-btn:hover {
         background-color: #83818136;
     }
+
+    .date-container {
+        color:  $t-txt3;
+        display: flex;
+        align-items: center;
+        justify-content:  flex-start;
+        margin: 4px 0 ;
+        max-width: 100%;
+        min-height: 20px;
+        overflow: hidden;
+        // padding: 2px;
+        position: relative;
+        text-decoration: none;
+        text-overflow: ellipsis;
+
+        .due-date-btn {
+            border: none;
+            background-color: transparent;
+        
+            font-family: segoe_ui;
+            // margin: 4px;
+            // padding: 3px;
+            border-radius: 3px;
+            z-index: 10;
+    
+            svg {
+                height: 16px;
+                width: 16px;
+                border-radius: 3px;
+                border: 0;
+                align-items: center;
+                background-color: transparent;
+                white-space: nowrap;
+        
+                path {
+                    fill: $t-txt3;  
+                }                
+            }
+
+            .due-date-format {
+                font-size: 12px;
+                white-space: nowrap; 
+            }
+        }
+    }
+
+    .desc-btn {
+        border: none;
+        background-color: transparent;
+    
+        margin: 4px;
+        padding: 3px;
+        border-radius: 3px;
+        z-index: 10;
+
+        svg {
+            height: 16px;
+            width: 16px;
+            border-radius: 3px;
+            border: 0;
+            align-items: center;
+            background-color: transparent;
+            margin: 0 4px;
+            white-space: nowrap;
+    
+            path {
+                fill: $t-txt3;  
+            }
+        }
+    }
   
 }
 

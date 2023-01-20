@@ -7,8 +7,8 @@
     justify-content: space-between;
 
     background-color: $wh-bg1;
+    background-color: #0d3c95;
 
-    // #0d3c95
     button {
         border: none;
         background-color: transparent;
@@ -30,11 +30,13 @@
         &.create-btn {
             padding: 8px;
             background-color: $wh-bg2;
+            background-color: #5A78B5;
             border-radius: 3px;
         }
 
         &.create-btn:hover {
             background-color: $wh-bg1;
+            background-color: #0d3c95;
         }
 
     }
