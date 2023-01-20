@@ -1,57 +1,35 @@
 import { useEffect, useState } from 'react'
-import { Link, Outlet, useParams } from 'react-router-dom'
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { boardService } from '../services/board.service'
-import { loadBoard, removeGroup } from '../store/board.actions'
+import { loadBoard, removeBoard } from '../store/board.actions'
+
+import { HiOutlineStar } from 'react-icons/hi2'
+import { BsFilter } from 'react-icons/bs'
+import { MdDeleteOutline } from 'react-icons/md'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-// import { loadCars, addCar, updateCar, removeCar } from '../store/car.actions.js'
 
 import { GroupList } from '../cmps/group-list'
 
 export function Board() {
-	// const { boardId } = useParams()
-	const boardId = 'b101'
+	const { boardId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
+
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		loadBoard(boardId)
 	}, [])
 
-	// useEffect(() => {
-	// 	loadGroups('b101')
-	// }, [])
-
-	// async function loadGroups(boardId) {
-	// 	try {
-	// 		groups = await boardService.queryGroup('b101')
-	// 		return groups
-	// 	} catch (err) {
-	// 		console.log('group-list cmp failed to load groups', err)
-	// 	}
-	// }
-
-	// async function onAddCar() {
-	//     const car = carService.getEmptyCar()
-	//     car.vendor = prompt('Vendor?')
-	//     try {
-	//         const savedCar = await addCar(car)
-	//         showSuccessMsg(`Car added (id: ${savedCar._id})`)
-	//     } catch (err) {
-	//         showErrorMsg('Cannot add car')
-	//     }
-	// }
-
-	// async function onUpdateCar(car) {
-	//     const price = +prompt('New price?')
-	//     const carToSave = { ...car, price }
-	//     try {
-	//         const savedCar = await updateCar(carToSave)
-	//         showSuccessMsg(`Car updated, new price: ${savedCar.price}`)
-	//     } catch (err) {
-	//         showErrorMsg('Cannot update car')
-	//     }
-	// }
+	async function onRemoveBoard() {
+		try {
+			await removeBoard(board._id)
+			navigate(`/workspace`)
+		} catch (err) {
+			console.log('Cannot remove board', err)
+		}
+	}
 
 	if (!board) return <h1>Loading....</h1>
 
@@ -59,10 +37,19 @@ export function Board() {
 		<section className="board">
 			<div className="board-top-menu">
 				{/* <BoardTopMenu /> */}
-				<h1>Demo</h1>
-				<button>Star</button>
+				<h1>{board.title}</h1>
+				<button>
+					<HiOutlineStar />
+				</button>
 				<span></span>
-				<button>Filter</button>
+				<button>
+					<BsFilter />
+					Filter
+				</button>
+				<span></span>
+				<button onClick={onRemoveBoard}>
+					<MdDeleteOutline />
+				</button>
 				<span></span>
 				<button>...</button>
 			</div>
@@ -70,26 +57,6 @@ export function Board() {
 				<GroupList />
 			</div>
 			<Outlet />
-			{/* <main>
-                <button onClick={onAddCar}>Add Car ⛐</button>
-                <ul className="car-list">
-                    {cars.map(car =>
-                        <li className="car-preview" key={car._id}>
-                            <h4>{car.vendor}</h4>
-                            <h1>⛐</h1>
-                            <p>Price: <span>${car.price.toLocaleString()}</span></p>
-                            <p>Owner: <span>{car.owner && car.owner.fullname}</span></p>
-                            <div>
-                                <button onClick={() => { onRemoveCar(car._id) }}>x</button>
-                                <button onClick={() => { onUpdateCar(car) }}>Edit</button>
-                            </div>
-
-                            <button onClick={() => { onAddCarMsg(car) }}>Add car msg</button>
-                            <button className="buy" onClick={() => { onAddToCart(car) }}>Add to cart</button>
-                        </li>)
-                    }
-                </ul>
-            </main> */}
 		</section>
 	)
 }
