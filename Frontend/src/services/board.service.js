@@ -60,7 +60,7 @@ async function save(board) {
 
 function getEmptyBoard() {
 	return {
-		title: 'New board',
+		title: '',
 		isStarred: false,
 		archivedAt: null,
 		createdBy: {},
@@ -382,6 +382,28 @@ function _createBoards() {
 						tasks: [],
 					},
 				],
+			},
+			{
+				_id: 'b102',
+				title: 'Stam board',
+				isStarred: false,
+				archivedAt: null,
+				createdBy: {},
+				style: {},
+				labels: [],
+				members: [],
+				groups: [],
+			},
+			{
+				_id: 'b103',
+				title: 'Yalla',
+				isStarred: false,
+				archivedAt: null,
+				createdBy: {},
+				style: {},
+				labels: [],
+				members: [],
+				groups: [],
 			},
 		]
 		utilService.saveToStorage(STORAGE_KEY, boards)
