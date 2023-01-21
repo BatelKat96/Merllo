@@ -90,44 +90,44 @@ function _createBoards() {
 					{
 						id: 'l101',
 						title: 'UI',
-						color: '#d6ecd2',
+						color: '#7bc86c',
 					},
 					{
 						id: 'l102',
 						title: 'Low priority',
-						color: '#faf3c0',
+						color: '#f5dd29',
 					},
 					{
 						id: 'l103',
 						title: 'Medium priority',
-						color: '#fce6c6',
+						color: '#ffaf3f',
 					},
 					{
 						id: 'l104',
 						title: 'High priority',
-						color: '#f5d3ce',
+						color: '#ef7564',
 					},
 					{
 						id: 'l105',
 						title: 'Bug',
-						color: '#eddbf4',
+						color: '#cd8de5',
 					},
 				],
 				members: [
 					{
 						_id: 'u101',
 						fullname: 'Batel K',
-						imgUrl: 'http://batel-img',
+						imgUrl: 'batel.png',
 					},
 					{
 						_id: 'u102',
 						fullname: 'Beta S',
-						imgUrl: 'http://beta-img',
+						imgUrl: 'beta.png',
 					},
 					{
 						_id: 'u103',
 						fullname: 'Dror K',
-						imgUrl: 'http://dror-img',
+						imgUrl: 'dror.png',
 					},
 				],
 				groups: [

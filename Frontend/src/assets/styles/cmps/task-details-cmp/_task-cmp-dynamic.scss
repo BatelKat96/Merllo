@@ -1,12 +1,22 @@
-.task-cmp-dynamoic {}
+.task-cmp-dynamoic {
 
-.task-cmp-dynamoic-container {
+    border: 2px solid black;
+    padding-inline: 12px;
     width: 304px;
 }
 
-hr {
-    border-top: 0.01em solid #dfe1e6;
+
+
+.task-cmp-dynamoic-container {}
+
+.cmp-dynamoic-title {
+    text-align: center;
+    height: 40px;
+    // margin: 0;
+    border-block-end: 0.01em solid #dfe1e6;
 }
+
+
 
 .cmp-dynamoic-input {
     box-shadow: inset 0 0 0 2px #dfe1e6;
@@ -19,3 +29,45 @@ hr {
         font-family: San_francisco_light;
     }
 }
+
+
+.cmp-dynamoic-option {
+    display: flex;
+    margin-block: 4px;
+    align-items: center;
+    padding-inline-start: 10px;
+
+    p {
+        margin: 0;
+        font-family: San_francisco_light;
+
+    }
+
+}
+
+
+.cmp-dynamoic-member-img {
+    width: 32px;
+    height: 32px;
+    margin-inline-end: 10px;
+    margin-block: 4px;
+}
+
+
+.cmp-dynamoic-option-labels {
+    width: 212px;
+    border-radius: 3px;
+
+    .color-circle {
+        margin-inline-end: 10px;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        margin-block: 8px;
+    }
+}
+
+
+// .cmp-dynamoic-option-labels {
+//     opacity: 0.5;
+// }
