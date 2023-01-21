@@ -8,19 +8,21 @@
         position: fixed;
         inset: 0;
         background-color: #1212126a;
-        cursor: pointer;
         opacity: 0;
         transition: opacity 0.6s;
         pointer-events: none;
         max-height: 100%;
         pointer-events: auto;
         opacity: 1;
+        cursor: auto;
     }
 
     .open-task {
         z-index: 220;
-        width: 248px;
-        position: fixed;
+        width: 260px;
+        position: relative;
+        top: -40px;
+        left: -228px;
 
         form {
 
@@ -39,6 +41,7 @@
                 outline: none;
                 border-radius: 3px;
                 resize: none;
+                cursor: text;
             }
 
             button {
@@ -59,12 +62,33 @@
                 line-height: 20px;
                 font-size: 14px;
                 font-weight: 400;
-              }
-            
+            }
+        }  
+    }
+
+    .quick-edit-btns {
+        position: relative;
+        top: -174px;
+        left: 34px;
+        z-index: 220;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+
+        button {
+            background: rgba(0, 0, 0, 0.652);
+            font-family: noto-sans-hebrew-regular;
+            text-align: left;
+            border-radius: 3px;
+            clear: both;
+            color: #c7d1db;
+            display: block;
+            width: fit-content;
+            float: left;
+            margin: 0px 0 4px 8px;
+            padding: 10px 12px;
+            border: none;
+
         }
     }
-}
-
-.quick-edit-btns {
-    display: flex;
 }
