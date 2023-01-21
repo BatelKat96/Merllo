@@ -1,0 +1,51 @@
+.task-labels-container {
+    padding-inline-start: 40px;
+    margin-top: 4px;
+
+    p {
+        margin: 0;
+    }
+
+    .labels-list {}
+
+    .add-labels {
+        background-color: $t-bg5;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $t-hover3;
+        }
+
+        .add-labels-icon {
+            color: #6b7485;
+            margin: auto;
+            width: 15px;
+            height: 15px;
+        }
+
+    }
+
+    .task-labels {
+        display: flex;
+        align-items: center;
+        padding-inline: 8px;
+        margin-inline-end: 4px;
+
+        .color-circle {
+            margin-inline-end: 8px;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-block: 8px;
+        }
+    }
+
+    li {
+        float: left;
+        border-radius: 3px;
+    }
+
+}

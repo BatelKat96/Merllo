@@ -122,6 +122,9 @@
     letter-spacing: 0.04em;
     width: fit-content;
 
+    text-transform: capitalize;
+
+
     @include margin-titles-task
 }
 
@@ -132,8 +135,14 @@
     font-family: segoe_ui;
     font-weight: bold;
     letter-spacing: 0.03em;
+
+    text-transform: capitalize;
+
 }
 
+.task-details-edit-item {
+    display: flex;
+}
 
 .btn-task-details {
     padding-inline: 12px;
