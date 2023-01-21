@@ -17,7 +17,7 @@ import { ReactComponent as SearchSvg } from '../assets/img/icons-header/search.s
 import { ReactComponent as TrelloSvg } from '../assets/img/icons-header/trello.svg'
 import { ReactComponent as UserSvg } from '../assets/img/icons-header/user.svg'
 
-export function MainHeader() {
+export function MainHeaderDemo() {
 	const [isBoardComposerOpen, setIsBoardComposerOpen] = useState(false)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 
@@ -31,7 +31,7 @@ export function MainHeader() {
 	}
 
 	return (
-		<header className="main-header">
+		<header className="main-header-demo">
 			<div className="right-nav">
 				<button>
 					<AppsSvg />

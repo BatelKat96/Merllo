@@ -15,6 +15,25 @@
                 border-box rgb(82, 67, 170);
         background-blend-mode: normal;
 
+        // position: absolute;
+        // bottom: 0;
+        // left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+
+        .shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(104% + 1.3px);
+            height: 99px;
+            transform: rotateY(180deg);
+
+            .shape-fill path {
+                fill: white;
+            }
+        }
+
 
         .hero-secrion {
             max-width: 1140px;
@@ -35,7 +54,6 @@
             position: relative;
             width: 50%;
             scroll-margin-top: 72px;
-
             text-align: left;
 
             h1 {
@@ -49,6 +67,7 @@
                 font-size: 1.3rem;
                 margin-bottom: 1rem;
                 margin-top: 0px;
+                line-height: 1.25;
             }
 
             button {
@@ -58,13 +77,13 @@
                 margin-bottom: 1rem;
 
                 font-family: charlie-regular;
-                background-color: $h-btn1;
+                background-color: #0065FF;
                 color: $h-txt1;
                 transition: all 250ms ease-out 0s;
             }
 
             button:hover, button:focus {
-                background-color: $h-btn2;
+                background-color: #0847a6;
                 text-decoration: none;
             }
 
@@ -82,57 +101,148 @@
             display: block;
             width: 58.3333%;
             padding-bottom: 0px;
+            margin-bottom: 0px;
+            top: 5rem;
+            z-index: 10;
 
             img .hero-img {
                 position: relative;
                 top: 3rem;
                 right: -3rem;
                 vertical-align: middle;
+                z-index: 10;
             }
         }
     }
 
     .bg-gradient-101 {
         display: block;
+        position: relative;
         height: fit-content;
         color: $h-txt3;
+
 
         background: linear-gradient(0deg, rgb(230, 252, 255), rgb(255, 255, 255)) 0% 0% / auto repeat scroll padding-box border-box rgb(178, 212, 255);
         background-blend-mode: normal;
 
-        .prod-section {
+        .merllo-101 {
             max-width: 1140px;
             margin-left: auto;
             margin-right: auto;
             padding-left: 1rem;
             padding-right: 1rem;
             width: 100%;
-        }
 
-        h5 {
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            margin-top: 1rem;
-            font-size: 1rem;
-            line-height: 1.25;
-            text-transform: uppercase;
-            font-family: charlie-semibold;
-        }
+            .prod-div {
+                text-align: left;
+                order: 1;
+                display: block;
+                flex: 0 0 auto;
+                width: 58.3333%;
 
-        h2 {
-            font-size: 2.25rem;
-            line-height: 1.33333;
-            padding-bottom: 1rem;
-            font-family: charlie-semibold;
-        }
+                h5 {
+                    font-weight: 500;
+                    margin-bottom: 0.5rem;
+                    margin-top: 1rem;
+                    font-size: 1rem;
+                    line-height: 1.25;
+                    text-transform: uppercase;
+                    font-family: charlie-semibold;
+                }
+        
+                h2 {
+                    font-size: 2.25rem;
+                    line-height: 1.33333;
+                    padding-bottom: 1rem;
+                    font-family: charlie-semibold;
+                }
+        
+                p {
+                    padding: 0px;
+                    font-size: 20px;
+                }
+            }
 
-        p {
-            padding: 0px;
-        }
+            .prod-cards-div {
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 1rem;
+                padding-right: 1rem;
 
-        img {
-            padding: 0px 160px;
-            padding-bottom: 20px;
+                justify-content: flex-start;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                padding: 1rem 1rem 5rem;
+
+                .prod-cards {
+                    display: block;
+                    flex: 0 0 auto;
+                    width: 33.3333%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    button {
+                        cursor: pointer;
+                        height: 100%;
+                        padding: 1rem 1rem 1rem 1.5rem;
+                        position: relative;
+                        text-align: left;
+                        margin: 8px;
+                        border: none;
+                        background-color: transparent;
+                        color: rgb(9, 30, 66);
+
+                        h5 {
+                            font-family: charlie-semibold; 
+                            font-size: 1rem; 
+                            margin: 2px;
+                        }
+
+                        p {
+                            font-family: charlie-regular;
+                            font-size: 0.8rem; 
+                            margin: 2px;
+                        }
+
+                    &.cards-btn:focus, 
+                    .cards-btn:hover,
+                    .cards-btn:active {
+                        background-color: rgb(255, 255, 255);
+                        color: rgb(9, 30, 66);
+                        box-shadow: rgb(9 30 66 / 15%) 0px 0.5rem 1rem 0px;
+                        border-radius: 0.3rem;
+                        border: 0px;
+
+                        div{
+                            background-color: rgb(0, 199, 229);
+                            border-radius: 0.3rem 0px 0px 0.3rem;
+                            bottom: 0px;
+                            content: "";
+                            left: 0px;
+                            position: absolute;
+                            top: 0px;
+                            width: 0.5rem;
+                        }
+                        }
+
+
+                    }
+                }
+
+                .prod-img {
+                    display: block;
+                    flex: 0 0 auto;
+                    width: 66.6667%;
+                    margin-top: 0px;
+                    padding-top: 1rem;
+
+                }
+
+            }
         }
     }
 }
