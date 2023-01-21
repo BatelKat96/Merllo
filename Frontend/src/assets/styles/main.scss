@@ -16,7 +16,8 @@
 @import "pages/about";
 @import "pages/home-page";
 @import "pages/board";
-@import "pages/task-details";
+// @import "pages/task-details";
+@import "pages/task-details-copy";
 @import "pages/user-details";
 @import "pages/workspace";
 
@@ -38,6 +39,8 @@
 // Task-details-components
 @import "cmps/task-details-cmp/task-description";
 @import "cmps/task-details-cmp/task-member";
-@import "cmps/task-details-cmp/task-side-bar";
+// @import "cmps/task-details-cmp/task-side-bar";
+@import "cmps/task-details-cmp/task-side-bar-copy";
 @import "cmps/task-details-cmp/task-title";
-@import "cmps/task-details-cmp/task-cmp-dynamic";
+// @import "cmps/task-details-cmp/task-cmp-dynamic";
+@import "cmps/task-details-cmp/task-cmp-dynamic-copy";

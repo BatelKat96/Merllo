@@ -1,16 +1,30 @@
+import { useState } from 'react'
+import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic';
+
 import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
 import { AiOutlineMinus } from "react-icons/ai";
 
 export function TaskSideBar({ onRemoveTask }) {
+
+    const [openModal, toggleOpenModal] = useState(false)
+
+    function onOpenModal() {
+        toggleOpenModal(!openModal)
+    }
+
+
     return <div className='side-bar-menu'>
         <h3 className='small-headline'>Add to card</h3>
 
-        <button className='clean-btn btn-task-details btn-side-bar'>
+        <button className='clean-btn btn-task-details btn-side-bar' onClick={onOpenModal}
+        >
             <span className='btn-side-bar-icon'>
                 <BsPerson />
             </span>
             Members
         </button>
+        {openModal && <TaskCmpDynamoic cmpType={'members'}
+            onOpenModal={onOpenModal} />}
 
         <button className='clean-btn btn-task-details btn-side-bar'>
             <span className='btn-side-bar-icon'>

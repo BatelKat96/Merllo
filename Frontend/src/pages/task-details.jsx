@@ -90,7 +90,7 @@ export function TaskDetails() {
                 <IoClose className='icon-task exit-icon' />
             </Link>
 
-            <div className='task-details-main-section'>
+            <div className='task-details-main-section' >
                 {<TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />}
 
                 <div className='task-details-container'>
@@ -106,7 +106,7 @@ export function TaskDetails() {
                     <TaskSideBar onRemoveTask={onRemoveTask} />
 
                 </div>
-                <TaskCmpDynamoic cmpType={'members'} />
+                {/* <TaskCmpDynamoic cmpType={'members'} /> */}
             </div>
         </div>
     </section>
