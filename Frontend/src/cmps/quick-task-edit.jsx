@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { boardService } from '../services/board.service'
 import { saveTask } from '../store/board.actions'
 
+import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
 
+import { ReactComponent as OpenTaskSvg } from '../assets/img/icons-task-details/taskTitle.svg'
+import { ReactComponent as MemberSvg } from '../assets/img/icons-task-preview/member.svg'
 
 export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
     const navigate = useNavigate()
@@ -68,16 +71,42 @@ export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
 
                 </section>
 
-                {/* <section className="quick-edit-btns">
-                    <button onClick={onOpenCard}>Open card</button>
-                    <button>Edit labels</button>
-                    <button>Change members</button>
-                    <button>Change cover</button>
-                    <button>Move</button>
-                    <button>Copy</button>
-                    <button>Edit dates</button>
-                    <button>Delete</button>
-                </section> */}
+                <section className="quick-edit-btns">
+
+                    <button onClick={onOpenCard}>
+                        <OpenTaskSvg /> Open card
+                    </button>
+
+                    <button>
+                        <OpenTaskSvg /> Edit labels
+                    </button>
+
+                    <button>
+                        <MemberSvg /> Change members
+                    </button>
+
+                    <button>
+                        <OpenTaskSvg /> Change cover
+                    </button>
+
+                    <button>
+                        <OpenTaskSvg /> Move
+                    </button>
+
+                    <button>
+                        <MdOutlineContentCopy /> Copy
+                    </button>
+
+                    <button>
+                        <OpenTaskSvg /> Edit dates
+                    </button>
+
+                    <button>
+                        <MdDeleteOutline /> Delete
+                    </button>
+
+                </section>
+
             </section>
         </>
     )
