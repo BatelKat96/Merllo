@@ -41,17 +41,17 @@
             {
                 "_id": "u101",
                 "fullname": "Batel K",
-                "imgUrl": "http://batel-img"
+                "imgUrl": "batel.png"
             },
             {
                 "_id": "u102",
                 "fullname": "Beta S",
-                "imgUrl": "http://beta-img"
+                "imgUrl": "beta.png"
             },
             {
                 "_id": "u103",
                 "fullname": "Dror K",
-                "imgUrl": "http://dror-img"
+                "imgUrl": "dror.png"
             }
         ],
         "groups": [
