@@ -3,16 +3,20 @@ import { useSelector } from 'react-redux'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { IoClose } from 'react-icons/io5'
 import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
+import { HiDotsHorizontal } from 'react-icons/hi'
 
 import { boardService } from '../services/board.service'
 import { removeGroup, saveGroup } from '../store/board.actions'
 import { TaskList } from './task-list'
+import { GroupDropdown } from './group-dropdown'
 
 export function GroupList() {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
+	const [isDropdownOpen, setIsDropdownOpen] = useState({ groupId: '' })
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
 	const groups = board.groups
+	const [dropdownPos, setDropdownPos] = useState('')
 
 	//  create new group
 	function openAddNewGroup() {
@@ -29,7 +33,6 @@ export function GroupList() {
 	}
 
 	async function onSaveNewGroup(ev) {
-		ev.preventDefault()
 		if (!groupToEdit.title) return
 		try {
 			await saveGroup(groupToEdit, board._id)
@@ -74,6 +77,15 @@ export function GroupList() {
 		}
 	}
 
+	//  dropdown control
+	function toggleDropdown(event, groupId) {
+		if (isDropdownOpen.groupId === groupId) {
+			setIsDropdownOpen({ groupId: '' })
+		} else {
+			setIsDropdownOpen({ groupId })
+		}
+	}
+
 	if (!groups) return <h1>Loading....</h1>
 	return (
 		<section className="group-list-container">
@@ -86,7 +98,6 @@ export function GroupList() {
 									name="title"
 									className="edit-group-title"
 									id={group.id}
-									autoFocus
 									spellCheck="false"
 									maxLength="512"
 									defaultValue={group.title}
@@ -94,21 +105,20 @@ export function GroupList() {
 								></textarea>
 							</form>
 							<button
-								className="btn-group remove"
-								onClick={() => {
-									onRemoveGroup(group.id)
-								}}
+								className="btn-group more"
+								onClick={(event) => toggleDropdown(event, group.id)}
 							>
-								<MdDeleteOutline className="icon-remove" />
+								<HiDotsHorizontal className="icon-more" />
 							</button>
-							<button
-								className="btn-group copy"
-								onClick={() => {
-									onCopyGroup(group)
-								}}
-							>
-								<MdOutlineContentCopy className="icon-copy" />
-							</button>
+							{isDropdownOpen.groupId === group.id && (
+								<GroupDropdown
+									toggleDropdown={toggleDropdown}
+									onRemoveGroup={onRemoveGroup}
+									onCopyGroup={onCopyGroup}
+									group={group}
+									dropdownPos={dropdownPos}
+								/>
+							)}
 						</div>
 						<TaskList group={group} tasks={group.tasks} />
 					</li>
@@ -138,14 +148,11 @@ export function GroupList() {
 								onChange={handleNewGroup}
 							/>
 							<div className="add-group-controls">
-								<button
-									className="btn-group add-group"
-									onClick={onSaveNewGroup}
-								>
+								<button className="add-group" onClick={onSaveNewGroup}>
 									Add list
 								</button>
 								<a
-									className="btn-group cancel"
+									className="cancel"
 									onClick={() => {
 										closeAddNewGroup()
 									}}

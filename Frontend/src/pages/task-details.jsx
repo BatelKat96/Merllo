@@ -114,7 +114,7 @@ export function TaskDetails() {
                     <TaskSideBar onRemoveTask={onRemoveTask} />
 
                 </div>
-                <TaskCmpDynamoic cmpType={'members'} />
+                {/* <TaskCmpDynamoic cmpType={'members'} /> */}
             </div>
         </div>
     </section>

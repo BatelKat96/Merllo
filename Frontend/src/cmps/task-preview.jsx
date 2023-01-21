@@ -41,8 +41,9 @@ export function TaskPreview({ group, task }) {
 					{quickTaskEdit && <QuickTaskEdit taskId={task.id}
 						groupId={group.id}
 						boardId={boardId}
-						taskTitle={task.title}
+						task={task}
 						onEdit={onQuickTaskEdit}
+						toggleQuickTaskEdit={toggleQuickTaskEdit}
 						quickTaskEdit={quickTaskEdit} />}
 				</a>
 

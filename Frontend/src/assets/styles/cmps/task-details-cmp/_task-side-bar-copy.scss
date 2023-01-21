@@ -1,0 +1,38 @@
+.side-bar-menu {
+
+    h3 {
+        margin-top: 9px;
+        margin-bottom: 0px;
+        font-size: 12px;
+        word-spacing: -0.99px;
+    }
+
+    .btn-side-bar {
+        margin-top: 6px;
+        display: block;
+        width: 168px;
+        display: flex;
+        align-items: center;
+        padding-inline-start: 6px;
+
+        // in response max-with 300px
+        &:first-of-type {
+            margin-top: 3px;
+        }
+    }
+
+    .btn-side-bar-icon {
+        margin-inline-end: 6px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-remove-side-bar {
+        background: #b04632;
+        color: $clr6;
+
+        &:hover {
+            background-color: #b04632;
+        }
+    }
+}
