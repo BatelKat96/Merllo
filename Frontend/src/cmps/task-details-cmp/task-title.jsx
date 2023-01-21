@@ -2,7 +2,7 @@ import taskTitle from '../../assets/img/icons-task-details/taskTitle.svg'
 import { AiOutlineEye } from "react-icons/ai";
 
 export function TaskTitle({ handleChange, onSaveEdit, task, group }) {
-    console.log('groupTitle:', { group })
+    // console.log('groupTitle:', { group })
 
     return <section className='task-title-container'>
         <div>

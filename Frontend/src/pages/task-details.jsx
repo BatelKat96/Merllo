@@ -11,6 +11,7 @@ import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic';
+import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item';
 
 
 export function TaskDetails() {
@@ -79,6 +80,10 @@ export function TaskDetails() {
         console.log('add member:')
 
     }
+    function addLabel() {
+        console.log('add labels:')
+
+    }
 
 
     if (!task) return <h1 className='loading'></h1>
@@ -91,11 +96,14 @@ export function TaskDetails() {
             </Link>
 
             <div className='task-details-main-section'>
-                {<TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />}
+                <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />
 
                 <div className='task-details-container'>
                     <div className='task-details-edit-section'>
-                        <TaskMember memberIds={memberIds} addMember={addMember} />
+                        <div className='task-details-edit-item'>
+                            {memberIds && <TaskDynamicItem ids={memberIds} add={addMember} board={board} type={'members'} />}
+                            {labelIds && <TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'labels'} />}
+                        </div>
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
                         {/* <p>Checklist</p>
                         <p>                        Activity-
@@ -106,7 +114,7 @@ export function TaskDetails() {
                     <TaskSideBar onRemoveTask={onRemoveTask} />
 
                 </div>
-                <TaskCmpDynamoic cmpType={'members'} />
+                {/* <TaskCmpDynamoic cmpType={'members'} /> */}
             </div>
         </div>
     </section>
