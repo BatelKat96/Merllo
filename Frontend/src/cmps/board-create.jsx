@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { addBoard } from '../store/board.actions'
 import { boardService } from '../services/board.service'
 
@@ -7,7 +6,6 @@ import { IoClose } from 'react-icons/io5'
 
 export function BoardCreate({ closeBoardComposer }) {
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
-	const navigate = useNavigate()
 
 	function handleNewBoard({ target }) {
 		let { value, name: field } = target
