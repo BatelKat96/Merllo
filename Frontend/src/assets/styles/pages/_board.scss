@@ -1,8 +1,11 @@
 .board {
-    background-color:rgb(131 140 145);
-    color: $b-txt1;
+    // background-color:rgb(131 140 145);
+    background-image:url("../../img/borads-bg-imgs/b101.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $b-txt2;
     height: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 45px);
     display: flex;
     flex-direction: column;
 
@@ -65,8 +68,9 @@
         padding: 8px 4px 4px 12px;
         padding-left: 32px;
 
-        button {
-            color: $b-txt1;
+        button.btn-board {
+            color: $b-txt2;
+            background-color: rgb(255 255 255 / 20%);
             border-radius: 3px;
             border: none;
             font-size: 14px;
@@ -77,12 +81,79 @@
             position: relative;
             text-decoration: none;
             text-overflow: ellipsis;
+            transition: .1s ease;
+            display: flex;
+            align-items: center;
+
+            &.star-false {
+                left: 0;
+                padding: 5px 6px 5px 6px ;
+                top: 0;
+
+                svg {
+                    height: 20px;
+                    line-height: 20px;
+                    width: 20px;
+                    stroke-width:2.3;
+                }
+
+                &:hover {
+                    color:#f2d600;
+
+                    svg {
+                        stroke-width:2.5;
+                    }
+                }
+
+                &:active {
+                    color:#f2d600;
+                    svg {
+                        path {
+                            fill:#f2d600;
+                        }
+                    }
+                }
+            }
+
+            &.star-true {
+                left: 0;
+                padding: 5px 6px 5px 6px ;
+                top: 0;
+                color:#f2d600;
+                svg {
+                    height: 20px;
+                    line-height: 20px;
+                    width: 20px;
+                    stroke-width:2.3;
+                    path {
+                        fill:#f2d600;
+                    }
+                }
+
+                &:hover {
+                    color:#f2d600;
+
+                    svg {
+                        stroke-width:2.5;
+                        path {
+                            fill:none
+                        }
+                    }
+                }
+
+                &:active {
+                    color:$b-txt2;
+                    svg {
+                        path {
+                            fill:none
+                        }
+                    }
+                }
+            }
         }
 
-        ;
-
         span {
-            border-left: 1px solid $b-txt1;
+            border-left: 1px solid rgb(255 255 255 / 16%);
             float: left;
             height: 16px;
             margin: 0 8px;

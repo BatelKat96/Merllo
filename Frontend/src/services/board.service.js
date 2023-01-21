@@ -85,7 +85,12 @@ function _createBoards() {
 					fullname: 'Batel K',
 					imgUrl: 'http://batel-img',
 				},
-				style: {},
+				style: {
+					bgImg: '',
+					txtClr1: '#172B4D',
+					txtClr2: '#ffffff',
+					txtClr3: '#5E6C84',
+				},
 				labels: [
 					{
 						id: 'l101',

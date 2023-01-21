@@ -49,9 +49,16 @@
             color: white;
             font-weight: 700;
             font-size: 16px;
+            // background: url("https://unsplash.com/photos/PtVq35qD-CU");
+            background-size: cover;
+            background-repeat: no-repeat;
 
             &:hover {
                 background-color: #0000007e;
+            }
+
+            img {
+                object-fit: cover;
             }
         }
 
@@ -71,10 +78,6 @@
             &:hover {
                 background-color: #091e4214;
             }
-        }
-
-        .board-b101 {
-            background-color: $b-txt3;
         }
     }
 }
