@@ -8,7 +8,9 @@ export function TaskSideBar({ onRemoveTask }) {
 
     const [openModal, toggleOpenModal] = useState(false)
 
-    function onOpenModal() {
+    function onOpenModal(ev) {
+        // ev.stopPropagation()
+        // ev.preventDefault()
         toggleOpenModal(!openModal)
     }
 
@@ -26,12 +28,14 @@ export function TaskSideBar({ onRemoveTask }) {
         {openModal && <TaskCmpDynamoic cmpType={'members'}
             onOpenModal={onOpenModal} />}
 
-        <button className='clean-btn btn-task-details btn-side-bar'>
+        <button className='clean-btn btn-task-details btn-side-bar' onClick={onOpenModal}>
             <span className='btn-side-bar-icon'>
                 <BsTag />
             </span>
             Labels
         </button>
+        {openModal && <TaskCmpDynamoic cmpType={'labels'}
+            onOpenModal={onOpenModal} />}
 
         <button className='clean-btn btn-task-details btn-side-bar '>
             <span className='btn-side-bar-icon'>
@@ -42,6 +46,7 @@ export function TaskSideBar({ onRemoveTask }) {
 
         <h3 className='small-headline'>Actions</h3>
         {/* <button className='clean-btn btn-side-bar btn-archive-side-bar' onClick={()=>{}}><span className='btn-side-bar-icon'><BsArchive /></span>Archive</button> */}
+
         <button className='clean-btn btn-task-details btn-side-bar btn-remove-side-bar' onClick={() => { onRemoveTask() }}>
             <span className='btn-side-bar-icon'>
                 <AiOutlineMinus />

@@ -8,8 +8,6 @@ export function TaskCmpDynamoic(props) {
     let info
     DynamicCmp(props)
 
-    console.log('TaskCmpDynamoic');
-
     function DynamicCmp(currProps) {
 
         switch (currProps.cmpType) {
@@ -63,6 +61,7 @@ export function TaskCmpDynamoic(props) {
                     defaultValue={data.txt} />
 
                 <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3>
+
                 {props.cmpType === 'members' && <ul className='cmp-dynamoic-options-list clean-list'>
                     {info.map(opt =>
                         <li key={opt._id} className="cmp-dynamoic-option">
