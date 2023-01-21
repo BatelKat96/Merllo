@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { boardService } from '../services/board.service'
 import { saveTask } from '../store/board.actions'
 
 import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
@@ -9,10 +8,9 @@ import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
 import { ReactComponent as OpenTaskSvg } from '../assets/img/icons-task-details/taskTitle.svg'
 import { ReactComponent as MemberSvg } from '../assets/img/icons-task-preview/member.svg'
 
-export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
+export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskEdit }) {
     const navigate = useNavigate()
-    const [taskToEdit, setTaskToEdit] = useState()
-
+    const [taskToEdit, setTaskToEdit] = useState(task)
 
 
     function handleChange({ target }) {
@@ -23,15 +21,15 @@ export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
 
     function handleKeyPress(ev) {
         if (ev.key === "Enter" && !ev.shiftKey) {
-            onSaveEdit(ev)
+            onSaveEdit()
+            toggleQuickTaskEdit()
         }
     }
 
 
-    async function onSaveEdit(ev) {
-        ev.preventDefault()
+    async function onSaveEdit() {
         try {
-            const savedTask = await saveTask(taskId, groupId, boardId)
+            let savedTask = await saveTask(taskToEdit, groupId, boardId)
         } catch (err) {
             console.log('Cannot update task ', err)
         }
@@ -41,9 +39,6 @@ export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
         navigate(`/board/${boardId}/${groupId}/${taskId}`)
     }
 
-    function prevent(e) {
-        e.preventDefault();
-    } 
 
     return (
         <>
@@ -65,7 +60,7 @@ export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
                             spellCheck="false"
                             onChange={handleChange}
                             onKeyDown={handleKeyPress}
-                            defaultValue={taskTitle} />
+                            defaultValue={task.title} />
                         <button onClick={onSaveEdit}>Save</button>
                     </form>
 
@@ -85,21 +80,21 @@ export function QuickTaskEdit({ taskTitle, taskId, groupId, boardId }) {
                         <MemberSvg /> Change members
                     </button>
 
-                    <button>
+                    {/* <button>
                         <OpenTaskSvg /> Change cover
-                    </button>
+                    </button> */}
 
-                    <button>
+                    {/* <button>
                         <OpenTaskSvg /> Move
-                    </button>
+                    </button> */}
 
                     <button>
                         <MdOutlineContentCopy /> Copy
                     </button>
 
-                    <button>
+                    {/* <button>
                         <OpenTaskSvg /> Edit dates
-                    </button>
+                    </button> */}
 
                     <button>
                         <MdDeleteOutline /> Delete

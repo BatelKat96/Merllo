@@ -14,22 +14,30 @@ export function TaskCmpDynamoic(props) {
                 console.log('he:')
                 console.log('board.members:', board.members)
                 info = board.members
+                console.log('info:', info)
                 return info
 
             case 'labels':
                 console.log('ops:')
                 console.log('board.labels:', board.labels)
                 info = board.labels
+                console.log('info:', info)
+
                 return info
         }
     }
 
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+
     let data = {
-        title: props.cmpType,
+        title: capitalizeFirstLetter(props.cmpType),
         txt: '',
         placeholder: `Search ${props.cmpType}`,
         optionsTitle: `Board ${props.cmpType}`,
-        options: ['hi', 'bye', 'why']
+        options: info
     }
     console.log('data:', data)
 
@@ -39,11 +47,8 @@ export function TaskCmpDynamoic(props) {
     return <div className='task-cmp-dynamoic'>
         <div className='task-cmp-dynamoic-container'>
 
-            {/* <DynamicCmp cmpType={props} /> */}
-            {/* <p>{lal.id}</p> */}
-
             <p className='cmp-dynamoic-title'>{data.title}</p>
-            <hr />
+
             <input type="text"
                 className='cmp-dynamoic-input'
                 name="txt"
@@ -53,14 +58,30 @@ export function TaskCmpDynamoic(props) {
                 defaultValue={data.txt} />
 
             <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3>
-
-            <ul className='cmp-dynamoic-options-list clean-list'>
+            {props.cmpType === 'members' && <ul className='cmp-dynamoic-options-list clean-list'>
+                {info.map(opt =>
+                    <li key={opt._id} className="cmp-dynamoic-option">
+                        <img className='cmp-dynamoic-member-img' src={require(`../../assets/img/members-task-details/${opt.imgUrl}`)} alt={opt.imgUrl} />
+                        <span>{opt.fullname}</span>
+                    </li>
+                )}
+            </ul>}
+            {props.cmpType === 'labels' && <ul className='cmp-dynamoic-options-list clean-list'>
+                {info.map(opt =>
+                    <li key={opt._id} className="cmp-dynamoic-option cmp-dynamoic-option-labels" style={{ backgroundColor: `${opt.color}38` }}>
+                        {/* <img className='cmp-dynamoic-member-img' src={require(`../../assets/img/members-task-details/${opt.imgUrl}`)} alt={opt.imgUrl} /> */}
+                        <span className='color-circle' style={{ backgroundColor: `${opt.color}` }}></span>
+                        <p>{opt.title}</p>
+                    </li>
+                )}
+            </ul>}
+            {/* <ul className='cmp-dynamoic-options-list clean-list'>
                 {data.options.map(opt =>
                     <li key={opt} className="cmp-dynamoic-option">
                         {opt}
                     </li>
                 )}
-            </ul>
+            </ul> */}
         </div>
     </div>
 
