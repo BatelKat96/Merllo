@@ -86,6 +86,8 @@ export function GroupList() {
 									name="title"
 									className="edit-group-title"
 									id={group.id}
+									autoFocus
+									spellCheck="false"
 									maxLength="512"
 									defaultValue={group.title}
 									onChange={handleEditGroup}
@@ -129,6 +131,8 @@ export function GroupList() {
 								type="text"
 								name="title"
 								placeholder="Enter list title..."
+								autoFocus
+								spellCheck="false"
 								maxLength="512"
 								value={groupToEdit.title}
 								onChange={handleNewGroup}
