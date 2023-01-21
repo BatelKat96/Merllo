@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { boardService } from '../services/board.service'
 import { saveTask } from '../store/board.actions'
 
 import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'

@@ -1,5 +1,12 @@
 .homepage-footer {
     display: block;
     color: $hf-txt1;
-    background-color: $hf-btn1;
+    background-color: rgb(23, 43, 77);
+    text-align: center;
+    padding: 2px;
+    
+    a {
+        color: #FFFFFF;
+        font-size: 0.8rem;
+    }
 }

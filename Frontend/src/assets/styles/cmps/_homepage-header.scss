@@ -52,7 +52,7 @@
 
             color: $hh-txt3;
             font-family: charlie-semibold;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             letter-spacing: 0.08rem;
 
             border: none;
@@ -62,8 +62,13 @@
             }
 
             &.singup-btn {
-                background-color: $hh-bg2;
+                background-color: #0065FF;
+                transition: all 250ms ease-out 0s;
                 color: $hh-txt2;
+
+                &.singup-btn:hover {
+                    background-color: #0847a6;
+                }
             }
         }
 
