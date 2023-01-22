@@ -31,8 +31,8 @@ export function MainHeaderDemo() {
 	}
 
 	return (
-		<header className="main-header-demo">
-			<div className="right-nav">
+		<header className="main-header">
+			<div className="logo-nav">
 				<button>
 					<AppsSvg />
 				</button>
@@ -42,17 +42,20 @@ export function MainHeaderDemo() {
 					<h1 className="merllo-logo">Merllo</h1>
 				</NavLink>
 
-				<button>
-					Workspaces
-					<DownSvg />
-				</button>
 
-				<button>
+				<NavLink to="/workspace">
+					<button className="nav-btn">
+						Boards
+						<DownSvg />
+					</button>
+				</NavLink>
+
+				<button className="nav-btn">
 					Recent
 					<DownSvg />
 				</button>
 
-				<button>
+				<button className="nav-btn">
 					Starred
 					<DownSvg />
 				</button>
@@ -78,7 +81,8 @@ export function MainHeaderDemo() {
 				</button>
 
 				<button>
-					<UserSvg />
+					{/* <UserSvg /> */}
+					<img className='member-img' src={require(`../assets/img/members-task-details/batel.png`)} />
 				</button>
 			</div>
 			{isBoardComposerOpen && (

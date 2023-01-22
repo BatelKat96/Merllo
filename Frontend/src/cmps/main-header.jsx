@@ -32,7 +32,7 @@ export function MainHeader() {
 
 	return (
 		<header className="main-header">
-			<div className="right-nav">
+			<div className="logo-nav">
 				<button>
 					<AppsSvg />
 				</button>
@@ -42,17 +42,20 @@ export function MainHeader() {
 					<h1 className="merllo-logo">Merllo</h1>
 				</NavLink>
 
-				<button>
-					Workspaces
-					<DownSvg />
-				</button>
 
-				<button>
+				<NavLink to="/workspace">
+					<button className="nav-btn">
+						Boards
+						<DownSvg />
+					</button>
+				</NavLink>
+
+				<button className="nav-btn">
 					Recent
 					<DownSvg />
 				</button>
 
-				<button>
+				<button className="nav-btn">
 					Starred
 					<DownSvg />
 				</button>
@@ -78,7 +81,8 @@ export function MainHeader() {
 				</button>
 
 				<button>
-					<UserSvg />
+					{/* <UserSvg /> */}
+					<img className='member-img' src={require(`../assets/img/members-task-details/batel.png`)} />
 				</button>
 			</div>
 			{isBoardComposerOpen && (
