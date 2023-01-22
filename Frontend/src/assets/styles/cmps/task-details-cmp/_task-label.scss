@@ -26,10 +26,11 @@
         }
 
         .add-labels-icon {
-            color: #6b7485;
+            color: $t-txt1;
             margin: auto;
-            width: 15px;
-            height: 15px;
+            // width: 15px;
+            // height: 15px;
+            font-size: 18px;
         }
 
     }
