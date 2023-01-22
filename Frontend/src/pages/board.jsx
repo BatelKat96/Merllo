@@ -45,6 +45,7 @@ export function Board() {
 			className="board"
 			style={{
 				backgroundImage: `url(../img/borads-bg-imgs/${board._id}.jpg)`,
+				backgroundSize: 'cover',
 			}}
 		>
 			<div className="board-top-menu">
