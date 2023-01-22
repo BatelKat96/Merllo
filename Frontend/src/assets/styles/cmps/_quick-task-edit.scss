@@ -89,6 +89,18 @@
             padding: 10px 12px;
             border: none;
 
+            .tag-svg {
+                transform: rotate(270deg)
+            }
+
+            .copy-svg {
+                    path {
+                        stroke: #c7d1db98;
+                        fill: transparent;
+                    }
+    
+            }
+
         }
     }
 }

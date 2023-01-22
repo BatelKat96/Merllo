@@ -114,11 +114,13 @@
 
         .add-new-group {
             width: 272px;
+            height: 32px;
             padding: 0 4px 4px 4px;
             transition: background 85ms ease-in, opacity 40ms ease-in, border-color 85ms ease-in;
 
             .placeholder {
                 font-size: 14px;
+                line-height: 26px;
                 color: white;
                 padding: 6px 8px;
                 margin: 0;
