@@ -24,7 +24,6 @@ export function GroupList() {
 		setIsAddNewGroupOpen(false)
 		setGroupToEdit(boardService.getEmptyGroup())
 	}
-	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
 	function handleNewGroup({ target }) {
 		let { value, name: field } = target
@@ -91,6 +90,8 @@ export function GroupList() {
 	}
 
 	if (!groups) return <h1>Loading....</h1>
+	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
+
 	return (
 		<section className="group-list-container">
 			<ul className="group-list clean-list">

@@ -3,9 +3,14 @@ import { addBoard } from '../store/board.actions'
 import { boardService } from '../services/board.service'
 
 import { IoClose } from 'react-icons/io5'
+import { Navigate, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export function BoardCreate({ closeBoardComposer }) {
+	const board = useSelector((storeState) => storeState.boardModule.board)
+	const boards = useSelector((storeState) => storeState.boardModule.boards)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
+	const navigate = useNavigate()
 
 	function handleNewBoard({ target }) {
 		let { value, name: field } = target
@@ -16,9 +21,10 @@ export function BoardCreate({ closeBoardComposer }) {
 		ev.preventDefault()
 		if (!boardToEdit.title) return
 		try {
-			await addBoard(boardToEdit)
+			const newBoard = await addBoard(boardToEdit)
 			closeBoardComposer()
 			setBoardToEdit(boardService.getEmptyBoard())
+			navigate(`/board/${newBoard._id}`)
 		} catch (err) {
 			console.log('Failed to save new board', err)
 		}
