@@ -9,6 +9,8 @@ import { removeGroup, saveGroup } from '../store/board.actions'
 import { TaskList } from './task-list'
 import { GroupDropdown } from './group-dropdown'
 
+import Loader from '../assets/img/loader.svg'
+
 export function GroupList() {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
@@ -89,7 +91,8 @@ export function GroupList() {
 		}
 	}
 
-	if (!groups) return <h1>Loading....</h1>
+	if (!groups) return <img className="loader" src={Loader} alt="loader" />
+
 	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
 	return (

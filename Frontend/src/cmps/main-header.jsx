@@ -75,10 +75,10 @@ export function MainHeader() {
 				<button>
 					<NotificationSvg />
 				</button>
-
+				{/*
 				<button>
 					<HelpSvg />
-				</button>
+				</button> */}
 
 				<button>
 					{/* <UserSvg /> */}

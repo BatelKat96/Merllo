@@ -6,7 +6,7 @@ import { boardService } from '../services/board.service'
 import { saveTask } from '../store/board.actions'
 
 import { IoClose } from 'react-icons/io5'
-import { AiOutlinePlus } from 'react-icons/ai'
+import { BsPlusLg } from 'react-icons/bs'
 import { FiMoreHorizontal } from 'react-icons/fi'
 
 export function TaskList({ group, tasks }) {
@@ -69,7 +69,7 @@ export function TaskList({ group, tasks }) {
                         <button
                             className="add-a-task"
                             onClick={openAddNewTask}>
-                            <AiOutlinePlus className="icon-plus" /> Add a card
+                            <BsPlusLg className="icon-plus" /> Add a card
                         </button>
 
                         {/* <button className="btn-group template">template</button> */}
@@ -94,7 +94,9 @@ export function TaskList({ group, tasks }) {
                                 onChange={handleNewTask}
                             ></textarea>
 
-                            <div className="add-task-controls">
+                            <div className="add-task-btns">
+
+                                <div className="add-btns">
                                 <button
                                     className="add-task-btn"
                                     id={group.id}
@@ -107,6 +109,18 @@ export function TaskList({ group, tasks }) {
                                 >
                                     <IoClose className="icon-close" />
                                 </a>
+                                </div>
+
+                                <div className="more-btns">
+
+                                    <a
+                                        className="more-btn"
+                                        onClick={closeAddNewTask}
+                                    >
+                                        <FiMoreHorizontal className="icon-close" />
+                                    </a>
+                                </div>
+
                             </div>
 
                         </form>

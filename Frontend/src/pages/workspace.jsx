@@ -9,6 +9,8 @@ import { AiOutlineClockCircle } from 'react-icons/ai'
 import { HiOutlineStar } from 'react-icons/hi2'
 import { ReactComponent as UserSvg } from '../assets/img/icons-header/user.svg'
 
+import Loader from '../assets/img/loader.svg'
+
 export function Workspace() {
 	const boards = useSelector((storeState) => storeState.boardModule.boards)
 	const board = useSelector((storeState) => storeState.boardModule.board)
@@ -56,7 +58,7 @@ export function Workspace() {
 	// 	return { backgroundColor: `blue` }
 	// }
 
-	if (!boards) return <h1>Loading....</h1>
+	if (!boards) return <img className="loader" src={Loader} alt="loader" />
 
 	return (
 		<section className="workspace-section">
