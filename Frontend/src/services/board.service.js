@@ -6,7 +6,6 @@ import { storageService } from './async-storage.service.js'
 import boardsData from '../data/demo-data.json'
 console.log(':', boardsData)
 
-
 const STORAGE_KEY = 'board'
 
 export const boardService = {

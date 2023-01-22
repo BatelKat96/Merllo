@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { IoClose } from 'react-icons/io5'
-import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
 import { HiDotsHorizontal } from 'react-icons/hi'
 
 import { boardService } from '../services/board.service'
@@ -16,7 +15,6 @@ export function GroupList() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState({ groupId: '' })
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
 	const groups = board.groups
-	const [dropdownPos, setDropdownPos] = useState('')
 
 	//  create new group
 	function openAddNewGroup() {
@@ -116,7 +114,6 @@ export function GroupList() {
 									onRemoveGroup={onRemoveGroup}
 									onCopyGroup={onCopyGroup}
 									group={group}
-									dropdownPos={dropdownPos}
 								/>
 							)}
 						</div>
