@@ -18,11 +18,23 @@
         float: left;
     }
 
-    .task-member-container {
-        float: right;
 
-        .member {
-            margin-inline-start: 3px;
+    .task-preview-actions {
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+
+        .task-preview-description-icon {
+            margin-top: 6px;
+            width: 18px;
+        }
+
+        .task-member-container {
+            float: right;
+
+            .member {
+                margin-inline-start: 3px;
+            }
         }
     }
 
