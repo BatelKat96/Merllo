@@ -17,44 +17,52 @@
     .board-main-content {
         // scroll-behavior: auto;
         overflow-x: scroll;
-        padding-left: 16px;
+        padding-left: 22px;
         margin-bottom: 5px;
         flex-grow: 1;
         // height: 100%;
         max-height: calc(100vh - 100px);
 
         &::-webkit-scrollbar {
-        width: 12px;
-        height: 12px;
+            width: 12px;
+            height: 12px;
         }
+
         &::-webkit-scrollbar-button {
-        width: 38px;
-        height: 38px;
+            width: 38px;
+            height: 38px;
         }
+
         &::-webkit-scrollbar-thumb {
-        background: #ffffff98;
-        border: none ;
-        border-radius: 4px;
+            background: #ffffff98;
+            border: none;
+            border-radius: 4px;
         }
+
         &::-webkit-scrollbar-thumb:hover {
-        background: #ffffff98;
+            background: #ffffff98;
         }
+
         &::-webkit-scrollbar-thumb:active {
-        background: #ffffff98;
+            background: #ffffff98;
         }
+
         &::-webkit-scrollbar-track {
-        background: #00000026;
-        border: none ;
-        border-radius: 4px;
+            background: #00000026;
+            border: none;
+            border-radius: 4px;
         }
+
         &::-webkit-scrollbar-track:hover {
-        background: #00000026;
+            background: #00000026;
         }
+
         &::-webkit-scrollbar-track:active {
-        background: #00000026;
+            background: #00000026;
         }
+
         &::-webkit-scrollbar-corner {
-        background: transparent;
+            background: transparent;
         }
 
     }
@@ -64,7 +72,7 @@
         height: 50px;
         display: flex;
         align-items: center;
-        padding: 6px 4px 6px 20px;
+        padding: 6px 4px 6px 30px;
         // padding-left: 32px;
 
         button.btn-board {
@@ -87,70 +95,77 @@
             &:hover {
                 background-color: rgb(255 255 255 / 35%);
             }
+
             &:active {
                 background-color: rgb(255 255 255 / 45%);
             }
 
             &.star-false {
                 left: 0;
-                padding: 5px 6px 5px 6px ;
+                padding: 5px 6px 5px 6px;
                 top: 0;
 
                 svg {
                     height: 20px;
                     line-height: 20px;
                     width: 20px;
-                    stroke-width:2.3;
+                    stroke-width: 2.3;
                 }
 
                 &:hover {
-                    color:#f2d600;
+                    color: #f2d600;
 
                     svg {
-                        stroke-width:2.5;
+                        stroke-width: 2.5;
                     }
                 }
 
                 &:active {
-                    color:#f2d600;
+                    color: #f2d600;
+
                     svg {
                         path {
-                            fill:#f2d600;
+                            fill: #f2d600;
                         }
                     }
                 }
             }
+
             &.star-true {
                 left: 0;
-                padding: 5px 6px 5px 6px ;
+                padding: 5px 6px 5px 6px;
                 top: 0;
-                color:#f2d600;
+                color: #f2d600;
+
                 svg {
                     height: 20px;
                     line-height: 20px;
                     width: 20px;
-                    stroke-width:2.3;
+                    stroke-width: 2.3;
+
                     path {
-                        fill:#f2d600;
+                        fill: #f2d600;
                     }
                 }
 
                 &:hover {
-                    color:#f2d600;
+                    color: #f2d600;
 
                     svg {
-                        stroke-width:2.5;
+                        stroke-width: 2.5;
+
                         path {
-                            fill:none
+                            fill: none
                         }
                     }
                 }
 
                 &:active {
-                    color:$b-txt2;
+                    color: $b-txt2;
+
                     svg {
                         path {
-                            fill:none
+                            fill: none
                         }
                     }
                 }

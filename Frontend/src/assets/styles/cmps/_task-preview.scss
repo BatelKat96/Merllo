@@ -1,5 +1,5 @@
 .task-preview {
-    padding: 6px 8px;
+    padding: 6px 8px 2px;
     overflow: hidden;
     margin: 4px 3px;
     min-height: 40px;
@@ -32,16 +32,16 @@
             width: 18px;
         }
 
-        .task-member-container {
+        .task-preview-member-container {
             float: right;
 
-            .member {
+            .task-preview-member {
                 margin-inline-start: 3px;
             }
         }
     }
 
-    .task-label-container {
+    .task-preview-label-container {
         display: inline-block;
 
 

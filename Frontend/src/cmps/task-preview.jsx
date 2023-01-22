@@ -42,7 +42,7 @@ export function TaskPreview({ group, task, board }) {
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
-				<div className="task-label-container">
+				<div className="task-preview-label-container">
 					{fullLabels && fullLabels.map(label =>
 						<li key={label.id} style={{ backgroundColor: `${label.color}` }} className="label" onClick={onLabel}>
 						</li>
@@ -66,9 +66,9 @@ export function TaskPreview({ group, task, board }) {
 
 				<div className="task-preview-actions ">
 					{task.description && <img className='task-preview-description-icon' src={description} />}
-					<ul className="task-member-container clean-list">
+					<ul className="task-preview-member-container clean-list">
 						{fullMembers && fullMembers.map(member =>
-							<li key={member._id} className="member" onClick={onLabel}>
+							<li key={member._id} className="task-preview-member" onClick={onLabel}>
 								<img className='member-img' src={require(`../assets/img/members-task-details/${member.imgUrl}`)} alt={member.fullname} title={member.fullname} />
 
 							</li>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic';
 
 import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
+import { TiTag } from "react-icons/ti";
 import { AiOutlineMinus } from "react-icons/ai";
 
 export function TaskSideBar({ onRemoveTask }) {
@@ -29,8 +30,8 @@ export function TaskSideBar({ onRemoveTask }) {
             onOpenModal={onOpenModal} />}
 
         <button className='clean-btn btn-task-details btn-side-bar' onClick={(event) => onOpenModal(event, 'labels')}>
-            <span className='btn-side-bar-icon'>
-                <BsTag />
+            <span className='btn-side-bar-icon btn-side-bar-icon-label '>
+                <TiTag />
             </span>
             Labels
         </button>

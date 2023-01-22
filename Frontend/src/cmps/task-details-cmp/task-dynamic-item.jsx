@@ -21,6 +21,7 @@ export function TaskDynamicItem({ ids, add, board, type }) {
             )}
 
 
+
             <li key="add-more" className={`add-${type}`} title={`Add another ${type}`} onClick={() => { '#' }} >
                 <FiPlus className={`add-${type}-icon`} onClick={() => { add() }} />
             </li>

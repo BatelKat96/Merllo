@@ -2,11 +2,15 @@
     padding-inline-start: 40px;
     margin-top: 4px;
 
+    h3 {
+        text-transform: capitalize;
+    }
+
     .members-list {
         .member-img {
             cursor: pointer;
             margin-inline-end: 4px;
-            width: 34px;
+            width: 32px;
             height: 34px;
         }
     }
@@ -14,7 +18,7 @@
     .add-members {
         background-color: $t-bg5;
         border-radius: 50%;
-        width: 34px;
+        width: 32px;
         height: 34px;
         display: flex;
         cursor: pointer;

@@ -103,6 +103,7 @@ export function TaskDetails() {
                         <div className='task-details-edit-item'>
                             {memberIds && <TaskDynamicItem ids={memberIds} add={addMember} board={board} type={'members'} />}
                             {labelIds && <TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'labels'} />}
+                            {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
                         {/* <p>Checklist</p>
