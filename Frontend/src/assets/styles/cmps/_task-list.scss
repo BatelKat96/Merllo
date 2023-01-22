@@ -3,6 +3,8 @@
 
     &::-webkit-scrollbar {
         width: 8px;
+        padding-top: 20px;
+
       }
     
     &::-webkit-scrollbar-thumb {
@@ -30,30 +32,28 @@
 }
                 
     .task-list-bottom {
-        // height: fit-content;
-        // min-height: 50px;
-        // display: flex;
-        // flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
         font-size: 14px;
-        // margin-bottom: 6px;
+        margin-top: 2px;
 
         .add-a-task-template {
             width: 98%;
             margin: 0px;
             margin: auto;
 
+            button {
+                display: flex;
+                align-items: center;
+            }
+
             .add-a-task {
                 width: 100%;
                 text-align: left;
                 border-radius: 3px;
-                margin: 2px 0px;
-                padding: 3px 8px;
+                padding: 8px;
+                padding-left: 18px;
                 font-family: segoe_ui;
                 font-weight: 400;
                 font-size: 14px;
-                line-height: 20px;
                 border: none;
                 color: #5E6C84;
                 background: transparent;
@@ -61,8 +61,7 @@
 
                 .icon-plus {
                     font-size: 12px;
-                    text-align: center;
-                    justify-content: center;
+                    margin-right: 8px;
                 }
 
                 &:hover {
@@ -75,7 +74,6 @@
                     
 
         .task-composer {
-            // height: 105px;
             width: 98%;
             margin: 0px;
             margin: auto;
@@ -84,6 +82,7 @@
                 width: 100%;
                 min-height: 54px;
                 padding: 4px 8px;
+                margin: 3px 0;
                 max-height: 162px;
                 color: #5E6C84;
                 background-color: #ffffff;
@@ -120,9 +119,21 @@
                 }
             }
     
-            .add-task-controls {
+            .add-task-btns {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                margin-bottom: 2px;
+                width: 100%;
+
+                .add-btns {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .more-btns {
+                    align-items: center;
+                }
                         
                 .add-task-btn {
                     background-color: #0079bf;
@@ -135,6 +146,7 @@
                     line-height: 20px;
                     font-size: 14px;
                     font-weight: 400;
+                    margin-bottom: 0px;
                         
                     &:hover {
                         background-color: #026aa7;
@@ -148,7 +160,7 @@
                     }
                 }
                         
-                .cancel-btn {
+                .cancel-btn, .more-btn {
                     background-color: unset;
                     color: #5E6C84;
                     border: none;
@@ -158,10 +170,25 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    &.more-btn {
+                        height: 32px;
+                        width: 32px;
+                        margin: 0;
+                        
+                        svg {
+                            font-size: 24px;
+                        }
+                    }
                         
                     &:hover {
                         cursor: pointer;
                         color: #172b4d;
+                    }
+
+                    &.more-btn:hover {
+                        border-radius: 3px;
+                        background-color:#091e4214;
                     }
                         
                 .icon-close {

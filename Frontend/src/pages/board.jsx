@@ -9,6 +9,8 @@ import { MdDeleteOutline, MdDelete } from 'react-icons/md'
 
 import { GroupList } from '../cmps/group-list'
 
+import Loader from '../assets/img/loader.svg'
+
 export function Board() {
 	const { boardId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
@@ -38,7 +40,7 @@ export function Board() {
 		}
 	}
 
-	if (!board) return <h1>Loading....</h1>
+	if (!board) return <img className="loader" src={Loader} alt="loader" />
 
 	return (
 		<section

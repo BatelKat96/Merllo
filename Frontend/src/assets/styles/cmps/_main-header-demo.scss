@@ -31,7 +31,7 @@
         }
 
         &.create-btn {
-            padding: 8px;
+            padding: 5px 8px 8px;
             background-color: $wh-bg2;
             background-color: #5A78B5;
             border-radius: 3px;
@@ -39,7 +39,7 @@
 
         &.create-btn:hover {
             background-color: $wh-bg1;
-            background-color: rgb(89, 123, 185);
+            background-color: rgb(132, 152, 188);
         }
 
         img {
@@ -53,6 +53,7 @@
     button:hover,
     button:active {
         background-color: $wh-bg2;
+        background-color: #5A78B5;
     }
 
     svg {
@@ -109,6 +110,7 @@
             justify-content: flex-start;
             border: 1px solid rgba(255, 255, 255, 0.25);
             box-shadow: none;
+            cursor: text;
 
             svg {
                 height: 16px;

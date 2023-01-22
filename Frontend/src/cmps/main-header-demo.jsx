@@ -76,9 +76,9 @@ export function MainHeaderDemo() {
 					<NotificationSvg />
 				</button>
 
-				<button>
+				{/* <button>
 					<HelpSvg />
-				</button>
+				</button> */}
 
 				<button>
 					{/* <UserSvg /> */}
