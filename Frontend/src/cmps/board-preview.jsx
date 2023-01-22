@@ -1,4 +1,5 @@
 import { boardImg } from '../img/borads-bg-imgs/b101.jpg'
+import { HiOutlineStar } from 'react-icons/hi2'
 
 export function BoardPreview({ board }) {
 	return (
@@ -9,7 +10,14 @@ export function BoardPreview({ board }) {
 			}}
 		>
 			<span className="preview-fade">
-				<div className="preview-details">{board.title}</div>
+				<div className="preview-details">
+					<span className="preview-board-title">{board.title}</span>
+					{board.isStarred && (
+						<span className="preview-board-starred">
+							<HiOutlineStar />
+						</span>
+					)}
+				</div>
 			</span>
 		</section>
 	)
