@@ -40,6 +40,9 @@
             padding: 8px;
 
             .preview-board-starred {
+                background-color: none;
+                border: none;
+                outline: none;
                 align-self: end;
                 color:#f2d600;
                 height: 20px;
@@ -54,7 +57,16 @@
                 }
 
                 &:hover {
-                    
+                    color:#f2d600;
+                    svg {
+                        height: 16px;
+                        line-height: 16px;
+                        width: 16px;
+                        stroke-width:2.5;
+                        path {
+                            fill:none;
+                        }
+                    }
                 }
 
                 // &.star-true {

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { loadBoards } from '../store/board.actions'
+import { loadBoards, updateBoard } from '../store/board.actions'
 import { boardService } from '../services/board.service'
 
 import { AiOutlineClockCircle } from 'react-icons/ai'
@@ -10,6 +10,7 @@ import { BoardPreview } from '../cmps/board-preview'
 
 export function Workspace() {
 	const boards = useSelector((storeState) => storeState.boardModule.boards)
+	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isBoardComposerOpen, setIsBoardComposerOpen] = useState(false)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 	const starredBoards = getStarredBoards()
@@ -29,6 +30,18 @@ export function Workspace() {
 
 	function getStarredBoards() {
 		return boards.filter((board) => board.isStarred)
+	}
+
+	async function onToggleStar(event, board) {
+		event.stopPropagation()
+		event.preventDefault()
+		board.isStarred = !board.isStarred
+		try {
+			await updateBoard(board)
+			console.log('success')
+		} catch (err) {
+			console.log('Cannot update board', err)
+		}
 	}
 
 	// function getBoardStyle(board) {
@@ -61,7 +74,7 @@ export function Workspace() {
 						return (
 							<li key={`starred-${strdBoard._id}`}>
 								<a href={`/board/${strdBoard._id}`}>
-									<BoardPreview board={strdBoard} />
+									<BoardPreview board={strdBoard} onToggleStar={onToggleStar} />
 								</a>
 							</li>
 							// <a href={`/board/${strdBoard._id}`}>
@@ -127,7 +140,7 @@ export function Workspace() {
 					{boards.map((board) => (
 						<li key={`starred-${board._id}`}>
 							<a href={`/board/${board._id}`}>
-								<BoardPreview board={board} />
+								<BoardPreview board={board} onToggleStar={onToggleStar} />
 							</a>
 						</li>
 						// <Link to={`/board/${board._id}`}>

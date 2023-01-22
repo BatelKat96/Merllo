@@ -1,7 +1,20 @@
 import { boardImg } from '../img/borads-bg-imgs/b101.jpg'
 import { HiOutlineStar } from 'react-icons/hi2'
+import { updateBoard } from '../store/board.actions'
 
-export function BoardPreview({ board }) {
+export function BoardPreview({ board, onToggleStar }) {
+	// async function onToggleStar(event) {
+	// 	event.stopPropagation()
+	// 	event.preventDefault()
+	// 	board.isStarred = !board.isStarred
+	// 	try {
+	// 		await updateBoard(board)
+	// 		console.log('success')
+	// 	} catch (err) {
+	// 		console.log('Cannot update board', err)
+	// 	}
+	// }
+
 	return (
 		<section
 			className="board-preview"
@@ -13,7 +26,13 @@ export function BoardPreview({ board }) {
 				<div className="preview-details">
 					<span className="preview-board-title">{board.title}</span>
 					{board.isStarred && (
-						<span className="preview-board-starred">
+						// <button className="preview-board-starred">
+						// 	<HiOutlineStar />
+						// </button>
+						<span
+							className="preview-board-starred"
+							onClick={(event) => onToggleStar(event, board)}
+						>
 							<HiOutlineStar />
 						</span>
 					)}
