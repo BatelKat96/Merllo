@@ -33,7 +33,48 @@
         }
 
         .preview-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
             padding: 8px;
+
+            .preview-board-starred {
+                align-self: end;
+                color:#f2d600;
+                height: 20px;
+                svg {
+                    height: 16px;
+                    line-height: 16px;
+                    width: 16px;
+                    stroke-width:1.3;
+                    path {
+                        fill:#f2d600;
+                    }
+                }
+
+                &:hover {
+                    
+                }
+
+                // &.star-true {
+                //     left: 0;
+                //     padding: 5px 6px 5px 6px ;
+                //     top: 0;
+    
+                //     &:hover {
+                //         color:#f2d600;
+    
+                //         svg {
+                //             stroke-width:2.5;
+                //             path {
+                //                 fill:none
+                //             }
+                //         }
+                //     }
+            }
+
+            
         }
     }
 }
