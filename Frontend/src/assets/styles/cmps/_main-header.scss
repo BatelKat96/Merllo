@@ -104,6 +104,8 @@
             background-color: rgba(255, 255, 255, 0.2);
             color: $wh-txt1;
             justify-content: flex-start;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: none;
 
             svg {
                 height: 16px;
