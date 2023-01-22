@@ -18,6 +18,9 @@
         float: left;
     }
 
+    p {
+        margin-block: 0;
+    }
 
     .task-preview-actions {
         // display: flex;
@@ -68,7 +71,7 @@
         clear: both;
         color: $t-txt1;
         display: block;
-        margin: 0 0 4px;
+        // margin: 0 0 4px;
         overflow: hidden;
     }
 
