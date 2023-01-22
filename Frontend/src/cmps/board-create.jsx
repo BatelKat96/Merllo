@@ -24,6 +24,7 @@ export function BoardCreate({ closeBoardComposer }) {
 			const newBoard = await addBoard(boardToEdit)
 			closeBoardComposer()
 			setBoardToEdit(boardService.getEmptyBoard())
+			console.log('new board success!')
 			navigate(`/board/${newBoard._id}`)
 		} catch (err) {
 			console.log('Failed to save new board', err)
