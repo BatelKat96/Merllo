@@ -54,10 +54,8 @@ export function TaskDetails() {
     async function onRemoveTask() {
         try {
             console.log('remove:')
-
             const removedTask = await removeTask(taskId, groupId, boardId)
             console.log('removedTask:', removedTask)
-
             navigate(`/board/${boardId}`)
             // showSuccessMsg(`Task edited (id: ${removedTask._id})`)
         } catch (err) {
@@ -68,6 +66,8 @@ export function TaskDetails() {
     async function onSaveEdit(ev) {
         ev.preventDefault()
         try {
+            console.log('in:')
+
             const savedTask = await saveTask(task, groupId, boardId)
             // showSuccessMsg(`Task edited (id: ${savedTask._id})`)
         } catch (err) {
@@ -76,8 +76,26 @@ export function TaskDetails() {
         }
     }
 
-    function addMember() {
-        console.log('add member:')
+    async function addMember(memberId, ev) {
+        // ev.preventDefault()
+        try {
+            console.log('add member:')
+            console.log('memberIds:', memberIds)
+            memberIds.find((id) => {
+                console.log('id:', id)
+
+                if (memberId === id) throw new Error('jjjjj')
+            })
+            memberIds.push(memberId)
+            console.log('after memberIds:', memberIds)
+            console.log('task:', task)
+            await saveTask(task, groupId, boardId)
+            console.log('after save task:', task)
+
+        } catch (err) {
+            console.log('Cannot update task ', err)
+            // showErrorMsg('Cannot update task ', err)
+        }
 
     }
     function addLabel() {
@@ -112,7 +130,7 @@ export function TaskDetails() {
                         </p> */}
 
                     </div>
-                    <TaskSideBar onRemoveTask={onRemoveTask} />
+                    <TaskSideBar onRemoveTask={onRemoveTask} task={task} />
 
                 </div>
                 {/* <TaskCmpDynamoic cmpType={'members'} /> */}

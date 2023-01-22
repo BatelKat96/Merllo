@@ -60,7 +60,7 @@
                 display: flex;
                 margin-block: 9px;
                 align-items: center;
-                padding-inline-start: 10px;
+                padding-inline-start: 5px;
 
                 // p {
                 //     margin: 0;
@@ -70,21 +70,21 @@
 
             .cmp-dynamoic-options-title {
                 padding-top: 1px;
-                letter-spacing: 0.06rem;
+                margin-block-end: 7px;
+                // letter-spacing: 0.06rem;
             }
 
             .cmp-dynamoic-options-list {
-                padding: 5px;
+                // padding: 5px;
+
+                .cmp-dynamoic-option {
+                    margin-block: 0;
+                }
 
                 span {
-                    padding-left: 10px;
-                    letter-spacing: 0.04rem;
+                    padding-left: 0px;
+                    // letter-spacing: 0.04rem;
                 }
-            }
-
-            .cmp-dynamoic-member-img {
-                width: 32px;
-                height: 32px;
             }
 
 
@@ -96,7 +96,7 @@
 .cmp-dynamoic-member-img {
     width: 32px;
     height: 32px;
-    margin-inline-end: 10px;
+    margin-inline-end: 8px;
     margin-block: 4px;
 }
 

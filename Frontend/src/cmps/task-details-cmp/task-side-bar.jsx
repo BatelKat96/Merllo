@@ -5,7 +5,7 @@ import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
 import { TiTag } from "react-icons/ti";
 import { AiOutlineMinus } from "react-icons/ai";
 
-export function TaskSideBar({ onRemoveTask }) {
+export function TaskSideBar({ onRemoveTask, task }) {
 
     const [openModal, toggleOpenModal] = useState(false)
 
@@ -26,7 +26,7 @@ export function TaskSideBar({ onRemoveTask }) {
             </span>
             Members
         </button>
-        {openModal && <TaskCmpDynamoic cmpType={'members'}
+        {openModal && <TaskCmpDynamoic cmpType={'members'} task={task}
             onOpenModal={onOpenModal} />}
 
         <button className='clean-btn btn-task-details btn-side-bar' onClick={(event) => onOpenModal(event, 'labels')}>
@@ -35,8 +35,8 @@ export function TaskSideBar({ onRemoveTask }) {
             </span>
             Labels
         </button>
-        {openModal && <TaskCmpDynamoic cmpType={'labels'}
-            onOpenModal={onOpenModal} />}
+        {/* {openModal && <TaskCmpDynamoic cmpType={'labels'}
+            onOpenModal={onOpenModal} />} */}
 
         <button className='clean-btn btn-task-details btn-side-bar '>
             <span className='btn-side-bar-icon'>

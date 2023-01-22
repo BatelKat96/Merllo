@@ -21,55 +21,46 @@
         display: block;
         width: 47.46px;
         margin-inline-start: 5.5px;
-        display: none;
-
-        .task-description-textarea:focus+.btn-description-edit {}
-
     }
 
+    .task-description-p {
+        grid-column: 2;
+        margin: 0;
+    }
 
+    .task-description-placeholder {
+        grid-column: 2;
+        margin: 0;
+        background-color: $t-bg5;
+        height: 56px;
+        width: 512px;
+        padding-inline: 12px;
+        padding-block: 8px;
+    }
 
     .task-description-textarea {
-        height: 56px;
+        height: 108px;
         width: 512px;
         padding-inline: 12px;
         padding-block: 12px;
         font-family: San_francisco_light;
-        background-color: $t-bg5;
         margin-inline-start: 40px;
         letter-spacing: 0.07em;
+        background-color: $clr6 ;
 
         &:hover {
-            background-color: $t-hover3;
             cursor: pointer;
-        }
-
-        &:focus {
-            height: 108px;
-            background-color: $clr6;
-
-
-            &:hover {
-                background-color: none;
-            }
+            background-color: none;
         }
 
     }
 
-    // .task-description-textarea:focus+.btn-description-edit {
-    //     opacity: 0;
-    // }
-
-
-    .task-description-textarea:focus+.task-description-btn {
-        display: block;
-    }
 
 
     .task-description-btn {
         margin-inline-start: 40px;
         margin-block-start: 8px;
-        display: none;
+        // display: none;
     }
 
     .btn-description-save {

@@ -4,17 +4,17 @@ import { IoClose } from "react-icons/io5"
 
 export function TaskCmpDynamoic(props) {
     const board = useSelector((storeState) => storeState.boardModule.board)
-    const members = 'Labels'
+    // const members = 'Labels'
     let info
     DynamicCmp(props)
 
-    function DynamicCmp(currProps) {
+    const { labelIds, memberIds } = props.task
 
+    function DynamicCmp(currProps) {
         switch (currProps.cmpType) {
             case 'members':
                 info = board.members
                 return info
-
             case 'labels':
                 info = board.labels
                 return info
@@ -36,7 +36,17 @@ export function TaskCmpDynamoic(props) {
         optionsTitle: `Board ${props.cmpType}`,
         options: info
     }
-    // console.log('data:', data)
+
+    function isCheck(id) {
+        return memberIds.find((member) => (member === id))
+    }
+
+    function handleChange({ target }) {
+        let { value, type, name: field } = target
+        value = type === 'number' ? +value : value
+        setTask((prevTask) => ({ ...prevTask, [field]: value }))
+    }
+
 
 
     if (!board) return <h1 className='loading'>Loadings....</h1>
@@ -65,8 +75,18 @@ export function TaskCmpDynamoic(props) {
                 {props.cmpType === 'members' && <ul className='cmp-dynamoic-options-list clean-list'>
                     {info.map(opt =>
                         <li key={opt._id} className="cmp-dynamoic-option">
-                            <img className='cmp-dynamoic-member-img' src={require(`../../assets/img/members-task-details/${opt.imgUrl}`)} alt={opt.imgUrl} />
-                            <span>{opt.fullname}</span>
+                            <label>
+
+                                <img className='cmp-dynamoic-member-img' src={require(`../../assets/img/members-task-details/${opt.imgUrl}`)} alt={opt.imgUrl} />
+                                <span>{opt.fullname}</span>
+                                <input className='cmp-dynamoic-member-isMember-checkbox'
+                                    defaultChecked={isCheck(opt._id)}
+                                    type='checkbox'
+                                    name='isMember'
+                                    id='isMember'
+                                // onChange={doneTodo}
+                                />
+                            </label>
                         </li>
                     )}
                 </ul>}
