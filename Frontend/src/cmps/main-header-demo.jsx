@@ -31,7 +31,7 @@ export function MainHeaderDemo() {
 	}
 
 	return (
-		<header className="main-header">
+		<header className="main-header-demo">
 			<div className="logo-nav">
 				<button>
 					<AppsSvg />
