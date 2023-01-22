@@ -17,7 +17,7 @@ export function Board() {
 
 	useEffect(() => {
 		loadBoard(boardId)
-	}, [])
+	}, [boardId])
 
 	async function onRemoveBoard() {
 		try {
