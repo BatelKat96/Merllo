@@ -19,13 +19,15 @@
         justify-content: center;
 
         font-family: segoe_ui;
-        margin: 0 4px;
-        padding: 0 5px;
+        margin: 0 3px;
+        padding: 0;
         font-size: 0.9rem;
         color: $wh-txt1;
-
-        padding: 8px;
         border-radius: 3px;
+
+        &.nav-btn {
+            padding-left: 18px;
+        }
 
         &.create-btn {
             padding: 8px;
@@ -35,6 +37,12 @@
 
         &.create-btn:hover {
             background-color: $wh-bg1;
+        }
+
+        img {
+            height: 24px;
+            width: 24px;
+            line-height: 24px;
         }
 
     }
@@ -51,7 +59,7 @@
         border: 0;
         align-items: center;
         background-color: transparent;
-        margin: 0 4px;
+        margin: 6px;
         white-space: nowrap;
         color: $wh-txt1;
 
@@ -61,7 +69,7 @@
 
     }
 
-    .right-nav {
+    .logo-nav {
         display: flex;
         align-items: center;
         margin-left: 4px;
@@ -69,7 +77,6 @@
         .header-logo {
             display: flex;
             align-items: center;
-            padding: 0 6px;
 
             h1 {
                 font-size: 1.2rem;
@@ -80,22 +87,28 @@
         }
     }
 
+
     .left-nav {
         display: flex;
         align-items: center;
-        margin-right: 4px;
+        margin-right: 6px;
 
         .search {
             height: 32px;
             width: 100%;
             width: 200px;
-            padding: 0px 2px 0px 30px;
+            padding: 0px 4px;
             border-radius: 3px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             line-height: 20px;
             background-color: rgba(255, 255, 255, 0.2);
             color: $wh-txt1;
             justify-content: flex-start;
+
+            svg {
+                height: 16px;
+                width: 16px;
+            }
         }
 
         .search:active,
