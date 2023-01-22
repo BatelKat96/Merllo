@@ -24,6 +24,7 @@ export function GroupList() {
 		setIsAddNewGroupOpen(false)
 		setGroupToEdit(boardService.getEmptyGroup())
 	}
+	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
 	function handleNewGroup({ target }) {
 		let { value, name: field } = target
@@ -31,6 +32,7 @@ export function GroupList() {
 	}
 
 	async function onSaveNewGroup(ev) {
+		ev.preventDefault()
 		if (!groupToEdit.title) return
 		try {
 			await saveGroup(groupToEdit, board._id)
@@ -42,10 +44,14 @@ export function GroupList() {
 	}
 
 	//  update existing group
-	function handleEditGroup({ target }) {
+	async function handleEditGroup({ target }) {
 		let currGroup = getGroupToEdit(target.id)
 		currGroup.title = target.value
-		saveGroup(currGroup, board._id)
+		try {
+			await saveGroup(currGroup, board._id)
+		} catch (err) {
+			console.log('Failed to update group', err)
+		}
 	}
 
 	function getGroupToEdit(groupId) {
@@ -57,9 +63,8 @@ export function GroupList() {
 	async function onRemoveGroup(groupId) {
 		try {
 			await removeGroup(groupId, board._id)
-			console.log('Group removed')
 		} catch (err) {
-			console.log('Cannot remove group', err)
+			console.log('Failed to remove group', err)
 		}
 	}
 
@@ -69,9 +74,10 @@ export function GroupList() {
 		duplicatedGroup.id = null
 		try {
 			await saveGroup(duplicatedGroup, board._id)
-			console.log('Group duplicated')
 		} catch (err) {
-			console.log('Cannot duplicate group', err)
+			console.log('Failed to duplicate group', err)
+		} finally {
+			toggleDropdown()
 		}
 	}
 
@@ -129,7 +135,8 @@ export function GroupList() {
 								openAddNewGroup()
 							}}
 						>
-							<AiOutlinePlus className="icon-plus" /> Add another list
+							<AiOutlinePlus className="icon-plus" />
+							<span>{addNewTxt}</span>
 						</div>
 					)}
 					{isAddNewGroupOpen && (

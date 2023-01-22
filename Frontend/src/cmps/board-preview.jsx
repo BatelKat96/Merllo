@@ -8,7 +8,9 @@ export function BoardPreview({ board }) {
 				backgroundImage: `url(../img/borads-bg-imgs/${board._id}.jpg)`,
 			}}
 		>
-			{board.title}
+			<span className="preview-fade">
+				<div className="preview-details">{board.title}</div>
+			</span>
 		</section>
 	)
 }

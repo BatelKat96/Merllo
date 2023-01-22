@@ -59,11 +59,11 @@ export function MainHeaderDemo() {
 
 				<button className="create-btn" onClick={openBoardComposer}>
 					Create
-					<CreateSvg />
+					{/* <CreateSvg /> */}
 				</button>
 			</div>
 
-			{/* <div className="left-nav">
+			<div className="left-nav">
 				<button className="search">
 					<SearchSvg />
 					Search
@@ -80,7 +80,7 @@ export function MainHeaderDemo() {
 				<button>
 					<UserSvg />
 				</button>
-			</div> */}
+			</div>
 			{isBoardComposerOpen && (
 				<BoardCreate closeBoardComposer={closeBoardComposer} />
 			)}

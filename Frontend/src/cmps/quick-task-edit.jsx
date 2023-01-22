@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { saveTask } from '../store/board.actions'
+import { saveTask, removeTask } from '../store/board.actions'
 
 import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
 
@@ -29,11 +29,32 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
 
     async function onSaveEdit() {
         try {
-            let savedTask = await saveTask(taskToEdit, groupId, boardId)
+            await saveTask(taskToEdit, groupId, boardId)
         } catch (err) {
             console.log('Cannot update task ', err)
         }
     }
+
+    async function onCopyTask() {
+        let copyTask = { ...taskToEdit }
+        copyTask.id = null
+        try {
+            await saveTask(copyTask, groupId, boardId)
+        } catch (err) {
+            console.log('Cannot copy task', err)
+        }
+    }
+
+
+    async function onRemoveTask() {
+        try {
+            await removeTask(taskId, groupId, boardId)
+            navigate(`/board/${boardId}`)
+        } catch (err) {
+            console.log('Cannot remove task ', err)
+        }
+    }
+
 
     const onOpenCard = () => {
         navigate(`/board/${boardId}/${groupId}/${taskId}`)
@@ -88,7 +109,7 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
                         <OpenTaskSvg /> Move
                     </button> */}
 
-                    <button>
+                    <button onClick={onCopyTask}>
                         <MdOutlineContentCopy /> Copy
                     </button>
 
@@ -96,7 +117,7 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
                         <OpenTaskSvg /> Edit dates
                     </button> */}
 
-                    <button>
+                    <button onClick={onRemoveTask}>
                         <MdDeleteOutline /> Delete
                     </button>
 

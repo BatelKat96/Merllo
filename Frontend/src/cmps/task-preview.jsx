@@ -65,6 +65,14 @@ export function TaskPreview({ group, task, board }) {
 						quickTaskEdit={quickTaskEdit} />}
 				</a>
 
+				{/* {quickTaskEdit && <QuickTaskEdit taskId={task.id}
+						groupId={group.id}
+						boardId={boardId}
+						task={task}
+						onEdit={onQuickTaskEdit}
+						toggleQuickTaskEdit={toggleQuickTaskEdit}
+					quickTaskEdit={quickTaskEdit} />} */}
+
 				<p className="task-title" onClick={onTask}>
 					{task.title}
 				</p>
