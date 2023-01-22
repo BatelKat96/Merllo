@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
@@ -12,12 +12,40 @@ import { GroupList } from '../cmps/group-list'
 export function Board() {
 	const { boardId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
-
+	const [titleWidth, setTitleWidth] = useState(null)
 	const navigate = useNavigate()
 
 	useEffect(() => {
-		loadBoard(boardId)
-	}, [boardId])
+		loadTheBoard(boardId)
+	}, [boardId, titleWidth])
+
+	async function loadTheBoard(boardId) {
+		try {
+			const board = await loadBoard(boardId)
+			setTitleWidth(board.title.length * 15)
+		} catch (err) {
+			console.log('Failed to load the board')
+		}
+	}
+
+	async function handleEditBoard({ target }) {
+		board.title = target.value
+		try {
+			await updateBoard(board)
+		} catch (err) {
+			console.log('Failed to update board', err)
+		} finally {
+			setTitleWidth(board.title.length * 15)
+		}
+	}
+
+	async function handleKey(ev) {
+		if (ev.code === 'Enter') {
+			ev.preventDefault()
+			handleEditBoard(ev)
+			ev.target.blur()
+		}
+	}
 
 	async function onRemoveBoard() {
 		try {
@@ -49,8 +77,22 @@ export function Board() {
 			}}
 		>
 			<div className="board-top-menu">
-				<h1>{board.title}</h1>
-				{/* <button className="btn-board star"> */}
+				<div className="board-title">
+					<form>
+						<textarea
+							name="title"
+							className="edit-group-title"
+							id={board.id}
+							spellCheck="false"
+							maxLength="512"
+							defaultValue={board.title}
+							onChange={handleEditBoard}
+							onKeyDown={handleKey}
+							style={{ width: `${titleWidth}px` }}
+						></textarea>
+					</form>
+				</div>
+
 				<button
 					className={`btn-board star-${board.isStarred}`}
 					onClick={onToggleStar}
