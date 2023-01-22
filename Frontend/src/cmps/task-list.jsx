@@ -52,67 +52,67 @@ export function TaskList({ group, tasks }) {
         <>
             <section className="task-list-wraper">
 
-            <ul className="task-list clean-list">
-                {tasks.map(task =>
+                <ul className="task-list clean-list">
+                    {tasks.map(task =>
 
-                    <li key={task.id}>
-                        <TaskPreview group={group} task={task} />
-                    </li>)}
-            </ul>
+                        <li key={task.id}>
+                            <TaskPreview group={group} task={task} board={board} />
+                        </li>)}
+                </ul>
             </section>
 
-                <section className="task-list-bottom">
+            <section className="task-list-bottom">
 
-                    {!isAddNewTaskOpen &&
+                {!isAddNewTaskOpen &&
 
-                        <div className="add-a-task-template">
-                            <button
-                                className="add-a-task"
-                                onClick={openAddNewTask}>
-                                <AiOutlinePlus className="icon-plus" /> Add a card
-                            </button>
+                    <div className="add-a-task-template">
+                        <button
+                            className="add-a-task"
+                            onClick={openAddNewTask}>
+                            <AiOutlinePlus className="icon-plus" /> Add a card
+                        </button>
 
-                            {/* <button className="btn-group template">template</button> */}
-                        </div>
-                    }
+                        {/* <button className="btn-group template">template</button> */}
+                    </div>
+                }
 
-                    {isAddNewTaskOpen &&
+                {isAddNewTaskOpen &&
 
-                        <div className="task-composer">
+                    <div className="task-composer">
 
-                            <form>
-                                <textarea
-                                    className="task-textarea"
-                                    type="text"
-                                    name="title"
+                        <form>
+                            <textarea
+                                className="task-textarea"
+                                type="text"
+                                name="title"
+                                id={group.id}
+                                placeholder="Enter a title for this card..."
+                                maxLength="512"
+                                spellCheck="false"
+                                value={taskToEdit.title}
+                                onKeyDown={handleKeyPress}
+                                onChange={handleNewTask}
+                            ></textarea>
+
+                            <div className="add-task-controls">
+                                <button
+                                    className="add-task-btn"
                                     id={group.id}
-                                    placeholder="Enter a title for this card..."
-                                    maxLength="512"
-                                    spellCheck="false"
-                                    value={taskToEdit.title}
-                                    onKeyDown={handleKeyPress}
-                                    onChange={handleNewTask}
-                                ></textarea>
+                                    onClick={onAddTask}>
+                                    Add Card
+                                </button>
+                                <a
+                                    className="cancel-btn"
+                                    onClick={closeAddNewTask}
+                                >
+                                    <IoClose className="icon-close" />
+                                </a>
+                            </div>
 
-                                <div className="add-task-controls">
-                                    <button
-                                        className="add-task-btn"
-                                        id={group.id}
-                                        onClick={onAddTask}>
-                                        Add Card
-                                    </button>
-                                    <a
-                                        className="cancel-btn"
-                                        onClick={closeAddNewTask}
-                                    >
-                                        <IoClose className="icon-close" />
-                                    </a>
-                                </div>
+                        </form>
 
-                            </form>
-
-                        </div>
-                    }
+                    </div>
+                }
 
             </section>
         </>)
