@@ -4,7 +4,7 @@
     .task-cmp-dynamoic-container {
         background: #ffffff;
         border-radius: 3px;
-        box-shadow: 0 8px 16px -4px #091e4240,0 0 0 1px ,#091e4214;
+        box-shadow: 0 8px 16px -4px #091e4240, 0 0 0 1px, #091e4214;
         overflow: hidden;
         position: absolute;
         width: 304px;
@@ -49,7 +49,7 @@
                 overflow-y: auto;
                 padding: 10px;
                 letter-spacing: 0.08rem;
-            
+
                 &::placeholder {
                     color: $t-txt2;
                     font-family: San_francisco_light;
@@ -60,7 +60,8 @@
                 display: flex;
                 margin-block: 9px;
                 align-items: center;
-            
+                padding-inline-start: 10px;
+
                 // p {
                 //     margin: 0;
                 //     font-family: San_francisco_light;
@@ -92,28 +93,23 @@
 }
 
 
-// .cmp-dynamoic-member-img {
-//     width: 32px;
-//     height: 32px;
-//     margin-inline-end: 10px;
-//     margin-block: 4px;
-// }
+.cmp-dynamoic-member-img {
+    width: 32px;
+    height: 32px;
+    margin-inline-end: 10px;
+    margin-block: 4px;
+}
 
 
-// .cmp-dynamoic-option-labels {
-//     width: 212px;
-//     border-radius: 3px;
+.cmp-dynamoic-option-labels {
+    width: 212px;
+    border-radius: 3px;
 
-//     .color-circle {
-//         margin-inline-end: 10px;
-//         border-radius: 50%;
-//         width: 16px;
-//         height: 16px;
-//         margin-block: 8px;
-//     }
-// }
-
-
-// .cmp-dynamoic-option-labels {
-//     opacity: 0.5;
-// }
+    .color-circle {
+        margin-inline-end: 10px;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        margin-block: 8px;
+    }
+}
