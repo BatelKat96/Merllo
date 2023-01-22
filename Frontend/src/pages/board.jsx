@@ -5,7 +5,7 @@ import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
 
 import { HiOutlineStar } from 'react-icons/hi2'
 import { BsFilter } from 'react-icons/bs'
-import { MdDeleteOutline } from 'react-icons/md'
+import { MdDeleteOutline, MdDelete } from 'react-icons/md'
 
 import { GroupList } from '../cmps/group-list'
 
@@ -41,27 +41,37 @@ export function Board() {
 	if (!board) return <h1>Loading....</h1>
 
 	return (
-		<section className="board">
+		<section
+			className="board"
+			style={{
+				backgroundImage: `url(../img/borads-bg-imgs/${board._id}.jpg)`,
+			}}
+		>
 			<div className="board-top-menu">
 				<h1>{board.title}</h1>
 				{/* <button className="btn-board star"> */}
 				<button
 					className={`btn-board star-${board.isStarred}`}
 					onClick={onToggleStar}
+					title="Click to star or unstar this board. Starred boards show up at the top of your boards list."
 				>
 					<HiOutlineStar />
 				</button>
 				<span></span>
-				<button className="btn-board filter">
+				{/* <button className="btn-board filter">
 					<BsFilter />
 					Filter
+				</button> */}
+				{/* <span></span> */}
+				<button
+					className="btn-board remove"
+					onClick={onRemoveBoard}
+					title="Delete board"
+				>
+					<MdDelete />
 				</button>
 				<span></span>
-				<button className="btn-board remove" onClick={onRemoveBoard}>
-					<MdDeleteOutline />
-				</button>
-				<span></span>
-				<button className="btn-board menu">...</button>
+				{/* <button className="btn-board menu">...</button> */}
 			</div>
 			<div className="board-main-content">
 				<GroupList />
