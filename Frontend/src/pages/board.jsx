@@ -12,30 +12,35 @@ import { GroupList } from '../cmps/group-list'
 export function Board() {
 	const { boardId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
+	const [boardTitle, setBoardTitle] = useState('')
 	const [titleWidth, setTitleWidth] = useState(null)
 	const navigate = useNavigate()
 
 	useEffect(() => {
 		loadTheBoard(boardId)
-	}, [boardId, titleWidth])
+	}, [boardId])
 
 	async function loadTheBoard(boardId) {
 		try {
 			const board = await loadBoard(boardId)
-			setTitleWidth(board.title.length * 15)
+			setBoardTitle(board.title)
+			setTitleWidth(board.title.length * 10 + 40)
 		} catch (err) {
 			console.log('Failed to load the board')
 		}
 	}
 
-	async function handleEditBoard({ target }) {
-		board.title = target.value
+	function handleEditBoard({ target }) {
+		setBoardTitle(target.value)
+		setTitleWidth(boardTitle.length * 10 + 40)
+	}
+
+	async function onSaveBoardTitle() {
+		board.title = boardTitle
 		try {
 			await updateBoard(board)
 		} catch (err) {
 			console.log('Failed to update board', err)
-		} finally {
-			setTitleWidth(board.title.length * 15)
 		}
 	}
 
@@ -43,6 +48,7 @@ export function Board() {
 		if (ev.code === 'Enter') {
 			ev.preventDefault()
 			handleEditBoard(ev)
+			onSaveBoardTitle()
 			ev.target.blur()
 		}
 	}
@@ -78,19 +84,18 @@ export function Board() {
 		>
 			<div className="board-top-menu">
 				<div className="board-title">
-					<form>
-						<textarea
-							name="title"
-							className="edit-group-title"
-							id={board.id}
-							spellCheck="false"
-							maxLength="512"
-							defaultValue={board.title}
-							onChange={handleEditBoard}
-							onKeyDown={handleKey}
-							style={{ width: `${titleWidth}px` }}
-						></textarea>
-					</form>
+					<input
+						onBlurCapture={onSaveBoardTitle}
+						name="title"
+						className="edit-group-title"
+						id={board.id}
+						spellCheck="false"
+						// maxLength="512"
+						defaultValue={board.title}
+						onChange={handleEditBoard}
+						onKeyDown={handleKey}
+						style={{ width: `${titleWidth}px` }}
+					></input>
 				</div>
 
 				<button

@@ -19,7 +19,6 @@
         padding-left: 12px;
         margin-bottom: 8px;
         flex-grow: 1;
-        // height: 100%;
         max-height: calc(100vh - 100px);
 
         &::-webkit-scrollbar {
@@ -78,12 +77,12 @@
             font-size: 18px;
             font-weight: 700;
             line-height: 32px;
-            max-width: calc(100% - 24px);
-            width: fit-content;
+            // max-width: calc(100% - 24px);
+            // width: fit-content;
+            // text-overflow: ellipsis;
             overflow: hidden;
             padding: 0;
             text-decoration: none;
-            text-overflow: ellipsis;
             white-space: nowrap;
             transition: .1s ease;
             border-radius: 3px;
@@ -93,27 +92,17 @@
             justify-content: center;
             margin: 4px;
 
-            // padding: 8px 4px 0px 8px;
-            // display: flex;
-            // justify-content: space-between;
-            // align-items: center;
-            // height: fit-content;
-            // position: relative;
-
             &:hover {
                 background-color: rgb(255 255 255 / 35%);
                 cursor: pointer;
             }
 
-            textarea {
+            input {
                 color: $b-txt2;
                 font-family: inherit;
                 height: 32px;
                 resize: none;
                 overflow: hidden;
-                overflow-wrap: break-word;
-                // margin: -4px 0;
-                // padding: 4px 8px 4px 3px;
                 background-color: inherit;
                 border: none;
                 border-radius: 3px;
@@ -121,7 +110,7 @@
                 font-size: 18px;
                 font-weight: 700;
                 line-height: 32px;
-                padding: 0 12px;
+                padding: 0 ;
                 margin: 0 auto;
                 text-align: center;
 
