@@ -3,10 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 import { saveTask, removeTask } from '../store/board.actions'
 
-import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
+import { TiTag } from "react-icons/ti";
 
 import { ReactComponent as OpenTaskSvg } from '../assets/img/icons-task-details/taskTitle.svg'
-import { ReactComponent as LabelSvg } from '../assets/img/icons-task-preview/label.svg'
 import { ReactComponent as MemberSvg } from '../assets/img/icons-task-preview/member.svg'
 import { ReactComponent as CopySvg } from '../assets/img/icons-task-preview/copy.svg'
 import { ReactComponent as DeleteSvg } from '../assets/img/icons-task-preview/delete.svg'
@@ -97,7 +96,7 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
                     </button>
 
                     <button>
-                        <LabelSvg /> Edit labels
+                        <TiTag className="tag-svg" /> Edit labels
                     </button>
 
                     <button>
@@ -113,7 +112,7 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
                     </button> */}
 
                     <button onClick={onCopyTask}>
-                        <CopySvg /> Copy
+                        <CopySvg className="copy-svg" /> Copy
                     </button>
 
                     {/* <button>

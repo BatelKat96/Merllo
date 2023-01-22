@@ -42,9 +42,9 @@ export function TaskPreview({ group, task, board }) {
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
-				<div className="task-label-container">
+				<div className="task-preview-label-container">
 					{fullLabels && fullLabels.map(label =>
-						<li key={label.id} style={{ backgroundColor: `${label.color}` }} className="label" onClick={onLabel}>
+						<li key={label.id} style={{ backgroundColor: `${label.color}` }} className="task-preview-label" onClick={onLabel}>
 						</li>
 					)}
 				</div>
