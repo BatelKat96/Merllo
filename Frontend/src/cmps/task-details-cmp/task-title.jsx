@@ -19,7 +19,9 @@ export function TaskTitle({ handleChange, onSaveEdit, task, group }) {
                     defaultValue={task.title}
                 />
             </form >
-            <p>in list <a href='#'>{group.title}</a> <span > <AiOutlineEye className='eye-icon' /></span></p>
+            <p>in list <a href='#'>{group.title}</a>
+                {/* <span > <AiOutlineEye className='eye-icon' /></span> */}
+            </p>
             {/* <AiOutlineEye className='eye-icon' /> */}
         </div>
     </section>
