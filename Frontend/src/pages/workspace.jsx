@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { loadBoards } from '../store/board.actions'
 import { boardService } from '../services/board.service'
 
@@ -32,16 +31,16 @@ export function Workspace() {
 		return boards.filter((board) => board.isStarred)
 	}
 
-	function getBoardStyle(board) {
-		if (!board) return
-		if (board?.style.bgImg)
-			return {
-				background: `url ("${board.style.bgImg}")`,
-			}
-		// else if (board?.style.backgroundColor)
-		// 	return { backgroundColor: `${board.style.bgColor}` }
-		return { backgroundColor: `blue` }
-	}
+	// function getBoardStyle(board) {
+	// 	if (!board) return
+	// 	if (board?.style.bgImg)
+	// 		return {
+	// 			background: `url ("${board.style.bgImg}")`,
+	// 		}
+	// 	// else if (board?.style.backgroundColor)
+	// 	// 	return { backgroundColor: `${board.style.bgColor}` }
+	// 	return { backgroundColor: `blue` }
+	// }
 
 	if (!boards) return <h1>Loading....</h1>
 
@@ -61,7 +60,9 @@ export function Workspace() {
 					{starredBoards.map((strdBoard) => {
 						return (
 							<li key={`starred-${strdBoard._id}`}>
-								<BoardPreview board={strdBoard} />
+								<a href={`/board/${strdBoard._id}`}>
+									<BoardPreview board={strdBoard} />
+								</a>
 							</li>
 							// <a href={`/board/${strdBoard._id}`}>
 							// 	<li
@@ -125,7 +126,9 @@ export function Workspace() {
 					</li>
 					{boards.map((board) => (
 						<li key={`starred-${board._id}`}>
-							<BoardPreview board={board} />
+							<a href={`/board/${board._id}`}>
+								<BoardPreview board={board} />
+							</a>
 						</li>
 						// <Link to={`/board/${board._id}`}>
 						// 	<li

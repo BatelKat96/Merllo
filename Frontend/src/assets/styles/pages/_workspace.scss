@@ -49,16 +49,32 @@
             color: white;
             font-weight: 700;
             font-size: 16px;
-            // background: url("https://unsplash.com/photos/PtVq35qD-CU");
+            background-color: rgb(0 121 191);
             background-size: cover;
             background-repeat: no-repeat;
-
-            &:hover {
-                background-color: #0000007e;
-            }
+            position: relative;
 
             img {
                 object-fit: cover;
+            }
+
+            .preview-fade {
+                background-color: #00000027;
+                border-radius: 3px;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                &:hover {
+                    background-color: #00000037;
+
+                }
+
+                .preview-details {
+                    padding: 8px;
+                }
             }
         }
 
