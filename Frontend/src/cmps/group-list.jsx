@@ -24,6 +24,7 @@ export function GroupList() {
 		setIsAddNewGroupOpen(false)
 		setGroupToEdit(boardService.getEmptyGroup())
 	}
+	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
 	function handleNewGroup({ target }) {
 		let { value, name: field } = target
@@ -134,7 +135,8 @@ export function GroupList() {
 								openAddNewGroup()
 							}}
 						>
-							<AiOutlinePlus className="icon-plus" /> Add another list
+							<AiOutlinePlus className="icon-plus" />
+							<span>{addNewTxt}</span>
 						</div>
 					)}
 					{isAddNewGroupOpen && (
