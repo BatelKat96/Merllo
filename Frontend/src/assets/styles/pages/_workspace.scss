@@ -1,7 +1,7 @@
 .workspace-section {
+    color: #172b4d;
     margin: auto;
     margin-top: 40px;
-    // margin: 40px 200px 0 200px;
     max-width: 825px;
     min-width: 288px;
     flex-grow: 1;
@@ -10,7 +10,7 @@
         display: flex;
         align-items: center;
         height: 38px;
-        margin-left: 15px;
+        margin-left: 11px;
 
         .boards-section-header-icon {
             width: 32px;
@@ -19,6 +19,7 @@
             align-items: center;
             justify-content: center;
             font-size: 26px;
+            color: #172b4d;
         }
 
         .boards-section-header-name {
@@ -38,47 +39,11 @@
     .board-list {
         display: flex;
         flex-wrap: wrap;
-        padding-bottom: 38px;
+        padding-bottom: 20px;
 
-        // .board-preview {
-        //     height: 96px;
-        //     width: 178px;
-        //     border-radius: 3px;
-        //     margin: 0 10px;
-        //     padding: 8px;
-        //     margin: 8px;
-        //     cursor: pointer;
-        //     color: white;
-        //     font-weight: 700;
-        //     font-size: 16px;
-        //     background-color: rgb(0 121 191);
-        //     background-size: cover;
-        //     background-repeat: no-repeat;
-        //     position: relative;
-
-        //     img {
-        //         object-fit: cover;
-        //     }
-
-        //     .preview-fade {
-        //         background-color: #00000027;
-        //         border-radius: 3px;
-        //         bottom: 0;
-        //         left: 0;
-        //         position: absolute;
-        //         right: 0;
-        //         top: 0;
-
-        //         &:hover {
-        //             background-color: #00000037;
-
-        //         }
-
-        //         .preview-details {
-        //             padding: 8px;
-        //         }
-        //     }
-        // }
+        li {
+            margin-bottom: 16px;
+        }
 
         .create-new-board {
             background-color: #f0f2f5;

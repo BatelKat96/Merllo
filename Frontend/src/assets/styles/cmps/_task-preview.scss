@@ -1,7 +1,8 @@
 .task-preview {
-    padding: 6px 8px 2px;
+    padding: 6px 8px;
     overflow: hidden;
-    margin: 4px 3px;
+    margin: 4px;
+    
     min-height: 40px;
     max-width: 100%;
     position: relative;
@@ -11,11 +12,12 @@
     font-family: segoe_ui;
     font-size: 14px;
     white-space: normal;
-
     cursor: pointer;
 
     li {
         float: left;
+        margin: 0 4px;
+        padding: 0 4px;
     }
 
     p {
@@ -77,18 +79,21 @@
         border: none;
         background-color: transparent;
 
-        display: block;
         position: absolute;
         top: 0px;
         right: 0px;
 
+        display: flex;
         align-items: center;
         justify-content: center;
 
         font-family: segoe_ui;
-        margin: 4px;
+        margin: 2px 2px;
         padding: 3px;
         border-radius: 3px;
+
+        opacity: 0;
+
 
         svg {
             height: 16px;
@@ -97,7 +102,7 @@
             border: 0;
             align-items: center;
             background-color: transparent;
-            margin: 0 4px;
+            margin: 3px;
             white-space: nowrap;
 
             path {
@@ -113,5 +118,9 @@
 
     &:hover {
         background-color: $t-hover2;
+
+        .edit-btn {
+            opacity: 100%;
+        }
     }
 }

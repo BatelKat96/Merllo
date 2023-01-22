@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
@@ -9,15 +9,51 @@ import { MdDeleteOutline, MdDelete } from 'react-icons/md'
 
 import { GroupList } from '../cmps/group-list'
 
+import Loader from '../assets/img/loader.svg'
+
 export function Board() {
 	const { boardId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
-
+	const [boardTitle, setBoardTitle] = useState('')
+	const [titleWidth, setTitleWidth] = useState(null)
 	const navigate = useNavigate()
 
 	useEffect(() => {
-		loadBoard(boardId)
+		loadTheBoard(boardId)
 	}, [boardId])
+
+	async function loadTheBoard(boardId) {
+		try {
+			const board = await loadBoard(boardId)
+			setBoardTitle(board.title)
+			setTitleWidth(board.title.length * 10 + 40)
+		} catch (err) {
+			console.log('Failed to load the board')
+		}
+	}
+
+	function handleEditBoard({ target }) {
+		setBoardTitle(target.value)
+		setTitleWidth(boardTitle.length * 10 + 40)
+	}
+
+	async function onSaveBoardTitle() {
+		board.title = boardTitle
+		try {
+			await updateBoard(board)
+		} catch (err) {
+			console.log('Failed to update board', err)
+		}
+	}
+
+	async function handleKey(ev) {
+		if (ev.code === 'Enter') {
+			ev.preventDefault()
+			handleEditBoard(ev)
+			onSaveBoardTitle()
+			ev.target.blur()
+		}
+	}
 
 	async function onRemoveBoard() {
 		try {
@@ -38,7 +74,7 @@ export function Board() {
 		}
 	}
 
-	if (!board) return <h1>Loading....</h1>
+	if (!board) return <img className="loader" src={Loader} alt="loader" />
 
 	return (
 		<section
@@ -49,8 +85,21 @@ export function Board() {
 			}}
 		>
 			<div className="board-top-menu">
-				<h1>{board.title}</h1>
-				{/* <button className="btn-board star"> */}
+				<div className="board-title">
+					<input
+						onBlurCapture={onSaveBoardTitle}
+						name="title"
+						className="edit-group-title"
+						id={board.id}
+						spellCheck="false"
+						// maxLength="512"
+						defaultValue={board.title}
+						onChange={handleEditBoard}
+						onKeyDown={handleKey}
+						style={{ width: `${titleWidth}px` }}
+					></input>
+				</div>
+
 				<button
 					className={`btn-board star-${board.isStarred}`}
 					onClick={onToggleStar}

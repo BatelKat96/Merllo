@@ -1,7 +1,7 @@
 .group-list-container {
 
     .btn-group {
-        position: absolute;
+        // position: absolute;
         right: 0;
         // z-index: 200;
         border: none;
@@ -62,12 +62,13 @@
 
             .group-top {
                 height: 40px;
-                padding: 8px 4px 0px 8px;
+                padding: 8px 4px 4px 8px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 height: fit-content;
                 position: relative;
+                color: $b-txt1;
 
                 textarea {
                     width: 100%;
@@ -84,6 +85,7 @@
                     background-color: inherit;
                     border: none;
                     border-radius: 3px;
+                    color: $b-txt1;
 
                     &:focus-visible {
                         outline: none;
@@ -97,16 +99,6 @@
                         max-height: 256px;
                     }
                 }
-
-                // .icon-remove, .icon-copy {
-                //     font-size: 16px;
-                //     text-align: center;
-                //     vertical-align: middle;
-                // }
-
-                // .btn-group.more {
-                //     position: absolute;
-                // }
             }
         }
 

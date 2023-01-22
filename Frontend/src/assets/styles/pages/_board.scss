@@ -16,10 +16,9 @@
 
     .board-main-content {
         overflow-x: scroll;
-        padding-left: 24px;
-        margin-bottom: 5px;
+        padding-left: 12px;
+        margin-bottom: 8px;
         flex-grow: 1;
-        // height: 100%;
         max-height: calc(100vh - 100px);
 
         &::-webkit-scrollbar {
@@ -67,11 +66,72 @@
     }
 
     .board-top-menu {
-        // margin: 5px;
+        color: $b-txt2;
         height: 50px;
         display: flex;
         align-items: center;
-        padding: 6px 4px 6px 20px;
+        padding: 6px 4px 6px 16px;
+
+        .board-title {
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 32px;
+            // max-width: calc(100% - 24px);
+            // width: fit-content;
+            // text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 0;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: .1s ease;
+            border-radius: 3px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 4px;
+
+            &:hover {
+                background-color: rgb(255 255 255 / 35%);
+                cursor: pointer;
+            }
+
+            input {
+                color: $b-txt2;
+                font-family: inherit;
+                height: 32px;
+                resize: none;
+                overflow: hidden;
+                background-color: inherit;
+                border: none;
+                border-radius: 3px;
+
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 32px;
+                padding: 0 ;
+                margin: 0 auto;
+                text-align: center;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+                &:focus {
+                    color: $b-txt1;
+                    border: none;
+                    box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
+                    background-color: $t-bg3;
+                    min-height: 20px;
+                    max-height: 256px;
+                }
+            }
+        }
 
         button.btn-board {
             color: $b-txt2;
