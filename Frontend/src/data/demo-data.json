@@ -10,10 +10,10 @@
             "imgUrl": "http://batel-img"
         },
         "style": {
-            "bgImg":"../assets/img/borads-bg-imgs/b101.jpg",
-            "txtClr1":"#172B4D",
-            "txtClr2":"#ffffff",
-            "txtClr3":"#5E6C84"
+            "bgImg": "../assets/img/borads-bg-imgs/b101.jpg",
+            "txtClr1": "#172B4D",
+            "txtClr2": "#ffffff",
+            "txtClr3": "#5E6C84"
         },
         "labels": [
             {
@@ -159,8 +159,8 @@
                         "title": "User authentication",
                         "archivedAt": null,
                         "labelIds": [
-                            "l101",
-                            "l103"
+                            "l103",
+                            "l101"
                         ],
                         "dueDate": 1674491781,
                         "byMember": {

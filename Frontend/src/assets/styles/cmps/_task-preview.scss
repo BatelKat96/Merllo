@@ -7,30 +7,47 @@
     position: relative;
     background-color: $t-bg3;
     border-radius: 3px;
-    box-shadow: var(--ds-shadow-raised,0 1px 0 #091e4240);
+    box-shadow: var(--ds-shadow-raised, 0 1px 0 #091e4240);
     font-family: segoe_ui;
     font-size: 14px;
     white-space: normal;
 
     cursor: pointer;
 
+    li {
+        float: left;
+    }
+
+    .task-member-container {
+        float: right;
+
+        .member {
+            margin-inline-start: 3px;
+        }
+    }
+
     .task-label-container {
         display: inline-block;
 
+
         .label {
-            margin: 4px 0 ;
+            margin: 4px 0;
             padding-right: 0;
             padding-left: 0;
             width: 40px;
             height: 8px;
-            background-color: #ffaf3f;
-            color: transparent; 
+            // background-color: #ffaf3f;
+            color: transparent;
             border: none;
             border-radius: 4px;
+            margin-inline-end: 3px;
         }
 
-        .label:hover, .label:focus {
-            background-color: #D09648;
+
+
+        .label:hover,
+        .label:focus {
+            // background-color: #D09648;
         }
     }
 
@@ -54,12 +71,11 @@
 
         align-items: center;
         justify-content: center;
-    
+
         font-family: segoe_ui;
         margin: 4px;
         padding: 3px;
         border-radius: 3px;
-        z-index: 10;
 
         svg {
             height: 16px;
@@ -70,9 +86,9 @@
             background-color: transparent;
             margin: 0 4px;
             white-space: nowrap;
-    
+
             path {
-                fill: $t-txt3;  
+                fill: $t-txt3;
             }
         }
     }
@@ -81,7 +97,7 @@
         background-color: #83818136;
     }
 
-    
+
     &:hover {
         background-color: $t-hover2;
     }

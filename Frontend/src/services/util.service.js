@@ -1,4 +1,5 @@
 export const utilService = {
+    findDataById,
     makeId,
     makeLorem,
     getRandomIntInclusive,
@@ -6,6 +7,25 @@ export const utilService = {
     randomPastTime,
     saveToStorage,
     loadFromStorage
+}
+
+function findDataById(ids, board, type) {
+    if (!ids) return
+    let currType = board[type]
+    let fullData = []
+    ids.map(id => {
+        if (type === 'members') {
+            currType.find((t) => {
+                if (t._id === id) fullData.push(t)
+            })
+        }
+        else if (type === 'labels') {
+            currType.find((t) => {
+                if (t.id === id) fullData.push(t)
+            })
+        }
+    })
+    return fullData
 }
 
 function makeId(length = 6) {

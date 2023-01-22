@@ -1,39 +1,9 @@
 import { FiPlus } from "react-icons/fi";
+import { utilService } from '../../services/util.service';
 
 
 export function TaskDynamicItem({ ids, add, board, type }) {
-
-    console.log('ids:', ids)
-
-    var currDataType = findDataById(ids)
-
-    function findDataById(ids) {
-        if (!ids) return
-        let currType = board[type]
-        console.log('currType:', currType)
-        let fullData = []
-        ids.map(id => {
-            console.log('id:', id)
-            if (type === 'members') {
-                // console.log('yes:',)
-
-                currType.find((t) => {
-                    // console.log('t:', t)
-
-                    // if (t._id === id) return t
-                    if (t._id === id) fullData.push(t)
-                })
-            }
-            else if (type === 'labels') {
-                currType.find((t) => {
-                    if (t.id === id) fullData.push(t)
-                })
-            }
-        })
-        console.log('fullData:', fullData)
-
-        return fullData
-    }
+    var currDataType = utilService.findDataById(ids, board, type)
 
     return <div className={`task-${type}-container`}>
         <h3 className='small-headline '>{type}</h3>
