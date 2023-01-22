@@ -6,7 +6,10 @@ import { saveTask, removeTask } from '../store/board.actions'
 import { MdOutlineContentCopy, MdDeleteOutline } from 'react-icons/md'
 
 import { ReactComponent as OpenTaskSvg } from '../assets/img/icons-task-details/taskTitle.svg'
+import { ReactComponent as LabelSvg } from '../assets/img/icons-task-preview/label.svg'
 import { ReactComponent as MemberSvg } from '../assets/img/icons-task-preview/member.svg'
+import { ReactComponent as CopySvg } from '../assets/img/icons-task-preview/copy.svg'
+import { ReactComponent as DeleteSvg } from '../assets/img/icons-task-preview/delete.svg'
 
 export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskEdit }) {
     const navigate = useNavigate()
@@ -94,7 +97,7 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
                     </button>
 
                     <button>
-                        <OpenTaskSvg /> Edit labels
+                        <LabelSvg /> Edit labels
                     </button>
 
                     <button>
@@ -110,7 +113,7 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
                     </button> */}
 
                     <button onClick={onCopyTask}>
-                        <MdOutlineContentCopy /> Copy
+                        <CopySvg /> Copy
                     </button>
 
                     {/* <button>
@@ -118,7 +121,7 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
                     </button> */}
 
                     <button onClick={onRemoveTask}>
-                        <MdDeleteOutline /> Delete
+                        <DeleteSvg /> Delete
                     </button>
 
                 </section>
