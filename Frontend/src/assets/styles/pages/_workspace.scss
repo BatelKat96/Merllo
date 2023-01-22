@@ -1,5 +1,7 @@
 .workspace-section {
-    margin: 40px 98px 0 98px;
+    margin: auto;
+    margin-top: 40px;
+    // margin: 40px 200px 0 200px;
     max-width: 825px;
     min-width: 288px;
     flex-grow: 1;
@@ -36,7 +38,7 @@
     .board-list {
         display: flex;
         flex-wrap: wrap;
-        padding-bottom: 20px;
+        padding-bottom: 38px;
 
         // .board-preview {
         //     height: 96px;

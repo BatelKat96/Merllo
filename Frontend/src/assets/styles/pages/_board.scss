@@ -15,9 +15,8 @@
     }
 
     .board-main-content {
-        // scroll-behavior: auto;
         overflow-x: scroll;
-        padding-left: 22px;
+        padding-left: 24px;
         margin-bottom: 5px;
         flex-grow: 1;
         // height: 100%;
@@ -72,8 +71,7 @@
         height: 50px;
         display: flex;
         align-items: center;
-        padding: 6px 4px 6px 30px;
-        // padding-left: 32px;
+        padding: 6px 4px 6px 20px;
 
         button.btn-board {
             color: $b-txt2;

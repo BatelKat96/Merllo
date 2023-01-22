@@ -62,7 +62,7 @@
 
             .group-top {
                 height: 40px;
-                padding: 8px 4px 4px 8px;
+                padding: 8px 4px 0px 8px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -80,7 +80,7 @@
                     overflow: hidden;
                     overflow-wrap: break-word;
                     margin: -4px 0;
-                    padding: 4px 8px;
+                    padding: 4px 8px 4px 3px;
                     background-color: inherit;
                     border: none;
                     border-radius: 3px;
