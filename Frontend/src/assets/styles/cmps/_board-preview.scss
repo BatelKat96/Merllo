@@ -54,7 +54,16 @@
                 }
 
                 &:hover {
-                    
+                    color:#f2d600;
+                    svg {
+                        height: 16px;
+                        line-height: 16px;
+                        width: 16px;
+                        stroke-width:2.5;
+                        path {
+                            fill:none;
+                        }
+                    }
                 }
 
                 // &.star-true {
