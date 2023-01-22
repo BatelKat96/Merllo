@@ -26,12 +26,13 @@ export function TaskPreview({ group, task }) {
 
 	function onLabel(ev) {
 		ev.stopPropagation()
+
 	}
+
 
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
-
 				<div className="task-label-container">
 					<button className="label" onClick={onLabel}></button>
 				</div>
@@ -52,7 +53,7 @@ export function TaskPreview({ group, task }) {
 				</p>
 
 				{/* <div className="task-preview-container"> */}
-					{/* <div className="date-container">
+				{/* <div className="date-container">
 						<button className="due-date-btn">
 							<AiOutlineClockCircle />
 						</button>
@@ -64,7 +65,7 @@ export function TaskPreview({ group, task }) {
 							<descriptionSvg />
 						</button> */}
 
-					{/* </div> */}
+				{/* </div> */}
 
 				{/* </div> */}
 			</section>

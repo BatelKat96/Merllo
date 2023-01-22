@@ -14,27 +14,27 @@
             {
                 "id": "l101",
                 "title": "UI",
-                "color": "#d6ecd2"
+                "color": "#7bc86c"
             },
             {
                 "id": "l102",
                 "title": "Low priority",
-                "color": "#faf3c0"
+                "color": "#f5dd29"
             },
             {
                 "id": "l103",
                 "title": "Medium priority",
-                "color": "#fce6c6"
+                "color": "#ffaf3f"
             },
             {
                 "id": "l104",
                 "title": "High priority",
-                "color": "#f5d3ce"
+                "color": "#ef7564"
             },
             {
                 "id": "l105",
                 "title": "Bug",
-                "color": "#eddbf4"
+                "color": "#cd8de5"
             }
         ],
         "members": [
@@ -63,7 +63,9 @@
                         "id": "c101",
                         "title": "Basic CRUDL",
                         "archivedAt": null,
-                        "labelIds": ["l104"],
+                        "labelIds": [
+                            "l104"
+                        ],
                         "dueDate": 1674837381,
                         "byMember": {
                             "_id": "u103",
@@ -78,8 +80,8 @@
                                 "createdAt": 1673973381,
                                 "byMember": {
                                     "_id": "u103",
-                                "fullname": "Dror K",
-                                "imgUrl": "http://dror-img"
+                                    "fullname": "Dror K",
+                                    "imgUrl": "http://dror-img"
                                 }
                             }
                         ]
@@ -89,7 +91,47 @@
                         "title": "Build app footer",
                         "description": "description",
                         "archivedAt": null,
-                        "labelIds": ["l103"],
+                        "labelIds": [
+                            "l102"
+                        ],
+                        "dueDate": 1674664581,
+                        "byMember": {
+                            "_id": "u103",
+                            "username": "Dror",
+                            "fullname": "Dror K",
+                            "imgUrl": "http://dror-img"
+                        },
+                        "style": {
+                            "bgColor": "#7bc86c"
+                        }
+                    },
+                    {
+                        "id": "c103",
+                        "title": "Build http service",
+                        "description": "description",
+                        "archivedAt": null,
+                        "labelIds": [
+                            "l104"
+                        ],
+                        "dueDate": 1674664581,
+                        "byMember": {
+                            "_id": "u103",
+                            "username": "Dror",
+                            "fullname": "Dror K",
+                            "imgUrl": "http://dror-img"
+                        },
+                        "style": {
+                            "bgColor": "#7bc86c"
+                        }
+                    },
+                    {
+                        "id": "c104",
+                        "title": "SEO",
+                        "description": "We need to call the agency for bid",
+                        "archivedAt": null,
+                        "labelIds": [
+                            "l103"
+                        ],
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
@@ -108,10 +150,13 @@
                 "title": "Backlog-server",
                 "tasks": [
                     {
-                        "id": "c103",
+                        "id": "c105",
                         "title": "User authentication",
                         "archivedAt": null,
-                        "labelIds": ["l101", "l103"],
+                        "labelIds": [
+                            "l101",
+                            "l103"
+                        ],
                         "dueDate": 1674491781,
                         "byMember": {
                             "_id": "u103",
@@ -124,10 +169,12 @@
                         }
                     },
                     {
-                        "id": "c104",
+                        "id": "c106",
                         "title": "Create services",
                         "archivedAt": null,
-                        "labelIds": ["l102"],
+                        "labelIds": [
+                            "l102"
+                        ],
                         "dueDate": 1674578181,
                         "byMember": {
                             "_id": "u103",
@@ -158,6 +205,52 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "id": "c107",
+                        "title": "Add npm modules",
+                        "description": "Don't forget to use Roni's files",
+                        "archivedAt": null,
+                        "labelIds": [
+                            "l104"
+                        ],
+                        "dueDate": 1674578181,
+                        "byMember": {
+                            "_id": "u103",
+                            "username": "Dror",
+                            "fullname": "Dror K",
+                            "imgUrl": "http://dror-img"
+                        }
+                    },
+                    {
+                        "id": "c109",
+                        "title": "REST API",
+                        "archivedAt": null,
+                        "labelIds": [
+                            "l103"
+                        ],
+                        "dueDate": 1674578181,
+                        "byMember": {
+                            "_id": "u103",
+                            "username": "Dror",
+                            "fullname": "Dror K",
+                            "imgUrl": "http://dror-img"
+                        }
+                    },
+                    {
+                        "id": "c110",
+                        "title": "Build server.js",
+                        "archivedAt": null,
+                        "labelIds": [
+                            "l102"
+                        ],
+                        "dueDate": 1674578181,
+                        "byMember": {
+                            "_id": "u103",
+                            "username": "Dror",
+                            "fullname": "Dror K",
+                            "imgUrl": "http://dror-img"
+                        }
                     }
                 ]
             },
@@ -166,10 +259,13 @@
                 "title": "In development",
                 "tasks": [
                     {
-                        "id": "c105",
+                        "id": "c111",
                         "title": "Support sockets",
                         "archivedAt": null,
-                        "labelIds": ["l103"],
+                        "labelIds": [
+                            "l103",
+                            "l105"
+                        ],
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
@@ -177,13 +273,19 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "memberIds": ["u101", "u103"]
+                        "memberIds": [
+                            "u101",
+                            "u102"
+                        ]
                     },
                     {
-                        "id": "c106",
+                        "id": "c112",
+                        "description": "Use the same header as we used in the \"Boxing\" project",
                         "title": "Build app header",
                         "archivedAt": null,
-                        "labelIds": ["l103"],
+                        "labelIds": [
+                            "l104"
+                        ],
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
@@ -192,8 +294,12 @@
                             "imgUrl": "http://dror-img"
                         },
                         "style": {
-                        "bgColor": "#ffaf3f"
-                        }
+                            "bgColor": "#ffaf3f"
+                        },
+                        "memberIds": [
+                            "u101",
+                            "u103"
+                        ]
                     }
                 ]
             },
@@ -202,10 +308,12 @@
                 "title": "QA",
                 "tasks": [
                     {
-                        "id": "c107",
+                        "id": "c113",
                         "title": "Database implementation",
                         "archivedAt": null,
-                        "labelIds": ["l105"],
+                        "labelIds": [
+                            "l105"
+                        ],
                         "dueDate": 1674837381,
                         "byMember": {
                             "_id": "u103",
@@ -213,14 +321,19 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "memberIds": ["u101"]
+                        "memberIds": [
+                            "u101"
+                        ]
                     },
                     {
-                        "id": "c108",
+                        "id": "c114",
                         "title": "PWA",
-                        "description": "description",
+                        "description": "Sent to another opinion to Lili",
                         "archivedAt": null,
-                        "labelIds": ["l101", "l104"],
+                        "labelIds": [
+                            "l101",
+                            "l104"
+                        ],
                         "dueDate": 1675010181,
                         "byMember": {
                             "_id": "u103",
@@ -228,8 +341,13 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "memberIds": ["u102","u103"],
-                        "attachments": ["http://img-attached1"]
+                        "memberIds": [
+                            "u102",
+                            "u103"
+                        ],
+                        "attachments": [
+                            "http://img-attached1"
+                        ]
                     }
                 ]
             },
@@ -238,10 +356,13 @@
                 "title": "Done",
                 "tasks": [
                     {
-                        "id": "c109",
+                        "id": "c115",
                         "title": "Login system",
                         "archivedAt": null,
-                        "labelIds": ["l101", "l103"],
+                        "labelIds": [
+                            "l101",
+                            "l103"
+                        ],
                         "dueDate": 1674146181,
                         "byMember": {
                             "_id": "u103",
@@ -249,16 +370,22 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "memberIds": ["u102", "u103"],
+                        "memberIds": [
+                            "u102",
+                            "u103"
+                        ],
                         "style": {
                             "bgColor": "#29cce5"
-                            }
+                        }
                     },
                     {
-                        "id": "c110",
+                        "id": "c116",
                         "title": "Add node.js modules",
                         "archivedAt": null,
-                        "labelIds": ["l101", "l104"],
+                        "labelIds": [
+                            "l101",
+                            "l104"
+                        ],
                         "dueDate": 1675010181,
                         "byMember": {
                             "_id": "u103",
@@ -266,8 +393,14 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "memberIds": ["u101","u102","u103"],
-                        "attachments": ["http://img-attached2"],
+                        "memberIds": [
+                            "u101",
+                            "u102",
+                            "u103"
+                        ],
+                        "attachments": [
+                            "http://img-attached2"
+                        ],
                         "checklists": [
                             {
                                 "id": "cl102",
@@ -283,7 +416,6 @@
                                         "title": "another item in checklist 1",
                                         "isDone": true
                                     }
-                                    
                                 ]
                             },
                             {
@@ -294,9 +426,29 @@
                                         "id": "td104",
                                         "title": "item in checklist 2",
                                         "isDone": true
-                                    }                                
+                                    }
                                 ]
                             }
+                        ]
+                    },
+                    {
+                        "id": "c117",
+                        "title": "SASS archtecture",
+                        "archivedAt": null,
+                        "labelIds": [
+                            "l101",
+                            "l104"
+                        ],
+                        "dueDate": 1675010181,
+                        "byMember": {
+                            "_id": "u103",
+                            "username": "Dror",
+                            "fullname": "Dror K",
+                            "imgUrl": "http://dror-img"
+                        },
+                        "memberIds": [
+                            "u101",
+                            "u102"
                         ]
                     }
                 ]
@@ -304,31 +456,30 @@
             {
                 "id": "g106",
                 "title": "Ready for production",
-                "tasks": [
-                ]
+                "tasks": []
             }
         ]
     },
     {
         "_id": "b102",
-		"title": "Stam board",
-		"isStarred": false,
-		"archivedAt": null,
-		"createdBy": {},
-		"style": {},
-		"labels": [],
-		"members": [],
-		"groups": []
-	},
+        "title": "Stam board",
+        "isStarred": false,
+        "archivedAt": null,
+        "createdBy": {},
+        "style": {},
+        "labels": [],
+        "members": [],
+        "groups": []
+    },
     {
         "_id": "b103",
-		"title": "Yalla",
-		"isStarred": false,
-		"archivedAt": null,
-		"createdBy": {},
-		"style": {},
-		"labels": [],
-		"members": [],
-		"groups": []
-	}
+        "title": "Yalla",
+        "isStarred": false,
+        "archivedAt": null,
+        "createdBy": {},
+        "style": {},
+        "labels": [],
+        "members": [],
+        "groups": []
+    }
 ]

@@ -9,8 +9,8 @@ export function TaskSideBar({ onRemoveTask }) {
     const [openModal, toggleOpenModal] = useState(false)
 
     function onOpenModal(ev) {
-        // ev.stopPropagation()
-        // ev.preventDefault()
+        ev.stopPropagation()
+        ev.preventDefault()
         toggleOpenModal(!openModal)
     }
 
@@ -28,7 +28,7 @@ export function TaskSideBar({ onRemoveTask }) {
         {openModal && <TaskCmpDynamoic cmpType={'members'}
             onOpenModal={onOpenModal} />}
 
-        <button className='clean-btn btn-task-details btn-side-bar' onClick={onOpenModal}>
+        <button className='clean-btn btn-task-details btn-side-bar' onClick={(event) => onOpenModal(event, 'labels')}>
             <span className='btn-side-bar-icon'>
                 <BsTag />
             </span>

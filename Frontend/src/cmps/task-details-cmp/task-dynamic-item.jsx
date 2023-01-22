@@ -44,7 +44,7 @@ export function TaskDynamicItem({ ids, add, board, type }) {
                 </li>
             )}
             {(type === 'labels') && currDataType.map(curr =>
-                <li key={curr._id} style={{ backgroundColor: `${curr.color}38` }} className="task-labels">
+                <li key={curr.id} style={{ backgroundColor: `${curr.color}38` }} className="task-labels">
                     <span className='color-circle' style={{ backgroundColor: `${curr.color}` }}></span>
                     <p>{curr.title}</p>
                 </li>
