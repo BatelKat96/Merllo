@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useState } from 'react'
 import { addBoard } from '../store/board.actions'
 import { boardService } from '../services/board.service'
-import { unsplashService } from '../services/unsplash.service'
 
 import { IoClose } from 'react-icons/io5'
-import { Navigate, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { BiCheck } from 'react-icons/bi'
 
 export function BoardCreate({ closeBoardComposer }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
@@ -111,6 +111,11 @@ export function BoardCreate({ closeBoardComposer }) {
 									onClick={() => setBoardBackground(undefined, bgImg.thumbnail)}
 									style={{ backgroundImage: 'url(' + bgImg.thumbnail + ')' }}
 								>
+									{backgroundImage === bgImg.thumbnail && (
+										<div className="selected-bg">
+											<BiCheck className="icon-selected-bg" />
+										</div>
+									)}
 									<span className="bg-preview-fade"></span>
 								</button>
 							</li>
@@ -127,6 +132,11 @@ export function BoardCreate({ closeBoardComposer }) {
 									onClick={() => setBoardBackground(bgClr, undefined)}
 									style={{ backgroundColor: bgClr }}
 								>
+									{backgroundColor === bgClr && (
+										<div className="selected-bg">
+											<BiCheck className="icon-selected-bg" />
+										</div>
+									)}
 									<span className="bg-preview-fade"></span>
 								</button>
 							</li>
@@ -148,25 +158,6 @@ export function BoardCreate({ closeBoardComposer }) {
 					Create
 				</button>
 			</form>
-
-			{/* <div className="photos-unsplash">
-				<p>Photos</p>
-				{photos && (
-					<section className="photo-list">
-						<ul className="clean-list">
-							{photos.map((photo) => (
-								<li
-									key={photo.background}
-									className="photo-unsplash"
-									style={{
-										background: `url('${photo.thumbnail}') center center / cover`,
-									}}
-								></li>
-							))}
-						</ul>
-					</section>
-				)}
-			</div> */}
 		</section>
 	)
 }
