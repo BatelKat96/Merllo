@@ -38,18 +38,22 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
     }
 
     function handleChange({ target }) {
-        let { value, type, name: field, id } = target
+
+        let { value, type, name: field, id, defaultValue } = target
+        console.log('defaultValue:', defaultValue)
         value = type === 'number' ? +value : value
-        currTitle = value
+        currTitle = value ? value : defaultValue
     }
 
     function onSaveChecklistTitle(ev, checklist_id) {
         if (checklistId === checklist_id) {
             let index = checklists.findIndex(cl => (cl.id === checklist_id))
             let currChecklist = checklists[index]
-            currChecklist.title = currTitle
+            // if (!currTitle) currTitle=
+            currChecklist.title = currTitle ? currTitle : currChecklist.title
             checklists.splice(index, 1, currChecklist)
             onCloseTitleInput()
+            setChecklistId('')
             onSaveEdit(ev)
         }
     }

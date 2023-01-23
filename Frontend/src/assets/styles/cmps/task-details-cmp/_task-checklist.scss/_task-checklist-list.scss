@@ -4,6 +4,7 @@
     align-items: center;
     height: 36px;
     border-radius: 4px;
+    cursor: pointer;
 
     &:hover {
         background-color: $t-bg5;
@@ -12,11 +13,40 @@
     .task-checklist-checkbox {
         width: 16px;
         height: 16px;
+        box-shadow: inset 0 0 0 2px #dfe1e6;
+        // border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: aqua;
+
+
+        &:active {
+            box-shadow: inset 0 0 0 2px #dfe1e6;
+            border: none;
+        }
+
+        &:focus {
+            box-shadow: inset 0 0 0 2px #dfe1e6;
+            border: none;
+        }
+
+        &:hover {
+            background: blue; //not work
+        }
+
+        &:checked {
+            box-shadow: none;
+        }
     }
 
     .task-checklist-label {
         margin-inline-start: 17px;
         // padding-inline-start: 15px;
+        cursor: pointer;
+    }
+
+    .task-checklist-checkbox:checked+.task-checklist-label {
+        text-decoration: line-through;
     }
 
 }
