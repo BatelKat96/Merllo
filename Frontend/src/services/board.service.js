@@ -67,7 +67,11 @@ function getEmptyBoard() {
 		isStarred: false,
 		archivedAt: null,
 		createdBy: {},
-		style: {},
+		style: {
+			background: '',
+			thumbnail: '',
+			backgroundColor: '#0067a3',
+		},
 		labels: [],
 		members: [],
 		groups: [],

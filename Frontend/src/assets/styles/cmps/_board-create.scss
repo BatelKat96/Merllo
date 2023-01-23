@@ -19,6 +19,15 @@
     padding: 0 10px;
     z-index: 300;
 
+    label {
+        color: #5e6c84;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        margin-top: 12px;
+    }
+
     .create-board-composer-header {
         margin-bottom: 8px;
         // position: relative;
@@ -84,7 +93,62 @@
                 }
             }
         }
-}
+    }
+
+    .create-board-bg-picker {
+
+        .bg-imgs-picker {
+            display: flex;
+
+            .bg-imgs-list {
+                display: flex;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                li {
+                    width: 64px;
+                    height: 40px;
+                    
+                    button.btn-bg.bg-img {
+                        align-items: center;
+                        background-position: center center;
+                        background-size: cover;
+                        border:none;
+                        outline:none;
+                        border-radius: 3px;
+                        box-shadow: none;
+                        color: rgba(255, 255, 255, 0.4);
+                        display: flex;
+                        justify-content: center;
+                        margin: 0;
+                        min-height: 0;
+                        outline: 0;
+                        padding: 0;
+                        position: relative;
+                        line-height: 0;
+                        height: 100%;
+                        width: 100%;
+                        cursor: pointer;
+                    }
+
+                    .bg-img-preview-fade {
+                        border-radius: 3px;
+                        width: 100%;
+                        height: 100%;
+                
+                        &:hover {
+                            background-color: #00000037;
+                        }
+
+                        &:active {
+                            background-color: #00000057;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     form {
         color:#5e6c84;
@@ -119,14 +183,6 @@
                 box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
                 background-color: $t-bg3;
             }
-        }
-
-        p {
-            color: #5e6c84;
-            font-size: 12px;
-            line-height: 16px;
-            font-weight: 700;
-            margin: 0;
         }
 
         button.btn-board-composer.create {
