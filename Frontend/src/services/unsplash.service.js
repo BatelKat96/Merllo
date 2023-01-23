@@ -8,14 +8,11 @@ const STORAGE_KEY = 'photos'
 const photos = _loadFromStorage(STORAGE_KEY) || null
 const API_KEY = 'JRY734h_KdVD-02lIwlrBk6TQnUCv29JyIqGjCYYVrE'
 
-async function getPhotos() {
-	return photos
-	// if (!searchWords && photos) return photos
-	// let URL = `https://api.unsplash.com/photos/random?count=30${
-	//   searchWords ? `&query=${searchWords}` : ''
-	// }&client_id=${API_KEY}`
-
-	let URL = `https://api.unsplash.com/photos/random?count=30&client_id=${API_KEY}`
+async function getPhotos(searchTxt) {
+	if (!searchTxt && photos) return photos
+	let URL = `https://api.unsplash.com/photos/random?count=30${
+		searchTxt ? `&query=${searchTxt}` : ''
+	}&client_id=${API_KEY}`
 
 	try {
 		const response = await axios.get(URL)
