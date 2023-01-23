@@ -1,4 +1,3 @@
-import { boardImg } from '../img/borads-bg-imgs/b101.jpg'
 import { HiOutlineStar } from 'react-icons/hi2'
 import { updateBoard } from '../store/board.actions'
 
@@ -15,13 +14,21 @@ export function BoardPreview({ board, onToggleStar }) {
 	// 	}
 	// }
 
+	function getBoardStyle() {
+		if (!board) return
+		if (board?.style.background) {
+			return {
+				background: `url('${board.style.thumbnail}') center center / cover`,
+			}
+		} else if (board?.style.backgroundColor) {
+			return { backgroundColor: `${board.style.backgroundColor}` }
+		}
+		return { backgroundColor: `#0067a3` }
+	}
+	const boardStyle = getBoardStyle()
+
 	return (
-		<section
-			className="board-preview"
-			style={{
-				backgroundImage: `url(../img/borads-bg-imgs/${board._id}.jpg)`,
-			}}
-		>
+		<section className="board-preview" style={boardStyle}>
 			<span className="preview-fade">
 				<div className="preview-details">
 					<span className="preview-board-title">{board.title}</span>

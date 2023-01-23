@@ -16,6 +16,7 @@ export function Workspace() {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isBoardComposerOpen, setIsBoardComposerOpen] = useState(false)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
+
 	const starredBoards = getStarredBoards()
 
 	useEffect(() => {
