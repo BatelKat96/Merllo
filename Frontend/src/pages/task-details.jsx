@@ -63,6 +63,17 @@ export function TaskDetails() {
             // showErrorMsg('Cannot update task ', err)
         }
     }
+
+    async function onCopyTask() {
+        let copyTask = { ...task }
+        copyTask.id = null
+        try {
+            await saveTask(copyTask, groupId, boardId)
+        } catch (err) {
+            console.log('Cannot copy task', err)
+        }
+    }
+
     async function onSaveEdit(ev) {
         ev.preventDefault()
         try {
@@ -123,14 +134,20 @@ export function TaskDetails() {
                             {labelIds && <TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
-                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                        <TaskDescription
+                            handleChange={handleChange}
+                            onSaveEdit={onSaveEdit}
+                            task={task} />
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
 
                     </div>
-                    <TaskSideBar onRemoveTask={onRemoveTask} task={task} />
+                    <TaskSideBar
+                        task={task}
+                        onRemoveTask={onRemoveTask}
+                        onCopyTask={onCopyTask} />
 
                 </div>
                 {/* <TaskCmpDynamoic cmpType={'members'} /> */}

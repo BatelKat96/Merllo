@@ -7,20 +7,18 @@ import Loader from '../../assets/img/loader.svg'
 import { saveTask } from '../../store/board.actions'
 
 export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, refDataBtn }) {
+
     const board = useSelector((storeState) => storeState.boardModule.board)
     const members = board.members
 
     const [updateTask, setUpdateTask] = useState(task)
     const [toRender, setToRender] = useState(members)
 
-    console.log('refDataBtn from dynmaic', refDataBtn);
-    console.log(refDataBtn.current.offsetTop);
-    console.log(refDataBtn.current.offsetLeft);
-
     const modalPos = {
         top: refDataBtn.current.offsetTop + "px",
         left: refDataBtn.current.offsetLeft + "px"
     }
+
     // let info
     // DynamicCmp(cmpType)
 
