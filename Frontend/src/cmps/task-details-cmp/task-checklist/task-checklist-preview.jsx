@@ -1,22 +1,31 @@
 import { useState } from 'react';
 import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
 import { TaskChecklistList } from './task-checklist-list';
+import { IoCloseOutline } from "react-icons/io5";
+import { GrClose } from "react-icons/gr";
+import { IoClose } from "react-icons/io5";
 
-export function TaskChecklistPreview({ handleChange, onSaveEdit, task }) {
+
+export function TaskChecklistPreview({ onSaveEdit, task }) {
     // console.log('task:', task)
+    const currChecklists = task.checklists
     const [isEditTitleOpen, setIsEditTitleOpen] = useState(false)
+    const [checklists, setChecklists] = useState(currChecklists)
     const [checklistId, setChecklistId] = useState('')
+    let currTitle
 
-    const { checklists } = task
+    // const { checklists } = task
+    // setCurrChecklists(checklists)
     // console.log('checklists:', checklists)
 
-    function onDeleteChecklist(id) {
-        console.log('delete checklist', id)
+    function onDeleteChecklist(ev, checklist_id) {
+        console.log('delete checklist', checklist_id)
+        let index = checklists.findIndex(cl => (cl.id === checklist_id))
+        checklists.splice(index, 1)
+        onSaveEdit(ev)
     }
 
-    function onChangeTodoDone(todo) {
-        todo.isDone = !todo.isDone
-    }
+
 
     function onShowTitleInput(id) {
         setChecklistId(id)
@@ -27,8 +36,22 @@ export function TaskChecklistPreview({ handleChange, onSaveEdit, task }) {
         setChecklistId('')
         setIsEditTitleOpen(false)
     }
-    function onSaveChecklistTitle() {
-        onCloseTitleInput()
+
+    function handleChange({ target }) {
+        let { value, type, name: field, id } = target
+        value = type === 'number' ? +value : value
+        currTitle = value
+    }
+
+    function onSaveChecklistTitle(ev, checklist_id) {
+        if (checklistId === checklist_id) {
+            let index = checklists.findIndex(cl => (cl.id === checklist_id))
+            let currChecklist = checklists[index]
+            currChecklist.title = currTitle
+            checklists.splice(index, 1, currChecklist)
+            onCloseTitleInput()
+            onSaveEdit(ev)
+        }
     }
 
     return <section className='task-checklists-preview-section'>
@@ -39,7 +62,6 @@ export function TaskChecklistPreview({ handleChange, onSaveEdit, task }) {
                         <BsCheck2Square className='icon-task checklists-icon' />
                     </div>
 
-
                     <div className='task-checklist-preview-title-container'>
                         {(!isEditTitleOpen || (checklistId !== checklist.id)) &&
                             <h3 className='medium-headline task-checklist-title'
@@ -48,21 +70,22 @@ export function TaskChecklistPreview({ handleChange, onSaveEdit, task }) {
                             </h3>
                         }
                         {isEditTitleOpen && (checklistId === checklist.id) &&
-                            <form onSubmit={onSaveChecklistTitle}>
+                            <form onSubmit={(ev) => onSaveChecklistTitle(ev, (checklist.id))}>
                                 <input autoFocus
-                                    name="checklist-title"
-                                    className='task-checklist-title-input'
-                                    id="checklist-title"
+                                    name='title'
+                                    className='task-checklist-title-input medium-headline'
+                                    id={checklist.id}
                                     onChange={handleChange}
                                     defaultValue={checklist.title}
                                 ></input>
-                                <div className='task-description-btn'>
-                                    <button className='clean-btn btn-task-details btn-description-save' >
+
+                                <div className='task-checklist-btn'>
+                                    <button className='clean-btn btn-task-details btn-checklist-save' >
                                         Save
                                     </button>
-                                    <button className='clean-btn btn-description-cancel btn-task-details btn-description-cancel'
+                                    <button className='clean-btn icon-task btn-checklist-cancel-container'
                                         onClick={() => { onCloseTitleInput() }}>
-                                        Cancel
+                                        <GrClose className='btn-checklist-cancel' />
                                     </button>
                                 </div>
                             </form >
@@ -70,8 +93,8 @@ export function TaskChecklistPreview({ handleChange, onSaveEdit, task }) {
 
                     </div>
 
-                    {!isEditTitleOpen && <div className='btn-checklist-delete-container'>
-                        <button className='clean-btn btn-task-details btn-checklist-delete' onClick={() => onDeleteChecklist(checklist.id)}>Delete</button>
+                    {(!isEditTitleOpen || (checklistId !== checklist.id)) && <div className='btn-checklist-delete-container'>
+                        <button className='clean-btn btn-task-details btn-checklist-delete' onClick={(ev) => onDeleteChecklist(ev, checklist.id)}>Delete</button>
                     </div>}
                 </div>
                 <hr />
@@ -80,7 +103,8 @@ export function TaskChecklistPreview({ handleChange, onSaveEdit, task }) {
                         checklist.todos && checklist.todos.length > 0 &&
                         < TaskChecklistList
                             todos={checklist.todos}
-                            onChangeTodoDone={onChangeTodoDone}
+                            checklist={checklist}
+                            onSaveEdit={onSaveEdit}
                         />
                     }
                 </ul>

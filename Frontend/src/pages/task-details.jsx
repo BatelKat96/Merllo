@@ -19,7 +19,7 @@ export function TaskDetails() {
     const board = useSelector((storeState) => storeState.boardModule.board) || loadBoard(boardId)
     const [task, setTask] = useState('')
     const { byMember, labelIds, style, checklists, memberIds } = task
-    console.log('checklists:', checklists)
+    // console.log('checklists:', checklists)
 
 
 
@@ -48,9 +48,10 @@ export function TaskDetails() {
     }
 
     function handleChange({ target }) {
-        console.log(':',)
-
         let { value, type, name: field } = target
+        console.log('value:', value)
+        console.log('field:', field)
+
         value = type === 'number' ? +value : value
         setTask((prevTask) => ({ ...prevTask, [field]: value }))
     }
@@ -113,7 +114,7 @@ export function TaskDetails() {
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
-                        {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
+                        {checklists && <TaskChecklistPreview handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />}
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
