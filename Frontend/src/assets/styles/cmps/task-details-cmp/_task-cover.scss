@@ -1,0 +1,47 @@
+.cover-section {
+
+    .cover-section-block {
+        display: block;
+
+        &.size{
+            .size-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                padding: 4px;
+                margin: 0 -4px;
+                overflow-x: hidden;
+
+                .size-opt {
+                    height: 62px;
+                    border: 1px solid var(--ds-border-disabled, rgba(9, 30, 66, 0.08));
+                    cursor: default;
+                    
+                    .size-img {
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+        }
+
+        &.colors{
+            
+        }
+
+        &.attachments{
+            
+        }
+
+        &.unsplash{
+            
+            small {
+                color: #5e6c84;
+                text-align: left;
+                font-size: 12px;
+                line-height: 16px;
+                font-family: segoe_ui;
+            }
+        }
+    }
+}

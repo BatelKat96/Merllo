@@ -75,67 +75,50 @@ export function TaskDetails() {
 		}
 	}
 
-	async function onSaveEdit(ev) {
-		ev.preventDefault()
-		try {
-			console.log('in:')
+    async function onSaveEdit(ev) {
+        ev.preventDefault()
+        try {
+            console.log('in:')
 
-			const savedTask = await saveTask(task, groupId, boardId)
-			// showSuccessMsg(`Task edited (id: ${savedTask._id})`)
-		} catch (err) {
-			console.log('Cannot update task ', err)
-			// showErrorMsg('Cannot update task ', err)
-		}
-	}
+            const savedTask = await saveTask(task, groupId, boardId)
+            // showSuccessMsg(`Task edited (id: ${savedTask._id})`)
+        } catch (err) {
+            console.log('Cannot update task ', err)
+            // showErrorMsg('Cannot update task ', err)
+        }
+    }
 
-	if (!task) return <h1 className="loading"></h1>
-	return (
-		<section className="task-details">
-			<div
-				onClick={() => navigate(`/board/${boardId}`)}
-				className="black-screen"
-			></div>
-			<div className="task-details-section">
-				<Link to={`/board/${boardId}`} className="btn-task-exit">
-					<IoClose className="icon-task exit-icon" />
-				</Link>
 
-				<div className="task-details-main-section">
-					<TaskTitle
-						handleChange={handleChange}
-						onSaveEdit={onSaveEdit}
-						task={task}
-						group={getGroup(groupId)}
-					/>
 
-					<div className="task-details-container">
-						<div className="task-details-edit-section">
-							<div className="task-details-edit-item">
-								{memberIds && (
-									<TaskDynamicItem
-										ids={memberIds}
-										board={board}
-										type={'members'}
-									/>
-								)}
-								{labelIds && (
-									<TaskDynamicItem
-										ids={labelIds}
-										board={board}
-										type={'labels'}
-									/>
-								)}
-								{/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
-							</div>
-							<TaskDescription
-								handleChange={handleChange}
-								onSaveEdit={onSaveEdit}
-								task={task}
-							/>
-							{checklists && (
-								<TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />
-							)}
-							{/* <p>Checklist</p>
+    if (!task) return <h1 className='loading'></h1>
+    return <section className='task-details'>
+        <div onClick={() => navigate(`/board/${boardId}`)} className="black-screen"></div>
+        <div className='task-details-section'>
+
+            <Link to={`/board/${boardId}`} className="btn-task-exit">
+                <IoClose className='icon-task exit-icon' />
+            </Link>
+
+            <div className='task-details-main-section'>
+                <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />
+
+                <div className='task-details-container'>
+                    <div className='task-details-edit-section'>
+                        <div className='task-details-edit-item'>
+                            {memberIds && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
+                            {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
+                            {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
+                        </div>
+<<<<<<< HEAD
+                        <TaskDescription
+                            handleChange={handleChange}
+                            onSaveEdit={onSaveEdit}
+                            task={task} />
+=======
+                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                        {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
+>>>>>>> 35a3bbf6970d57e0ec23d5570b5cb50bad051072
+                        {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
