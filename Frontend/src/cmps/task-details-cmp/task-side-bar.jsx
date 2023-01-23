@@ -7,24 +7,46 @@ import { AiOutlineMinus } from "react-icons/ai";
 import { useParams } from 'react-router-dom';
 
 export function TaskSideBar({ onRemoveTask, task }) {
-    const [openModal, toggleOpenModal] = useState(false)
+    // const [openModal, toggleOpenModal] = useState(false)
     const { boardId, groupId, taskId } = useParams()
+    const [modalType, setModalType] = useState()
 
     const memberBtn = useRef()
     const labelBtn = useRef()
     const checklistBtn = useRef()
 
-    function onOpenModal(ev) {
-        // ev.stopPropagation()
-        // ev.preventDefault()
-        toggleOpenModal(!openModal)
+    function getRefData(type) {
+        switch (type) {
+            case 'members':
+                return memberBtn
+
+            case 'labels':
+                return labelBtn
+
+            case 'checklist':
+                return checklistBtn
+        }
+    }
+
+    // function onOpenModal(ev, type) {
+    //     console.log('onOpenModal', type);
+    //     // ev.stopPropagation()
+    //     // ev.preventDefault()
+    //     refData(type)
+    //     getBtnPos(refDataBtn)
+    //     toggleOpenModal(!openModal)
+    // }
+
+    function onOpenModal(ev, type) {
+        setModalType(type)
     }
 
 
     return <div className='side-bar-menu'>
         <h3 className='small-headline'>Add to card</h3>
         <button className='clean-btn btn-task-details btn-side-bar'
-            onClick={onOpenModal}
+            // onClick={onOpenModal}
+            onClick={(event) => onOpenModal(event, 'members')}
             ref={memberBtn}
         >
             <span className='btn-side-bar-icon'>
@@ -44,7 +66,8 @@ export function TaskSideBar({ onRemoveTask, task }) {
         </button>
 
         <button className='clean-btn btn-task-details btn-side-bar'
-            onClick={onOpenModal}
+            // onClick={onOpenModal}
+            onClick={(event) => onOpenModal(event, 'checklist')}
             ref={checklistBtn}
         >
             <span className='btn-side-bar-icon'>
@@ -63,13 +86,12 @@ export function TaskSideBar({ onRemoveTask, task }) {
             Delete
         </button>
 
-        {openModal && <TaskCmpDynamoic
-            cmpType={'members'}
-            // refData={memberBtn}
+        {modalType && <TaskCmpDynamoic
+            cmpType={modalType}
+            refDataBtn={getRefData(modalType)}
             task={task}
             groupId={groupId}
             boardId={boardId}
             onOpenModal={onOpenModal} />}
     </div >
-
 }
