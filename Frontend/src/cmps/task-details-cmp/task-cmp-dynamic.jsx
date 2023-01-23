@@ -5,9 +5,8 @@ import { IoClose } from "react-icons/io5"
 import { BiCheck } from 'react-icons/bi'
 import Loader from '../../assets/img/loader.svg'
 import { saveTask } from '../../store/board.actions'
-import { useState } from 'react'
 
-export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId }) {
+export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, refData }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const members = board.members
 

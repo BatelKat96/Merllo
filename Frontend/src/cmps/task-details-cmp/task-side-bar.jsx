@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic';
 
 import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
@@ -7,10 +7,12 @@ import { AiOutlineMinus } from "react-icons/ai";
 import { useParams } from 'react-router-dom';
 
 export function TaskSideBar({ onRemoveTask, task }) {
-
-
     const [openModal, toggleOpenModal] = useState(false)
     const { boardId, groupId, taskId } = useParams()
+
+    const memberBtn = useRef()
+    const labelBtn = useRef()
+    const checklistBtn = useRef()
 
     function onOpenModal(ev) {
         // ev.stopPropagation()
@@ -21,30 +23,30 @@ export function TaskSideBar({ onRemoveTask, task }) {
 
     return <div className='side-bar-menu'>
         <h3 className='small-headline'>Add to card</h3>
-        <button className='clean-btn btn-task-details btn-side-bar' onClick={onOpenModal}
+        <button className='clean-btn btn-task-details btn-side-bar'
+            onClick={onOpenModal}
+            ref={memberBtn}
         >
             <span className='btn-side-bar-icon'>
                 <BsPerson />
             </span>
             Members
         </button>
-        {openModal && <TaskCmpDynamoic
-            cmpType={'members'}
-            task={task}
-            groupId={groupId}
-            boardId={boardId}
-            onOpenModal={onOpenModal} />}
 
-        <button className='clean-btn btn-task-details btn-side-bar' onClick={(event) => onOpenModal(event, 'labels')}>
+        <button className='clean-btn btn-task-details btn-side-bar'
+            onClick={(event) => onOpenModal(event, 'labels')}
+            ref={labelBtn}
+        >
             <span className='btn-side-bar-icon btn-side-bar-icon-label '>
                 <TiTag />
             </span>
             Labels
         </button>
-        {/* {openModal && <TaskCmpDynamoic cmpType={'labels'}
-            onOpenModal={onOpenModal} />} */}
 
-        <button className='clean-btn btn-task-details btn-side-bar '>
+        <button className='clean-btn btn-task-details btn-side-bar'
+            onClick={onOpenModal}
+            ref={checklistBtn}
+        >
             <span className='btn-side-bar-icon'>
                 <BsCheck2Square />
             </span>
@@ -61,5 +63,13 @@ export function TaskSideBar({ onRemoveTask, task }) {
             Delete
         </button>
 
+        {openModal && <TaskCmpDynamoic
+            cmpType={'members'}
+            // refData={memberBtn}
+            task={task}
+            groupId={groupId}
+            boardId={boardId}
+            onOpenModal={onOpenModal} />}
     </div >
+
 }
