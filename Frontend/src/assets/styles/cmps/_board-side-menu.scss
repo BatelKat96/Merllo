@@ -1,0 +1,100 @@
+.board-side-menu {
+    box-shadow: 0 12px 24px -6px #091e4240,0 0 0 1px;
+    transform: translateX(0);
+    
+    position: fixed;
+    right: 0;
+    top: 45px;
+    height: 100%;
+    
+    background-color: #f4f5f7;
+    transition-duration: .1s;
+    transition-property: transform,width;
+    transition-timing-function: ease-in;
+    width: 339px;
+    z-index: 400;
+
+    display: flex;
+    flex-direction: column;
+    padding:0 10px;
+
+    .board-side-menu-header {
+        // box-sizing: border-box;
+        // flex: 0 0 auto;
+        // height: 48px;
+        // opacity: 0;
+        // overflow: hidden;
+        // padding: 0 6px 0 12px;
+        // position: relative;
+        // transition: opacity .2s ease-in;
+        
+        width: 100%;
+        display: flex;
+        border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+
+        .board-side-menu-header-title {
+            color: #0067a3;
+            flex: 1;
+            line-height: 20px;
+            margin: 14px 32px;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            transition: margin .12s ease-in;
+            white-space: nowrap;
+        }
+
+        a.board-side-menu-header-cancel {
+            background-color: unset;
+            color: #42526e;
+            border: none;
+            margin: 0 2px;
+            height: 32px;
+            width: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 6px;
+            top: 8px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .icon-close {
+                font-size: 24px;
+                text-align: center;
+                
+                svg {
+                    stroke-width: 1;
+                }
+            }
+        }
+    }
+
+    .board-side-menu-content {
+        ul {
+            margin: 8px 0;
+
+            li {
+                border-radius: 3px;
+                height: 30px;
+                padding-left: 18px;
+                display: flex;
+                align-items: center;
+                a {
+                    color: #0067a3;
+                    line-height: 20px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    padding: 6px;
+                }
+                &:hover {
+                    background-color: #091e4214;
+                }
+            }
+        }
+
+    }
+}

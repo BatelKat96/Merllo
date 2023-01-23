@@ -10,12 +10,15 @@ import { MdDeleteOutline, MdDelete } from 'react-icons/md'
 import { GroupList } from '../cmps/group-list'
 
 import Loader from '../assets/img/loader.svg'
+import { BoardSideMenu } from '../cmps/board-side-menu'
+import { FiSunset } from 'react-icons/fi'
 
 export function Board() {
 	const { boardId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [boardTitle, setBoardTitle] = useState('')
 	const [titleWidth, setTitleWidth] = useState(null)
+	const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
 	const navigate = useNavigate()
 
 	useEffect(() => {
@@ -75,6 +78,10 @@ export function Board() {
 		}
 	}
 
+	function onToggleSideMenu() {
+		setIsSideMenuOpen(!isSideMenuOpen)
+	}
+
 	function getBoardStyle() {
 		if (!board.style) return
 		if (board?.style.background) {
@@ -128,11 +135,14 @@ export function Board() {
 					<MdDelete />
 				</button>
 				<span></span>
-				{/* <button className="btn-board menu">...</button> */}
+				<button className="btn-board menu" onClick={onToggleSideMenu}>
+					...
+				</button>
 			</div>
 			<div className="board-main-content">
 				<GroupList />
 			</div>
+			{isSideMenuOpen && <BoardSideMenu onToggleSideMenu={onToggleSideMenu} />}
 			<Outlet />
 		</section>
 	)
