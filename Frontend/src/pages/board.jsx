@@ -1,17 +1,14 @@
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
-
-import { HiOutlineStar } from 'react-icons/hi2'
-import { BsFilter } from 'react-icons/bs'
-import { MdDeleteOutline, MdDelete } from 'react-icons/md'
-
 import { GroupList } from '../cmps/group-list'
 
 import Loader from '../assets/img/loader.svg'
+import { HiOutlineStar } from 'react-icons/hi2'
+import { BsFilter } from 'react-icons/bs'
+import { MdDelete } from 'react-icons/md'
 import { BoardSideMenu } from '../cmps/board-side-menu'
-import { FiSunset } from 'react-icons/fi'
 
 export function Board() {
 	const { boardId } = useParams()

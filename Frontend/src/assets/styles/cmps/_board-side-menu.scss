@@ -19,15 +19,6 @@
     padding:0 10px;
 
     .board-side-menu-header {
-        // box-sizing: border-box;
-        // flex: 0 0 auto;
-        // height: 48px;
-        // opacity: 0;
-        // overflow: hidden;
-        // padding: 0 6px 0 12px;
-        // position: relative;
-        // transition: opacity .2s ease-in;
-        
         width: 100%;
         display: flex;
         border-bottom: 1px solid rgba(9, 30, 66, 0.13);
@@ -185,7 +176,6 @@
             overflow: hidden;
 
                 input.search-photos-input {
-                    // padding-left: 50px;
                     background: #fafbfc;
                     width: 100%;
                     border: none;
@@ -201,7 +191,6 @@
                     transition-property: background-color,border-color,box-shadow;
                     transition-timing-function: ease;
                 }
-            
 
             .photo-list-wrapper {
                 height:75vh;

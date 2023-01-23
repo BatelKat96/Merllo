@@ -48,17 +48,6 @@ export function Workspace() {
 		}
 	}
 
-	// function getBoardStyle(board) {
-	// 	if (!board) return
-	// 	if (board?.style.bgImg)
-	// 		return {
-	// 			background: `url ("${board.style.bgImg}")`,
-	// 		}
-	// 	// else if (board?.style.backgroundColor)
-	// 	// 	return { backgroundColor: `${board.style.bgColor}` }
-	// 	return { backgroundColor: `blue` }
-	// }
-
 	if (!boards) return <img className="loader" src={Loader} alt="loader" />
 
 	return (
