@@ -40,6 +40,48 @@
         height: 54px;
 
 
-        :focus {}
+
+        &:focus {
+            box-shadow: rgba(9, 30, 66, 0.13) 0px 0px 0px 1px inset;
+            background-color: $t-bg5;
+        }
+    }
+}
+
+.task-checklist-btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn-checklist-save {
+    background-color: $t-btn-bgc;
+    color: $clr6;
+    margin-inline-end: 4px;
+    width: 52px;
+    height: 32px;
+    font-size: 14px;
+
+
+    &:hover {
+        background-color: #026aa7;
+    }
+}
+
+
+.btn-checklist-cancel-container {
+    // width: 52px;
+    // height: 32px;
+    // margin-block-start: 4px;
+
+    .btn-checklist-cancel {
+        width: 18px;
+        height: 18px;
+        color: #42526e;
+        vertical-align: bottom;
+
+        path {
+            stroke: #42526e;
+            stroke-width: 10%;
+        }
     }
 }

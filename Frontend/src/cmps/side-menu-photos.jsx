@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
 import { unsplashService } from '../services/unsplash.service'
 import Loader from '../assets/img/loader.svg'
-import { AiOutlineSearch } from 'react-icons/ai'
 
 export const SideMenuPhotos = ({ changeBackground }) => {
 	const [photos, setPhotos] = useState(null)
-	const [search, setSearch] = useState('')
+	const [searchTxt, setSearchTxt] = useState('')
 
 	const getPhotos = async () => {
 		try {
-			const photos = await unsplashService.getPhotos()
+			const photos = await unsplashService.getPhotos(searchTxt)
 			setPhotos(photos)
 		} catch (err) {
 			console.log('Failed to get photos')
@@ -19,31 +18,29 @@ export const SideMenuPhotos = ({ changeBackground }) => {
 	useEffect(() => {
 		getPhotos()
 	}, [])
-	console.log('photos', photos)
 
 	const onSearchPhotos = (ev) => {
 		ev.preventDefault()
-		if (!search) return
+		if (!searchTxt) return
 		setPhotos(null)
-		getPhotos(search)
+		getPhotos(searchTxt)
 	}
 
 	const handleChange = ({ target }) => {
-		setSearch(target.value)
+		setSearchTxt(target.value)
 	}
 
 	return (
 		<section className="side-menu-photos">
 			<form onSubmit={onSearchPhotos}>
-				<div className="input-holder">
+				<div className="search-photos-input-container">
 					<input
 						placeholder="Photos"
 						type="text"
-						className="input"
-						value={search}
+						className="search-photos-input"
+						value={searchTxt}
 						onChange={handleChange}
 					/>
-					<AiOutlineSearch className="icon" />
 				</div>
 			</form>
 			{photos ? (

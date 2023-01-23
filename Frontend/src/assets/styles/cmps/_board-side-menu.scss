@@ -19,15 +19,6 @@
     padding:0 10px;
 
     .board-side-menu-header {
-        // box-sizing: border-box;
-        // flex: 0 0 auto;
-        // height: 48px;
-        // opacity: 0;
-        // overflow: hidden;
-        // padding: 0 6px 0 12px;
-        // position: relative;
-        // transition: opacity .2s ease-in;
-        
         width: 100%;
         display: flex;
         border-bottom: 1px solid rgba(9, 30, 66, 0.13);
@@ -183,6 +174,23 @@
         .side-menu-photos{
             height: 100%;
             overflow: hidden;
+
+                input.search-photos-input {
+                    background: #fafbfc;
+                    width: 100%;
+                    border: none;
+                    border-radius: 3px;
+                    box-shadow: inset 0 0 0 2px #dfe1e6;
+                    box-sizing: border-box;
+                    display: block;
+                    line-height: 20px;
+                    margin-bottom: 12px;
+                    outline: none;
+                    padding: 8px 12px;
+                    transition-duration: 85ms;
+                    transition-property: background-color,border-color,box-shadow;
+                    transition-timing-function: ease;
+                }
 
             .photo-list-wrapper {
                 height:75vh;
