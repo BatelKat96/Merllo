@@ -56,7 +56,7 @@ export function HomePage() {
 
                             <div className="prod-cards">
 
-                                <button className="cards-btn card-boards" autofocus >
+                                <button className="cards-btn card-boards" autoFocus >
                                     <h5>Boards</h5>
                                     <p>Merllo boards keep tasks organized and work moving forward. ln a glance, see everything from "things to do" to "aww yeah, we did it!"</p>
                                     <div></div>

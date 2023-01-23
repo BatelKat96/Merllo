@@ -10,10 +10,9 @@
             "imgUrl": "http://batel-img"
         },
         "style": {
-            "bgImg": "../assets/img/borads-bg-imgs/b101.jpg",
-            "txtClr1": "#172B4D",
-            "txtClr2": "#ffffff",
-            "txtClr3": "#5E6C84"
+            "background": "../assets/img/borads-bg-imgs/b101.jpg",
+            "thumbnail":"../assets/img/borads-bg-imgs/b101.jpg",
+            "backgroundColor":"#0067a3"
         },
         "labels": [
             {
@@ -471,7 +470,11 @@
         "isStarred": false,
         "archivedAt": null,
         "createdBy": {},
-        "style": {},
+        "style": {
+            "background": "",
+            "thumbnail":"",
+            "backgroundColor":""
+        },
         "labels": [],
         "members": [],
         "groups": []
@@ -482,7 +485,11 @@
         "isStarred": false,
         "archivedAt": null,
         "createdBy": {},
-        "style": {},
+        "style": {
+            "background": "",
+            "thumbnail":"",
+            "backgroundColor":""
+        },
         "labels": [],
         "members": [],
         "groups": []

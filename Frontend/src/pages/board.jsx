@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
@@ -32,12 +32,13 @@ export function Board() {
 		}
 	}
 
-	function handleEditBoard({ target }) {
+	function handleEditBoardTitle({ target }) {
 		setBoardTitle(target.value)
 		setTitleWidth(boardTitle.length * 10 + 40)
 	}
 
 	async function onSaveBoardTitle() {
+		if (!boardTitle) return
 		board.title = boardTitle
 		try {
 			await updateBoard(board)
@@ -49,7 +50,7 @@ export function Board() {
 	async function handleKey(ev) {
 		if (ev.code === 'Enter') {
 			ev.preventDefault()
-			handleEditBoard(ev)
+			handleEditBoardTitle(ev)
 			onSaveBoardTitle()
 			ev.target.blur()
 		}
@@ -74,16 +75,23 @@ export function Board() {
 		}
 	}
 
+	function getBoardStyle() {
+		if (!board.style) return
+		if (board?.style.background) {
+			return {
+				background: `url("${board.style.background}") center center / cover`,
+			}
+		} else if (board?.style.backgroundColor) {
+			return { backgroundColor: `${board.style.backgroundColor}` }
+		}
+		return { backgroundColor: `#0067a3` }
+	}
+
 	if (!board) return <img className="loader" src={Loader} alt="loader" />
+	const boardStyle = getBoardStyle()
 
 	return (
-		<section
-			className="board"
-			style={{
-				backgroundImage: `url(../img/borads-bg-imgs/${board._id}.jpg)`,
-				backgroundSize: 'cover',
-			}}
-		>
+		<section className="board" style={boardStyle}>
 			<div className="board-top-menu">
 				<div className="board-title">
 					<input
@@ -92,9 +100,8 @@ export function Board() {
 						className="edit-group-title"
 						id={board.id}
 						spellCheck="false"
-						// maxLength="512"
 						defaultValue={board.title}
-						onChange={handleEditBoard}
+						onChange={handleEditBoardTitle}
 						onKeyDown={handleKey}
 						style={{ width: `${titleWidth}px` }}
 					></input>
