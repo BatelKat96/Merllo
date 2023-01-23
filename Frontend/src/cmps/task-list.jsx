@@ -51,7 +51,6 @@ export function TaskList({ group, tasks }) {
     return (
         <>
             <section className="task-list-wraper">
-
                 <ul className="task-list clean-list">
                     {tasks.map(task =>
 
