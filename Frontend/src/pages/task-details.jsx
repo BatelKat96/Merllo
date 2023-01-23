@@ -3,22 +3,24 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
 
 import { boardService } from '../services/board.service'
-import { loadBoard } from '../store/board.actions'
 import { IoClose } from "react-icons/io5";
-import { removeTask, saveTask } from '../store/board.actions'
+import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic';
 import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item';
+import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview';
 
 
 export function TaskDetails() {
-    const board = useSelector((storeState) => storeState.boardModule.board)
-    const { boardId, groupId, taskId } = useParams() || loadBoard(boardId)
+    const { boardId, groupId, taskId } = useParams()
+    const board = useSelector((storeState) => storeState.boardModule.board) || loadBoard(boardId)
     const [task, setTask] = useState('')
-    const { byMember, labelIds, style, memberIds } = task
+    const { byMember, labelIds, style, checklists, memberIds } = task
+    console.log('checklists:', checklists)
+
 
 
     const navigate = useNavigate()
@@ -46,6 +48,8 @@ export function TaskDetails() {
     }
 
     function handleChange({ target }) {
+        console.log(':',)
+
         let { value, type, name: field } = target
         value = type === 'number' ? +value : value
         setTask((prevTask) => ({ ...prevTask, [field]: value }))
@@ -63,6 +67,17 @@ export function TaskDetails() {
             // showErrorMsg('Cannot update task ', err)
         }
     }
+
+    async function onCopyTask() {
+        let copyTask = { ...task }
+        copyTask.id = null
+        try {
+            await saveTask(copyTask, groupId, boardId)
+        } catch (err) {
+            console.log('Cannot copy task', err)
+        }
+    }
+
     async function onSaveEdit(ev) {
         ev.preventDefault()
         try {
@@ -76,32 +91,6 @@ export function TaskDetails() {
         }
     }
 
-    async function addMember(memberId, ev) {
-        // ev.preventDefault()
-        try {
-            console.log('add member:')
-            console.log('memberIds:', memberIds)
-            memberIds.find((id) => {
-                console.log('id:', id)
-
-                if (memberId === id) throw new Error('jjjjj')
-            })
-            memberIds.push(memberId)
-            console.log('after memberIds:', memberIds)
-            console.log('task:', task)
-            await saveTask(task, groupId, boardId)
-            console.log('after save task:', task)
-
-        } catch (err) {
-            console.log('Cannot update task ', err)
-            // showErrorMsg('Cannot update task ', err)
-        }
-
-    }
-    function addLabel() {
-        console.log('add labels:')
-
-    }
 
 
     if (!task) return <h1 className='loading'></h1>
@@ -119,18 +108,29 @@ export function TaskDetails() {
                 <div className='task-details-container'>
                     <div className='task-details-edit-section'>
                         <div className='task-details-edit-item'>
-                            {memberIds && <TaskDynamicItem ids={memberIds} add={addMember} board={board} type={'members'} />}
-                            {labelIds && <TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'labels'} />}
+                            {memberIds && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
+                            {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
+<<<<<<< HEAD
+                        <TaskDescription
+                            handleChange={handleChange}
+                            onSaveEdit={onSaveEdit}
+                            task={task} />
+=======
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                        {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
+>>>>>>> 35a3bbf6970d57e0ec23d5570b5cb50bad051072
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
 
                     </div>
-                    <TaskSideBar onRemoveTask={onRemoveTask} task={task} />
+                    <TaskSideBar
+                        task={task}
+                        onRemoveTask={onRemoveTask}
+                        onCopyTask={onCopyTask} />
 
                 </div>
                 {/* <TaskCmpDynamoic cmpType={'members'} /> */}
