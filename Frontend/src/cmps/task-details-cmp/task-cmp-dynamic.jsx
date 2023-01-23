@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { IoClose } from "react-icons/io5"
@@ -5,6 +6,8 @@ import { IoClose } from "react-icons/io5"
 import Loader from '../../assets/img/loader.svg'
 
 export function TaskCmpDynamoic(props) {
+    const [task, setTask] = useState()
+
     const board = useSelector((storeState) => storeState.boardModule.board)
     // const members = 'Labels'
     let info

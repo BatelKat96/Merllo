@@ -91,36 +91,36 @@ export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskE
 
                 <section className="quick-edit-btns">
 
-                    <button onClick={onOpenCard}>
+                    <button className="quick-btn" onClick={onOpenCard}>
                         <OpenTaskSvg /> Open card
                     </button>
 
-                    <button>
+                    <button className="quick-btn" >
                         <TiTag className="tag-svg" /> Edit labels
                     </button>
 
-                    <button>
+                    <button className="quick-btn" >
                         <MemberSvg /> Change members
                     </button>
 
-                    {/* <button>
+                    <button className="quick-btn" >
                         <OpenTaskSvg /> Change cover
-                    </button> */}
+                    </button>
 
-                    {/* <button>
+                    <button className="quick-btn" >
                         <OpenTaskSvg /> Move
-                    </button> */}
+                    </button>
 
-                    <button onClick={onCopyTask}>
+                    <button className="quick-btn" onClick={onCopyTask}>
                         <CopySvg className="copy-svg" /> Copy
                     </button>
 
-                    {/* <button>
+                    <button className="quick-btn" >
                         <OpenTaskSvg /> Edit dates
-                    </button> */}
+                    </button>
 
-                    <button onClick={onRemoveTask}>
-                        <DeleteSvg /> Delete
+                    <button className="quick-btn" onClick={onRemoveTask}>
+                        <DeleteSvg /> Remove
                     </button>
 
                 </section>

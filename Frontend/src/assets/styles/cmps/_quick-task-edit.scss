@@ -75,8 +75,8 @@
         display: flex;
         flex-direction: column;
 
-        button {
-            background: rgba(0, 0, 0, 0.652);
+        .quick-btn  {
+            background-color:rgba(0, 0, 0, 0.652);
             font-family: noto-sans-hebrew-regular;
             text-align: left;
             border-radius: 3px;
@@ -90,6 +90,12 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            transition: transform 85ms ease-in;
+
+            &:hover {
+                background-color:rgba(0, 0, 0, 0.902);
+                transform: translateX(5px);
+            }
 
             .tag-svg {
                 transform: rotate(270deg);
