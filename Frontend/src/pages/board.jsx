@@ -46,7 +46,7 @@ export function Board() {
 		try {
 			await updateBoard(board)
 		} catch (err) {
-			console.log('Failed to update board', err)
+			console.log('Failed to update board title', err)
 		}
 	}
 
@@ -80,6 +80,15 @@ export function Board() {
 
 	function onToggleSideMenu() {
 		setIsSideMenuOpen(!isSideMenuOpen)
+	}
+
+	async function changeBackground({ background, backgroundColor, thumbnail }) {
+		board.style = { background, backgroundColor, thumbnail }
+		try {
+			await updateBoard(board)
+		} catch (err) {
+			console.log('Failed to update board background', err)
+		}
 	}
 
 	function getBoardStyle() {
@@ -142,7 +151,12 @@ export function Board() {
 			<div className="board-main-content">
 				<GroupList />
 			</div>
-			{isSideMenuOpen && <BoardSideMenu onToggleSideMenu={onToggleSideMenu} />}
+			{isSideMenuOpen && (
+				<BoardSideMenu
+					onToggleSideMenu={onToggleSideMenu}
+					changeBackground={changeBackground}
+				/>
+			)}
 			<Outlet />
 		</section>
 	)
