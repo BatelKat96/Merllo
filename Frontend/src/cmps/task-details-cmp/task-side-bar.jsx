@@ -1,18 +1,27 @@
 import { useState, useRef } from 'react'
 import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic';
+
 import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
 import { TiTag } from "react-icons/ti";
-import { AiOutlineMinus } from "react-icons/ai";
+import { ImAttachment } from "react-icons/im";
+import { FiArrowRight } from "react-icons/fi";
+import { MdContentCopy } from "react-icons/md";
+import { AiOutlineMinus, AiOutlineClockCircle } from "react-icons/ai";
 import { useParams } from 'react-router-dom';
 
-export function TaskSideBar({ onRemoveTask, task }) {
-    // const [openModal, toggleOpenModal] = useState(false)
+export function TaskSideBar({ onRemoveTask, task, onCopyTask }) {
+
     const { boardId, groupId, taskId } = useParams()
     const [modalType, setModalType] = useState()
+    const [isArchive, setIsArchive] = useState(false)
 
     const memberBtn = useRef()
     const labelBtn = useRef()
     const checklistBtn = useRef()
+    const datesBtn = useRef()
+    const attachmentBtn = useRef()
+    const coverBtn = useRef()
+
 
     function getRefData(type) {
         switch (type) {
@@ -24,29 +33,36 @@ export function TaskSideBar({ onRemoveTask, task }) {
 
             case 'checklist':
                 return checklistBtn
+
+            case 'dates':
+                return datesBtn
+
+            case 'attachment':
+                return attachmentBtn
+
+            case 'cover':
+                return coverBtn
         }
     }
 
-    // function onOpenModal(ev, type) {
-    //     console.log('onOpenModal', type);
-    //     // ev.stopPropagation()
-    //     // ev.preventDefault()
-    //     refData(type)
-    //     getBtnPos(refDataBtn)
-    //     toggleOpenModal(!openModal)
-    // }
 
-    function onOpenModal(ev, type) {
+    function onOpenModal(type) {
         setModalType(type)
+    }
+
+    function onOpenArchive() {
+        setIsArchive(true)
+    }
+    function onBackArchive() {
+        setIsArchive(false)
     }
 
 
     return <div className='side-bar-menu'>
         <h3 className='small-headline'>Add to card</h3>
         <button className='clean-btn btn-task-details btn-side-bar'
-            // onClick={onOpenModal}
-            onClick={(event) => onOpenModal(event, 'members')}
             ref={memberBtn}
+            onClick={() => onOpenModal('members')}
         >
             <span className='btn-side-bar-icon'>
                 <BsPerson />
@@ -55,8 +71,8 @@ export function TaskSideBar({ onRemoveTask, task }) {
         </button>
 
         <button className='clean-btn btn-task-details btn-side-bar'
-            onClick={(event) => onOpenModal(event, 'labels')}
             ref={labelBtn}
+            onClick={() => onOpenModal('labels')}
         >
             <span className='btn-side-bar-icon btn-side-bar-icon-label '>
                 <TiTag />
@@ -65,9 +81,8 @@ export function TaskSideBar({ onRemoveTask, task }) {
         </button>
 
         <button className='clean-btn btn-task-details btn-side-bar'
-            // onClick={onOpenModal}
-            onClick={(event) => onOpenModal(event, 'checklist')}
             ref={checklistBtn}
+            onClick={() => onOpenModal('checklist')}
         >
             <span className='btn-side-bar-icon'>
                 <BsCheck2Square />
@@ -75,15 +90,85 @@ export function TaskSideBar({ onRemoveTask, task }) {
             Checklist
         </button>
 
-        <h3 className='small-headline'>Actions</h3>
-        {/* <button className='clean-btn btn-side-bar btn-archive-side-bar' onClick={()=>{}}><span className='btn-side-bar-icon'><BsArchive /></span>Archive</button> */}
-
-        <button className='clean-btn btn-task-details btn-side-bar btn-remove-side-bar' onClick={() => { onRemoveTask() }}>
+        <button className='clean-btn btn-task-details btn-side-bar'
+            ref={datesBtn}
+            onClick={() => onOpenModal('dates')}
+        >
             <span className='btn-side-bar-icon'>
-                <AiOutlineMinus />
+                <AiOutlineClockCircle />
             </span>
-            Delete
+            Dates
         </button>
+
+        <button className='clean-btn btn-task-details btn-side-bar'
+            ref={attachmentBtn}
+            onClick={() => onOpenModal('attachment')}
+        >
+            <span className='btn-side-bar-icon'>
+                <ImAttachment />
+            </span>
+            Attachment
+        </button>
+
+        <button className='clean-btn btn-task-details btn-side-bar'
+            ref={coverBtn}
+            onClick={() => onOpenModal('cover')}
+        >
+            <span className='btn-side-bar-icon btn-side-bar-icon-label'>
+                <BsSquareHalf />
+            </span>
+            Cover
+        </button>
+
+        <h3 className='small-headline'>Actions</h3>
+
+        <button className='clean-btn btn-task-details btn-side-bar'
+            onClick={() => { onRemoveTask() }}>
+            <span className='btn-side-bar-icon'>
+                <FiArrowRight />
+            </span>
+            Move
+        </button>
+
+        <button className='clean-btn btn-task-details btn-side-bar'
+            onClick={onCopyTask}>
+            <span className='btn-side-bar-icon'>
+                <MdContentCopy />
+            </span>
+            Copy
+        </button>
+
+        <hr className='task-side-bar-hr' />
+
+        {!isArchive &&
+            <button className='clean-btn btn-task-details btn-side-bar'
+                onClick={onOpenArchive}>
+                <span className='btn-side-bar-icon'>
+                    <BsArchive />
+                </span>
+                Archive
+            </button>
+        }
+
+        {isArchive &&
+            <div className='btns-task-details-archive'>
+                <button className='clean-btn btn-task-details btn-side-bar'
+                    onClick={onBackArchive}>
+                    <span className='btn-side-bar-icon btn-side-bar-icon-label'>
+                        <BsArrowCounterclockwise />
+                    </span>
+                    Send to board
+                </button>
+
+                <button className='clean-btn btn-task-details btn-side-bar btn-remove-side-bar'
+                    onClick={onRemoveTask}>
+                    <span className='btn-side-bar-icon'>
+                        <AiOutlineMinus />
+                    </span>
+                    Delete
+                </button>
+            </div>
+        }
 
         {modalType && <TaskCmpDynamoic
             cmpType={modalType}
