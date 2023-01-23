@@ -38,6 +38,7 @@ export function Board() {
 	}
 
 	async function onSaveBoardTitle() {
+		if (!boardTitle) return
 		board.title = boardTitle
 		try {
 			await updateBoard(board)
