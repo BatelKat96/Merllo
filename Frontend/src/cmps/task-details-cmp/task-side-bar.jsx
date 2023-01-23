@@ -4,21 +4,23 @@ import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic';
 import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
 import { TiTag } from "react-icons/ti";
 import { AiOutlineMinus } from "react-icons/ai";
+import { useParams } from 'react-router-dom';
 
 export function TaskSideBar({ onRemoveTask, task }) {
 
+
     const [openModal, toggleOpenModal] = useState(false)
+    const { boardId, groupId, taskId } = useParams()
 
     function onOpenModal(ev) {
-        ev.stopPropagation()
-        ev.preventDefault()
+        // ev.stopPropagation()
+        // ev.preventDefault()
         toggleOpenModal(!openModal)
     }
 
 
     return <div className='side-bar-menu'>
         <h3 className='small-headline'>Add to card</h3>
-
         <button className='clean-btn btn-task-details btn-side-bar' onClick={onOpenModal}
         >
             <span className='btn-side-bar-icon'>
@@ -26,7 +28,11 @@ export function TaskSideBar({ onRemoveTask, task }) {
             </span>
             Members
         </button>
-        {openModal && <TaskCmpDynamoic cmpType={'members'} task={task}
+        {openModal && <TaskCmpDynamoic
+            cmpType={'members'}
+            task={task}
+            groupId={groupId}
+            boardId={boardId}
             onOpenModal={onOpenModal} />}
 
         <button className='clean-btn btn-task-details btn-side-bar' onClick={(event) => onOpenModal(event, 'labels')}>
