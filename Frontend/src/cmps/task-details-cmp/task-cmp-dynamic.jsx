@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import { TaskCover } from './task-cover'
+import { TaskCoverModal } from './task-cover-modal'
 
 import { IoClose } from "react-icons/io5"
 import { BiCheck } from 'react-icons/bi'
@@ -157,7 +157,7 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                     )}
                 </ul> */}
 
-                {cmpType === 'cover' && <TaskCover />}
+                {cmpType === 'cover' && <TaskCoverModal />}
 
             </div>
         </div>

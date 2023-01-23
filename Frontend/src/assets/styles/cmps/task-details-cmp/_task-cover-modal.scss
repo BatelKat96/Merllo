@@ -1,0 +1,105 @@
+.cover-section {
+
+    .cover-section-block {
+        display: block;
+
+        &.size{
+            .size-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                padding: 4px;
+                margin: 0 -4px;
+                overflow-x: hidden;
+                    
+                .size-img {
+                    border-radius: 3px;
+                    height: 62px;
+                    border: 1px solid var(--ds-border-disabled, rgba(9, 30, 66, 0.08));
+                    cursor: default;
+                }
+            }
+
+        }
+
+        &.colors{
+            .color-wrapper {
+                -webkit-transform: translate3d(0, 0, 0);
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                padding: 4px;
+                margin: 0 -4px;
+                overflow-x: hidden;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+                .color-btn {
+                    margin: 0;
+                    border-radius: 3px;
+                    height: 72px;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    box-shadow: none;
+                    width: 50px;
+                    height: 32px;
+                    cursor: pointer;
+                    border: none;
+                }
+            }
+        }
+
+        &.attachments{
+            .cover-upload-btn {
+                margin: 0;
+                width: 100%;
+                -webkit-appearance: none;
+                border: none;
+                border-radius: 3px;
+                box-sizing: border-box;
+                display: inline-block;
+                line-height: 20px;
+                padding: 6px 12px;
+                position: relative;
+                text-decoration: none;
+                font-family: segoe_ui;
+            }
+        }
+
+        &.unsplash{
+
+            .img-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                padding: 4px;
+                margin: 0 -4px;
+                overflow-x: hidden;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                .img-btn {
+                    margin: 0;
+                    border-radius: 3px;
+                    height: 72px;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    box-shadow: none;
+                    height: 48px;
+                    width: 88px;
+                    border: none;
+                }
+            }
+            
+            small {
+                color: #5e6c84;
+                text-align: left;
+                font-size: 12px;
+                line-height: 16px;
+                font-family: segoe_ui;
+            }
+        }
+    }
+}
