@@ -2,8 +2,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
 
-
 import { boardService } from '../services/board.service'
+import { loadBoard } from '../store/board.actions'
 import { IoClose } from "react-icons/io5";
 import { removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
@@ -16,8 +16,8 @@ import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item';
 
 export function TaskDetails() {
     const board = useSelector((storeState) => storeState.boardModule.board)
+    const { boardId, groupId, taskId } = useParams() || loadBoard(boardId)
     const [task, setTask] = useState('')
-    const { boardId, groupId, taskId } = useParams()
     const { byMember, labelIds, style, memberIds } = task
 
 
