@@ -1,16 +1,15 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic';
-
 import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
 import { TiTag } from "react-icons/ti";
 import { AiOutlineMinus } from "react-icons/ai";
 import { useParams } from 'react-router-dom';
 
 export function TaskSideBar({ onRemoveTask, task }) {
-
-
     const [openModal, toggleOpenModal] = useState(false)
     const { boardId, groupId, taskId } = useParams()
+
+    // const btnMembersRef = useRef()
 
     function onOpenModal(ev) {
         // ev.stopPropagation()
@@ -22,6 +21,7 @@ export function TaskSideBar({ onRemoveTask, task }) {
     return <div className='side-bar-menu'>
         <h3 className='small-headline'>Add to card</h3>
         <button className='clean-btn btn-task-details btn-side-bar' onClick={onOpenModal}
+
         >
             <span className='btn-side-bar-icon'>
                 <BsPerson />
@@ -35,7 +35,7 @@ export function TaskSideBar({ onRemoveTask, task }) {
             boardId={boardId}
             onOpenModal={onOpenModal} />}
 
-        <button className='clean-btn btn-task-details btn-side-bar' onClick={(event) => onOpenModal(event, 'labels')}>
+        <button className='clean-btn btn-task-details btn-side-bar' onClick={(ev) => onOpenModal(ev)}>
             <span className='btn-side-bar-icon btn-side-bar-icon-label '>
                 <TiTag />
             </span>

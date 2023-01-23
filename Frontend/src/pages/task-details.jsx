@@ -5,20 +5,23 @@ import { useEffect, useState } from 'react'
 
 import { boardService } from '../services/board.service'
 import { IoClose } from "react-icons/io5";
-import { removeTask, saveTask } from '../store/board.actions'
+import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic';
 import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item';
+import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview';
 
 
 export function TaskDetails() {
-    const board = useSelector((storeState) => storeState.boardModule.board)
-    const [task, setTask] = useState('')
     const { boardId, groupId, taskId } = useParams()
-    const { byMember, labelIds, style, memberIds } = task
+    const board = useSelector((storeState) => storeState.boardModule.board) || loadBoard(boardId)
+    const [task, setTask] = useState('')
+    const { byMember, labelIds, style, checklists, memberIds } = task
+    console.log('checklists:', checklists)
+
 
 
     const navigate = useNavigate()
@@ -76,32 +79,6 @@ export function TaskDetails() {
         }
     }
 
-    async function addMember(memberId, ev) {
-        // ev.preventDefault()
-        try {
-            console.log('add member:')
-            console.log('memberIds:', memberIds)
-            memberIds.find((id) => {
-                console.log('id:', id)
-
-                if (memberId === id) throw new Error('jjjjj')
-            })
-            memberIds.push(memberId)
-            console.log('after memberIds:', memberIds)
-            console.log('task:', task)
-            await saveTask(task, groupId, boardId)
-            console.log('after save task:', task)
-
-        } catch (err) {
-            console.log('Cannot update task ', err)
-            // showErrorMsg('Cannot update task ', err)
-        }
-
-    }
-    function addLabel() {
-        console.log('add labels:')
-
-    }
 
 
     if (!task) return <h1 className='loading'></h1>
@@ -119,11 +96,12 @@ export function TaskDetails() {
                 <div className='task-details-container'>
                     <div className='task-details-edit-section'>
                         <div className='task-details-edit-item'>
-                            {memberIds && <TaskDynamicItem ids={memberIds} add={addMember} board={board} type={'members'} />}
-                            {labelIds && <TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'labels'} />}
+                            {memberIds && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
+                            {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                        {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?

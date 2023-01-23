@@ -5,14 +5,16 @@ import { IoClose } from "react-icons/io5"
 import { BiCheck } from 'react-icons/bi'
 import Loader from '../../assets/img/loader.svg'
 import { saveTask } from '../../store/board.actions'
-import { useState } from 'react'
+
 
 export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const members = board.members
+    const labels = board.labels
 
     const [updateTask, setUpdateTask] = useState(task)
     const [toRender, setToRender] = useState(members)
+    // const [toRender, setToRender] = useState(labels)
 
     // let info
     // DynamicCmp(cmpType)
@@ -25,6 +27,7 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId }
                 setToRender(board.members)
                 return toRender
             case 'labels':
+            // setToRender(board.labels)
             // info = board.labels
             // return info
         }
@@ -45,6 +48,7 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId }
     }
 
 
+
     async function onToggleMember(id) {
         if (memberIds?.includes(id)) {
             const index = memberIds.indexOf(id)
@@ -53,6 +57,19 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId }
         else {
             if (memberIds) memberIds.push(id)
             else memberIds = [id]
+        }
+        setUpdateTask((prevTask) => ({ ...prevTask }))
+        await saveTask(updateTask, groupId, boardId)
+    }
+
+    async function onToggleLabel(id) {
+        if (labelIds?.includes(id)) {
+            const index = labelIds.indexOf(id)
+            labelIds.splice(index, 1)
+        }
+        else {
+            if (labelIds) labelIds.push(id)
+            else labelIds = [id]
         }
         setUpdateTask((prevTask) => ({ ...prevTask }))
         await saveTask(updateTask, groupId, boardId)
@@ -109,11 +126,19 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId }
                 {/* side-bar-label-cmp-dynamoic */}
                 {/* {cmpType === 'labels' && <ul className='cmp-dynamoic-options-list clean-list'>
                     {info.map(opt =>
-                        <li key={opt._id} className="cmp-dynamoic-option cmp-dynamoic-option-labels" style={{ backgroundColor: `${opt.color}38` }}> */}
-                {/* <img className='cmp-dynamoic-member-img' src={require(`../../assets/img/members-task-details/${opt.imgUrl}`)} alt={opt.imgUrl} /> */}
+                        <label htmlFor={opt.id} className="cmp-dynamoic-labels-label">
+                        <input 
+                       onChange={(ev) => {handleChange(ev, opt.id)}}
+                       checked={labelIds?.includes(opt.id)}
+                    className="checkbox"
+                    type="checkbox"
+                    id={opt.id}
+                        />
+                    <li key={opt.id} className="cmp-dynamoic-option cmp-dynamoic-option-labels" style={{ backgroundColor: `${opt.color}38` }}> onClick={() => onToggleLabel(opt.id)}*/}
                 {/* <span className='color-circle' style={{ backgroundColor: `${opt.color}` }}></span>
                             <p>{opt.title}</p>
-                        </li>
+                            </li>
+                            </label>
                     )}
                 </ul>} */}
 

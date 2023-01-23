@@ -1,0 +1,42 @@
+.task-checklists-preview-section {}
+
+.task-checklists-preview-container {
+    // display: grid;
+    // grid-template-columns: 40px 1fr;
+
+
+    .checklists-icon-container {
+
+        padding-block-start: 2px;
+        padding-inline-start: 8px;
+
+    }
+
+    .checklists-icon {
+        width: 19.5px;
+        width: 19.5px;
+        // align-self: center;
+        justify-self: center;
+    }
+}
+
+.task-checklist-preview-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.task-checklist-preview-header-icon-and-title {
+    display: flex;
+    align-items: center;
+
+}
+
+.task-checklist-preview-title-container {
+
+    margin-inline-start: 15px;
+    font-size: 12px;
+
+}
