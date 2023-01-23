@@ -48,6 +48,8 @@ export function TaskDetails() {
     }
 
     function handleChange({ target }) {
+        console.log(':',)
+
         let { value, type, name: field } = target
         value = type === 'number' ? +value : value
         setTask((prevTask) => ({ ...prevTask, [field]: value }))
@@ -110,14 +112,15 @@ export function TaskDetails() {
                             {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
-
+<<<<<<< HEAD
                         <TaskDescription
                             handleChange={handleChange}
                             onSaveEdit={onSaveEdit}
                             task={task} />
-
+=======
+                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
                         {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
-
+>>>>>>> 35a3bbf6970d57e0ec23d5570b5cb50bad051072
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
