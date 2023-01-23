@@ -88,44 +88,67 @@ export function TaskDetails() {
         }
     }
 
+    if (!task) return <h1 className="loading"></h1>
+    return (
+        <section className="task-details">
+            <div
+                onClick={() => navigate(`/board/${boardId}`)}
+                className="black-screen"
+            ></div>
+            <div className="task-details-section">
+                <Link to={`/board/${boardId}`} className="btn-task-exit">
+                    <IoClose className="icon-task exit-icon" />
+                </Link>
 
+                <div className="task-details-main-section">
+                    <TaskTitle
+                        handleChange={handleChange}
+                        onSaveEdit={onSaveEdit}
+                        task={task}
+                        group={getGroup(groupId)}
+                    />
 
-    if (!task) return <h1 className='loading'></h1>
-    return <section className='task-details'>
-        <div onClick={() => navigate(`/board/${boardId}`)} className="black-screen"></div>
-        <div className='task-details-section'>
-
-            <Link to={`/board/${boardId}`} className="btn-task-exit">
-                <IoClose className='icon-task exit-icon' />
-            </Link>
-
-            <div className='task-details-main-section'>
-                <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />
-
-                <div className='task-details-container'>
-                    <div className='task-details-edit-section'>
-                        <div className='task-details-edit-item'>
-                            {memberIds && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
-                            {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
-                            {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
-                        </div>
-
-                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
-                        {checklists && <TaskChecklistPreview handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />}
-                        {/* <p>Checklist</p>
+                    <div className="task-details-container">
+                        <div className="task-details-edit-section">
+                            <div className="task-details-edit-item">
+                                {memberIds && (
+                                    <TaskDynamicItem
+                                        ids={memberIds}
+                                        board={board}
+                                        type={'members'}
+                                    />
+                                )}
+                                {labelIds && (
+                                    <TaskDynamicItem
+                                        ids={labelIds}
+                                        board={board}
+                                        type={'labels'}
+                                    />
+                                )}
+                                {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
+                            </div>
+                            <TaskDescription
+                                handleChange={handleChange}
+                                onSaveEdit={onSaveEdit}
+                                task={task}
+                            />
+                            {checklists && (
+                                <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />
+                            )}
+                            {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
+                        </div>
+                        <TaskSideBar
+                            task={task}
+                            onRemoveTask={onRemoveTask}
+                            onCopyTask={onCopyTask}
+                        />
                     </div>
-                    <TaskSideBar
-                        task={task}
-                        onRemoveTask={onRemoveTask}
-                        onCopyTask={onCopyTask}
-                    />
+                    {/* <TaskCmpDynamoic cmpType={'members'} /> */}
                 </div>
-                {/* <TaskCmpDynamoic cmpType={'members'} /> */}
             </div>
-        </div>
-    </section>
-
+        </section>
+    )
 }

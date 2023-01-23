@@ -32,12 +32,16 @@ export function BoardPreview({ board, onToggleStar }) {
 			<span className="preview-fade">
 				<div className="preview-details">
 					<span className="preview-board-title">{board.title}</span>
-					{board.isStarred && (
-						// <button className="preview-board-starred">
-						// 	<HiOutlineStar />
-						// </button>
+					{board.isStarred ? (
 						<span
 							className="preview-board-starred"
+							onClick={(event) => onToggleStar(event, board)}
+						>
+							<HiOutlineStar />
+						</span>
+					) : (
+						<span
+							className="preview-board-not-starred"
 							onClick={(event) => onToggleStar(event, board)}
 						>
 							<HiOutlineStar />

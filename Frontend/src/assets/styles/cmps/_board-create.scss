@@ -137,6 +137,38 @@
                 height: 100%;
                 width: 100%;
                 cursor: pointer;
+
+                .selected-bg {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 13px;
+                    border-radius: 3px;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+
+                    svg.icon-selected-bg {
+                        color:white;
+                        fill: none;
+                        stroke-width: 2;
+                        outline: none;
+                        border: none;
+                        height: 15px;
+                        width: 15px;
+                        box-shadow: none;
+
+                        path {
+                            fill:none
+                        }
+                    }
+                }
             }
 
             span.bg-preview-fade {
@@ -152,6 +184,8 @@
                     background-color: #00000057;
                 }
             }
+
+            
         
         
         }
