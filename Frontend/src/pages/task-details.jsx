@@ -109,28 +109,23 @@ export function TaskDetails() {
                             {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
-<<<<<<< HEAD
-    <TaskDescription
-        handleChange={handleChange}
-        onSaveEdit={onSaveEdit}
-        task={task} />
-=======
+
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
                         {checklists && <TaskChecklistPreview handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />}
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
-						</div>
-						<TaskSideBar
-							task={task}
-							onRemoveTask={onRemoveTask}
-							onCopyTask={onCopyTask}
-						/>
-					</div>
-					{/* <TaskCmpDynamoic cmpType={'members'} /> */}
-				</div>
-			</div>
-		</section>
-	)
+                    </div>
+                    <TaskSideBar
+                        task={task}
+                        onRemoveTask={onRemoveTask}
+                        onCopyTask={onCopyTask}
+                    />
+                </div>
+                {/* <TaskCmpDynamoic cmpType={'members'} /> */}
+            </div>
+        </div>
+    </section>
+
 }
