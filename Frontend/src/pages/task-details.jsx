@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
 
 import { boardService } from '../services/board.service'
-import { loadBoard } from '../store/board.actions'
 import { IoClose } from "react-icons/io5";
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
@@ -111,15 +110,14 @@ export function TaskDetails() {
                             {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
-<<<<<<< HEAD
+
                         <TaskDescription
                             handleChange={handleChange}
                             onSaveEdit={onSaveEdit}
                             task={task} />
-=======
-                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+
                         {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
->>>>>>> 35a3bbf6970d57e0ec23d5570b5cb50bad051072
+
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
