@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react'
 
 import { boardService } from '../services/board.service'
-import { loadBoard } from '../store/board.actions'
 import { IoClose } from "react-icons/io5";
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
@@ -49,6 +48,8 @@ export function TaskDetails() {
     }
 
     function handleChange({ target }) {
+        console.log(':',)
+
         let { value, type, name: field } = target
         value = type === 'number' ? +value : value
         setTask((prevTask) => ({ ...prevTask, [field]: value }))
