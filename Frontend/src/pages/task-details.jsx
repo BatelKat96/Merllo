@@ -1,82 +1,79 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
 import { boardService } from '../services/board.service'
-import { IoClose } from "react-icons/io5";
+import { IoClose } from 'react-icons/io5'
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
-import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic';
-import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item';
-import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview';
-
+import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic'
+import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item'
+import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview'
 
 export function TaskDetails() {
-    const { boardId, groupId, taskId } = useParams()
-    const board = useSelector((storeState) => storeState.boardModule.board) || loadBoard(boardId)
-    const [task, setTask] = useState('')
-    const { byMember, labelIds, style, checklists, memberIds } = task
-    console.log('checklists:', checklists)
+	const { boardId, groupId, taskId } = useParams()
+	const board =
+		useSelector((storeState) => storeState.boardModule.board) ||
+		loadBoard(boardId)
+	const [task, setTask] = useState('')
+	const { byMember, labelIds, style, checklists, memberIds } = task
+	console.log('checklists:', checklists)
 
+	const navigate = useNavigate()
 
+	useEffect(() => {
+		loadTask(taskId, groupId, boardId)
+	}, [])
 
-    const navigate = useNavigate()
+	function getGroup(groupId) {
+		let groups = board.groups
+		let currGroup = groups.find((grp) => grp.id === groupId)
+		return currGroup
+	}
 
-    useEffect(() => {
-        loadTask(taskId, groupId, boardId)
-    }, [])
+	async function loadTask(taskId, groupId, boardId) {
+		try {
+			const task = await boardService.getTaskById(taskId, groupId, boardId)
+			setTask(task)
+		} catch (err) {
+			console.log('Failed to load task', err)
+			throw err
+		}
+	}
 
+	function handleChange({ target }) {
+		console.log(':')
 
-    function getGroup(groupId) {
-        let groups = board.groups
-        let currGroup = groups.find((grp) => grp.id === groupId)
-        return currGroup
-    }
+		let { value, type, name: field } = target
+		value = type === 'number' ? +value : value
+		setTask((prevTask) => ({ ...prevTask, [field]: value }))
+	}
 
+	async function onRemoveTask() {
+		try {
+			console.log('remove:')
+			const removedTask = await removeTask(taskId, groupId, boardId)
+			console.log('removedTask:', removedTask)
+			navigate(`/board/${boardId}`)
+			// showSuccessMsg(`Task edited (id: ${removedTask._id})`)
+		} catch (err) {
+			console.log('Cannot remove task ', err)
+			// showErrorMsg('Cannot update task ', err)
+		}
+	}
 
-    async function loadTask(taskId, groupId, boardId) {
-        try {
-            const task = await boardService.getTaskById(taskId, groupId, boardId)
-            setTask(task)
-        } catch (err) {
-            console.log('Failed to load task', err)
-            throw err
-        }
-    }
-
-    function handleChange({ target }) {
-        console.log(':',)
-
-        let { value, type, name: field } = target
-        value = type === 'number' ? +value : value
-        setTask((prevTask) => ({ ...prevTask, [field]: value }))
-    }
-
-    async function onRemoveTask() {
-        try {
-            console.log('remove:')
-            const removedTask = await removeTask(taskId, groupId, boardId)
-            console.log('removedTask:', removedTask)
-            navigate(`/board/${boardId}`)
-            // showSuccessMsg(`Task edited (id: ${removedTask._id})`)
-        } catch (err) {
-            console.log('Cannot remove task ', err)
-            // showErrorMsg('Cannot update task ', err)
-        }
-    }
-
-    async function onCopyTask() {
-        let copyTask = { ...task }
-        copyTask.id = null
-        try {
-            await saveTask(copyTask, groupId, boardId)
-        } catch (err) {
-            console.log('Cannot copy task', err)
-        }
-    }
+	async function onCopyTask() {
+		let copyTask = { ...task }
+		copyTask.id = null
+		try {
+			await saveTask(copyTask, groupId, boardId)
+		} catch (err) {
+			console.log('Cannot copy task', err)
+		}
+	}
 
     async function onSaveEdit(ev) {
         ev.preventDefault()
@@ -112,28 +109,29 @@ export function TaskDetails() {
                             {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
-
+<<<<<<< HEAD
                         <TaskDescription
                             handleChange={handleChange}
                             onSaveEdit={onSaveEdit}
                             task={task} />
-
+=======
+                        <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
                         {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
-
+>>>>>>> 35a3bbf6970d57e0ec23d5570b5cb50bad051072
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
-
-                    </div>
-                    <TaskSideBar
-                        task={task}
-                        onRemoveTask={onRemoveTask}
-                        onCopyTask={onCopyTask} />
-
-                </div>
-                {/* <TaskCmpDynamoic cmpType={'members'} /> */}
-            </div>
-        </div>
-    </section>
+						</div>
+						<TaskSideBar
+							task={task}
+							onRemoveTask={onRemoveTask}
+							onCopyTask={onCopyTask}
+						/>
+					</div>
+					{/* <TaskCmpDynamoic cmpType={'members'} /> */}
+				</div>
+			</div>
+		</section>
+	)
 }

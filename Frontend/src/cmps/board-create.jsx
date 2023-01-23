@@ -10,24 +10,8 @@ import { useSelector } from 'react-redux'
 export function BoardCreate({ closeBoardComposer }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const boards = useSelector((storeState) => storeState.boardModule.boards)
-	const [photos, setPhotos] = useState(null)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 	const navigate = useNavigate()
-
-	// const getPhotos = async () => {
-	// 	try {
-	// 		const photos = await unsplashService.getPhotos()
-	// 		setPhotos(photos)
-	// 	} catch (err) {
-	// 		console.log('Failed to get photos')
-	// 	}
-	// }
-
-	// useEffect(() => {
-	// 	getPhotos()
-	// }, [])
-
-	// console.log(photos)
 
 	const bgImgs = [
 		{
