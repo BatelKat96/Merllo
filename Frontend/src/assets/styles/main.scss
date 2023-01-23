@@ -37,6 +37,7 @@
 @import "cmps/homepage-footer";
 @import "cmps/board-create";
 @import "cmps/board-preview";
+@import "cmps/board-side-menu";
 
 // Task-details-components
 @import "cmps/task-details-cmp/task-description";
@@ -44,6 +45,7 @@
 @import "cmps/task-details-cmp/_task-checklist.scss/task-checklist-list";
 @import "cmps/task-details-cmp/task-member";
 @import "cmps/task-details-cmp/task-label";
+@import "cmps/task-details-cmp/task-cover";
 // @import "cmps/task-details-cmp/task-side-bar";
 @import "cmps/task-details-cmp/task-side-bar-copy";
 @import "cmps/task-details-cmp/task-title";

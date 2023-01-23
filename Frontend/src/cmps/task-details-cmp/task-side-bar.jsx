@@ -1,13 +1,14 @@
 import { useState, useRef } from 'react'
+import { useParams } from 'react-router-dom'
+
 import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic'
 
 import { BsArchive, BsPerson, BsCheck2Square, BsSquareHalf, BsArrowCounterclockwise } from "react-icons/bs"
-import { TiTag } from "react-icons/ti"
+import { AiOutlineMinus, AiOutlineClockCircle } from "react-icons/ai"
 import { ImAttachment } from "react-icons/im"
 import { FiArrowRight } from "react-icons/fi"
 import { MdContentCopy } from "react-icons/md"
-import { AiOutlineMinus, AiOutlineClockCircle } from "react-icons/ai"
-import { useParams } from 'react-router-dom'
+import { TiTag } from "react-icons/ti"
 
 export function TaskSideBar({ onRemoveTask, task, onCopyTask }) {
 

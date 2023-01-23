@@ -10,12 +10,15 @@ import { MdDeleteOutline, MdDelete } from 'react-icons/md'
 import { GroupList } from '../cmps/group-list'
 
 import Loader from '../assets/img/loader.svg'
+import { BoardSideMenu } from '../cmps/board-side-menu'
+import { FiSunset } from 'react-icons/fi'
 
 export function Board() {
 	const { boardId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [boardTitle, setBoardTitle] = useState('')
 	const [titleWidth, setTitleWidth] = useState(null)
+	const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
 	const navigate = useNavigate()
 
 	useEffect(() => {
@@ -43,7 +46,7 @@ export function Board() {
 		try {
 			await updateBoard(board)
 		} catch (err) {
-			console.log('Failed to update board', err)
+			console.log('Failed to update board title', err)
 		}
 	}
 
@@ -72,6 +75,19 @@ export function Board() {
 			console.log('success')
 		} catch (err) {
 			console.log('Cannot update board', err)
+		}
+	}
+
+	function onToggleSideMenu() {
+		setIsSideMenuOpen(!isSideMenuOpen)
+	}
+
+	async function changeBackground({ background, backgroundColor, thumbnail }) {
+		board.style = { background, backgroundColor, thumbnail }
+		try {
+			await updateBoard(board)
+		} catch (err) {
+			console.log('Failed to update board background', err)
 		}
 	}
 
@@ -128,11 +144,19 @@ export function Board() {
 					<MdDelete />
 				</button>
 				<span></span>
-				{/* <button className="btn-board menu">...</button> */}
+				<button className="btn-board menu" onClick={onToggleSideMenu}>
+					...
+				</button>
 			</div>
 			<div className="board-main-content">
 				<GroupList />
 			</div>
+			{isSideMenuOpen && (
+				<BoardSideMenu
+					onToggleSideMenu={onToggleSideMenu}
+					changeBackground={changeBackground}
+				/>
+			)}
 			<Outlet />
 		</section>
 	)

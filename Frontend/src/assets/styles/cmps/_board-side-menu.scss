@@ -1,0 +1,257 @@
+.board-side-menu {
+    box-shadow: 0 12px 24px -6px #091e4240,0 0 0 1px;
+    transform: translateX(0);
+    
+    position: fixed;
+    right: 0;
+    top: 45px;
+    height: 100%;
+    
+    background-color: #f4f5f7;
+    transition-duration: .1s;
+    transition-property: transform,width;
+    transition-timing-function: ease-in;
+    width: 339px;
+    z-index: 400;
+
+    display: flex;
+    flex-direction: column;
+    padding:0 10px;
+
+    .board-side-menu-header {
+        // box-sizing: border-box;
+        // flex: 0 0 auto;
+        // height: 48px;
+        // opacity: 0;
+        // overflow: hidden;
+        // padding: 0 6px 0 12px;
+        // position: relative;
+        // transition: opacity .2s ease-in;
+        
+        width: 100%;
+        display: flex;
+        border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+
+        .board-side-menu-header-title {
+            color: #0067a3;
+            flex: 1;
+            line-height: 20px;
+            margin: 14px 32px;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            transition: margin .12s ease-in;
+            white-space: nowrap;
+        }
+
+        a.board-side-menu-header-cancel {
+            background-color: unset;
+            color: #42526e;
+            border: none;
+            margin: 0 2px;
+            height: 32px;
+            width: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 6px;
+            top: 8px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .icon-close {
+                font-size: 24px;
+                text-align: center;
+                
+                svg {
+                    stroke-width: 0;
+                }
+            }
+        }
+
+        a.board-side-menu-header-go-back {
+            color: #42526e;
+            border: none;
+            margin: 0 2px;
+            height: 32px;
+            width: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            &:hover {
+                cursor: pointer;
+            }
+
+            .icon-go-back{
+                font-size: 24px;
+                text-align: center;
+                    
+                    svg {
+                        stroke-width: 0;
+                    }
+            }
+        }
+    }
+
+    .board-side-menu-content {
+        margin: 8px 0;
+
+        .side-menu-main{
+            border-radius: 3px;
+            height: 30px;
+            padding-left: 18px;
+            display: flex;
+            align-items: center;
+            a {
+                color: #0067a3;
+                line-height: 30px;
+                font-weight: 600;
+                font-size: 14px;
+                padding: 6px;
+            }
+            &:hover {
+                background-color: #091e4214;
+                cursor: pointer;
+            }
+        }
+
+        .side-menu-bg-options {
+            color: #0067a3;
+            display: flex;
+            justify-content: space-between;
+            gap:8px;
+            width: 100%;
+
+            .option {
+                width: 100%;
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .option-img {
+                    background-color: #dfe1e6;
+                    background-size: cover;
+                    border-radius: 8px;
+                    height: 96px;
+                    margin-bottom: 8px;
+                    width: 100%;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+                .bg-photos {
+                    background-image: url("https://a.trellocdn.com/prgb/dist/images/photos-thumbnail@3x.8f9c1323c9c16601a9a4.jpg");
+                }
+                .bg-colors {
+                    background-image: url("https://a.trellocdn.com/prgb/dist/images/colors@2x.ec32a2ed8dd8198b8ef0.jpg");
+                }
+                
+                p {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    text-align: center;
+                    margin:0;
+                }
+            }
+        }
+
+        .side-menu-colors{
+            
+            ul.color-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(5, 96px);
+                gap: 8px;
+
+                li {
+                    border-radius: 8px;
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .side-menu-photos{
+            height: 100%;
+            overflow: hidden;
+
+            .photo-list-wrapper {
+                height:75vh;
+            
+                ul.photo-list {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: repeat(15, 96px);
+                    gap: 8px;
+                    height: 100%;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    position: relative;
+                    padding-right: 4px;
+
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                        height: 8px;
+                        margin: 5px;
+                    }
+            
+                    &::-webkit-scrollbar-button {
+                        // width: 38px;
+                        // height: 38px;
+                    }
+            
+                    &::-webkit-scrollbar-thumb {
+                        background: #BFC4CE;
+                        border: none;
+                        border-radius: 4px;
+                    }
+            
+                    &::-webkit-scrollbar-thumb:hover {
+                        background: #BFC4CE;
+                    }
+            
+                    &::-webkit-scrollbar-thumb:active {
+                        background: #BFC4CE;
+                    }
+            
+                    &::-webkit-scrollbar-track {
+                        background: #dadbe2;
+                        border: none;
+                        border-radius: 4px;
+                    }
+            
+                    &::-webkit-scrollbar-track:hover {
+                        background: #dadbe2;
+                    }
+            
+                    &::-webkit-scrollbar-track:active {
+                        background: #dadbe2;
+                    }
+            
+                    &::-webkit-scrollbar-corner {
+                        background: transparent;
+                    }
+
+
+
+                    li {
+                        border-radius: 8px;
+                        &:hover {
+                            cursor: pointer;
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,18 +1,17 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
 import { boardService } from '../services/board.service'
-import { IoClose } from "react-icons/io5";
+import { IoClose } from 'react-icons/io5'
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
-import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic';
-import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item';
-import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview';
-
+import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic'
+import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item'
+import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview'
 
 export function TaskDetails() {
     const { boardId, groupId, taskId } = useParams()
@@ -29,13 +28,11 @@ export function TaskDetails() {
         loadTask(taskId, groupId, boardId)
     }, [])
 
-
     function getGroup(groupId) {
         let groups = board.groups
         let currGroup = groups.find((grp) => grp.id === groupId)
         return currGroup
     }
-
 
     async function loadTask(taskId, groupId, boardId) {
         try {
@@ -48,10 +45,9 @@ export function TaskDetails() {
     }
 
     function handleChange({ target }) {
-        let { value, type, name: field } = target
-        console.log('value:', value)
-        console.log('field:', field)
+        console.log(':')
 
+        let { value, type, name: field } = target
         value = type === 'number' ? +value : value
         setTask((prevTask) => ({ ...prevTask, [field]: value }))
     }
@@ -113,22 +109,28 @@ export function TaskDetails() {
                             {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                             {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                         </div>
+<<<<<<< HEAD
+    <TaskDescription
+        handleChange={handleChange}
+        onSaveEdit={onSaveEdit}
+        task={task} />
+=======
                         <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
                         {checklists && <TaskChecklistPreview handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />}
                         {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
-
-                    </div>
-                    <TaskSideBar
-                        task={task}
-                        onRemoveTask={onRemoveTask}
-                        onCopyTask={onCopyTask} />
-
-                </div>
-                {/* <TaskCmpDynamoic cmpType={'members'} /> */}
-            </div>
-        </div>
-    </section>
+						</div>
+						<TaskSideBar
+							task={task}
+							onRemoveTask={onRemoveTask}
+							onCopyTask={onCopyTask}
+						/>
+					</div>
+					{/* <TaskCmpDynamoic cmpType={'members'} /> */}
+				</div>
+			</div>
+		</section>
+	)
 }
