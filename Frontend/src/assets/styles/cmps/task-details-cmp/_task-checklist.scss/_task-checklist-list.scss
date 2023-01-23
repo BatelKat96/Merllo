@@ -1,0 +1,22 @@
+.task-checklist-todo {
+    padding-inline-start: 8px;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: $t-bg5;
+    }
+
+    .task-checklist-checkbox {
+        width: 16px;
+        height: 16px;
+    }
+
+    .task-checklist-label {
+        margin-inline-start: 17px;
+        // padding-inline-start: 15px;
+    }
+
+}

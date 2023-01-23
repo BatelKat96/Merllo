@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic';
 
-import { BsArchive, BsPerson, BsCheck2Square, BsSquareHalf, BsArrowCounterclockwise } from "react-icons/bs";
+import { BsArchive, BsPerson, BsTag, BsCheck2Square } from "react-icons/bs";
 import { TiTag } from "react-icons/ti";
 import { ImAttachment } from "react-icons/im";
 import { FiArrowRight } from "react-icons/fi";
