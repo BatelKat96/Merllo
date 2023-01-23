@@ -19,7 +19,7 @@
     padding: 0 10px;
     z-index: 300;
 
-    label {
+    label.create-board-label {
         color: #5e6c84;
         font-size: 12px;
         line-height: 16px;
@@ -97,11 +97,69 @@
 
     .create-board-bg-picker {
 
-        .bg-imgs-picker {
+        .bg-img-picker, .bg-clr-picker {
+            display: flex;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding-top: 8px;
+
+                li.li-bg-img {
+                    width: 64px;
+                    height: 40px;
+                }
+
+                li.li-bg-clr {
+                    width: 40px;
+                    height: 32px;
+                }
+            }
+
+            button.btn-bg.bg-img {
+                align-items: center;
+                background-position: center center;
+                background-size: cover;
+                border:none;
+                outline:none;
+                border-radius: 3px;
+                box-shadow: none;
+                color: rgba(255, 255, 255, 0.4);
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                min-height: 0;
+                outline: 0;
+                padding: 0;
+                position: relative;
+                line-height: 0;
+                height: 100%;
+                width: 100%;
+                cursor: pointer;
+            }
+
+            span.bg-preview-fade {
+                border-radius: 3px;
+                width: 100%;
+                height: 100%;
+        
+                &:hover {
+                    background-color: #00000037;
+                }
+
+                &:active {
+                    background-color: #00000057;
+                }
+            }
+        
+        
+        }
+
+        .bg-img-picker{
             display: flex;
 
             .bg-imgs-list {
-                display: flex;
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
@@ -132,7 +190,7 @@
                         cursor: pointer;
                     }
 
-                    .bg-img-preview-fade {
+                    span.bg-preview-fade {
                         border-radius: 3px;
                         width: 100%;
                         height: 100%;
@@ -149,6 +207,22 @@
             }
         }
     }
+
+        .bg-clr-picker {
+            display: flex;
+
+            .bg-clrs-list {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                li {
+                    width: 40px;
+                    height: 32px;
+                }
+            }
+
+        }
 
     form {
         color:#5e6c84;

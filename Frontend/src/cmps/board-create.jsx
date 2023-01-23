@@ -60,6 +60,15 @@ export function BoardCreate({ closeBoardComposer }) {
 		},
 	]
 
+	const bgClrs = [
+		'#0079bf',
+		'#d29034',
+		'#519839',
+		'#b04632',
+		'#89609e',
+		'#cd5a91',
+	]
+
 	const [backgroundColor, setBackgroundColor] = useState('')
 	const [backgroundImage, setBackgroundImage] = useState(bgImgs[0].thumbnail)
 
@@ -70,7 +79,7 @@ export function BoardCreate({ closeBoardComposer }) {
 
 	const setBoardBackground = (backgroundColor, backgroundImage) => {
 		console.log('setBoardBackground: backgroundImage', backgroundImage)
-		// setBackgroundColor(backgroundColor)
+		setBackgroundColor(backgroundColor)
 		setBackgroundImage(backgroundImage)
 		let style = backgroundImage
 			? bgImgs.find((bgImg) => bgImg.thumbnail === backgroundImage)
@@ -107,18 +116,34 @@ export function BoardCreate({ closeBoardComposer }) {
 			</div>
 
 			<div className="create-board-bg-picker">
-				<label>Background</label>
-				<div className="bg-imgs-picker">
+				<label className="create-board-label">Background</label>
+				<div className="bg-img-picker">
 					<ul className="clean-list bg-imgs-list">
 						{bgImgs.map((bgImg) => (
-							<li key={bgImg.thumbnail}>
+							<li key={bgImg.thumbnail} className="li-bg-img">
 								<button
 									className="btn-bg bg-img"
 									title="Custom image"
 									onClick={() => setBoardBackground(undefined, bgImg.thumbnail)}
 									style={{ backgroundImage: 'url(' + bgImg.thumbnail + ')' }}
 								>
-									<span className="bg-img-preview-fade"></span>
+									<span className="bg-preview-fade"></span>
+								</button>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				<div className="bg-clr-picker">
+					<ul className="clean-list bg-clrs-list">
+						{bgClrs.map((bgClr) => (
+							<li key={bgClr} className="li-bg-clr">
+								<button
+									className="btn-bg bg-img"
+									onClick={() => setBoardBackground(bgClr, undefined)}
+									style={{ backgroundColor: bgClr }}
+								>
+									<span className="bg-preview-fade"></span>
 								</button>
 							</li>
 						))}
@@ -127,7 +152,7 @@ export function BoardCreate({ closeBoardComposer }) {
 			</div>
 
 			<form>
-				<label>Board title</label>
+				<label className="create-board-label">Board title</label>
 				<input
 					type="text"
 					name="title"
