@@ -89,14 +89,14 @@ export function TaskCoverModal({ task }) {
     }
 
     // task details
-    async function changeCover({ bgColor }) {
-        task.style = { bgColor }
-        try {
-            await updateBoard(board)
-        } catch (err) {
-            console.log('Failed to update board background', err)
-        }
-    }
+    // async function changeCover({ bgColor }) {
+    //     task.style = { bgColor }
+    //     try {
+    //         await updateBoard(board)
+    //     } catch (err) {
+    //         console.log('Failed to update board background', err)
+    //     }
+    // }
 
     return (
         <section className='cmp-dynamoic-options-list cover-section'>
