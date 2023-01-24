@@ -101,7 +101,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
                             <GrClose className='btn-checklist-cancel' />
                         </button>
                     </div>
-                </form >}
+                </form >)}
 
         </label>
     )

@@ -6,6 +6,7 @@ import { saveTask } from '../../../store/board.actions'
 import Size1 from '../../../assets/img/cover-size1.png'
 import Size2 from '../../../assets/img/cover-size2.png'
 
+
 export function TaskCoverModal({ task }) {
 
     const { boardId, groupId, taskId } = useParams()
@@ -38,35 +39,17 @@ export function TaskCoverModal({ task }) {
         'https://images.unsplash.com/photo-1673026066090-d52723e12d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80&w=400'
     ]
 
-    const [taskToEdit, setTaskToEdit] = useState('')
-
     const [coverColor, setCoverColor] = useState('')
-    const [coverImg, setcoverImg] = useState(coverImgs[0].thumbnail)
+    const [coverImg, setcoverImg] = useState('')
 
-    // function getBoardStyle() {
-    // 	if (!board) return
-    // 	if (board?.style.background) {
-    // 		return {
-    // 			background: `url('${board.style.thumbnail}') center center / cover`,
-    // 		}
-    // 	} else if (board?.style.backgroundColor) {
-    // 		return { backgroundColor: `${board.style.backgroundColor}` }
-    // 	}
-    // 	return { backgroundColor: `#0067a3` }
-    // }
+    async function setTaskCover(coverColor, backgroundImage) {
 
-    async function setTaskCover(backgroundColor, backgroundImage) {
-
-        setCoverColor(backgroundColor)
+        setCoverColor(coverColor)
         setcoverImg(backgroundImage)
 
-        // let style = backgroundImage
-        //     ? coverImgs.find((coverImg) => coverImg === backgroundImage)
-        //     : { bgColor: backgroundColor }
         let style
 
-        if (backgroundColor) style = { bgColor: backgroundColor }
-
+        if (coverColor) style = { backgroundColor: coverColor }
         else style = { background: `url("${backgroundImage}") center center / cover` }
 
         task.style = style
@@ -96,7 +79,7 @@ export function TaskCoverModal({ task }) {
                             <button
                                 className='color-btn'
                                 onClick={() => setTaskCover(coverColor, undefined)}
-                                style={{ backgroundColor: coverColor }}
+                                style={{ backgroundColor: `${coverColor} ` }}
                             >
                             </button>
                         </li>
