@@ -96,7 +96,7 @@ export function TaskDetails() {
     function onSaveTask(ev, updateTask) {
         ev.preventDefault()
         // try {
-        console.log('in: ')
+        console.log('ina: ')
         setTask(updateTask)
         // const savedTask = await saveTask(task, groupId, boardId)
         saveTask(updateTask, groupId, boardId)
@@ -177,6 +177,7 @@ export function TaskDetails() {
                                 task={task}
                                 onRemoveTask={onRemoveTask}
                                 onCopyTask={onCopyTask}
+                                onSaveTask={onSaveTask}
                             />
                         </div>
                         {/* <TaskCmpDynamoic cmpType={'members'} /> */}
