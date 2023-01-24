@@ -24,7 +24,7 @@
         border-bottom: 1px solid rgba(9, 30, 66, 0.13);
 
         .board-side-menu-header-title {
-            color: #0067a3;
+            color: #172b4d;
             flex: 1;
             line-height: 20px;
             margin: 14px 32px;
@@ -33,6 +33,15 @@
             text-overflow: ellipsis;
             transition: margin .12s ease-in;
             white-space: nowrap;
+
+            a.header-unsplash-link {
+                cursor: pointer;
+                text-decoration: underline;
+
+                &:visited {
+                    color: inherit;
+                }
+            }
         }
 
         a.board-side-menu-header-cancel {
@@ -100,7 +109,7 @@
             display: flex;
             align-items: center;
             a {
-                color: #0067a3;
+                color: #172b4d;
                 line-height: 30px;
                 font-weight: 600;
                 font-size: 14px;
@@ -113,7 +122,7 @@
         }
 
         .side-menu-bg-options {
-            color: #0067a3;
+            color: #172b4d;
             display: flex;
             justify-content: space-between;
             gap:8px;
