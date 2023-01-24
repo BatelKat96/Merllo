@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import Size1 from '../../assets/img/cover-size1.png'
-import Size2 from '../../assets/img/cover-size2.png'
+import Size1 from '../../../assets/img/cover-size1.png'
+import Size2 from '../../../assets/img/cover-size2.png'
 
 export function TaskCoverModal() {
 

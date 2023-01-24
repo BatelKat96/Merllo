@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import { TaskCoverModal } from './task-cover-modal'
+import { TaskCoverModal } from './task-cmp-dynamic-modals/task-cover-modal'
 
 import { IoClose } from "react-icons/io5"
 import { BiCheck } from 'react-icons/bi'
