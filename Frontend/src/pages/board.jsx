@@ -138,7 +138,20 @@ export function Board() {
 					Filter
 				</button> */}
 					{/* <span></span> */}
-					<div className="board-top-menu-members"></div>
+					<ul className="board-top-menu-members clean-list">
+						{board.members.map((member, idx) => (
+							<li style={{ zIndex: idx + 5 }}>
+								<img
+									height="30"
+									width="30"
+									src={member.imgUrl}
+									alt={member.fullname}
+									title={member.fullname}
+								/>
+							</li>
+						))}
+					</ul>
+					<span></span>
 					<button
 						className="btn-board remove"
 						onClick={onRemoveBoard}
