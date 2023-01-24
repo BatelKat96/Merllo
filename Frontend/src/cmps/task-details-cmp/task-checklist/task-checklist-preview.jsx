@@ -46,6 +46,10 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
     }
 
     function onSaveChecklistTitle(ev, checklist_id) {
+        console.log('ev:', ev)
+
+        ev.stopPropagation()
+        ev.preventDefault()
         if (checklistId === checklist_id) {
             let index = checklists.findIndex(cl => (cl.id === checklist_id))
             let currChecklist = checklists[index]
@@ -74,8 +78,9 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
                             </h3>
                         }
                         {isEditTitleOpen && (checklistId === checklist.id) &&
-                            <form onSubmit={(ev) => onSaveChecklistTitle(ev, (checklist.id))}>
-                                <input autoFocus
+                            <form>
+                                <input
+                                    autoFocus
                                     name='title'
                                     className='task-checklist-title-input medium-headline'
                                     id={checklist.id}
@@ -84,11 +89,12 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
                                 ></input>
 
                                 <div className='task-checklist-btn'>
-                                    <button className='clean-btn btn-task-details btn-checklist-save' >
+                                    <button className='clean-btn btn-task-details btn-checklist-save'
+                                        type="submit" onClick={(ev) => onSaveChecklistTitle(ev, (checklist.id))}>
                                         Save
                                     </button>
                                     <button className='clean-btn icon-task btn-checklist-cancel-container'
-                                        onClick={() => { onCloseTitleInput() }}>
+                                        onClick={onCloseTitleInput}>
                                         <GrClose className='btn-checklist-cancel' />
                                     </button>
                                 </div>
