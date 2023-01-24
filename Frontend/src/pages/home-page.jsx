@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import { HomePageFooter } from '../cmps/home-page-footer'
+import { HomePageFooter } from '../cmps/home-page/home-page-footer'
 
 // import heroPng from '../assets/img/TrelloUICollage_4x.webp'
 import productivityPng from '../assets/img/Carousel_Image_Boards_2x.png'
@@ -56,7 +56,7 @@ export function HomePage() {
 
                             <div className="prod-cards">
 
-                                <button className="cards-btn card-boards" autoFocus >
+                                <button className="cards-btn card-boards" >
                                     <h5>Boards</h5>
                                     <p>Merllo boards keep tasks organized and work moving forward. ln a glance, see everything from "things to do" to "aww yeah, we did it!"</p>
                                     <div></div>

@@ -6,7 +6,7 @@ import { HiDotsHorizontal } from 'react-icons/hi'
 
 import { boardService } from '../../services/board.service'
 import { removeGroup, saveGroup } from '../../store/board.actions'
-import { TaskList } from '../task-list'
+import { TaskList } from '../task-preview/task-list'
 import { GroupDropdown } from './group-dropdown'
 
 import Loader from '../../assets/img/loader.svg'

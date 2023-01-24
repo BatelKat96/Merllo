@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { TaskPreview } from './task-preview'
-import { boardService } from '../services/board.service'
-import { saveTask } from '../store/board.actions'
+import { boardService } from '../../services/board.service'
+import { saveTask } from '../../store/board.actions'
 
 import { IoClose } from 'react-icons/io5'
 import { BsPlusLg } from 'react-icons/bs'
@@ -96,18 +96,18 @@ export function TaskList({ group, tasks }) {
                             <div className="add-task-btns">
 
                                 <div className="add-btns">
-                                <button
-                                    className="add-task-btn"
-                                    id={group.id}
-                                    onClick={onAddTask}>
-                                    Add Card
-                                </button>
-                                <a
-                                    className="cancel-btn"
-                                    onClick={closeAddNewTask}
-                                >
-                                    <IoClose className="icon-close" />
-                                </a>
+                                    <button
+                                        className="add-task-btn"
+                                        id={group.id}
+                                        onClick={onAddTask}>
+                                        Add Card
+                                    </button>
+                                    <a
+                                        className="cancel-btn"
+                                        onClick={closeAddNewTask}
+                                    >
+                                        <IoClose className="icon-close" />
+                                    </a>
                                 </div>
 
                                 <div className="more-btns">

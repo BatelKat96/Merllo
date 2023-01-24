@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
 
-import { AppHeader } from './cmps/app-header'
+import { AppHeader } from '../src/cmps/home-page/app-header'
 
 import { HomePage } from './pages/home-page'
 import { About } from './pages/about'
