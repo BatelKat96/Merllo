@@ -1,15 +1,14 @@
 import { useSelector } from 'react-redux'
 
-export function SideMenuMain({ onChangeTitle }) {
+export function SideMenuMain({ onChangeTitle, onRemoveBoard }) {
 	const board = useSelector((state) => state.boardModule.board)
 
 	return (
 		<section className="side-menu-main">
-			<section className="board-menu-content-frame">
-				<a onClick={() => onChangeTitle('Change background')}>
-					Change background
-				</a>
-			</section>
+			<button onClick={() => onChangeTitle('Change background')}>
+				Change background
+			</button>
+			<button onClick={onRemoveBoard}>Delete board</button>
 		</section>
 	)
 }

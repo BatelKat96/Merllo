@@ -127,7 +127,7 @@ export function GroupList() {
 								/>
 							)}
 						</div>
-						<TaskList group={group} tasks={group.tasks} />
+						<TaskList group={group} tasksList={group.tasks} />
 					</li>
 				))}
 

@@ -229,7 +229,7 @@
                     width: 20px;
                 }
             }
-            
+
             button.btn-board.remove {
                 align-items: center;
                 svg {
@@ -238,7 +238,18 @@
                     width: 20px;
                 }
             }
+
+            ul.board-top-menu-members {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                direction: rtl;
+                
+                li {
+                    height: 30px;
+                    margin-right: -4px;
+                }
+            }
         }
-        
     }
 }

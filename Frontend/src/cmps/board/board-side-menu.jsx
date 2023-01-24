@@ -6,7 +6,11 @@ import { SideMenuColors } from './side-menu-colors'
 import { SideMenuMain } from './side-menu-main'
 import { SideMenuPhotos } from './side-menu-photos'
 
-export function BoardSideMenu({ onToggleSideMenu, changeBackground }) {
+export function BoardSideMenu({
+	onToggleSideMenu,
+	changeBackground,
+	onRemoveBoard,
+}) {
 	const [title, setTitle] = useState('Menu')
 
 	function onChangeTitle(title) {
@@ -16,7 +20,12 @@ export function BoardSideMenu({ onToggleSideMenu, changeBackground }) {
 	function getCmp() {
 		switch (title) {
 			case 'Menu':
-				return <SideMenuMain onChangeTitle={onChangeTitle} />
+				return (
+					<SideMenuMain
+						onChangeTitle={onChangeTitle}
+						onRemoveBoard={onRemoveBoard}
+					/>
+				)
 			case 'Change background':
 				return <SideMenuBgOptions onChangeTitle={onChangeTitle} />
 			case 'Colors':

@@ -138,15 +138,28 @@ export function Board() {
 					Filter
 				</button> */}
 					{/* <span></span> */}
-					<div className="board-top-menu-members"></div>
-					<button
+					<ul className="board-top-menu-members clean-list">
+						{board.members.map((member, idx) => (
+							<li style={{ zIndex: idx + 5 }} key={member._id}>
+								<img
+									height="30"
+									width="30"
+									src={member.imgUrl}
+									alt={member.fullname}
+									title={`${member.fullname} (${member.username})`}
+								/>
+							</li>
+						))}
+					</ul>
+					<span></span>
+					{/* <button
 						className="btn-board remove"
 						onClick={onRemoveBoard}
 						title="Delete board"
 					>
 						<MdDelete />
 					</button>
-					<span></span>
+					<span></span> */}
 					<button className="btn-board menu" onClick={onToggleSideMenu}>
 						<HiDotsHorizontal className="icon-more" />
 					</button>
@@ -159,6 +172,7 @@ export function Board() {
 				<BoardSideMenu
 					onToggleSideMenu={onToggleSideMenu}
 					changeBackground={changeBackground}
+					onRemoveBoard={onRemoveBoard}
 				/>
 			)}
 

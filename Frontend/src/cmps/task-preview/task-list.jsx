@@ -1,16 +1,19 @@
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { TaskPreview } from './task-preview'
 import { boardService } from '../../services/board.service'
-import { saveTask } from '../../store/board.actions'
+import { saveTask, saveGroup } from '../../store/board.actions'
 
 import { IoClose } from 'react-icons/io5'
 import { BsPlusLg } from 'react-icons/bs'
 import { FiMoreHorizontal } from 'react-icons/fi'
 
-export function TaskList({ group, tasks }) {
+export function TaskList({ group, tasksList }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
+    const { boardId } = useParams()
 
     const [taskToEdit, setTaskToEdit] = useState(boardService.getEmptyTask())
 
@@ -47,17 +50,59 @@ export function TaskList({ group, tasks }) {
         }
     }
 
+    //DragDrop
+    const [tasks, updateTasks] = useState(tasksList)
+
+    function handleOnDragEnd(result) {
+        if (!result.destination) return
+
+        const items = Array.from(tasks)
+        const [reorderedItem] = items.splice(result.source.index, 1)
+        items.splice(result.destination.index, 0, reorderedItem)
+
+        updateTasks(items)
+
+        group.tasks = tasks
+        saveGroup(group, boardId) //
+    }
+
 
     return (
         <>
             <section className="task-list-wraper">
-                <ul className="task-list clean-list">
-                    {tasks.map(task =>
 
-                        <li key={task.id}>
-                            <TaskPreview group={group} task={task} board={board} />
-                        </li>)}
-                </ul>
+                <DragDropContext onDragEnd={handleOnDragEnd}>
+                    <Droppable droppableId="characters">
+                        {(provided) => (
+                            <ul className="task-list clean-list characters"
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                            >
+
+                                {tasks.map((task, index) =>
+
+                                    <Draggable key={task.id}
+                                        draggableId={task.id}
+                                        index={index}>
+                                        {(provided) => (
+
+                                            <li key={task.id}
+                                                ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                                <TaskPreview
+                                                    group={group}
+                                                    task={task}
+                                                    board={board}
+                                                />
+                                            </li>)}
+
+                                    </Draggable>
+                                )}
+                                {provided.placeholder}
+                            </ul>
+                        )}
+                    </Droppable>
+                </DragDropContext>
+
             </section>
 
             <section className="task-list-bottom">
