@@ -10,9 +10,9 @@
             "imgUrl": "http://batel-img"
         },
         "style": {
-            "background": "../assets/img/borads-bg-imgs/b101.jpg",
-            "thumbnail":"../assets/img/borads-bg-imgs/b101.jpg",
-            "backgroundColor":"#0067a3"
+            "background":"https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
+            "thumbnail":"https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
+            "backgroundColor":"#0c2640"
         },
         "labels": [
             {
@@ -45,17 +45,20 @@
             {
                 "_id": "u101",
                 "fullname": "Batel K",
-                "imgUrl": "https://trello-members.s3.amazonaws.com/63c43e4080db3d01989c046e/e4e3a604db36af75f239332f98d75263/30.png"
+                "username": "batelkat",
+                "imgUrl": "https://trello-members.s3.amazonaws.com/63c43e4080db3d01989c046e/e4e3a604db36af75f239332f98d75263/170.png"
             },
             {
                 "_id": "u102",
                 "fullname": "Beta S",
-                "imgUrl": "https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/30.png"
+                "username": "betash",
+                "imgUrl": "https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/170.png"
             },
             {
                 "_id": "u103",
                 "fullname": "Dror K",
-                "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/50.png"
+                "username": "drorka",
+                "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
             }
         ],
         "groups": [
@@ -471,9 +474,9 @@
         "archivedAt": null,
         "createdBy": {},
         "style": {
-            "background": "",
-            "thumbnail":"",
-            "backgroundColor":""
+            "background": "https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
+            "thumbnail":"https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
+            "backgroundColor":"#262626"
         },
         "labels": [],
         "members": [],
@@ -488,7 +491,7 @@
         "style": {
             "background": "",
             "thumbnail":"",
-            "backgroundColor":""
+            "backgroundColor":"#0079bf"
         },
         "labels": [],
         "members": [],

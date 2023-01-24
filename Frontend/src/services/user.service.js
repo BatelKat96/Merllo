@@ -2,8 +2,9 @@ import { storageService } from './async-storage.service'
 // import { httpService } from './http.service'
 
 import usersData from '../data/users-data.json'
+import { utilService } from './util.service'
 
-const STORAGE_KEY_USERS = 'users'
+const STORAGE_KEY_USERS = 'user'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
 export const userService = {
@@ -19,6 +20,8 @@ export const userService = {
 }
 
 window.userService = userService
+
+_createUsers()
 
 function getUsers() {
 	console.log('user service getUsers')
@@ -103,6 +106,14 @@ function saveLocalUser(user) {
 
 function getLoggedinUser() {
 	return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+}
+
+function _createUsers() {
+	let users = utilService.loadFromStorage(STORAGE_KEY_USERS)
+	if (!users) {
+		users = usersData
+		utilService.saveToStorage(STORAGE_KEY_USERS, users)
+	}
 }
 
 // ;(async ()=>{

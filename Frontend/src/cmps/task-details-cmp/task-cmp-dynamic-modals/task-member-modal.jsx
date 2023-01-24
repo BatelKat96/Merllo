@@ -5,40 +5,42 @@ import { BiCheck } from 'react-icons/bi'
 import { saveTask } from '../../../store/board.actions'
 import { useSelector } from 'react-redux'
 
-export function TaskMemberModal({ task, data }) {
+export function TaskMemberModal({ task, data, onSaveTask }) {
     console.log('task:', task)
 
     const board = useSelector((storeState) => storeState.boardModule.board)
     const members = board.members
+    const memberIds = task.memberIds
 
     const { boardId, groupId, taskId } = useParams()
-    const [updateTask, setUpdateTask] = useState(task)
+    // const [updateTask, setUpdateTask] = useState(task)
     const [toRender, setToRender] = useState(members)
 
-    console.log('updateTask:', updateTask)
-    const { memberIds } = updateTask
+    // console.log('updateTask:', updateTask)
+    // const { memberIds } = updateTask
 
 
-    async function onToggleMember(id) {
-        console.log('id:', id)
-        console.log('memberIds:', memberIds)
-        // const updateMemberIds=
+    async function onToggleMember(ev, id) {
+        // console.log('id:', id)
+        // console.log('memberIdsd:', memberIds)
+        let updateMemberIds
+        let updateTask
 
         if (memberIds?.includes(id)) {
-            console.log('ine:')
-            const index = memberIds.indexOf(id)
-            memberIds.splice(index, 1)
+            updateMemberIds = memberIds.filter(member => (member !== id))
+            updateTask = { ...task, memberIds: updateMemberIds }
+        } else {
+            if (memberIds) {
+                updateMemberIds = memberIds
+                updateMemberIds.push(id)
+                updateTask = { ...task, memberIds: updateMemberIds }
+            }
+            else {
+                updateTask = { ...task }
+                updateTask.memberIds = [id]
+            }
         }
-        else {
-            console.log('in:')
-            if (memberIds) memberIds.push(id)
-            else updateTask.memberIds = [id]
-        }
-        console.log('updateTask:', updateTask)
-
-        setUpdateTask((prevTask) => ({ ...prevTask }))
-        console.log('updateTask:', updateTask)
-        await saveTask(updateTask, groupId, boardId)
+        onSaveTask(ev, updateTask)
     }
 
     function handleChange({ target }) {
@@ -48,8 +50,7 @@ export function TaskMemberModal({ task, data }) {
         setToRender(filteredMembers)
     }
 
-
-    return <>
+    return (<>
         <input
             type="text"
             className='cmp-dynamoic-input'
@@ -64,9 +65,7 @@ export function TaskMemberModal({ task, data }) {
         <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3>
         <ul className='cmp-dynamoic-options-list clean-list' >
             {toRender && toRender.map(opt =>
-                <li key={opt._id} className="cmp-dynamoic-option" onClick={() => onToggleMember(opt._id)}>
-                    {/* <div onClick={() => onToggleMember(opt._id)}> */}
-
+                <li key={opt._id} className="cmp-dynamoic-option" onClick={(ev) => onToggleMember(ev, opt._id)}>
                     <img className='cmp-dynamoic-member-img'
                         src={opt.imgUrl}
                         alt={opt.imgUrl} />
@@ -75,12 +74,11 @@ export function TaskMemberModal({ task, data }) {
                         <span className="checked-icon">
                             <BiCheck />
                         </span>)}
-                    {/* </div> */}
                 </li>
             )}
             {!toRender.length && <li className="cmp-dynamoic-option">No member by this name</li>
             }
         </ul>
     </>
-
+    )
 }
