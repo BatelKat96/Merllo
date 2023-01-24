@@ -2,11 +2,15 @@ import { useEffect, useState } from 'react'
 import { unsplashService } from '../../services/unsplash.service'
 import Loader from '../../assets/img/loader.svg'
 
-export const SideMenuPhotos = ({ changeBackground }) => {
+export function SideMenuPhotos({ changeBackground }) {
 	const [photos, setPhotos] = useState(null)
 	const [searchTxt, setSearchTxt] = useState('')
 
-	const getPhotos = async () => {
+	useEffect(() => {
+		getPhotos()
+	}, [])
+
+	async function getPhotos() {
 		try {
 			const photos = await unsplashService.getPhotos(searchTxt)
 			setPhotos(photos)
@@ -14,10 +18,6 @@ export const SideMenuPhotos = ({ changeBackground }) => {
 			console.log('Failed to get photos')
 		}
 	}
-
-	useEffect(() => {
-		getPhotos()
-	}, [])
 
 	const onSearchPhotos = (ev) => {
 		ev.preventDefault()

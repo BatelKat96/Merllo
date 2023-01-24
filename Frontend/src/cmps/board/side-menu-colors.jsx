@@ -1,4 +1,4 @@
-export const SideMenuColors = ({ changeBackground }) => {
+export function SideMenuColors({ changeBackground }) {
 	const colors = [
 		'#0079bf',
 		'#d29034',

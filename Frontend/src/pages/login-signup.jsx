@@ -1,22 +1,17 @@
-import React, { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
-
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-
-// import { login, signup } from '../store/actions/user.action'
+import { login, signup } from '../store/user.actions'
 
 import leftHero from '../assets/img/left-loginsignup-hero.svg'
 import rightHero from '../assets/img/right-loginsignup-hero.svg'
 import logo from '../assets/img/merllo-logo.png'
-// const logo = require('../assets/img/merllo-logo.png')
 
 export function LoginSignup() {
 	const params = useParams()
 	const navigate = useNavigate()
-	const dispatch = useDispatch()
 	const [status, setStatus] = useState(params.status)
 	const [wrongCredentialsDiv, setWrongCredentialsDiv] = useState()
 
@@ -42,26 +37,26 @@ export function LoginSignup() {
 		onSubmit: (values) => {
 			if (status === 'signup') {
 				console.log('status===signup', values)
-				// ;(async () => {
-				// 	try {
-				// 		await dispatch(signup(values))
-				// 		navigate('/workspace')
-				// 	} catch (err) {
-				// 		console.log(err, 'cannot signup')
-				// 	}
-				// })()
+				;(async () => {
+					try {
+						await signup(values)
+						navigate('/workspace')
+					} catch (err) {
+						console.log(err, 'cannot signup')
+					}
+				})()
 			}
 			if (status === 'login') {
 				console.log('status===login', values)
-				// ;(async () => {
-				// 	try {
-				// 		await dispatch(login(values))
-				// 		navigate('/workspace')
-				// 	} catch (err) {
-				// 		console.log(err, 'cannot login')
-				// 		setWrongCredentialsDiv('')
-				// 	}
-				// })()
+				;(async () => {
+					try {
+						await login(values)
+						navigate('/workspace')
+					} catch (err) {
+						console.log(err, 'cannot login')
+						setWrongCredentialsDiv('')
+					}
+				})()
 			}
 		},
 	})
@@ -76,16 +71,16 @@ export function LoginSignup() {
 	return (
 		<section className="form-container">
 			<div className="form-logo">
-				<img height="43" src={logo} alt="" />
+				<img height="43px" src={logo} alt="" />
 				<p className="logo-txt">Merllo</p>
 			</div>
 			<form className="signup-form" onSubmit={formik.handleSubmit}>
 				<h1>{formTxt}</h1>
 				<div className={`wrong-credentials ${wrongCredentialsDiv}`}>
-					Incorrect email address and / or password.
+					Incorrect Username and / or password.
 				</div>
 				{status === 'signup' && (
-					<React.Fragment>
+					<Fragment>
 						<input
 							id="fullname"
 							name="fullname"
@@ -101,7 +96,7 @@ export function LoginSignup() {
 						) : (
 							<span className="empty-space">&nbsp;</span>
 						)}
-					</React.Fragment>
+					</Fragment>
 				)}
 				<input
 					id="username"

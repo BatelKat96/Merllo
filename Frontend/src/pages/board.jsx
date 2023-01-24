@@ -9,6 +9,7 @@ import Loader from '../assets/img/loader.svg'
 import { HiOutlineStar } from 'react-icons/hi2'
 import { BsFilter } from 'react-icons/bs'
 import { MdDelete } from 'react-icons/md'
+import { HiDotsHorizontal } from 'react-icons/hi'
 
 export function Board() {
 	const { boardId } = useParams()
@@ -106,44 +107,50 @@ export function Board() {
 	return (
 		<section className="board" style={boardStyle}>
 			<div className="board-top-menu">
-				<div className="board-title">
-					<input
-						onBlurCapture={onSaveBoardTitle}
-						name="title"
-						className="edit-group-title"
-						id={board.id}
-						spellCheck="false"
-						defaultValue={board.title}
-						onChange={handleEditBoardTitle}
-						onKeyDown={handleKey}
-						style={{ width: `${titleWidth}px` }}
-					></input>
+				<div className="board-top-menu-left">
+					<div className="board-title">
+						<input
+							onBlurCapture={onSaveBoardTitle}
+							name="title"
+							className="edit-group-title"
+							id={board.id}
+							spellCheck="false"
+							defaultValue={board.title}
+							onChange={handleEditBoardTitle}
+							onKeyDown={handleKey}
+							style={{ width: `${titleWidth}px` }}
+						></input>
+					</div>
+
+					<button
+						className={`btn-board star-${board.isStarred}`}
+						onClick={onToggleStar}
+						title="Click to star or unstar this board. Starred boards show up at the top of your boards list."
+					>
+						<HiOutlineStar />
+					</button>
+					<span></span>
 				</div>
 
-				<button
-					className={`btn-board star-${board.isStarred}`}
-					onClick={onToggleStar}
-					title="Click to star or unstar this board. Starred boards show up at the top of your boards list."
-				>
-					<HiOutlineStar />
-				</button>
-				<span></span>
-				{/* <button className="btn-board filter">
+				<div className="board-top-menu-right">
+					{/* <button className="btn-board filter">
 					<BsFilter />
 					Filter
 				</button> */}
-				{/* <span></span> */}
-				<button
-					className="btn-board remove"
-					onClick={onRemoveBoard}
-					title="Delete board"
-				>
-					<MdDelete />
-				</button>
-				<span></span>
-				<button className="btn-board menu" onClick={onToggleSideMenu}>
-					...
-				</button>
+					{/* <span></span> */}
+					<div className="board-top-menu-members"></div>
+					<button
+						className="btn-board remove"
+						onClick={onRemoveBoard}
+						title="Delete board"
+					>
+						<MdDelete />
+					</button>
+					<span></span>
+					<button className="btn-board menu" onClick={onToggleSideMenu}>
+						<HiDotsHorizontal className="icon-more" />
+					</button>
+				</div>
 			</div>
 			<div className="board-main-content">
 				<GroupList />
@@ -154,6 +161,7 @@ export function Board() {
 					changeBackground={changeBackground}
 				/>
 			)}
+
 			<Outlet />
 		</section>
 	)

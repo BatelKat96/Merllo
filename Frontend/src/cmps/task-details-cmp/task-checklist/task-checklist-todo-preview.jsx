@@ -77,13 +77,13 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
                 />
             )}
 
-            {(isEditTodoOpen || (todoId == todo.id)) &&
-                < form  >
+            {(isEditTodoOpen || todoId == todo.id) && (
+                <form>
                     <input
                         // onBlur={onCloseTitleInput}
                         autoFocus
-                        name='title'
-                        className='task-todo-title-input'
+                        name="title"
+                        className="task-todo-title-input"
                         id={todo.id}
                         onChange={handleChange}
                         defaultValue={todo.title}

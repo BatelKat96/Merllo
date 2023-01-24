@@ -1,10 +1,11 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 
 import { BoardCreate } from '../board-create'
+import { UserMenu } from '../user-menu'
+import { logout } from '../../store/user.actions'
 import { boardService } from '../../services/board.service'
-
 
 import { ReactComponent as AppsSvg } from '../../assets/img/icons-header/apps.svg'
 import { ReactComponent as CreateSvg } from '../../assets/img/icons-header/create.svg'
@@ -17,16 +18,34 @@ import { ReactComponent as UserSvg } from '../../assets/img/icons-header/user.sv
 
 export function MainHeader() {
 	const [isBoardComposerOpen, setIsBoardComposerOpen] = useState(false)
+	const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
+	const user = useSelector((storeState) => storeState.userModule.user)
+	const navigate = useNavigate()
 
+	// create board
 	function openBoardComposer() {
 		setIsBoardComposerOpen(true)
 	}
-
 	function closeBoardComposer() {
 		setIsBoardComposerOpen(false)
 		setBoardToEdit(boardService.getEmptyBoard())
 	}
+
+	// user
+	function openUserMenu() {
+		setIsUserMenuOpen(true)
+	}
+	function closeUserMenu() {
+		setIsUserMenuOpen(false)
+	}
+
+	function onLogout() {
+		logout()
+		navigate(`/`)
+	}
+
+	console.log('user', user)
 
 	return (
 		<header className="main-header">
@@ -39,7 +58,6 @@ export function MainHeader() {
 					<TrelloSvg />
 					<h1 className="merllo-logo">Merllo</h1>
 				</NavLink>
-
 
 				<NavLink to="/workspace">
 					<button className="nav-btn">
@@ -78,13 +96,25 @@ export function MainHeader() {
 					<HelpSvg />
 				</button> */}
 
-				<button>
-					{/* <UserSvg /> */}
-					<img className='member-img' src={require(`../../assets/img/members-task-details/batel.png`)} />
-				</button>
+				{user && (
+					<button onClick={openUserMenu}>
+						{/* <UserSvg /> */}
+						<img
+							className="member-img"
+							src={require(`../../assets/img/members-task-details/batel.png`)}
+						/>
+					</button>
+				)}
 			</div>
 			{isBoardComposerOpen && (
 				<BoardCreate closeBoardComposer={closeBoardComposer} />
+			)}
+			{user && isUserMenuOpen && (
+				<UserMenu
+					user={user}
+					onLogout={onLogout}
+					closeUserMenu={closeUserMenu}
+				/>
 			)}
 		</header>
 	)
