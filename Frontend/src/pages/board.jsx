@@ -140,13 +140,13 @@ export function Board() {
 					{/* <span></span> */}
 					<ul className="board-top-menu-members clean-list">
 						{board.members.map((member, idx) => (
-							<li style={{ zIndex: idx + 5 }}>
+							<li style={{ zIndex: idx + 5 }} key={member._id}>
 								<img
 									height="30"
 									width="30"
 									src={member.imgUrl}
 									alt={member.fullname}
-									title={member.fullname}
+									title={`${member.fullname} (${member.username})`}
 								/>
 							</li>
 						))}

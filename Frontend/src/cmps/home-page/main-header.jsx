@@ -35,6 +35,7 @@ export function MainHeader() {
 	// user
 	function openUserMenu() {
 		setIsUserMenuOpen(true)
+		console.log(user)
 	}
 	function closeUserMenu() {
 		setIsUserMenuOpen(false)
@@ -97,7 +98,7 @@ export function MainHeader() {
 				</button> */}
 
 				{user && (
-					<button onClick={openUserMenu}>
+					<button className="btn-member-img" onClick={openUserMenu}>
 						{/* <UserSvg /> */}
 						<img className="member-img" src={user.imgUrl} alt={user.fullname} />
 					</button>
