@@ -70,19 +70,6 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
             <a onClick={onClose}><IoClose className='close-icon' /></a>
             <p className='cmp-dynamoic-title'>{data.title}</p>
             <div className='dynamic-container'>
-                {/* <input
-                    type="text"
-                    className='cmp-dynamoic-input'
-                    name="txt"
-                    id="txt"
-                    placeholder={data.placeholder}
-                    onChange={handleChange}
-                    defaultValue={data.txt}
-                    autoFocus
-                    autoComplete="off"
-                />
-                <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3> */}
-
 
                 {cmpType === 'members' &&
                     <TaskMemberModal
@@ -97,33 +84,6 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                         data={data}
                         onSaveTask={onSaveTask}
                     />}
-
-                {/* side-bar-label-cmp-dynamoic */}
-                {/* {cmpType === 'labels' && <ul className='cmp-dynamoic-options-list clean-list'>
-                    {info.map(opt =>
-                        <label htmlFor={opt.id} className="cmp-dynamoic-labels-label">
-                        <input 
-                       onChange={(ev) => {handleChange(ev, opt.id)}}
-                       checked={labelIds?.includes(opt.id)}
-                    className="checkbox"
-                    type="checkbox"
-                    id={opt.id}
-                        />
-                    <li key={opt.id} className="cmp-dynamoic-option cmp-dynamoic-option-labels" style={{ backgroundColor: `${opt.color}38` }}> onClick={() => onToggleLabel(opt.id)}*/}
-                {/* <span className='color-circle' style={{ backgroundColor: `${opt.color}` }}></span>
-                            <p>{opt.title}</p>
-                            </li>
-                            </label>
-                    )}
-                </ul>} */}
-
-                {/* <ul className='cmp-dynamoic-options-list clean-list'>
-                    {data.options.map(opt =>
-                        <li key={opt} className="cmp-dynamoic-option">
-                            {opt}
-                        </li>
-                    )}
-                </ul> */}
 
                 {cmpType === 'cover' &&
                     <TaskCoverModal

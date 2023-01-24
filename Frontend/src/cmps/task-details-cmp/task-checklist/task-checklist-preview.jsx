@@ -66,7 +66,7 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
     }
 
     function onSaveChecklistTitle(ev, checklist_id) {
-        console.log('ev:', ev)
+        // console.log('ev:', ev)
 
         ev.stopPropagation()
         ev.preventDefault()
