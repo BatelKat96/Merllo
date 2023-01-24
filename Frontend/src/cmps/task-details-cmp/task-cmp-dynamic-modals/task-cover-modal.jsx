@@ -1,9 +1,16 @@
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { boardService } from '../../../services/board.service'
 
 import Size1 from '../../../assets/img/cover-size1.png'
 import Size2 from '../../../assets/img/cover-size2.png'
 
-export function TaskCoverModal() {
+export function TaskCoverModal({ task }) {
+
+    const { boardId, groupId, taskId } = useParams()
+    const currTask = boardService.getTaskById(taskId, groupId, boardId)
+    console.log(currTask)
 
     const coverColors = [
         '#7BC86C',
@@ -63,32 +70,45 @@ export function TaskCoverModal() {
         },
     ]
 
-    const [cover, setCover] = useState()
+    const [taskToEdit, setTaskToEdit] = useState('')
+
     const [color, setColor] = useState('')
     const [img, setImg] = useState(coverImgs[0].thumbnail)
 
-    const setTaskCover = (backgroundColor, backgroundImage) => {
-        console.log(backgroundColor, backgroundImage);
-        setColor(backgroundColor)
-        setImg(backgroundImage)
+    const setTaskCover = (bgColor, bgImg) => {
 
-        let style = backgroundImage
-            ? coverImgs.find((coverImg) => coverImg.thumbnail === backgroundImage)
-            : { backgroundColor }
-        setCover((cover) => ({ ...cover, style }))
+        setColor(bgColor)
+        setImg(bgImg)
+
+        let style = bgImg
+            ? coverImgs.find((coverImg) => coverImg.thumbnail === bgImg)
+            : { bgColor }
+
+        setTaskToEdit((currTask) => ({ ...currTask, style }))
+        console.log(task)
+    }
+
+    // task details
+    async function changeCover({ bgColor }) {
+        task.style = { bgColor }
+        try {
+            await updateBoard(board)
+        } catch (err) {
+            console.log('Failed to update board background', err)
+        }
     }
 
     return (
         <section className='cmp-dynamoic-options-list cover-section'>
 
-            <div className='cover-section-block size'>
+            {/* <div className='cover-section-block size'>
                 <h3 className='small-headline cmp-dynamoic-options-title'>Size</h3>
 
                 <div className='size-wrapper'>
                     <img src={Size1} className='size-img' />
                     <img src={Size2} className='size-img' />
                 </div>
-            </div>
+            </div> */}
 
             <div className='cover-section-block colors'>
                 <h3 className='small-headline cmp-dynamoic-options-title'>Colors</h3>
