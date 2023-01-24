@@ -6,6 +6,7 @@ import { GrClose } from "react-icons/gr";
 import { IoClose } from "react-icons/io5";
 
 
+
 export function TaskChecklistPreview({ onSaveEdit, task }) {
     // console.log('task:', task)
     const currChecklists = task.checklists

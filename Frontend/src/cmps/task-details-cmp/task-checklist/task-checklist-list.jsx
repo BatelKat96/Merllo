@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react'
+import { TodoPreview } from './task-checklist-todo-preview'
 
 export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
     // console.log('todos:', todos)
@@ -31,9 +32,10 @@ export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
                     type="checkbox"
                     id={todo.id}
                 />
-                <label className="task-checklist-label">
-                    {todo.title}
-                </label>
+                {/* <label className="task-checklist-label"> */}
+                <TodoPreview todo={todo} updateTodo={updateTodo} />
+
+                {/* </label> */}
             </li>
 
         })}

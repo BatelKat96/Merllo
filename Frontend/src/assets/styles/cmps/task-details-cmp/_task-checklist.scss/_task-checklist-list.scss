@@ -2,7 +2,7 @@
     padding-inline-start: 8px;
     display: flex;
     align-items: center;
-    height: 36px;
+    // min-height: 36px;
     border-radius: 4px;
     cursor: pointer;
 
@@ -17,7 +17,9 @@
         // border-radius: 5px;
         border: none;
         cursor: pointer;
-        background-color: aqua;
+        align-self: flex-start;
+        margin-top: 10px;
+        // background-color: aqua;
 
 
         &:active {
@@ -28,6 +30,11 @@
         &:focus {
             box-shadow: inset 0 0 0 2px #dfe1e6;
             border: none;
+        }
+
+        &::placeholder {
+
+            background-color: rgb(255, 0, 230); //not work
         }
 
         &:hover {
@@ -45,8 +52,13 @@
         cursor: pointer;
     }
 
-    .task-checklist-checkbox:checked+.task-checklist-label {
+    // .task-checklist-checkbox:checked+.task-checklist-label {
+    //     text-decoration: line-through;
+    // }
+
+    .task-checklist-checkbox:checked+label>.task-checklist-label-span {
         text-decoration: line-through;
+
     }
 
 }
