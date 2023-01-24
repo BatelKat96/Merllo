@@ -103,21 +103,30 @@
         margin: 8px 0;
 
         .side-menu-main{
-            border-radius: 3px;
-            height: 30px;
             padding-left: 18px;
             display: flex;
-            align-items: center;
-            a {
+            flex-direction: column;
+            align-items: start;
+            button {
+                background-color:inherit;
+                width: 100%;
+                border: none;
+                outline: none;
                 color: #172b4d;
+                height: 30px;
+                border-radius: 3px;
                 line-height: 30px;
                 font-weight: 600;
                 font-size: 14px;
-                padding: 6px;
-            }
-            &:hover {
-                background-color: #091e4214;
-                cursor: pointer;
+                font-family: 'Segoe UI';
+                text-align: start;
+                &:hover {
+                    background-color: #091e4214;
+                    cursor: pointer;
+                }
+                &:active {
+                    background-color: #e4f0f6;
+                }
             }
         }
 

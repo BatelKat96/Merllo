@@ -152,14 +152,14 @@ export function Board() {
 						))}
 					</ul>
 					<span></span>
-					<button
+					{/* <button
 						className="btn-board remove"
 						onClick={onRemoveBoard}
 						title="Delete board"
 					>
 						<MdDelete />
 					</button>
-					<span></span>
+					<span></span> */}
 					<button className="btn-board menu" onClick={onToggleSideMenu}>
 						<HiDotsHorizontal className="icon-more" />
 					</button>
@@ -172,6 +172,7 @@ export function Board() {
 				<BoardSideMenu
 					onToggleSideMenu={onToggleSideMenu}
 					changeBackground={changeBackground}
+					onRemoveBoard={onRemoveBoard}
 				/>
 			)}
 
