@@ -37,7 +37,6 @@ export function BoardSideMenu({ onToggleSideMenu, changeBackground }) {
 			case 'Photos by':
 				setTitle('Change background')
 				break
-
 			default:
 				return <section></section>
 		}

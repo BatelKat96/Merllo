@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
-import { login, signup } from '../store/user.actions'
-
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { login, signup } from '../store/user.actions'
 
 import leftHero from '../assets/img/left-loginsignup-hero.svg'
 import rightHero from '../assets/img/right-loginsignup-hero.svg'
@@ -14,7 +12,6 @@ import logo from '../assets/img/merllo-logo.png'
 export function LoginSignup() {
 	const params = useParams()
 	const navigate = useNavigate()
-	const dispatch = useDispatch()
 	const [status, setStatus] = useState(params.status)
 	const [wrongCredentialsDiv, setWrongCredentialsDiv] = useState()
 
@@ -74,7 +71,7 @@ export function LoginSignup() {
 	return (
 		<section className="form-container">
 			<div className="form-logo">
-				<img height="43" src={logo} alt="" />
+				<img height="43px" src={logo} alt="" />
 				<p className="logo-txt">Merllo</p>
 			</div>
 			<form className="signup-form" onSubmit={formik.handleSubmit}>
@@ -83,7 +80,7 @@ export function LoginSignup() {
 					Incorrect Username and / or password.
 				</div>
 				{status === 'signup' && (
-					<React.Fragment>
+					<Fragment>
 						<input
 							id="fullname"
 							name="fullname"
@@ -99,7 +96,7 @@ export function LoginSignup() {
 						) : (
 							<span className="empty-space">&nbsp;</span>
 						)}
-					</React.Fragment>
+					</Fragment>
 				)}
 				<input
 					id="username"

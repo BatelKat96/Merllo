@@ -1,14 +1,6 @@
-import { useSelector } from 'react-redux'
-import { useState } from 'react'
-import { boardService } from '../services/board.service'
-
 import { IoClose } from 'react-icons/io5'
-import { useNavigate } from 'react-router-dom'
-import { BiCheck } from 'react-icons/bi'
 
 export function UserMenu({ user, onLogout, closeUserMenu }) {
-	const navigate = useNavigate()
-
 	return (
 		<section className="user-menu">
 			<div className="user-menu-header">
