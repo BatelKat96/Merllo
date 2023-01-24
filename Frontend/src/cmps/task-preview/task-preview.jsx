@@ -94,7 +94,7 @@ export function TaskPreview({ group, task, board }) {
 										className="member-img"
 										height="30px"
 										width="30px"
-										src={require(`${member.imgUrl}`)}
+										src={member.imgUrl}
 										alt={member.fullname}
 										title={member.fullname}
 									/>
