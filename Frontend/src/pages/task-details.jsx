@@ -139,17 +139,17 @@ export function TaskDetails() {
 
 
 
-                    {task.style?.bgColor && (
+                    {task.style?.backgroundColor && (
                         <section
                             className="task-cover"
-                            style={{ backgroundColor: task.style.bgColor }}
+                            style={{ backgroundColor: task.style.backgroundColor }}
                         ></section>
                     )}
 
-                    {task.style?.coverImg && (
-                        <section className="task-cover">
-                            <img src={task.style.coverImg} alt="Background cover" />
-                        </section>
+                    {task.style?.background && (
+                        <section className="task-cover"
+                            style={{ background: task.style.background }}
+                        ></section>
                     )}
 
                     {/* <div className='stam'> */}

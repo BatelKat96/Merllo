@@ -45,17 +45,17 @@
             {
                 "_id": "u101",
                 "fullname": "Batel K",
-                "imgUrl": "batel.png"
+                "imgUrl": "https://trello-members.s3.amazonaws.com/63c43e4080db3d01989c046e/e4e3a604db36af75f239332f98d75263/30.png"
             },
             {
                 "_id": "u102",
                 "fullname": "Beta S",
-                "imgUrl": "beta.png"
+                "imgUrl": "https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/30.png"
             },
             {
                 "_id": "u103",
                 "fullname": "Dror K",
-                "imgUrl": "dror.png"
+                "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/50.png"
             }
         ],
         "groups": [
@@ -106,7 +106,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "style": {
-                            "bgColor": "#7bc86c"
+                            "backgroundColor": "#FFAF3F"
                         }
                     },
                     {
@@ -125,7 +125,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "style": {
-                            "bgColor": "#7bc86c"
+                            "backgroundColor": "#5BA4CF"
                         }
                     },
                     {
@@ -144,7 +144,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "style": {
-                            "bgColor": "#7bc86c"
+                            "backgroundColor": "#172B4D"
                         }
                     }
                 ]
@@ -169,7 +169,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "style": {
-                            "bgColor": "#29cce5"
+                            "backgroundColor": "#F5DD29"
                         }
                     },
                     {
@@ -298,7 +298,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "style": {
-                            "bgColor": "#ffaf3f"
+                            "backgroundColor": "#29CCE5"
                         },
                         "memberIds": [
                             "u101",
@@ -379,7 +379,7 @@
                             "u103"
                         ],
                         "style": {
-                            "bgColor": "#29cce5"
+                            "backgroundColor": "#7BC86C"
                         }
                     },
                     {
