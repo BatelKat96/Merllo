@@ -4,23 +4,21 @@ import { HomePageHeader } from './home-page-header'
 import { MainHeader } from './main-header'
 import { MainHeaderDemo } from './main-header-demo'
 
-
 export function AppHeader() {
+	const location = useLocation()
 
-    const location = useLocation()
+	function DynamicCmp({ urlParams }) {
+		if (urlParams.includes('b101')) return <MainHeaderDemo />
 
-    function DynamicCmp({ urlParams }) {
+		if (urlParams.includes('workspace')) return <MainHeader />
+		if (urlParams.includes('board')) return <MainHeader />
+		if (urlParams.includes('task')) return <MainHeader />
 
-        if (urlParams.includes('b101')) return <MainHeaderDemo />
+		if (urlParams.includes('login')) return
+		if (urlParams.includes('signup')) return
 
-        if (urlParams.includes('workspace')) return <MainHeader />
-        if (urlParams.includes('board')) return <MainHeader />
-        if (urlParams.includes('task')) return <MainHeader />
+		if (urlParams.includes('/')) return <HomePageHeader />
+	}
 
-        if (urlParams.includes('/')) return <HomePageHeader />
-    }
-
-    return (
-        <DynamicCmp urlParams={location.pathname} />
-    )
+	return <DynamicCmp urlParams={location.pathname} />
 }

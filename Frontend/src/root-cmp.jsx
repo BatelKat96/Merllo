@@ -8,6 +8,7 @@ import { About } from './pages/about'
 import { Workspace } from './pages/workspace'
 import { Board } from './pages/board'
 import { TaskDetails } from './pages/task-details'
+import { LoginSignup } from './pages/login-signup'
 
 export function RootCmp() {
 	return (
@@ -16,14 +17,19 @@ export function RootCmp() {
 
 			{/* <div> */}
 
-			<main className='app-main'>
+			<main className="app-main">
 				<Routes>
 					<Route element={<HomePage />} path="/" />
+					<Route path="/:status" element={<LoginSignup />} />
 					<Route element={<About />} path="/about" />
 					<Route element={<Workspace />} path="/workspace" />
-					<Route element={<Board />} path="/board/:boardId" >
-						<Route element={<TaskDetails />} path="/board/:boardId/:groupId/:taskId" />
+					<Route element={<Board />} path="/board/:boardId">
+						<Route
+							element={<TaskDetails />}
+							path="/board/:boardId/:groupId/:taskId"
+						/>
 					</Route>
+					<Route element={<HomePage />} path="/" />
 
 					{/* <Route element={<UserDetails />} path="/user/:id" /> */}
 				</Routes>
