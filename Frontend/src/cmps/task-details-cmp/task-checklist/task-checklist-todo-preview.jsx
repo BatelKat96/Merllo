@@ -1,16 +1,17 @@
 import { Fragment, useState } from 'react'
 import { GrClose } from "react-icons/gr"
 import { HiDotsHorizontal } from 'react-icons/hi'
+import { TodoDeleteModal } from './todo-delete-modal'
 
 
 export function TodoPreview({ todo, updateTodo }) {
     const [isEditTodoOpen, setIsEditTodoOpen] = useState(false)
+    const [isDeleteModalOpen, setDeleteModalOpen] = useState({ todoId: '' })
     const [todoId, setTodoId] = useState('')
     const [currTodo, setCurrTodo] = useState(todo)
     let currTitle
 
     function onShowTodoInput(id) {
-
         setTodoId(id)
         setIsEditTodoOpen(true)
     }
@@ -22,32 +23,42 @@ export function TodoPreview({ todo, updateTodo }) {
         setIsEditTodoOpen(false)
     }
     function handleChange({ target }) {
-
         let { value, type, name: field, id, defaultValue } = target
-        console.log('value:', value)
-        console.log('field:', field)
-
-        console.log('defaultValue:', defaultValue)
         value = type === 'number' ? +value : value
         currTitle = value ? value : defaultValue
-        console.log('currTitle:', currTitle)
-
     }
 
     function onSaveTodoTitle(ev, id) {
-        console.log('id:', id)
         ev.stopPropagation()
         ev.preventDefault()
         if (todoId === id) {
             currTodo.title = currTitle
-            console.log('currTodo after:', currTodo)
-
             onCloseTodoInput(ev)
             updateTodo(ev, currTodo)
         }
     }
 
-    function onOpenModalDelete() {
+    function toggleModalDelete(ev, id) {
+        // console.log('id:', id)
+        // console.log('isDeleteModalOpen.todoId:', isDeleteModalOpen.todoId)
+
+        ev.stopPropagation()
+        ev.preventDefault()
+        if (isDeleteModalOpen.todoId === id) {
+            setDeleteModalOpen({ todoId: '' })
+            console.log('if isDeleteModalOpen:', isDeleteModalOpen)
+
+        } else {
+            setDeleteModalOpen({ 'todoId': id })
+            console.log(' else isDeleteModalOpen:', isDeleteModalOpen)
+        }
+    }
+
+    function onRemoveTodo(ev, id) {
+        console.log('id:', id)
+        ev.stopPropagation()
+        ev.preventDefault()
+
 
     }
 
@@ -63,15 +74,27 @@ export function TodoPreview({ todo, updateTodo }) {
 
 
                 </span>}
+
             {!isEditTodoOpen &&
-                <button className='clean-btn btn-checklist-label-menu-container '>
+                <button
+                    className='clean-btn btn-checklist-label-menu-container'
+                    onClick={(ev) => toggleModalDelete(ev, todo.id)}
+                >
                     <HiDotsHorizontal className='btn-checklist-label-menu' />
                 </button>
             }
+            {isDeleteModalOpen.todoId === todo.id && (
+                <TodoDeleteModal
+                    toggleModalDelete={toggleModalDelete}
+                    todoId={todo.id}
+                    onRemoveTodo={onRemoveTodo}
+                    type={'todo'}
+                />
+            )}
+
             {(isEditTodoOpen || (todoId == todo.id)) &&
                 < form  >
                     <input
-
                         // onBlur={onCloseTitleInput}
                         autoFocus
                         name='title'
