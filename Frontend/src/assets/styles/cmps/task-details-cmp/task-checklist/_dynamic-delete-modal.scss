@@ -1,4 +1,4 @@
-.todo-modal {
+.item-modal {
     z-index: 300;
     position: fixed;
     margin: 0;
@@ -6,7 +6,7 @@
     width: 1px;
 
 
-    .todo-modal-container {
+    .item-modal-container {
         z-index: 320;
         position: relative;
         top: 4px;
@@ -19,7 +19,7 @@
         box-shadow: var(--ds-shadow-overlay, 0 8px 16px -4px #091e4240, 0 0 0 1px var(--ds-border, #091e4214));
         overflow: hidden;
 
-        .todo-modal-header {
+        .item-modal-header {
             margin-bottom: 8px;
 
             text-align: center;
@@ -46,7 +46,7 @@
                 grid-row: 1;
             }
 
-            button.btn-todo-modal.close {
+            button.btn-item-modal.close {
                 grid-column: 3;
                 grid-row: 1;
                 background: transparent;
@@ -89,7 +89,7 @@
 
         }
 
-        .btn-remove-todo-modal {
+        .btn-remove-item-modal {
             width: 100%;
             background: #b04632;
             color: $clr6;

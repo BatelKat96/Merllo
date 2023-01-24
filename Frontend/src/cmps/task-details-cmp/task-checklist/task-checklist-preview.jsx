@@ -4,29 +4,35 @@ import { TaskChecklistList } from './task-checklist-list';
 import { IoCloseOutline } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
 import { IoClose } from "react-icons/io5";
+import { ItemDeleteModal } from './dynamic-delete-modal';
 
 
 
 export function TaskChecklistPreview({ onSaveEdit, task }) {
-    // console.log('task:', task)
     const currChecklists = task.checklists
     const [isEditTitleOpen, setIsEditTitleOpen] = useState(false)
     const [checklists, setChecklists] = useState(currChecklists)
     const [checklistId, setChecklistId] = useState('')
+    const [isDeleteModalOpen, setDeleteModalOpen] = useState({ checklistId: '' })
+
     let currTitle
 
-    // const { checklists } = task
-    // setCurrChecklists(checklists)
-    // console.log('checklists:', checklists)
+    function toggleDeleteChecklist(ev, id) {
+        ev.stopPropagation()
+        ev.preventDefault()
+        if (isDeleteModalOpen.checklistId === id) {
+            setDeleteModalOpen({ checklistId: '' })
+        } else {
+            setDeleteModalOpen({ 'checklistId': id })
+        }
+    }
 
-    function onDeleteChecklist(ev, checklist_id) {
+    function onRemoveChecklist(ev, checklist_id) {
         console.log('delete checklist', checklist_id)
         let index = checklists.findIndex(cl => (cl.id === checklist_id))
         checklists.splice(index, 1)
         onSaveEdit(ev)
     }
-
-
 
     function onShowTitleInput(id) {
         setChecklistId(id)
@@ -61,6 +67,10 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
             setChecklistId('')
             onSaveEdit(ev)
         }
+    }
+
+    function addTodo(title) {
+
     }
 
     return <section className='task-checklists-preview-section'>
@@ -107,8 +117,20 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
                     </div>
 
                     {(!isEditTitleOpen || (checklistId !== checklist.id)) && <div className='btn-checklist-delete-container'>
-                        <button className='clean-btn btn-task-details btn-checklist-delete' onClick={(ev) => onDeleteChecklist(ev, checklist.id)}>Delete</button>
+                        <button
+                            className='clean-btn btn-task-details btn-checklist-delete'
+                            onClick={(ev) => toggleDeleteChecklist(ev, checklist.id)}>
+                            Delete
+                        </button>
                     </div>}
+                    {isDeleteModalOpen.checklistId === checklist.id && (
+                        <ItemDeleteModal
+                            toggleModalDelete={toggleDeleteChecklist}
+                            itemId={checklist.id}
+                            onRemoveItem={onRemoveChecklist}
+                            type={'checklist'}
+                        />
+                    )}
                 </div>
                 <hr />
                 <ul className='clean-list'>

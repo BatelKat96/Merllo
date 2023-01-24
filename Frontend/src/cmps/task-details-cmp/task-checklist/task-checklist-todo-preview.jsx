@@ -1,15 +1,17 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import { GrClose } from "react-icons/gr"
 import { HiDotsHorizontal } from 'react-icons/hi'
-import { TodoDeleteModal } from './todo-delete-modal'
+import { ItemDeleteModal } from './dynamic-delete-modal'
 
 
-export function TodoPreview({ todo, updateTodo }) {
+export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
     const [isEditTodoOpen, setIsEditTodoOpen] = useState(false)
     const [isDeleteModalOpen, setDeleteModalOpen] = useState({ todoId: '' })
     const [todoId, setTodoId] = useState('')
     const [currTodo, setCurrTodo] = useState(todo)
     let currTitle
+
+    console.log('todo:', todo)
 
     function onShowTodoInput(id) {
         setTodoId(id)
@@ -33,55 +35,44 @@ export function TodoPreview({ todo, updateTodo }) {
         ev.preventDefault()
         if (todoId === id) {
             currTodo.title = currTitle
+            currTitle = ''
             onCloseTodoInput(ev)
             updateTodo(ev, currTodo)
         }
     }
 
     function toggleModalDelete(ev, id) {
-        // console.log('id:', id)
-        // console.log('isDeleteModalOpen.todoId:', isDeleteModalOpen.todoId)
-
         ev.stopPropagation()
         ev.preventDefault()
         if (isDeleteModalOpen.todoId === id) {
             setDeleteModalOpen({ todoId: '' })
-            console.log('if isDeleteModalOpen:', isDeleteModalOpen)
-
         } else {
             setDeleteModalOpen({ 'todoId': id })
-            console.log(' else isDeleteModalOpen:', isDeleteModalOpen)
         }
     }
 
 
 
     return (
-        // <Fragment>
         <label className="task-checklist-label" onClick={() => { onShowTodoInput(todo.id) }}>
-
-            {/* onClick={() => { onShowTodoInput(todo.id) }} */}
             {(!isEditTodoOpen || (todoId !== todo.id)) &&
                 <span className='task-checklist-label-span'
                 >
                     {todo.title}
-
-
                 </span>}
 
             {!isEditTodoOpen &&
                 <button
                     className='clean-btn btn-checklist-label-menu-container'
-                    onClick={(ev) => toggleModalDelete(ev, todo.id)}
-                >
+                    onClick={(ev) => toggleModalDelete(ev, todo.id)}>
                     <HiDotsHorizontal className='btn-checklist-label-menu' />
                 </button>
             }
             {isDeleteModalOpen.todoId === todo.id && (
-                <TodoDeleteModal
+                <ItemDeleteModal
                     toggleModalDelete={toggleModalDelete}
-                    todoId={todo.id}
-                    onRemoveTodo={onRemoveTodo}
+                    itemId={todo.id}
+                    onRemoveItem={onRemoveTodo}
                     type={'todo'}
                 />
             )}
@@ -113,7 +104,6 @@ export function TodoPreview({ todo, updateTodo }) {
                 </form >}
 
         </label>
-        // </Fragment>
     )
 
 }
