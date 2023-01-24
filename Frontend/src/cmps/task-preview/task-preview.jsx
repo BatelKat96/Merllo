@@ -17,7 +17,6 @@ export function TaskPreview({ group, task, board }) {
 	const currLabels = task.labelIds
 	const currMembers = task.memberIds
 	const currCover = task.style
-	console.log(currCover);
 
 	var fullMembers = currMembers ? utilService.findDataById(currMembers, board, 'members') : ''
 

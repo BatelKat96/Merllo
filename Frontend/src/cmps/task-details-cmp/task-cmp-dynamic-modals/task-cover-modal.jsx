@@ -42,15 +42,15 @@ export function TaskCoverModal({ task }) {
     const [coverColor, setCoverColor] = useState('')
     const [coverImg, setcoverImg] = useState('')
 
-    async function setTaskCover(coverColor, backgroundImage) {
+    async function setTaskCover(coverColor, coverImg) {
 
         setCoverColor(coverColor)
-        setcoverImg(backgroundImage)
+        setcoverImg(coverImg)
 
         let style
 
         if (coverColor) style = { backgroundColor: coverColor }
-        else style = { background: `url("${backgroundImage}") center center / cover` }
+        else style = { background: `url("${coverImg}") center center / cover` }
 
         task.style = style
 
