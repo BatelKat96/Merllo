@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 
@@ -21,6 +21,7 @@ export function MainHeader() {
 	const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 	const user = useSelector((storeState) => storeState.userModule.user)
+	const navigate = useNavigate()
 
 	// create board
 	function openBoardComposer() {
@@ -37,6 +38,11 @@ export function MainHeader() {
 	}
 	function closeUserMenu() {
 		setIsUserMenuOpen(false)
+	}
+
+	function onLogout() {
+		logout()
+		navigate(`/`)
 	}
 
 	console.log('user', user)
@@ -90,19 +96,25 @@ export function MainHeader() {
 					<HelpSvg />
 				</button> */}
 
-				<button onClick={openUserMenu}>
-					{/* <UserSvg /> */}
-					<img
-						className="member-img"
-						src={require(`../../assets/img/members-task-details/batel.png`)}
-					/>
-				</button>
+				{user && (
+					<button onClick={openUserMenu}>
+						{/* <UserSvg /> */}
+						<img
+							className="member-img"
+							src={require(`../../assets/img/members-task-details/batel.png`)}
+						/>
+					</button>
+				)}
 			</div>
 			{isBoardComposerOpen && (
 				<BoardCreate closeBoardComposer={closeBoardComposer} />
 			)}
 			{user && isUserMenuOpen && (
-				<UserMenu user={user} logout={logout} closeUserMenu={closeUserMenu} />
+				<UserMenu
+					user={user}
+					onLogout={onLogout}
+					closeUserMenu={closeUserMenu}
+				/>
 			)}
 		</header>
 	)

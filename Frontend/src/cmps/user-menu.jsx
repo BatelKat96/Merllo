@@ -6,7 +6,7 @@ import { IoClose } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom'
 import { BiCheck } from 'react-icons/bi'
 
-export function UserMenu({ user, logout, closeUserMenu }) {
+export function UserMenu({ user, onLogout, closeUserMenu }) {
 	const navigate = useNavigate()
 
 	return (
@@ -26,7 +26,7 @@ export function UserMenu({ user, logout, closeUserMenu }) {
 					<div className="user-name">{user.fullname}</div>
 				</div>
 				<hr className="user-menu-separator" />
-				<a className="user-menu-logout" onClick={logout}>
+				<a className="user-menu-logout" onClick={onLogout}>
 					Logout
 				</a>
 			</div>
