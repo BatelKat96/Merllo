@@ -40,8 +40,6 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
         }
     }
 
-
-
     function onClose() {
         onOpenModal()
     }
@@ -157,7 +155,9 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                     )}
                 </ul> */}
 
-                {cmpType === 'cover' && <TaskCoverModal />}
+                {cmpType === 'cover' &&
+                    <TaskCoverModal
+                        task={task} />}
 
             </div>
         </div>
