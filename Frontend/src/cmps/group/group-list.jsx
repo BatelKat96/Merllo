@@ -4,12 +4,12 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import { IoClose } from 'react-icons/io5'
 import { HiDotsHorizontal } from 'react-icons/hi'
 
-import { boardService } from '../services/board.service'
-import { removeGroup, saveGroup } from '../store/board.actions'
-import { TaskList } from './task-list'
+import { boardService } from '../../services/board.service'
+import { removeGroup, saveGroup } from '../../store/board.actions'
+import { TaskList } from '../task-list'
 import { GroupDropdown } from './group-dropdown'
 
-import Loader from '../assets/img/loader.svg'
+import Loader from '../../assets/img/loader.svg'
 
 export function GroupList() {
 	const board = useSelector((storeState) => storeState.boardModule.board)

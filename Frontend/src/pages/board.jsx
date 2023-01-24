@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
-import { GroupList } from '../cmps/group-list'
+import { GroupList } from '../cmps/group/group-list'
+import { BoardSideMenu } from '../cmps/board/board-side-menu'
 
 import Loader from '../assets/img/loader.svg'
 import { HiOutlineStar } from 'react-icons/hi2'
 import { BsFilter } from 'react-icons/bs'
 import { MdDelete } from 'react-icons/md'
-import { BoardSideMenu } from '../cmps/board-side-menu'
 
 export function Board() {
 	const { boardId } = useParams()

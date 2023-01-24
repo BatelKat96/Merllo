@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { unsplashService } from '../services/unsplash.service'
-import Loader from '../assets/img/loader.svg'
+import { unsplashService } from '../../services/unsplash.service'
+import Loader from '../../assets/img/loader.svg'
 
 export const SideMenuPhotos = ({ changeBackground }) => {
 	const [photos, setPhotos] = useState(null)
