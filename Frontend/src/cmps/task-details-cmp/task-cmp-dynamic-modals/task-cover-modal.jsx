@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { boardService } from '../../../services/board.service'
+import { saveTask } from '../../../store/board.actions'
 
 import Size1 from '../../../assets/img/cover-size1.png'
 import Size2 from '../../../assets/img/cover-size2.png'
@@ -9,8 +9,7 @@ import Size2 from '../../../assets/img/cover-size2.png'
 export function TaskCoverModal({ task }) {
 
     const { boardId, groupId, taskId } = useParams()
-    const currTask = boardService.getTaskById(taskId, groupId, boardId)
-    console.log(currTask)
+    const [updateTask, setUpdateTask] = useState(task)
 
     const coverColors = [
         '#7BC86C',
@@ -26,77 +25,55 @@ export function TaskCoverModal({ task }) {
     ]
 
     const coverImgs = [
-        {
-            backgroundColor: '#d9d9d9',
-            background:
-                'https://images.unsplash.com/photo-1672091161606-71d1cf383221?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
-            thumbnail:
-                'https://images.unsplash.com/photo-1672091161606-71d1cf383221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
-        },
-        {
-            backgroundColor: '#262626',
-            background:
-                'https://images.unsplash.com/photo-1672167630747-35dd70a83994?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
-            thumbnail:
-                'https://images.unsplash.com/photo-1672167630747-35dd70a83994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
-        },
-        {
-            backgroundColor: '#f3f3d9',
-            background:
-                'https://images.unsplash.com/photo-1673212815770-16f0a1f1500f?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
-            thumbnail:
-                'https://images.unsplash.com/photo-1673212815770-16f0a1f1500f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
-        },
-        {
-            backgroundColor: '#d9d9d9',
-            background:
-                'https://images.unsplash.com/photo-1673725437336-e2f3307cebbf?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
-            thumbnail:
-                'https://images.unsplash.com/photo-1673725437336-e2f3307cebbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
-        },
-        {
-            backgroundColor: '#d9d9d9',
-            background:
-                'https://images.unsplash.com/photo-1672575395994-835afaaeb376?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80',
-            thumbnail:
-                'https://images.unsplash.com/photo-1672575395994-835afaaeb376?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80',
-        },
-        {
-            backgroundColor: '#f3f3f3',
-            background:
-                'https://images.unsplash.com/photo-1673026066090-d52723e12d70?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80',
-            thumbnail:
-                'https://images.unsplash.com/photo-1673026066090-d52723e12d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80&w=400',
-        },
+        'https://images.unsplash.com/photo-1672091161606-71d1cf383221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+
+        'https://images.unsplash.com/photo-1672167630747-35dd70a83994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+
+        'https://images.unsplash.com/photo-1673212815770-16f0a1f1500f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+
+        'https://images.unsplash.com/photo-1673725437336-e2f3307cebbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+
+        'https://images.unsplash.com/photo-1672575395994-835afaaeb376?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80',
+
+        'https://images.unsplash.com/photo-1673026066090-d52723e12d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80&w=400'
     ]
 
     const [taskToEdit, setTaskToEdit] = useState('')
 
-    const [color, setColor] = useState('')
-    const [img, setImg] = useState(coverImgs[0].thumbnail)
+    const [coverColor, setCoverColor] = useState('')
+    const [coverImg, setcoverImg] = useState(coverImgs[0].thumbnail)
 
-    const setTaskCover = (bgColor, bgImg) => {
-
-        setColor(bgColor)
-        setImg(bgImg)
-
-        let style = bgImg
-            ? coverImgs.find((coverImg) => coverImg.thumbnail === bgImg)
-            : { bgColor }
-
-        setTaskToEdit((currTask) => ({ ...currTask, style }))
-        console.log(task)
-    }
-
-    // task details
-    // async function changeCover({ bgColor }) {
-    //     task.style = { bgColor }
-    //     try {
-    //         await updateBoard(board)
-    //     } catch (err) {
-    //         console.log('Failed to update board background', err)
-    //     }
+    // function getBoardStyle() {
+    // 	if (!board) return
+    // 	if (board?.style.background) {
+    // 		return {
+    // 			background: `url('${board.style.thumbnail}') center center / cover`,
+    // 		}
+    // 	} else if (board?.style.backgroundColor) {
+    // 		return { backgroundColor: `${board.style.backgroundColor}` }
+    // 	}
+    // 	return { backgroundColor: `#0067a3` }
     // }
+
+    async function setTaskCover(backgroundColor, backgroundImage) {
+
+        setCoverColor(backgroundColor)
+        setcoverImg(backgroundImage)
+
+        // let style = backgroundImage
+        //     ? coverImgs.find((coverImg) => coverImg === backgroundImage)
+        //     : { bgColor: backgroundColor }
+        let style
+
+        if (backgroundColor) style = { bgColor: backgroundColor }
+
+        else style = { background: `url("${backgroundImage}") center center / cover` }
+
+        task.style = style
+
+        setUpdateTask(task)
+        await saveTask(updateTask, groupId, boardId)
+    }
 
     return (
         <section className='cmp-dynamoic-options-list cover-section'>
@@ -139,11 +116,11 @@ export function TaskCoverModal({ task }) {
 
                 <div className='img-wrapper clean-list'>
                     {coverImgs.map((coverImg) => (
-                        <li key={coverImg.thumbnail} className={coverImg.thumbnail}>
+                        <li key={coverImg} className={coverImg}>
                             <button
                                 className='img-btn'
                                 onClick={() => setTaskCover(undefined, coverImg)}
-                                style={{ backgroundImage: 'url(' + coverImg.thumbnail + ')' }}
+                                style={{ background: `url('${coverImg}') center center / cover` }}
                             >
                             </button>
                         </li>
