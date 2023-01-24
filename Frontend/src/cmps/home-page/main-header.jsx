@@ -99,10 +99,7 @@ export function MainHeader() {
 				{user && (
 					<button onClick={openUserMenu}>
 						{/* <UserSvg /> */}
-						<img
-							className="member-img"
-							src={require(`../../assets/img/members-task-details/batel.png`)}
-						/>
+						<img className="member-img" src={user.imgUrl} alt={user.fullname} />
 					</button>
 				)}
 			</div>
