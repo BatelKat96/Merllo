@@ -1,7 +1,7 @@
 import { IoClose } from 'react-icons/io5'
 
 export function ItemDeleteModal({ toggleModalDelete, itemId, onRemoveItem, type }) {
-    console.log('hello:')
+    // console.log('hello:')
 
     return (
         <section className="item-modal">

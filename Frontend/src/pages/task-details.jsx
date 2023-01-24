@@ -18,16 +18,17 @@ import Loader from '../assets/img/loader.svg'
 
 export function TaskDetails() {
     const { boardId, groupId, taskId } = useParams()
-    const board = useSelector((storeState) => storeState.boardModule.board) || loadBoard(boardId)
+    const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
     const { byMember, labelIds, style, checklists, memberIds } = task
-    // console.log('checklists:', checklists)
+    console.log('memberIds:', memberIds)
 
 
 
     const navigate = useNavigate()
 
     useEffect(() => {
+        if (!board) loadBoard(boardId)
         loadTask(taskId, groupId, boardId)
     }, [])
 
@@ -36,6 +37,7 @@ export function TaskDetails() {
         let currGroup = groups.find((grp) => grp.id === groupId)
         return currGroup
     }
+
 
     async function loadTask(taskId, groupId, boardId) {
         try {
@@ -91,12 +93,26 @@ export function TaskDetails() {
         // }
     }
 
+    function onSaveTask(ev, updateTask) {
+        ev.preventDefault()
+        // try {
+        console.log('in: ')
+        setTask(updateTask)
+        // const savedTask = await saveTask(task, groupId, boardId)
+        saveTask(updateTask, groupId, boardId)
+        // showSuccessMsg(`Task edited (id: ${savedTask._id})`)
+        // } catch (err) {
+        // console.log('Cannot update task ', err)
+        // showErrorMsg('Cannot update task ', err)
+        // }
+    }
+
     function onCloseTaskDetails(ev) {
 
         ev.preventDefault()
         console.log('out:')
 
-        onSaveEdit(ev)
+        // onSaveEdit(ev)
         console.log('ev:', ev)
 
         navigate(`/board/${boardId}`)
@@ -113,8 +129,8 @@ export function TaskDetails() {
                 className="black-screen"
             ></div>
             <div className="task-details-section">
-                {(!task) && <img className="loader" src={Loader} alt="loader" />}
-                {(task) && <Fragment>
+                {(!task || !board) && <img className="loader" src={Loader} alt="loader" />}
+                {(task && board) && <Fragment>
                     <span
                         onClick={(ev) => onCloseTaskDetails(ev)}
                         className="clean-btn btn-task-exit">
@@ -150,7 +166,7 @@ export function TaskDetails() {
                                 </div>
 
                                 <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
-                                {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} />}
+                                {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
 
                                 {/* <p>Checklist</p>
                         <p>                        Activity-

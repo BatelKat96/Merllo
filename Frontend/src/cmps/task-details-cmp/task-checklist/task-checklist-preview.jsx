@@ -8,10 +8,11 @@ import { ItemDeleteModal } from './dynamic-delete-modal';
 
 
 
-export function TaskChecklistPreview({ onSaveEdit, task }) {
-    const currChecklists = task.checklists
+export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
+    // let upadtetask = { ...task }
+    const checklists = task.checklists
     const [isEditTitleOpen, setIsEditTitleOpen] = useState(false)
-    const [checklists, setChecklists] = useState(currChecklists)
+    // const [checklists, setChecklists] = useState(currChecklists)
     const [checklistId, setChecklistId] = useState('')
     const [isDeleteModalOpen, setDeleteModalOpen] = useState({ checklistId: '' })
 
@@ -27,11 +28,23 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
         }
     }
 
+    // function onRemoveChecklist(ev, checklist_id) {
+    //     console.log('delete checklist', checklist_id)
+    //     let index = checklists.findIndex(cl => (cl.id === checklist_id))
+    //     checklists.splice(index, 1)
+    //     onSaveEdit(ev)
+    // }
+
     function onRemoveChecklist(ev, checklist_id) {
         console.log('delete checklist', checklist_id)
-        let index = checklists.findIndex(cl => (cl.id === checklist_id))
-        checklists.splice(index, 1)
-        onSaveEdit(ev)
+        console.log('checklists:', checklists)
+
+        const newChecklists = checklists.filter(cl => (cl.id !== checklist_id))
+        console.log('newChecklists:', newChecklists)
+
+        const newTask = { ...task, checklists: newChecklists }
+        onSaveTask(ev, newTask)
+        // onSaveEdit(ev)
     }
 
     function onShowTitleInput(id) {

@@ -8,8 +8,10 @@ import { BiCheck } from 'react-icons/bi'
 import Loader from '../../assets/img/loader.svg'
 import { saveTask } from '../../store/board.actions'
 import { TaskList } from '../task-preview/task-list'
+import { TaskLabelModal } from './task-cmp-dynamic-modals/task-label-modal'
+import { TaskMemberModal } from './task-cmp-dynamic-modals/task-member-modal'
 
-export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, refDataBtn }) {
+export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, refDataBtn, onSaveTask }) {
 
     const board = useSelector((storeState) => storeState.boardModule.board)
     const members = board.members
@@ -24,22 +26,8 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
         left: refDataBtn.current.offsetLeft + "px"
     }
 
-    // let info
-    // DynamicCmp(cmpType)
+    const { labelIds } = updateTask
 
-    const { labelIds, memberIds } = task
-
-    function DynamicCmp(cmpType) {
-        switch (cmpType) {
-            case 'members':
-                setToRender(board.members)
-                return toRender
-            case 'labels':
-            // setToRender(board.labels)
-            // info = board.labels
-            // return info
-        }
-    }
 
     function onClose() {
         onOpenModal()
@@ -49,24 +37,10 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
         title: cmpType,
         txt: '',
         placeholder: `Search ${cmpType}`,
-        optionsTitle: `Board ${cmpType}`,
-        options: toRender
+        optionsTitle: `Board ${cmpType}`
+
     }
 
-
-
-    async function onToggleMember(id) {
-        if (memberIds?.includes(id)) {
-            const index = memberIds.indexOf(id)
-            memberIds.splice(index, 1)
-        }
-        else {
-            if (memberIds) memberIds.push(id)
-            else memberIds = [id]
-        }
-        setUpdateTask((prevTask) => ({ ...prevTask }))
-        await saveTask(updateTask, groupId, boardId)
-    }
 
     async function onToggleLabel(id) {
         if (labelIds?.includes(id)) {
@@ -96,7 +70,7 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
             <a onClick={onClose}><IoClose className='close-icon' /></a>
             <p className='cmp-dynamoic-title'>{data.title}</p>
             <div className='dynamic-container'>
-                <input
+                {/* <input
                     type="text"
                     className='cmp-dynamoic-input'
                     name="txt"
@@ -107,27 +81,22 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                     autoFocus
                     autoComplete="off"
                 />
-                <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3>
+                <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3> */}
 
 
-                {/* side-bar-member-cmp-dynamoic */}
-                {cmpType === 'members' && <ul className='cmp-dynamoic-options-list clean-list' >
-                    {toRender && toRender.map(opt =>
-                        <li key={opt._id} className="cmp-dynamoic-option" onClick={() => onToggleMember(opt._id)}>
-                            {/* <div onClick={() => onToggleMember(opt._id)}> */}
+                {cmpType === 'members' &&
+                    <TaskMemberModal
+                        task={task}
+                        data={data}
+                        onSaveTask={onSaveTask}
+                    />}
 
-                            <img className='cmp-dynamoic-member-img' src={require(`../../assets/img/members-task-details/${opt.imgUrl}`)} alt={opt.imgUrl} />
-                            <span>{opt.fullname}</span>
-                            {memberIds?.includes(opt._id) && (
-                                <span className="checked-icon">
-                                    <BiCheck />
-                                </span>)}
-                            {/* </div> */}
-                        </li>
-                    )}
-                    {!toRender.length && <li className="cmp-dynamoic-option">No member by this name</li>
-                    }
-                </ul>}
+                {cmpType === 'labels' &&
+                    <TaskLabelModal
+                        task={task}
+                        data={data}
+                        onSaveTask={onSaveTask}
+                    />}
 
                 {/* side-bar-label-cmp-dynamoic */}
                 {/* {cmpType === 'labels' && <ul className='cmp-dynamoic-options-list clean-list'>

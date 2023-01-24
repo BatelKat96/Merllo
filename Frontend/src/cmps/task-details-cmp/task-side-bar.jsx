@@ -10,7 +10,7 @@ import { FiArrowRight } from "react-icons/fi"
 import { MdContentCopy } from "react-icons/md"
 import { TiTag } from "react-icons/ti"
 
-export function TaskSideBar({ onRemoveTask, task, onCopyTask }) {
+export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
 
     const { boardId, groupId, taskId } = useParams()
     const [modalType, setModalType] = useState()
@@ -177,6 +177,7 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask }) {
             task={task}
             groupId={groupId}
             boardId={boardId}
-            onOpenModal={onOpenModal} />}
+            onOpenModal={onOpenModal}
+            onSaveTask={onSaveTask} />}
     </div >
 }

@@ -5,7 +5,7 @@ export const ADD_BOARD = 'ADD_BOARD'
 export const UPDATE_BOARD = 'UPDATE_BOARD'
 
 const initialState = {
-	board: {},
+	board: null,
 	boards: [],
 }
 
