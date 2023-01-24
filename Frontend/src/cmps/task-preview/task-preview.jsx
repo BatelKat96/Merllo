@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { QuickTaskEdit } from './quick-task-edit'
 
@@ -10,17 +10,21 @@ import description from '../../assets/img/icons-task-details/description.svg'
 export function TaskPreview({ group, task, board }) {
 	const { boardId } = useParams()
 	const navigate = useNavigate()
+
+	const [quickTaskEdit, toggleQuickTaskEdit] = useState(false)
+
 	const currLabels = task.labelIds
 	const currMembers = task.memberIds
+	const currCover = task.style
+	console.log(currCover)
 
-	var fullLabels = currLabels
-		? utilService.findDataById(currLabels, board, 'labels')
-		: ''
 	var fullMembers = currMembers
 		? utilService.findDataById(currMembers, board, 'members')
 		: ''
 
-	const [quickTaskEdit, toggleQuickTaskEdit] = useState(false)
+	var fullLabels = currLabels
+		? utilService.findDataById(currLabels, board, 'labels')
+		: ''
 
 	function onQuickTaskEdit(ev) {
 		ev.stopPropagation()
@@ -39,6 +43,10 @@ export function TaskPreview({ group, task, board }) {
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
+				{currCover && (
+					<div className="task-preview-cover" style={currCover}></div>
+				)}
+
 				<div className="task-preview-label-container">
 					{fullLabels &&
 						fullLabels.map((label) => (
@@ -53,6 +61,7 @@ export function TaskPreview({ group, task, board }) {
 
 				<a className="edit-btn" onClick={onQuickTaskEdit}>
 					<EditSvg />
+
 					{quickTaskEdit && (
 						<QuickTaskEdit
 							taskId={task.id}
