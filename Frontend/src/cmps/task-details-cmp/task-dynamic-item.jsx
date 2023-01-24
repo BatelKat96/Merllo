@@ -10,7 +10,7 @@ export function TaskDynamicItem({ ids, add, board, type }) {
         <ul className={`${type}-list clean-list`}>
             {(type === 'members') && currDataType.map(curr =>
                 <li key={curr._id}>
-                    <img className='member-img' src={require(`../../assets/img/members-task-details/${curr.imgUrl}`)} alt={curr.fullname} title={curr.fullname} />
+                    <img className='member-img' src={curr.imgUrl} alt={curr.fullname} title={curr.fullname} />
                 </li>
             )}
             {(type === 'labels') && currDataType.map(curr =>

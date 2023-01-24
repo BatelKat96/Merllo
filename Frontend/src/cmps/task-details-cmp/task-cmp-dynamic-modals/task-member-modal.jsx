@@ -68,7 +68,7 @@ export function TaskMemberModal({ task, data }) {
                     {/* <div onClick={() => onToggleMember(opt._id)}> */}
 
                     <img className='cmp-dynamoic-member-img'
-                        src={require(`../../../assets/img/members-task-details/${opt.imgUrl}`)}
+                        src={opt.imgUrl}
                         alt={opt.imgUrl} />
                     <span>{opt.fullname}</span>
                     {memberIds?.includes(opt._id) && (
