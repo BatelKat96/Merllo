@@ -21,6 +21,14 @@ export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
         // onSaveEdit(ev)
     }
 
+    function onRemoveTodo(ev, id) {
+        console.log('id:', id)
+        ev.stopPropagation()
+        ev.preventDefault()
+
+
+    }
+
 
     return <Fragment>
         {todos.map(todo => {
@@ -33,7 +41,7 @@ export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
                     id={todo.id}
                 />
                 {/* <label className="task-checklist-label"> */}
-                <TodoPreview todo={todo} updateTodo={updateTodo} />
+                <TodoPreview todo={todo} updateTodo={updateTodo} onRemoveTodo={onRemoveTodo} />
 
                 {/* </label> */}
             </li>

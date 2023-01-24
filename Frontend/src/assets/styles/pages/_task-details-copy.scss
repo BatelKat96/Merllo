@@ -6,27 +6,9 @@
     // position: absolute;
     // z-index: 100;
     // overflow: auto;
-    background-color: aqua
+
 }
 
-// .black-screen {
-//     position: fixed;
-//     inset: 0;
-//     background-color: #121212db;
-//     cursor: pointer;
-//     opacity: 0;
-//     transition: opacity 0.6s;
-//     pointer-events: none;
-//     z-index: 10;
-//     box-shadow: -6px 0px 14px rgb(0 0 0 / 20%);
-//     max-height: 100%;
-//     pointer-events: auto;
-//     opacity: 1;
-
-//     left: 0;
-//     right: 0;
-//     top: 0;
-// }
 
 .task-details-section {
     left: 50%;
@@ -36,7 +18,7 @@
     background-color: $t-bg1;
     border-radius: 2px;
     width: 768px;
-    // height: 901px;
+    height: 801px;
     margin-inline: auto;
     // margin-block: 40px 80px;
     display: grid;

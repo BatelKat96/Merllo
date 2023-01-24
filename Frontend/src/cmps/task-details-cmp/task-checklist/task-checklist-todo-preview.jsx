@@ -54,13 +54,7 @@ export function TodoPreview({ todo, updateTodo }) {
         }
     }
 
-    function onRemoveTodo(ev, id) {
-        console.log('id:', id)
-        ev.stopPropagation()
-        ev.preventDefault()
 
-
-    }
 
     return (
         // <Fragment>
