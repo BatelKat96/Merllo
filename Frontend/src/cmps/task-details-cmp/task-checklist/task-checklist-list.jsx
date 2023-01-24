@@ -17,7 +17,7 @@ export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
         let updateTodo = currTodos[index]
         let newTodos = currTodos.splice(index, 1, updateTodo)
         setCurrTodos(newTodos)
-        onSaveEdit(ev)
+        // onSaveEdit(ev)
     }
 
 

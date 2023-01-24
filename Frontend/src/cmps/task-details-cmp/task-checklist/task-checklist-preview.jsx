@@ -64,7 +64,8 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
 
     return <section className='task-checklists-preview-section'>
         {checklists.map(checklist => {
-            return <div className='task-checklists-preview-container' key={checklist.id}>
+            return <div className='task-checklists-preview-container' key={checklist.id} >
+
                 <div className='task-checklist-preview-header'>
                     <div className='checklists-icon-container'>
                         <BsCheck2Square className='icon-task checklists-icon' />
@@ -80,6 +81,7 @@ export function TaskChecklistPreview({ onSaveEdit, task }) {
                         {isEditTitleOpen && (checklistId === checklist.id) &&
                             <form>
                                 <input
+                                    // onBlur={onCloseTitleInput}
                                     autoFocus
                                     name='title'
                                     className='task-checklist-title-input medium-headline'
