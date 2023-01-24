@@ -1,0 +1,38 @@
+.task-checklist-label {
+    flex-grow: 1;
+    height: 100%;
+    padding-block: 7px;
+    // position: relative;
+
+    .task-checklist-label-span {}
+
+    .task-todo-title-input {
+        background-color: $t-bg5;
+        box-shadow: rgba(9, 30, 66, 0.13) 0px 0px 0px 1px inset;
+        padding: 8px 12px;
+        width: 512px;
+        height: 54px;
+
+
+        &:focus {
+            box-shadow: rgba(9, 30, 66, 0.13) 0px 0px 0px 1px inset;
+            background-color: $t-bg5;
+        }
+    }
+
+    .btn-checklist-label-menu-container {
+
+        // width: 24px;
+        // height: 24px;
+
+        float: right;
+
+        .btn-checklist-label-menu {
+            // padding: 4px;
+
+            &:hover {
+                background-color: $t-hover3;
+            }
+        }
+    }
+}
