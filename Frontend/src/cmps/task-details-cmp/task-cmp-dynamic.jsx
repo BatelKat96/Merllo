@@ -7,6 +7,7 @@ import { IoClose } from "react-icons/io5"
 import { BiCheck } from 'react-icons/bi'
 import Loader from '../../assets/img/loader.svg'
 import { saveTask } from '../../store/board.actions'
+import { TaskList } from '../task-preview/task-list'
 
 export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, refDataBtn }) {
 
@@ -157,7 +158,8 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
 
                 {cmpType === 'cover' &&
                     <TaskCoverModal
-                        task={task} />}
+                        task={task}
+                    />}
 
             </div>
         </div>
