@@ -2,13 +2,10 @@ import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { QuickTaskEdit } from './quick-task-edit'
-import { boardService } from '../services/board.service'
 
-import { utilService } from '../services/util.service'
-import { ReactComponent as EditSvg } from '../assets/img/icons-task-preview/edit.svg'
-import { ReactComponent as descriptionSvg } from '../assets/img/icons-task-details/description.svg'
-import { AiOutlineClockCircle } from 'react-icons/ai'
-import description from '../assets/img/icons-task-details/description.svg'
+import { utilService } from '../../services/util.service'
+import { ReactComponent as EditSvg } from '../../assets/img/icons-task-preview/edit.svg'
+import description from '../../assets/img/icons-task-details/description.svg'
 
 
 export function TaskPreview({ group, task, board }) {
@@ -69,7 +66,7 @@ export function TaskPreview({ group, task, board }) {
 					<ul className="task-preview-member-container clean-list">
 						{fullMembers && fullMembers.map(member =>
 							<li key={member._id} className="task-preview-member" onClick={onLabel}>
-								<img className='member-img' src={require(`../assets/img/members-task-details/${member.imgUrl}`)} alt={member.fullname} title={member.fullname} />
+								<img className='member-img' src={require(`../../assets/img/members-task-details/${member.imgUrl}`)} alt={member.fullname} title={member.fullname} />
 
 							</li>
 						)}
