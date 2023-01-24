@@ -1,7 +1,7 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 // import { httpService } from './http.service.js'
-// import { userService } from './user.service.js'
+import { userService } from './user.service.js'
 
 import boardsData from '../data/demo-data.json'
 console.log(':', boardsData)
@@ -54,7 +54,7 @@ async function save(board) {
 		// savedBoard = await httpService.put(`board/${board._id}`, board)
 	} else {
 		// Later, owner is set by the backend
-		// board.owner = userService.getLoggedinUser()
+		board.createdBy = userService.getLoggedinUser()
 		savedBoard = await storageService.post(STORAGE_KEY, board)
 		// savedBoard = await httpService.post('board', board)
 	}
@@ -70,7 +70,7 @@ function getEmptyBoard() {
 		style: {
 			background: '',
 			thumbnail: '',
-			backgroundColor: '#0067a3',
+			backgroundColor: '',
 		},
 		labels: [],
 		members: [],
