@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { saveTask, removeTask } from '../store/board.actions'
+import { saveTask, removeTask } from '../../store/board.actions'
 
 import { TiTag } from "react-icons/ti";
 
-import { ReactComponent as OpenTaskSvg } from '../assets/img/icons-task-details/taskTitle.svg'
-import { ReactComponent as MemberSvg } from '../assets/img/icons-task-preview/member.svg'
-import { ReactComponent as CopySvg } from '../assets/img/icons-task-preview/copy.svg'
-import { ReactComponent as DeleteSvg } from '../assets/img/icons-task-preview/delete.svg'
+import { ReactComponent as OpenTaskSvg } from '../../assets/img/icons-task-details/taskTitle.svg'
+import { ReactComponent as MemberSvg } from '../../assets/img/icons-task-preview/member.svg'
+import { ReactComponent as CopySvg } from '../../assets/img/icons-task-preview/copy.svg'
+import { ReactComponent as DeleteSvg } from '../../assets/img/icons-task-preview/delete.svg'
 
 export function QuickTaskEdit({ task, taskId, groupId, boardId, toggleQuickTaskEdit }) {
     const navigate = useNavigate()

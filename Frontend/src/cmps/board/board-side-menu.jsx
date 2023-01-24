@@ -55,7 +55,12 @@ export function BoardSideMenu({ onToggleSideMenu, changeBackground }) {
 					{title === 'Photos by' ? (
 						<Fragment>
 							{title}{' '}
-							<a href="https://unsplash.com/" target="_blank" rel="noreferrer">
+							<a
+								className="header-unsplash-link"
+								href="https://unsplash.com/"
+								target="_blank"
+								rel="noreferrer"
+							>
 								Unsplash
 							</a>
 						</Fragment>
