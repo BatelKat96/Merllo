@@ -1,0 +1,64 @@
+25.1.2023, 16:48:38 - INFO - Server is running on port: 3030 
+25.1.2023, 17:13:15 - INFO - Server is running on port: 3030 
+25.1.2023, 17:30:50 - INFO - Server is running on port: 3030 
+25.1.2023, 17:42:09 - INFO - Server is running on port: 3030 
+25.1.2023, 17:49:32 - INFO - Server is running on port: 3030 
+25.1.2023, 17:50:27 - INFO - Server is running on port: 3030 
+25.1.2023, 17:50:29 - DEBUG - Getting Boards 
+25.1.2023, 17:50:29 - ERROR - Failed to get boards | TypeError: collection.toArray is not a function 
+25.1.2023, 17:50:29 - ERROR - cannot find boards | TypeError: collection.toArray is not a function 
+25.1.2023, 17:50:46 - DEBUG - Getting Boards 
+25.1.2023, 17:50:46 - ERROR - cannot find boards | TypeError: collection.toArray is not a function 
+25.1.2023, 17:50:46 - ERROR - Failed to get boards | TypeError: collection.toArray is not a function 
+25.1.2023, 17:51:17 - INFO - Server is running on port: 3030 
+25.1.2023, 17:51:20 - DEBUG - Getting Boards 
+25.1.2023, 17:51:31 - DEBUG - Getting Boards 
+25.1.2023, 17:53:15 - INFO - Server is running on port: 3030 
+25.1.2023, 17:53:19 - DEBUG - Getting Boards 
+25.1.2023, 17:54:33 - INFO - Server is running on port: 3030 
+25.1.2023, 17:54:50 - INFO - Server is running on port: 3030 
+25.1.2023, 17:55:06 - INFO - Server is running on port: 3030 
+25.1.2023, 17:55:09 - INFO - Server is running on port: 3030 
+25.1.2023, 17:55:21 - DEBUG - Getting Boards 
+25.1.2023, 17:55:48 - DEBUG - Getting Boards 
+25.1.2023, 18:00:17 - DEBUG - Getting Boards 
+25.1.2023, 18:01:18 - DEBUG - Getting Boards 
+25.1.2023, 18:02:44 - DEBUG - Getting Boards 
+25.1.2023, 18:03:21 - DEBUG - Getting Boards 
+25.1.2023, 18:04:04 - DEBUG - Getting Boards 
+25.1.2023, 18:08:15 - INFO - Server is running on port: 3030 
+25.1.2023, 18:08:23 - INFO - Server is running on port: 3030 
+25.1.2023, 18:09:14 - DEBUG - Getting Boards 
+25.1.2023, 18:24:23 - INFO - Server is running on port: 3030 
+25.1.2023, 18:25:36 - INFO - Server is running on port: 3030 
+25.1.2023, 18:25:50 - INFO - Server is running on port: 3030 
+25.1.2023, 18:53:25 - INFO - Server is running on port: 3030 
+25.1.2023, 19:01:07 - INFO - Server is running on port: 3030 
+25.1.2023, 19:15:18 - INFO - Server is running on port: 3030 
+25.1.2023, 19:15:33 - INFO - Server is running on port: 3030 
+25.1.2023, 19:18:55 - INFO - Server is running on port: 3030 
+25.1.2023, 19:23:16 - DEBUG - auth.service - login with username: batelkat 
+25.1.2023, 19:23:16 - ERROR - Failed to Login Invalid username or password 
+25.1.2023, 19:26:06 - DEBUG - auth.service - login with username: drorka 
+25.1.2023, 19:26:06 - ERROR - Failed to Login Invalid username or password 
+25.1.2023, 19:26:30 - INFO - Server is running on port: 3030 
+25.1.2023, 19:26:36 - DEBUG - auth.service - login with username: drorka 
+25.1.2023, 19:26:36 - ERROR - Failed to Login Invalid username or password 
+25.1.2023, 19:28:02 - INFO - Server is running on port: 3030 
+25.1.2023, 19:28:10 - DEBUG - auth.service - login with username: drorka 
+25.1.2023, 19:28:10 - ERROR - Failed to Login Invalid username or password 
+25.1.2023, 19:31:46 - DEBUG - auth.service - signup with username: drorka, fullname: Dror K 
+25.1.2023, 19:31:47 - DEBUG - auth.route - new account created: {"username":"drorka","password":"$2b$10$5PJ.H37RvHtX7HtvqNv3Ge/J.thhuSaLE1FZ26mYCfYNINw/3dZXO","fullname":"Dror K","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","_id":"63d167834e88210b5fd8297d"} 
+25.1.2023, 19:31:47 - DEBUG - auth.service - login with username: drorka 
+25.1.2023, 19:31:47 - INFO - User signup: | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} 
+25.1.2023, 19:31:58 - DEBUG - auth.service - login with username: drorka 
+25.1.2023, 19:31:58 - INFO - User login:  | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} 
+25.1.2023, 19:34:11 - DEBUG - auth.service - signup with username: batelkat, fullname: Batel K 
+25.1.2023, 19:34:11 - DEBUG - auth.route - new account created: {"username":"batelkat","password":"$2b$10$SjPUN8l.oC9AWSv3fspeWeWo1TyKX9HYL.pcsPqtNMbmklvW4mBXO","fullname":"Batel K","imgUrl":"https://trello-members.s3.amazonaws.com/63c43e4080db3d01989c046e/e4e3a604db36af75f239332f98d75263/170.png","_id":"63d168134e88210b5fd8297e"} 
+25.1.2023, 19:34:11 - DEBUG - auth.service - login with username: batelkat 
+25.1.2023, 19:34:11 - INFO - User signup: | {"_id":"63d168134e88210b5fd8297e","username":"batelkat","fullname":"Batel K","imgUrl":"https://trello-members.s3.amazonaws.com/63c43e4080db3d01989c046e/e4e3a604db36af75f239332f98d75263/170.png"} 
+25.1.2023, 19:34:34 - DEBUG - auth.service - signup with username: betash, fullname: Beta 
+25.1.2023, 19:34:34 - DEBUG - auth.service - login with username: betash 
+25.1.2023, 19:34:34 - DEBUG - auth.route - new account created: {"username":"betash","password":"$2b$10$lSbQwdp77vKwA.kPTqGeW..vY1NOZx73n5HCbRCBkN3//Dc2kvmre","fullname":"Beta","imgUrl":"https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/170.png","_id":"63d1682a4e88210b5fd8297f"} 
+25.1.2023, 19:34:34 - INFO - User signup: | {"_id":"63d1682a4e88210b5fd8297f","username":"betash","fullname":"Beta","imgUrl":"https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/170.png"} 
+25.1.2023, 19:35:52 - INFO - Server is running on port: 3030 

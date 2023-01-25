@@ -102,7 +102,7 @@ export function Board() {
 	}
 
 	function getBoardTxtStyle(backgroundColor) {
-		console.log(backgroundColor)
+		// console.log(backgroundColor)
 		var r = parseInt(backgroundColor.substring(1, 3), 16)
 		var g = parseInt(backgroundColor.substring(3, 5), 16)
 		var b = parseInt(backgroundColor.substring(5, 7), 16)

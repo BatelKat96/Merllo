@@ -182,10 +182,10 @@ async function getTaskById(taskId, groupId, boardId) {
 async function removeTask(taskId, groupId, boardId) {
 	try {
 		let group = await getGroupById(groupId, boardId)
-		console.log('group before', group)
+		// console.log('group before', group)
 		let updatedTasks = group.tasks.filter((task) => task.id !== taskId)
 		group.tasks = updatedTasks
-		console.log('group after', group)
+		// console.log('group after', group)
 		return await saveGroup(group, boardId)
 	} catch (err) {
 		console.log('Failed to remove task', err)
