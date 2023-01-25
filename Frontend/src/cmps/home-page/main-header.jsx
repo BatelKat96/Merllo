@@ -49,8 +49,6 @@ export function MainHeader() {
 		navigate(`/`)
 	}
 
-	console.log('user', user)
-
 	function getHeaderStyle() {
 		if (!board.style) return { backgroundColor: `#046AA7` }
 		if (board?.style.backgroundColor) {
