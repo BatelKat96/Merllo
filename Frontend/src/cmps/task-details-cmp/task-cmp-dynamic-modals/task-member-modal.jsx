@@ -2,27 +2,18 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { BiCheck } from 'react-icons/bi'
 
-import { saveTask } from '../../../store/board.actions'
 import { useSelector } from 'react-redux'
 
 export function TaskMemberModal({ task, data, onSaveTask }) {
-    console.log('task:', task)
 
     const board = useSelector((storeState) => storeState.boardModule.board)
     const members = board.members
     const memberIds = task.memberIds
 
-    const { boardId, groupId, taskId } = useParams()
-    // const [updateTask, setUpdateTask] = useState(task)
     const [toRender, setToRender] = useState(members)
-
-    // console.log('updateTask:', updateTask)
-    // const { memberIds } = updateTask
 
 
     async function onToggleMember(ev, id) {
-        // console.log('id:', id)
-        // console.log('memberIdsd:', memberIds)
         let updateMemberIds
         let updateTask
 

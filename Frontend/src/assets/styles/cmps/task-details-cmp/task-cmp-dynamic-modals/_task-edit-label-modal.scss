@@ -1,0 +1,92 @@
+.item-modal {
+    z-index: 100;
+    position: fixed;
+    margin: 0;
+    height: 1px;
+    width: 1px;
+
+
+    .item-modal-container {
+        z-index: 120;
+        position: relative;
+        top: 10px;
+        left: 214px;
+
+        width: 304px;
+        padding: 0 10px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: var(--ds-shadow-overlay, 0 8px 16px -4px #091e4240, 0 0 0 1px var(--ds-border, #091e4214));
+        overflow: hidden;
+
+        .item-modal-header {
+            margin-bottom: 8px;
+
+            text-align: center;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 12px 1fr 12px;
+
+            span {
+                font-family: 'Segoe UI';
+                font-size: 14px;
+                font-weight: 400;
+                border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+                color: #5e6c84;
+                height: 40px;
+                display: block;
+                line-height: 40px;
+                margin: 0;
+                overflow: hidden;
+                padding: 0 32px;
+                position: relative;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                grid-column: 1 / span 3;
+                grid-row: 1;
+            }
+
+            button.btn-item-modal.close {
+                grid-column: 3;
+                grid-row: 1;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                z-index: 6000;
+                outline: none;
+                display: inline-block;
+                justify-self: center;
+                align-self: center;
+                color: #6b778c;
+
+                svg {
+                    path {
+                        fill: #6b778c;
+                    }
+                }
+
+                .icon-close {
+                    background: transparent;
+                    font-size: 20px;
+                    font-weight: 400;
+                    z-index: 6000;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    svg {
+                        path {
+                            fill: #172b4d;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
