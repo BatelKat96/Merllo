@@ -49,19 +49,19 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
 
 
 
-    return (
+    return (<>
+        <button
+            className="clean-btn btn-item-modal btn-edit-label-modal-back-container"
+            onClick={(ev) => onOpenAddLabelModal(ev)}
+        >
+            <MdKeyboardArrowLeft className='btn-edit-label-modal-back' />
+        </button>
         <section className="edit-label-modal">
 
-            <button
-                className="clean-btn btn-item-modal btn-edit-label-modal-back-container"
-                onClick={(ev) => onOpenAddLabelModal(ev)}
-            >
-                <MdKeyboardArrowLeft className='btn-edit-label-modal-back' />
-            </button>
             <h3 className='small-headline cmp-dynamoic-options-title edit-label-modal-mini-title '>Title</h3>
             <input
                 type="text"
-                className='title-edit-label'
+                className='cmp-dynamoic-input'
                 name="title"
                 id="txt"
                 onChange={handleChange}
@@ -71,7 +71,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
             />
 
             <div className='colors'>
-                <h3 className='small-headline cmp-dynamoic-options-title edit-label-modal-mini-title '>Select color</h3>
+                <h3 className='small-headline cmp-dynamoic-options-title  '>Select color</h3>
 
                 <div className='color-wrapper clean-list'>
                     {labelColors.map((labelColor) => (
@@ -99,7 +99,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
                 </button>}
 
             </div>
-            {isDeleteModalOpen.labelId === label.id && (
+            {isDeleteModalOpen.labelId === label.id && currLabel.id && (
                 <ItemDeleteModal
                     toggleModalDelete={toggleModalDelete}
                     itemId={label.id}
@@ -109,6 +109,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
             )}
         </section >
 
+    </>
     )
 }
 

@@ -1,8 +1,8 @@
 import { IoClose } from 'react-icons/io5'
 
 export function ItemDeleteModal({ toggleModalDelete, itemId, onRemoveItem, type }) {
-    // console.log('hello:')
-    console.log('onRemoveItem:', onRemoveItem)
+    console.log('hello:')
+    // console.log('onRemoveItem:', onRemoveItem)
 
     return (
         <section className="item-modal">
@@ -18,7 +18,8 @@ export function ItemDeleteModal({ toggleModalDelete, itemId, onRemoveItem, type 
                 </div>
 
                 <p>Deleting a {type} is permanent and there is no way to get it back.</p>
-                <button className='clean-btn btn-task-details btn-side-bar btn-remove-item-modal' onClick={(ev) => onRemoveItem(ev, itemId)}>Delete {type}</button>
+                <button className='clean-btn btn-task-details btn-side-bar btn-remove-item-modal'
+                    onClick={(ev) => onRemoveItem(ev, itemId)}>Delete {type}</button>
 
             </div>
         </section>

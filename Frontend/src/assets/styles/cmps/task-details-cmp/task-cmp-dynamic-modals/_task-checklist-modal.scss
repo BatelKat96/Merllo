@@ -1,0 +1,27 @@
+.task-checklist-modal-section {
+
+    .add-checklist-title {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    .add-checklist-input {
+
+        margin-block-end: 20px;
+    }
+
+
+    .btn-add-checklist {
+        background-color: $t-btn-bgc;
+        color: $clr6;
+        width: 74px;
+        height: 32px;
+        font-size: 14px;
+        padding: 4px 12px 6px;
+
+        &:hover {
+            background-color: #026aa7;
+        }
+    }
+
+}

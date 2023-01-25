@@ -82,7 +82,7 @@ export async function updateBoard(board) {
 }
 
 export async function loadBoard(boardId) {
-	console.log('loadBoard', boardId)
+	// console.log('loadBoard', boardId)
 	try {
 		const board = await boardService.getById(boardId)
 		store.dispatch({

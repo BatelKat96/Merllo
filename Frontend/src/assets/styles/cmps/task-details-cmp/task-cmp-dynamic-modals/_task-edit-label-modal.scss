@@ -25,6 +25,8 @@
     }
 
     .colors {
+        margin-top: 12px;
+
         .color-wrapper {
             -webkit-transform: translate3d(0, 0, 0);
             display: grid;
@@ -52,4 +54,9 @@
         }
     }
 
+
+}
+
+.btn-create-label {
+    width: 100%;
 }

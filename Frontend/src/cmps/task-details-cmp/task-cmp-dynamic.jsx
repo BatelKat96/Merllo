@@ -10,6 +10,7 @@ import { saveTask } from '../../store/board.actions'
 import { TaskList } from '../task-preview/task-list'
 import { TaskLabelModal } from './task-cmp-dynamic-modals/task-label-modal'
 import { TaskMemberModal } from './task-cmp-dynamic-modals/task-member-modal'
+import { TaskChecklistModal } from './task-cmp-dynamic-modals/task-checklist-modal'
 import { TaskDatesModal } from './task-cmp-dynamic-modals/task-dates-modal'
 
 export function TaskCmpDynamoic({
@@ -105,6 +106,14 @@ export function TaskCmpDynamoic({
 					)}
 
 					{cmpType === 'cover' && <TaskCoverModal task={task} />}
+
+					{cmpType === 'checklist' && (
+						<TaskChecklistModal
+							task={task}
+							onSaveTask={onSaveTask}
+							onClose={onClose}
+						/>
+					)}
 
 					{cmpType === 'dates' && (
 						<TaskDatesModal

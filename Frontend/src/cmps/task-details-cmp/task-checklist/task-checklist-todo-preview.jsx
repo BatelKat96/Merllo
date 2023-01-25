@@ -11,7 +11,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
     const [currTodo, setCurrTodo] = useState(todo)
     let currTitle
 
-    console.log('todo:', todo)
+    // console.log('todo:', todo)
 
     function onShowTodoInput(id) {
         setTodoId(id)
@@ -51,6 +51,11 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
         }
     }
 
+    // function addTodo(ev,title){
+    //     console.log('title:', title)
+
+
+    //         }
 
 
     return (
@@ -68,7 +73,6 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
                     <HiDotsHorizontal className='btn-checklist-label-menu' />
                 </button>
             }
-
 
             {(isEditTodoOpen || (todoId == todo.id)) &&
                 < form  >
