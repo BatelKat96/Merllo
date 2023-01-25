@@ -19,6 +19,7 @@ export function GroupList() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState({ groupId: '' })
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
 	const groups = board.groups
+
 	// let tasks = group.tasks
 
 	//  create new group
@@ -134,7 +135,7 @@ export function GroupList() {
 		<section className="group-list-container">
 
 			<DragDropContext onDragEnd={handleOnDragEnd}>
-				<Droppable droppableId="groupsDrag">
+				<Droppable droppableId="groupsDrag" direction="horizontal">
 					{(provided) => (
 
 						<ul className="group-list clean-list groupsDrag"

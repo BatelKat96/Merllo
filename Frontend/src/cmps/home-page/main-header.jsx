@@ -66,8 +66,8 @@ export function MainHeader() {
 		var g = parseInt(backgroundColor.substring(3, 5), 16)
 		var b = parseInt(backgroundColor.substring(5, 7), 16)
 		var yiq = (r * 299 + g * 587 + b * 114) / 1000
-		console.log('yiq', yiq)
-		console.log('yiq >= 128', yiq >= 128)
+		// console.log('yiq', yiq)
+		// console.log('yiq >= 128', yiq >= 128)
 		return yiq >= 128 ? 'light-bg' : 'dark-bg'
 	}
 
