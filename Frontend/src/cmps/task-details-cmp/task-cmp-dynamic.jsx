@@ -103,6 +103,7 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                 {cmpType === 'cover' &&
                     <TaskCoverModal
                         task={task}
+                    onSaveTask={onSaveTask}
                     />}
 
             </div>

@@ -34,6 +34,34 @@
 
     .task-cover {
         grid-row: 1;
+        height: 116px;
+
+        &.img {
+            height: 160px;
+        }
+
+    .btn-task-cover {
+        z-index: 1000;
+        position: relative;
+        float: right;
+        margin: 10px 8px;
+        display: flex;
+        gap: 8px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+        color: #172b4d;
+        padding: 8px;
+        transition: all 150ms ease-out 0s;
+
+        span {
+            transform: rotate(270deg)
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+    
     }
 
     .task-details-main-section {
@@ -113,7 +141,10 @@
 
     &:hover {
         background-color: $t-hover3;
+    }
 
+    &.close-hover {
+        background-color: $t-hover3; 
     }
 
     .exit-icon {

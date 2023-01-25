@@ -7,7 +7,7 @@ import Size1 from '../../../assets/img/cover-size1.png'
 import Size2 from '../../../assets/img/cover-size2.png'
 
 
-export function TaskCoverModal({ task }) {
+export function TaskCoverModal({ task, onSaveTask }) {
 
     const { boardId, groupId, taskId } = useParams()
     const [updateTask, setUpdateTask] = useState(task)
@@ -26,21 +26,22 @@ export function TaskCoverModal({ task }) {
     ]
 
     const coverImgs = [
-        'https://images.unsplash.com/photo-1672091161606-71d1cf383221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+        'https://images.unsplash.com/photo-1672091161606-71d1cf383221?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
 
-        'https://images.unsplash.com/photo-1672167630747-35dd70a83994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+        'https://images.unsplash.com/photo-1672167630747-35dd70a83994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
 
-        'https://images.unsplash.com/photo-1673212815770-16f0a1f1500f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+        'https://images.unsplash.com/photo-1673212815770-16f0a1f1500f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
 
-        'https://images.unsplash.com/photo-1673725437336-e2f3307cebbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80&w=400',
+        'https://images.unsplash.com/photo-1673725437336-e2f3307cebbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ0Njg0MzQ&ixlib=rb-4.0.3&q=80',
 
         'https://images.unsplash.com/photo-1672575395994-835afaaeb376?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80',
 
-        'https://images.unsplash.com/photo-1673026066090-d52723e12d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80&w=400'
+        'https://images.unsplash.com/photo-1673026066090-d52723e12d70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1MDcwNzU&ixlib=rb-4.0.3&q=80'
     ]
 
     const [coverColor, setCoverColor] = useState('')
     const [coverImg, setcoverImg] = useState('')
+    const [selected, setSelected] = useState(false)
 
     async function setTaskCover(coverColor, coverImg) {
 
@@ -75,10 +76,13 @@ export function TaskCoverModal({ task }) {
 
                 <div className='color-wrapper clean-list'>
                     {coverColors.map((coverColor) => (
-                        <li key={coverColor} className={coverColor}>
+                        <li key={coverColor} className={coverColor}
+                        // onClick={() => onSelectedCover(coverColor)}
+                        >
                             <button
                                 className='color-btn'
                                 onClick={() => setTaskCover(coverColor, undefined)}
+                                // onMouseDown={() => onSelectedCover(key)}
                                 style={{ backgroundColor: `${coverColor} ` }}
                             >
                             </button>
@@ -87,19 +91,21 @@ export function TaskCoverModal({ task }) {
                 </div>
             </div>
 
-            <div className='cover-section-block attachments'>
+            {/* <div className='cover-section-block attachments'>
                 <h3 className='small-headline cmp-dynamoic-options-title'>Attachments</h3>
                 <button className='cover-upload-btn'>
                     Upload a cover image
                 </button>
-            </div>
+            </div> */}
 
             <div className='cover-section-block unsplash'>
                 <h3 className='small-headline cmp-dynamoic-options-title'>Photos from Unsplash</h3>
 
                 <div className='img-wrapper clean-list'>
                     {coverImgs.map((coverImg) => (
-                        <li key={coverImg} className={coverImg}>
+                        <li key={coverImg} className={coverImg}
+                        // onClick={() => onSelectedCover(coverImg)}
+                        >
                             <button
                                 className='img-btn'
                                 onClick={() => setTaskCover(undefined, coverImg)}

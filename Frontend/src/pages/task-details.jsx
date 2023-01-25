@@ -1,11 +1,10 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState, useRef } from 'react'
 
 import { boardService } from '../services/board.service'
-
-import { IoClose } from 'react-icons/io5'
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
+
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
@@ -13,17 +12,30 @@ import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic'
 import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item'
 import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview'
+
 import Loader from '../assets/img/loader.svg'
+import { IoClose } from 'react-icons/io5'
+import { BsSquareHalf } from 'react-icons/bs'
+
 
 
 export function TaskDetails() {
-    const { boardId, groupId, taskId } = useParams()
     const board = useSelector((storeState) => storeState.boardModule.board)
+    const { boardId, groupId, taskId } = useParams()
     const [task, setTask] = useState('')
     const { byMember, labelIds, style, checklists, memberIds } = task
     // console.log('memberIds:', memberIds)
+    const [modalType, setModalType] = useState()
+    const coverBtn = useRef()
 
+    // function coverSet() {
+    //     setIsCoverSet(true)
 
+    //     if (isCoverSet) {
+    //         ' img'
+    //     } else ''
+
+    // }
 
     const navigate = useNavigate()
 
@@ -117,6 +129,10 @@ export function TaskDetails() {
         ev.stopPropagation()
     }
 
+    function onOpenModal(type) {
+        setModalType(type)
+    }
+
 
     // if (!task) return <h1 className="loading"></h1>
     {/* {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div> */ }
@@ -129,6 +145,7 @@ export function TaskDetails() {
             >
                 <div className="task-details-section" onClick={(ev) => onStopPropagation(ev)}>
                     {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>}
+
                     {(task && board) && <Fragment>
                         <span
                             onClick={(ev) => onCloseTaskDetails(ev)}
@@ -136,19 +153,39 @@ export function TaskDetails() {
                             <IoClose className="icon-task exit-icon" />
                         </span>
 
-
-
                         {task.style?.backgroundColor && (
                             <section
                                 className="task-cover"
                                 style={{ backgroundColor: task.style.backgroundColor }}
-                            ></section>
+                            >
+                                <button className='clean-btn  btn-task-cover'
+                                    style={{ top: 60 }}
+                                    ref={coverBtn}
+                                    onClick={() => onOpenModal('cover')}
+                                >
+                                    <span className='btn-side-bar-icon btn-side-bar-icon-label'>
+                                        <BsSquareHalf />
+                                    </span>
+                                    Cover
+                                </button>
+                            </section>
                         )}
 
                         {task.style?.background && (
-                            <section className="task-cover"
+                            <section className="task-cover img"
                                 style={{ background: task.style.background }}
-                            ></section>
+                            >
+                                <button className='clean-btn btn-task-cover'
+                                    style={{ top: 104 }}
+                                    ref={coverBtn}
+                                    onClick={() => onOpenModal('cover')}
+                                >
+                                    <span>
+                                        <BsSquareHalf />
+                                    </span>
+                                    Cover
+                                </button>
+                            </section>
                         )}
 
                         {/* <div className='stam'> */}
@@ -184,6 +221,15 @@ export function TaskDetails() {
                     </Fragment>}
                 </div>
             </div>
+
+            {modalType && <TaskCmpDynamoic
+                cmpType={modalType}
+                refDataBtn={coverBtn}
+                task={task}
+                groupId={groupId}
+                boardId={boardId}
+                onOpenModal={onOpenModal}
+                onSaveTask={onSaveTask} />}
         </section>
 
 
