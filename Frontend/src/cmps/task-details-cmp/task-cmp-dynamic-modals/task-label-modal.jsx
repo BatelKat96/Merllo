@@ -14,6 +14,8 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
 
     const { labels } = board
     const { labelIds } = task
+    console.log('labels:', labels)
+
 
     const [toRender, setToRender] = useState(labels)
 
@@ -51,16 +53,18 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
         let updateLabelIds
         let updateLabelsBoard
         let updateTask
-        if (!board.labels) board.labels = []
+        let currUpdateBoard = { ...board }
         if (!task.labelIds) task.labelIds = []
 
         if (label.id) {
+
 
             //board
             updateLabelsBoard = labels
             let index = updateLabelsBoard.findIndex(lbl => (lbl.id === label.id))
             updateLabelsBoard.splice(index, 1, label)
-            board.labels = updateLabelsBoard
+
+            currUpdateBoard.labels = updateLabelsBoard
 
             //task
             updateLabelIds = labelIds
@@ -68,13 +72,12 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
             updateLabelIds.splice(indexInTask, 1, label.id)
             updateTask = { ...task, labelIds: updateLabelIds }
         } else {
-
             label.id = utilService.makeId()
 
             //board
             updateLabelsBoard = labels
             updateLabelsBoard.push(label)
-            board.labels = updateLabelsBoard
+            currUpdateBoard.labels = updateLabelsBoard
 
             //task
             updateLabelIds = labelIds
@@ -83,13 +86,33 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
         }
 
         try {
-            await updateBoard(board)
-            onSaveTask(ev, updateTask)
             onOpenAddLabelModal(ev)
+            setToRender(updateLabelsBoard)
+            await updateBoard(currUpdateBoard)
+            onSaveTask(ev, updateTask)
         } catch (err) {
             console.log('Cant save label:', err)
         }
     }
+
+
+
+
+    async function onRemoveLabel(ev, id) {
+        console.log('label:', id)
+        let currUpdateBoard = { ...board }
+        let updateLabelsBoard = labels.filter(cl => (cl.id !== id))
+        currUpdateBoard.labels = updateLabelsBoard
+        try {
+            onOpenAddLabelModal(ev)
+            setToRender(updateLabelsBoard)
+            await updateBoard(currUpdateBoard)
+            // onSaveTask(ev, updateTask)
+        } catch (err) {
+            console.log('Cant save label:', err)
+        }
+    }
+
 
     return <>
         {!isAddLabelModalOpen && <section>
@@ -110,6 +133,7 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
                     <li key={opt.id} className="cmp-dynamoic-option cmp-dynamoic-option-labels"
                     >
                         <input
+
                             onChange={(ev) => { onToggleLabel(ev, opt.id) }}
                             checked={labelIds?.includes(opt.id)}
                             className="cmp-dynamoic-labels-checkbox"
@@ -136,7 +160,7 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
         </section>}
 
         {isAddLabelModalOpen && <div className='edit-label-modal'>
-            <EditLabelTitle label={selectedLabel} onOpenAddLabelModal={onOpenAddLabelModal} onSaveLabel={onSaveLabel} />
+            <EditLabelTitle label={selectedLabel} onOpenAddLabelModal={onOpenAddLabelModal} onSaveLabel={onSaveLabel} onRemoveLabel={onRemoveLabel} />
 
         </div>}
     </>
