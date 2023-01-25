@@ -24,7 +24,7 @@
 
         &.colors{
             .color-wrapper {
-                -webkit-transform: translate3d(0, 0, 0);
+                // -webkit-transform: translate3d(0, 0, 0);
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 8px;
@@ -46,6 +46,11 @@
                     height: 32px;
                     cursor: pointer;
                     border: none;
+                    transition: all 150ms ease-out 0s;
+
+                    &:hover {
+                        filter: saturate(85%) brightness(85%);
+                    }
                 }
             }
         }
@@ -90,6 +95,10 @@
                     height: 48px;
                     width: 88px;
                     border: none;
+
+                    &:hover {
+                        filter: saturate(85%) brightness(85%);
+                    }
                 }
             }
             

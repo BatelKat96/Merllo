@@ -51,9 +51,9 @@ export function MainHeader() {
 	return (
 		<header className="main-header">
 			<div className="logo-nav">
-				<button>
+				{/* <button>
 					<AppsSvg />
-				</button>
+				</button> */}
 
 				<NavLink to="/" className="header-logo">
 					<TrelloSvg />

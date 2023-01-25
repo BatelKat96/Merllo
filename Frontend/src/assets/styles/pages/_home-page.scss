@@ -81,11 +81,11 @@
                 background-color: #0065FF;
                 color: $h-txt1;
                 transition: all 250ms ease-out 0s;
-            }
 
-            button:hover, button:focus {
-                background-color: #0847a6;
-                text-decoration: none;
+                &:hover {
+                    background-color: #0847a6;
+                    text-decoration: none;
+                }
             }
 
             a {
@@ -196,6 +196,7 @@
                         border: none;
                         background-color: transparent;
                         color: rgb(9, 30, 66);
+                        transition: all 150ms ease-out 0s;
 
                         h5 {
                             font-family: charlie-semibold; 

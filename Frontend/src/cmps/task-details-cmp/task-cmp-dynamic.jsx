@@ -73,7 +73,8 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
     // }
 
 
-    if (!board) return <img className="loader" src={Loader} alt="loader" />
+    if (!board) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
+
     return <div className='task-cmp-dynamoic' style={modalPos}>
         <div className='task-cmp-dynamoic-container'>
             <a onClick={onClose}><IoClose className='close-icon' /></a>

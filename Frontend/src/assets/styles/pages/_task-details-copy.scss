@@ -109,6 +109,7 @@
     color: #42526e;
     padding: 4px;
     // margin: 4px;
+    transition: all 150ms ease-out 0s;
 
     &:hover {
         background-color: $t-hover3;
@@ -151,6 +152,7 @@
     color: $t-txt1;
     background-color: $t-bg5;
     border-radius: 3px;
+    transition: all 150ms ease-out 0s;
 
     &:hover {
         background-color: $t-hover3;

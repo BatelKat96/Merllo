@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+
 import { boardService } from '../../services/board.service'
 import { removeGroup, saveGroup } from '../../store/board.actions'
+
 import { TaskList } from '../task-preview/task-list'
 import { GroupDropdown } from './group-dropdown'
 
@@ -91,7 +94,7 @@ export function GroupList() {
 		}
 	}
 
-	if (!groups) return <img className="loader" src={Loader} alt="loader" />
+	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 
 	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
@@ -130,48 +133,48 @@ export function GroupList() {
 						<TaskList group={group} tasksList={group.tasks} />
 					</li>
 				))}
-
-				<div className={`add-new-group`}>
-					{!isAddNewGroupOpen && (
-						<div
-							className="placeholder"
-							onClick={() => {
-								openAddNewGroup()
-							}}
-						>
-							<AiOutlinePlus className="icon-plus" />
-							<span>{addNewTxt}</span>
-						</div>
-					)}
-					{isAddNewGroupOpen && (
-						<form className="add-group-form">
-							<input
-								type="text"
-								name="title"
-								placeholder="Enter list title..."
-								autoFocus
-								spellCheck="false"
-								maxLength="512"
-								value={groupToEdit.title}
-								onChange={handleNewGroup}
-							/>
-							<div className="add-group-controls">
-								<button className="add-group" onClick={onSaveNewGroup}>
-									Add list
-								</button>
-								<a
-									className="cancel"
-									onClick={() => {
-										closeAddNewGroup()
-									}}
-								>
-									<IoClose className="icon-close" />
-								</a>
-							</div>
-						</form>
-					)}
-				</div>
 			</ul>
+
+			<div className={`add-new-group`}>
+				{!isAddNewGroupOpen && (
+					<div
+						className="placeholder"
+						onClick={() => {
+							openAddNewGroup()
+						}}
+					>
+						<AiOutlinePlus className="icon-plus" />
+						<span>{addNewTxt}</span>
+					</div>
+				)}
+				{isAddNewGroupOpen && (
+					<form className="add-group-form">
+						<input
+							type="text"
+							name="title"
+							placeholder="Enter list title..."
+							autoFocus
+							spellCheck="false"
+							maxLength="512"
+							value={groupToEdit.title}
+							onChange={handleNewGroup}
+						/>
+						<div className="add-group-controls">
+							<button className="add-group" onClick={onSaveNewGroup}>
+								Add list
+							</button>
+							<a
+								className="cancel"
+								onClick={() => {
+									closeAddNewGroup()
+								}}
+							>
+								<IoClose className="icon-close" />
+							</a>
+						</div>
+					</form>
+				)}
+			</div>
 		</section>
 	)
 }

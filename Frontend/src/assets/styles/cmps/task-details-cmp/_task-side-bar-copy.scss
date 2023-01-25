@@ -30,6 +30,7 @@
     .btn-remove-side-bar {
         background: #b04632;
         color: $clr6;
+        transition: all 150ms ease-out 0s;
 
         &:hover {
             background-color: #b04632;
