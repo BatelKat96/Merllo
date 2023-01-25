@@ -1,0 +1,64 @@
+.dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 80%;
+    font-size: 14px;
+
+    .calendar {
+        margin-top: -8px;
+    }
+
+    .dates-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        button.btn-dates {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 6px 0;
+            margin-bottom: 8px;
+
+            &.save {
+                background-color: #0079bf;
+                box-shadow: none;
+                border: none;
+                color: #ffffff;
+                width: 100%;
+                &:hover {
+                    background-color: #026aa7;
+                }
+                &:active {
+                    background-color:  #055a8c;
+                }
+            }
+            
+            &.remove {
+                background-color: #f5f6f8;
+                box-shadow: none;
+                border: none;
+                color: #172b4d;
+                width: 100%;
+                &:hover {
+                    background-color:rgba(9, 30, 66, 0.08);
+                }
+                &:active {
+                    background-color:#e4f0f6;
+                    color: #0079bf;
+                }
+
+            }
+        }
+    }
+
+}
