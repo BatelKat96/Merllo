@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
@@ -101,7 +101,12 @@ export function Board() {
 		return { backgroundColor: `#0067a3` }
 	}
 
-	if (!board) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
+	if (!board)
+		return (
+			<div className="loader-wrapper">
+				<img className="loader" src={Loader} alt="loader" />
+			</div>
+		)
 	const boardStyle = getBoardStyle()
 
 	return (
@@ -175,7 +180,6 @@ export function Board() {
 					onRemoveBoard={onRemoveBoard}
 				/>
 			)}
-
 			<Outlet />
 		</section>
 	)

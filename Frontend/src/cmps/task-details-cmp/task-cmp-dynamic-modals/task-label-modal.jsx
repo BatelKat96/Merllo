@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { boardService } from '../../../services/board.service'
 import { EditLabelTitle } from './task-edit-label-modal'
 
 
 
-export function TaskLabelModal({ task, data, onSaveTask }) {
+export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen, isAddLabelModalOpen, setSelectedLabel, selectedLabel }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const labels = board.labels
     const labelIds = task.labelIds
 
     const [toRender, setToRender] = useState(labels)
-    const [isAddLabelModalOpen, setIsAddLabelModalOpen] = useState(false)
-    const [selectedLabel, setSelectedLabel] = useState('')
+    // const [isAddLabelModalOpen, setIsAddLabelModalOpen] = useState(false)
+    // const [selectedLabel, setSelectedLabel] = useState('')
 
     async function onToggleLabel(ev, id) {
         let updateLabelIds
@@ -44,6 +45,9 @@ export function TaskLabelModal({ task, data, onSaveTask }) {
     function onOpenAddLabelModal(ev, label) {
         ev.stopPropagation()
         ev.preventDefault()
+        if (!label) label = boardService.getEmptyLabel()
+        console.log('label:', label)
+
         setIsAddLabelModalOpen(!isAddLabelModalOpen)
         setSelectedLabel(label)
     }
@@ -106,7 +110,7 @@ export function TaskLabelModal({ task, data, onSaveTask }) {
             </button>
         </section>}
 
-        {isAddLabelModalOpen && <div>
+        {isAddLabelModalOpen && <div className='edit-label-modal'>
             <EditLabelTitle label={selectedLabel} onOpenAddLabelModal={onOpenAddLabelModal} />
 
         </div>}

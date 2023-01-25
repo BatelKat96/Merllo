@@ -1,26 +1,70 @@
+import { useState } from 'react';
 import { IoClose } from 'react-icons/io5'
-
+import { MdKeyboardArrowLeft } from "react-icons/md";
 export function EditLabelTitle({ label, onOpenAddLabelModal }) {
     console.log('label:', label)
+    const [currLabel, setCurrLabel] = useState(label)
+
+    const labelColors = [
+        '#7BC86C',
+        '#F5DD29',
+        '#FFAF3F',
+        '#EF7564',
+        '#CD8DE5',
+        '#5BA4CF',
+        '#29CCE5',
+        '#6DECA9',
+        '#FF8ED4',
+        '#172B4D'
+    ]
+
+    function handleChange({ target }) {
+        console.log(':')
+        let { value, type, name: field } = target
+        value = type === 'number' ? +value : value
+        setCurrLabel((prevLabel) => ({ ...prevLabel, [field]: value }))
+    }
+
 
 
     return (
-        <section className="item-label-modal">
-            <div className="item-modal-container">
-                <div className="item-modal-header">
-                    {label ? <span>Edit label</span> : <span>Create label</span>}
-                    <button
-                        className="btn-item-modal close"
-                        onClick={(ev) => onOpenAddLabelModal(ev)}
-                    >
-                        <IoClose className="icon-close" />
-                    </button>
-                </div>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore ducimus facilis aut blanditiis fugit ad numquam officiis qui cum dignissimos, iure minima consequuntur. Illo odio aliquid repellat necessitatibus, ipsum sed!</p>
-                {/* <p>Deleting a {type} is permanent and there is no way to get it back.</p>
-                <button className='clean-btn btn-task-details btn-side-bar btn-remove-item-modal' onClick={(ev) => onRemoveItem(ev, itemId)}>Delete {type}</button> */}
+        <section className="edit-label-modal">
 
+            <button
+                className="clean-btn btn-item-modal btn-edit-label-modal-back-container"
+                onClick={(ev) => onOpenAddLabelModal(ev)}
+            >
+                <MdKeyboardArrowLeft className='btn-edit-label-modal-back' />
+            </button>
+            <h3 className='small-headline cmp-dynamoic-options-title edit-label-modal-mini-title '>Title</h3>
+            <input
+                type="text"
+                className='title-edit-label'
+                name="title"
+                id="txt"
+                onChange={handleChange}
+                defaultValue={(label.title)}
+                autoFocus
+                autoComplete="off"
+            />
+
+            <div className='colors'>
+                <h3 className='small-headline cmp-dynamoic-options-title edit-label-modal-mini-title '>Select color</h3>
+
+                <div className='color-wrapper clean-list'>
+                    {labelColors.map((labelColor) => (
+                        <li key={labelColor} className={labelColor}>
+                            <button
+                                className='color-btn'
+                                // onClick={() => setTaskCover(coverColor, undefined)}
+                                style={{ backgroundColor: `${labelColor} ` }}
+                            >
+                            </button>
+                        </li>
+                    ))}
+                </div>
             </div>
+
         </section >
 
     )
