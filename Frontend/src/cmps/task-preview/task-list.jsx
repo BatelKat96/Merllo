@@ -50,25 +50,12 @@ export function TaskList({ group, handleOnDragEnd }) {
         }
     }
 
-    //dragNdrop
-    async function handleOnDragEnd(result) {
-        console.log(result)
-        if (!result.destination) return
-
-        const items = Array.from(tasks)
-        const [reorderedItem] = items.splice(result.source.index, 1)
-        items.splice(result.destination.index, 0, reorderedItem)
-
-        group.tasks = items
-        updateBoard(board)
-    }
-
 
     return (
         <>
             <section className="task-list-wraper">
 
-                <DragDropContext onDragEnd={handleOnDragEnd}>
+                <DragDropContext onDragEnd={(result) => handleOnDragEnd(result, group)}>
                     <Droppable droppableId="tasks">
                         {(provided) => (
 

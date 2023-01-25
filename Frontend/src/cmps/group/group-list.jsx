@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { boardService } from '../../services/board.service'
-import { removeGroup, saveGroup } from '../../store/board.actions'
+import { removeGroup, saveGroup, updateBoard } from '../../store/board.actions'
 
 import { TaskList } from '../task-preview/task-list'
 import { GroupDropdown } from './group-dropdown'
@@ -19,6 +19,8 @@ export function GroupList() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState({ groupId: '' })
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
 	const groups = board.groups
+
+	// let tasks = group.tasks
 
 	//  create new group
 	function openAddNewGroup() {
@@ -94,6 +96,36 @@ export function GroupList() {
 		}
 	}
 
+	//dragNdrop
+	async function handleOnDragEnd(result, group) {
+		const { source, destination } = result
+		const type = source.droppableId
+		let tasks = group.tasks
+
+		console.log('result', result)
+		console.log('source', source)
+		console.log('destination', destination)
+		console.log('type', type)
+
+		if (!result.destination) return
+
+		if (type === 'tasks') {
+			const items = Array.from(tasks)
+			const [reorderedItem] = items.splice(result.source.index, 1)
+			items.splice(result.destination.index, 0, reorderedItem)
+			group.tasks = items
+		}
+
+		if (type === 'groupsDrag') {
+			const items = Array.from(groups)
+			const [reorderedItem] = items.splice(result.source.index, 1)
+			items.splice(result.destination.index, 0, reorderedItem)
+			board.groups = items
+		}
+
+		updateBoard(board)
+	}
+
 
 	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 
@@ -101,43 +133,68 @@ export function GroupList() {
 
 	return (
 		<section className="group-list-container">
-			<ul className="group-list clean-list">
-				{groups.map((group) => (
-					<li className="group-wrapper" key={group.id}>
-						<div className="group-top">
-							<form>
-								<textarea
-									name="title"
-									className="edit-group-title"
-									id={group.id}
-									spellCheck="false"
-									maxLength="512"
-									defaultValue={group.title}
-									onChange={handleEditGroup}
-								></textarea>
-							</form>
-							<button
-								className="btn-group more"
-								onClick={(event) => toggleDropdown(event, group.id)}
-							>
-								<HiDotsHorizontal className="icon-more" />
-							</button>
-							{isDropdownOpen.groupId === group.id && (
-								<GroupDropdown
-									toggleDropdown={toggleDropdown}
-									onRemoveGroup={onRemoveGroup}
-									onCopyGroup={onCopyGroup}
-									group={group}
-								/>
-							)}
-						</div>
-						<TaskList
-							group={group}
-						// handleOnDragEnd={handleOnDragEnd}
-						/>
-					</li>
-				))}
-			</ul>
+
+			<DragDropContext onDragEnd={handleOnDragEnd}>
+				<Droppable droppableId="groupsDrag" direction="horizontal">
+					{(provided) => (
+
+						<ul className="group-list clean-list groupsDrag"
+							{...provided.droppableProps}
+							ref={provided.innerRef}>
+
+							{groups.map((group, index) => (
+
+								<Draggable key={group.id}
+									draggableId={group.id}
+									index={index}>
+
+									{(provided) => (
+
+										<li className="group-wrapper" key={group.id}
+											ref={provided.innerRef}
+											{...provided.draggableProps}
+											{...provided.dragHandleProps}>
+
+											<div className="group-top">
+												<form>
+													<textarea
+														name="title"
+														className="edit-group-title"
+														id={group.id}
+														spellCheck="false"
+														maxLength="512"
+														defaultValue={group.title}
+														onChange={handleEditGroup}
+													></textarea>
+												</form>
+												<button
+													className="btn-group more"
+													onClick={(event) => toggleDropdown(event, group.id)}
+												>
+													<HiDotsHorizontal className="icon-more" />
+												</button>
+												{isDropdownOpen.groupId === group.id && (
+													<GroupDropdown
+														toggleDropdown={toggleDropdown}
+														onRemoveGroup={onRemoveGroup}
+														onCopyGroup={onCopyGroup}
+														group={group}
+													/>
+												)}
+											</div>
+											<TaskList
+												group={group}
+												handleOnDragEnd={handleOnDragEnd}
+											/>
+
+										</li>)}
+								</Draggable>
+							))}
+							{provided.placeholder}
+						</ul>
+					)}
+				</Droppable>
+			</DragDropContext>
 
 			<div className={`add-new-group`}>
 				{!isAddNewGroupOpen && (
