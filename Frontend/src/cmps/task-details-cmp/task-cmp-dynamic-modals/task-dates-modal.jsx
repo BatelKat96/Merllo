@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { BiCheck } from 'react-icons/bi'
 
 import TextField from '@mui/material/TextField'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
