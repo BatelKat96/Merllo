@@ -90,7 +90,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            transition: transform 85ms ease-in;
+            transition: all 150ms ease-out 0s;
 
             &:hover {
                 background-color:rgba(0, 0, 0, 0.902);

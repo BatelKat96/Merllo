@@ -33,11 +33,13 @@
             padding: 5px 8px 8px;
             background-color: $wh-bg2;
             border-radius: 3px;
+            transition: all 150ms ease-out 0s;
+
+            &:hover {
+                background-color: $wh-bg1;
+            }
         }
 
-        &.create-btn:hover {
-            background-color: $wh-bg1;
-        }
 
         img {
             height: 24px;

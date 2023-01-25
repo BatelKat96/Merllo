@@ -32,10 +32,11 @@ export function MainHeaderDemo() {
 
 	return (
 		<header className="main-header-demo">
+
 			<div className="logo-nav">
-				<button>
+				{/* <button>
 					<AppsSvg />
-				</button>
+				</button> */}
 
 				<NavLink to="/" className="header-logo">
 					<TrelloSvg />
