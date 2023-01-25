@@ -106,10 +106,15 @@
     top: 0;
 }
 
-.loader {
-    margin: auto;
-    width: 50px;
-    align-items: center;
-    text-align: center;
+.loader-wrapper { 
+    display: flex;
     justify-content: center;
+    width: 3rem;
+    height: 3rem;
+
+    img.loader {
+        margin: auto;
+        width: 3rem;
+        height: 3rem;
+    }
 }

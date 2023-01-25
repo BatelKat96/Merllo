@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+
 import { boardService } from '../../services/board.service'
 import { removeGroup, saveGroup } from '../../store/board.actions'
+
 import { TaskList } from '../task-preview/task-list'
 import { GroupDropdown } from './group-dropdown'
 
@@ -91,7 +94,7 @@ export function GroupList() {
 		}
 	}
 
-	if (!groups) return <img className="loader" src={Loader} alt="loader" />
+	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 
 	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
