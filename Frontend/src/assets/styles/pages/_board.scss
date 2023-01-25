@@ -8,11 +8,18 @@
     display: flex;
     flex-direction: column;
     // background: linear-gradient(to bottom,#0000003d,#00000000 80px,#00000000);
+    // mask-image: linear-gradient(to bottom,#0000003d,#00000000 80px,#00000000);
+    // -webkit-mask-image: linear-gradient(to bottom,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.7) 80px,rgba(0, 0, 0, 0.7));
     
     h1 {
         font-size: 18px;
         line-height: 32px;
         padding: 0 12px;
+    }
+
+    .board-bg-gradient {
+        background: linear-gradient(to bottom,#0000003d,#00000000 80px,#00000000);
+        
     }
     
     .board-main-content {
