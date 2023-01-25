@@ -120,8 +120,8 @@ export function TaskDetails() {
 
 
     // if (!task) return <h1 className="loading"></h1>
-    {/* {(!task || !board) && <img className="loader" src={Loader} alt="loader" />} */ }
-    // { (!task) && <img className="loader" src={Loader} alt="loader" /> }
+    {/* {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div> */ }
+    // { (!task) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div> }
     return (
         <section className='task-details'>
             <div
@@ -129,7 +129,7 @@ export function TaskDetails() {
                 className="black-screen"
             ></div>
             <div className="task-details-section">
-                {(!task || !board) && <img className="loader" src={Loader} alt="loader" />}
+                {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>}
                 {(task && board) && <Fragment>
                     <span
                         onClick={(ev) => onCloseTaskDetails(ev)}

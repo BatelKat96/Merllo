@@ -59,7 +59,7 @@ export function SideMenuPhotos({ changeBackground }) {
 					</ul>
 				</div>
 			) : (
-				<img className="loader" src={Loader} alt="loader" />
+					<div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 			)}
 		</section>
 	)

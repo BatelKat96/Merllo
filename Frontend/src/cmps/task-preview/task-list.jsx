@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
-import { TaskPreview } from './task-preview'
 import { boardService } from '../../services/board.service'
-import { saveTask, saveGroup } from '../../store/board.actions'
+import { saveTask, saveGroup, updateBoard } from '../../store/board.actions'
+import { TaskPreview } from './task-preview'
 
 import { IoClose } from 'react-icons/io5'
 import { BsPlusLg } from 'react-icons/bs'
@@ -50,7 +50,7 @@ export function TaskList({ group, tasksList }) {
         }
     }
 
-    //DragDrop
+    //DragNDrop
     const [tasks, updateTasks] = useState(tasksList)
 
     function handleOnDragEnd(result) {
@@ -64,6 +64,7 @@ export function TaskList({ group, tasksList }) {
 
         group.tasks = tasks
         saveGroup(group, boardId) //
+        // updateBoard(board)
     }
 
 
@@ -72,9 +73,9 @@ export function TaskList({ group, tasksList }) {
             <section className="task-list-wraper">
 
                 <DragDropContext onDragEnd={handleOnDragEnd}>
-                    <Droppable droppableId="characters">
+                    <Droppable droppableId="tasks">
                         {(provided) => (
-                            <ul className="task-list clean-list characters"
+                            <ul className="task-list clean-list tasks"
                                 {...provided.droppableProps}
                                 ref={provided.innerRef}
                             >

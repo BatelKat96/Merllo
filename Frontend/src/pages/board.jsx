@@ -101,7 +101,7 @@ export function Board() {
 		return { backgroundColor: `#0067a3` }
 	}
 
-	if (!board) return <img className="loader" src={Loader} alt="loader" />
+	if (!board) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 	const boardStyle = getBoardStyle()
 
 	return (

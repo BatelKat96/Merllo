@@ -48,7 +48,7 @@ export function Workspace() {
 		}
 	}
 
-	if (!boards) return <img className="loader" src={Loader} alt="loader" />
+	if (!boards) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 
 	return (
 		<section className="workspace-section">
