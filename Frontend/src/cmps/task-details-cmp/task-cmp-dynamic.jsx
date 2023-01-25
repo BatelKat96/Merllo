@@ -10,7 +10,6 @@ import { saveTask } from '../../store/board.actions'
 import { TaskList } from '../task-preview/task-list'
 import { TaskLabelModal } from './task-cmp-dynamic-modals/task-label-modal'
 import { TaskMemberModal } from './task-cmp-dynamic-modals/task-member-modal'
-import { TaskChecklistModal } from './task-cmp-dynamic-modals/task-checklist-modal'
 
 export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, refDataBtn, onSaveTask }) {
 
@@ -104,16 +103,6 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                 {cmpType === 'cover' &&
                     <TaskCoverModal
                         task={task}
-                    />}
-
-
-
-
-                {cmpType === 'checklist' &&
-                    <TaskChecklistModal
-                        task={task}
-                        onSaveTask={onSaveTask}
-                        onClose={onClose}
                     />}
 
             </div>

@@ -54,6 +54,7 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
     function onOpenArchive() {
         setIsArchive(true)
     }
+
     function onBackArchive() {
         setIsArchive(false)
     }

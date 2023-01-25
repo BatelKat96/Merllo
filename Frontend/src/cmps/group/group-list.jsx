@@ -18,7 +18,9 @@ export function GroupList() {
 	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
 	const [isDropdownOpen, setIsDropdownOpen] = useState({ groupId: '' })
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
-	const groups = board.groups
+	const [groupsDrag, setGroups] = useState(board)
+
+	let groups = board.groups
 
 	// let tasks = group.tasks
 
@@ -126,6 +128,43 @@ export function GroupList() {
 		updateBoard(board)
 	}
 
+	// function onDragEnd(result, groups, setGroups) {
+	// 	if (!result.destination) return;
+	// 	const { source, destination } = result;
+
+	// 	if (source.droppableId !== destination.droppableId) {
+	// 		const sourceGroup = groups[source.droppableId];
+	// 		const destGroup = groups[destination.droppableId];
+	// 		const sourceTasks = [...sourceGroup.tasks];
+	// 		const destTasks = [...destGroup.tasks];
+	// 		const [removed] = sourceTasks.splice(source.index, 1);
+	// 		destTasks.splice(destination.index, 0, removed);
+	// 		setGroups({
+	// 			...groups,
+	// 			[source.droppableId]: {
+	// 				...sourceGroup,
+	// 				tasks: sourceTasks
+	// 			},
+	// 			[destination.droppableId]: {
+	// 				...destGroup,
+	// 				tasks: destTasks
+	// 			}
+	// 		});
+	// 	} else {
+	// 		const group = groups[source.droppableId];
+	// 		const copiedTasks = [...group.tasks];
+	// 		const [removed] = copiedTasks.splice(source.index, 1);
+	// 		copiedTasks.splice(destination.index, 0, removed);
+	// 		setGroups({
+	// 			...groups,
+	// 			[source.droppableId]: {
+	// 				...group,
+	// 				tasks: copiedTasks
+	// 			}
+	// 		})
+	// 	}
+	// }
+
 
 	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 
@@ -135,8 +174,14 @@ export function GroupList() {
 		<section className="group-list-container">
 
 			<DragDropContext onDragEnd={handleOnDragEnd}>
+				{/* <DragDropContext
+				onDragEnd={result => onDragEnd(result, groups, setGroups)}>
+				{/* */}
 				<Droppable droppableId="groupsDrag" direction="horizontal">
-					{(provided) => (
+					{(provided) => ( 
+
+				// <Droppable droppableId={group.id} key={group.id}>
+				// 	{(provided, snapshot) => {
 
 						<ul className="group-list clean-list groupsDrag"
 							{...provided.droppableProps}
@@ -193,6 +238,7 @@ export function GroupList() {
 							{provided.placeholder}
 						</ul>
 					)}
+					{/* }} */}
 				</Droppable>
 			</DragDropContext>
 
