@@ -35,12 +35,14 @@
             background-color: $wh-bg2;
             background-color: #5A78B5;
             border-radius: 3px;
+            transition: all 150ms ease-out 0s;
+
+            &:hover {
+                background-color: $wh-bg1;
+                background-color: rgb(132, 152, 188);
+            }
         }
 
-        &.create-btn:hover {
-            background-color: $wh-bg1;
-            background-color: rgb(132, 152, 188);
-        }
 
         img {
             height: 24px;

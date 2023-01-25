@@ -14,11 +14,13 @@ import { TaskMemberModal } from './task-cmp-dynamic-modals/task-member-modal'
 export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, refDataBtn, onSaveTask }) {
 
     const board = useSelector((storeState) => storeState.boardModule.board)
-    const members = board.members
-    const labels = board.labels
+    const [isAddLabelModalOpen, setIsAddLabelModalOpen] = useState(false)
+    const [selectedLabel, setSelectedLabel] = useState('')
+    // const members = board.members
+    // const labels = board.labels
 
-    const [updateTask, setUpdateTask] = useState(task)
-    const [toRender, setToRender] = useState(members)
+    // const [updateTask, setUpdateTask] = useState(task)
+    // const [toRender, setToRender] = useState(members)
     // const [toRender, setToRender] = useState(labels)
 
     const modalPos = {
@@ -26,7 +28,7 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
         left: refDataBtn.current.offsetLeft + "px"
     }
 
-    const { labelIds } = updateTask
+
 
 
     function onClose() {
@@ -41,27 +43,34 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
 
     }
 
+    if (cmpType === 'labels' && isAddLabelModalOpen) {
 
-    async function onToggleLabel(id) {
-        if (labelIds?.includes(id)) {
-            const index = labelIds.indexOf(id)
-            labelIds.splice(index, 1)
-        }
-        else {
-            if (labelIds) labelIds.push(id)
-            else labelIds = [id]
-        }
-        setUpdateTask((prevTask) => ({ ...prevTask }))
-        await saveTask(updateTask, groupId, boardId)
+        if (!selectedLabel) data.title = 'Create Label'
+        else data.title = 'Edit Label'
+
     }
 
-    function handleChange({ target }) {
-        const regex = new RegExp(target.value, 'i')
-        const filteredMembers = members.filter((member) => regex.test(member.fullname))
-        console.log('filteredMembers:', filteredMembers)
 
-        setToRender(filteredMembers)
-    }
+    // async function onToggleLabel(id) {
+    //     if (labelIds?.includes(id)) {
+    //         const index = labelIds.indexOf(id)
+    //         labelIds.splice(index, 1)
+    //     }
+    //     else {
+    //         if (labelIds) labelIds.push(id)
+    //         else labelIds = [id]
+    //     }
+    //     setUpdateTask((prevTask) => ({ ...prevTask }))
+    //     await saveTask(updateTask, groupId, boardId)
+    // }
+
+    // function handleChange({ target }) {
+    //     const regex = new RegExp(target.value, 'i')
+    //     const filteredMembers = members.filter((member) => regex.test(member.fullname))
+    //     console.log('filteredMembers:', filteredMembers)
+
+    //     setToRender(filteredMembers)
+    // }
 
 
     if (!board) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
@@ -77,6 +86,7 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                         task={task}
                         data={data}
                         onSaveTask={onSaveTask}
+
                     />}
 
                 {cmpType === 'labels' &&
@@ -84,6 +94,10 @@ export function TaskCmpDynamoic({ cmpType, task, onOpenModal, boardId, groupId, 
                         task={task}
                         data={data}
                         onSaveTask={onSaveTask}
+                        setIsAddLabelModalOpen={setIsAddLabelModalOpen}
+                        isAddLabelModalOpen={isAddLabelModalOpen}
+                        selectedLabel={selectedLabel}
+                        setSelectedLabel={setSelectedLabel}
                     />}
 
                 {cmpType === 'cover' &&

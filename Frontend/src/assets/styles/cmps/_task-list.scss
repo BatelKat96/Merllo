@@ -58,6 +58,7 @@
                 color: #5E6C84;
                 background: transparent;
                 cursor: pointer;
+                transition: all 150ms ease-out 0s;
 
                 .icon-plus {
                     font-size: 12px;
@@ -147,6 +148,7 @@
                     font-size: 14px;
                     font-weight: 400;
                     margin-bottom: 0px;
+                    transition: all 150ms ease-out 0s;
                         
                     &:hover {
                         background-color: #026aa7;
@@ -170,6 +172,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    transition: all 150ms ease-out 0s;
 
                     &.more-btn {
                         height: 32px;

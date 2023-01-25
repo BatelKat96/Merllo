@@ -24,6 +24,7 @@ export const boardService = {
 	removeTask,
 	saveTask,
 	getEmptyTask,
+	getEmptyLabel
 }
 window.cs = boardService
 
@@ -556,5 +557,15 @@ function getEmptyTask() {
 		style: {},
 		attachments: [],
 		checklists: [],
+	}
+}
+
+
+function getEmptyLabel() {
+	return {
+		id: utilService.makeId(),
+		label: '',
+		color: ''
+
 	}
 }
