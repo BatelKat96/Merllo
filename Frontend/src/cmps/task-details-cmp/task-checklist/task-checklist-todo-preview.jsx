@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { GrClose } from "react-icons/gr"
 import { HiDotsHorizontal } from 'react-icons/hi'
-import { ItemDeleteModal } from './dynamic-delete-modal'
+import { ItemDeleteModal } from '../dynamic-delete-modal'
 
 
 export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
@@ -68,14 +68,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
                     <HiDotsHorizontal className='btn-checklist-label-menu' />
                 </button>
             }
-            {isDeleteModalOpen.todoId === todo.id && (
-                <ItemDeleteModal
-                    toggleModalDelete={toggleModalDelete}
-                    itemId={todo.id}
-                    onRemoveItem={onRemoveTodo}
-                    type={'todo'}
-                />
-            )}
+
 
             {(isEditTodoOpen || (todoId == todo.id)) &&
                 < form  >
@@ -103,6 +96,14 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
                     </div>
                 </form >}
 
+            {isDeleteModalOpen.todoId === todo.id && (
+                <ItemDeleteModal
+                    toggleModalDelete={toggleModalDelete}
+                    itemId={todo.id}
+                    onRemoveItem={onRemoveTodo}
+                    type={'todo'}
+                />
+            )}
         </label>
     )
 

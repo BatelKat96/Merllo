@@ -21,7 +21,7 @@ export function TaskDetails() {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
     const { byMember, labelIds, style, checklists, memberIds } = task
-    console.log('memberIds:', memberIds)
+    // console.log('memberIds:', memberIds)
 
 
 
@@ -80,6 +80,7 @@ export function TaskDetails() {
         }
     }
 
+    /// not good
     function onSaveEdit(ev) {
         ev.preventDefault()
         // try {
@@ -108,14 +109,12 @@ export function TaskDetails() {
     }
 
     function onCloseTaskDetails(ev) {
-
         ev.preventDefault()
-        console.log('out:')
-
-        // onSaveEdit(ev)
-        console.log('ev:', ev)
-
         navigate(`/board/${boardId}`)
+    }
+
+    function onStopPropagation(ev) {
+        ev.stopPropagation()
     }
 
 
@@ -127,64 +126,64 @@ export function TaskDetails() {
             <div
                 onClick={(ev) => onCloseTaskDetails(ev)}
                 className="black-screen"
-            ></div>
-            <div className="task-details-section">
-                {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>}
-                {(task && board) && <Fragment>
-                    <span
-                        onClick={(ev) => onCloseTaskDetails(ev)}
-                        className="clean-btn btn-task-exit">
-                        <IoClose className="icon-task exit-icon" />
-                    </span>
+            >
+                <div className="task-details-section" onClick={(ev) => onStopPropagation(ev)}>
+                    {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>}
+                    {(task && board) && <Fragment>
+                        <span
+                            onClick={(ev) => onCloseTaskDetails(ev)}
+                            className="clean-btn btn-task-exit">
+                            <IoClose className="icon-task exit-icon" />
+                        </span>
 
 
 
-                    {task.style?.backgroundColor && (
-                        <section
-                            className="task-cover"
-                            style={{ backgroundColor: task.style.backgroundColor }}
-                        ></section>
-                    )}
+                        {task.style?.backgroundColor && (
+                            <section
+                                className="task-cover"
+                                style={{ backgroundColor: task.style.backgroundColor }}
+                            ></section>
+                        )}
 
-                    {task.style?.background && (
-                        <section className="task-cover"
-                            style={{ background: task.style.background }}
-                        ></section>
-                    )}
+                        {task.style?.background && (
+                            <section className="task-cover"
+                                style={{ background: task.style.background }}
+                            ></section>
+                        )}
 
-                    {/* <div className='stam'> */}
+                        {/* <div className='stam'> */}
 
-                    <div className='task-details-main-section'>
-                        <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />
+                        <div className='task-details-main-section'>
+                            <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />
 
-                        <div className='task-details-container'>
-                            <div className='task-details-edit-section'>
-                                <div className='task-details-edit-item'>
-                                    {memberIds && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
-                                    {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
-                                    {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
-                                </div>
+                            <div className='task-details-container'>
+                                <div className='task-details-edit-section'>
+                                    <div className='task-details-edit-item'>
+                                        {memberIds && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
+                                        {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
+                                        {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
+                                    </div>
 
-                                <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
-                                {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
+                                    <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                                    {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
 
-                                {/* <p>Checklist</p>
+                                    {/* <p>Checklist</p>
                         <p>                        Activity-
                             Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
                         </p> */}
+                                </div>
+                                <TaskSideBar
+                                    task={task}
+                                    onRemoveTask={onRemoveTask}
+                                    onCopyTask={onCopyTask}
+                                    onSaveTask={onSaveTask}
+                                />
                             </div>
-                            <TaskSideBar
-                                task={task}
-                                onRemoveTask={onRemoveTask}
-                                onCopyTask={onCopyTask}
-                                onSaveTask={onSaveTask}
-                            />
+                            {/* <TaskCmpDynamoic cmpType={'members'} /> */}
                         </div>
-                        {/* <TaskCmpDynamoic cmpType={'members'} /> */}
-                    </div>
-                </Fragment>}
+                    </Fragment>}
+                </div>
             </div>
-
         </section>
 
 

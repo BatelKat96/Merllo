@@ -3,6 +3,7 @@
     border-radius: 3px;
     margin-block-end: 5px;
     padding-block: 0;
+    width: 100%;
 
 }
 
@@ -45,6 +46,29 @@
 
 }
 
-.btn-create-label {
-    width: 100%;
+.btn-edit-label {
+    margin-inline-start: 0.2em;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: $t-hover3;
+    }
+}
+
+
+.btn-edit-label-modal {
+    display: flex;
+    justify-content: space-between;
+
+    .btn-remove-label {
+        background: #b04632;
+        color: $clr6;
+
+        &:hover {
+            background-color: #b04632;
+        }
+    }
 }

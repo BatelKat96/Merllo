@@ -4,7 +4,7 @@ import { TaskChecklistList } from './task-checklist-list';
 import { IoCloseOutline } from "react-icons/io5";
 import { GrClose } from "react-icons/gr";
 import { IoClose } from "react-icons/io5";
-import { ItemDeleteModal } from './dynamic-delete-modal';
+import { ItemDeleteModal } from '../dynamic-delete-modal';
 
 
 
@@ -127,6 +127,14 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                             </form >
                         }
 
+                        {isDeleteModalOpen.checklistId === checklist.id && (
+                            <ItemDeleteModal
+                                toggleModalDelete={toggleDeleteChecklist}
+                                itemId={checklist.id}
+                                onRemoveItem={onRemoveChecklist}
+                                type={'checklist'}
+                            />
+                        )}
                     </div>
 
                     {(!isEditTitleOpen || (checklistId !== checklist.id)) && <div className='btn-checklist-delete-container'>
@@ -136,14 +144,6 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                             Delete
                         </button>
                     </div>}
-                    {isDeleteModalOpen.checklistId === checklist.id && (
-                        <ItemDeleteModal
-                            toggleModalDelete={toggleDeleteChecklist}
-                            itemId={checklist.id}
-                            onRemoveItem={onRemoveChecklist}
-                            type={'checklist'}
-                        />
-                    )}
                 </div>
                 <hr />
                 <ul className='clean-list'>
