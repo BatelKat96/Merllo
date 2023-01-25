@@ -21,15 +21,9 @@ export function TaskMemberModal({ task, data, onSaveTask }) {
             updateMemberIds = memberIds.filter(member => (member !== id))
             updateTask = { ...task, memberIds: updateMemberIds }
         } else {
-            if (memberIds) {
-                updateMemberIds = memberIds
-                updateMemberIds.push(id)
-                updateTask = { ...task, memberIds: updateMemberIds }
-            }
-            else {
-                updateTask = { ...task }
-                updateTask.memberIds = [id]
-            }
+            updateMemberIds = memberIds
+            updateMemberIds.push(id)
+            updateTask = { ...task, memberIds: updateMemberIds }
         }
         onSaveTask(ev, updateTask)
     }
@@ -37,7 +31,7 @@ export function TaskMemberModal({ task, data, onSaveTask }) {
     function handleChange({ target }) {
         const regex = new RegExp(target.value, 'i')
         const filteredMembers = members.filter((member) => regex.test(member.fullname))
-        console.log('filteredMembers:', filteredMembers)
+        // console.log('filteredMembers:', filteredMembers)
         setToRender(filteredMembers)
     }
 

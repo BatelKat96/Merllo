@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { IoClose } from 'react-icons/io5'
 import { MdKeyboardArrowLeft } from "react-icons/md";
-export function EditLabelTitle({ label, onOpenAddLabelModal }) {
+import { ItemDeleteModal } from '../dynamic-delete-modal';
+export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemoveLabel }) {
     console.log('label:', label)
     const [currLabel, setCurrLabel] = useState(label)
+    const [isDeleteModalOpen, setDeleteModalOpen] = useState({ labelId: '' })
+    console.log('onRemoveLabel:', onRemoveLabel)
+
 
     const labelColors = [
         '#7BC86C',
@@ -24,6 +28,24 @@ export function EditLabelTitle({ label, onOpenAddLabelModal }) {
         value = type === 'number' ? +value : value
         setCurrLabel((prevLabel) => ({ ...prevLabel, [field]: value }))
     }
+
+
+    function setLabelCover(color) {
+        currLabel.color = color
+        console.log('currLabel:', currLabel)
+    }
+
+    function toggleModalDelete(ev, id) {
+        ev.stopPropagation()
+        ev.preventDefault()
+        if (isDeleteModalOpen.labelId === id) {
+            setDeleteModalOpen({ labelId: '' })
+        } else {
+            setDeleteModalOpen({ 'labelId': id })
+        }
+    }
+
+
 
 
 
@@ -56,7 +78,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal }) {
                         <li key={labelColor} className={labelColor}>
                             <button
                                 className='color-btn'
-                                // onClick={() => setTaskCover(coverColor, undefined)}
+                                onClick={() => setLabelCover(labelColor)}
                                 style={{ backgroundColor: `${labelColor} ` }}
                             >
                             </button>
@@ -65,7 +87,29 @@ export function EditLabelTitle({ label, onOpenAddLabelModal }) {
                 </div>
             </div>
 
+            <div className='btn-edit-label-modal'>
+
+                <button className='clean-btn btn-task-details btn-create-label'
+                    onClick={(ev) => { onSaveLabel(ev, currLabel) }}>
+                    Save label
+                </button>
+                {currLabel.id && <button className='clean-btn btn-task-details btn-remove-label'
+                    onClick={(ev) => toggleModalDelete(ev, currLabel.id)} >
+                    Delete label
+                </button>}
+
+            </div>
+            {isDeleteModalOpen.labelId === label.id && (
+                <ItemDeleteModal
+                    toggleModalDelete={toggleModalDelete}
+                    itemId={label.id}
+                    onRemoveItem={onRemoveLabel}
+                    type={'label'}
+                />
+            )}
         </section >
 
     )
 }
+
+// onClick={(ev) => { onRemoveLabel(ev, currLabel) }}
