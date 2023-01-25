@@ -130,48 +130,48 @@ export function GroupList() {
 						<TaskList group={group} tasksList={group.tasks} />
 					</li>
 				))}
-
-				<div className={`add-new-group`}>
-					{!isAddNewGroupOpen && (
-						<div
-							className="placeholder"
-							onClick={() => {
-								openAddNewGroup()
-							}}
-						>
-							<AiOutlinePlus className="icon-plus" />
-							<span>{addNewTxt}</span>
-						</div>
-					)}
-					{isAddNewGroupOpen && (
-						<form className="add-group-form">
-							<input
-								type="text"
-								name="title"
-								placeholder="Enter list title..."
-								autoFocus
-								spellCheck="false"
-								maxLength="512"
-								value={groupToEdit.title}
-								onChange={handleNewGroup}
-							/>
-							<div className="add-group-controls">
-								<button className="add-group" onClick={onSaveNewGroup}>
-									Add list
-								</button>
-								<a
-									className="cancel"
-									onClick={() => {
-										closeAddNewGroup()
-									}}
-								>
-									<IoClose className="icon-close" />
-								</a>
-							</div>
-						</form>
-					)}
-				</div>
 			</ul>
+
+			<div className={`add-new-group`}>
+				{!isAddNewGroupOpen && (
+					<div
+						className="placeholder"
+						onClick={() => {
+							openAddNewGroup()
+						}}
+					>
+						<AiOutlinePlus className="icon-plus" />
+						<span>{addNewTxt}</span>
+					</div>
+				)}
+				{isAddNewGroupOpen && (
+					<form className="add-group-form">
+						<input
+							type="text"
+							name="title"
+							placeholder="Enter list title..."
+							autoFocus
+							spellCheck="false"
+							maxLength="512"
+							value={groupToEdit.title}
+							onChange={handleNewGroup}
+						/>
+						<div className="add-group-controls">
+							<button className="add-group" onClick={onSaveNewGroup}>
+								Add list
+							</button>
+							<a
+								className="cancel"
+								onClick={() => {
+									closeAddNewGroup()
+								}}
+							>
+								<IoClose className="icon-close" />
+							</a>
+						</div>
+					</form>
+				)}
+			</div>
 		</section>
 	)
 }
