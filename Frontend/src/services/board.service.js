@@ -563,8 +563,8 @@ function getEmptyTask() {
 
 function getEmptyLabel() {
 	return {
-		id: utilService.makeId(),
-		label: '',
+		id: '',
+		title: '',
 		color: ''
 
 	}

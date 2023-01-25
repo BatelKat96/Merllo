@@ -21,7 +21,7 @@ export function TaskDetails() {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
     const { byMember, labelIds, style, checklists, memberIds } = task
-    console.log('memberIds:', memberIds)
+    // console.log('memberIds:', memberIds)
 
 
 

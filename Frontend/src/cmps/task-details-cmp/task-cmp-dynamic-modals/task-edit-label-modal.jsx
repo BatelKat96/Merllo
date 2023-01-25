@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { IoClose } from 'react-icons/io5'
 import { MdKeyboardArrowLeft } from "react-icons/md";
-export function EditLabelTitle({ label, onOpenAddLabelModal }) {
+export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel }) {
     console.log('label:', label)
     const [currLabel, setCurrLabel] = useState(label)
 
@@ -26,6 +26,10 @@ export function EditLabelTitle({ label, onOpenAddLabelModal }) {
     }
 
 
+    function setLabelCover(color) {
+        currLabel.color = color
+        console.log('currLabel:', currLabel)
+    }
 
     return (
         <section className="edit-label-modal">
@@ -56,7 +60,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal }) {
                         <li key={labelColor} className={labelColor}>
                             <button
                                 className='color-btn'
-                                // onClick={() => setTaskCover(coverColor, undefined)}
+                                onClick={() => setLabelCover(labelColor)}
                                 style={{ backgroundColor: `${labelColor} ` }}
                             >
                             </button>
@@ -65,6 +69,10 @@ export function EditLabelTitle({ label, onOpenAddLabelModal }) {
                 </div>
             </div>
 
+
+            <button className='clean-btn btn-task-details btn-create-label' onClick={(ev) => { onSaveLabel(ev, currLabel) }}>
+                Save label
+            </button>
         </section >
 
     )
