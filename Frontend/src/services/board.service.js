@@ -59,6 +59,7 @@ async function save(board) {
 		savedBoard = await storageService.post(STORAGE_KEY, board)
 		// savedBoard = await httpService.post('board', board)
 	}
+	console.log('savedBoard post', savedBoard);
 	return savedBoard
 }
 
@@ -470,6 +471,7 @@ async function saveGroup(group, boardId) {
 			group.id = utilService.makeId()
 			board.groups.push(group)
 		}
+		console.log('Saved group in boardService', 'group:', group, 'board:', board)
 		return save(board)
 	} catch (err) {
 		console.log('Failed to save group', err)
@@ -533,6 +535,7 @@ async function saveTask(task, groupId, boardId) {
 			task.id = utilService.makeId()
 			group.tasks.push(task)
 		}
+		console.log('saveGroup in boarService', 'group:', group, 'boardId:', boardId);
 		return await saveGroup(group, boardId)
 	} catch (err) {
 		console.log('Failed to save group', err)
