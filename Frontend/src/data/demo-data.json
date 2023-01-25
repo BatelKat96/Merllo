@@ -10,9 +10,9 @@
             "imgUrl": "http://batel-img"
         },
         "style": {
-            "background":"https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
-            "thumbnail":"https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
-            "backgroundColor":"#0c2640"
+            "background": "https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
+            "backgroundColor": "#0c2640"
         },
         "labels": [
             {
@@ -80,6 +80,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "comments": [
                             {
                                 "id": "cm101",
@@ -108,6 +109,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "style": {
                             "backgroundColor": "#FFAF3F"
                         }
@@ -127,6 +129,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "style": {
                             "backgroundColor": "#5BA4CF"
                         }
@@ -146,6 +149,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "style": {
                             "backgroundColor": "#172B4D"
                         }
@@ -171,6 +175,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "style": {
                             "backgroundColor": "#F5DD29"
                         }
@@ -227,7 +232,8 @@
                             "username": "Dror",
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
-                        }
+                        },
+                        "checklists": []
                     },
                     {
                         "id": "c109",
@@ -242,7 +248,8 @@
                             "username": "Dror",
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
-                        }
+                        },
+                        "checklists": []
                     },
                     {
                         "id": "c110",
@@ -257,7 +264,8 @@
                             "username": "Dror",
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
-                        }
+                        },
+                        "checklists": []
                     }
                 ]
             },
@@ -280,6 +288,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "memberIds": [
                             "u101",
                             "u102"
@@ -300,6 +309,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "style": {
                             "backgroundColor": "#29CCE5"
                         },
@@ -328,6 +338,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "memberIds": [
                             "u101"
                         ]
@@ -348,6 +359,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "memberIds": [
                             "u102",
                             "u103"
@@ -377,6 +389,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "memberIds": [
                             "u102",
                             "u103"
@@ -453,6 +466,7 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
+                        "checklists": [],
                         "memberIds": [
                             "u101",
                             "u102"
@@ -463,7 +477,9 @@
             {
                 "id": "g106",
                 "title": "Ready for production",
-                "tasks": []
+                "tasks": [],
+                "checklists": [],
+                "labelIds": []
             }
         ]
     },
@@ -475,8 +491,8 @@
         "createdBy": {},
         "style": {
             "background": "https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
-            "thumbnail":"https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
-            "backgroundColor":"#262626"
+            "thumbnail": "https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
+            "backgroundColor": "#262626"
         },
         "labels": [],
         "members": [],
@@ -490,8 +506,8 @@
         "createdBy": {},
         "style": {
             "background": "",
-            "thumbnail":"",
-            "backgroundColor":"#0079bf"
+            "thumbnail": "",
+            "backgroundColor": "#0079bf"
         },
         "labels": [],
         "members": [],

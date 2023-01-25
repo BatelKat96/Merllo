@@ -1,8 +1,7 @@
 import { Fragment, useState } from 'react'
 import { TodoPreview } from './task-checklist-todo-preview'
 
-export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
-    const [currTodos, setCurrTodos] = useState(todos)
+export function TaskChecklistList({ todos, checklist, updateChecklists }) {
 
     function onChangeTodoDone(ev, todo) {
         todo.isDone = !todo.isDone
@@ -10,20 +9,23 @@ export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
     }
 
     function updateTodo(ev, todo) {
-        let index = currTodos.findIndex(cl => (cl.id === todo.id))
-        let updateTodo = currTodos[index]
-        let newTodos = currTodos.splice(index, 1, updateTodo)
-        setCurrTodos(newTodos)
-        onSaveEdit(ev)
+        let updateTodos = todos
+        let updateChecklist = { ...checklist }
+        const index = updateTodos.findIndex(cl => (cl.id === todo.id))
+        const updateTodo = updateTodos[index]
+        updateTodos.splice(index, 1, updateTodo)
+        updateChecklist.todos = updateTodos
+        updateChecklists(ev, updateChecklist)
     }
 
-    function onRemoveTodo(ev, id) {
+    function onRemoveTodo(ev, todoId) {
         ev.stopPropagation()
         ev.preventDefault()
-        let index = currTodos.findIndex(cl => (cl.id === id))
-        let newTodos = currTodos.splice(index, 1)
-        setCurrTodos(newTodos)
 
+        let updateChecklist = { ...checklist }
+        const updateTodos = todos.filter(cl => (cl.id !== todoId))
+        updateChecklist.todos = updateTodos
+        updateChecklists(ev, updateChecklist)
     }
 
 
@@ -37,13 +39,11 @@ export function TaskChecklistList({ todos, checklist, onSaveEdit }) {
                     type="checkbox"
                     id={todo.id}
                 />
-                {/* <label className="task-checklist-label"> */}
                 <TodoPreview todo={todo} updateTodo={updateTodo} onRemoveTodo={onRemoveTodo} />
-
-                {/* </label> */}
             </li>
 
         })}
+
 
     </Fragment>
 }
