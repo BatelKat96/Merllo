@@ -1,12 +1,10 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { BoardCreate } from '../board-create'
 import { boardService } from '../../services/board.service'
-import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
-import { login, logout, signup } from '../../store/user.actions.js'
-import { LoginSignup } from './login-signup.jsx'
+import { logout } from '../../store/user.actions.js'
 
 import { ReactComponent as AppsSvg } from '../../assets/img/icons-header/apps.svg'
 import { ReactComponent as CreateSvg } from '../../assets/img/icons-header/create.svg'

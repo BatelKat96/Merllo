@@ -22,8 +22,6 @@ export function GroupList() {
 
 	let groups = board.groups
 
-	// let tasks = group.tasks
-
 	//  create new group
 	function openAddNewGroup() {
 		setIsAddNewGroupOpen(true)
@@ -174,14 +172,9 @@ export function GroupList() {
 		<section className="group-list-container">
 
 			<DragDropContext onDragEnd={handleOnDragEnd}>
-				{/* <DragDropContext
-				onDragEnd={result => onDragEnd(result, groups, setGroups)}>
-				{/* */}
+
 				<Droppable droppableId="groupsDrag" direction="horizontal">
 					{(provided) => ( 
-
-				// <Droppable droppableId={group.id} key={group.id}>
-				// 	{(provided, snapshot) => {
 
 						<ul className="group-list clean-list groupsDrag"
 							{...provided.droppableProps}
@@ -238,7 +231,7 @@ export function GroupList() {
 							{provided.placeholder}
 						</ul>
 					)}
-					{/* }} */}
+
 				</Droppable>
 			</DragDropContext>
 

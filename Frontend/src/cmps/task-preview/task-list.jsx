@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { boardService } from '../../services/board.service'
-import { saveTask, saveGroup, updateBoard, loadBoard } from '../../store/board.actions'
+import { saveTask } from '../../store/board.actions'
 import { TaskPreview } from './task-preview'
 
 import { IoClose } from 'react-icons/io5'

@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
 import { BiCheck } from 'react-icons/bi'
 
-import { useSelector } from 'react-redux'
 
 export function TaskMemberModal({ task, data, onSaveTask }) {
 
