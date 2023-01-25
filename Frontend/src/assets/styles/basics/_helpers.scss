@@ -109,12 +109,14 @@
 .loader-wrapper { 
     display: flex;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
+    align-items: center;
+
+    margin: auto;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
 
     img.loader {
-        margin: auto;
-        width: 3rem;
-        height: 3rem;
+        // margin: auto;
     }
 }

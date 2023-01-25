@@ -12,7 +12,6 @@ export function HomePage() {
         <>
             <section className="home-page">
 
-
                 <div className="bg-gradient-hero">
 
                     <section className="hero-secrion">
