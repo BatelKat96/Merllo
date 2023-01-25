@@ -1,10 +1,12 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect, useState, useRef } from 'react'
 
 import { boardService } from '../services/board.service'
 
 import { IoClose } from 'react-icons/io5'
+import { BsArchive, BsPerson, BsCheck2Square, BsSquareHalf, BsArrowCounterclockwise } from "react-icons/bs"
+
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
