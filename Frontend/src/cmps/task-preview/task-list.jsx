@@ -4,19 +4,19 @@ import { useSelector } from 'react-redux'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { boardService } from '../../services/board.service'
-import { saveTask, saveGroup, updateBoard } from '../../store/board.actions'
+import { saveTask, saveGroup, updateBoard, loadBoard } from '../../store/board.actions'
 import { TaskPreview } from './task-preview'
 
 import { IoClose } from 'react-icons/io5'
 import { BsPlusLg } from 'react-icons/bs'
 import { FiMoreHorizontal } from 'react-icons/fi'
 
-export function TaskList({ group, tasksList }) {
+export function TaskList({ group, handleOnDragEnd }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
-    const { boardId } = useParams()
+    const { boardId, groupId } = useParams()
+    const tasks = group.tasks
 
     const [taskToEdit, setTaskToEdit] = useState(boardService.getEmptyTask())
-
     const [isAddNewTaskOpen, setIsAddNewTaskOpen] = useState(false)
 
     function handleNewTask({ target }) {
@@ -50,21 +50,17 @@ export function TaskList({ group, tasksList }) {
         }
     }
 
-    //DragNDrop
-    const [tasks, updateTasks] = useState(tasksList)
-
-    function handleOnDragEnd(result) {
+    //dragNdrop
+    async function handleOnDragEnd(result) {
+        console.log(result)
         if (!result.destination) return
 
         const items = Array.from(tasks)
         const [reorderedItem] = items.splice(result.source.index, 1)
         items.splice(result.destination.index, 0, reorderedItem)
 
-        updateTasks(items)
-
-        group.tasks = tasks
-        saveGroup(group, boardId) //
-        // updateBoard(board)
+        group.tasks = items
+        updateBoard(board)
     }
 
 
@@ -75,20 +71,24 @@ export function TaskList({ group, tasksList }) {
                 <DragDropContext onDragEnd={handleOnDragEnd}>
                     <Droppable droppableId="tasks">
                         {(provided) => (
+
                             <ul className="task-list clean-list tasks"
                                 {...provided.droppableProps}
-                                ref={provided.innerRef}
-                            >
+                                ref={provided.innerRef} >
 
                                 {tasks.map((task, index) =>
 
                                     <Draggable key={task.id}
                                         draggableId={task.id}
                                         index={index}>
+
                                         {(provided) => (
 
                                             <li key={task.id}
-                                                ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}>
+
                                                 <TaskPreview
                                                     group={group}
                                                     task={task}
