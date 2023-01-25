@@ -104,10 +104,10 @@ export function GroupList() {
 		const type = source.droppableId
 		let tasks = group.tasks
 
-		console.log('result', result)
-		console.log('source', source)
-		console.log('destination', destination)
-		console.log('type', type)
+		// console.log('result', result)
+		// console.log('source', source)
+		// console.log('destination', destination)
+		// console.log('type', type)
 
 		if (!result.destination) return
 

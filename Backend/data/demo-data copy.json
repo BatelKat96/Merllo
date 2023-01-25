@@ -1,18 +1,17 @@
 [
     {
-        "_id": "b101",
         "title": "Demo",
         "isStarred": true,
         "archivedAt": null,
         "createdBy": {
             "_id": "u101",
             "fullname": "Batel K",
-            "imgUrl": "http://batel-img"
+            "imgUrl": "https://trello-members.s3.amazonaws.com/63c43e4080db3d01989c046e/e4e3a604db36af75f239332f98d75263/170.png"
         },
         "style": {
-            "background": "https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
-            "thumbnail": "https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
-            "backgroundColor": "#0c2640"
+            "background":"https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
+            "thumbnail":"https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
+            "backgroundColor":"#0c2640"
         },
         "labels": [
             {
@@ -76,11 +75,10 @@
                         "dueDate": 1674837381,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "comments": [
                             {
                                 "id": "cm101",
@@ -89,7 +87,7 @@
                                 "byMember": {
                                     "_id": "u103",
                                     "fullname": "Dror K",
-                                    "imgUrl": "http://dror-img"
+                                    "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                                 }
                             }
                         ]
@@ -105,11 +103,10 @@
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "style": {
                             "backgroundColor": "#FFAF3F"
                         }
@@ -125,11 +122,10 @@
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "style": {
                             "backgroundColor": "#5BA4CF"
                         }
@@ -145,11 +141,10 @@
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "style": {
                             "backgroundColor": "#172B4D"
                         }
@@ -171,11 +166,10 @@
                         "dueDate": 1674491781,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "style": {
                             "backgroundColor": "#F5DD29"
                         }
@@ -190,9 +184,9 @@
                         "dueDate": 1674578181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
                         "checklists": [
                             {
@@ -229,11 +223,10 @@
                         "dueDate": 1674578181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
-                        },
-                        "checklists": []
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
+                        }
                     },
                     {
                         "id": "c109",
@@ -245,11 +238,10 @@
                         "dueDate": 1674578181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
-                        },
-                        "checklists": []
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
+                        }
                     },
                     {
                         "id": "c110",
@@ -261,11 +253,10 @@
                         "dueDate": 1674578181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
-                        },
-                        "checklists": []
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
+                        }
                     }
                 ]
             },
@@ -284,11 +275,10 @@
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "memberIds": [
                             "u101",
                             "u102"
@@ -305,11 +295,10 @@
                         "dueDate": 1674664581,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "style": {
                             "backgroundColor": "#29CCE5"
                         },
@@ -334,11 +323,10 @@
                         "dueDate": 1674837381,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "memberIds": [
                             "u101"
                         ]
@@ -355,11 +343,10 @@
                         "dueDate": 1675010181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "memberIds": [
                             "u102",
                             "u103"
@@ -385,11 +372,10 @@
                         "dueDate": 1674146181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "memberIds": [
                             "u102",
                             "u103"
@@ -409,9 +395,9 @@
                         "dueDate": 1675010181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
                         "memberIds": [
                             "u101",
@@ -462,11 +448,10 @@
                         "dueDate": 1675010181,
                         "byMember": {
                             "_id": "u103",
-                            "username": "Dror",
+                            "username": "drorka",
                             "fullname": "Dror K",
-                            "imgUrl": "http://dror-img"
+                            "imgUrl": "https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"
                         },
-                        "checklists": [],
                         "memberIds": [
                             "u101",
                             "u102"
@@ -477,37 +462,33 @@
             {
                 "id": "g106",
                 "title": "Ready for production",
-                "tasks": [],
-                "checklists": [],
-                "labelIds": []
+                "tasks": []
             }
         ]
     },
     {
-        "_id": "b102",
         "title": "Stam board",
         "isStarred": false,
         "archivedAt": null,
         "createdBy": {},
         "style": {
             "background": "https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
-            "thumbnail": "https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
-            "backgroundColor": "#262626"
+            "thumbnail":"https://images.unsplash.com/photo-1672392758425-8fbcecd35694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
+            "backgroundColor":"#262626"
         },
         "labels": [],
         "members": [],
         "groups": []
     },
     {
-        "_id": "b103",
         "title": "Yalla",
         "isStarred": false,
         "archivedAt": null,
         "createdBy": {},
         "style": {
             "background": "",
-            "thumbnail": "",
-            "backgroundColor": "#0079bf"
+            "thumbnail":"",
+            "backgroundColor":"#0079bf"
         },
         "labels": [],
         "members": [],

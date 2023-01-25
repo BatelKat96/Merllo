@@ -1,10 +1,11 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Fragment, useEffect, useState, useRef } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 import { boardService } from '../services/board.service'
-import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 
+import { IoClose } from 'react-icons/io5'
+import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
@@ -12,30 +13,19 @@ import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic'
 import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item'
 import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview'
-
 import Loader from '../assets/img/loader.svg'
-import { IoClose } from 'react-icons/io5'
-import { BsSquareHalf } from 'react-icons/bs'
-
 
 
 export function TaskDetails() {
-    const board = useSelector((storeState) => storeState.boardModule.board)
     const { boardId, groupId, taskId } = useParams()
+    const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
     const { byMember, labelIds, style, checklists, memberIds } = task
     // console.log('memberIds:', memberIds)
     const [modalType, setModalType] = useState()
     const coverBtn = useRef()
 
-    // function coverSet() {
-    //     setIsCoverSet(true)
 
-    //     if (isCoverSet) {
-    //         ' img'
-    //     } else ''
-
-    // }
 
     const navigate = useNavigate()
 
@@ -196,13 +186,13 @@ export function TaskDetails() {
                             <div className='task-details-container'>
                                 <div className='task-details-edit-section'>
                                     <div className='task-details-edit-item'>
-                                        {memberIds && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
-                                        {labelIds && <TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
+                                        {(memberIds && (memberIds.length > 0)) && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
+                                        {(labelIds && (labelIds.length > 0)) && < TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
                                         {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                                     </div>
 
                                     <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
-                                    {checklists && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
+                                    {(checklists && (checklists.length > 0)) && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
 
                                     {/* <p>Checklist</p>
                         <p>                        Activity-

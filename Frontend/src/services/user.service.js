@@ -45,7 +45,6 @@ function remove(userId) {
 async function update({ _id, score }) {
 	console.log('user service update _id, score', _id, score)
 	const user = await storageService.get('user', _id)
-	user.score = score
 	await storageService.put('user', user)
 
 	// const user = await httpService.put(`user/${_id}`, {_id, score})

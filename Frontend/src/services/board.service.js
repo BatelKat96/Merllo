@@ -24,7 +24,9 @@ export const boardService = {
 	removeTask,
 	saveTask,
 	getEmptyTask,
-	getEmptyLabel
+	getEmptyLabel,
+	getEmptyTodo,
+	getEmptyChecklist
 }
 window.cs = boardService
 
@@ -84,338 +86,6 @@ function _createBoards() {
 	let boards = utilService.loadFromStorage(STORAGE_KEY)
 	if (!boards) {
 		boards = boardsData
-		// boards = [
-		// 	{
-		// 		_id: 'b101',
-		// 		title: 'Demo',
-		// 		isStarred: true,
-		// 		archivedAt: null,
-		// 		createdBy: {
-		// 			_id: 'u101',
-		// 			fullname: 'Batel K',
-		// 			imgUrl: 'http://batel-img',
-		// 		},
-		// 		style: {},
-		// 		labels: [
-		// 			{
-		// 				id: 'l101',
-		// 				title: 'UI',
-		// 				color: '#7bc86c',
-		// 			},
-		// 			{
-		// 				id: 'l102',
-		// 				title: 'Low priority',
-		// 				color: '#f5dd29',
-		// 			},
-		// 			{
-		// 				id: 'l103',
-		// 				title: 'Medium priority',
-		// 				color: '#ffaf3f',
-		// 			},
-		// 			{
-		// 				id: 'l104',
-		// 				title: 'High priority',
-		// 				color: '#ef7564',
-		// 			},
-		// 			{
-		// 				id: 'l105',
-		// 				title: 'Bug',
-		// 				color: '#cd8de5',
-		// 			},
-		// 		],
-		// 		members: [
-		// 			{
-		// 				_id: 'u101',
-		// 				fullname: 'Batel K',
-		// 				imgUrl: 'batel.png',
-		// 			},
-		// 			{
-		// 				_id: 'u102',
-		// 				fullname: 'Beta S',
-		// 				imgUrl: 'beta.png',
-		// 			},
-		// 			{
-		// 				_id: 'u103',
-		// 				fullname: 'Dror K',
-		// 				imgUrl: 'dror.png',
-		// 			},
-		// 		],
-		// 		groups: [
-		// 			{
-		// 				id: 'g101',
-		// 				title: 'Backlog-client',
-		// 				tasks: [
-		// 					{
-		// 						id: 'c101',
-		// 						title: 'Basic CRUDL',
-		// 						archivedAt: null,
-		// 						labelIds: ['l104'],
-		// 						dueDate: 1674837381,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						comments: [
-		// 							{
-		// 								id: 'cm101',
-		// 								txt: 'this is a comment',
-		// 								createdAt: 1673973381,
-		// 								byMember: {
-		// 									_id: 'u103',
-		// 									fullname: 'Dror K',
-		// 									imgUrl: 'http://dror-img',
-		// 								},
-		// 							},
-		// 						],
-		// 					},
-		// 					{
-		// 						id: 'c102',
-		// 						title: 'Build app footer',
-		// 						description: 'description',
-		// 						archivedAt: null,
-		// 						labelIds: ['l103'],
-		// 						dueDate: 1674664581,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						style: {
-		// 							bgColor: '#7bc86c',
-		// 						},
-		// 					},
-		// 				],
-		// 			},
-		// 			{
-		// 				id: 'g102',
-		// 				title: 'Backlog-server',
-		// 				tasks: [
-		// 					{
-		// 						id: 'c103',
-		// 						title: 'User authentication',
-		// 						archivedAt: null,
-		// 						labelIds: ['l101', 'l103'],
-		// 						dueDate: 1674491781,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						style: {
-		// 							bgColor: '#29cce5',
-		// 						},
-		// 					},
-		// 					{
-		// 						id: 'c104',
-		// 						title: 'Create services',
-		// 						archivedAt: null,
-		// 						labelIds: ['l102'],
-		// 						dueDate: 1674578181,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						checklists: [
-		// 							{
-		// 								id: 'cl101',
-		// 								title: 'Checklist',
-		// 								todos: [
-		// 									{
-		// 										id: 'td101',
-		// 										title: 'Board',
-		// 										isDone: false,
-		// 									},
-		// 									{
-		// 										id: 'td102',
-		// 										title: 'User',
-		// 										isDone: false,
-		// 									},
-		// 									{
-		// 										id: 'td103',
-		// 										title: 'Task',
-		// 										isDone: false,
-		// 									},
-		// 								],
-		// 							},
-		// 						],
-		// 					},
-		// 				],
-		// 			},
-		// 			{
-		// 				id: 'g103',
-		// 				title: 'In development',
-		// 				tasks: [
-		// 					{
-		// 						id: 'c105',
-		// 						title: 'Support sockets',
-		// 						archivedAt: null,
-		// 						labelIds: ['l103'],
-		// 						dueDate: 1674664581,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						memberIds: ['u101', 'u103'],
-		// 					},
-		// 					{
-		// 						id: 'c106',
-		// 						title: 'Build app header',
-		// 						archivedAt: null,
-		// 						labelIds: ['l103'],
-		// 						dueDate: 1674664581,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						style: {
-		// 							bgColor: '#ffaf3f',
-		// 						},
-		// 					},
-		// 				],
-		// 			},
-		// 			{
-		// 				id: 'g104',
-		// 				title: 'QA',
-		// 				tasks: [
-		// 					{
-		// 						id: 'c107',
-		// 						title: 'Database implementation',
-		// 						archivedAt: null,
-		// 						labelIds: ['l105'],
-		// 						dueDate: 1674837381,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						memberIds: ['u101'],
-		// 					},
-		// 					{
-		// 						id: 'c108',
-		// 						title: 'PWA',
-		// 						description: 'description',
-		// 						archivedAt: null,
-		// 						labelIds: ['l101', 'l104'],
-		// 						dueDate: 1675010181,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						memberIds: ['u102', 'u103'],
-		// 						attachments: ['http://img-attached1'],
-		// 					},
-		// 				],
-		// 			},
-		// 			{
-		// 				id: 'g105',
-		// 				title: 'Done',
-		// 				tasks: [
-		// 					{
-		// 						id: 'c109',
-		// 						title: 'Login system',
-		// 						archivedAt: null,
-		// 						labelIds: ['l101', 'l103'],
-		// 						dueDate: 1674146181,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						memberIds: ['u102', 'u103'],
-		// 						style: {
-		// 							bgColor: '#29cce5',
-		// 						},
-		// 					},
-		// 					{
-		// 						id: 'c110',
-		// 						title: 'Add node.js modules',
-		// 						archivedAt: null,
-		// 						labelIds: ['l101', 'l104'],
-		// 						dueDate: 1675010181,
-		// 						byMember: {
-		// 							_id: 'u103',
-		// 							username: 'Dror',
-		// 							fullname: 'Dror K',
-		// 							imgUrl: 'http://dror-img',
-		// 						},
-		// 						memberIds: ['u101', 'u102', 'u103'],
-		// 						attachments: ['http://img-attached2'],
-		// 						checklists: [
-		// 							{
-		// 								id: 'cl102',
-		// 								title: 'Checklist1',
-		// 								todos: [
-		// 									{
-		// 										id: 'td104',
-		// 										title: 'item in checklist 1',
-		// 										isDone: true,
-		// 									},
-		// 									{
-		// 										id: 'td105',
-		// 										title: 'another item in checklist 1',
-		// 										isDone: true,
-		// 									},
-		// 								],
-		// 							},
-		// 							{
-		// 								id: 'cl103',
-		// 								title: 'Checklist2',
-		// 								todos: [
-		// 									{
-		// 										id: 'td104',
-		// 										title: 'item in checklist 2',
-		// 										isDone: true,
-		// 									},
-		// 								],
-		// 							},
-		// 						],
-		// 					},
-		// 				],
-		// 			},
-		// 			{
-		// 				id: 'g106',
-		// 				title: 'Ready for production',
-		// 				tasks: [],
-		// 			},
-		// 		],
-		// 	},
-		// 	{
-		// 		_id: 'b102',
-		// 		title: 'Stam board',
-		// 		isStarred: false,
-		// 		archivedAt: null,
-		// 		createdBy: {},
-		// 		style: {},
-		// 		labels: [],
-		// 		members: [],
-		// 		groups: [],
-		// 	},
-		// 	{
-		// 		_id: 'b103',
-		// 		title: 'Yalla',
-		// 		isStarred: false,
-		// 		archivedAt: null,
-		// 		createdBy: {},
-		// 		style: {},
-		// 		labels: [],
-		// 		members: [],
-		// 		groups: [],
-		// 	},
-		// ]
 		utilService.saveToStorage(STORAGE_KEY, boards)
 	}
 }
@@ -570,5 +240,19 @@ function getEmptyLabel() {
 		title: '',
 		color: ''
 
+	}
+}
+function getEmptyTodo() {
+	return {
+		id: utilService.makeId(),
+		isDone: false,
+		title: ''
+	}
+}
+function getEmptyChecklist() {
+	return {
+		id: utilService.makeId(),
+		title: '',
+		todos: []
 	}
 }

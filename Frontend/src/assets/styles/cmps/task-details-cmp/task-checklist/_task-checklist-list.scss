@@ -32,15 +32,6 @@
             border: none;
         }
 
-        &::placeholder {
-
-            background-color: rgb(255, 0, 230); //not work
-        }
-
-        &:hover {
-            background: blue; //not work
-        }
-
         &:checked {
             box-shadow: none;
         }
@@ -48,13 +39,9 @@
 
     .task-checklist-label {
         margin-inline-start: 17px;
-        // padding-inline-start: 15px;
         cursor: pointer;
     }
 
-    // .task-checklist-checkbox:checked+.task-checklist-label {
-    //     text-decoration: line-through;
-    // }
 
     .task-checklist-checkbox:checked+label>.task-checklist-label-span {
         text-decoration: line-through;
