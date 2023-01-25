@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 
@@ -16,23 +16,40 @@ import { ReactComponent as NotificationSvg } from '../../assets/img/icons-header
 import { ReactComponent as SearchSvg } from '../../assets/img/icons-header/search.svg'
 import { ReactComponent as TrelloSvg } from '../../assets/img/icons-header/trello.svg'
 import { ReactComponent as UserSvg } from '../../assets/img/icons-header/user.svg'
+import { UserMenu } from '../user-menu'
 
-export function MainHeaderDemo() {
+export function MainHeaderWorkspace() {
 	const [isBoardComposerOpen, setIsBoardComposerOpen] = useState(false)
+	const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
+	const user = useSelector((storeState) => storeState.userModule.user)
+	const navigate = useNavigate()
 
+	// create board
 	function openBoardComposer() {
 		setIsBoardComposerOpen(true)
 	}
-
 	function closeBoardComposer() {
 		setIsBoardComposerOpen(false)
 		setBoardToEdit(boardService.getEmptyBoard())
 	}
 
+	// user
+	function openUserMenu() {
+		setIsUserMenuOpen(true)
+		console.log(user)
+	}
+	function closeUserMenu() {
+		setIsUserMenuOpen(false)
+	}
+
+	function onLogout() {
+		logout()
+		navigate(`/`)
+	}
+
 	return (
 		<header className="main-header-demo">
-
 			<div className="logo-nav">
 				{/* <button>
 					<AppsSvg />
@@ -42,7 +59,6 @@ export function MainHeaderDemo() {
 					<TrelloSvg />
 					<h1 className="merllo-logo">Merllo</h1>
 				</NavLink>
-
 
 				<NavLink to="/workspace">
 					<button className="nav-btn">
@@ -81,13 +97,22 @@ export function MainHeaderDemo() {
 					<HelpSvg />
 				</button> */}
 
-				<button>
-					{/* <UserSvg /> */}
-					<img className='member-img' src={require(`../../assets/img/members-task-details/batel.png`)} />
-				</button>
+				{user && (
+					<button className="btn-member-img" onClick={openUserMenu}>
+						{/* <UserSvg /> */}
+						<img className="member-img" src={user.imgUrl} alt={user.fullname} />
+					</button>
+				)}
 			</div>
 			{isBoardComposerOpen && (
 				<BoardCreate closeBoardComposer={closeBoardComposer} />
+			)}
+			{user && isUserMenuOpen && (
+				<UserMenu
+					user={user}
+					onLogout={onLogout}
+					closeUserMenu={closeUserMenu}
+				/>
 			)}
 		</header>
 	)

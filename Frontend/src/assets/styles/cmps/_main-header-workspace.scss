@@ -8,7 +8,7 @@
     justify-content: space-between;
 
     background-color: $wh-bg1;
-    background-color: #0c3d94;
+    background-color: #026aa7;
 
     button {
         border: none;
@@ -29,35 +29,29 @@
         &.nav-btn {
             padding-left: 18px;
         }
-
         &.create-btn {
             padding: 5px 8px 8px;
-            background-color: $wh-bg2;
-            background-color: #5A78B5;
+            background-color: rgba(0, 0, 0, 0.2);
             border-radius: 3px;
             transition: all 150ms ease-out 0s;
-
             &:hover {
-                background-color: $wh-bg1;
-                background-color: rgb(132, 152, 188);
+                background-color: rgba(255, 255, 255, 0.2);
             }
         }
-
 
         img {
             height: 24px;
             width: 24px;
             line-height: 24px;
         }
-
     }
 
-    button:hover,
+    button:hover {
+    background-color: #025586;
+    }
     button:active {
-        background-color: $wh-bg2;
-        background-color: #5A78B5;
+        background-color: rgba(255, 255, 255, 0.2);
     }
-
     svg {
         height: 20px;
         width: 20px;
@@ -68,11 +62,9 @@
         margin: 6px;
         white-space: nowrap;
         color: $wh-txt1;
-
         path {
             fill: $wh-txt1;
         }
-
     }
 
     .logo-nav {
@@ -113,7 +105,6 @@
             border: 1px solid rgba(255, 255, 255, 0.25);
             box-shadow: none;
             cursor: text;
-
             svg {
                 height: 16px;
                 width: 16px;
