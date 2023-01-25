@@ -8,6 +8,7 @@ export function SideMenuMain({ onChangeTitle, onRemoveBoard }) {
 			<button onClick={() => onChangeTitle('Change background')}>
 				Change background
 			</button>
+			{/* <hr className="side-menu-separator" /> */}
 			<button onClick={onRemoveBoard}>Delete board</button>
 		</section>
 	)

@@ -94,6 +94,7 @@ export function GroupList() {
 		}
 	}
 
+
 	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 
 	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
@@ -130,7 +131,10 @@ export function GroupList() {
 								/>
 							)}
 						</div>
-						<TaskList group={group} tasksList={group.tasks} />
+						<TaskList
+							group={group}
+						// handleOnDragEnd={handleOnDragEnd}
+						/>
 					</li>
 				))}
 			</ul>

@@ -2,15 +2,15 @@ import { useLocation } from 'react-router-dom'
 
 import { HomePageHeader } from './home-page-header'
 import { MainHeader } from './main-header'
-import { MainHeaderDemo } from './main-header-demo'
+import { MainHeaderWorkspace } from './main-header-workspace'
 
 export function AppHeader() {
 	const location = useLocation()
 
 	function DynamicCmp({ urlParams }) {
-		if (urlParams.includes('b101')) return <MainHeaderDemo />
+		if (urlParams.includes('b101')) return <MainHeader />
 
-		if (urlParams.includes('workspace')) return <MainHeader />
+		if (urlParams.includes('workspace')) return <MainHeaderWorkspace />
 		if (urlParams.includes('board')) return <MainHeader />
 		if (urlParams.includes('task')) return <MainHeader />
 
