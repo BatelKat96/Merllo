@@ -17,7 +17,6 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
     const [currChecklistId, setCurrChecklistId] = useState('')
     const [titleToEdit, setTitleToEdit] = useState('')
     const [isAddTitleOpen, setIsAddTitleOpen] = useState(false)
-    // const [isAddTitleOpen, setIsAddTitleOpen] = useState(false)
 
 
 
@@ -57,7 +56,6 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
         console.log('value:', value)
 
         value = type === 'number' ? +value : value
-        // currTitle = value ? value : defaultValue
         setTitleToEdit(value)
     }
 
@@ -85,19 +83,11 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
 
 
     function updateChecklists(ev, checklist) {
-        console.log('in update checklists:', checklist)
-
         let updateChecklists = checklists
-
         let index = updateChecklists.findIndex(cl => (cl.id === checklist.id))
-        // let currChecklist = updateChecklists[index]
         updateChecklists.splice(index, 1, checklist)
-        console.log('updateChecklists after remove:', updateChecklists)
-
         setCurrChecklistId('')
         const newTask = { ...task, checklists: updateChecklists }
-        console.log('newTask:', newTask)
-
         onSaveTask(ev, newTask)
     }
 
@@ -150,7 +140,6 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                         {isEditTitleOpen && (currChecklistId === checklist.id) &&
                             <form>
                                 <textarea
-                                    // onBlur={onCloseTitleInput}
                                     onBlur={(ev) => onCloseTitleInput(ev)}
                                     autoFocus
                                     name='title'

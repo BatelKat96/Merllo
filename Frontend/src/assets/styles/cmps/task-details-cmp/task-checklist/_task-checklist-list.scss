@@ -14,12 +14,11 @@
         width: 16px;
         height: 16px;
         box-shadow: inset 0 0 0 2px #dfe1e6;
-        // border-radius: 5px;
+        margin-block-start: 10px !important;
         border: none;
         cursor: pointer;
         align-self: flex-start;
         margin-top: 10px;
-        // background-color: aqua;
 
 
         &:active {
