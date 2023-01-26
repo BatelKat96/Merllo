@@ -1,3 +1,5 @@
+import { useClickOutside } from '../../customHooks/is-clicked-outside'
+import { useRef } from 'react'
 import { IoClose } from 'react-icons/io5'
 
 export function GroupDropdown({
@@ -6,8 +8,10 @@ export function GroupDropdown({
 	onCopyGroup,
 	group,
 }) {
+	const modalRef = useRef()
+	useClickOutside(modalRef, toggleDropdown)
 	return (
-		<section className="group-dropdown">
+		<section className="group-dropdown" ref={modalRef}>
 			<div className="group-dropdown-container">
 				<div className="group-dropdown-header">
 					<span>List actions</span>

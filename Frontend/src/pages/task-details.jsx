@@ -9,20 +9,21 @@ import { BsArchive, BsPerson, BsCheck2Square, BsSquareHalf, BsArrowCounterclockw
 
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
-import { TaskMember } from '../cmps/task-details-cmp/task-member'
+// import { TaskMember } from '../cmps/task-details-cmp/task-member'
 import { TaskDescription } from '../cmps/task-details-cmp/task-description'
 import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
 import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic'
 import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item'
 import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview'
 import Loader from '../assets/img/loader.svg'
+import { TaskDueDate } from '../cmps/task-details-cmp/task-due-date'
 
 
 export function TaskDetails() {
     const { boardId, groupId, taskId } = useParams()
     const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
-    const { byMember, labelIds, style, checklists, memberIds } = task
+    const { byMember, labelIds, style, checklists, memberIds, dueDate, isDone } = task
     const [modalType, setModalType] = useState()
     const coverBtn = useRef()
 
@@ -169,6 +170,7 @@ export function TaskDetails() {
                                     <div className='task-details-edit-item'>
                                         {(memberIds && (memberIds.length > 0)) && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
                                         {(labelIds && (labelIds.length > 0)) && < TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
+                                        {(dueDate) && < TaskDueDate dueDate={dueDate} isDone={isDone} task={task} onSaveTask={onSaveTask} />}
                                     </div>
 
                                     <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />

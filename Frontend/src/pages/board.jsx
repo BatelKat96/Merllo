@@ -120,6 +120,7 @@ export function Board() {
 		)
 	const boardStyle = getBoardStyle()
 	const txtStyle = getBoardTxtStyle(board.style.backgroundColor)
+	const menuStatus = isSideMenuOpen ? 'open' : ''
 
 	return (
 		<section className="board" style={boardStyle}>
@@ -146,10 +147,9 @@ export function Board() {
 					>
 						<HiOutlineStar />
 					</button>
-					<span></span>
 				</div>
 
-				<div className="board-top-menu-right">
+				<div className={`board-top-menu-right ${menuStatus}`}>
 					{/* <button className="btn-board filter">
 					<BsFilter />
 					Filter
@@ -169,29 +169,24 @@ export function Board() {
 						))}
 					</ul>
 					<span></span>
-					{/* <button
-						className="btn-board remove"
-						onClick={onRemoveBoard}
-						title="Delete board"
+					<button
+						className={`btn-board menu ${menuStatus}`}
+						onClick={onToggleSideMenu}
 					>
-						<MdDelete />
-					</button>
-					<span></span> */}
-					<button className="btn-board menu" onClick={onToggleSideMenu}>
 						<HiDotsHorizontal className="icon-more" />
 					</button>
+					{isSideMenuOpen && (
+						<BoardSideMenu
+							onToggleSideMenu={onToggleSideMenu}
+							changeBackground={changeBackground}
+							onRemoveBoard={onRemoveBoard}
+						/>
+					)}
 				</div>
 			</div>
 			<div className="board-main-content">
 				<GroupList />
 			</div>
-			{isSideMenuOpen && (
-				<BoardSideMenu
-					onToggleSideMenu={onToggleSideMenu}
-					changeBackground={changeBackground}
-					onRemoveBoard={onRemoveBoard}
-				/>
-			)}
 			<Outlet />
 		</section>
 	)

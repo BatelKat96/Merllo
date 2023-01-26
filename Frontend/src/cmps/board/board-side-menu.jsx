@@ -1,10 +1,11 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { IoIosArrowBack } from 'react-icons/io'
 import { IoClose } from 'react-icons/io5'
 import { SideMenuBgOptions } from './side-menu-bg-options'
 import { SideMenuColors } from './side-menu-colors'
 import { SideMenuMain } from './side-menu-main'
 import { SideMenuPhotos } from './side-menu-photos'
+import { useClickOutside } from '../../customHooks/is-clicked-outside'
 
 export function BoardSideMenu({
 	onToggleSideMenu,
@@ -12,6 +13,8 @@ export function BoardSideMenu({
 	onRemoveBoard,
 }) {
 	const [title, setTitle] = useState('Menu')
+	const modalRef = useRef()
+	useClickOutside(modalRef, onToggleSideMenu)
 
 	function onChangeTitle(title) {
 		setTitle(title)
@@ -52,7 +55,7 @@ export function BoardSideMenu({
 	}
 
 	return (
-		<section className="board-side-menu">
+		<section className="board-side-menu" ref={modalRef}>
 			<div className="board-side-menu-header">
 				{title !== 'Menu' && (
 					<a className="board-side-menu-header-go-back" onClick={onGoBack}>

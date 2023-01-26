@@ -81,6 +81,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "comments": [
                             {
                                 "id": "cm101",
@@ -92,7 +93,8 @@
                                     "imgUrl": "http://dror-img"
                                 }
                             }
-                        ]
+                        ],
+                        "isDone": false
                     },
                     {
                         "id": "c102",
@@ -110,9 +112,11 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#FFAF3F"
-                        }
+                        },
+                        "isDone": false
                     },
                     {
                         "id": "c103",
@@ -130,9 +134,11 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#5BA4CF"
-                        }
+                        },
+                        "isDone": false
                     },
                     {
                         "id": "c104",
@@ -150,9 +156,11 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#172B4D"
-                        }
+                        },
+                        "isDone": false
                     }
                 ]
             },
@@ -176,9 +184,11 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#F5DD29"
-                        }
+                        },
+                        "isDone": false
                     },
                     {
                         "id": "c106",
@@ -216,7 +226,9 @@
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "memberIds": [],
+                        "isDone": false
                     },
                     {
                         "id": "c107",
@@ -233,7 +245,9 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "checklists": []
+                        "checklists": [],
+                        "memberIds": [],
+                        "isDone": false
                     },
                     {
                         "id": "c109",
@@ -249,7 +263,9 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "checklists": []
+                        "checklists": [],
+                        "memberIds": [],
+                        "isDone": false
                     },
                     {
                         "id": "c110",
@@ -265,7 +281,9 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "checklists": []
+                        "checklists": [],
+                        "memberIds": [],
+                        "isDone": false
                     }
                 ]
             },
@@ -292,7 +310,8 @@
                         "memberIds": [
                             "u101",
                             "u102"
-                        ]
+                        ],
+                        "isDone": false
                     },
                     {
                         "id": "c112",
@@ -316,7 +335,8 @@
                         "memberIds": [
                             "u101",
                             "u103"
-                        ]
+                        ],
+                        "isDone": false
                     }
                 ]
             },
@@ -341,7 +361,8 @@
                         "checklists": [],
                         "memberIds": [
                             "u101"
-                        ]
+                        ],
+                        "isDone": false
                     },
                     {
                         "id": "c114",
@@ -366,7 +387,8 @@
                         ],
                         "attachments": [
                             "http://img-attached1"
-                        ]
+                        ],
+                        "isDone": false
                     }
                 ]
             },
@@ -396,7 +418,8 @@
                         ],
                         "style": {
                             "backgroundColor": "#7BC86C"
-                        }
+                        },
+                        "isDone": false
                     },
                     {
                         "id": "c116",
@@ -449,7 +472,8 @@
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "isDone": false
                     },
                     {
                         "id": "c117",
@@ -470,7 +494,8 @@
                         "memberIds": [
                             "u101",
                             "u102"
-                        ]
+                        ],
+                        "isDone": false
                     }
                 ]
             },
@@ -479,7 +504,9 @@
                 "title": "Ready for production",
                 "tasks": [],
                 "checklists": [],
-                "labelIds": []
+                "labelIds": [],
+                "dueDate": "",
+                "isDone": false
             }
         ]
     },

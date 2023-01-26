@@ -100,12 +100,8 @@ export function GroupList() {
 	}
 
 	//dragNdrop
-	async function handleOnDragEnd(result) {
+	function handleOnDragEnd(result) {
 		const { destination, source, draggableId, type } = result
-		// console.log('result', result);
-		// console.log('source', source);
-		// console.log('destination', destination);
-		// console.log('type', type);
 
 		if (!destination) return
 
@@ -153,11 +149,12 @@ export function GroupList() {
 	}
 
 
+
 	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
 
 	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
-	return (
+	return ( <>
 		<section className="group-list-container">
 
 			<DragDropContext onDragEnd={handleOnDragEnd}>
@@ -269,5 +266,6 @@ export function GroupList() {
 				)}
 			</div>
 		</section>
+		</>
 	)
 }

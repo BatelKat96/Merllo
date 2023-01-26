@@ -1,9 +1,16 @@
 .todos-prog-bar-section {
     display: flex;
-    width: 100%;
+    // width: 100%;
     align-items: center;
     margin-block-start: 8px;
     margin-block-end: 5px;
+
+    .todos-prog-bar-percentage {
+        margin-inline-start: 6px;
+        font-size: 11px;
+        max-width: 32px;
+        text-align: center;
+    }
 
     .todos-prog-bar-background {
         background-color: $t-hover3;
@@ -12,7 +19,7 @@
         height: 8px;
         width: 100%;
         border-radius: 0.5em;
-        margin-left: 12px;
+        // margin-left: 12px;
 
         .prog-accomplished {
             transition: background-color 0.3s, width 0.15s;
@@ -30,9 +37,5 @@
         }
     }
 
-    span {
-        margin-inline-start: 8px;
-        font-size: 11px;
-    }
 
 }

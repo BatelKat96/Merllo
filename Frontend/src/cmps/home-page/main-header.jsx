@@ -82,70 +82,76 @@ export function MainHeader() {
 
 	return (
 		<header className={`main-header-${txtStyle}`} style={headerStyle}>
-			<div className="logo-nav">
-				{/* <button>
+			<span className="fade">
+				<div className="logo-nav">
+					{/* <button>
 					<AppsSvg />
 				</button> */}
 
-				<NavLink to="/" className="header-logo">
-					<TrelloSvg />
-					<h1 className="merllo-logo">Merllo</h1>
-				</NavLink>
+					<NavLink to="/" className="header-logo">
+						<TrelloSvg />
+						<h1 className="merllo-logo">Merllo</h1>
+					</NavLink>
 
-				<NavLink to="/workspace">
+					<NavLink to="/workspace">
+						<button className="nav-btn">
+							Boards
+							<DownSvg />
+						</button>
+					</NavLink>
+
 					<button className="nav-btn">
-						Boards
+						Recent
 						<DownSvg />
 					</button>
-				</NavLink>
 
-				<button className="nav-btn">
-					Recent
-					<DownSvg />
-				</button>
+					<button className="nav-btn">
+						Starred
+						<DownSvg />
+					</button>
 
-				<button className="nav-btn">
-					Starred
-					<DownSvg />
-				</button>
+					<button className="create-btn" onClick={openBoardComposer}>
+						Create
+						{/* <CreateSvg /> */}
+					</button>
+				</div>
 
-				<button className="create-btn" onClick={openBoardComposer}>
-					Create
-					{/* <CreateSvg /> */}
-				</button>
-			</div>
+				<div className="left-nav">
+					<button className="search">
+						<SearchSvg />
+						Search
+					</button>
 
-			<div className="left-nav">
-				<button className="search">
-					<SearchSvg />
-					Search
-				</button>
-
-				<button>
-					<NotificationSvg />
-				</button>
-				{/*
+					<button>
+						<NotificationSvg />
+					</button>
+					{/*
 				<button>
 					<HelpSvg />
 				</button> */}
 
-				{user && (
-					<button className="btn-member-img" onClick={openUserMenu}>
-						{/* <UserSvg /> */}
-						<img className="member-img" src={user.imgUrl} alt={user.fullname} />
-					</button>
+					{user && (
+						<button className="btn-member-img" onClick={openUserMenu}>
+							{/* <UserSvg /> */}
+							<img
+								className="member-img"
+								src={user.imgUrl}
+								alt={user.fullname}
+							/>
+						</button>
+					)}
+				</div>
+				{isBoardComposerOpen && (
+					<BoardCreate closeBoardComposer={closeBoardComposer} />
 				)}
-			</div>
-			{isBoardComposerOpen && (
-				<BoardCreate closeBoardComposer={closeBoardComposer} />
-			)}
-			{user && isUserMenuOpen && (
-				<UserMenu
-					user={user}
-					onLogout={onLogout}
-					closeUserMenu={closeUserMenu}
-				/>
-			)}
+				{user && isUserMenuOpen && (
+					<UserMenu
+						user={user}
+						onLogout={onLogout}
+						closeUserMenu={closeUserMenu}
+					/>
+				)}
+			</span>
 		</header>
 	)
 }
