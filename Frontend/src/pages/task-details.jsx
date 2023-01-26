@@ -135,7 +135,7 @@ export function TaskDetails() {
                 onClick={(ev) => onCloseTaskDetails(ev)}
                 className="black-screen"
             >
-                <div className="task-details-section" onClick={(ev) => onStopPropagation(ev)}>
+                <div className="task-details-section" onClick={(ev) => { onStopPropagation(ev) }}>
                     {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>}
 
                     {(task && board) && <Fragment>

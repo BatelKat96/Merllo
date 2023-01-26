@@ -1,0 +1,38 @@
+.todos-prog-bar-section {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-block-start: 8px;
+    margin-block-end: 5px;
+
+    .todos-prog-bar-background {
+        background-color: #fff;
+        color: #111;
+        position: relative;
+        height: 8px;
+        width: 100%;
+        border-radius: 0.5em;
+        margin-left: 12px;
+
+        .prog-accomplished {
+            transition: background-color 0.3s, width 0.15s;
+            // position: absolute;
+            border-radius: 0.5em 0 0 0.5em;
+            width: 100%;
+            height: 100%;
+            background-color: #5ba4cf;
+
+            &.isComplite {
+                border-radius: 0.5em;
+
+                background-color: #61bd4f;
+            }
+        }
+    }
+
+    span {
+        margin-inline-start: 8px;
+        font-size: 11px;
+    }
+
+}

@@ -11,7 +11,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
     const [currTodo, setCurrTodo] = useState(todo)
     let currTitle
 
-    // console.log('todo:', todo)
+
 
     function onShowTodoInput(id) {
         setTodoId(id)
@@ -19,6 +19,10 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
     }
 
     function onCloseTodoInput(ev) {
+        if (!ev) return
+        if (ev.relatedTarget?.className === 'clean-btn btn-task-details btn-checklist-save') {
+            return
+        }
         ev.stopPropagation()
         ev.preventDefault()
         setTodoId('')
@@ -51,13 +55,6 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
         }
     }
 
-    // function addTodo(ev,title){
-    //     console.log('title:', title)
-
-
-    //         }
-
-
     return (
         <label className="task-checklist-label" onClick={() => { onShowTodoInput(todo.id) }}>
             {(!isEditTodoOpen || (todoId !== todo.id)) &&
@@ -77,7 +74,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
             {(isEditTodoOpen || (todoId == todo.id)) &&
                 < form  >
                     <input
-                        // onBlur={onCloseTitleInput}
+                        onBlur={(ev) => onCloseTodoInput(ev)}
                         autoFocus
                         name='title'
                         className='task-todo-title-input'
