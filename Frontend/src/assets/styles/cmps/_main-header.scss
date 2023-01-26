@@ -8,160 +8,32 @@
     justify-content: space-between;
 
     background-color: $wh-bg1;
-    // filter: brightness(75%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
-    button {
-        border: none;
-        background-color: transparent;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        font-family: segoe_ui;
-        margin: 0 3px;
-        padding: 0;
-        font-size: 0.9rem;
-        color: $bh-txt1;
-        border-radius: 3px;
-
-        &.nav-btn {
-            padding-left: 18px;
-        }
-
-        &.create-btn {
-            padding: 5px 8px 8px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
-            transition: all 150ms ease-out 0s;
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        img {
-            height: 24px;
-            width: 24px;
-            line-height: 24px;
-        }
-
-    }
-
-    button:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-    button:active {
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-
-    button.btn-member-img {
-        padding: 4px;
-        &:hover {
-            color: rgba(255, 255, 255, 0.2);
-            // color: rgb(0 0 0 / 20%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    svg {
-        height: 20px;
-        width: 20px;
-        border-radius: 3px;
-        border: 0;
-        align-items: center;
-        background-color: transparent;
-        margin: 6px;
-        white-space: nowrap;
-        color: $bh-txt1;
-        path {
-            fill: $bh-txt1;
-        }
-    }
-
-    .logo-nav {
-        display: flex;
-        align-items: center;
-        margin-left: 4px;
-
-        .header-logo {
-            display: flex;
-            align-items: center;
-
-            svg {
-                transform: rotate(180deg);
-            }
-
-            h1 {
-                font-size: 1.2rem;
-                font-family: charlie-semibold;
-                letter-spacing: 0.03rem;
-                color: $bh-txt1;
-            }
-        }
-    }
-
-    .left-nav {
-        display: flex;
-        align-items: center;
-        margin-right: 6px;
-
-        .search {
-            height: 32px;
-            width: 100%;
-            width: 200px;
-            padding: 0px 4px;
-            border-radius: 3px;
-            font-size: 0.9rem;
-            line-height: 20px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: $bh-txt1;
-            justify-content: flex-start;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: none;
-            cursor: text;
-            svg {
-                height: 16px;
-                width: 16px;
-            }
-        }
-
-        .search:active,
-        .search:focus {
-            cursor: text;
-            background-color: rgba(255, 255, 255, 0.525);
-        }
-    }
-
-}
-
-.main-header-light-bg {
+    span.fade {
         height: 44px;
         // min-width: 1000px;
         width: 100%;
-    
+
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: $wh-bg1;
+        background-color: rgba(0,0,0,0.1);
 
         button {
             border: none;
             background-color: transparent;
-    
+
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-    
+
             font-family: segoe_ui;
             margin: 0 3px;
             padding: 0;
             font-size: 0.9rem;
-            color: $bh-txt2;
+            color: $bh-txt1;
             border-radius: 3px;
 
             &.nav-btn {
@@ -170,12 +42,11 @@
 
             &.create-btn {
                 padding: 5px 8px 8px;
-                background-color: rgba(0, 0, 0, 0.1);
+                background-color: rgba(255, 255, 255, 0.2);
                 border-radius: 3px;
                 transition: all 150ms ease-out 0s;
                 &:hover {
-                    // background-color: $wh-bg1;
-                    background-color: rgba(0, 0, 0, 0.2);
+                    background-color: rgba(255, 255, 255, 0.3);
                 }
             }
 
@@ -184,23 +55,28 @@
                 width: 24px;
                 line-height: 24px;
             }
+
         }
-    
-        button:hover,
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
         button:active {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.4);
         }
-    
+
         button.btn-member-img {
             padding: 4px;
             &:hover {
-                color: rgb(0 0 0 / 20%);
+                color: rgba(255, 255, 255, 0.2);
+                // color: rgb(0 0 0 / 20%);
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
         }
+
         svg {
             height: 20px;
             width: 20px;
@@ -210,36 +86,39 @@
             background-color: transparent;
             margin: 6px;
             white-space: nowrap;
-            color: $bh-txt2;
+            color: $bh-txt1;
             path {
-                fill: $bh-txt2;
+                fill: $bh-txt1;
             }
         }
-    
+
         .logo-nav {
             display: flex;
             align-items: center;
             margin-left: 4px;
-    
+
             .header-logo {
                 display: flex;
                 align-items: center;
-    
+
+                svg {
+                    transform: rotate(180deg);
+                }
+
                 h1 {
                     font-size: 1.2rem;
                     font-family: charlie-semibold;
                     letter-spacing: 0.03rem;
-                    color: $bh-txt2;
+                    color: $bh-txt1;
                 }
             }
         }
-    
-    
+
         .left-nav {
             display: flex;
             align-items: center;
             margin-right: 6px;
-    
+
             .search {
                 height: 32px;
                 width: 100%;
@@ -249,9 +128,9 @@
                 font-size: 0.9rem;
                 line-height: 20px;
                 background-color: rgba(255, 255, 255, 0.2);
-                color: $bh-txt2;
+                color: $bh-txt1;
                 justify-content: flex-start;
-                border: 1px solid rgba(23, 43, 77, 0.16);
+                border: 1px solid rgba(255, 255, 255, 0.25);
                 box-shadow: none;
                 cursor: text;
                 svg {
@@ -263,7 +142,150 @@
             .search:active,
             .search:focus {
                 cursor: text;
-                background-color: rgba(255, 255, 255, 0.16);
+                background-color: rgba(255, 255, 255, 0.525);
             }
         }
+    }
+}
+
+.main-header-light-bg {
+    
+        height: 44px;
+        // min-width: 1000px;
+        width: 100%;
+    
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $wh-bg1;
+
+        span.fade {
+            height: 44px;
+            // min-width: 1000px;
+            width: 100%;
+    
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0,0,0,0.1);
+
+            button {
+                border: none;
+                background-color: transparent;
+        
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+        
+                font-family: segoe_ui;
+                margin: 0 3px;
+                padding: 0;
+                font-size: 0.9rem;
+                color: $bh-txt2;
+                border-radius: 3px;
+
+                &.nav-btn {
+                    padding-left: 18px;
+                }
+
+                &.create-btn {
+                    padding: 5px 8px 8px;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    border-radius: 3px;
+                    transition: all 150ms ease-out 0s;
+                    &:hover {
+                        // background-color: $wh-bg1;
+                        background-color: rgba(0, 0, 0, 0.2);
+                    }
+                }
+
+                img {
+                    height: 24px;
+                    width: 24px;
+                    line-height: 24px;
+                }
+            }
+        
+            button:hover,
+            button:active {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+        
+            button.btn-member-img {
+                padding: 4px;
+                &:hover {
+                    color: rgb(0 0 0 / 20%);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            svg {
+                height: 20px;
+                width: 20px;
+                border-radius: 3px;
+                border: 0;
+                align-items: center;
+                background-color: transparent;
+                margin: 6px;
+                white-space: nowrap;
+                color: $bh-txt2;
+                path {
+                    fill: $bh-txt2;
+                }
+            }
+        
+            .logo-nav {
+                display: flex;
+                align-items: center;
+                margin-left: 4px;
+        
+                .header-logo {
+                    display: flex;
+                    align-items: center;
+        
+                    h1 {
+                        font-size: 1.2rem;
+                        font-family: charlie-semibold;
+                        letter-spacing: 0.03rem;
+                        color: $bh-txt2;
+                    }
+                }
+            }
+        
+        
+            .left-nav {
+                display: flex;
+                align-items: center;
+                margin-right: 6px;
+        
+                .search {
+                    height: 32px;
+                    width: 100%;
+                    width: 200px;
+                    padding: 0px 4px;
+                    border-radius: 3px;
+                    font-size: 0.9rem;
+                    line-height: 20px;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    color: $bh-txt2;
+                    justify-content: flex-start;
+                    border: 1px solid rgba(23, 43, 77, 0.16);
+                    box-shadow: none;
+                    cursor: text;
+                    svg {
+                        height: 16px;
+                        width: 16px;
+                    }
+                }
+
+                .search:active,
+                .search:focus {
+                    cursor: text;
+                    background-color: rgba(255, 255, 255, 0.16);
+                }
+            }
+    }
 }

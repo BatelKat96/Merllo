@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { useRef } from 'react'
+import { useClickOutside } from '../customHooks/is-clicked-outside'
 import { addBoard } from '../store/board.actions'
 import { boardService } from '../services/board.service'
 
@@ -12,6 +14,8 @@ export function BoardCreate({ closeBoardComposer }) {
 	const boards = useSelector((storeState) => storeState.boardModule.boards)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 	const navigate = useNavigate()
+	const modalRef = useRef()
+	useClickOutside(modalRef, closeBoardComposer)
 
 	const bgImgs = [
 		{
@@ -88,7 +92,7 @@ export function BoardCreate({ closeBoardComposer }) {
 	}
 
 	return (
-		<section className="create-board-composer">
+		<section className="create-board-composer" ref={modalRef}>
 			<div className="create-board-composer-header">
 				<h2>Create board</h2>
 				<button
