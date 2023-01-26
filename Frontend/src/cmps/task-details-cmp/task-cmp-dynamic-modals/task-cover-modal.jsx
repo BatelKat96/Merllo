@@ -5,6 +5,7 @@ import { saveTask } from '../../../store/board.actions'
 
 import Size1 from '../../../assets/img/cover-size1.png'
 import Size2 from '../../../assets/img/cover-size2.png'
+import { TaskChecklistBarProgress } from '../task-checklist/task-checklist-bar-progress'
 
 
 export function TaskCoverModal({ task, onSaveTask }) {
@@ -41,14 +42,14 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
     const [coverColor, setCoverColor] = useState('')
     const [coverImg, setcoverImg] = useState('')
-    const [selected, setSelected] = useState(false)
+    let style
+
+    // let isSelected = (onToggleCover(coverColor)) ? 'selected' : ''
 
     async function setTaskCover(coverColor, coverImg) {
 
         setCoverColor(coverColor)
         setcoverImg(coverImg)
-
-        let style
 
         if (coverColor) style = { backgroundColor: coverColor }
         else style = { background: `url("${coverImg}") center center / cover` }
@@ -76,13 +77,13 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
                 <div className='color-wrapper clean-list'>
                     {coverColors.map((coverColor) => (
-                        <li key={coverColor} className={coverColor}
-                        // onClick={() => onSelectedCover(coverColor)}
+                        <li key={coverColor}
+                            className={coverColor}
                         >
                             <button
+                                // className={`color-btn ${isSelected}`}
                                 className='color-btn'
                                 onClick={() => setTaskCover(coverColor, undefined)}
-                                // onMouseDown={() => onSelectedCover(key)}
                                 style={{ backgroundColor: `${coverColor} ` }}
                             >
                             </button>
@@ -107,6 +108,7 @@ export function TaskCoverModal({ task, onSaveTask }) {
                         // onClick={() => onSelectedCover(coverImg)}
                         >
                             <button
+                                // className={`img-btn ${isSelected}`}
                                 className='img-btn'
                                 onClick={() => setTaskCover(undefined, coverImg)}
                                 style={{ background: `url('${coverImg}') center center / cover` }}
