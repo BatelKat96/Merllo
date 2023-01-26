@@ -21,7 +21,7 @@
     .board-side-menu-header {
         width: 100%;
         display: flex;
-        border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+        border-bottom: 1px solid rgba(9, 30, 66, 0.129);
 
         .board-side-menu-header-title {
             color: #172b4d;
@@ -104,7 +104,6 @@
         flex-grow: 0.9;
 
         .side-menu-main{
-            padding-left: 18px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -123,7 +122,6 @@
                 font-size: 14px;
                 font-family: 'Segoe UI';
                 text-align: start;
-                padding-left: 16px;
                 display: flex;
                 align-items: center;
                 &:hover {
