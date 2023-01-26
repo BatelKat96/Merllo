@@ -55,26 +55,36 @@ export function TaskList({ group, handleOnDragEnd }) {
         <>
             <section className="task-list-wraper">
 
-                <DragDropContext onDragEnd={(result) => handleOnDragEnd(result, group)}>
-                    <Droppable droppableId="tasks">
-                        {(provided) => (
+                {/* <DragDropContext onDragEnd={(result) => handleOnDragEnd(result, group)}> */}
+                <Droppable droppableId={group.id}
+                    key="tasks"
+                    type="tasks"
+                >
+                    {(provided, snapshot) => (
 
                             <ul className="task-list clean-list tasks"
                                 {...provided.droppableProps}
-                                ref={provided.innerRef} >
+                            ref={provided.innerRef}
+                        // isDraggingOver={snapshot.isDraggingOver}
+                        >
 
                                 {tasks.map((task, index) =>
 
-                                    <Draggable key={task.id}
+                                    <Draggable
+                                        key={task.id}
+                                        group={group.id}
+                                        type={task}
                                         draggableId={task.id}
                                         index={index}>
 
-                                        {(provided) => (
+                                        {(provided, snapshot) => (
 
                                             <li key={task.id}
                                                 ref={provided.innerRef}
+                                                // isdragging={snapshot.isDragging}
                                                 {...provided.draggableProps}
-                                                {...provided.dragHandleProps}>
+                                                {...provided.dragHandleProps}
+                                            >
 
                                                 <TaskPreview
                                                     group={group}
@@ -89,7 +99,7 @@ export function TaskList({ group, handleOnDragEnd }) {
                             </ul>
                         )}
                     </Droppable>
-                </DragDropContext>
+                {/* </DragDropContext> */}
 
             </section>
 

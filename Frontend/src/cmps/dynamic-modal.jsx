@@ -10,7 +10,7 @@ import { TaskCoverModal } from './task-cmp-dynamic-modals/task-cover-modal'
 import Loader from '../../assets/img/loader.svg'
 import { IoClose } from 'react-icons/io5'
 
-export function TaskCmpDynamoic({
+export function dynamoicModal({
 	cmpType,
 	task,
 	onOpenModal,
@@ -107,7 +107,6 @@ export function TaskCmpDynamoic({
 					{cmpType === 'cover' && (
 						<TaskCoverModal
 							task={task}
-							onSaveTask={onSaveTask}
 						/>
 					)}
 

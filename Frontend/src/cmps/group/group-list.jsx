@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
@@ -15,6 +16,8 @@ import { HiDotsHorizontal } from 'react-icons/hi'
 
 export function GroupList() {
 	const board = useSelector((storeState) => storeState.boardModule.board)
+	const { boardId } = useParams()
+
 	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
 	const [isDropdownOpen, setIsDropdownOpen] = useState({ groupId: '' })
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
@@ -97,71 +100,57 @@ export function GroupList() {
 	}
 
 	//dragNdrop
-	async function handleOnDragEnd(result, group) {
-		const { source, destination } = result
-		const type = source.droppableId
-		let tasks = group.tasks
+	async function handleOnDragEnd(result) {
+		const { destination, source, draggableId, type } = result
+		// console.log('result', result);
+		// console.log('source', source);
+		// console.log('destination', destination);
+		// console.log('type', type);
 
-		// console.log('result', result)
-		// console.log('source', source)
-		// console.log('destination', destination)
-		// console.log('type', type)
+		if (!destination) return
 
-		if (!result.destination) return
+		if (
+			destination.droppableId === source.droppableId &&
+			destination.index === source.index
+		) return
+
+		if (type === 'groups') {
+			const newGroups = Array.from(groups)
+			const [reorderedGroups] = newGroups.splice(source.index, 1)
+			newGroups.splice(destination.index, 0, reorderedGroups)
+
+			board.groups = newGroups
+			updateBoard(board)
+			return
+		}
 
 		if (type === 'tasks') {
-			const items = Array.from(tasks)
-			const [reorderedItem] = items.splice(result.source.index, 1)
-			items.splice(result.destination.index, 0, reorderedItem)
-			group.tasks = items
-		}
+			const sourceGroup = groups.find(group => group.id === source.droppableId)
+			const destinationGroup = groups.find(group => group.id === destination.droppableId)
 
-		if (type === 'groupsDrag') {
-			const items = Array.from(groups)
-			const [reorderedItem] = items.splice(result.source.index, 1)
-			items.splice(result.destination.index, 0, reorderedItem)
-			board.groups = items
-		}
+			if (sourceGroup === destinationGroup) {
+				const newTasks = Array.from(sourceGroup.tasks)
+				const [task] = newTasks.splice(source.index, 1)
+				newTasks.splice(destination.index, 0, task)
 
-		updateBoard(board)
+				sourceGroup.tasks = newTasks
+				updateBoard(board)
+				return
+			}
+
+			else {
+				const newSourceGroup = Array.from(sourceGroup.tasks)
+				const newDestinationGroup = Array.from(destinationGroup.tasks)
+				const [task] = newSourceGroup.splice(source.index, 1)
+				newDestinationGroup.splice(destination.index, 0, task)
+
+				sourceGroup.tasks = newSourceGroup
+				destinationGroup.tasks = newDestinationGroup
+				updateBoard(board)
+				return
+			}
+		}
 	}
-
-	// function onDragEnd(result, groups, setGroups) {
-	// 	if (!result.destination) return;
-	// 	const { source, destination } = result;
-
-	// 	if (source.droppableId !== destination.droppableId) {
-	// 		const sourceGroup = groups[source.droppableId];
-	// 		const destGroup = groups[destination.droppableId];
-	// 		const sourceTasks = [...sourceGroup.tasks];
-	// 		const destTasks = [...destGroup.tasks];
-	// 		const [removed] = sourceTasks.splice(source.index, 1);
-	// 		destTasks.splice(destination.index, 0, removed);
-	// 		setGroups({
-	// 			...groups,
-	// 			[source.droppableId]: {
-	// 				...sourceGroup,
-	// 				tasks: sourceTasks
-	// 			},
-	// 			[destination.droppableId]: {
-	// 				...destGroup,
-	// 				tasks: destTasks
-	// 			}
-	// 		});
-	// 	} else {
-	// 		const group = groups[source.droppableId];
-	// 		const copiedTasks = [...group.tasks];
-	// 		const [removed] = copiedTasks.splice(source.index, 1);
-	// 		copiedTasks.splice(destination.index, 0, removed);
-	// 		setGroups({
-	// 			...groups,
-	// 			[source.droppableId]: {
-	// 				...group,
-	// 				tasks: copiedTasks
-	// 			}
-	// 		})
-	// 	}
-	// }
 
 
 	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
@@ -173,10 +162,14 @@ export function GroupList() {
 
 			<DragDropContext onDragEnd={handleOnDragEnd}>
 
-				<Droppable droppableId="groupsDrag" direction="horizontal">
+				<Droppable droppableId="groups"
+					direction="horizontal"
+					type="groups"
+					key="groups">
+
 					{(provided) => ( 
 
-						<ul className="group-list clean-list groupsDrag"
+						<ul className="group-list clean-list groups"
 							{...provided.droppableProps}
 							ref={provided.innerRef}>
 

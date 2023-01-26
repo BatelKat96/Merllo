@@ -1,16 +1,10 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-
-import { saveTask } from '../../../store/board.actions'
 
 import Size1 from '../../../assets/img/cover-size1.png'
 import Size2 from '../../../assets/img/cover-size2.png'
 
 
 export function TaskCoverModal({ task, onSaveTask }) {
-
-    const { boardId, groupId, taskId } = useParams()
-    const [updateTask, setUpdateTask] = useState(task)
 
     const coverColors = [
         '#7BC86C',
@@ -41,30 +35,43 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
     const [coverColor, setCoverColor] = useState('')
     const [coverImg, setcoverImg] = useState('')
-    let style
+    const [isSelected, setIsSelected] = useState(false)
 
-    // let isSelected = (onToggleCover(coverColor)) ? 'selected' : ''
+    let selectedCover = (isSelected) ? 'selected' : ''
 
-    async function setTaskCover(coverColor, coverImg) {
+    function setTaskCover(ev, coverColor, coverImg) {
+        let style
+
+        if (task?.style?.background === coverImg) {
+            task.style.background = null
+            onSaveTask(ev, task)
+        }
+
+        else if (task?.style?.backgroundColor === coverColor) {
+            task.style.backgroundColor = null
+            onSaveTask(ev, task)
+        }
+
+        else {
 
         setCoverColor(coverColor)
         setcoverImg(coverImg)
 
-        if (coverColor) style = { backgroundColor: coverColor }
-        else style = { background: `url("${coverImg}") center center / cover` }
+            if (coverColor) {
+                style = { backgroundColor: coverColor }
+                setIsSelected(isSelected)
+            }
 
-        task.style = style
+            else {
+                style = { background: `url("${coverImg}") center center / cover` }
+                setIsSelected(isSelected)
+            }
 
-        setUpdateTask(task)
-        await saveTask(updateTask, groupId, boardId)
+            task.style = style
+            onSaveTask(ev, task)
+        }
     }
 
-    async function onRemoveCover() {
-        task.style = null
-
-        // setUpdateTask(task)
-        await saveTask(updateTask, groupId, boardId)
-    }
 
     return (
         <section className='cmp-dynamoic-options-list cover-section'>
@@ -87,9 +94,8 @@ export function TaskCoverModal({ task, onSaveTask }) {
                             className={coverColor}
                         >
                             <button
-                                // className={`color-btn ${isSelected}`}
-                                className='color-btn'
-                                onClick={() => setTaskCover(coverColor, undefined)}
+                                className={`color-btn ${selectedCover}`}
+                                onClick={(ev) => setTaskCover(ev, coverColor, undefined)}
                                 style={{ backgroundColor: `${coverColor} ` }}
                             >
                             </button>
@@ -112,12 +118,11 @@ export function TaskCoverModal({ task, onSaveTask }) {
                 <div className='img-wrapper clean-list'>
                     {coverImgs.map((coverImg) => (
                         <li key={coverImg} className={coverImg}
-                        // onClick={() => onSelectedCover(coverImg)}
                         >
                             <button
-                                // className={`img-btn ${isSelected}`}
-                                className='img-btn'
-                                onClick={() => setTaskCover(undefined, coverImg)}
+                                className={`img-btn ${selectedCover}`}
+                                // className='img-btn'
+                                onClick={(ev) => setTaskCover(ev, undefined, coverImg)}
                                 style={{ background: `url('${coverImg}') center center / cover` }}
                             >
                             </button>
@@ -127,13 +132,6 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
                 <small>By using images from Unsplash, you agree to their license and Terms of Service</small>
             </div>
-
-            {task.style &&
-                <button
-                    className="remove-cover-btn"
-                    onClick={onRemoveCover}
-                >Remove Cover
-                </button>}
 
         </section>
     )
