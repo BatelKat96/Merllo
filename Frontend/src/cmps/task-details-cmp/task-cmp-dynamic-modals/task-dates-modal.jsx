@@ -5,6 +5,8 @@ import TextField from '@mui/material/TextField'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker'
+import DatePicker, { CalendarContainer } from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 export function TaskDatesModal({ task, data, onSaveTask, onClose }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
@@ -29,7 +31,13 @@ export function TaskDatesModal({ task, data, onSaveTask, onClose }) {
 	return (
 		<>
 			<section className="dates">
-				<LocalizationProvider
+				<DatePicker
+					selected={selectedDate}
+					onChange={(date) => setSelectedDate(date)}
+					calendarClassName="calendar"
+					inline
+				/>
+				{/* <LocalizationProvider
 					className="calendar"
 					style={{ margin: '-8px 0 0 0' }}
 					dateAdapter={AdapterDayjs}
@@ -49,7 +57,7 @@ export function TaskDatesModal({ task, data, onSaveTask, onClose }) {
 						onChange={setSelectedDate}
 						renderInput={(params) => <TextField {...params} />}
 					/>
-				</LocalizationProvider>
+				</LocalizationProvider> */}
 
 				<div className="dates-actions">
 					<button
