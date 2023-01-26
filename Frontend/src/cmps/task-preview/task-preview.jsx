@@ -17,6 +17,7 @@ export function TaskPreview({ group, task, board }) {
 	const currMembers = task.memberIds
 	const currCover = task.style
 
+
 	var fullMembers = currMembers
 		? utilService.findDataById(currMembers, board, 'members')
 		: ''
@@ -42,21 +43,20 @@ export function TaskPreview({ group, task, board }) {
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
-				{currCover && (
-					<div className="task-preview-cover" style={currCover}></div>
+
+				{task.style?.backgroundColor && (
+					<div
+						className="task-preview-cover"
+						style={currCover}>
+					</div>
 				)}
 
-				<div className="task-preview-label-container">
-					{fullLabels &&
-						fullLabels.map((label) => (
-							<li
-								key={label.id}
-								style={{ backgroundColor: `${label.color}` }}
-								className="task-preview-label"
-								onClick={onLabel}
-							></li>
-						))}
-				</div>
+				{task.style?.background && (
+					<div
+						className="task-preview-cover img"
+						style={currCover}>
+					</div>
+				)}
 
 				<a className="edit-btn" onClick={onQuickTaskEdit}>
 					<EditSvg />
@@ -73,6 +73,21 @@ export function TaskPreview({ group, task, board }) {
 						/>
 					)}
 				</a>
+
+				<section className='task-preview-details'>
+
+					<div className="task-preview-label-container">
+
+						{fullLabels &&
+							fullLabels.map((label) => (
+								<li
+									key={label.id}
+									style={{ backgroundColor: `${label.color}` }}
+									className="task-preview-label"
+									onClick={onLabel}
+								></li>
+							))}
+					</div>
 
 				<p className="task-title" onClick={onTask}>
 					{task.title}
@@ -119,6 +134,7 @@ export function TaskPreview({ group, task, board }) {
 				{/* </div> */}
 
 				{/* </div> */}
+				</section>
 			</section>
 		</>
 	)
