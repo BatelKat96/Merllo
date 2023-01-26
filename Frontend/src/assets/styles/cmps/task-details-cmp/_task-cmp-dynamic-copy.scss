@@ -1,16 +1,14 @@
 .task-cmp-dynamoic {
-    position: absolute;
-    margin-top: 34px;
+    position: fixed;
+    margin-top: 38px;
 
     .task-cmp-dynamoic-container {
         background: #ffffff;
         border-radius: 3px;
         box-shadow: 0 8px 16px -4px #091e4240, 0 0 0 1px, #091e4214;
         overflow: hidden;
-        position: absolute;
         width: 304px;
         z-index: 70;
-        top: 4px;
 
         .close-icon {
             position: absolute;
@@ -84,25 +82,3 @@
         }
     }
 }
-
-
-// .cmp-dynamoic-member-img {
-//     width: 32px;
-//     height: 32px;
-//     margin-inline-end: 8px;
-//     margin-block: 4px;
-// }
-
-
-// .cmp-dynamoic-option-labels {
-//     width: 212px;
-//     border-radius: 3px;
-
-//     .color-circle {
-//         margin-inline-end: 10px;
-//         border-radius: 50%;
-//         width: 16px;
-//         height: 16px;
-//         margin-block: 8px;
-//     }
-// }

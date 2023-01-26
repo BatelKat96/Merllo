@@ -40,9 +40,9 @@ export function TaskCmpDynamoic({
 		left: refDataBtn.current.offsetLeft + 'px',
 	}
 
-	console.log(refDataBtn);
-	console.log(screenSize.current[0]);
-	console.log(screenSize.current[1]);
+	// console.log(refDataBtn);
+	// console.log(screenSize.current[0]);
+	// console.log(screenSize.current[1]);
 
 	function onClose() {
 		onOpenModal()
