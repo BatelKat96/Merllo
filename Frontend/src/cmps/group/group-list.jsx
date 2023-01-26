@@ -174,7 +174,7 @@ export function GroupList() {
 			<DragDropContext onDragEnd={handleOnDragEnd}>
 
 				<Droppable droppableId="groupsDrag" direction="horizontal">
-					{(provided) => ( 
+					{(provided) => (
 
 						<ul className="group-list clean-list groupsDrag"
 							{...provided.droppableProps}
