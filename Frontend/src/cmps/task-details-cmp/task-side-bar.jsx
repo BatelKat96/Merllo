@@ -22,6 +22,7 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
     const datesBtn = useRef()
     const attachmentBtn = useRef()
     const coverBtn = useRef()
+    const moveCardBtn = useRef()
 
 
     function getRefData(type) {
@@ -43,6 +44,9 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
 
             case 'cover':
                 return coverBtn
+
+            case 'move card':
+                return moveCardBtn
         }
     }
 
