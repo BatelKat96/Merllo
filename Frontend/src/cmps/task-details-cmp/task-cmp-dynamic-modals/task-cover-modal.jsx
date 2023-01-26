@@ -5,7 +5,6 @@ import { saveTask } from '../../../store/board.actions'
 
 import Size1 from '../../../assets/img/cover-size1.png'
 import Size2 from '../../../assets/img/cover-size2.png'
-import { TaskChecklistBarProgress } from '../task-checklist/task-checklist-bar-progress'
 
 
 export function TaskCoverModal({ task, onSaveTask }) {
@@ -60,6 +59,13 @@ export function TaskCoverModal({ task, onSaveTask }) {
         await saveTask(updateTask, groupId, boardId)
     }
 
+    async function onRemoveCover() {
+        task.style = null
+
+        // setUpdateTask(task)
+        await saveTask(updateTask, groupId, boardId)
+    }
+
     return (
         <section className='cmp-dynamoic-options-list cover-section'>
 
@@ -90,6 +96,7 @@ export function TaskCoverModal({ task, onSaveTask }) {
                         </li>
                     ))}
                 </div>
+
             </div>
 
             {/* <div className='cover-section-block attachments'>
@@ -120,6 +127,13 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
                 <small>By using images from Unsplash, you agree to their license and Terms of Service</small>
             </div>
+
+            {task.style &&
+                <button
+                    className="remove-cover-btn"
+                    onClick={onRemoveCover}
+                >Remove Cover
+                </button>}
 
         </section>
     )

@@ -1,17 +1,14 @@
 import { useState, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
-import { TaskCoverModal } from './task-cmp-dynamic-modals/task-cover-modal'
-
-import { IoClose } from 'react-icons/io5'
-import { BiCheck } from 'react-icons/bi'
-import Loader from '../../assets/img/loader.svg'
-import { saveTask } from '../../store/board.actions'
-import { TaskList } from '../task-preview/task-list'
-import { TaskLabelModal } from './task-cmp-dynamic-modals/task-label-modal'
 import { TaskMemberModal } from './task-cmp-dynamic-modals/task-member-modal'
+import { TaskLabelModal } from './task-cmp-dynamic-modals/task-label-modal'
 import { TaskChecklistModal } from './task-cmp-dynamic-modals/task-checklist-modal'
 import { TaskDatesModal } from './task-cmp-dynamic-modals/task-dates-modal'
+import { TaskCoverModal } from './task-cmp-dynamic-modals/task-cover-modal'
+
+import Loader from '../../assets/img/loader.svg'
+import { IoClose } from 'react-icons/io5'
 
 export function TaskCmpDynamoic({
 	cmpType,
@@ -25,12 +22,7 @@ export function TaskCmpDynamoic({
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddLabelModalOpen, setIsAddLabelModalOpen] = useState(false)
 	const [selectedLabel, setSelectedLabel] = useState('')
-	// const members = board.members
-	// const labels = board.labels
 
-	// const [updateTask, setUpdateTask] = useState(task)
-	// const [toRender, setToRender] = useState(members)
-	// const [toRender, setToRender] = useState(labels)
 
 	const screenSize = useRef([window.innerWidth, window.innerHeight])
 	// console.log('Width', {screenSize.current[0]})
@@ -39,10 +31,6 @@ export function TaskCmpDynamoic({
 		top: refDataBtn.current.offsetTop + 'px',
 		left: refDataBtn.current.offsetLeft + 'px',
 	}
-
-	// console.log(refDataBtn);
-	// console.log(screenSize.current[0]);
-	// console.log(screenSize.current[1]);
 
 	function onClose() {
 		onOpenModal()
@@ -59,27 +47,6 @@ export function TaskCmpDynamoic({
 		if (!selectedLabel) data.title = 'Create Label'
 		else data.title = 'Edit Label'
 	}
-
-	// async function onToggleLabel(id) {
-	//     if (labelIds?.includes(id)) {
-	//         const index = labelIds.indexOf(id)
-	//         labelIds.splice(index, 1)
-	//     }
-	//     else {
-	//         if (labelIds) labelIds.push(id)
-	//         else labelIds = [id]
-	//     }
-	//     setUpdateTask((prevTask) => ({ ...prevTask }))
-	//     await saveTask(updateTask, groupId, boardId)
-	// }
-
-	// function handleChange({ target }) {
-	//     const regex = new RegExp(target.value, 'i')
-	//     const filteredMembers = members.filter((member) => regex.test(member.fullname))
-	//     console.log('filteredMembers:', filteredMembers)
-
-	//     setToRender(filteredMembers)
-	// }
 
 	if (!board)
 		return (
@@ -113,12 +80,6 @@ export function TaskCmpDynamoic({
 						/>
 					)}
 
-					{cmpType === 'cover' && (
-						<TaskCoverModal
-							task={task}
-						/>)
-					}
-
 					{cmpType === 'checklist' && (
 						<TaskChecklistModal
 							task={task}
@@ -135,6 +96,46 @@ export function TaskCmpDynamoic({
 							onClose={onClose}
 						/>
 					)}
+
+
+					{cmpType === 'attachment' && (
+						<TaskCoverModal
+							task={task}
+						/>
+					)}
+
+					{cmpType === 'cover' && (
+						<TaskCoverModal
+							task={task}
+						/>
+					)}
+
+					{cmpType === 'move card' && (
+						<TaskCoverModal
+							task={task}
+						/>
+					)}
+
+
+					{cmpType === 'create board' && (
+						<TaskCoverModal
+						/>
+					)}
+
+
+					{cmpType === 'list action' && (
+						<TaskCoverModal
+							task={task}
+						/>
+					)}
+
+
+					{cmpType === 'options' && (
+						<TaskCoverModal
+							task={task}
+						/>
+					)}
+
 				</div>
 			</div>
 		</div>
