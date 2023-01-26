@@ -5,6 +5,7 @@ import { BsCheck2Square } from "react-icons/bs";
 import { TaskChecklistList } from './task-checklist-list';
 import { GrClose } from "react-icons/gr";
 import { ItemDeleteModal } from '../dynamic-delete-modal';
+import { TaskChecklistBarProgress } from './task-checklist-bar-progress';
 
 
 
@@ -42,7 +43,11 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
         setIsEditTitleOpen(true)
     }
 
-    function onCloseTitleInput() {
+    function onCloseTitleInput(ev) {
+        if (!ev) return
+        if (ev.relatedTarget?.className === 'clean-btn btn-task-details btn-checklist-save') {
+            return
+        }
         setCurrChecklistId('')
         setIsEditTitleOpen(false)
     }
@@ -98,15 +103,15 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
 
 
     function onAddTodoInputOpen(id) {
-        console.log('id:', id)
-
         setIsAddTitleOpen(true)
-        console.log('currChecklistId bf:', currChecklistId)
         setCurrChecklistId(id)
-        console.log('currChecklistId af:', currChecklistId)
-
     }
-    function onAddTodoInputClose() {
+    function onAddTodoInputClose(ev) {
+        if (!ev) return
+        if (ev.relatedTarget?.className === 'clean-btn btn-task-details btn-checklist-save') {
+            return
+        }
+
         setIsAddTitleOpen(false)
         setCurrChecklistId('')
     }
@@ -146,6 +151,7 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                             <form>
                                 <textarea
                                     // onBlur={onCloseTitleInput}
+                                    onBlur={(ev) => onCloseTitleInput(ev)}
                                     autoFocus
                                     name='title'
                                     className='task-checklist-title-input medium-headline'
@@ -185,7 +191,9 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                         </button>
                     </div>}
                 </div>
-                <hr />
+
+                <TaskChecklistBarProgress todos={checklist.todos} />
+
                 <ul className='clean-list'>
                     {checklist.todos && checklist.todos.length > 0 &&
                         < TaskChecklistList
@@ -203,8 +211,9 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                         Add an item
                     </button>}
 
-                    {(isAddTitleOpen && (currChecklistId === checklist.id)) && <form>
+                    {(isAddTitleOpen && (currChecklistId === checklist.id)) && <form >
                         <textarea
+                            onBlur={(ev) => onAddTodoInputClose(ev)}
                             autoFocus
                             name='add-todo'
                             className='task-add-todo-input'
@@ -225,11 +234,8 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                             </button>
                         </div>
                     </form >
-
                     }
-
                 </div>
-
             </div>
         })
         }
