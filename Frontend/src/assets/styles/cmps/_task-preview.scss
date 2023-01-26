@@ -1,5 +1,5 @@
 .task-preview {
-    padding: 6px 8px;
+    padding-bottom: 8px;
     overflow: hidden;
     margin: 4px;
     
@@ -14,74 +14,84 @@
     white-space: normal;
     cursor: pointer;
 
+
     .task-preview-cover {
         height: 32px;
         border-radius: 3px 3px 0 0;
         display: block;
         position:static ;
         padding: 0;
-    }
 
-    li {
-        float: left;
-        margin: 0 4px;
-        padding: 0 4px;
-    }
-
-    p {
-        margin-block: 0;
-    }
-
-    .task-preview-actions {
-        // display: flex;
-        // align-items: center;
-        // justify-content: space-between;
-
-        .task-preview-description-icon {
-            margin-top: 6px;
-            width: 18px;
-        }
-
-        .task-preview-member-container {
-            float: right;
-
-            .task-preview-member {
-                margin-inline-start: 3px;
-            }
+        &.img {
+            height: 163px; 
         }
     }
 
-    .task-preview-label-container {
-        display: inline-block;
+    .task-preview-details {
+        padding: 4px 8px 2px;
+
+        li {
+            float: left;
+            margin: 0 4px;
+            padding: 0 4px;
+        }
+    
+        p {
+            margin-block: 0;
+        }
 
 
-        .task-preview-label {
-            margin: 4px 0;
-            padding-right: 0;
-            padding-left: 0;
-            width: 40px;
-            height: 8px;
-            border: none;
-            border-radius: 4px;
-            margin-inline-end: 3px;
-            transition: all 150ms ease-out 0s;
+        .task-preview-label-container {
+            padding: 4px 0 ;
+            padding-bottom: 0;
+            display: inline-block;
 
-            &:hover,
-            :focus {
-                filter: saturate(85%) brightness(92%);
+            .task-preview-label {
+                margin: 4px 0;
+                padding-right: 0;
+                padding-left: 0;
+                width: 40px;
+                height: 8px;
+                border: none;
+                border-radius: 4px;
+                margin-inline-end: 3px;
+                transition: all 150ms ease-out 0s;
+    
+                &:hover,
+                :focus {
+                    filter: saturate(85%) brightness(92%);
+                }
             }
         }
 
+        .task-title {
+            word-wrap: break-word;
+            clear: both;
+            color: $t-txt1;
+            display: block;
+            overflow: hidden;
+            padding: 0;
+        }
 
-    }
 
-    .task-title {
-        word-wrap: break-word;
-        clear: both;
-        color: $t-txt1;
-        display: block;
-        // margin: 0 0 4px;
-        overflow: hidden;
+        .task-preview-actions {
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-between;
+    
+            .task-preview-description-icon {
+                margin-top: 6px;
+                width: 18px;
+            }
+    
+            .task-preview-member-container {
+                float: right;
+    
+                .task-preview-member {
+                    margin-inline-start: 3px;
+                }
+            }
+        }
     }
 
     .edit-btn {
