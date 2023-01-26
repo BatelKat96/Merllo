@@ -23,11 +23,10 @@ export function TaskDetails() {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
     const { byMember, labelIds, style, checklists, memberIds } = task
-    // console.log('memberIds:', memberIds)
     const [modalType, setModalType] = useState()
     const coverBtn = useRef()
 
-
+    let coverClose = (task.style) ? 'close-hover' : ''
 
     const navigate = useNavigate()
 
@@ -87,29 +86,13 @@ export function TaskDetails() {
     /// not good
     function onSaveEdit(ev) {
         ev.preventDefault()
-        // try {
-        console.log('in:')
-        // const savedTask = await saveTask(task, groupId, boardId)
         saveTask(task, groupId, boardId)
-        // showSuccessMsg(`Task edited (id: ${savedTask._id})`)
-        // } catch (err) {
-        // console.log('Cannot update task ', err)
-        // showErrorMsg('Cannot update task ', err)
-        // }
     }
 
     function onSaveTask(ev, updateTask) {
         ev.preventDefault()
-        // try {
-        console.log('ina: ')
         setTask(updateTask)
-        // const savedTask = await saveTask(task, groupId, boardId)
         saveTask(updateTask, groupId, boardId)
-        // showSuccessMsg(`Task edited (id: ${savedTask._id})`)
-        // } catch (err) {
-        // console.log('Cannot update task ', err)
-        // showErrorMsg('Cannot update task ', err)
-        // }
     }
 
     function onCloseTaskDetails(ev) {
@@ -126,9 +109,6 @@ export function TaskDetails() {
     }
 
 
-    // if (!task) return <h1 className="loading"></h1>
-    {/* {(!task || !board) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div> */ }
-    // { (!task) && <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div> }
     return (
         <section className='task-details'>
             <div
@@ -141,7 +121,7 @@ export function TaskDetails() {
                     {(task && board) && <Fragment>
                         <span
                             onClick={(ev) => onCloseTaskDetails(ev)}
-                            className="clean-btn btn-task-exit">
+                            className={`clean-btn btn-task-exit ${coverClose}`}>
                             <IoClose className="icon-task exit-icon" />
                         </span>
 
@@ -180,7 +160,6 @@ export function TaskDetails() {
                             </section>
                         )}
 
-                        {/* <div className='stam'> */}
 
                         <div className='task-details-main-section'>
                             <TaskTitle handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} group={getGroup(groupId)} />
@@ -190,16 +169,12 @@ export function TaskDetails() {
                                     <div className='task-details-edit-item'>
                                         {(memberIds && (memberIds.length > 0)) && <TaskDynamicItem ids={memberIds} board={board} type={'members'} />}
                                         {(labelIds && (labelIds.length > 0)) && < TaskDynamicItem ids={labelIds} board={board} type={'labels'} />}
-                                        {/* {<TaskDynamicItem ids={labelIds} add={addLabel} board={board} type={'notifications'} />} */}
                                     </div>
 
                                     <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
                                     {(checklists && (checklists.length > 0)) && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
 
-                                    {/* <p>Checklist</p>
-                        <p>                        Activity-
-                            Lorem, ipsumandae ducimus pariatur consequuntur assumenda obcaecati excepturi odio debitis, nam at! Eveniet, necessitatibus nesciunt quibusdam exercitationem ipsam nobis hic aliquam?
-                        </p> */}
+
                                 </div>
                                 <TaskSideBar
                                     task={task}
@@ -208,7 +183,6 @@ export function TaskDetails() {
                                     onSaveTask={onSaveTask}
                                 />
                             </div>
-                            {/* <TaskCmpDynamoic cmpType={'members'} /> */}
                         </div>
                     </Fragment>}
                 </div>

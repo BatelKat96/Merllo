@@ -10,9 +10,9 @@
             "imgUrl": "http://batel-img"
         },
         "style": {
-            "background": "https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
-            "thumbnail": "https://images.unsplash.com/photo-1672913404066-2dd7a44d96ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
-            "backgroundColor": "#0c2640"
+            "background": "https://images.unsplash.com/photo-1672676515299-3a378e32463e?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1672676515299-3a378e32463e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDE5NDJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzQ1OTM5NzI&ixlib=rb-4.0.3&q=80&w=400",
+            "backgroundColor": "#595959"
         },
         "labels": [
             {
