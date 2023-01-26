@@ -13,13 +13,13 @@ export function TaskChecklistBarProgress({ todos }) {
 
     return <section className='todos-prog-bar-section'>
 
-        <span>{getUserProgress()}%</span>
+        <span className='todos-prog-bar-percentage'>{getUserProgress() || 0}%</span>
         <div className='todos-prog-bar-background'>
-            <div
+            {(getUserProgress() > 0) && <div
                 className={`prog-accomplished ${isComplite}`}
                 style={{
                     width: `${getUserProgress()}%`,
-                }}></div>
+                }}></div>}
         </div>
     </section>
 

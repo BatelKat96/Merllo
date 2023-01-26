@@ -81,6 +81,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "comments": [
                             {
                                 "id": "cm101",
@@ -110,6 +111,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#FFAF3F"
                         }
@@ -130,6 +132,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#5BA4CF"
                         }
@@ -150,6 +153,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#172B4D"
                         }
@@ -176,6 +180,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "memberIds": [],
                         "style": {
                             "backgroundColor": "#F5DD29"
                         }
@@ -216,7 +221,8 @@
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "memberIds": []
                     },
                     {
                         "id": "c107",
@@ -233,7 +239,8 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "checklists": []
+                        "checklists": [],
+                        "memberIds": []
                     },
                     {
                         "id": "c109",
@@ -249,7 +256,8 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "checklists": []
+                        "checklists": [],
+                        "memberIds": []
                     },
                     {
                         "id": "c110",
@@ -265,7 +273,8 @@
                             "fullname": "Dror K",
                             "imgUrl": "http://dror-img"
                         },
-                        "checklists": []
+                        "checklists": [],
+                        "memberIds": []
                     }
                 ]
             },
