@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { TaskCoverModal } from './task-cmp-dynamic-modals/task-cover-modal'
@@ -32,10 +32,17 @@ export function TaskCmpDynamoic({
 	// const [toRender, setToRender] = useState(members)
 	// const [toRender, setToRender] = useState(labels)
 
+	const screenSize = useRef([window.innerWidth, window.innerHeight])
+	// console.log('Width', {screenSize.current[0]})
+
 	const modalPos = {
 		top: refDataBtn.current.offsetTop + 'px',
 		left: refDataBtn.current.offsetLeft + 'px',
 	}
+
+	console.log(refDataBtn);
+	console.log(screenSize.current[0]);
+	console.log(screenSize.current[1]);
 
 	function onClose() {
 		onOpenModal()
@@ -89,6 +96,7 @@ export function TaskCmpDynamoic({
 				</a>
 				<p className="cmp-dynamoic-title">{data.title}</p>
 				<div className="dynamic-container">
+
 					{cmpType === 'members' && (
 						<TaskMemberModal task={task} data={data} onSaveTask={onSaveTask} />
 					)}
@@ -105,7 +113,11 @@ export function TaskCmpDynamoic({
 						/>
 					)}
 
-					{cmpType === 'cover' && <TaskCoverModal task={task} />}
+					{cmpType === 'cover' && (
+						<TaskCoverModal
+							task={task}
+						/>)
+					}
 
 					{cmpType === 'checklist' && (
 						<TaskChecklistModal

@@ -3,7 +3,7 @@
     overflow: hidden;
     margin: 4px;
     
-    min-height: 40px;
+    // min-height: 10px;
     max-width: 100%;
     position: relative;
     background-color: $t-bg3;
@@ -132,6 +132,10 @@
 
         &:hover {
             background-color: #83818136;
+
+            path {
+                fill: #172B4D;
+            }
         }
     }
 
