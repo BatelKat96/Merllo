@@ -10,8 +10,6 @@ const {
 	addBoard,
 	updateBoard,
 	removeBoard,
-	addBoardMsg,
-	removeBoardMsg,
 } = require('./board.controller')
 const router = express.Router()
 
@@ -31,7 +29,7 @@ router.delete('/:id', removeBoard)
 // router.put('/:id', requireAuth, updateBoard)
 // router.delete('/:id', requireAuth, removeBoard)
 
-router.post('/:id/msg', requireAuth, addBoardMsg)
-router.delete('/:id/msg/:msgId', requireAuth, removeBoardMsg)
+// router.post('/:id/msg', requireAuth, addBoardMsg)
+// router.delete('/:id/msg/:msgId', requireAuth, removeBoardMsg)
 
 module.exports = router

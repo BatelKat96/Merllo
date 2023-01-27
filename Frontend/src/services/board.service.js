@@ -1,6 +1,6 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
-// import { httpService } from './http.service.js'
+import { httpService } from './http.service.js'
 import { userService } from './user.service.js'
 
 import boardsData from '../data/demo-data.json'
@@ -26,7 +26,7 @@ export const boardService = {
 	getEmptyTask,
 	getEmptyLabel,
 	getEmptyTodo,
-	getEmptyChecklist
+	getEmptyChecklist,
 }
 window.cs = boardService
 
@@ -34,34 +34,37 @@ _createBoards()
 
 // * board service
 async function query(filterBy = { title: '' }) {
-	var boards = await storageService.query(STORAGE_KEY)
-	// here we will add filters
-	return boards
-	// return httpService.get(STORAGE_KEY, filterBy)
+	return httpService.get(STORAGE_KEY, filterBy)
+	// var boards = await storageService.query(STORAGE_KEY)
+	// // here we will add filters
+	// return boards
 }
 
 async function getById(boardId) {
-	return await storageService.get(STORAGE_KEY, boardId)
-	// return httpService.get(`board/${boardId}`)
+	return httpService.get(`board/${boardId}`)
+	// return await storageService.get(STORAGE_KEY, boardId)
 }
 
 async function remove(boardId) {
-	await storageService.remove(STORAGE_KEY, boardId)
-	// return httpService.delete(`board/${boardId}`)
+	return httpService.delete(`board/${boardId}`)
+	// await storageService.remove(STORAGE_KEY, boardId)
 }
 
 async function save(board) {
 	var savedBoard
 	if (board._id) {
-		savedBoard = await storageService.put(STORAGE_KEY, board)
-		// savedBoard = await httpService.put(`board/${board._id}`, board)
+		console.log('existing')
+		savedBoard = await httpService.put(`board/${board._id}`, board)
+		// savedBoard = await storageService.put(STORAGE_KEY, board)
 	} else {
+		console.log('new')
 		// Later, owner is set by the backend
 		board.createdBy = userService.getLoggedinUser()
-		savedBoard = await storageService.post(STORAGE_KEY, board)
-		// savedBoard = await httpService.post('board', board)
+		savedBoard = await httpService.post('board', board)
+		// savedBoard = await storageService.post(STORAGE_KEY, board)
 	}
 	// console.log('savedBoard post', savedBoard);
+	console.log('savedBoard', savedBoard)
 	return savedBoard
 }
 
@@ -233,26 +236,24 @@ function getEmptyTask() {
 	}
 }
 
-
 function getEmptyLabel() {
 	return {
 		id: '',
 		title: '',
-		color: ''
-
+		color: '',
 	}
 }
 function getEmptyTodo() {
 	return {
 		id: utilService.makeId(),
 		isDone: false,
-		title: ''
+		title: '',
 	}
 }
 function getEmptyChecklist() {
 	return {
 		id: utilService.makeId(),
 		title: '',
-		todos: []
+		todos: [],
 	}
 }

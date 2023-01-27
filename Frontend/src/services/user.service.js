@@ -1,5 +1,5 @@
-import { storageService } from './async-storage.service'
-// import { httpService } from './http.service'
+// import { storageService } from './async-storage.service'
+import { httpService } from './http.service'
 
 import usersData from '../data/users-data.json'
 import { utilService } from './util.service'
@@ -25,29 +25,29 @@ _createUsers()
 
 function getUsers() {
 	console.log('user service getUsers')
-	return storageService.query('user')
-	// return httpService.get(`user`)
+	return httpService.get(`user`)
+	// return storageService.query('user')
 }
 
 async function getById(userId) {
 	console.log('user service getById', userId)
-	const user = await storageService.get('user', userId)
-	// const user = await httpService.get(`user/${userId}`)
+	const user = await httpService.get(`user/${userId}`)
+	// const user = await storageService.get('user', userId)
 	return user
 }
 
 function remove(userId) {
 	console.log('user service remove', userId)
-	return storageService.remove('user', userId)
-	// return httpService.delete(`user/${userId}`)
+	return httpService.delete(`user/${userId}`)
+	// return storageService.remove('user', userId)
 }
 
 async function update({ _id, score }) {
 	console.log('user service update _id, score', _id, score)
-	const user = await storageService.get('user', _id)
-	await storageService.put('user', user)
+	// const user = await storageService.get('user', _id)
+	// await storageService.put('user', user)
 
-	// const user = await httpService.put(`user/${_id}`, {_id, score})
+	const user = await httpService.put(`user/${_id}`, { _id, score })
 	// Handle case in which admin updates other user's details
 	if (getLoggedinUser()._id === user._id) saveLocalUser(user)
 	return user
@@ -56,11 +56,11 @@ async function update({ _id, score }) {
 async function login(userCred) {
 	console.log('user service login', userCred)
 	try {
-		const users = await storageService.query('user')
-		console.log('users', users)
-		const user = users.find((user) => user.username === userCred.username)
-		console.log('user', user)
-		// const user = await httpService.post('auth/login', userCred)
+		// const users = await storageService.query('user')
+		// console.log('users', users)
+		// const user = users.find((user) => user.username === userCred.username)
+		// console.log('user', user)
+		const user = await httpService.post('auth/login', userCred)
 		if (user) {
 			// socketService.login(user._id)
 			return saveLocalUser(user)
@@ -79,17 +79,22 @@ async function signup(userCred) {
 	if (!userCred.imgUrl)
 		userCred.imgUrl =
 			'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-	const user = await storageService.post('user', userCred)
-	// const user = await httpService.post('auth/signup', userCred)
+
+	const user = await httpService.post('auth/signup', userCred)
+	// const user = await storageService.post('user', userCred)
 	// socketService.login(user._id)
 	return saveLocalUser(user)
 }
 
 async function logout() {
 	console.log('user service logout')
-	sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+	try {
+		await httpService.post('auth/logout')
+		sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+	} catch (err) {
+		console.log('service logout error', err)
+	}
 	// socketService.logout()
-	// return await httpService.post('auth/logout')
 }
 
 function saveLocalUser(user) {
