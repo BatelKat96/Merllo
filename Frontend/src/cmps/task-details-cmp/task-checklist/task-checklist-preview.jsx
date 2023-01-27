@@ -8,15 +8,18 @@ import { TaskChecklistList } from './task-checklist-list';
 import { GrClose } from "react-icons/gr";
 import { ItemDeleteModal } from '../dynamic-delete-modal';
 import { TaskChecklistBarProgress } from './task-checklist-bar-progress';
+import { saveTask } from '../../../store/board.actions';
+import { useParams } from 'react-router-dom';
 
 
-export function TaskChecklistPreview({ task, onSaveTask }) {
+export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
     const { checklists } = task
     const [isEditTitleOpen, setIsEditTitleOpen] = useState(false)
     const [isDeleteModalOpen, setDeleteModalOpen] = useState({ checklistId: '' })
     const [currChecklistId, setCurrChecklistId] = useState('')
     const [titleToEdit, setTitleToEdit] = useState('')
     const [isAddTitleOpen, setIsAddTitleOpen] = useState(false)
+    const { boardId, groupId } = useParams()
 
     function toggleDeleteChecklist(ev, id) {
         ev.stopPropagation()
@@ -125,17 +128,30 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
 
         if (!destination) return
 
-        if (
-            destination.droppableId === source.droppableId &&
-            destination.index === source.index
-        ) return
+        // if (
+        //     destination.droppableId === source.droppableId &&
+        //     destination.index === source.index
+        // ) return
 
-        // const newTodos = Array.from(todos)
-        // const [reorderedTodos] = newTodos.splice(source.index, 1)
-        // newTodos.splice(destination.index, 0, reorderedTodos)
+        const updateChecklist = checklists.find(cl => (cl.id === destination.droppableId))
 
-        // checklist.todos = newTodos
-        // return
+        const newTodos = Array.from(updateChecklist.todos)
+
+        const reorderedTodos = newTodos.splice(source.index, 1)
+
+        newTodos.splice(destination.index, 0, reorderedTodos[0])
+
+        updateChecklist.todos = newTodos
+
+        let updateChecklists = checklists
+        let index = updateChecklists.findIndex(cl => (cl.id === updateChecklist.id))
+        updateChecklists.splice(index, 1, updateChecklist)
+        setCurrChecklistId('')
+        const newTask = { ...task, checklists: updateChecklists }
+
+        setTask(newTask)
+        saveTask(newTask, groupId, boardId)
+
     }
 
     return <section className='task-checklists-preview-section'>
@@ -210,15 +226,15 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
                                 {...provided.droppableProps}
                                 ref={provided.innerRef}>
 
-                    {checklist.todos && checklist.todos.length > 0 &&
-                        < TaskChecklistList
-                            todos={checklist.todos}
-                            checklist={checklist}
-                            updateChecklists={updateChecklists}
-                        />
-                    }
+                                {checklist.todos && checklist.todos.length > 0 &&
+                                    < TaskChecklistList
+                                        todos={checklist.todos}
+                                        checklist={checklist}
+                                        updateChecklists={updateChecklists}
+                                    />
+                                }
                                 {provided.placeholder}
-                </ul>
+                            </ul>
                         )}
                     </Droppable>
                 </DragDropContext>

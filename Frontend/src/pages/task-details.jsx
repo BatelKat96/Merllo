@@ -175,7 +175,7 @@ export function TaskDetails() {
                                     </div>
 
                                     <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />
-                                    {(checklists && (checklists.length > 0)) && <TaskChecklistPreview task={task} onSaveTask={onSaveTask} />}
+                                    {(checklists && (checklists.length > 0)) && <TaskChecklistPreview task={task} onSaveTask={onSaveTask} setTask={setTask} />}
                                     {(attachments && (attachments.length > 0)) && <TaskAttachmentPreview handleChange={handleChange} task={task} onSaveTask={onSaveTask} />}
 
 
