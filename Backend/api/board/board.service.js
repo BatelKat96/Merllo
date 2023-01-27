@@ -74,34 +74,34 @@ async function update(board) {
 	}
 }
 
-async function addBoardMsg(boardId, msg) {
-	try {
-		msg.id = utilService.makeId()
-		const collection = await dbService.getCollection('board')
-		await collection.updateOne(
-			{ _id: ObjectId(boardId) },
-			{ $push: { msgs: msg } }
-		)
-		return msg
-	} catch (err) {
-		logger.error(`cannot add board msg ${boardId}`, err)
-		throw err
-	}
-}
+// async function addBoardMsg(boardId, msg) {
+// 	try {
+// 		msg.id = utilService.makeId()
+// 		const collection = await dbService.getCollection('board')
+// 		await collection.updateOne(
+// 			{ _id: ObjectId(boardId) },
+// 			{ $push: { msgs: msg } }
+// 		)
+// 		return msg
+// 	} catch (err) {
+// 		logger.error(`cannot add board msg ${boardId}`, err)
+// 		throw err
+// 	}
+// }
 
-async function removeBoardMsg(boardId, msgId) {
-	try {
-		const collection = await dbService.getCollection('board')
-		await collection.updateOne(
-			{ _id: ObjectId(boardId) },
-			{ $pull: { msgs: { id: msgId } } }
-		)
-		return msgId
-	} catch (err) {
-		logger.error(`cannot add board msg ${boardId}`, err)
-		throw err
-	}
-}
+// async function removeBoardMsg(boardId, msgId) {
+// 	try {
+// 		const collection = await dbService.getCollection('board')
+// 		await collection.updateOne(
+// 			{ _id: ObjectId(boardId) },
+// 			{ $pull: { msgs: { id: msgId } } }
+// 		)
+// 		return msgId
+// 	} catch (err) {
+// 		logger.error(`cannot add board msg ${boardId}`, err)
+// 		throw err
+// 	}
+// }
 
 module.exports = {
 	remove,
@@ -109,6 +109,4 @@ module.exports = {
 	getById,
 	add,
 	update,
-	addBoardMsg,
-	removeBoardMsg,
 }

@@ -6,8 +6,6 @@ module.exports = {
 	query,
 	getById,
 	getByUsername,
-	remove,
-	update,
 	add,
 }
 
@@ -52,33 +50,6 @@ async function getByUsername(username) {
 	}
 }
 
-async function remove(userId) {
-	try {
-		const collection = await dbService.getCollection('user')
-		await collection.deleteOne({ _id: ObjectId(userId) })
-	} catch (err) {
-		logger.error(`cannot remove user ${userId}`, err)
-		throw err
-	}
-}
-
-async function update(user) {
-	try {
-		// peek only updatable properties
-		const userToSave = {
-			_id: ObjectId(user._id), // needed for the returnd obj
-			fullname: user.fullname,
-			imgUrl: user.imgUrl,
-		}
-		const collection = await dbService.getCollection('user')
-		await collection.updateOne({ _id: userToSave._id }, { $set: userToSave })
-		return userToSave
-	} catch (err) {
-		logger.error(`cannot update user ${user._id}`, err)
-		throw err
-	}
-}
-
 async function add(user) {
 	try {
 		// peek only updatable fields!
@@ -96,6 +67,33 @@ async function add(user) {
 		throw err
 	}
 }
+
+// async function remove(userId) {
+// 	try {
+// 		const collection = await dbService.getCollection('user')
+// 		await collection.deleteOne({ _id: ObjectId(userId) })
+// 	} catch (err) {
+// 		logger.error(`cannot remove user ${userId}`, err)
+// 		throw err
+// 	}
+// }
+
+// async function update(user) {
+// 	try {
+// 		// peek only updatable properties
+// 		const userToSave = {
+// 			_id: ObjectId(user._id), // needed for the returnd obj
+// 			fullname: user.fullname,
+// 			imgUrl: user.imgUrl,
+// 		}
+// 		const collection = await dbService.getCollection('user')
+// 		await collection.updateOne({ _id: userToSave._id }, { $set: userToSave })
+// 		return userToSave
+// 	} catch (err) {
+// 		logger.error(`cannot update user ${user._id}`, err)
+// 		throw err
+// 	}
+// }
 
 function _buildCriteria(filterBy) {
 	const criteria = {}

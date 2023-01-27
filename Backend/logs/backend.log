@@ -62,3 +62,70 @@
 25.1.2023, 19:34:34 - DEBUG - auth.route - new account created: {"username":"betash","password":"$2b$10$lSbQwdp77vKwA.kPTqGeW..vY1NOZx73n5HCbRCBkN3//Dc2kvmre","fullname":"Beta","imgUrl":"https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/170.png","_id":"63d1682a4e88210b5fd8297f"} 
 25.1.2023, 19:34:34 - INFO - User signup: | {"_id":"63d1682a4e88210b5fd8297f","username":"betash","fullname":"Beta","imgUrl":"https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/170.png"} 
 25.1.2023, 19:35:52 - INFO - Server is running on port: 3030 
+27.1.2023, 8:31:51 - INFO - Server is running on port: 3030 
+27.1.2023, 8:37:17 - INFO - Server is running on port: 3030 
+27.1.2023, 8:38:18 - DEBUG - Getting Boards 
+27.1.2023, 8:39:12 - DEBUG - Getting Boards 
+27.1.2023, 8:41:36 - INFO - Server is running on port: 3030 
+27.1.2023, 8:43:14 - INFO - Server is running on port: 3030 
+27.1.2023, 8:43:23 - INFO - Server is running on port: 3030 
+27.1.2023, 9:04:34 - DEBUG - Getting Boards 
+27.1.2023, 9:07:53 - DEBUG - Getting Boards 
+27.1.2023, 9:08:02 - DEBUG - Getting Boards 
+27.1.2023, 9:08:21 - DEBUG - Getting Boards 
+27.1.2023, 9:08:26 - DEBUG - Getting Boards 
+27.1.2023, 9:08:33 - DEBUG - Getting Boards 
+27.1.2023, 9:10:02 - INFO - Server is running on port: 3030 
+27.1.2023, 9:14:33 - INFO - Server is running on port: 3030 
+27.1.2023, 9:15:32 - DEBUG - Getting Boards 
+27.1.2023, 9:18:21 - DEBUG - Getting Boards 
+27.1.2023, 9:19:38 - DEBUG - Getting Boards 
+27.1.2023, 9:19:50 - DEBUG - Getting Boards 
+27.1.2023, 9:20:07 - DEBUG - Getting Boards 
+27.1.2023, 9:20:16 - DEBUG - Getting Boards 
+27.1.2023, 9:20:24 - DEBUG - Getting Boards 
+27.1.2023, 9:23:59 - DEBUG - Getting Boards 
+27.1.2023, 9:24:28 - DEBUG - Getting Boards 
+27.1.2023, 9:24:43 - DEBUG - auth.service - login with username: drorka 
+27.1.2023, 9:24:43 - INFO - User login:  | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
+27.1.2023, 9:24:43 - DEBUG - Getting Boards (userId: 63d167834e88210b5fd8297d)
+27.1.2023, 9:25:48 - DEBUG - Getting Boards (userId: 63d167834e88210b5fd8297d)
+27.1.2023, 9:28:37 - DEBUG - auth.service - login with username: betash 
+27.1.2023, 9:28:37 - INFO - User login:  | {"_id":"63d1682a4e88210b5fd8297f","username":"betash","fullname":"Beta","imgUrl":"https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/170.png"} 
+27.1.2023, 9:28:37 - DEBUG - Getting Boards (userId: 63d1682a4e88210b5fd8297f)
+27.1.2023, 9:29:46 - INFO - Server is running on port: 3030 
+27.1.2023, 9:29:53 - DEBUG - auth.service - login with username: drorka 
+27.1.2023, 9:29:54 - INFO - User login:  | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
+27.1.2023, 9:29:54 - DEBUG - Getting Boards (userId: 63d167834e88210b5fd8297d)
+27.1.2023, 9:32:38 - DEBUG - auth.service - login with username: betash 
+27.1.2023, 9:32:38 - INFO - User login:  | {"_id":"63d1682a4e88210b5fd8297f","username":"betash","fullname":"Beta","imgUrl":"https://trello-members.s3.amazonaws.com/63bab30b6ce00501cc0c3600/ec3da514a24f9d24a3a7f418838ebc0d/170.png"} 
+27.1.2023, 9:32:38 - DEBUG - Getting Boards (userId: 63d1682a4e88210b5fd8297f)
+27.1.2023, 9:34:12 - DEBUG - auth.service - login with username: drorka 
+27.1.2023, 9:34:12 - INFO - User login:  | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
+27.1.2023, 9:34:13 - DEBUG - Getting Boards (userId: 63d167834e88210b5fd8297d)
+27.1.2023, 9:37:58 - INFO - Server is running on port: 3030 
+27.1.2023, 9:38:08 - DEBUG - auth.service - login with username: drorka 
+27.1.2023, 9:38:09 - INFO - User login:  | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
+27.1.2023, 9:38:10 - DEBUG - Getting Boards (userId: 63d167834e88210b5fd8297d)
+27.1.2023, 9:39:19 - INFO - Server is running on port: 3030 
+27.1.2023, 9:40:11 - DEBUG - auth.service - login with username: drorka 
+27.1.2023, 9:40:11 - INFO - User login:  | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
+27.1.2023, 9:40:12 - DEBUG - Getting Boards (userId: 63d167834e88210b5fd8297d)
+27.1.2023, 9:41:56 - INFO - Server is running on port: 3030 
+27.1.2023, 9:42:23 - DEBUG - auth.service - login with username: batelkat 
+27.1.2023, 9:42:23 - INFO - User login:  | {"_id":"63d168134e88210b5fd8297e","username":"batelkat","fullname":"Batel K","imgUrl":"https://trello-members.s3.amazonaws.com/63c43e4080db3d01989c046e/e4e3a604db36af75f239332f98d75263/170.png"} 
+27.1.2023, 9:42:24 - DEBUG - Getting Boards (userId: 63d168134e88210b5fd8297e)
+27.1.2023, 9:43:08 - INFO - Server is running on port: 3030 
+27.1.2023, 9:52:04 - DEBUG - auth.service - login with username: drorka (userId: 63d168134e88210b5fd8297e)
+27.1.2023, 9:52:05 - INFO - User login:  | {"_id":"63d167834e88210b5fd8297d","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} (userId: 63d168134e88210b5fd8297e)
+27.1.2023, 9:52:05 - DEBUG - Getting Boards (userId: 63d167834e88210b5fd8297d)
+27.1.2023, 9:52:42 - DEBUG - auth.service - signup with username: shuki, fullname: shuki 
+27.1.2023, 9:52:42 - DEBUG - auth.service - login with username: shuki 
+27.1.2023, 9:52:42 - DEBUG - auth.route - new account created: {"username":"shuki","password":"$2b$10$aF.0TrBpWglmLd5YIDkYgejIiwSrEpDQ9pOua/YBvHyGg3VAb17qe","fullname":"shuki","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","_id":"63d382ca1728619f6fd5c7b0"} 
+27.1.2023, 9:52:42 - INFO - User signup: | {"_id":"63d382ca1728619f6fd5c7b0","username":"shuki","fullname":"shuki","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} 
+27.1.2023, 9:52:43 - DEBUG - Getting Boards (userId: 63d382ca1728619f6fd5c7b0)
+27.1.2023, 10:40:21 - INFO - Server is running on port: 3030 
+27.1.2023, 10:40:39 - DEBUG - Getting Boards 
+27.1.2023, 10:52:53 - DEBUG - Getting Boards 
+27.1.2023, 10:53:37 - DEBUG - Getting Boards 
+27.1.2023, 10:53:44 - DEBUG - Getting Boards 
