@@ -82,6 +82,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "comments": [
                             {
                                 "id": "cm101",
@@ -113,6 +114,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "style": {
                             "backgroundColor": "#FFAF3F"
                         },
@@ -135,6 +137,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "style": {
                             "backgroundColor": "#5BA4CF"
                         },
@@ -157,6 +160,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "style": {
                             "backgroundColor": "#172B4D"
                         },
@@ -185,6 +189,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "style": {
                             "backgroundColor": "#F5DD29"
                         },
@@ -228,6 +233,7 @@
                             }
                         ],
                         "memberIds": [],
+                        "attachments": [],
                         "isDone": false
                     },
                     {
@@ -247,6 +253,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "isDone": false
                     },
                     {
@@ -265,6 +272,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "isDone": false
                     },
                     {
@@ -283,6 +291,7 @@
                         },
                         "checklists": [],
                         "memberIds": [],
+                        "attachments": [],
                         "isDone": false
                     }
                 ]
@@ -307,6 +316,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "attachments": [],
                         "memberIds": [
                             "u101",
                             "u102"
@@ -329,6 +339,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "attachments": [],
                         "style": {
                             "backgroundColor": "#29CCE5"
                         },
@@ -385,9 +396,7 @@
                             "u102",
                             "u103"
                         ],
-                        "attachments": [
-                            "http://img-attached1"
-                        ],
+                        "attachments": [],
                         "isDone": false
                     }
                 ]
@@ -412,6 +421,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "attachments": [],
                         "memberIds": [
                             "u102",
                             "u103"
@@ -441,9 +451,7 @@
                             "u102",
                             "u103"
                         ],
-                        "attachments": [
-                            "http://img-attached2"
-                        ],
+                        "attachments": [],
                         "checklists": [
                             {
                                 "id": "cl102",
@@ -491,6 +499,7 @@
                             "imgUrl": "http://dror-img"
                         },
                         "checklists": [],
+                        "attachments": [],
                         "memberIds": [
                             "u101",
                             "u102"
@@ -503,10 +512,7 @@
                 "id": "g106",
                 "title": "Ready for production",
                 "tasks": [],
-                "checklists": [],
-                "labelIds": [],
-                "dueDate": "",
-                "isDone": false
+                "labelIds": []
             }
         ]
     },

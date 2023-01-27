@@ -9,6 +9,8 @@ export const utilService = {
 	randomPastTime,
 	saveToStorage,
 	loadFromStorage,
+	randomFutureTime,
+	timeSince
 }
 
 function findDataById(ids, board, type) {
@@ -127,6 +129,15 @@ function randomPastTime() {
 	return Date.now() - pastTime
 }
 
+function randomFutureTime() {
+	const HOUR = 1000 * 60 * 60
+	const DAY = 1000 * 60 * 60 * 24
+	const WEEK = 1000 * 60 * 60 * 24 * 7
+
+	const pastTime = getRandomIntInclusive(HOUR, WEEK)
+	return Date.now() + pastTime
+}
+
 function debounce(func, timeout = 300) {
 	let timer
 	return (...args) => {
@@ -145,3 +156,37 @@ function loadFromStorage(key) {
 	const data = localStorage.getItem(key)
 	return data ? JSON.parse(data) : undefined
 }
+
+function timeSince(date) {
+	var seconds = Math.floor((new Date() - date) / 1000)
+
+	var interval = seconds / 31536000
+
+	if (interval > 1) {
+		if (Math.floor(interval) === 1) return 'a year ago'
+		return Math.floor(interval) + ' years ago'
+	}
+	interval = seconds / 2592000
+	if (interval > 1) {
+		if (Math.floor(interval) === 1) return 'a month ago'
+		return Math.floor(interval) + ' months ago'
+	}
+	interval = seconds / 86400
+	if (interval > 1) {
+		if (Math.floor(interval) === 1) return 'a day ago'
+		return Math.floor(interval) + ' days ago'
+	}
+	interval = seconds / 3600
+	if (interval > 1) {
+		if (Math.floor(interval) === 1) return 'an hour ago'
+		return Math.floor(interval) + ' hours ago'
+	}
+	interval = seconds / 60
+	if (interval > 1) {
+		if (Math.floor(interval) === 1) return 'Just now'
+		return Math.floor(interval) + ' minutes ago'
+	}
+	if (Math.floor(seconds) === 0) return 'Just now'
+	return Math.floor(seconds) + ' seconds ago'
+}
+

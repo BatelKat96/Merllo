@@ -177,6 +177,15 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
             </div>
         }
 
+        {/* {modalType && <TaskCmpDynamoic
+            cmpType={modalType}
+            refDataBtn={getRefData(modalType)}
+            task={task}
+            groupId={groupId}
+            boardId={boardId}
+            onOpenModal={onOpenModal}
+            onSaveTask={onSaveTask} />} */}
+
         {modalType && <DynamoicModal
             cmpType={modalType}
             refDataBtn={getRefData(modalType)}

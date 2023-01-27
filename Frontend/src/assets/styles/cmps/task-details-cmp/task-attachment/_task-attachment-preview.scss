@@ -1,0 +1,28 @@
+.task-attachments-section {
+
+    .task-attachments-header {
+        display: flex;
+        align-items: center;
+        margin-block-end: 20px;
+    }
+
+    .task-attachments-icon-container {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        padding-inline-start: 3px;
+        margin-inline-end: 8px;
+
+
+        .task-attachments-icon {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+        }
+    }
+
+    // .task-attachments-header-title {
+    //     margin-block-end: -5px
+    // }
+}

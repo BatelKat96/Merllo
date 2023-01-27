@@ -9,6 +9,7 @@ import { TaskCoverModal } from './task-details-cmp/task-cmp-dynamic-modals/task-
 
 import Loader from '../assets/img/loader.svg'
 import { IoClose } from 'react-icons/io5'
+import { logDOM } from '@testing-library/react'
 
 export function DynamoicModal({
 	cmpType,
@@ -17,43 +18,43 @@ export function DynamoicModal({
 	boardId,
 	groupId,
 	refDataBtn,
-	onSaveTask,
-	ref
+	onSaveTask
 }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddLabelModalOpen, setIsAddLabelModalOpen] = useState(false)
 	const [selectedLabel, setSelectedLabel] = useState('')
 
-	const [width, setWidth] = useState(window.innerWidth)
-	const [height, setHeight] = useState(window.innerHeight)
-
 	const modalRef = useRef(null)
+	const [modalStyle, setModalStyle] = useState(false)
+	const [modalHeight, setModalHeight] = useState()
 
 	useEffect(() => {
-		window.addEventListener("resize", updateDimensions)
-		return () => window.removeEventListener("resize", updateDimensions)
-	}, [])
+		setModalStyle(true)
 
-	function updateDimensions() {
-		setWidth(window.innerWidth)
-		setHeight(window.innerHeight)
-	}
+		setModalHeight(modalRef.current.getBoundingClientRect().height)
 
-	// const modalPos = {
-	// 	top: refDataBtn.current.offsetTop + 'px',
-	// 	left: refDataBtn.current.offsetLeft + 'px',
-	// }
+	}, [modalStyle])
 
-	function getModalPos(ref) {
-		const rect = ref.current.getBoundingClientRect()
-		console.log(rect);
-		const modalPos = { top: rect.top + 38, left: rect.left }
 
-		console.log('window.innerWidth', window.innerWidth);
-		console.log('window.innerHeight', window.innerHeight);
-		if (window.innerWidth - rect.right < 320) modalPos.left -= 96
+	function getModalPos(refDataBtn) {
+		const rect = refDataBtn.current.getBoundingClientRect()
 
-		if (window.innerHeight - rect.bottom < 10) modalPos.top -= -400
+		let topModal = rect.top + rect.height + 5
+		let bottomModal = ''
+		let leftModal = rect.left
+		let rightModal = rect.right
+
+		if (window.innerHeight < (rect.top + modalHeight)) {
+			topModal = ''
+			bottomModal = 10
+		}
+
+		if (window.innerWidth < (rect.left + 304)) {
+			leftModal = ''
+			rightModal = 20
+		}
+
+		let modalPos = { bottom: bottomModal, top: topModal, left: leftModal, right: rightModal }
 
 		return modalPos
 	}
@@ -83,7 +84,10 @@ export function DynamoicModal({
 		)
 
 	return (
-		<section className="dynamoic-modal" style={getModalPos(refDataBtn)} onBlur={onClose}>
+		<section className="dynamoic-modal"
+			style={getModalPos(refDataBtn)}
+			onBlur={onClose}
+			ref={modalRef}>
 
 			<div className="dynamoic-modal-wrapper">
 
