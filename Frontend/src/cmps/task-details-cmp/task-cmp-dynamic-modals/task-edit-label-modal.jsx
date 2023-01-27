@@ -68,6 +68,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
                 defaultValue={(label.title)}
                 autoFocus
                 autoComplete="off"
+                required
             />
 
             <div className='colors'>
