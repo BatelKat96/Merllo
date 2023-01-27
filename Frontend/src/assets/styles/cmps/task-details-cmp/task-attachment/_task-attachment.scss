@@ -1,0 +1,49 @@
+.task-attachment-container {
+    display: flex;
+    align-items: center;
+    margin-inline-start: 40px;
+
+    .task-attachment-preview-img-container {
+        aspect-ratio: 16 / 9;
+        width: 200px;
+        margin-inline-end: 20px;
+
+        .task-attachment-preview-img {
+            object-fit: cover;
+
+        }
+    }
+
+    .attachment-details {
+
+        .attachment-name {
+            font-family: segoe_ui_bold;
+            margin: 0;
+            margin-block-end: -5px
+        }
+
+        .attachment-remove {
+            margin: 0;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .make-attachment-cover {
+            display: flex;
+            align-items: center;
+
+            .make-attachment-cover-icon-container {
+                padding-top: 6px;
+                margin-inline-end: 5px;
+            }
+
+            .make-attachment-cover-p {
+                text-decoration: underline;
+            }
+        }
+
+
+    }
+
+
+}

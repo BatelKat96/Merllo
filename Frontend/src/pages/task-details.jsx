@@ -17,13 +17,14 @@ import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item'
 import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview'
 import Loader from '../assets/img/loader.svg'
 import { TaskDueDate } from '../cmps/task-details-cmp/task-due-date'
+import { TaskAttachmentPreview } from '../cmps/task-details-cmp/task-attachmente-preview'
 
 
 export function TaskDetails() {
     const { boardId, groupId, taskId } = useParams()
     const board = useSelector((storeState) => storeState.boardModule.board)
     const [task, setTask] = useState('')
-    const { byMember, labelIds, style, checklists, memberIds, dueDate, isDone } = task
+    const { byMember, labelIds, style, checklists, memberIds, dueDate, isDone, attachments } = task
     const [modalType, setModalType] = useState()
     const coverBtn = useRef()
 
@@ -174,7 +175,8 @@ export function TaskDetails() {
                                     </div>
 
                                     <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />
-                                    {(checklists && (checklists.length > 0)) && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
+                                    {(checklists && (checklists.length > 0)) && <TaskChecklistPreview task={task} onSaveTask={onSaveTask} />}
+                                    {(attachments && (attachments.length > 0)) && <TaskAttachmentPreview handleChange={handleChange} task={task} onSaveTask={onSaveTask} />}
 
 
                                 </div>
