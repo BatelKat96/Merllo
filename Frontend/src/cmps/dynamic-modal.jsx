@@ -27,14 +27,12 @@ export function DynamoicModal({
 	const [width, setWidth] = useState(window.innerWidth)
 	const [height, setHeight] = useState(window.innerHeight)
 
-	const modalRef = useRef(null)
+	// useEffect(() => {
+	// 	window.addEventListener("resize", updateScreenDimensions)
+	// 	return () => window.removeEventListener("resize", updateScreenDimensions)
+	// }, [])
 
-	useEffect(() => {
-		window.addEventListener("resize", updateDimensions)
-		return () => window.removeEventListener("resize", updateDimensions)
-	}, [])
-
-	function updateDimensions() {
+	function updateScreenDimensions() {
 		setWidth(window.innerWidth)
 		setHeight(window.innerHeight)
 	}
@@ -44,9 +42,15 @@ export function DynamoicModal({
 	// 	left: refDataBtn.current.offsetLeft + 'px',
 	// }
 
+
+	const modalRef = useRef()
+	const modalSize = modalRef.current.getBoundingClientRect()
+	console.log(modalSize);
+
 	function getModalPos(ref) {
 		const rect = ref.current.getBoundingClientRect()
 		console.log(rect);
+
 		const modalPos = { top: rect.top + 38, left: rect.left }
 
 		console.log('window.innerWidth', window.innerWidth);
@@ -83,7 +87,7 @@ export function DynamoicModal({
 		)
 
 	return (
-		<section className="dynamoic-modal" style={getModalPos(refDataBtn)} onBlur={onClose}>
+		<section className="dynamoic-modal" style={getModalPos(refDataBtn)} onBlur={onClose} ref={this.modalRef}>
 
 			<div className="dynamoic-modal-wrapper">
 
