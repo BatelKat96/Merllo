@@ -8,8 +8,6 @@ import { ItemDeleteModal } from '../dynamic-delete-modal';
 import { TaskChecklistBarProgress } from './task-checklist-bar-progress';
 
 
-
-
 export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
     const { checklists } = task
     const [isEditTitleOpen, setIsEditTitleOpen] = useState(false)
@@ -217,7 +215,7 @@ export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
                                 type="submit" onClick={(ev) => addTodo(ev, titleToEdit, checklist)}>
                                 Add
                             </button>
-                            <button className='clean-btn btn-description-cancel btn-task-details btn-description-cancel'
+                            <button className='clean-btn btn-add-todo-cancel '
                                 onClick={onAddTodoInputClose}>
                                 Cancel
                             </button>

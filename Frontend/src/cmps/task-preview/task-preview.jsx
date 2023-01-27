@@ -5,7 +5,7 @@ import { QuickTaskEdit } from './quick-task-edit'
 
 import { utilService } from '../../services/util.service'
 import { ReactComponent as EditSvg } from '../../assets/img/icons-task-preview/edit.svg'
-import description from '../../assets/img/icons-task-details/description.svg'
+import descriptionIcon from '../../assets/img/icons-task-details/description-icon.svg'
 
 export function TaskPreview({ group, task, board }) {
 	const { boardId } = useParams()
@@ -89,37 +89,37 @@ export function TaskPreview({ group, task, board }) {
 							))}
 					</div>
 
-				<p className="task-title" onClick={onTask}>
-					{task.title}
-				</p>
+					<p className="task-title" onClick={onTask}>
+						{task.title}
+					</p>
 
-				<div className="task-preview-actions ">
-					{task.description && (
-						<img className="task-preview-description-icon" src={description} />
-					)}
-					<ul className="task-preview-member-container clean-list">
-						{fullMembers &&
-							fullMembers.map((member) => (
-								<li
-									key={member._id}
-									className="task-preview-member"
-									onClick={onLabel}
-								>
-									<img
-										className="member-img"
-										height="30px"
-										width="30px"
-										src={member.imgUrl}
-										alt={member.fullname}
-										title={member.fullname}
-									/>
-								</li>
-							))}
-					</ul>
-				</div>
+					<div className="task-preview-actions ">
+						{task.description && (
+							<img className="task-preview-description-icon" src={descriptionIcon} />
+						)}
+						<ul className="task-preview-member-container clean-list">
+							{fullMembers &&
+								fullMembers.map((member) => (
+									<li
+										key={member._id}
+										className="task-preview-member"
+										onClick={onLabel}
+									>
+										<img
+											className="member-img"
+											height="30px"
+											width="30px"
+											src={member.imgUrl}
+											alt={member.fullname}
+											title={member.fullname}
+										/>
+									</li>
+								))}
+						</ul>
+					</div>
 
-				{/* <div className="task-preview-container"> */}
-				{/* <div className="date-container">
+					{/* <div className="task-preview-container"> */}
+					{/* <div className="date-container">
 						<button className="due-date-btn">
 							<AiOutlineClockCircle />
 						</button>
@@ -131,9 +131,9 @@ export function TaskPreview({ group, task, board }) {
 							<descriptionSvg />
 						</button> */}
 
-				{/* </div> */}
+					{/* </div> */}
 
-				{/* </div> */}
+					{/* </div> */}
 				</section>
 			</section>
 		</>

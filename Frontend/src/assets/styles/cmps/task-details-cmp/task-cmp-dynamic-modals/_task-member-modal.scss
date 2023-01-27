@@ -1,6 +1,30 @@
-.cmp-dynamoic-member-img {
-    width: 32px;
-    height: 32px;
-    margin-inline-end: 8px;
-    margin-block: 4px;
+.cmp-dynamoic-option-member {
+
+    .cmp-dynamoic-member-img {
+        width: 32px;
+        height: 32px;
+        margin-inline-end: 8px;
+        margin-block: 4px;
+    }
+
+    .cmp-dynamoic-member-name {
+        flex-grow: 1;
+        font-size: 14px;
+    }
+
+    .cmp-dynamoic-member-checked-icon-container {
+        width: 42px;
+        height: 42px;
+        padding: 11px;
+
+        .cmp-dynamoic-member-checked-icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &:hover {
+        background-color: $t-bg5;
+        border-radius: 3px;
+    }
 }

@@ -50,14 +50,14 @@ export function TaskMemberModal({ task, data, onSaveTask }) {
         <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3>
         <ul className='cmp-dynamoic-options-list clean-list' >
             {toRender && toRender.map(opt =>
-                <li key={opt._id} className="cmp-dynamoic-option" onClick={(ev) => onToggleMember(ev, opt._id)}>
+                <li key={opt._id} className="cmp-dynamoic-option cmp-dynamoic-option-member" onClick={(ev) => onToggleMember(ev, opt._id)}>
                     <img className='cmp-dynamoic-member-img'
                         src={opt.imgUrl}
                         alt={opt.imgUrl} />
-                    <span>{opt.fullname}</span>
+                    <span className="cmp-dynamoic-member-name">{opt.fullname}</span>
                     {memberIds?.includes(opt._id) && (
-                        <span className="checked-icon">
-                            <BiCheck />
+                        <span className="cmp-dynamoic-member-checked-icon-container">
+                            <BiCheck className="cmp-dynamoic-member-checked-icon" />
                         </span>)}
                 </li>
             )}

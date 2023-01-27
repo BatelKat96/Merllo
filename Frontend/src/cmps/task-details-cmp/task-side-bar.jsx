@@ -126,7 +126,7 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
             Cover
         </button>
 
-        <h3 className='small-headline'>Actions</h3>
+        <h3 className='small-headline side-bar-menu-second-section'>Actions</h3>
 
         <button className='clean-btn btn-task-details btn-side-bar'
             onClick={() => { onRemoveTask() }}>

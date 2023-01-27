@@ -4,13 +4,13 @@
 
     .checklists-icon-container {
         padding-block-start: 7.5px;
-        padding-inline-start: 8px;
+        padding-inline-start: 6px;
         align-self: flex-start;
     }
 
     .checklists-icon {
-        width: 19.5px;
-        height: 19.5px;
+        width: 21px;
+        height: 21px;
         justify-self: center;
     }
 }
@@ -32,57 +32,63 @@
     font-size: 12px;
     flex-grow: 1;
 
-    .task-checklist-title-input {
-        background-color: $t-bg5;
-        box-shadow: rgba(9, 30, 66, 0.13) 0px 0px 0px 1px inset;
-        padding: 8px 12px;
-        width: 512px;
-        height: 54px;
+    .task-checklist-title {
+        cursor: pointer;
+    }
 
+    form {
 
-        &:focus {
-            box-shadow: rgba(9, 30, 66, 0.13) 0px 0px 0px 1px inset;
+        .task-checklist-title-input {
             background-color: $t-bg5;
+            box-shadow: rgba(37, 117, 255, 0.13) 0px 0px 0px 1px inset;
+            padding: 8px 12px;
+            width: 512px;
+            height: 54px;
+            border-radius: 3px;
+
+            &:focus {
+                box-shadow: rgba(9, 30, 66, 0.13) 0px 0px 0px 1px inset !important;
+                background-color: $t-bg5;
+            }
         }
     }
-}
 
-.task-checklist-btn {
-    display: flex;
-    align-items: center;
-}
-
-.btn-checklist-save {
-    background-color: $t-btn-bgc;
-    color: $clr6;
-    margin-inline-end: 4px;
-    width: 52px;
-    height: 32px;
-    font-size: 14px;
-    padding: 4px 12px 6px;
-
-
-    &:hover {
-        background-color: #026aa7;
+    .task-checklist-btn {
+        display: flex;
+        align-items: center;
     }
-}
+
+    .btn-checklist-save {
+        background-color: $t-btn-bgc;
+        color: $clr6;
+        margin-inline-end: 4px;
+        width: 52px;
+        height: 32px;
+        font-size: 14px;
+        padding: 4px 12px 6px;
 
 
-.btn-checklist-cancel-container {
-
-    .btn-checklist-cancel {
-        width: 18px;
-        height: 18px;
-        color: #42526e;
-        vertical-align: bottom;
-
-        path {
-            stroke: #42526e;
-            stroke-width: 10%;
+        &:hover {
+            background-color: #026aa7;
         }
     }
-}
 
+    .btn-checklist-cancel-container {
+
+        .btn-checklist-cancel {
+            width: 18px;
+            height: 18px;
+            color: #42526e;
+            vertical-align: bottom;
+
+            path {
+                stroke: #42526e;
+                stroke-width: 10%;
+            }
+        }
+    }
+
+}
 
 .task-add-todo-container {
     margin-block-start: 8px;
@@ -94,9 +100,36 @@
         height: 56px;
         padding: 8px 12px;
         width: 100%;
+        font-size: 14px;
+        border-radius: 3px;
     }
 
     .btn-add-todo {
         margin-block-end: 40px;
+    }
+
+    .btn-checklist-save {
+        background-color: $t-btn-bgc;
+        color: $clr6;
+        margin-inline-end: 4px;
+        width: 52px;
+        height: 32px;
+        font-size: 14px;
+        padding: 4px 12px 6px;
+
+
+        &:hover {
+            background-color: #026aa7;
+        }
+    }
+
+    .btn-add-todo-cancel {
+        width: 64.9px;
+        height: 32px;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: $t-hover3;
+        }
     }
 }
