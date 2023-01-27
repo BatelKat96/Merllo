@@ -3,14 +3,19 @@
     align-items: center;
     margin-inline-start: 40px;
 
+    &:hover {
+        background-color: $t-bg5;
+    }
+
     .task-attachment-preview-img-container {
-        aspect-ratio: 16 / 9;
-        width: 200px;
+        // aspect-ratio: 16 / 9;
+        width: 150px;
         margin-inline-end: 20px;
+        border-radius: 3px;
 
         .task-attachment-preview-img {
             object-fit: cover;
-
+            border-radius: 3px;
         }
     }
 
@@ -18,27 +23,48 @@
 
         .attachment-name {
             font-family: segoe_ui_bold;
-            margin: 0;
-            margin-block-end: -5px
+            margin-block-end: -4px
         }
 
         .attachment-remove {
-            margin: 0;
             text-decoration: underline;
             cursor: pointer;
+
+            &:hover {
+                color: $t-txt1;
+            }
+        }
+
+        .attachment-detail-p {
+            margin: 0;
+            margin-block-end: -5px;
+            color: $t-txt2;
         }
 
         .make-attachment-cover {
             display: flex;
             align-items: center;
+            cursor: pointer;
 
             .make-attachment-cover-icon-container {
                 padding-top: 6px;
-                margin-inline-end: 5px;
+                margin-inline-end: 3px;
+
+            }
+
+            .make-attachment-cover-icon {
+                width: 80%;
+                height: 80%;
+
             }
 
             .make-attachment-cover-p {
                 text-decoration: underline;
+                color: $t-txt2;
+
+                &:hover {
+                    color: $t-txt1;
+                }
             }
         }
 

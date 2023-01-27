@@ -155,7 +155,7 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
 
             </ul>
             <button className='clean-btn btn-task-details btn-create-label' onClick={(ev) => { onOpenAddLabelModal(ev) }}>
-                Create A new label
+                Create a new label
             </button>
         </section>}
 
