@@ -7,7 +7,6 @@ import {
 	SET_BOARD,
 	ADD_BOARD,
 	REMOVE_BOARD,
-	UPDATE_BOARD,
 } from './board.reducer.js'
 
 // Action Creators:
@@ -36,7 +35,6 @@ export function getActionUpdateBoard(board) {
 export async function loadBoards() {
 	try {
 		const boards = await boardService.query()
-		console.log('Boards from local storage:', boards)
 		store.dispatch({
 			type: SET_BOARDS,
 			boards,
@@ -60,7 +58,6 @@ export async function removeBoard(boardId) {
 export async function addBoard(board) {
 	try {
 		const savedBoard = await boardService.save(board)
-		console.log('Added Board', savedBoard)
 		store.dispatch(getActionAddBoard(savedBoard))
 		return savedBoard
 	} catch (err) {
@@ -72,7 +69,6 @@ export async function addBoard(board) {
 export async function updateBoard(board) {
 	try {
 		const savedBoard = await boardService.save(board)
-		console.log('Updated Board:', savedBoard)
 		store.dispatch(getActionUpdateBoard(savedBoard))
 		return savedBoard
 	} catch (err) {
@@ -82,7 +78,6 @@ export async function updateBoard(board) {
 }
 
 export async function loadBoard(boardId) {
-	// console.log('loadBoard', boardId)
 	try {
 		const board = await boardService.getById(boardId)
 		store.dispatch({
@@ -97,17 +92,6 @@ export async function loadBoard(boardId) {
 }
 
 // * group actions
-// export async function loadGroups(boardId) {
-// 	try {
-// 		const groups = await boardService.queryGroups(boardId)
-// 		console.log('Groups from local storage:', groups)
-// 		return groups
-// 	} catch (err) {
-// 		console.log('Cannot load groups', err)
-// 		throw err
-// 	}
-// }
-
 export async function removeGroup(groupId, boardId) {
 	try {
 		let savedBoard = await boardService.removeGroup(groupId, boardId)
@@ -123,7 +107,6 @@ export async function saveGroup(group, boardId) {
 	try {
 		const savedBoard = await boardService.saveGroup(group, boardId)
 		store.dispatch(getActionUpdateBoard(savedBoard))
-		console.log('save group success')
 		return group
 	} catch (err) {
 		console.log('Cannot save group', err)
@@ -132,17 +115,6 @@ export async function saveGroup(group, boardId) {
 }
 
 // * task actions
-// export async function loadTasks(groupId, boardId) {
-// 	try {
-// 		const tasks = await boardService.queryTasks(groupId, boardId)
-// 		console.log('Tasks from local storage:', tasks)
-// 		return tasks
-// 	} catch (err) {
-// 		console.log('Cannot load tasks', err)
-// 		throw err
-// 	}
-// }
-
 export async function removeTask(taskId, groupId, boardId) {
 	try {
 		let savedBoard = await boardService.removeTask(taskId, groupId, boardId)

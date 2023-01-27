@@ -3,9 +3,6 @@ import { storageService } from './async-storage.service.js'
 import { httpService } from './http.service.js'
 import { userService } from './user.service.js'
 
-import boardsData from '../data/demo-data.json'
-// console.log(':', boardsData)
-
 const STORAGE_KEY = 'board'
 
 export const boardService = {
@@ -26,11 +23,10 @@ export const boardService = {
 	getEmptyTask,
 	getEmptyLabel,
 	getEmptyTodo,
-	getEmptyChecklist, getEmptyAttachment
+	getEmptyChecklist,
+	getEmptyAttachment,
 }
 window.cs = boardService
-
-_createBoards()
 
 // * board service
 async function query(filterBy = { title: '' }) {
@@ -53,11 +49,9 @@ async function remove(boardId) {
 async function save(board) {
 	var savedBoard
 	if (board._id) {
-		console.log('existing')
 		savedBoard = await httpService.put(`board/${board._id}`, board)
 		// savedBoard = await storageService.put(STORAGE_KEY, board)
 	} else {
-		console.log('new')
 		// Later, owner is set by the backend
 		board.createdBy = userService.getLoggedinUser()
 		savedBoard = await httpService.post('board', board)
@@ -85,13 +79,13 @@ function getEmptyBoard() {
 	}
 }
 
-function _createBoards() {
-	let boards = utilService.loadFromStorage(STORAGE_KEY)
-	if (!boards) {
-		boards = boardsData
-		utilService.saveToStorage(STORAGE_KEY, boards)
-	}
-}
+// function _createBoards() {
+// 	let boards = utilService.loadFromStorage(STORAGE_KEY)
+// 	if (!boards) {
+// 		boards = boardsData
+// 		utilService.saveToStorage(STORAGE_KEY, boards)
+// 	}
+// }
 
 // * group service
 async function queryGroups(boardId) {
@@ -221,7 +215,7 @@ function getEmptyTask() {
 		title: '',
 		archivedAt: null,
 		labelIds: [],
-		dueDate: (Date.now() + 2 * (24 * 60 * 60 * 1000)),
+		dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
 		byMember: {
 			_id: '',
 			username: '',
@@ -233,7 +227,7 @@ function getEmptyTask() {
 		style: {},
 		attachments: [],
 		checklists: [],
-		isDone: false
+		isDone: false,
 	}
 }
 
@@ -264,6 +258,6 @@ function getEmptyAttachment() {
 		id: utilService.makeId(),
 		createdAt: Date.now(),
 		url: '',
-		title: 'Attachment Image'
+		title: 'Attachment Image',
 	}
 }
