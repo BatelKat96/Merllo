@@ -124,21 +124,18 @@ export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
     //dragNdrop
     function handleOnDragEnd(result) {
         const { destination, source, draggableId, type } = result
-        console.log(result);
 
         if (!destination) return
 
-        // if (
-        //     destination.droppableId === source.droppableId &&
-        //     destination.index === source.index
-        // ) return
+        if (
+            destination.droppableId === source.droppableId &&
+            destination.index === source.index
+        ) return
 
         const updateChecklist = checklists.find(cl => (cl.id === destination.droppableId))
 
         const newTodos = Array.from(updateChecklist.todos)
-
         const reorderedTodos = newTodos.splice(source.index, 1)
-
         newTodos.splice(destination.index, 0, reorderedTodos[0])
 
         updateChecklist.todos = newTodos
@@ -151,7 +148,6 @@ export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
 
         setTask(newTask)
         saveTask(newTask, groupId, boardId)
-
     }
 
     return <section className='task-checklists-preview-section'>
