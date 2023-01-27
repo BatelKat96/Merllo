@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { boardService } from '../../../services/board.service';
 
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+
 import { BsCheck2Square } from "react-icons/bs";
 import { TaskChecklistList } from './task-checklist-list';
 import { GrClose } from "react-icons/gr";
@@ -15,9 +17,6 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
     const [currChecklistId, setCurrChecklistId] = useState('')
     const [titleToEdit, setTitleToEdit] = useState('')
     const [isAddTitleOpen, setIsAddTitleOpen] = useState(false)
-
-
-
 
     function toggleDeleteChecklist(ev, id) {
         ev.stopPropagation()
@@ -119,8 +118,28 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
         onAddTodoInputClose()
     }
 
+    //dragNdrop
+    function handleOnDragEnd(result) {
+        const { destination, source, draggableId, type } = result
+        console.log(result);
+
+        if (!destination) return
+
+        if (
+            destination.droppableId === source.droppableId &&
+            destination.index === source.index
+        ) return
+
+        // const newTodos = Array.from(todos)
+        // const [reorderedTodos] = newTodos.splice(source.index, 1)
+        // newTodos.splice(destination.index, 0, reorderedTodos)
+
+        // checklist.todos = newTodos
+        // return
+    }
+
     return <section className='task-checklists-preview-section'>
-        {checklists.map(checklist => {
+        {checklists.map((checklist, index) => {
             return <div className='task-checklists-preview-container' key={checklist.id} >
 
                 <div className='task-checklist-preview-header'>
@@ -180,8 +199,17 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
                 </div>
 
                 <TaskChecklistBarProgress todos={checklist.todos} />
+                <DragDropContext onDragEnd={handleOnDragEnd}>
+                    <Droppable droppableId={checklist.id}
+                        key="checklist"
+                        type="checklist"
+                    >
+                        {(provided, snapshot) => (
 
-                <ul className='clean-list'>
+                            <ul className='clean-list'
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}>
+
                     {checklist.todos && checklist.todos.length > 0 &&
                         < TaskChecklistList
                             todos={checklist.todos}
@@ -189,8 +217,11 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
                             updateChecklists={updateChecklists}
                         />
                     }
+                                {provided.placeholder}
                 </ul>
-
+                        )}
+                    </Droppable>
+                </DragDropContext>
 
                 <div className='task-add-todo-container' >
                     {(!isAddTitleOpen || (currChecklistId !== checklist.id)) && <button className='clean-btn btn-task-details btn-add-todo'
@@ -226,7 +257,6 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
             </div>
         })
         }
-
     </section >
 
 }
