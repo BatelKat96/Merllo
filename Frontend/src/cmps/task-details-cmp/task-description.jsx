@@ -29,7 +29,7 @@ export function TaskDescription({ task, onSaveTask }) {
     async function onSaveDesc(ev) {
         ev.preventDefault()
         let updateTask = { ...task }
-        updateTask.description = descToEdit
+        updateTask.description = descToEdit ? descToEdit : updateTask.description
         onSaveTask(ev, updateTask)
         closeEditDesc(ev)
     }
