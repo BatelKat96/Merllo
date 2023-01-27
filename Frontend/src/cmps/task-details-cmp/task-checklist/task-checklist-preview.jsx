@@ -8,7 +8,7 @@ import { ItemDeleteModal } from '../dynamic-delete-modal';
 import { TaskChecklistBarProgress } from './task-checklist-bar-progress';
 
 
-export function TaskChecklistPreview({ onSaveEdit, task, onSaveTask }) {
+export function TaskChecklistPreview({ task, onSaveTask }) {
     const { checklists } = task
     const [isEditTitleOpen, setIsEditTitleOpen] = useState(false)
     const [isDeleteModalOpen, setDeleteModalOpen] = useState({ checklistId: '' })
