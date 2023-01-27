@@ -63,12 +63,21 @@
     display: flex;
     justify-content: space-between;
 
+    .btn-update-label {
+        background-color: $t-btn-bgc;
+        color: $clr6;
+
+        &:hover {
+            background-color: #026aa7;
+        }
+    }
+
     .btn-remove-label {
         background: #b04632;
         color: $clr6;
 
         &:hover {
-            background-color: #b04632;
+            background-color: #933b27;
         }
     }
 }

@@ -173,7 +173,7 @@ export function TaskDetails() {
                                         {(dueDate) && < TaskDueDate dueDate={dueDate} isDone={isDone} task={task} onSaveTask={onSaveTask} />}
                                     </div>
 
-                                    <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} />
+                                    <TaskDescription handleChange={handleChange} onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />
                                     {(checklists && (checklists.length > 0)) && <TaskChecklistPreview onSaveEdit={onSaveEdit} task={task} onSaveTask={onSaveTask} />}
 
 

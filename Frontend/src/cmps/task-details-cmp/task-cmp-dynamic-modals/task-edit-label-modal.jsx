@@ -89,13 +89,13 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
 
             <div className='btn-edit-label-modal'>
 
-                <button className='clean-btn btn-task-details btn-create-label'
+                <button className='clean-btn btn-task-details btn-update-label'
                     onClick={(ev) => { onSaveLabel(ev, currLabel) }}>
-                    Save label
+                    Save
                 </button>
                 {currLabel.id && <button className='clean-btn btn-task-details btn-remove-label'
                     onClick={(ev) => toggleModalDelete(ev, currLabel.id)} >
-                    Delete label
+                    Delete
                 </button>}
 
             </div>

@@ -1,14 +1,13 @@
 .todos-prog-bar-section {
     display: flex;
-    // width: 100%;
     align-items: center;
     margin-block-start: 8px;
     margin-block-end: 5px;
 
     .todos-prog-bar-percentage {
-        margin-inline-start: 6px;
+        margin-inline-start: 3px;
         font-size: 11px;
-        max-width: 32px;
+        width: 32px;
         text-align: center;
     }
 
@@ -19,11 +18,10 @@
         height: 8px;
         width: 100%;
         border-radius: 0.5em;
-        // margin-left: 12px;
+        margin-left: 5px;
 
         .prog-accomplished {
             transition: background-color 0.3s, width 0.15s;
-            // position: absolute;
             border-radius: 0.5em 0 0 0.5em;
             width: 100%;
             height: 100%;
@@ -31,11 +29,8 @@
 
             &.isComplite {
                 border-radius: 0.5em;
-
                 background-color: #61bd4f;
             }
         }
     }
-
-
 }

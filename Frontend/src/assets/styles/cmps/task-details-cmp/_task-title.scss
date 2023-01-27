@@ -15,17 +15,24 @@
     }
 
 
-    .task-details-title {
+    .task-details-title-input {
         line-height: 24px;
         font-size: 20px;
         height: 35px;
         width: 670px;
-        font-family: San_francisco_medium !important;
+        font-family: San_francisco_medium;
         padding: 0 0 0 5px;
         letter-spacing: 0.035em;
+        margin: 0;
+        background-color: $t-bg1;
+
+        &:focus {
+            border-radius: 3px;
+            box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
+        }
     }
 
-    p {
+    .task-details-title-location {
         font-family: San_francisco_light;
         color: $t-txt2;
         margin: 0;
@@ -34,18 +41,8 @@
         line-height: 10px;
         font-size: 14px;
         padding-block-start: 3px;
+        cursor: text;
 
-
-        a {
-            color: inherit;
-            text-decoration: underline;
-            letter-spacing: 0.045em;
-
-            &:hover {
-                color: $t-txt1;
-            }
-
-        }
 
         .eye-icon {
             margin-inline-start: 12px;

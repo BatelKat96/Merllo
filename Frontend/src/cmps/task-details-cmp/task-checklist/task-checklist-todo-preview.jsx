@@ -73,7 +73,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
 
             {(isEditTodoOpen || (todoId == todo.id)) &&
                 < form  >
-                    <input
+                    <textarea
                         onBlur={(ev) => onCloseTodoInput(ev)}
                         autoFocus
                         name='title'
@@ -81,7 +81,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
                         id={todo.id}
                         onChange={handleChange}
                         defaultValue={todo.title}
-                    ></input>
+                    ></textarea>
 
                     <div className='task-checklist-btn'>
                         <button className='clean-btn btn-task-details btn-checklist-save'
