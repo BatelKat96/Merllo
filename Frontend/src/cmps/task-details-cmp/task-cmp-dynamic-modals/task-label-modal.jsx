@@ -50,6 +50,12 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
     }
 
     async function onSaveLabel(ev, label) {
+        if (!label.title) return
+        console.log('label be:', label)
+
+        if (!label.color) label.color = '#F5DD29'
+        console.log('label af: ', label)
+
         let updateLabelIds
         let updateLabelsBoard
         let updateTask
@@ -155,7 +161,7 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
 
             </ul>
             <button className='clean-btn btn-task-details btn-create-label' onClick={(ev) => { onOpenAddLabelModal(ev) }}>
-                Create A new label
+                Create a new label
             </button>
         </section>}
 

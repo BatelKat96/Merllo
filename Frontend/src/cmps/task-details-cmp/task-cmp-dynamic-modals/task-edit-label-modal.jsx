@@ -6,7 +6,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
     console.log('label:', label)
     const [currLabel, setCurrLabel] = useState(label)
     const [isDeleteModalOpen, setDeleteModalOpen] = useState({ labelId: '' })
-    console.log('onRemoveLabel:', onRemoveLabel)
+    // console.log('onRemoveLabel:', onRemoveLabel)
 
 
     const labelColors = [
@@ -31,6 +31,8 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
 
 
     function setLabelCover(color) {
+        console.log('color:', color)
+
         currLabel.color = color
         console.log('currLabel:', currLabel)
     }
@@ -68,6 +70,7 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
                 defaultValue={(label.title)}
                 autoFocus
                 autoComplete="off"
+                required
             />
 
             <div className='colors'>
@@ -113,4 +116,3 @@ export function EditLabelTitle({ label, onOpenAddLabelModal, onSaveLabel, onRemo
     )
 }
 
-// onClick={(ev) => { onRemoveLabel(ev, currLabel) }}

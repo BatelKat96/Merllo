@@ -5,6 +5,7 @@ import { TaskMemberModal } from './task-details-cmp/task-cmp-dynamic-modals/task
 import { TaskLabelModal } from './task-details-cmp/task-cmp-dynamic-modals/task-label-modal'
 import { TaskChecklistModal } from './task-details-cmp/task-cmp-dynamic-modals/task-checklist-modal'
 import { TaskDatesModal } from './task-details-cmp/task-cmp-dynamic-modals/task-dates-modal'
+import { TaskAttachmentModal } from './task-details-cmp/task-cmp-dynamic-modals/task-attachment-modal'
 import { TaskCoverModal } from './task-details-cmp/task-cmp-dynamic-modals/task-cover-modal'
 
 import Loader from '../assets/img/loader.svg'
@@ -30,9 +31,7 @@ export function DynamoicModal({
 
 	useEffect(() => {
 		setModalStyle(true)
-
 		setModalHeight(modalRef.current.getBoundingClientRect().height)
-
 	}, [modalStyle])
 
 
@@ -86,7 +85,6 @@ export function DynamoicModal({
 	return (
 		<section className="dynamoic-modal"
 			style={getModalPos(refDataBtn)}
-			onBlur={onClose}
 			ref={modalRef}>
 
 			<div className="dynamoic-modal-wrapper">
@@ -138,14 +136,18 @@ export function DynamoicModal({
 
 
 					{cmpType === 'attachment' && (
-						<TaskCoverModal
+						<TaskAttachmentModal
 							task={task}
+							onSaveTask={onSaveTask}
+							onClose={onClose}
 						/>
 					)}
 
 					{cmpType === 'cover' && (
 						<TaskCoverModal
 							task={task}
+							onSaveTask={onSaveTask}
+							onClose={onClose}
 						/>
 					)}
 

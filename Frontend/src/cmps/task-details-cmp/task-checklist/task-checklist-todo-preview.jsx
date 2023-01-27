@@ -38,7 +38,7 @@ export function TodoPreview({ todo, updateTodo, onRemoveTodo }) {
         ev.stopPropagation()
         ev.preventDefault()
         if (todoId === id) {
-            currTodo.title = currTitle
+            currTodo.title = currTitle ? currTitle : currTodo.title
             currTitle = ''
             onCloseTodoInput(ev)
             updateTodo(ev, currTodo)

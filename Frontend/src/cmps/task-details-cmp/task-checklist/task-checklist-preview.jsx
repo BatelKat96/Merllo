@@ -1,23 +1,25 @@
 import { useState } from 'react';
 import { boardService } from '../../../services/board.service';
 
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+
 import { BsCheck2Square } from "react-icons/bs";
 import { TaskChecklistList } from './task-checklist-list';
 import { GrClose } from "react-icons/gr";
 import { ItemDeleteModal } from '../dynamic-delete-modal';
 import { TaskChecklistBarProgress } from './task-checklist-bar-progress';
+import { saveTask } from '../../../store/board.actions';
+import { useParams } from 'react-router-dom';
 
 
-export function TaskChecklistPreview({ task, onSaveTask }) {
+export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
     const { checklists } = task
     const [isEditTitleOpen, setIsEditTitleOpen] = useState(false)
     const [isDeleteModalOpen, setDeleteModalOpen] = useState({ checklistId: '' })
     const [currChecklistId, setCurrChecklistId] = useState('')
     const [titleToEdit, setTitleToEdit] = useState('')
     const [isAddTitleOpen, setIsAddTitleOpen] = useState(false)
-
-
-
+    const { boardId, groupId } = useParams()
 
     function toggleDeleteChecklist(ev, id) {
         ev.stopPropagation()
@@ -107,7 +109,7 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
     function addTodo(ev, newTodoTitle, checklist) {
         ev.stopPropagation()
         ev.preventDefault()
-
+        if (!newTodoTitle) return
         let updateTodos = checklist.todos
         let updateChecklist = { ...checklist }
         let newTodo = boardService.getEmptyTodo()
@@ -119,8 +121,37 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
         onAddTodoInputClose()
     }
 
+    //dragNdrop
+    function handleOnDragEnd(result) {
+        const { destination, source, draggableId, type } = result
+
+        if (!destination) return
+
+        if (
+            destination.droppableId === source.droppableId &&
+            destination.index === source.index
+        ) return
+
+        const updateChecklist = checklists.find(cl => (cl.id === destination.droppableId))
+
+        const newTodos = Array.from(updateChecklist.todos)
+        const reorderedTodos = newTodos.splice(source.index, 1)
+        newTodos.splice(destination.index, 0, reorderedTodos[0])
+
+        updateChecklist.todos = newTodos
+
+        let updateChecklists = checklists
+        let index = updateChecklists.findIndex(cl => (cl.id === updateChecklist.id))
+        updateChecklists.splice(index, 1, updateChecklist)
+        setCurrChecklistId('')
+        const newTask = { ...task, checklists: updateChecklists }
+
+        setTask(newTask)
+        saveTask(newTask, groupId, boardId)
+    }
+
     return <section className='task-checklists-preview-section'>
-        {checklists.map(checklist => {
+        {checklists.map((checklist, index) => {
             return <div className='task-checklists-preview-container' key={checklist.id} >
 
                 <div className='task-checklist-preview-header'>
@@ -136,7 +167,9 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
                             </h3>
                         }
                         {isEditTitleOpen && (currChecklistId === checklist.id) &&
-                            <form>
+                            // <form>
+                            <div className='task-checklist-title-input'>
+
                                 <textarea
                                     onBlur={(ev) => onCloseTitleInput(ev)}
                                     autoFocus
@@ -157,7 +190,8 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
                                         <GrClose className='btn-checklist-cancel' />
                                     </button>
                                 </div>
-                            </form >
+                            </div>
+                            // </form >
                         }
 
                         {isDeleteModalOpen.checklistId === checklist.id && (
@@ -180,17 +214,29 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
                 </div>
 
                 <TaskChecklistBarProgress todos={checklist.todos} />
+                <DragDropContext onDragEnd={handleOnDragEnd}>
+                    <Droppable droppableId={checklist.id}
+                        key="checklist"
+                        type="checklist"
+                    >
+                        {(provided, snapshot) => (
 
-                <ul className='clean-list'>
-                    {checklist.todos && checklist.todos.length > 0 &&
-                        < TaskChecklistList
-                            todos={checklist.todos}
-                            checklist={checklist}
-                            updateChecklists={updateChecklists}
-                        />
-                    }
-                </ul>
+                            <ul className='clean-list'
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}>
 
+                                {checklist.todos && checklist.todos.length > 0 &&
+                                    < TaskChecklistList
+                                        todos={checklist.todos}
+                                        checklist={checklist}
+                                        updateChecklists={updateChecklists}
+                                    />
+                                }
+                                {provided.placeholder}
+                            </ul>
+                        )}
+                    </Droppable>
+                </DragDropContext>
 
                 <div className='task-add-todo-container' >
                     {(!isAddTitleOpen || (currChecklistId !== checklist.id)) && <button className='clean-btn btn-task-details btn-add-todo'
@@ -200,6 +246,7 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
 
                     {(isAddTitleOpen && (currChecklistId === checklist.id)) && <form >
                         <textarea
+                            required
                             onBlur={(ev) => onAddTodoInputClose(ev)}
                             autoFocus
                             name='add-todo'
@@ -208,6 +255,7 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
                             placeholder='Add an item'
                             onChange={handleChange}
                             defaultValue={titleToEdit}
+
                         ></textarea>
 
                         <div className='task-checklist-btn'>
@@ -226,7 +274,6 @@ export function TaskChecklistPreview({ task, onSaveTask }) {
             </div>
         })
         }
-
     </section >
 
 }

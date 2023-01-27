@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react'
+import { Draggable } from 'react-beautiful-dnd'
 
 import { TodoPreview } from './task-checklist-todo-preview'
 
@@ -30,21 +31,37 @@ export function TaskChecklistList({ todos, checklist, updateChecklists }) {
     }
 
 
-    return <Fragment>
-        {todos.map(todo => {
-            return <li key={todo.id} className="task-checklist-todo">
-                <input
-                    onChange={(ev) => { onChangeTodoDone(ev, todo) }}
-                    checked={todo.isDone}
-                    className="task-checklist-checkbox"
-                    type="checkbox"
-                    id={todo.id}
-                />
-                <TodoPreview todo={todo} updateTodo={updateTodo} onRemoveTodo={onRemoveTodo} />
-            </li>
+    return <>
+        {todos.map((todo, index) =>
 
-        })}
+            <Draggable
+                key={todo.id}
+                type="todo"
+                draggableId={todo.id}
+                index={index}>
+
+                {(provided, snapshot) => (
+
+                    <li key={todo.id}
+                        className="task-checklist-todo"
+                        ref={provided.innerRef}
+                        // isdragging={snapshot.isDragging}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}>
+                        <input
+                            onChange={(ev) => { onChangeTodoDone(ev, todo) }}
+                            checked={todo.isDone}
+                            className="task-checklist-checkbox"
+                            type="checkbox"
+                            id={todo.id}
+                        />
+                        <TodoPreview todo={todo} updateTodo={updateTodo} onRemoveTodo={onRemoveTodo} />
+                    </li>
+                )}
+            </Draggable>
+
+        )}
 
 
-    </Fragment>
+    </>
 }

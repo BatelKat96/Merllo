@@ -147,7 +147,11 @@
 27.1.2023, 11:15:11 - DEBUG - Getting Boards 
 27.1.2023, 11:42:18 - INFO - Server is running on port: 3030 
 27.1.2023, 11:42:32 - DEBUG - Getting Boards 
+<<<<<<< HEAD
+27.1.2023, 13:53:27 - DEBUG - Getting Boards 
+=======
 >>>>>>> 98459cccf15d492506e9908d2780cee049153da7
+>>>>>>> 0497315ce5efd7661c3728bc8c58b478cb9a7009
 27.1.2023, 14:18:10 - DEBUG - Getting Boards 
 27.1.2023, 14:18:19 - DEBUG - Getting Boards 
 27.1.2023, 14:18:35 - DEBUG - Getting Boards 
