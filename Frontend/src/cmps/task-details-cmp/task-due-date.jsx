@@ -2,23 +2,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import { utilService } from '../../services/util.service';
 
 
-export function TaskDueDate({ dueDate, isDone, task, onSaveTask }) {
-    // console.log('updateTask:', updateTask)
+export function TaskDueDate({ task, onSaveTask }) {
 
-    // console.log('dueDate:', dueDate)
-    // console.log('isDone:', isDone)
-
-    // * for developing
-    const altask = {
-        // dueDate: 1674928040000, // in 2 days
-        dueDate: 1674841704000, // tomorrow
-        // dueDate: 1674668918000, // today
-        // dueDate: 1674668930000, // yesterday
-    }
-    const taskDuedate = utilService.dueDateFormat(task.dueDate)
+    // const taskDuedate = utilService.dueDateFormat(task.dueDate)
     const taskDuedateTime = utilService.dueDateTimeFormat(task.dueDate)
-    // console.log('taskDuedate', taskDuedate)
-    // console.log('taskDuedateTime', taskDuedateTime)
+
 
     let updateTask = { ...task }
 
@@ -36,9 +24,7 @@ export function TaskDueDate({ dueDate, isDone, task, onSaveTask }) {
         const now = new Date()
         const msBetweenDates = taskDuedate.getTime() - now.getTime()
         const hoursBetweenDates = msBetweenDates / (60 * 60 * 1000)
-        // console.log('taskDuedate', taskDuedate)
-        // console.log('now', now)
-        // console.log('hoursBetweenDates', hoursBetweenDates)
+
         if (hoursBetweenDates < 0) {
             console.log('overdue')
             return <span className="due-sticker overdue">overdue</span>
@@ -55,9 +41,6 @@ export function TaskDueDate({ dueDate, isDone, task, onSaveTask }) {
 
     }
 
-
-    // let isComplite = (task.isDone) ? 'complete' : ''
-    // let isOnTime = ((Date.now() - dueDate) < 0) ? 'late' : ''
 
     return <section className='task-due-date-section'>
         <h3 className='small-headline'>Due date</h3>

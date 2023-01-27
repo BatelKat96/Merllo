@@ -9,6 +9,7 @@ import { TaskCoverModal } from './task-cmp-dynamic-modals/task-cover-modal'
 
 import Loader from '../../assets/img/loader.svg'
 import { IoClose } from 'react-icons/io5'
+import { TaskAttachmentModal } from './task-cmp-dynamic-modals/task-attachment-modal'
 
 export function TaskCmpDynamoic({
 	cmpType,
@@ -99,8 +100,10 @@ export function TaskCmpDynamoic({
 
 
 					{cmpType === 'attachment' && (
-						<TaskCoverModal
+						<TaskAttachmentModal
 							task={task}
+							onSaveTask={onSaveTask}
+							onClose={onClose}
 						/>
 					)}
 

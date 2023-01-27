@@ -26,7 +26,7 @@ export const boardService = {
 	getEmptyTask,
 	getEmptyLabel,
 	getEmptyTodo,
-	getEmptyChecklist
+	getEmptyChecklist, getEmptyAttachment
 }
 window.cs = boardService
 
@@ -218,7 +218,7 @@ function getEmptyTask() {
 		title: '',
 		archivedAt: null,
 		labelIds: [],
-		dueDate: 1674837381,
+		dueDate: (Date.now() + 2 * (24 * 60 * 60 * 1000)),
 		byMember: {
 			_id: '',
 			username: '',
@@ -230,6 +230,7 @@ function getEmptyTask() {
 		style: {},
 		attachments: [],
 		checklists: [],
+		isDone: false
 	}
 }
 
@@ -254,5 +255,14 @@ function getEmptyChecklist() {
 		id: utilService.makeId(),
 		title: '',
 		todos: []
+	}
+}
+
+function getEmptyAttachment() {
+	return {
+		id: utilService.makeId(),
+		createdAt: Date.now(),
+		url: '',
+		title: 'Attachment Image'
 	}
 }
