@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import { Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { boardService } from '../../services/board.service'
 import { saveTask } from '../../store/board.actions'
@@ -13,7 +13,6 @@ import { FiMoreHorizontal } from 'react-icons/fi'
 
 export function TaskList({ group, handleOnDragEnd }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
-    const { boardId, groupId } = useParams()
     const tasks = group.tasks
 
     const [taskToEdit, setTaskToEdit] = useState(boardService.getEmptyTask())

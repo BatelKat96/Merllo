@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { TaskCmpDynamoic } from '../task-details-cmp/task-cmp-dynamic'
+import { DynamoicModal } from '../dynamic-modal'
 
 import { BsArchive, BsPerson, BsCheck2Square, BsSquareHalf, BsArrowCounterclockwise } from "react-icons/bs"
 import { AiOutlineMinus, AiOutlineClockCircle } from "react-icons/ai"
@@ -184,5 +185,14 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
             boardId={boardId}
             onOpenModal={onOpenModal}
             onSaveTask={onSaveTask} />}
+
+        {/* {modalType && <DynamoicModal
+            cmpType={modalType}
+            refDataBtn={getRefData(modalType)}
+            task={task}
+            groupId={groupId}
+            boardId={boardId}
+            onOpenModal={onOpenModal}
+            onSaveTask={onSaveTask} />} */}
     </div >
 }

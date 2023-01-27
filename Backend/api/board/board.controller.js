@@ -5,9 +5,9 @@ const logger = require('../../services/logger.service')
 async function getBoards(req, res) {
 	try {
 		logger.debug('Getting Boards')
-		// const filterBy = {
-		// 	txt: req.query.txt || '',
-		// }
+		const filterBy = {
+			txt: req.query.txt || '',
+		}
 		const boards = await boardService.query()
 		res.json(boards)
 	} catch (err) {
@@ -29,11 +29,13 @@ async function getBoardById(req, res) {
 
 async function addBoard(req, res) {
 	const { loggedinUser } = req
+	console.log('req.body', req.body)
 
 	try {
 		const board = req.body
-		board.createdBy = loggedinUser
+		// board.createdBy = loggedinUser
 		const addedBoard = await boardService.add(board)
+		console.log('addedBoard', addedBoard)
 		res.json(addedBoard)
 	} catch (err) {
 		logger.error('Failed to add board', err)
@@ -63,35 +65,35 @@ async function removeBoard(req, res) {
 	}
 }
 
-async function addBoardMsg(req, res) {
-	const { loggedinUser } = req
-	try {
-		const boardId = req.params.id
-		const msg = {
-			txt: req.body.txt,
-			by: loggedinUser,
-		}
-		const savedMsg = await boardService.addBoardMsg(boardId, msg)
-		res.json(savedMsg)
-	} catch (err) {
-		logger.error('Failed to update board', err)
-		res.status(500).send({ err: 'Failed to update board' })
-	}
-}
+// async function addBoardMsg(req, res) {
+// 	const { loggedinUser } = req
+// 	try {
+// 		const boardId = req.params.id
+// 		const msg = {
+// 			txt: req.body.txt,
+// 			by: loggedinUser,
+// 		}
+// 		const savedMsg = await boardService.addBoardMsg(boardId, msg)
+// 		res.json(savedMsg)
+// 	} catch (err) {
+// 		logger.error('Failed to update board', err)
+// 		res.status(500).send({ err: 'Failed to update board' })
+// 	}
+// }
 
-async function removeBoardMsg(req, res) {
-	const { loggedinUser } = req
-	try {
-		const boardId = req.params.id
-		const { msgId } = req.params
+// async function removeBoardMsg(req, res) {
+// 	const { loggedinUser } = req
+// 	try {
+// 		const boardId = req.params.id
+// 		const { msgId } = req.params
 
-		const removedId = await boardService.removeBoardMsg(boardId, msgId)
-		res.send(removedId)
-	} catch (err) {
-		logger.error('Failed to remove board msg', err)
-		res.status(500).send({ err: 'Failed to remove board msg' })
-	}
-}
+// 		const removedId = await boardService.removeBoardMsg(boardId, msgId)
+// 		res.send(removedId)
+// 	} catch (err) {
+// 		logger.error('Failed to remove board msg', err)
+// 		res.status(500).send({ err: 'Failed to remove board msg' })
+// 	}
+// }
 
 module.exports = {
 	getBoards,
@@ -99,6 +101,4 @@ module.exports = {
 	addBoard,
 	updateBoard,
 	removeBoard,
-	addBoardMsg,
-	removeBoardMsg,
 }
