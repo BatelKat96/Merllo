@@ -1,0 +1,43 @@
+.dynamoic-modal {
+    position: fixed;
+    z-index: 1000;
+
+    .dynamoic-modal-wrapper {
+        background: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 8px 16px -4px #091e4240, 0 0 0 1px, #091e4214;
+        overflow: hidden;
+        width: 304px;
+        z-index: 70;
+
+        .close-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            color: #5e6c84;
+
+        }
+
+        .dynamoic-modal-title {
+            text-align: center;
+            border-bottom: 1px solid #091e4221;
+            box-sizing: border-box;
+            color: #5e6c84;
+            display: block;
+            line-height: 40px;
+            margin: 0 12px;
+            padding: 0 32px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-transform: capitalize;
+            cursor: default;
+        }
+
+        .dynamic-modal-container {
+            padding: 12px;
+        }
+    }
+}

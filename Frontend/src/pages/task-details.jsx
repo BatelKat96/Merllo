@@ -6,7 +6,7 @@ import { boardService } from '../services/board.service'
 
 import { IoClose } from 'react-icons/io5'
 import { BsArchive, BsPerson, BsCheck2Square, BsSquareHalf, BsArrowCounterclockwise } from "react-icons/bs"
-
+import { DynamoicModal } from '../cmps/dynamic-modal'
 import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 import { TaskTitle } from '../cmps/task-details-cmp/task-title'
 // import { TaskMember } from '../cmps/task-details-cmp/task-member'
@@ -198,6 +198,15 @@ export function TaskDetails() {
                 boardId={boardId}
                 onOpenModal={onOpenModal}
                 onSaveTask={onSaveTask} />}
+
+            {/* {modalType && <DynamoicModal
+                cmpType={modalType}
+                refDataBtn={coverBtn}
+                task={task}
+                groupId={groupId}
+                boardId={boardId}
+                onOpenModal={onOpenModal}
+                onSaveTask={onSaveTask} />} */}
         </section>
 
 
