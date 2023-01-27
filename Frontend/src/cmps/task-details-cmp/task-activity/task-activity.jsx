@@ -84,7 +84,7 @@ export const TaskActivity = () => {
 		<section className="task-activities">
 			<div className="task-activities-header">
 				<GrSort className="icon-activities" />
-				<p>Activity</p>
+				<p>Activity - NOT WORKING YETTTTT!!!</p>
 			</div>
 
 			<AddComment user={getUser()} addComment={addComment} />

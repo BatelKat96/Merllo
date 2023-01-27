@@ -270,3 +270,8 @@
 27.1.2023, 18:28:15 - INFO - New connected socket [id: C_CoV32s96TqZgc6AAAR] 
 27.1.2023, 18:28:15 - INFO - Setting socket.userId = 63d3e3630e97fcd4d0fddd98 for socket [id: C_CoV32s96TqZgc6AAAR] 
 27.1.2023, 18:28:16 - INFO - Socket is now on board 63d38c0d22c23a90886a018f [id: C_CoV32s96TqZgc6AAAR] 
+27.1.2023, 18:33:46 - DEBUG - Getting Boards (userId: 63d3e3630e97fcd4d0fddd98)
+27.1.2023, 18:33:47 - INFO - Socket disconnected [id: undefined] 
+27.1.2023, 18:33:51 - INFO - New connected socket [id: XwjIpufM_13Ev3khAAAT] 
+27.1.2023, 18:33:52 - INFO - Setting socket.userId = 63d3e3630e97fcd4d0fddd98 for socket [id: XwjIpufM_13Ev3khAAAT] 
+27.1.2023, 18:33:52 - INFO - Socket is now on board 63d38c0d22c23a90886a018e [id: XwjIpufM_13Ev3khAAAT] 
