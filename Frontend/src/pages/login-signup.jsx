@@ -36,7 +36,6 @@ export function LoginSignup() {
 		}),
 		onSubmit: (values) => {
 			if (status === 'signup') {
-				console.log('status===signup', values)
 				;(async () => {
 					try {
 						await signup(values)
@@ -47,7 +46,6 @@ export function LoginSignup() {
 				})()
 			}
 			if (status === 'login') {
-				console.log('status===login', values)
 				;(async () => {
 					try {
 						await login(values)

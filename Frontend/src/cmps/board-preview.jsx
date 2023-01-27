@@ -2,18 +2,6 @@ import { HiOutlineStar } from 'react-icons/hi2'
 import { updateBoard } from '../store/board.actions'
 
 export function BoardPreview({ board, onToggleStar }) {
-	// async function onToggleStar(event) {
-	// 	event.stopPropagation()
-	// 	event.preventDefault()
-	// 	board.isStarred = !board.isStarred
-	// 	try {
-	// 		await updateBoard(board)
-	// 		console.log('success')
-	// 	} catch (err) {
-	// 		console.log('Cannot update board', err)
-	// 	}
-	// }
-
 	function getBoardStyle() {
 		if (!board) return
 		if (board?.style.background) {

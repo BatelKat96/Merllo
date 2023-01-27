@@ -66,25 +66,21 @@ export function BoardCreate({ closeBoardComposer }) {
 	}
 
 	const setBoardBackground = (backgroundColor, backgroundImage) => {
-		console.log('setBoardBackground: backgroundImage', backgroundImage)
 		setBackgroundColor(backgroundColor)
 		setBackgroundImage(backgroundImage)
 		let style = backgroundImage
 			? bgImgs.find((bgImg) => bgImg.thumbnail === backgroundImage)
 			: { backgroundColor }
 		setBoardToEdit((prevBoard) => ({ ...prevBoard, style }))
-		console.log('setBoardBackground: boardToEdit', boardToEdit)
 	}
 
 	async function onCreateBoard(ev) {
 		ev.preventDefault()
 		if (!boardToEdit.title) return
-		console.log('onCreateBoard: boardToEdit', boardToEdit)
 		try {
 			const newBoard = await addBoard(boardToEdit)
 			closeBoardComposer()
 			setBoardToEdit(boardService.getEmptyBoard())
-			console.log('new board success!')
 			navigate(`/board/${newBoard._id}`)
 		} catch (err) {
 			console.log('Failed to save new board', err)
