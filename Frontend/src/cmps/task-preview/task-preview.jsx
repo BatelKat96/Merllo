@@ -130,13 +130,6 @@ export function TaskPreview({ group, task, board }) {
 							</span>
 						)}
 
-						{/* {currAttach?.length !== 0 && (
-							<span className="task-preview-actions-icons attach">
-								<FiPaperclip />
-								<p>{currAttach.length}</p>
-							</span>
-						)} */}
-
 
 						{currAttach && currAttach.length !== 0 && (
 							<span className="task-preview-actions-icons attach">
