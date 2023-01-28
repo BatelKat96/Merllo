@@ -124,140 +124,140 @@ export function TaskDetails() {
 		setModalType(type)
 	}
 
-	return ( <>
-		<section className="task-details">
-			<div onClick={(ev) => onCloseTaskDetails(ev)} className="black-screen">
-				<div
-					className="task-details-section"
-					onClick={(ev) => {
-						onStopPropagation(ev)
-					}}
-				>
-					{(!task || !board) && (
-						<div className="loader-wrapper">
-							<img className="loader" src={Loader} alt="loader" />
-						</div>
-					)}
+	return (
+		<>
+			<section className="task-details">
+				<div onClick={(ev) => onCloseTaskDetails(ev)} className="black-screen">
+					<div
+						className="task-details-section"
+						onClick={(ev) => {
+							onStopPropagation(ev)
+						}}
+					>
+						{(!task || !board) && (
+							<div className="loader-wrapper">
+								<img className="loader" src={Loader} alt="loader" />
+							</div>
+						)}
 
-					{task && board && (
-						<>
-							<span
-								onClick={(ev) => onCloseTaskDetails(ev)}
-								className={`clean-btn btn-task-exit ${coverClose}`}
-							>
-								<IoClose className="icon-task exit-icon" />
-							</span>
-
-							{task.style?.backgroundColor && (
-								<section
-									className="task-cover"
-									style={{ backgroundColor: task.style.backgroundColor }}
+						{task && board && (
+							<>
+								<span
+									onClick={(ev) => onCloseTaskDetails(ev)}
+									className={`clean-btn btn-task-exit ${coverClose}`}
 								>
-									<button
-										className="clean-btn  btn-task-cover"
-										style={{ top: 60 }}
-										ref={coverBtn}
-										onClick={() => onOpenModal('cover')}
+									<IoClose className="icon-task exit-icon" />
+								</span>
+
+								{task.style?.backgroundColor && (
+									<section
+										className="task-cover"
+										style={{ backgroundColor: task.style.backgroundColor }}
 									>
-										<span className="btn-side-bar-icon btn-side-bar-icon-label">
-											<BsSquareHalf />
-										</span>
-										Cover
-									</button>
-								</section>
-							)}
+										<button
+											className="clean-btn  btn-task-cover"
+											style={{ top: 60 }}
+											ref={coverBtn}
+											onClick={() => onOpenModal('cover')}
+										>
+											<span className="btn-side-bar-icon btn-side-bar-icon-label">
+												<BsSquareHalf />
+											</span>
+											Cover
+										</button>
+									</section>
+								)}
 
-							{task.style?.background && (
-								<section
-									className="task-cover img"
-									style={{ background: task.style.background }}
-								>
-									<button
-										className="clean-btn btn-task-cover"
-										style={{ top: 104 }}
-										ref={coverBtn}
-										onClick={() => onOpenModal('cover')}
+								{task.style?.background && (
+									<section
+										className="task-cover img"
+										style={{ background: task.style.background }}
 									>
-										<span>
-											<BsSquareHalf />
-										</span>
-										Cover
-									</button>
-								</section>
-							)}
+										<button
+											className="clean-btn btn-task-cover"
+											style={{ top: 104 }}
+											ref={coverBtn}
+											onClick={() => onOpenModal('cover')}
+										>
+											<span>
+												<BsSquareHalf />
+											</span>
+											Cover
+										</button>
+									</section>
+								)}
 
-							<div className="task-details-main-section">
-								<TaskTitle
-									handleChange={handleChange}
-									onSaveEdit={onSaveEdit}
-									task={task}
-									group={getGroup(groupId)}
-								/>
+								<div className="task-details-main-section">
+									<TaskTitle
+										handleChange={handleChange}
+										onSaveEdit={onSaveEdit}
+										task={task}
+										group={getGroup(groupId)}
+									/>
 
-								<div className="task-details-container">
-									<div className="task-details-edit-section">
-										<div className="task-details-edit-item">
-											{memberIds && memberIds.length > 0 && (
-												<TaskDynamicItem
-													ids={memberIds}
-													board={board}
-													type={'members'}
+									<div className="task-details-container">
+										<div className="task-details-edit-section">
+											<div className="task-details-edit-item">
+												{memberIds && memberIds.length > 0 && (
+													<TaskDynamicItem
+														ids={memberIds}
+														board={board}
+														type={'members'}
+													/>
+												)}
+												{labelIds && labelIds.length > 0 && (
+													<TaskDynamicItem
+														ids={labelIds}
+														board={board}
+														type={'labels'}
+													/>
+												)}
+												{dueDate && (
+													<TaskDueDate
+														dueDate={dueDate}
+														isDone={isDone}
+														task={task}
+														onSaveTask={onSaveTask}
+													/>
+												)}
+											</div>
+											<TaskDescription
+												handleChange={handleChange}
+												onSaveEdit={onSaveEdit}
+												task={task}
+												onSaveTask={onSaveTask}
+											/>
+											{checklists && checklists.length > 0 && (
+												<TaskChecklistPreview
+													task={task}
+													onSaveTask={onSaveTask}
+													setTask={setTask}
 												/>
 											)}
-											{labelIds && labelIds.length > 0 && (
-												<TaskDynamicItem
-													ids={labelIds}
-													board={board}
-													type={'labels'}
-												/>
-											)}
-											{dueDate && (
-												<TaskDueDate
-													dueDate={dueDate}
-													isDone={isDone}
+											{attachments && attachments.length > 0 && (
+												<TaskAttachmentPreview
+													handleChange={handleChange}
 													task={task}
 													onSaveTask={onSaveTask}
 												/>
 											)}
+
+											<TaskActivity task={task} onSaveTask={onSaveTask} />
 										</div>
-										<TaskDescription
-											handleChange={handleChange}
-											onSaveEdit={onSaveEdit}
+										<TaskSideBar
 											task={task}
+											onRemoveTask={onRemoveTask}
+											onCopyTask={onCopyTask}
 											onSaveTask={onSaveTask}
 										/>
-										{checklists && checklists.length > 0 && (
-											<TaskChecklistPreview
-												task={task}
-												onSaveTask={onSaveTask}
-												setTask={setTask}
-											/>
-										)}
-										{attachments && attachments.length > 0 && (
-											<TaskAttachmentPreview
-												handleChange={handleChange}
-												task={task}
-												onSaveTask={onSaveTask}
-											/>
-										)}
-
-										<TaskActivity />
 									</div>
-									<TaskSideBar
-										task={task}
-										onRemoveTask={onRemoveTask}
-										onCopyTask={onCopyTask}
-										onSaveTask={onSaveTask}
-									/>
 								</div>
-							</div>
-						</>
-					)}
+							</>
+						)}
+					</div>
 				</div>
-			</div>
 
-
-            {/* {modalType && <TaskCmpDynamoic
+				{/* {modalType && <TaskCmpDynamoic
                 cmpType={modalType}
                 refDataBtn={coverBtn}
                 task={task}
@@ -266,15 +266,18 @@ export function TaskDetails() {
                 onOpenModal={onOpenModal}
                 onSaveTask={onSaveTask} />} */}
 
-            {modalType && <DynamoicModal
-                cmpType={modalType}
-                refDataBtn={coverBtn}
-                task={task}
-                groupId={groupId}
-                boardId={boardId}
-                onOpenModal={onOpenModal}
-                onSaveTask={onSaveTask} />}
-		</section>
+				{modalType && (
+					<DynamoicModal
+						cmpType={modalType}
+						refDataBtn={coverBtn}
+						task={task}
+						groupId={groupId}
+						boardId={boardId}
+						onOpenModal={onOpenModal}
+						onSaveTask={onSaveTask}
+					/>
+				)}
+			</section>
 		</>
 	)
 }

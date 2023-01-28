@@ -1,65 +1,85 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 
-export const AddComment = ({ user, addComment }) => {
-	const [comment, setComment] = useState('')
-	const [inputSize, setInputSize] = useState({ height: `36px` })
-	const [isButtonShown, setIsButtonShown] = useState({ display: `none` })
+export function AddComment({ user, addComment }) {
+	const [commentTxt, setCommentTxt] = useState('')
+	const [isAddCommentOpen, setIsAddCommentOpen] = useState(false)
 	const [isButtonClickable, setIsButtonClickable] = useState(true)
 
-	const handleChange = ({ target }) => {
-		setComment(target.value)
+	function handleChange({ target }) {
+		setCommentTxt(target.value)
 		if (target.value && isButtonClickable) setIsButtonClickable(false)
 		else if (!target.value && !isButtonClickable) setIsButtonClickable(true)
 	}
 
-	const onFocusInput = () => {
-		setInputSize({ height: `84px` })
-		setIsButtonShown({ display: `block` })
+	function onFocusInput() {
+		setIsAddCommentOpen(true)
 	}
 
-	const onBlurInput = () => {
-		if (!comment) {
-			setInputSize({ height: `36px` })
-			setIsButtonShown({ display: `none` })
+	function onBlurInput(ev) {
+		if (!ev) return
+		if (
+			ev.relatedTarget?.className === 'btn-save-comment' ||
+			ev.relatedTarget?.className === 'new-comment-container'
+		) {
+			return
+		}
+		if (!commentTxt) {
+			setIsAddCommentOpen(false)
 		}
 	}
 
-	const onAddComment = (ev) => {
+	function onAddComment(ev) {
 		ev.preventDefault()
-		addComment(comment)
-		setComment('')
+		addComment(ev, commentTxt)
+		setCommentTxt('')
 		setTimeout(() => ev.target.blur(), 100)
 	}
 
-	const handleUserKeyPress = (ev) => {
+	function handleUserKeyPress(ev) {
 		if (ev.key === 'Enter' && !ev.shiftKey) {
 			onAddComment(ev)
 		}
 	}
 
+	const newCommentContainerStyle = isAddCommentOpen
+		? { height: 'fit-content', paddingBottom: '8px' }
+		: { height: '36px' }
+	const addNewCommentBtnStyle = isAddCommentOpen
+		? { display: 'block' }
+		: { display: 'none' }
+	const textAreaStyle = isAddCommentOpen
+		? { height: 'fit-content' }
+		: { height: '36px' }
+
 	return (
-		<section className="add-comment">
+		<Fragment>
 			<div className="member-img">
 				<img src={user?.imgUrl} alt="member" referrerPolicy="no-referrer" />
 			</div>
-			<form onSubmit={onAddComment}>
-				<textarea
-					value={comment}
-					onChange={handleChange}
-					style={inputSize}
-					onFocus={onFocusInput}
-					onBlur={onBlurInput}
-					onKeyDown={handleUserKeyPress}
-					placeholder="Write a comment..."
-				></textarea>
-				{/* <button
-					className="btn-save-comment"
-					style={isButtonShown}
-					disabled={isButtonClickable}
-				>
-					Save
-				</button> */}
+			<form>
+				<div className="new-comment-container" style={newCommentContainerStyle}>
+					<textarea
+						value={commentTxt}
+						onChange={handleChange}
+						style={textAreaStyle}
+						onFocus={onFocusInput}
+						onBlur={(ev) => onBlurInput(ev)}
+						onKeyDown={handleUserKeyPress}
+						placeholder="Write a comment..."
+					></textarea>
+					<button
+						className="btn-save-comment"
+						style={addNewCommentBtnStyle}
+						disabled={isButtonClickable}
+						type="submit"
+						onClick={(ev) => {
+							onAddComment(ev)
+						}}
+					>
+						Save
+					</button>
+				</div>
 			</form>
-		</section>
+		</Fragment>
 	)
 }

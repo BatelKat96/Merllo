@@ -2,6 +2,15 @@
     padding: 8px 0px;
     max-width: 558px;
     font-family:'segoe_ui';
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto;
+
+    .icon-activities {
+        svg {
+            font-size: 17px;
+        }
+    }
 
     .task-activities-header {
         height: 32px;
@@ -14,27 +23,24 @@
         margin-bottom: 4px;
         width: 100%;
         color: #172b4d;
-
-        .icon-activities {
-            svg {
-                font-size: 17px;
-            }
-        }
     }
 
 
-    .add-comment {
-        display: flex;
-        margin-top: 12px;
-        gap: 8px;
-        width: 100%;
-        align-items: center;
-        height: 36px;
+    // .add-comment {
+        // display: flex;
+        // margin-top: 12px;
+        // gap: 8px;
+        // width: 100%;
+        // // align-items: center;
+        // height: 36px;
+        // grid-column: 1/3;
+    // }
 
         .member-img {
             height: 32px;
             width: 32px;
             object-fit: cover;
+            justify-self: center;
             img {
                 width: 100%;
                 border-radius: 25em;
@@ -44,18 +50,14 @@
         form {
             width: 100%;
         }
-        
-        textarea {
-            font-family:'segoe_ui';
-            overflow: hidden;
-            overflow-wrap: break-word;
-            height: 20px;
+
+        .new-comment-container {
             width: 100%;
-            padding: 8px 12px;
+            height: fit-content;
             background-color: white;
             border-radius: 3px;
             flex: 1;
-
+            margin: 0;
             box-shadow: 0 1px 2px -1px #091e4240, 0 0 0 1px #091e4214;
             transition-duration: 85ms;
             transition-property: height, box-shadow;
@@ -66,24 +68,41 @@
             &::placeholder {
                 color: #5e6c84;
             }
-        }
 
-        button.btn-save-comment {
-            height: 32px;
-            position: absolute;
-            bottom: 12px;
-            left: 52px;
-            &:disabled {
-                background-color: #091e420a;
-                color: #a5adba;
-                cursor: not-allowed;
+            textarea {
+                font-family:'segoe_ui';
+                overflow: hidden;
+                overflow-wrap: break-word;
+                width: 100%;
+                padding: 8px 12px;
+                background-color: white;
+                border-radius: 3px;
+                flex: 1;
+                margin: 0;
+            }
+
+            button.btn-save-comment {
+                height: 32px;
+                border-radius: 3px;
+                border:none;
+                margin-left: 12px;
+                padding:3px 12px;
+                background-color: #0079bf;
+                color: white;
                 &:hover {
-                background-color: #091e420a;
-                color: #a5adba;
+                background-color: #026aa7;
+                }
+                &:active {
+                    background-color: #055a8c;
+                }
+                &:disabled {
+                    background-color: #091e420a;
+                    color: #a5adba;
+                    cursor: not-allowed;
                 }
             }
         }
-    }
+    
 
 
     .task-activity-list {
@@ -92,13 +111,18 @@
         gap: 14px;
         width: 100%;
         margin-top: 12px;
+        grid-column: 1/3;
 
         .activity-preview {
             width: 100%;
             display: grid;
-            grid-template-columns: 32px 1fr;
-            gap: 8px;
+            grid-template-columns: 40px 1fr;
             color: #172b4d;
+
+            .preview-member-img {
+                justify-self: center;
+                width: 32px;
+            }
 
             .activity-description {
                 word-break: break-word;
