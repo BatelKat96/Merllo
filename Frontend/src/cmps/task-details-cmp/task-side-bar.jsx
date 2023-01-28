@@ -141,7 +141,7 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
         <button className='clean-btn btn-task-details btn-side-bar'
             onClick={onCopyTask}>
             <span className='btn-side-bar-icon'>
-                <MdContentCopy />
+                <MdContentCopy className='copy-svg' />
             </span>
             Copy
         </button>

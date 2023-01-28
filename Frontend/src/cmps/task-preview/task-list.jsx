@@ -1,44 +1,33 @@
-import { useState, useRef } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { boardService } from '../../services/board.service'
 import { saveTask } from '../../store/board.actions'
 import { TaskPreview } from './task-preview'
-import { DynamoicModal } from '../dynamic-modal'
 
 import { IoClose } from 'react-icons/io5'
 import { BsPlusLg } from 'react-icons/bs'
-import { FiMoreHorizontal } from 'react-icons/fi'
 
-export function TaskList({ group, handleOnDragEnd }) {
+
+export function TaskList({ group }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const tasks = group.tasks
 
     const [taskToEdit, setTaskToEdit] = useState(boardService.getEmptyTask())
     const [isAddNewTaskOpen, setIsAddNewTaskOpen] = useState(false)
-    const [modalType, setModalType] = useState()
-
-    const moreBtn = useRef()
-    // modalType = moreBtn
-
 
     function handleNewTask({ target }) {
         let { value, name: field } = target
         setTaskToEdit((prevTask) => ({ ...prevTask, [field]: value }))
     }
 
-    function closeAddNewTask() {
-        setIsAddNewTaskOpen(false)
-    }
-
     function openAddNewTask() {
         setIsAddNewTaskOpen(true)
     }
 
-    function onOpenModal(type) {
-        setModalType(type)
+    function closeAddNewTask() {
+        setIsAddNewTaskOpen(false)
     }
 
     function handleKeyPress(ev) {
@@ -59,12 +48,10 @@ export function TaskList({ group, handleOnDragEnd }) {
         }
     }
 
-
     return (
         <>
             <section className="task-list-wraper">
 
-                {/* <DragDropContext onDragEnd={(result) => handleOnDragEnd(result, group)}> */}
                 <Droppable droppableId={group.id}
                     key="tasks"
                     type="tasks"
@@ -122,8 +109,6 @@ export function TaskList({ group, handleOnDragEnd }) {
                             onClick={openAddNewTask}>
                             <BsPlusLg className="icon-plus" /> Add a card
                         </button>
-
-                        {/* <button className="btn-group template">template</button> */}
                     </div>
                 }
 
@@ -162,32 +147,12 @@ export function TaskList({ group, handleOnDragEnd }) {
                                     </a>
                                 </div>
 
-                                <div className="more-btns">
-
-                                    <a
-                                        className="more-btn"
-                                        ref={moreBtn}
-                                        onClick={() => onOpenModal('options')}
-                                    >
-                                        <FiMoreHorizontal className="icon-close" />
-                                    </a>
-                                </div>
-
                             </div>
 
                         </form>
 
                     </div>
                 }
-                {modalType && <DynamoicModal
-                    cmpType={moreBtn}
-                    refDataBtn={moreBtn}
-                    // task={task}
-                    // groupId={groupId}
-                    // boardId={boardId}
-                    onOpenModal={onOpenModal}
-                // onSaveTask={onSaveTask} 
-                />}
             </section>
 
         </>)

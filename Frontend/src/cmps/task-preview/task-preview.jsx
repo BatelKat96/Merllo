@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { QuickTaskEdit } from './quick-task-edit'
@@ -12,6 +12,8 @@ export function TaskPreview({ group, task, board }) {
 	const navigate = useNavigate()
 
 	const [quickTaskEdit, toggleQuickTaskEdit] = useState(false)
+
+	const quickEditBtn = useRef()
 
 	const currLabels = task.labelIds
 	const currMembers = task.memberIds
@@ -29,10 +31,10 @@ export function TaskPreview({ group, task, board }) {
 	function onQuickTaskEdit(ev) {
 		ev.stopPropagation()
 		ev.preventDefault()
-		toggleQuickTaskEdit(!quickTaskEdit)
+		toggleQuickTaskEdit(!quickTaskEdit) 
 	}
 
-	const onTask = () => {
+	function onTask() {
 		navigate(`/board/${boardId}/${group.id}/${task.id}`)
 	}
 
@@ -58,7 +60,9 @@ export function TaskPreview({ group, task, board }) {
 					</div>
 				)}
 
-				<a className="edit-btn" onClick={onQuickTaskEdit}>
+				<a className="edit-btn"
+					onClick={onQuickTaskEdit}
+					ref={quickEditBtn}>
 					<EditSvg />
 
 					{quickTaskEdit && (
@@ -70,6 +74,7 @@ export function TaskPreview({ group, task, board }) {
 							onEdit={onQuickTaskEdit}
 							toggleQuickTaskEdit={toggleQuickTaskEdit}
 							quickTaskEdit={quickTaskEdit}
+							refDataBtn={quickEditBtn}
 						/>
 					)}
 				</a>
