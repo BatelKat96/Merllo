@@ -21,7 +21,8 @@ export function DynamoicModal({
 	boardId,
 	groupId,
 	refDataBtn,
-	onSaveTask
+	onSaveTask,
+	onSaveEdit
 }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddLabelModalOpen, setIsAddLabelModalOpen] = useState(false)

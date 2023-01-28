@@ -20,9 +20,7 @@
     .open-task {
         z-index: 220;
         width: 260px;
-        position: relative;
-        top: 170px;
-        left: -112px;
+        position: fixed;
 
         form {
 
@@ -46,11 +44,10 @@
 
             button {
                 position: absolute;
-                top: cal(124px + 6px);
+                top: cal(124px + 2px);
                 font-size: 14px;
                 background-color: #046AA7;
                 cursor: pointer;
-
                 background-color: #0079bf;
                 border: none;
                 box-shadow: none;
@@ -68,8 +65,8 @@
 
     .quick-edit-btns {
         position: relative;
-        top: 36px;
-        left: 146px;
+        top: 10px;
+        left: 260px;
         z-index: 220;
         cursor: pointer;
         display: flex;
@@ -92,19 +89,29 @@
             gap: 5px;
             transition: all 150ms ease-out 0s;
 
+            svg {
+                color: #c7d1db;
+                height: 13px;
+
+                path {
+                    fill: #c7d1db;
+                }
+            }
+
             &:hover {
                 background-color:rgba(0, 0, 0, 0.902);
                 transform: translateX(5px);
             }
 
-            .tag-svg {
+            .tag-svg, .cover-svg {
                 transform: rotate(270deg);
             }
 
             .copy-svg {
                     path {
-                        stroke: #c7d1db98;
+                        stroke: #c7d1db;
                         fill: transparent;
+                        // fill:#c7d1db;
                     }
     
             }

@@ -11,11 +11,9 @@ const STORAGE_TASKS_KEY = 'task'
 _createTasks()
 
 export const taskService = {
-
     getById,
     save,
-    remove,
-
+    remove
 }
 
 
