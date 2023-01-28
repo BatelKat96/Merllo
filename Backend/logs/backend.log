@@ -419,3 +419,50 @@
 28.1.2023, 17:58:23 - INFO - New connected socket [id: 3ADtcXo_GjcyZZeTAABL] 
 28.1.2023, 17:58:23 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 3ADtcXo_GjcyZZeTAABL] 
 28.1.2023, 17:58:24 - INFO - Socket is now on board 63d541512dc177b41719d5ec [id: 3ADtcXo_GjcyZZeTAABL] 
+28.1.2023, 18:00:13 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:00:15 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 18:00:18 - INFO - New connected socket [id: 5Lw6QapGSQDovLYQAABN] 
+28.1.2023, 18:00:18 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 5Lw6QapGSQDovLYQAABN] 
+28.1.2023, 18:00:18 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: 5Lw6QapGSQDovLYQAABN] 
+28.1.2023, 18:00:25 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:00:29 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 18:00:32 - INFO - New connected socket [id: r37f3Fyio_l0D1pKAABP] 
+28.1.2023, 18:00:33 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: r37f3Fyio_l0D1pKAABP] 
+28.1.2023, 18:00:32 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: r37f3Fyio_l0D1pKAABP] 
+28.1.2023, 18:00:34 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:00:36 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 18:00:37 - INFO - New connected socket [id: Gns2tthJKpCnfZs8AABR] 
+28.1.2023, 18:00:37 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: Gns2tthJKpCnfZs8AABR] 
+28.1.2023, 18:00:37 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: Gns2tthJKpCnfZs8AABR] 
+28.1.2023, 18:00:50 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:00:50 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:04:32 - INFO - New connected socket [id: 6HgyMyeHS1io77NQAABT] 
+28.1.2023, 18:04:32 - INFO - Setting socket.userId = kZZOF4 for socket [id: 6HgyMyeHS1io77NQAABT] 
+28.1.2023, 18:04:32 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: 6HgyMyeHS1io77NQAABT] 
+28.1.2023, 18:05:10 - DEBUG - Getting Boards 
+28.1.2023, 18:05:21 - DEBUG - Getting Boards 
+28.1.2023, 18:05:44 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 18:05:46 - INFO - New connected socket [id: THRNL7vtno9Xr8xnAABV] 
+28.1.2023, 18:05:46 - INFO - Setting socket.userId = fJeKSB for socket [id: THRNL7vtno9Xr8xnAABV] 
+28.1.2023, 18:05:46 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: THRNL7vtno9Xr8xnAABV] 
+28.1.2023, 18:11:59 - INFO - Server is running on port: 3030 
+28.1.2023, 18:12:03 - INFO - New connected socket [id: c1onQ4M2IWXcDc4VAAAB] 
+28.1.2023, 18:12:03 - INFO - Setting socket.userId = rGOCXx for socket [id: c1onQ4M2IWXcDc4VAAAB] 
+28.1.2023, 18:12:03 - INFO - New connected socket [id: M3FkvNk0p2NKq8p4AAAD] 
+28.1.2023, 18:12:23 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 18:12:26 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:12:30 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 18:12:31 - INFO - New connected socket [id: FPt07wu0zJQHomBDAAAF] 
+28.1.2023, 18:12:32 - INFO - Setting socket.userId = RId9m8 for socket [id: FPt07wu0zJQHomBDAAAF] 
+28.1.2023, 18:12:32 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: FPt07wu0zJQHomBDAAAF] 
+28.1.2023, 18:12:41 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:12:41 - INFO - Emit to room: 63d541512dc177b41719d5eb (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:12:53 - DEBUG - auth.service - login with username: drorka 
+28.1.2023, 18:12:53 - INFO - User login:  | {"_id":"63d53f24405315f7da6a0ada","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
+28.1.2023, 18:12:53 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:12:57 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 18:12:58 - INFO - New connected socket [id: A2lZoZgVqpWkaV5HAAAH] 
+28.1.2023, 18:12:59 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: A2lZoZgVqpWkaV5HAAAH] 
+28.1.2023, 18:12:59 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: A2lZoZgVqpWkaV5HAAAH] 
+28.1.2023, 18:13:04 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 18:13:04 - INFO - Broadcast to room 63d541512dc177b41719d5eb excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)

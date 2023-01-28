@@ -2,6 +2,7 @@ const boardService = require('./board.service.js')
 const logger = require('../../services/logger.service')
 const { broadcast } = require('../../services/socket.service.js')
 const asyncLocalStorage = require('../../services/als.service.js')
+const utilService = require('../../services/util.service.js')
 
 async function getBoards(req, res) {
 	try {
@@ -48,7 +49,9 @@ async function updateBoard(req, res) {
 	try {
 		const board = req.body
 		const updatedBoard = await boardService.update(board)
-		const loggedinUser = asyncLocalStorage.getStore().loggedinUser
+		const loggedinUser = asyncLocalStorage.getStore().loggedinUser || {
+			_id: utilService.makeId(),
+		}
 
 		broadcast({
 			type: 'update-board',
