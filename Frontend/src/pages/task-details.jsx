@@ -124,7 +124,7 @@ export function TaskDetails() {
 		setModalType(type)
 	}
 
-	return (
+	return ( <>
 		<section className="task-details">
 			<div onClick={(ev) => onCloseTaskDetails(ev)} className="black-screen">
 				<div
@@ -140,7 +140,7 @@ export function TaskDetails() {
 					)}
 
 					{task && board && (
-						<Fragment>
+						<>
 							<span
 								onClick={(ev) => onCloseTaskDetails(ev)}
 								className={`clean-btn btn-task-exit ${coverClose}`}
@@ -251,24 +251,13 @@ export function TaskDetails() {
 									/>
 								</div>
 							</div>
-						</Fragment>
+						</>
 					)}
 				</div>
 			</div>
 
-			{modalType && (
-				<TaskCmpDynamoic
-					cmpType={modalType}
-					refDataBtn={coverBtn}
-					task={task}
-					groupId={groupId}
-					boardId={boardId}
-					onOpenModal={onOpenModal}
-					onSaveTask={onSaveTask}
-				/>
-			)}
 
-			{/* {modalType && <DynamoicModal
+            {/* {modalType && <TaskCmpDynamoic
                 cmpType={modalType}
                 refDataBtn={coverBtn}
                 task={task}
@@ -276,6 +265,16 @@ export function TaskDetails() {
                 boardId={boardId}
                 onOpenModal={onOpenModal}
                 onSaveTask={onSaveTask} />} */}
+
+            {modalType && <DynamoicModal
+                cmpType={modalType}
+                refDataBtn={coverBtn}
+                task={task}
+                groupId={groupId}
+                boardId={boardId}
+                onOpenModal={onOpenModal}
+                onSaveTask={onSaveTask} />}
 		</section>
+		</>
 	)
 }

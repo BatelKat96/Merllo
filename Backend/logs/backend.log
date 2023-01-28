@@ -152,6 +152,17 @@
 =======
 >>>>>>> 98459cccf15d492506e9908d2780cee049153da7
 >>>>>>> 0497315ce5efd7661c3728bc8c58b478cb9a7009
+<<<<<<< HEAD
+27.1.2023, 16:25:27 - DEBUG - Getting Boards 
+27.1.2023, 16:25:33 - DEBUG - Getting Boards 
+27.1.2023, 16:47:22 - DEBUG - Getting Boards 
+28.1.2023, 8:22:04 - INFO - Server is running on port: 3030 
+28.1.2023, 8:27:02 - DEBUG - Getting Boards 
+28.1.2023, 8:29:22 - DEBUG - Getting Boards 
+28.1.2023, 8:29:41 - DEBUG - Getting Boards 
+28.1.2023, 10:33:56 - DEBUG - Getting Boards 
+28.1.2023, 10:34:13 - DEBUG - Getting Boards 
+=======
 27.1.2023, 14:18:10 - DEBUG - Getting Boards 
 27.1.2023, 14:18:19 - DEBUG - Getting Boards 
 27.1.2023, 14:18:35 - DEBUG - Getting Boards 
@@ -275,11 +286,9 @@
 27.1.2023, 18:33:51 - INFO - New connected socket [id: XwjIpufM_13Ev3khAAAT] 
 27.1.2023, 18:33:52 - INFO - Setting socket.userId = 63d3e3630e97fcd4d0fddd98 for socket [id: XwjIpufM_13Ev3khAAAT] 
 27.1.2023, 18:33:52 - INFO - Socket is now on board 63d38c0d22c23a90886a018e [id: XwjIpufM_13Ev3khAAAT] 
-27.1.2023, 23:36:44 - INFO - Socket disconnected [id: undefined] 
-28.1.2023, 10:42:54 - INFO - New connected socket [id: KGMCpCorFjIG0KLrAAAV] 
-28.1.2023, 10:43:36 - INFO - Socket disconnected [id: undefined] 
-28.1.2023, 10:43:59 - INFO - New connected socket [id: Hf1e55yiC7NE5vmPAAAX] 
-28.1.2023, 12:23:30 - INFO - Socket disconnected [id: undefined] 
-28.1.2023, 13:48:06 - INFO - New connected socket [id: zq3ATDJD17hxlGA_AAAZ] 
-28.1.2023, 13:48:28 - INFO - Socket disconnected [id: undefined] 
-28.1.2023, 13:51:17 - INFO - New connected socket [id: HFjsuO4UII1RbHITAAAb] 
+>>>>>>> 569ec35bcd0e64a1855e430e44d5114b83ce80dc
+28.1.2023, 10:35:26 - INFO - Server is running on port: 3030 
+28.1.2023, 10:42:51 - INFO - New connected socket [id: SHcP5Rq0XXWZF5NFAAAB] 
+28.1.2023, 10:42:53 - INFO - Socket is now on board 63d3952dc6ec2af08474bed8 [id: SHcP5Rq0XXWZF5NFAAAB] 
+28.1.2023, 10:43:10 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 10:43:15 - INFO - New connected socket [id: PM4h2YGWscwCF3fZAAAD] 

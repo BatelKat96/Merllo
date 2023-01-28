@@ -24,8 +24,9 @@ export const boardService = {
 	getEmptyLabel,
 	getEmptyTodo,
 	getEmptyChecklist,
-	getEmptyAttachment,
+	getEmptyAttachment
 }
+
 window.cs = boardService
 
 // * board service
