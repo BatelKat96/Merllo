@@ -108,7 +108,8 @@ export function GroupList() {
 		if (
 			destination.droppableId === source.droppableId &&
 			destination.index === source.index
-		) return
+		)
+			return
 
 		if (type === 'groups') {
 			const newGroups = Array.from(groups)
@@ -121,8 +122,12 @@ export function GroupList() {
 		}
 
 		if (type === 'tasks') {
-			const sourceGroup = groups.find(group => group.id === source.droppableId)
-			const destinationGroup = groups.find(group => group.id === destination.droppableId)
+			const sourceGroup = groups.find(
+				(group) => group.id === source.droppableId
+			)
+			const destinationGroup = groups.find(
+				(group) => group.id === destination.droppableId
+			)
 
 			if (sourceGroup === destinationGroup) {
 				const newTasks = Array.from(sourceGroup.tasks)
@@ -132,9 +137,7 @@ export function GroupList() {
 				sourceGroup.tasks = newTasks
 				updateBoard(board)
 				return
-			}
-
-			else {
+			} else {
 				const newSourceGroup = Array.from(sourceGroup.tasks)
 				const newDestinationGroup = Array.from(destinationGroup.tasks)
 				const [task] = newSourceGroup.splice(source.index, 1)
@@ -148,124 +151,127 @@ export function GroupList() {
 		}
 	}
 
-
-
-	if (!groups) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
+	if (!groups)
+		return (
+			<div className="loader-wrapper">
+				<img className="loader" src={Loader} alt="loader" />
+			</div>
+		)
 
 	const addNewTxt = groups.length === 0 ? 'Add a list' : 'Add another list'
 
-	return ( <>
-		<section className="group-list-container">
-
-			<DragDropContext onDragEnd={handleOnDragEnd}>
-
-				<Droppable droppableId="groups"
-					direction="horizontal"
-					type="groups"
-					key="groups">
-
-					{(provided) => ( 
-
-						<ul className="group-list clean-list groups"
-							{...provided.droppableProps}
-							ref={provided.innerRef}>
-
-							{groups.map((group, index) => (
-
-								<Draggable key={group.id}
-									draggableId={group.id}
-									index={index}>
-
-									{(provided) => (
-
-										<li className="group-wrapper" key={group.id}
-											ref={provided.innerRef}
-											{...provided.draggableProps}
-											{...provided.dragHandleProps}>
-
-											<div className="group-top">
-												<form>
-													<textarea
-														name="title"
-														className="edit-group-title"
-														id={group.id}
-														spellCheck="false"
-														maxLength="512"
-														defaultValue={group.title}
-														onChange={handleEditGroup}
-													></textarea>
-												</form>
-												<button
-													className="btn-group more"
-													onClick={(event) => toggleDropdown(event, group.id)}
-												>
-													<HiDotsHorizontal className="icon-more" />
-												</button>
-												{isDropdownOpen.groupId === group.id && (
-													<GroupDropdown
-														toggleDropdown={toggleDropdown}
-														onRemoveGroup={onRemoveGroup}
-														onCopyGroup={onCopyGroup}
-														group={group}
-													/>
-												)}
-											</div>
-											<TaskList
-												group={group}
-												handleOnDragEnd={handleOnDragEnd}
-											/>
-
-										</li>)}
-								</Draggable>
-							))}
-							{provided.placeholder}
-						</ul>
-					)}
-
-				</Droppable>
-			</DragDropContext>
-
-			<div className={`add-new-group`}>
-				{!isAddNewGroupOpen && (
-					<div
-						className="placeholder"
-						onClick={() => {
-							openAddNewGroup()
-						}}
+	return (
+		<>
+			<section className="group-list-container">
+				<DragDropContext onDragEnd={handleOnDragEnd}>
+					<Droppable
+						droppableId="groups"
+						direction="horizontal"
+						type="groups"
+						key="groups"
 					>
-						<AiOutlinePlus className="icon-plus" />
-						<span>{addNewTxt}</span>
-					</div>
-				)}
-				{isAddNewGroupOpen && (
-					<form className="add-group-form">
-						<input
-							type="text"
-							name="title"
-							placeholder="Enter list title..."
-							autoFocus
-							spellCheck="false"
-							maxLength="512"
-							value={groupToEdit.title}
-							onChange={handleNewGroup}
-						/>
-						<div className="add-group-controls">
-							<button className="add-group" onClick={onSaveNewGroup}>
-								Add list
-							</button>
-							<a
-								className="cancel"
-								onClick={() => {
-									closeAddNewGroup()
-								}}
+						{(provided) => (
+							<ul
+								className="group-list clean-list groups"
+								{...provided.droppableProps}
+								ref={provided.innerRef}
 							>
-								<IoClose className="icon-close" />
-							</a>
+								{groups.map((group, index) => (
+									<Draggable
+										key={group.id}
+										draggableId={group.id}
+										index={index}
+									>
+										{(provided) => (
+											<li
+												className="group-wrapper"
+												key={group.id}
+												ref={provided.innerRef}
+												{...provided.draggableProps}
+												{...provided.dragHandleProps}
+											>
+												<div className="group-top">
+													<form>
+														<textarea
+															name="title"
+															className="edit-group-title"
+															id={group.id}
+															spellCheck="false"
+															maxLength="512"
+															defaultValue={group.title}
+															onChange={handleEditGroup}
+														></textarea>
+													</form>
+													<button
+														className="btn-group more"
+														onClick={(event) => toggleDropdown(event, group.id)}
+													>
+														<HiDotsHorizontal className="icon-more" />
+													</button>
+													{isDropdownOpen.groupId === group.id && (
+														<GroupDropdown
+															toggleDropdown={toggleDropdown}
+															onRemoveGroup={onRemoveGroup}
+															onCopyGroup={onCopyGroup}
+															group={group}
+														/>
+													)}
+												</div>
+												<TaskList
+													group={group}
+													handleOnDragEnd={handleOnDragEnd}
+												/>
+											</li>
+										)}
+									</Draggable>
+								))}
+								{provided.placeholder}
+							</ul>
+						)}
+					</Droppable>
+				</DragDropContext>
+
+				<div className={`add-new-group`}>
+					{!isAddNewGroupOpen && (
+						<div
+							className="placeholder"
+							onClick={() => {
+								openAddNewGroup()
+							}}
+						>
+							<AiOutlinePlus className="icon-plus" />
+							<span>{addNewTxt}</span>
 						</div>
-					</form>
-				)}
-			</div>
-		</section>
+					)}
+					{isAddNewGroupOpen && (
+						<form className="add-group-form">
+							<input
+								type="text"
+								name="title"
+								placeholder="Enter list title..."
+								autoFocus
+								spellCheck="false"
+								maxLength="512"
+								value={groupToEdit.title}
+								onChange={handleNewGroup}
+							/>
+							<div className="add-group-controls">
+								<button className="add-group" onClick={onSaveNewGroup}>
+									Add list
+								</button>
+								<a
+									className="cancel"
+									onClick={() => {
+										closeAddNewGroup()
+									}}
+								>
+									<IoClose className="icon-close" />
+								</a>
+							</div>
+						</form>
+					)}
+				</div>
+			</section>
 		</>
 	)
 }

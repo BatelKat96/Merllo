@@ -214,7 +214,8 @@ function getEmptyTask() {
 		title: '',
 		archivedAt: null,
 		labelIds: [],
-		dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
+		dueDate: '',
+		// dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
 		byMember: {
 			_id: '',
 			username: '',

@@ -6,6 +6,11 @@ import { QuickTaskEdit } from './quick-task-edit'
 import { utilService } from '../../services/util.service'
 import { ReactComponent as EditSvg } from '../../assets/img/icons-task-preview/edit.svg'
 import descriptionIcon from '../../assets/img/icons-task-details/description-icon.svg'
+import { FaRegComment } from 'react-icons/fa'
+import { FiPaperclip } from 'react-icons/fi'
+import { AiOutlineClockCircle } from 'react-icons/ai'
+import { BsCheck2Square } from 'react-icons/bs'
+import { GrTextAlignFull } from 'react-icons/gr'
 
 export function TaskPreview({ group, task, board }) {
 	const { boardId } = useParams()
@@ -18,6 +23,10 @@ export function TaskPreview({ group, task, board }) {
 	const currLabels = task.labelIds
 	const currMembers = task.memberIds
 	const currCover = task.style
+	const currComments = task.comments
+	const currAttach = task.attachments
+	const currDueDate = task.dueDate
+	const currCheck = task.checklists
 
 
 	var fullMembers = currMembers
@@ -30,7 +39,7 @@ export function TaskPreview({ group, task, board }) {
 
 	function onQuickTaskEdit(ev) {
 		ev.stopPropagation()
-		ev.preventDefault()
+		// ev.preventDefault()
 		toggleQuickTaskEdit(!quickTaskEdit) 
 	}
 
@@ -40,27 +49,28 @@ export function TaskPreview({ group, task, board }) {
 
 	function onLabel(ev) {
 		ev.stopPropagation()
+		// ev.preventDefault()
 	}
 
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
 
-				{task.style?.backgroundColor && (
+				{currCover?.backgroundColor && (
 					<div
 						className="task-preview-cover"
 						style={currCover}>
 					</div>
 				)}
 
-				{task.style?.background && (
+				{currCover?.background && (
 					<div
 						className="task-preview-cover img"
 						style={currCover}>
 					</div>
 				)}
 
-				<a className="edit-btn"
+				<button className="edit-btn"
 					onClick={onQuickTaskEdit}
 					ref={quickEditBtn}>
 					<EditSvg />
@@ -77,7 +87,7 @@ export function TaskPreview({ group, task, board }) {
 							refDataBtn={quickEditBtn}
 						/>
 					)}
-				</a>
+				</button>
 
 				<section className='task-preview-details'>
 
@@ -98,10 +108,46 @@ export function TaskPreview({ group, task, board }) {
 						{task.title}
 					</p>
 
-					<div className="task-preview-actions ">
-						{task.description && (
-							<img className="task-preview-description-icon" src={descriptionIcon} />
+					<div className="task-preview-actions">
+
+						{currDueDate !== '' && (
+							<span className="task-preview-actions-icons date">
+								<AiOutlineClockCircle />
+								<p>{currDueDate}</p>
+							</span>
 						)}
+
+						{task?.description && (
+							<span className="task-preview-actions-icons desc">
+								<GrTextAlignFull />
+							</span>
+						)}
+
+						{currComments?.length !== 0 && (
+							<span className="task-preview-actions-icons comment">
+								<FaRegComment />
+								<p>{currComments.length}</p>
+							</span>
+						)}
+
+						{currAttach?.length !== 0 && (
+							<span className="task-preview-actions-icons attach">
+								<FiPaperclip />
+								<p>{currAttach.length}</p>
+							</span>
+						)}
+
+						{currCheck?.length !== 0 && (
+							<span className="task-preview-actions-icons check">
+								<BsCheck2Square />
+								<p>{currCheck.length}</p>
+							</span>
+						)}
+
+					</div>
+
+
+					<div className='task-preview-actions-member'>
 						<ul className="task-preview-member-container clean-list">
 							{fullMembers &&
 								fullMembers.map((member) => (
@@ -122,6 +168,7 @@ export function TaskPreview({ group, task, board }) {
 								))}
 						</ul>
 					</div>
+
 
 					{/* <div className="task-preview-container"> */}
 					{/* <div className="date-container">

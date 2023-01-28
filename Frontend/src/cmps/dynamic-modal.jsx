@@ -27,7 +27,6 @@ export function DynamoicModal({
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [isAddLabelModalOpen, setIsAddLabelModalOpen] = useState(false)
 	const [selectedLabel, setSelectedLabel] = useState('')
-
 	const modalRef = useRef(null)
 	const [modalStyle, setModalStyle] = useState(false)
 	const [modalHeight, setModalHeight] = useState()
@@ -75,10 +74,6 @@ export function DynamoicModal({
 	if (cmpType === 'labels' && isAddLabelModalOpen) {
 		if (!selectedLabel) data.title = 'Create Label'
 		else data.title = 'Edit Label'
-	}
-
-	if (cmpType === 'options') {
-		data.title = 'Options'
 	}
 
 	if (cmpType === 'move card') {
@@ -179,14 +174,6 @@ export function DynamoicModal({
 
 
 					{cmpType === 'list action' && (
-						<TaskCoverModal
-							task={task}
-						/>
-					)}
-
-
-					{cmpType === 'options' && (
-
 						<TaskCoverModal
 							task={task}
 						/>

@@ -108,7 +108,6 @@
             display: flex;
             flex-direction: column;
             align-items: start;
-            justify-content: space-between;
             button {
                 background-color:inherit;
                 width: 100%;
@@ -130,6 +129,98 @@
                 }
                 &:active {
                     background-color: #e4f0f6;
+                }
+            }
+
+            hr.side-menu-separator {
+                height: 1px;
+                border: 0;
+                border-top: 1px solid rgba(9, 30, 66, 0.129);
+                margin: 8px 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            .board-activity-log {
+                width: 100%;
+                .board-activity-log-header {
+                    background-color:inherit;
+                    width: 100%;
+                    height: 30px;
+                    color: #172b4d;
+                    line-height: 30px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    font-family: 'Segoe UI';
+                    text-align: start;
+                    padding: 0 6px;
+                }
+
+                .board-activity-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                    width: 100%;
+                    margin-top: 12px;
+                    padding: 0 6px;
+            
+                    .board-activity-preview {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 32px 1fr;
+                        color: #172b4d;
+            
+                        .preview-member-img {
+                            width: 32px;
+                        }
+            
+                        .board-activity-description {
+                            display: flex;
+                            flex-direction: column;
+                            word-break: break-word;
+                            line-height: 20px;
+                            
+                            p {
+                                margin: 0;
+                            }
+                        
+                            .username {
+                                font-weight: 700;
+                                font-size: 14px;
+                                margin-inline-end: 3px;
+                                color: #172b4d;
+                                line-height: 20px;
+                            }
+
+                            .activity-txt {
+                                font-weight: 400;
+                                font-size: 14px;
+                                color: #172b4d;
+                                line-height: 20px;
+                                height: fit-content;
+                                word-break: break-word;
+                            }
+
+                            .time {
+                                font-weight: 400;
+                                font-size: 12px;
+                                color: #5e6c84;
+                                margin-left: 8px;
+                            }
+
+                            .comment {
+                                margin-top: 3px;
+                                width: 100%;
+                                min-height: 36px;
+                                border-radius: 3px;
+                                box-shadow: 0 1px 2px -1px #091e4240, 0 0 0 1px #091e4214;
+                                background-color: white;
+                                padding: 8px 12px;
+                                margin-bottom: 6px;
+                                color: #172b4d;
+                            }
+                        }
+                    }
                 }
             }
         }
