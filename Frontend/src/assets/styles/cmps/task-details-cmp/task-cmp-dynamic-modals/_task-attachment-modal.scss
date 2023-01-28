@@ -1,0 +1,37 @@
+.task-attachment-dynamic-modal {
+
+    .task-attachment-dynamic-add-container {
+
+        border-bottom: 1px solid rgba(9, 30, 66, 0.1294117647);
+        margin-block-end: 20px;
+    }
+
+    .task-attachment-dynamic-add {
+        position: relative;
+        border-radius: 3px;
+        padding: 12px 8px;
+        margin-block-end: 12px;
+        cursor: pointer;
+
+
+        .task-attachment-dynamic-modal-input {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .task-attachment-dynamic-p {
+            margin: 0;
+        }
+
+        &:hover {
+            background-color: $t-bg5;
+        }
+    }
+
+    .task-attachment-dynamic-file-name {
+        margin-inline-start: 10px;
+        font-family: segoe_ui_bold;
+    }
+
+
+}

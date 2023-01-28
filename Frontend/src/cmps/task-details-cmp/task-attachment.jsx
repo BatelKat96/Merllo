@@ -4,14 +4,18 @@ import { BsSquareHalf } from 'react-icons/bs'
 
 export function TaskAttachment({ task, attachment, onSaveTask, onDeleteAttachment }) {
 
+    // console.log('attachment:', attachment)
+    // console.log('taskStyle out: ', task.style)
+
     function onToggleTaskCover(ev) {
         let updateTask = { ...task }
         if (!updateTask.style) updateTask.style = {}
         const taskStyle = updateTask.style
-        console.log('updateTask:', updateTask)
+        // console.log('updateTask:', updateTask)
+        // console.log('taskStyle in:', taskStyle)
 
         if (taskStyle) {
-            if (taskStyle.background === attachment.url) {
+            if (taskStyle.background === `url("${attachment.url}") center center / cover`) {
                 taskStyle.background = null
             } else {
                 taskStyle.background = `url("${attachment.url}") center center / cover`
@@ -54,7 +58,7 @@ export function TaskAttachment({ task, attachment, onSaveTask, onDeleteAttachmen
                         }}
                     />
                 </section>
-                {task.style?.coverImg === attachment.url
+                {task.style?.background === `url("${attachment.url}") center center / cover`
                     ? <p className="make-attachment-cover-p">Remove cover</p>
                     : <p className="make-attachment-cover-p">Make cover</p>}
 
