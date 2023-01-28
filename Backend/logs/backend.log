@@ -415,3 +415,7 @@
 28.1.2023, 17:53:09 - INFO - Broadcast to room 63d541512dc177b41719d5ec excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
 28.1.2023, 17:53:19 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
 28.1.2023, 17:53:19 - INFO - Broadcast to room 63d541512dc177b41719d5ec excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:58:17 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 17:58:23 - INFO - New connected socket [id: 3ADtcXo_GjcyZZeTAABL] 
+28.1.2023, 17:58:23 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 3ADtcXo_GjcyZZeTAABL] 
+28.1.2023, 17:58:24 - INFO - Socket is now on board 63d541512dc177b41719d5ec [id: 3ADtcXo_GjcyZZeTAABL] 
