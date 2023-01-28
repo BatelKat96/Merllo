@@ -130,7 +130,8 @@ export function TaskSideBar({ onRemoveTask, task, onCopyTask, onSaveTask }) {
         <h3 className='small-headline side-bar-menu-second-section'>Actions</h3>
 
         <button className='clean-btn btn-task-details btn-side-bar'
-            onClick={() => { onRemoveTask() }}>
+            ref={moveCardBtn}
+            onClick={() => onOpenModal('move card')}>
             <span className='btn-side-bar-icon'>
                 <FiArrowRight />
             </span>

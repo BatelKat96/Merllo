@@ -7,6 +7,8 @@ import { TaskChecklistModal } from './task-details-cmp/task-cmp-dynamic-modals/t
 import { TaskDatesModal } from './task-details-cmp/task-cmp-dynamic-modals/task-dates-modal'
 import { TaskAttachmentModal } from './task-details-cmp/task-cmp-dynamic-modals/task-attachment-modal'
 import { TaskCoverModal } from './task-details-cmp/task-cmp-dynamic-modals/task-cover-modal'
+import { TaskMoveModal } from './task-details-cmp/task-cmp-dynamic-modals/task-move-modal'
+
 
 import Loader from '../assets/img/loader.svg'
 import { IoClose } from 'react-icons/io5'
@@ -74,6 +76,14 @@ export function DynamoicModal({
 		else data.title = 'Edit Label'
 	}
 
+	if (cmpType === 'options') {
+		data.title = 'Options'
+	}
+
+	if (cmpType === 'move card') {
+		data.title = 'Move card'
+	}
+
 
 	if (!board)
 		return (
@@ -92,6 +102,7 @@ export function DynamoicModal({
 				<a onClick={onClose}>
 					<IoClose className="close-icon" />
 				</a>
+
 
 				<p className="dynamoic-modal-title">{data.title}</p>
 
@@ -152,8 +163,10 @@ export function DynamoicModal({
 					)}
 
 					{cmpType === 'move card' && (
-						<TaskCoverModal
+						<TaskMoveModal
 							task={task}
+							onSaveTask={onSaveTask}
+							onClose={onClose}
 						/>
 					)}
 
@@ -172,6 +185,7 @@ export function DynamoicModal({
 
 
 					{cmpType === 'options' && (
+
 						<TaskCoverModal
 							task={task}
 						/>

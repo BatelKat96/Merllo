@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
@@ -6,6 +6,7 @@ import { Droppable, Draggable } from 'react-beautiful-dnd'
 import { boardService } from '../../services/board.service'
 import { saveTask } from '../../store/board.actions'
 import { TaskPreview } from './task-preview'
+import { DynamoicModal } from '../dynamic-modal'
 
 import { IoClose } from 'react-icons/io5'
 import { BsPlusLg } from 'react-icons/bs'
@@ -17,6 +18,11 @@ export function TaskList({ group, handleOnDragEnd }) {
 
     const [taskToEdit, setTaskToEdit] = useState(boardService.getEmptyTask())
     const [isAddNewTaskOpen, setIsAddNewTaskOpen] = useState(false)
+    const [modalType, setModalType] = useState()
+
+    const moreBtn = useRef()
+    // modalType = moreBtn
+
 
     function handleNewTask({ target }) {
         let { value, name: field } = target
@@ -29,6 +35,10 @@ export function TaskList({ group, handleOnDragEnd }) {
 
     function openAddNewTask() {
         setIsAddNewTaskOpen(true)
+    }
+
+    function onOpenModal(type) {
+        setModalType(type)
     }
 
     function handleKeyPress(ev) {
@@ -156,7 +166,8 @@ export function TaskList({ group, handleOnDragEnd }) {
 
                                     <a
                                         className="more-btn"
-                                        onClick={closeAddNewTask}
+                                        ref={moreBtn}
+                                        onClick={() => onOpenModal('options')}
                                     >
                                         <FiMoreHorizontal className="icon-close" />
                                     </a>
@@ -168,7 +179,16 @@ export function TaskList({ group, handleOnDragEnd }) {
 
                     </div>
                 }
-
+                {modalType && <DynamoicModal
+                    cmpType={moreBtn}
+                    refDataBtn={moreBtn}
+                    // task={task}
+                    // groupId={groupId}
+                    // boardId={boardId}
+                    onOpenModal={onOpenModal}
+                // onSaveTask={onSaveTask} 
+                />}
             </section>
+
         </>)
 }

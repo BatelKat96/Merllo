@@ -192,16 +192,7 @@ export function TaskDetails() {
                 </div>
             </div>
 
-            {modalType && <TaskCmpDynamoic
-                cmpType={modalType}
-                refDataBtn={coverBtn}
-                task={task}
-                groupId={groupId}
-                boardId={boardId}
-                onOpenModal={onOpenModal}
-                onSaveTask={onSaveTask} />}
-
-            {/* {modalType && <DynamoicModal
+            {/* {modalType && <TaskCmpDynamoic
                 cmpType={modalType}
                 refDataBtn={coverBtn}
                 task={task}
@@ -209,6 +200,15 @@ export function TaskDetails() {
                 boardId={boardId}
                 onOpenModal={onOpenModal}
                 onSaveTask={onSaveTask} />} */}
+
+            {modalType && <DynamoicModal
+                cmpType={modalType}
+                refDataBtn={coverBtn}
+                task={task}
+                groupId={groupId}
+                boardId={boardId}
+                onOpenModal={onOpenModal}
+                onSaveTask={onSaveTask} />}
         </section>
 
 

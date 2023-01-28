@@ -105,12 +105,12 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
             </div>
 
-            {/* <div className='cover-section-block attachments'>
+            <div className='cover-section-block attachments'>
                 <h3 className='small-headline cmp-dynamoic-options-title'>Attachments</h3>
                 <button className='cover-upload-btn'>
                     Upload a cover image
                 </button>
-            </div> */}
+            </div>
 
             <div className='cover-section-block unsplash'>
                 <h3 className='small-headline cmp-dynamoic-options-title'>Photos from Unsplash</h3>

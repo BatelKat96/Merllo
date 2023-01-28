@@ -26,8 +26,10 @@ export const boardService = {
 	getEmptyTask,
 	getEmptyLabel,
 	getEmptyTodo,
-	getEmptyChecklist, getEmptyAttachment
+	getEmptyChecklist,
+	getEmptyAttachment
 }
+
 window.cs = boardService
 
 _createBoards()
