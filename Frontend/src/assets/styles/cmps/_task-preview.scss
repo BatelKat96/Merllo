@@ -11,6 +11,7 @@
     font-size: 14px;
     white-space: normal;
     cursor: pointer;
+    padding-bottom: 2px;
     
     .task-preview-cover {
         height: 32px;
@@ -78,9 +79,9 @@
     }
 
     .task-preview-label-container {
-        padding: 4px 0 ;
-        // padding-bottom: 0;
-        // display: inline-block;
+        // padding: 4px 0 ;
+        display: flex;
+        gap: 2px;
 
         .task-preview-label {
             margin: 4px 0;
@@ -101,12 +102,13 @@
     }
 
     .task-preview-details {
-        padding: 4px 8px 2px;
+        padding: 4px 8px;
 
-        li {
-            float: left;
-            margin: 0 4px;
-            padding: 0 4px;
+        .task-preview-member-container {
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 2px;
         }
     
         p {
@@ -119,64 +121,64 @@
             color: $t-txt1;
             display: block;
             overflow: hidden;
-            padding: 0;
+            padding: 6px 0;
         }
 
-        .task-preview-actions {
-            display: block;
+        .task-preview-actions-wrapper {
             display: flex;
-            flex-direction: row;
             flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            float: left;
-            margin-left: -2px;
-            max-width: 100%;
+            justify-content: space-between;
 
-            p {
-                font-size: 11px;
-                padding-left: 2px;
-            }
-
-            .task-preview-actions-icons {
-                color:#6b778c;
-                // display: inline-block;
-                margin: 0 4px 4px 0;
-                max-width: 100%;
-                // min-height: 18px;
-                overflow: hidden;
-                padding: 2px;
-                position: relative;
-                text-decoration: none;
-                text-overflow: ellipsis;
-                vertical-align: top;
+            .task-preview-actions {
+                display: block;
                 display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
                 align-items: center;
-                padding: 0 4px;
+                float: left;
+                margin-left: -2px;
+                max-width: 100%;
+                margin-top: 4px;
 
-                .date {
-
+                p {
+                    font-size: 11px;
+                    padding-left: 2px;
                 }
 
-                .desc {
+                .task-preview-actions-icons {
+                    color:#6b778c;
+                    margin: 0 4px 4px 0;
+                    overflow: hidden;
+                    padding: 2px;
+                    position: relative;
+                    text-decoration: none;
+                    text-overflow: ellipsis;
+                    vertical-align: top;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 4px;
 
+                    .date {
+
+                    }
+
+                    .desc {
+                        
+                    }
+
+                    .comment {
+
+                    }
+
+                    .attach {
+
+                    }
+
+                    .check {
+
+                    }
                 }
-
-                .comment {
-
-                }
-
-                .attach {
-
-                }
-
-                .check {
-
-                }
-            }
-
-            .task-preview-actions-member {
-
             }
         }
     }
