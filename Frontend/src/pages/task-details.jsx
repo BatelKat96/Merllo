@@ -43,7 +43,7 @@ export function TaskDetails() {
 	const [modalType, setModalType] = useState()
 	const coverBtn = useRef()
 
-	let coverClose = task.style ? 'close-hover' : ''
+	let coverClose = task?.style?.background || task?.style?.backgroundColor ? 'close-hover' : ''
 
 	const navigate = useNavigate()
 
