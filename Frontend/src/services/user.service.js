@@ -1,8 +1,8 @@
 // import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
+import { utilService } from './util.service'
 
 import usersData from '../data/users-data.json'
-import { utilService } from './util.service'
 
 const STORAGE_KEY_USERS = 'user'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -20,8 +20,6 @@ export const userService = {
 }
 
 window.userService = userService
-
-_createUsers()
 
 function getUsers() {
 	console.log('user service getUsers')
@@ -76,9 +74,8 @@ async function login(userCred) {
 
 async function signup(userCred) {
 	console.log('user service signup', userCred)
-	if (!userCred.imgUrl)
-		userCred.imgUrl =
-			'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+	userCred.imgUrl =
+		'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
 
 	const user = await httpService.post('auth/signup', userCred)
 	// const user = await storageService.post('user', userCred)
@@ -109,16 +106,24 @@ function saveLocalUser(user) {
 }
 
 function getLoggedinUser() {
-	return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+	return (
+		JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER)) || {
+			fullname: 'Guest',
+			username: 'Guest',
+			imgUrl:
+				'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+			_id: utilService.makeId(),
+		}
+	)
 }
 
-function _createUsers() {
-	let users = utilService.loadFromStorage(STORAGE_KEY_USERS)
-	if (!users) {
-		users = usersData
-		utilService.saveToStorage(STORAGE_KEY_USERS, users)
-	}
-}
+// function _createUsers() {
+// 	let users = utilService.loadFromStorage(STORAGE_KEY_USERS)
+// 	if (!users) {
+// 		users = usersData
+// 		utilService.saveToStorage(STORAGE_KEY_USERS, users)
+// 	}
+// }
 
 // ;(async ()=>{
 //     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})

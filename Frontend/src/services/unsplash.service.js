@@ -224,7 +224,7 @@ const API_KEY = 'JRY734h_KdVD-02lIwlrBk6TQnUCv29JyIqGjCYYVrE'
 
 async function getPhotos(searchTxt) {
 	// * for dev purposes
-	return hardCodedPhotos
+	// return hardCodedPhotos
 
 	// * real function
 	if (!searchTxt && photos) return photos
