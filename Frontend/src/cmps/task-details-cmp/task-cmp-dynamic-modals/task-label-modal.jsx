@@ -50,6 +50,12 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
     }
 
     async function onSaveLabel(ev, label) {
+        if (!label.title) return
+        console.log('label be:', label)
+
+        if (!label.color) label.color = '#F5DD29'
+        console.log('label af: ', label)
+
         let updateLabelIds
         let updateLabelsBoard
         let updateTask

@@ -1,0 +1,135 @@
+.task-activities {
+    padding: 8px 0px;
+    max-width: 558px;
+    font-family:'segoe_ui';
+
+    .task-activities-header {
+        height: 32px;
+        margin-top: 8px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        border-radius: 3px;
+        margin-bottom: 4px;
+        width: 100%;
+        color: #172b4d;
+
+        .icon-activities {
+            svg {
+                font-size: 17px;
+            }
+        }
+    }
+
+
+    .add-comment {
+        display: flex;
+        margin-top: 12px;
+        gap: 8px;
+        width: 100%;
+        align-items: center;
+        height: 36px;
+
+        .member-img {
+            height: 32px;
+            width: 32px;
+            object-fit: cover;
+            img {
+                width: 100%;
+                border-radius: 25em;
+            }
+        }
+
+        form {
+            width: 100%;
+        }
+        
+        textarea {
+            font-family:'segoe_ui';
+            overflow: hidden;
+            overflow-wrap: break-word;
+            height: 20px;
+            width: 100%;
+            padding: 8px 12px;
+            background-color: white;
+            border-radius: 3px;
+            flex: 1;
+
+            box-shadow: 0 1px 2px -1px #091e4240, 0 0 0 1px #091e4214;
+            transition-duration: 85ms;
+            transition-property: height, box-shadow;
+            transition-timing-function: ease;
+            &:focus {
+                box-shadow: 0 4px 8px -2px #091e4240, 0 0 0 1px #091e4214;
+            }
+            &::placeholder {
+                color: #5e6c84;
+            }
+        }
+
+        button.btn-save-comment {
+            height: 32px;
+            position: absolute;
+            bottom: 12px;
+            left: 52px;
+            &:disabled {
+                background-color: #091e420a;
+                color: #a5adba;
+                cursor: not-allowed;
+                &:hover {
+                background-color: #091e420a;
+                color: #a5adba;
+                }
+            }
+        }
+    }
+
+
+    .task-activity-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        margin-top: 12px;
+
+        .activity-preview {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            gap: 8px;
+            color: #172b4d;
+
+            .activity-description {
+                word-break: break-word;
+                line-height: 20px;
+            
+                .username {
+                    font-weight: 700;
+                    font-size: 14px;
+                    margin-inline-end: 3px;
+                    color: #172b4d;
+                }
+
+                .time {
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: #5e6c84;
+                    margin-left: 4px;
+                }
+            
+                .comment {
+                    margin-top: 3px;
+                    width: 100%;
+                    min-height: 36px;
+                    border-radius: 3px;
+                    box-shadow: 0 1px 2px -1px #091e4240, 0 0 0 1px #091e4214;
+                    background-color: white;
+                    padding: 8px 12px;
+                    margin-bottom: 6px;
+                    color: #172b4d;
+                }
+            }
+        }
+    }
+}

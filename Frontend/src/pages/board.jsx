@@ -1,9 +1,14 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useCallback, useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
 import { GroupList } from '../cmps/group/group-list'
 import { BoardSideMenu } from '../cmps/board/board-side-menu'
+import {
+	socketService,
+	SOCKET_EMIT_JOIN_BOARD,
+	SOCKET_EVENT_UPDATE_BOARD,
+} from '../services/socket.service.js'
 
 import Loader from '../assets/img/loader.svg'
 import { HiOutlineStar } from 'react-icons/hi2'
@@ -17,7 +22,15 @@ export function Board() {
 	const [boardTitle, setBoardTitle] = useState('')
 	const [titleWidth, setTitleWidth] = useState(null)
 	const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+	const dispatch = useDispatch()
 	const navigate = useNavigate()
+
+	const socketUpdateBoard = useCallback(
+		(updatedBoard) => {
+			dispatch({ type: 'SET_BOARD', board: updatedBoard })
+		},
+		[dispatch]
+	)
 
 	useEffect(() => {
 		loadTheBoard(boardId)
@@ -28,10 +41,15 @@ export function Board() {
 			const board = await loadBoard(boardId)
 			setBoardTitle(board.title)
 			setTitleWidth(board.title.length * 10 + 40)
+			socketService.emit(SOCKET_EMIT_JOIN_BOARD, boardId)
 		} catch (err) {
 			console.log('Failed to load the board')
 		}
 	}
+
+	useEffect(() => {
+		socketService.on(SOCKET_EVENT_UPDATE_BOARD, socketUpdateBoard)
+	}, [socketUpdateBoard])
 
 	function handleEditBoardTitle({ target }) {
 		setBoardTitle(target.value)

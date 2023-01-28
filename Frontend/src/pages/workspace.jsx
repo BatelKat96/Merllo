@@ -42,13 +42,17 @@ export function Workspace() {
 		board.isStarred = !board.isStarred
 		try {
 			await updateBoard(board)
-			console.log('success')
 		} catch (err) {
 			console.log('Cannot update board', err)
 		}
 	}
 
-	if (!boards) return <div className="loader-wrapper"><img className="loader" src={Loader} alt="loader" /></div>
+	if (!boards)
+		return (
+			<div className="loader-wrapper">
+				<img className="loader" src={Loader} alt="loader" />
+			</div>
+		)
 
 	return (
 		<section className="workspace-section">

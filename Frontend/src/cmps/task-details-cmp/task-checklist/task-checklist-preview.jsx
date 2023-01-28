@@ -109,7 +109,7 @@ export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
     function addTodo(ev, newTodoTitle, checklist) {
         ev.stopPropagation()
         ev.preventDefault()
-
+        if (!newTodoTitle) return
         let updateTodos = checklist.todos
         let updateChecklist = { ...checklist }
         let newTodo = boardService.getEmptyTodo()
@@ -167,7 +167,9 @@ export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
                             </h3>
                         }
                         {isEditTitleOpen && (currChecklistId === checklist.id) &&
-                            <form>
+                            // <form>
+                            <div className='task-checklist-title-input'>
+
                                 <textarea
                                     onBlur={(ev) => onCloseTitleInput(ev)}
                                     autoFocus
@@ -188,7 +190,8 @@ export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
                                         <GrClose className='btn-checklist-cancel' />
                                     </button>
                                 </div>
-                            </form >
+                            </div>
+                            // </form >
                         }
 
                         {isDeleteModalOpen.checklistId === checklist.id && (
@@ -243,6 +246,7 @@ export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
 
                     {(isAddTitleOpen && (currChecklistId === checklist.id)) && <form >
                         <textarea
+                            required
                             onBlur={(ev) => onAddTodoInputClose(ev)}
                             autoFocus
                             name='add-todo'
@@ -251,6 +255,7 @@ export function TaskChecklistPreview({ task, onSaveTask, setTask }) {
                             placeholder='Add an item'
                             onChange={handleChange}
                             defaultValue={titleToEdit}
+
                         ></textarea>
 
                         <div className='task-checklist-btn'>
