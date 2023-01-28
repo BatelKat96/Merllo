@@ -108,67 +108,69 @@ export function TaskPreview({ group, task, board }) {
 						{task.title}
 					</p>
 
-					<div className="task-preview-actions">
+					<div className="task-preview-actions-wrapper">
 
-						{currDueDate !== '' && (
-							<span className="task-preview-actions-icons date">
-								<AiOutlineClockCircle />
-								<p>{currDueDate}</p>
-							</span>
-						)}
+						<div className="task-preview-actions">
 
-						{task?.description && (
-							<span className="task-preview-actions-icons desc">
-								<GrTextAlignFull />
-							</span>
-						)}
+							{currDueDate !== '' && (
+								<span className="task-preview-actions-icons date">
+									<AiOutlineClockCircle />
+									<p>{utilService.dueDateFormat(currDueDate)}</p>
+								</span>
+							)}
 
-						{currComments?.length !== 0 && (
-							<span className="task-preview-actions-icons comment">
-								<FaRegComment />
-								<p>{currComments.length}</p>
-							</span>
-						)}
+							{task?.description && (
+								<span className="task-preview-actions-icons desc">
+									<GrTextAlignFull size={11} />
+								</span>
+							)}
 
-
-						{currAttach && currAttach.length !== 0 && (
-							<span className="task-preview-actions-icons attach">
-								<FiPaperclip />
-								<p>{currAttach.length}</p>
-							</span>
-						)}
-
-						{currCheck?.length !== 0 && (
-							<span className="task-preview-actions-icons check">
-								<BsCheck2Square />
-								<p>{currCheck.length}</p>
-							</span>
-						)}
-
-					</div>
+							{currComments?.length !== 0 && (
+								<span className="task-preview-actions-icons comment">
+									<FaRegComment size={11} />
+									<p>{currComments.length}</p>
+								</span>
+							)}
 
 
-					<div className='task-preview-actions-member'>
-						<ul className="task-preview-member-container clean-list">
-							{fullMembers &&
-								fullMembers.map((member) => (
-									<li
-										key={member._id}
-										className="task-preview-member"
-										onClick={onLabel}
-									>
-										<img
-											className="member-img"
-											height="30px"
-											width="30px"
-											src={member.imgUrl}
-											alt={member.fullname}
-											title={member.fullname}
-										/>
-									</li>
-								))}
-						</ul>
-					</div>
+							{currAttach && currAttach.length !== 0 && (
+								<span className="task-preview-actions-icons attach">
+									<FiPaperclip size={11} />
+									<p>{currAttach.length}</p>
+								</span>
+							)}
+
+							{currCheck?.length !== 0 && (
+								<span className="task-preview-actions-icons check">
+									<BsCheck2Square />
+									<p>{currCheck.length}</p>
+								</span>
+							)}
+
+						</div>
+
+
+						<div className='task-preview-actions-member-wrapper'>
+							<ul className="task-preview-member-container clean-list">
+								{fullMembers &&
+									fullMembers.map((member) => (
+										<li
+											key={member._id}
+											className="task-preview-member"
+											onClick={onLabel}
+										>
+											<img
+												className="member-img"
+												height="28px"
+												width="28px"
+												src={member.imgUrl}
+												alt={member.fullname}
+												title={member.fullname}
+											/>
+										</li>
+									))}
+							</ul>
+						</div>
 
 
 					{/* <div className="task-preview-container"> */}
@@ -187,6 +189,7 @@ export function TaskPreview({ group, task, board }) {
 					{/* </div> */}
 
 					{/* </div> */}
+					</div>
 				</section>
 			</section>
 		</>
