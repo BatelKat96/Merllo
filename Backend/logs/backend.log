@@ -372,3 +372,27 @@
 28.1.2023, 17:05:43 - INFO - New connected socket [id: FiVSAs25KbtQYFJDAABB] 
 28.1.2023, 17:05:44 - INFO - Setting socket.userId = 63d3e3630e97fcd4d0fddd98 for socket [id: FiVSAs25KbtQYFJDAABB] 
 28.1.2023, 17:05:45 - INFO - Socket is now on board 63d38c0d22c23a90886a018e [id: FiVSAs25KbtQYFJDAABB] 
+28.1.2023, 17:28:36 - DEBUG - auth.service - signup with username: drorka, fullname: drorka (userId: 63d3e3630e97fcd4d0fddd98)
+28.1.2023, 17:28:36 - DEBUG - auth.route - new account created: {"username":"drorka","password":"$2b$10$ynZErhFw.yTR.wF.Q9w.au5/jwjf5IGpdjHNCC0QwuMcTOWcyyq9u","fullname":"drorka","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","_id":"63d53f24405315f7da6a0ada"} (userId: 63d3e3630e97fcd4d0fddd98)
+28.1.2023, 17:28:36 - DEBUG - auth.service - login with username: drorka (userId: 63d3e3630e97fcd4d0fddd98)
+28.1.2023, 17:28:37 - INFO - User signup: | {"_id":"63d53f24405315f7da6a0ada","username":"drorka","fullname":"drorka","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} (userId: 63d3e3630e97fcd4d0fddd98)
+28.1.2023, 17:28:37 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:29:12 - DEBUG - auth.service - signup with username: batelkat, fullname: Batel K (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:29:12 - DEBUG - auth.route - new account created: {"username":"batelkat","password":"$2b$10$naaFyCxF2S4SQiJ8Pk2VCeGFyrnYBC.gdVgj6bx6MSbgGNdjTi0me","fullname":"Batel K","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","_id":"63d53f48405315f7da6a0adb"} (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:29:12 - DEBUG - auth.service - login with username: batelkat (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:29:12 - INFO - User signup: | {"_id":"63d53f48405315f7da6a0adb","username":"batelkat","fullname":"Batel K","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:29:13 - DEBUG - Getting Boards (userId: 63d53f48405315f7da6a0adb)
+28.1.2023, 17:29:25 - DEBUG - auth.service - signup with username: betash, fullname: Beta 
+28.1.2023, 17:29:25 - DEBUG - auth.route - new account created: {"username":"betash","password":"$2b$10$vSjWQKhqhg7oXONMgQJaDepcENR0hzkO87FuiYAIYyCi7TfAfXtGe","fullname":"Beta","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","_id":"63d53f55405315f7da6a0adc"} 
+28.1.2023, 17:29:25 - DEBUG - auth.service - login with username: betash 
+28.1.2023, 17:29:26 - INFO - User signup: | {"_id":"63d53f55405315f7da6a0adc","username":"betash","fullname":"Beta","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} 
+28.1.2023, 17:29:26 - DEBUG - Getting Boards (userId: 63d53f55405315f7da6a0adc)
+28.1.2023, 17:39:43 - DEBUG - auth.service - login with username: drorka 
+28.1.2023, 17:39:43 - INFO - User login:  | {"_id":"63d53f24405315f7da6a0ada","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
+28.1.2023, 17:39:44 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:39:49 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 17:39:54 - INFO - New connected socket [id: ZDLIShsgY4MjG4cwAABD] 
+28.1.2023, 17:39:54 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: ZDLIShsgY4MjG4cwAABD] 
+28.1.2023, 17:39:55 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: ZDLIShsgY4MjG4cwAABD] 
+28.1.2023, 17:40:06 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:40:06 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
