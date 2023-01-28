@@ -396,3 +396,22 @@
 28.1.2023, 17:39:55 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: ZDLIShsgY4MjG4cwAABD] 
 28.1.2023, 17:40:06 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
 28.1.2023, 17:40:06 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:51:49 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 17:51:55 - INFO - New connected socket [id: UZhOp2mothnms37cAABF] 
+28.1.2023, 17:51:55 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: UZhOp2mothnms37cAABF] 
+28.1.2023, 17:51:56 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: UZhOp2mothnms37cAABF] 
+28.1.2023, 17:52:06 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 17:52:08 - INFO - New connected socket [id: D3SaHxVqAmmGzM_KAABH] 
+28.1.2023, 17:52:09 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: D3SaHxVqAmmGzM_KAABH] 
+28.1.2023, 17:52:09 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: D3SaHxVqAmmGzM_KAABH] 
+28.1.2023, 17:52:45 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:52:48 - INFO - Socket disconnected [id: undefined] 
+28.1.2023, 17:52:51 - INFO - New connected socket [id: V2D8ldNQhkcpqsT_AABJ] 
+28.1.2023, 17:52:52 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: V2D8ldNQhkcpqsT_AABJ] 
+28.1.2023, 17:52:52 - INFO - Socket is now on board 63d541512dc177b41719d5ec [id: V2D8ldNQhkcpqsT_AABJ] 
+28.1.2023, 17:53:00 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:53:00 - INFO - Broadcast to room 63d541512dc177b41719d5ec excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:53:09 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:53:09 - INFO - Broadcast to room 63d541512dc177b41719d5ec excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:53:19 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+28.1.2023, 17:53:19 - INFO - Broadcast to room 63d541512dc177b41719d5ec excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)

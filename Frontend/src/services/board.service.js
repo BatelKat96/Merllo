@@ -24,7 +24,7 @@ export const boardService = {
 	getEmptyLabel,
 	getEmptyTodo,
 	getEmptyChecklist,
-	getEmptyAttachment
+	getEmptyAttachment,
 }
 
 window.cs = boardService
@@ -58,8 +58,6 @@ async function save(board) {
 		savedBoard = await httpService.post('board', board)
 		// savedBoard = await storageService.post(STORAGE_KEY, board)
 	}
-	// console.log('savedBoard post', savedBoard);
-	console.log('savedBoard', savedBoard)
 	return savedBoard
 }
 

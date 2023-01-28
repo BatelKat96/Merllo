@@ -21,8 +21,6 @@ export const userService = {
 
 window.userService = userService
 
-_createUsers()
-
 function getUsers() {
 	console.log('user service getUsers')
 	return httpService.get(`user`)
@@ -112,13 +110,13 @@ function getLoggedinUser() {
 	return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
-function _createUsers() {
-	let users = utilService.loadFromStorage(STORAGE_KEY_USERS)
-	if (!users) {
-		users = usersData
-		utilService.saveToStorage(STORAGE_KEY_USERS, users)
-	}
-}
+// function _createUsers() {
+// 	let users = utilService.loadFromStorage(STORAGE_KEY_USERS)
+// 	if (!users) {
+// 		users = usersData
+// 		utilService.saveToStorage(STORAGE_KEY_USERS, users)
+// 	}
+// }
 
 // ;(async ()=>{
 //     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})
