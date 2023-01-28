@@ -24,7 +24,7 @@ export function TaskPreview({ group, task, board }) {
 	const currMembers = task.memberIds
 	const currCover = task.style
 	const currComments = task.comments
-	const currAttach = task.attachments
+	const currAttach = task?.attachments
 	const currDueDate = task.dueDate
 	const currCheck = task.checklists
 
@@ -130,7 +130,15 @@ export function TaskPreview({ group, task, board }) {
 							</span>
 						)}
 
-						{currAttach?.length !== 0 && (
+						{/* {currAttach?.length !== 0 && (
+							<span className="task-preview-actions-icons attach">
+								<FiPaperclip />
+								<p>{currAttach.length}</p>
+							</span>
+						)} */}
+
+
+						{currAttach && currAttach.length !== 0 && (
 							<span className="task-preview-actions-icons attach">
 								<FiPaperclip />
 								<p>{currAttach.length}</p>
