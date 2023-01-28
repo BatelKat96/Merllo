@@ -12,6 +12,7 @@ import { BiCheck } from 'react-icons/bi'
 export function BoardCreate({ closeBoardComposer }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const boards = useSelector((storeState) => storeState.boardModule.boards)
+	const user = useSelector((state) => state.userModule.user)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 	const navigate = useNavigate()
 	const modalRef = useRef()
