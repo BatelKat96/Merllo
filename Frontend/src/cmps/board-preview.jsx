@@ -4,11 +4,11 @@ import { updateBoard } from '../store/board.actions'
 export function BoardPreview({ board, onToggleStar }) {
 	function getBoardStyle() {
 		if (!board) return
-		if (board?.style.background) {
+		if (board?.style?.background) {
 			return {
 				background: `url('${board.style.thumbnail}') center center / cover`,
 			}
-		} else if (board?.style.backgroundColor) {
+		} else if (board?.style?.backgroundColor) {
 			return { backgroundColor: `${board.style.backgroundColor}` }
 		}
 		return { backgroundColor: `#0067a3` }

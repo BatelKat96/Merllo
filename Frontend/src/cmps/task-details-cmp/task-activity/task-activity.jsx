@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import { utilService } from '../../../services/util.service'
 import { AddComment } from './add-comment'
 import { GrSort } from 'react-icons/gr'
+import { IoList } from 'react-icons/io5'
 
 export function TaskActivity({ task, onSaveTask }) {
 	const board = useSelector((state) => state.boardModule.board)
@@ -31,9 +32,9 @@ export function TaskActivity({ task, onSaveTask }) {
 
 	return (
 		<section className="task-activities">
-			<GrSort className="icon-activities" />
+			<IoList className="icon-activities" />
 			<div className="task-activities-header">
-				<p>Activity</p>
+				<h3 className="medium-headline">Activity</h3>
 			</div>
 
 			<AddComment user={getUser()} addComment={addComment} />
