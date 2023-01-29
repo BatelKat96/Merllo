@@ -1442,3 +1442,20 @@
 29.1.2023, 15:05:57 - INFO - Socket disconnected [id: undefined] 
 29.1.2023, 15:05:59 - INFO - New connected socket [id: 1hdFohC-2OqKI76_AAAV] 
 29.1.2023, 15:05:59 - INFO - Setting socket.userId = 4tksaO for socket [id: 1hdFohC-2OqKI76_AAAV] 
+29.1.2023, 15:12:05 - INFO - New connected socket [id: JP09Y2ejQEK1hT8pAABl] 
+29.1.2023, 15:12:05 - DEBUG - Getting Boards 
+29.1.2023, 15:12:05 - INFO - Setting socket.userId = CyetAb for socket [id: JP09Y2ejQEK1hT8pAABl] 
+29.1.2023, 15:12:09 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 15:16:23 - INFO - Server is running on port: 3030 
+29.1.2023, 15:16:23 - INFO - New connected socket [id: UraqogNf1OD9iz7qAAAB] 
+29.1.2023, 15:16:23 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: UraqogNf1OD9iz7qAAAB] 
+29.1.2023, 15:16:49 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 15:16:52 - INFO - New connected socket [id: D-ikoPHUZC1NAFxAAAAD] 
+29.1.2023, 15:16:54 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: D-ikoPHUZC1NAFxAAAAD] 
+29.1.2023, 15:16:56 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: D-ikoPHUZC1NAFxAAAAD] 
+29.1.2023, 15:17:25 - INFO - Server is running on port: 3030 
+29.1.2023, 15:17:25 - INFO - New connected socket [id: irtYmWwkrSJqNQSLAAAB] 
+29.1.2023, 15:17:39 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 15:18:07 - INFO - New connected socket [id: gci5nvmzVjOeB2IyAAAD] 
+29.1.2023, 15:18:08 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: gci5nvmzVjOeB2IyAAAD] 
+29.1.2023, 15:18:10 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: gci5nvmzVjOeB2IyAAAD] 
