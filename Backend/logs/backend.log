@@ -1459,3 +1459,5 @@
 29.1.2023, 15:18:07 - INFO - New connected socket [id: gci5nvmzVjOeB2IyAAAD] 
 29.1.2023, 15:18:08 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: gci5nvmzVjOeB2IyAAAD] 
 29.1.2023, 15:18:10 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: gci5nvmzVjOeB2IyAAAD] 
+29.1.2023, 15:39:16 - INFO - Server is running on port: 3030 
+29.1.2023, 15:39:17 - INFO - New connected socket [id: 1uWb6FJh41bGICjeAAAB] 
