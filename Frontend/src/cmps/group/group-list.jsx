@@ -21,7 +21,6 @@ export function GroupList() {
 	const [isAddNewGroupOpen, setIsAddNewGroupOpen] = useState(false)
 	const [isDropdownOpen, setIsDropdownOpen] = useState({ groupId: '' })
 	const [groupToEdit, setGroupToEdit] = useState(boardService.getEmptyGroup())
-	// const [groupsDrag, setGroups] = useState(board)
 
 	let groups = board.groups
 

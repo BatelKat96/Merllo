@@ -21,9 +21,9 @@ export function HomePage() {
 
                             <p>Keep everything in the same place—even if your team isn't.</p>
 
-                            <button className="start-demo-btn">
-                                <Link to="/workspace">Start demo</Link>
-                            </button>
+                            <Link to="/workspace">
+                                <button className="start-demo-btn">Start now</button>
+                            </Link>
                         </div>
 
                         <div className="img">

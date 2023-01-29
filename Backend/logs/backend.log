@@ -1138,6 +1138,99 @@
 =======
 >>>>>>> 2902ef73734d2dd17d73971b90ba99c8da909472
 >>>>>>> 1fc301bf7ff2f5dc93a3ee89eaa9ca3b156c407b
+<<<<<<< HEAD
+29.1.2023, 10:49:05 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:05 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:06 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:06 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:07 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:07 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:07 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:07 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:31 - DEBUG - Getting Boards 
+29.1.2023, 10:49:33 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 10:49:35 - INFO - New connected socket [id: EIxK2rBkBaAffYgRAAAV] 
+29.1.2023, 10:49:35 - INFO - Setting socket.userId = 1bxpC5 for socket [id: EIxK2rBkBaAffYgRAAAV] 
+29.1.2023, 10:49:35 - INFO - Socket is now on board 63d541512dc177b41719d5ed [id: EIxK2rBkBaAffYgRAAAV] 
+29.1.2023, 10:49:41 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:41 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:47 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:47 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:49 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:49 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:51 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:51 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:54 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:54 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:56 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:56 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:59:42 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 10:59:43 - INFO - New connected socket [id: lnfOmokA8TWNo5MrAAAX] 
+29.1.2023, 10:59:43 - INFO - Setting socket.userId = Ofyhgb for socket [id: lnfOmokA8TWNo5MrAAAX] 
+29.1.2023, 10:59:43 - INFO - Socket is now on board 63d541512dc177b41719d5ed [id: lnfOmokA8TWNo5MrAAAX] 
+29.1.2023, 10:59:47 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:59:47 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 11:00:54 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:00:54 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 11:25:12 - DEBUG - Getting Boards 
+29.1.2023, 11:25:14 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:25:15 - INFO - New connected socket [id: GKnVlolbubsGWpmMAAAZ] 
+29.1.2023, 11:25:15 - INFO - Setting socket.userId = N8LrkS for socket [id: GKnVlolbubsGWpmMAAAZ] 
+29.1.2023, 11:25:16 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: GKnVlolbubsGWpmMAAAZ] 
+29.1.2023, 11:25:42 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:25:42 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:25:53 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:25:53 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:25:56 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:25:56 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:34:00 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:34:01 - INFO - New connected socket [id: lQDd56rQ7VF8KhtCAAAb] 
+29.1.2023, 11:34:01 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: lQDd56rQ7VF8KhtCAAAb] 
+29.1.2023, 11:34:01 - INFO - Setting socket.userId = l0Unh7 for socket [id: lQDd56rQ7VF8KhtCAAAb] 
+29.1.2023, 11:34:57 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:34:57 - INFO - New connected socket [id: jDI39JDv5O-EU1imAAAd] 
+29.1.2023, 11:34:57 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: jDI39JDv5O-EU1imAAAd] 
+29.1.2023, 11:34:57 - INFO - Setting socket.userId = b8IIaj for socket [id: jDI39JDv5O-EU1imAAAd] 
+29.1.2023, 11:35:44 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:35:44 - INFO - New connected socket [id: fo4lQihmp5TZPE_vAAAf] 
+29.1.2023, 11:35:44 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: fo4lQihmp5TZPE_vAAAf] 
+29.1.2023, 11:35:45 - INFO - Setting socket.userId = hxui8k for socket [id: fo4lQihmp5TZPE_vAAAf] 
+29.1.2023, 11:36:24 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:36:24 - INFO - New connected socket [id: RSbFEfImYA4TL5RuAAAh] 
+29.1.2023, 11:36:24 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: RSbFEfImYA4TL5RuAAAh] 
+29.1.2023, 11:36:24 - INFO - Setting socket.userId = uiuuwD for socket [id: RSbFEfImYA4TL5RuAAAh] 
+29.1.2023, 11:36:59 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:36:59 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:43:39 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:43:39 - INFO - New connected socket [id: OwKJTaxelnvLd6xzAAAj] 
+29.1.2023, 11:43:40 - INFO - Setting socket.userId = FdVwt3 for socket [id: OwKJTaxelnvLd6xzAAAj] 
+29.1.2023, 11:44:45 - DEBUG - Getting Boards 
+29.1.2023, 11:45:07 - DEBUG - Getting Boards 
+29.1.2023, 11:55:26 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:55:27 - INFO - New connected socket [id: 57rLJ-5VgD2n0CvGAAAl] 
+29.1.2023, 11:55:27 - DEBUG - Getting Boards 
+29.1.2023, 11:55:28 - INFO - Setting socket.userId = l7kDxy for socket [id: 57rLJ-5VgD2n0CvGAAAl] 
+29.1.2023, 11:56:18 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:56:19 - INFO - New connected socket [id: bf1QGAIoz4IiKFMOAAAn] 
+29.1.2023, 11:56:19 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: bf1QGAIoz4IiKFMOAAAn] 
+29.1.2023, 11:56:19 - INFO - Setting socket.userId = r2AGej for socket [id: bf1QGAIoz4IiKFMOAAAn] 
+29.1.2023, 12:02:17 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 12:02:19 - INFO - New connected socket [id: 13Wcry1y9SOx0pPnAAAp] 
+29.1.2023, 12:02:20 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: 13Wcry1y9SOx0pPnAAAp] 
+29.1.2023, 12:02:20 - INFO - Setting socket.userId = 2A7Ur4 for socket [id: 13Wcry1y9SOx0pPnAAAp] 
+29.1.2023, 12:04:14 - INFO - Broadcasting event: update-board 
+29.1.2023, 12:04:14 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 12:14:30 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 12:14:31 - INFO - New connected socket [id: ST4DfuV-c6hvGve6AAAr] 
+29.1.2023, 12:14:31 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: ST4DfuV-c6hvGve6AAAr] 
+29.1.2023, 12:14:31 - INFO - Setting socket.userId = fqQxMI for socket [id: ST4DfuV-c6hvGve6AAAr] 
+29.1.2023, 12:16:58 - DEBUG - Getting Boards 
+29.1.2023, 12:19:52 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 12:19:53 - INFO - New connected socket [id: IOPmM2-r1ry8qUgPAAAt] 
+29.1.2023, 12:19:53 - INFO - Socket is now on board 63d59ffac8453fced2350c58 [id: IOPmM2-r1ry8qUgPAAAt] 
+29.1.2023, 12:19:53 - INFO - Setting socket.userId = sMrxj9 for socket [id: IOPmM2-r1ry8qUgPAAAt] 
+29.1.2023, 12:31:49 - DEBUG - Getting Boards 
+=======
 >>>>>>> 3622b7393dd076d40d4a4dea3c08ffdc9e57cb70
 29.1.2023, 11:01:48 - INFO - Socket disconnected [id: undefined] 
 29.1.2023, 11:01:53 - INFO - New connected socket [id: S8XTbo-1BIEtY4mHAAA9] 
@@ -1182,502 +1275,5 @@
 29.1.2023, 11:24:43 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 8Hs2rPUiXMTYy_oYAAAF] 
 29.1.2023, 11:24:43 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
 29.1.2023, 11:27:02 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:29:34 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:29:40 - INFO - New connected socket [id: jsocn0cwdzY_hSdHAAAH] 
-29.1.2023, 11:29:40 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: jsocn0cwdzY_hSdHAAAH] 
-29.1.2023, 11:29:41 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: jsocn0cwdzY_hSdHAAAH] 
-29.1.2023, 11:29:50 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:29:50 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:29:56 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:29:56 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:30:00 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:30:00 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:30:09 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:30:09 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:30:36 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:30:47 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:30:50 - INFO - New connected socket [id: yYItBR8SazWq7qs4AAAJ] 
-29.1.2023, 11:30:51 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: yYItBR8SazWq7qs4AAAJ] 
-29.1.2023, 11:30:51 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: yYItBR8SazWq7qs4AAAJ] 
-29.1.2023, 11:31:16 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:34:56 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:34:58 - INFO - New connected socket [id: 7jphmyetl3Cc0_E-AAAL] 
-29.1.2023, 11:34:59 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:34:59 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 7jphmyetl3Cc0_E-AAAL] 
-29.1.2023, 11:35:01 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:35:04 - INFO - New connected socket [id: kgBNQ7XPaYGaxJPHAAAN] 
-29.1.2023, 11:35:05 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: kgBNQ7XPaYGaxJPHAAAN] 
-29.1.2023, 11:35:06 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: kgBNQ7XPaYGaxJPHAAAN] 
-29.1.2023, 11:35:51 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:35:53 - INFO - New connected socket [id: TvjZZj2g9Pd6Yir7AAAP] 
-29.1.2023, 11:35:54 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: TvjZZj2g9Pd6Yir7AAAP] 
-29.1.2023, 11:35:54 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: TvjZZj2g9Pd6Yir7AAAP] 
-29.1.2023, 11:37:22 - INFO - New connected socket [id: U6Abpdiq-L1W4FYKAAAR] 
-29.1.2023, 11:37:22 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: U6Abpdiq-L1W4FYKAAAR] 
-29.1.2023, 11:37:22 - INFO - Setting socket.userId = MNxxSY for socket [id: U6Abpdiq-L1W4FYKAAAR] 
-29.1.2023, 11:37:27 - INFO - Broadcasting event: update-board 
-29.1.2023, 11:37:27 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 11:38:11 - INFO - Broadcasting event: update-board 
-29.1.2023, 11:38:11 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 11:38:13 - INFO - Broadcasting event: update-board 
-29.1.2023, 11:38:13 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 11:38:28 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:38:28 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:38:33 - INFO - Broadcasting event: update-board 
-29.1.2023, 11:38:33 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 11:38:36 - INFO - Broadcasting event: update-board 
-29.1.2023, 11:38:36 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 11:38:47 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:51:35 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:51:37 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:51:39 - INFO - New connected socket [id: Qj6nQGR1a9D136G7AAAT] 
-29.1.2023, 11:51:40 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: Qj6nQGR1a9D136G7AAAT] 
-29.1.2023, 11:51:40 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: Qj6nQGR1a9D136G7AAAT] 
-29.1.2023, 11:51:44 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:51:48 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 11:51:49 - INFO - New connected socket [id: gF7I3PIxPqpsoi7AAAAV] 
-29.1.2023, 11:51:50 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: gF7I3PIxPqpsoi7AAAAV] 
-29.1.2023, 11:51:50 - INFO - Socket is now on board 63d59ffac8453fced2350c58 [id: gF7I3PIxPqpsoi7AAAAV] 
-29.1.2023, 11:51:56 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 11:53:53 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:01:28 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:01:34 - INFO - New connected socket [id: sJb4PxkJl5_4s4XkAAAX] 
-29.1.2023, 12:01:36 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:01:36 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: sJb4PxkJl5_4s4XkAAAX] 
-29.1.2023, 12:01:47 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:01:49 - INFO - New connected socket [id: DgdOpYNsO9eZlhoWAAAZ] 
-29.1.2023, 12:01:50 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: DgdOpYNsO9eZlhoWAAAZ] 
-29.1.2023, 12:01:51 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: DgdOpYNsO9eZlhoWAAAZ] 
-29.1.2023, 12:01:53 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:02:03 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:02:04 - INFO - New connected socket [id: DMp1JWG2sFv-pcrUAAAb] 
-29.1.2023, 12:02:05 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: DMp1JWG2sFv-pcrUAAAb] 
-29.1.2023, 12:02:05 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: DMp1JWG2sFv-pcrUAAAb] 
-29.1.2023, 12:02:11 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:02:17 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:02:19 - INFO - New connected socket [id: RmVWOp7V67CVChN0AAAd] 
-29.1.2023, 12:02:19 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: RmVWOp7V67CVChN0AAAd] 
-29.1.2023, 12:02:19 - INFO - Socket is now on board 63d5a169c8453fced2350c5a [id: RmVWOp7V67CVChN0AAAd] 
-29.1.2023, 12:02:33 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:02:33 - INFO - Broadcast to room 63d5a169c8453fced2350c5a excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:02:37 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:02:56 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:02:59 - INFO - New connected socket [id: H-2o4LP5wj3dg2p6AAAf] 
-29.1.2023, 12:02:59 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: H-2o4LP5wj3dg2p6AAAf] 
-29.1.2023, 12:03:00 - INFO - Socket is now on board 63d643321cd1ac7a460955c6 [id: H-2o4LP5wj3dg2p6AAAf] 
-29.1.2023, 12:03:03 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:05:49 - DEBUG - auth.service - login with username: drorka (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:05:49 - INFO - User login:  | {"_id":"63d53f24405315f7da6a0ada","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:05:49 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:06:36 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:06:38 - INFO - New connected socket [id: K4Afhy-6QGJxzM0aAAAh] 
-29.1.2023, 12:06:39 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: K4Afhy-6QGJxzM0aAAAh] 
-29.1.2023, 12:06:39 - INFO - Socket is now on board 63d59ffac8453fced2350c58 [id: K4Afhy-6QGJxzM0aAAAh] 
-29.1.2023, 12:07:13 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:13 - INFO - Broadcast to room 63d59ffac8453fced2350c58 excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:19 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:19 - INFO - Broadcast to room 63d59ffac8453fced2350c58 excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:23 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:23 - INFO - Broadcast to room 63d59ffac8453fced2350c58 excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:26 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:26 - INFO - Broadcast to room 63d59ffac8453fced2350c58 excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:31 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:31 - INFO - Broadcast to room 63d59ffac8453fced2350c58 excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:37 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:07:39 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:07:41 - INFO - New connected socket [id: PHDJsIwl_s0EUgY_AAAj] 
-29.1.2023, 12:07:41 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: PHDJsIwl_s0EUgY_AAAj] 
-29.1.2023, 12:07:42 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: PHDJsIwl_s0EUgY_AAAj] 
-29.1.2023, 12:08:19 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:08:19 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:08:19 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:08:19 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:17:04 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:17:09 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:17:13 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:17:15 - INFO - New connected socket [id: CDe0ArbPvljYQqi6AAAl] 
-29.1.2023, 12:17:15 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: CDe0ArbPvljYQqi6AAAl] 
-29.1.2023, 12:17:16 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: CDe0ArbPvljYQqi6AAAl] 
-29.1.2023, 12:26:17 - INFO - New connected socket [id: -zE1YYDzVY2A2TzfAAAn] 
-29.1.2023, 12:26:17 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: -zE1YYDzVY2A2TzfAAAn] 
-29.1.2023, 12:26:18 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: -zE1YYDzVY2A2TzfAAAn] 
-29.1.2023, 12:27:34 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:30:10 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:30:31 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:31:55 - INFO - New connected socket [id: 4uT9c6lVMlV9WIStAAAp] 
-29.1.2023, 12:31:55 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:31:55 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 4uT9c6lVMlV9WIStAAAp] 
-29.1.2023, 12:32:04 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:32:07 - INFO - New connected socket [id: zaU61bEuXp_l_RJeAAAr] 
-29.1.2023, 12:32:07 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:32:10 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: zaU61bEuXp_l_RJeAAAr] 
-29.1.2023, 12:32:10 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: zaU61bEuXp_l_RJeAAAr] 
-29.1.2023, 12:32:10 - INFO - New connected socket [id: CbnkFV8Mm_ei1gmMAAAt] 
-29.1.2023, 12:32:10 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: CbnkFV8Mm_ei1gmMAAAt] 
-29.1.2023, 12:32:11 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: CbnkFV8Mm_ei1gmMAAAt] 
-29.1.2023, 12:32:13 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:32:14 - INFO - New connected socket [id: C44SaI4lWsGCv8jQAAAv] 
-29.1.2023, 12:32:15 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: C44SaI4lWsGCv8jQAAAv] 
-29.1.2023, 12:32:15 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:32:17 - INFO - New connected socket [id: GPUyUZUus7Vg16YyAAAx] 
-29.1.2023, 12:32:18 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: GPUyUZUus7Vg16YyAAAx] 
-29.1.2023, 12:32:42 - INFO - New connected socket [id: 7teawYczwrbjCHMkAAAz] 
-29.1.2023, 12:32:42 - DEBUG - Getting Boards 
-29.1.2023, 12:32:42 - INFO - Setting socket.userId = aE1i7Q for socket [id: 7teawYczwrbjCHMkAAAz] 
-29.1.2023, 12:36:02 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:37:37 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:38:03 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:38:05 - INFO - New connected socket [id: WRgnUNFr_JOxIy8XAAA1] 
-29.1.2023, 12:38:05 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: WRgnUNFr_JOxIy8XAAA1] 
-29.1.2023, 12:38:05 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: WRgnUNFr_JOxIy8XAAA1] 
-29.1.2023, 12:38:27 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:38:27 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:38:30 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:38:30 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:38:49 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:38:49 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:02 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:02 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:04 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:04 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:42 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:42 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:44 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:44 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:46 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:39:46 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:35 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:35 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:36 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:36 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:46 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:46 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:47 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:40:47 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:41:23 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:41:27 - INFO - New connected socket [id: TKfzAX_ugsU5rh81AAA3] 
-29.1.2023, 12:41:28 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: TKfzAX_ugsU5rh81AAA3] 
-29.1.2023, 12:41:28 - INFO - Setting socket.userId = yqcNEm for socket [id: TKfzAX_ugsU5rh81AAA3] 
-29.1.2023, 12:41:39 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:41:39 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:42:49 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:42:49 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:00 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:00 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:20 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:20 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:33 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:33 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:36 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:43:36 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:47:55 - INFO - New connected socket [id: c8UQlMU2bFHY933rAAA5] 
-29.1.2023, 12:47:55 - INFO - Setting socket.userId = 2pzat7 for socket [id: c8UQlMU2bFHY933rAAA5] 
-29.1.2023, 12:47:56 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: c8UQlMU2bFHY933rAAA5] 
-29.1.2023, 12:48:04 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:48:44 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:49:51 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:50:07 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:50:09 - INFO - New connected socket [id: rvD95EYnjFjp2G8wAAA7] 
-29.1.2023, 12:50:09 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: rvD95EYnjFjp2G8wAAA7] 
-29.1.2023, 12:50:10 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: rvD95EYnjFjp2G8wAAA7] 
-29.1.2023, 12:50:29 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:50:29 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:50:34 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:50:34 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:50:52 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:50:52 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:51:31 - INFO - Broadcasting event: update-board 
-29.1.2023, 12:51:31 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 12:51:35 - INFO - Broadcasting event: update-board 
-29.1.2023, 12:51:35 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 12:51:37 - INFO - Broadcasting event: update-board 
-29.1.2023, 12:51:37 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 12:51:47 - INFO - Broadcasting event: update-board 
-29.1.2023, 12:51:47 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 12:52:23 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:52:26 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 12:52:28 - INFO - New connected socket [id: ify1_o97F9m5UOSuAAA9] 
-29.1.2023, 12:52:29 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: ify1_o97F9m5UOSuAAA9] 
-29.1.2023, 12:52:29 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: ify1_o97F9m5UOSuAAA9] 
-29.1.2023, 12:53:14 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:53:14 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:53:17 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:53:17 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:53:31 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:53:31 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:53:45 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:53:45 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:12 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:12 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:14 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:14 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:18 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:18 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:24 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:24 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:26 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:54:26 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:04 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:04 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:06 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:06 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:07 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:07 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:22 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:22 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:22 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:55:22 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:11 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:11 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:19 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:19 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:40 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:40 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:43 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 12:59:43 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:01:59 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:01:59 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:02:04 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:02:04 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:02:08 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:02:08 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:03:35 - INFO - Broadcasting event: update-board 
-29.1.2023, 13:03:35 - INFO - Emit to room: 63d541512dc177b41719d5ea 
-29.1.2023, 13:04:54 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:06:41 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:06:43 - INFO - New connected socket [id: iCpP66Mls6-5uL_zAAA_] 
-29.1.2023, 13:06:43 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: iCpP66Mls6-5uL_zAAA_] 
-29.1.2023, 13:06:43 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: iCpP66Mls6-5uL_zAAA_] 
-29.1.2023, 13:06:56 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:06:56 - INFO - New connected socket [id: kMXJwXtUBsaBXzacAABB] 
-29.1.2023, 13:06:57 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: kMXJwXtUBsaBXzacAABB] 
-29.1.2023, 13:06:57 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: kMXJwXtUBsaBXzacAABB] 
-29.1.2023, 13:14:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:14:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:14:27 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:14:27 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:14:56 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:14:56 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:05 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:05 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:08 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:08 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:18 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:18 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:28 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:15:28 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:28 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:28 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:43 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:43 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:51 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:51 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:54 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:16:54 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:13 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:13 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:14 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:14 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:18 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:18 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:30 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:30 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:46 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:46 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:58 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:58 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:59 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:17:59 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:06 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:06 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:11 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:11 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:14 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:14 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:15 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:15 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:20 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:20 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:23 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:18:23 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:19:00 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:19:08 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:19:09 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:19:11 - INFO - New connected socket [id: tVxAuholqISzMY_mAABD] 
-29.1.2023, 13:19:11 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: tVxAuholqISzMY_mAABD] 
-29.1.2023, 13:19:11 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: tVxAuholqISzMY_mAABD] 
-29.1.2023, 13:19:23 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:19:25 - INFO - New connected socket [id: sn3Pl7yjIU0hjyXyAABF] 
-29.1.2023, 13:19:25 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: sn3Pl7yjIU0hjyXyAABF] 
-29.1.2023, 13:19:25 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: sn3Pl7yjIU0hjyXyAABF] 
-29.1.2023, 13:19:45 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:19:45 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:25 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:25 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:32 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:32 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:34 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:34 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:40 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:40 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:42 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:42 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:59 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:21:59 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:04 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:04 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:05 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:05 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:08 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:08 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:10 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:22:10 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:23:42 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:23:42 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:23:47 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:23:47 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:23:49 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:23:49 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:02 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:02 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:09 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:09 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:09 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:09 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:24:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:32 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:32 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:33 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:33 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:49 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:25:51 - INFO - New connected socket [id: u_5MWWyiP6BIUe72AABH] 
-29.1.2023, 13:25:51 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: u_5MWWyiP6BIUe72AABH] 
-29.1.2023, 13:25:51 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: u_5MWWyiP6BIUe72AABH] 
-29.1.2023, 13:25:57 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:25:57 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:26:03 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:26:03 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:26:10 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:26:10 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:26:13 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:26:14 - INFO - New connected socket [id: JOfMez2DnZTntu7sAABJ] 
-29.1.2023, 13:26:15 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: JOfMez2DnZTntu7sAABJ] 
-29.1.2023, 13:26:15 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: JOfMez2DnZTntu7sAABJ] 
-29.1.2023, 13:26:40 - DEBUG - auth.service - signup with username: tutit, fullname: Tutit 
-29.1.2023, 13:26:40 - ERROR - Failed to signup Username already taken 
-29.1.2023, 13:26:46 - DEBUG - auth.service - signup with username: tutit, fullname: Tutit 
-29.1.2023, 13:26:46 - ERROR - Failed to signup Username already taken 
-29.1.2023, 13:27:11 - DEBUG - auth.service - signup with username: avner, fullname: Avner 
-29.1.2023, 13:27:11 - DEBUG - auth.route - new account created: {"username":"avner","password":"$2b$10$29MyiTfB6XvI7yGfIBgVkew1KFYh7IVRljDYPAbXOLWgy54YgcT56","fullname":"Avner","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","_id":"63d6580f8919bafd4b3ec254"} 
-29.1.2023, 13:27:11 - DEBUG - auth.service - login with username: avner 
-29.1.2023, 13:27:11 - INFO - User signup: | {"_id":"63d6580f8919bafd4b3ec254","username":"avner","fullname":"Avner","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} 
-29.1.2023, 13:27:12 - DEBUG - Getting Boards (userId: 63d6580f8919bafd4b3ec254)
-29.1.2023, 13:27:24 - DEBUG - auth.service - login with username: drorka 
-29.1.2023, 13:27:24 - INFO - User login:  | {"_id":"63d53f24405315f7da6a0ada","username":"drorka","fullname":"Dror K","imgUrl":"https://trello-members.s3.amazonaws.com/63bab33d151c0c01befa37ef/619d7095c4aabefc9291f818fd1852cc/170.png"} 
-29.1.2023, 13:27:25 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:32:27 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:32:29 - INFO - New connected socket [id: ifZZTQiYb2uB1rruAABL] 
-29.1.2023, 13:32:29 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: ifZZTQiYb2uB1rruAABL] 
-29.1.2023, 13:32:30 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: ifZZTQiYb2uB1rruAABL] 
-29.1.2023, 13:47:14 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:47:14 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:47:37 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:47:37 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:47:49 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:47:49 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:11 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:11 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:13 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:13 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:16 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:16 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:18 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:18 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:39 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:39 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:51 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:48:51 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:20 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:20 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:25 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:25 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:34 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:34 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:47 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:47 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:51 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:49:51 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:05 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:05 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:15 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:15 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:25 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:25 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:26 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:26 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:44 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:44 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:46 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:50:46 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:05 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:05 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:11 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:11 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:12 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:12 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:42 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:42 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:54 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:54 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:55 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:51:55 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:52:02 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:52:04 - INFO - New connected socket [id: 8JYIHwYOOU-oZTvtAABN] 
-29.1.2023, 13:52:04 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 8JYIHwYOOU-oZTvtAABN] 
-29.1.2023, 13:52:04 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: 8JYIHwYOOU-oZTvtAABN] 
-29.1.2023, 13:53:33 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:53:35 - INFO - New connected socket [id: 3O40xN_WgkpnTD09AABP] 
-29.1.2023, 13:53:36 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 3O40xN_WgkpnTD09AABP] 
-29.1.2023, 13:53:36 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: 3O40xN_WgkpnTD09AABP] 
-29.1.2023, 13:53:52 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 13:53:57 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:53:58 - INFO - New connected socket [id: KCbriu8ATVCBE6TuAABR] 
-29.1.2023, 13:53:58 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: KCbriu8ATVCBE6TuAABR] 
-29.1.2023, 13:53:58 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: KCbriu8ATVCBE6TuAABR] 
-29.1.2023, 13:54:56 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 13:55:00 - INFO - New connected socket [id: KPvo6TMf5yq6mTlHAABT] 
-29.1.2023, 13:55:00 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: KPvo6TMf5yq6mTlHAABT] 
-29.1.2023, 13:55:01 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: KPvo6TMf5yq6mTlHAABT] 
-29.1.2023, 14:14:37 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 14:14:40 - INFO - New connected socket [id: WgZ203XSFaqd_k2kAABV] 
-29.1.2023, 14:14:41 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: WgZ203XSFaqd_k2kAABV] 
-29.1.2023, 14:14:41 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: WgZ203XSFaqd_k2kAABV] 
-29.1.2023, 14:26:34 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 14:26:36 - INFO - New connected socket [id: qaDf0IJ8lL23UFtPAABX] 
-29.1.2023, 14:26:37 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: qaDf0IJ8lL23UFtPAABX] 
-29.1.2023, 14:26:38 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: qaDf0IJ8lL23UFtPAABX] 
-29.1.2023, 14:28:30 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 14:28:31 - INFO - New connected socket [id: OjBBIkHEeoP8TLj_AABZ] 
-29.1.2023, 14:28:32 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: OjBBIkHEeoP8TLj_AABZ] 
-29.1.2023, 14:28:32 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: OjBBIkHEeoP8TLj_AABZ] 
-29.1.2023, 14:43:49 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 14:43:52 - INFO - New connected socket [id: RidUAktHXkeN5_0QAABb] 
-29.1.2023, 14:43:52 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: RidUAktHXkeN5_0QAABb] 
-29.1.2023, 14:43:53 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: RidUAktHXkeN5_0QAABb] 
-29.1.2023, 14:52:34 - INFO - Socket disconnected [id: undefined] 
-29.1.2023, 14:52:39 - INFO - New connected socket [id: d1tOM7Lv94RWkbyjAABd] 
-29.1.2023, 14:52:41 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: d1tOM7Lv94RWkbyjAABd] 
-29.1.2023, 14:52:41 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: d1tOM7Lv94RWkbyjAABd] 
-29.1.2023, 14:53:03 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
-29.1.2023, 14:53:03 - INFO - Broadcast to room 63d541512dc177b41719d5ea excluding user: 63d53f24405315f7da6a0ada (userId: 63d53f24405315f7da6a0ada)
+>>>>>>> f7af9459bdc8383ffaa50deccec48c94437c9fa0
+29.1.2023, 12:55:22 - DEBUG - Getting Boards 
