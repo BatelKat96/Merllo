@@ -21,9 +21,9 @@ export function HomePage() {
 
                             <p>Keep everything in the same place—even if your team isn't.</p>
 
-                            <button className="start-demo-btn">
-                                <Link to="/workspace">Start demo</Link>
-                            </button>
+                            <Link to="/workspace">
+                                <button className="start-demo-btn">Start now</button>
+                            </Link>
                         </div>
 
                         <div className="img">
@@ -77,7 +77,7 @@ export function HomePage() {
 
                             </div>
 
-                            <div className="prod-img">
+                            {/* <div className="prod-img">
 
                                 <img className="boards-img"
                                     src="https://images.ctfassets.net/rz1oowkt5gyp/3N2U3C71rApm61cGFxnc2E/970b010002488a09a420282df5e7b43a/Carousel_Image_Boards_2x.png?w=1536" alt="boards" />
@@ -88,7 +88,7 @@ export function HomePage() {
                                 <img className="cards-img hide"
                                     src="https://images.ctfassets.net/rz1oowkt5gyp/26CA6JZeRgoOK4nuRHnIlY/060702a80cf7c3be3651d9297d196267/Carousel_Image_Cards_2x.png?w=1536&fm=webp" alt="boards" />
 
-                            </div>
+                            </div> */}
 
                         </div>
                     </section>

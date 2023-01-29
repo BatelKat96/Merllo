@@ -36,6 +36,7 @@
         height: 32px;
         width: 32px;
         object-fit: cover;
+        border-radius: 50%;
         img {
             width: 100%;
             border-radius: 25em;
@@ -115,6 +116,7 @@
 
             .preview-member-img {
                 width: 32px;
+                border-radius: 50%;
             }
 
             .activity-description {

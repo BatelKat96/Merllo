@@ -69,12 +69,12 @@ export function MainHeader() {
 		return yiq >= 160 ? 'light-bg' : 'dark-bg'
 	}
 
-	if (!board)
-		return (
-			<div className="loader-wrapper">
-				<img className="loader" src={Loader} alt="loader" />
-			</div>
-		)
+	if (!board) return
+		// return (
+		// 	<div className="loader-wrapper">
+		// 		<img className="loader" src={Loader} alt="loader" />
+		// 	</div>)
+
 	const headerStyle = getHeaderStyle()
 	const txtStyle = getHeaderTxtStyle(headerStyle)
 
@@ -98,10 +98,10 @@ export function MainHeader() {
 						</button>
 					</NavLink>
 
-					<button className="nav-btn">
+					{/* <button className="nav-btn">
 						Recent
 						<DownSvg />
-					</button>
+					</button> */}
 
 					<button className="nav-btn">
 						Starred
@@ -115,14 +115,14 @@ export function MainHeader() {
 				</div>
 
 				<div className="left-nav">
-					<button className="search">
+					{/* <button className="search">
 						<SearchSvg />
 						Search
-					</button>
+					</button> */}
 
-					<button>
+					{/* <button>
 						<NotificationSvg />
-					</button>
+					</button> */}
 					{/*
 				<button>
 					<HelpSvg />

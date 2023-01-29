@@ -48,8 +48,6 @@ async function remove(boardId) {
 }
 
 async function save(board) {
-	console.log('board vv:', board)
-
 	var savedBoard
 	if (board._id) {
 		savedBoard = await httpService.put(`board/${board._id}`, board)
@@ -74,36 +72,9 @@ function getEmptyBoard() {
 			thumbnail: '',
 			backgroundColor: '',
 		},
-		labels: [
-			{
-				"id": "l101",
-				"title": "UI",
-				"color": "#7bc86c"
-			},
-			{
-				"id": "l102",
-				"title": "Low priority",
-				"color": "#f5dd29"
-			},
-			{
-				"id": "l103",
-				"title": "Medium priority",
-				"color": "#ffaf3f"
-			},
-			{
-				"id": "l104",
-				"title": "High priority",
-				"color": "#ef7564"
-			},
-			{
-				"id": "l105",
-				"title": "Bug",
-				"color": "#cd8de5"
-			}
-		],
+		labels: [],
 		members: [],
 		groups: [],
-		activities: [],
 	}
 }
 
@@ -152,9 +123,8 @@ async function removeGroup(groupId, boardId) {
 	}
 }
 
-async function saveGroup(group, boardId) {
+async function saveGroup(group, board) {
 	try {
-		let board = await getById(boardId)
 		if (group.id) {
 			const idx = board.groups.findIndex(
 				(currGroup) => currGroup.id === group.id
@@ -243,8 +213,7 @@ function getEmptyTask() {
 		title: '',
 		archivedAt: null,
 		labelIds: [],
-		dueDate: '',
-		// dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
+		dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
 		byMember: {
 			_id: '',
 			username: '',

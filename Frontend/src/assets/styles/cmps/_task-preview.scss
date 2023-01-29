@@ -109,6 +109,10 @@
             display: flex;
             flex-direction: row;
             gap: 2px;
+
+            .member-img {
+                border-radius: 50%;
+            }
         }
     
         p {

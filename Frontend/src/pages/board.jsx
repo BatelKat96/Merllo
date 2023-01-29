@@ -25,6 +25,7 @@ export function Board() {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 
+	// * with sockets
 	const socketUpdateBoard = useCallback(
 		(updatedBoard) => {
 			dispatch({ type: 'SET_BOARD', board: updatedBoard })
@@ -50,6 +51,23 @@ export function Board() {
 	useEffect(() => {
 		socketService.on(SOCKET_EVENT_UPDATE_BOARD, socketUpdateBoard)
 	}, [socketUpdateBoard])
+	// *
+
+	// * without sockets
+	// useEffect(() => {
+	// 	loadTheBoard(boardId)
+	// }, [boardId])
+
+	// async function loadTheBoard(boardId) {
+	// 	try {
+	// 		const board = await loadBoard(boardId)
+	// 		setBoardTitle(board.title)
+	// 		setTitleWidth(board.title.length * 10 + 40)
+	// 	} catch (err) {
+	// 		console.log('Failed to load the board')
+	// 	}
+	// }
+	// *
 
 	function handleEditBoardTitle({ target }) {
 		setBoardTitle(target.value)
@@ -145,7 +163,7 @@ export function Board() {
 						<input
 							onBlurCapture={onSaveBoardTitle}
 							name="title"
-							className="edit-group-title"
+							className="edit-board-title"
 							id={board.id}
 							spellCheck="false"
 							defaultValue={board.title}
@@ -176,6 +194,7 @@ export function Board() {
 								<img
 									height="30"
 									width="30"
+									style={{ borderRadius: '50%' }}
 									src={member.imgUrl}
 									alt={member.fullname}
 									title={`${member.fullname} (${member.username})`}

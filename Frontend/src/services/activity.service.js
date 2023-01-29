@@ -4,7 +4,7 @@ import { userService } from './user.service'
 import { utilService } from './util.service'
 
 export const activityService = {
-	addActivity,
+	// addActivity,
 }
 
 // * data for dev

@@ -52,6 +52,25 @@ export function TaskPreview({ group, task, board }) {
 		// ev.preventDefault()
 	}
 
+	function getDueWarnSpan(task) {
+		if (task.isDone) {
+			return <span className="due-sticker completed">completed</span>
+		}
+		const taskDuedate = new Date(task.dueDate)
+		const now = new Date()
+		const msBetweenDates = taskDuedate.getTime() - now.getTime()
+		const hoursBetweenDates = msBetweenDates / (60 * 60 * 1000)
+
+		if (hoursBetweenDates < 0) {
+			console.log('overdue')
+			return <span className="due-sticker overdue">overdue</span>
+		}
+		if (hoursBetweenDates < 24) {
+			console.log('due soon')
+			return <span className="due-sticker soon">due soon</span>
+		}
+	}
+
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
@@ -113,7 +132,7 @@ export function TaskPreview({ group, task, board }) {
 						<div className="task-preview-actions">
 
 							{currDueDate !== '' && (
-								<span className="task-preview-actions-icons date">
+								<span className="task-preview-actions-icons date ">
 									<AiOutlineClockCircle />
 									<p>{utilService.dueDateFormat(currDueDate)}</p>
 								</span>

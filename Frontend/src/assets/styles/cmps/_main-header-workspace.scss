@@ -1,6 +1,6 @@
 .main-header-demo {
     height: 44px;
-    // min-width: 1000px;
+    min-width: 1200px;
     width: 100%;
 
     display: flex;
@@ -9,6 +9,7 @@
 
     background-color: $wh-bg1;
     background-color: #026aa7;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
     button {
         border: none;
