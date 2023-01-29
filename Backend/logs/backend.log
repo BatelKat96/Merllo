@@ -997,3 +997,94 @@
 =======
 >>>>>>> 2902ef73734d2dd17d73971b90ba99c8da909472
 >>>>>>> 1fc301bf7ff2f5dc93a3ee89eaa9ca3b156c407b
+29.1.2023, 10:49:05 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:05 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:06 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:06 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:07 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:07 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:07 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:07 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 10:49:31 - DEBUG - Getting Boards 
+29.1.2023, 10:49:33 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 10:49:35 - INFO - New connected socket [id: EIxK2rBkBaAffYgRAAAV] 
+29.1.2023, 10:49:35 - INFO - Setting socket.userId = 1bxpC5 for socket [id: EIxK2rBkBaAffYgRAAAV] 
+29.1.2023, 10:49:35 - INFO - Socket is now on board 63d541512dc177b41719d5ed [id: EIxK2rBkBaAffYgRAAAV] 
+29.1.2023, 10:49:41 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:49:41 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:47 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:47 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:49 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:49 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:51 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:51 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:54 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:54 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:50:56 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:50:56 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 10:59:42 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 10:59:43 - INFO - New connected socket [id: lnfOmokA8TWNo5MrAAAX] 
+29.1.2023, 10:59:43 - INFO - Setting socket.userId = Ofyhgb for socket [id: lnfOmokA8TWNo5MrAAAX] 
+29.1.2023, 10:59:43 - INFO - Socket is now on board 63d541512dc177b41719d5ed [id: lnfOmokA8TWNo5MrAAAX] 
+29.1.2023, 10:59:47 - INFO - Broadcasting event: update-board 
+29.1.2023, 10:59:47 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 11:00:54 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:00:54 - INFO - Emit to room: 63d541512dc177b41719d5ed 
+29.1.2023, 11:25:12 - DEBUG - Getting Boards 
+29.1.2023, 11:25:14 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:25:15 - INFO - New connected socket [id: GKnVlolbubsGWpmMAAAZ] 
+29.1.2023, 11:25:15 - INFO - Setting socket.userId = N8LrkS for socket [id: GKnVlolbubsGWpmMAAAZ] 
+29.1.2023, 11:25:16 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: GKnVlolbubsGWpmMAAAZ] 
+29.1.2023, 11:25:42 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:25:42 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:25:53 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:25:53 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:25:56 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:25:56 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:34:00 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:34:01 - INFO - New connected socket [id: lQDd56rQ7VF8KhtCAAAb] 
+29.1.2023, 11:34:01 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: lQDd56rQ7VF8KhtCAAAb] 
+29.1.2023, 11:34:01 - INFO - Setting socket.userId = l0Unh7 for socket [id: lQDd56rQ7VF8KhtCAAAb] 
+29.1.2023, 11:34:57 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:34:57 - INFO - New connected socket [id: jDI39JDv5O-EU1imAAAd] 
+29.1.2023, 11:34:57 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: jDI39JDv5O-EU1imAAAd] 
+29.1.2023, 11:34:57 - INFO - Setting socket.userId = b8IIaj for socket [id: jDI39JDv5O-EU1imAAAd] 
+29.1.2023, 11:35:44 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:35:44 - INFO - New connected socket [id: fo4lQihmp5TZPE_vAAAf] 
+29.1.2023, 11:35:44 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: fo4lQihmp5TZPE_vAAAf] 
+29.1.2023, 11:35:45 - INFO - Setting socket.userId = hxui8k for socket [id: fo4lQihmp5TZPE_vAAAf] 
+29.1.2023, 11:36:24 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:36:24 - INFO - New connected socket [id: RSbFEfImYA4TL5RuAAAh] 
+29.1.2023, 11:36:24 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: RSbFEfImYA4TL5RuAAAh] 
+29.1.2023, 11:36:24 - INFO - Setting socket.userId = uiuuwD for socket [id: RSbFEfImYA4TL5RuAAAh] 
+29.1.2023, 11:36:59 - INFO - Broadcasting event: update-board 
+29.1.2023, 11:36:59 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 11:43:39 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:43:39 - INFO - New connected socket [id: OwKJTaxelnvLd6xzAAAj] 
+29.1.2023, 11:43:40 - INFO - Setting socket.userId = FdVwt3 for socket [id: OwKJTaxelnvLd6xzAAAj] 
+29.1.2023, 11:44:45 - DEBUG - Getting Boards 
+29.1.2023, 11:45:07 - DEBUG - Getting Boards 
+29.1.2023, 11:55:26 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:55:27 - INFO - New connected socket [id: 57rLJ-5VgD2n0CvGAAAl] 
+29.1.2023, 11:55:27 - DEBUG - Getting Boards 
+29.1.2023, 11:55:28 - INFO - Setting socket.userId = l7kDxy for socket [id: 57rLJ-5VgD2n0CvGAAAl] 
+29.1.2023, 11:56:18 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 11:56:19 - INFO - New connected socket [id: bf1QGAIoz4IiKFMOAAAn] 
+29.1.2023, 11:56:19 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: bf1QGAIoz4IiKFMOAAAn] 
+29.1.2023, 11:56:19 - INFO - Setting socket.userId = r2AGej for socket [id: bf1QGAIoz4IiKFMOAAAn] 
+29.1.2023, 12:02:17 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 12:02:19 - INFO - New connected socket [id: 13Wcry1y9SOx0pPnAAAp] 
+29.1.2023, 12:02:20 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: 13Wcry1y9SOx0pPnAAAp] 
+29.1.2023, 12:02:20 - INFO - Setting socket.userId = 2A7Ur4 for socket [id: 13Wcry1y9SOx0pPnAAAp] 
+29.1.2023, 12:04:14 - INFO - Broadcasting event: update-board 
+29.1.2023, 12:04:14 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+29.1.2023, 12:14:30 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 12:14:31 - INFO - New connected socket [id: ST4DfuV-c6hvGve6AAAr] 
+29.1.2023, 12:14:31 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: ST4DfuV-c6hvGve6AAAr] 
+29.1.2023, 12:14:31 - INFO - Setting socket.userId = fqQxMI for socket [id: ST4DfuV-c6hvGve6AAAr] 
+29.1.2023, 12:16:58 - DEBUG - Getting Boards 
+29.1.2023, 12:19:52 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 12:19:53 - INFO - New connected socket [id: IOPmM2-r1ry8qUgPAAAt] 
+29.1.2023, 12:19:53 - INFO - Socket is now on board 63d59ffac8453fced2350c58 [id: IOPmM2-r1ry8qUgPAAAt] 
+29.1.2023, 12:19:53 - INFO - Setting socket.userId = sMrxj9 for socket [id: IOPmM2-r1ry8qUgPAAAt] 
+29.1.2023, 12:31:49 - DEBUG - Getting Boards 
