@@ -54,7 +54,12 @@ export function AddComment({ user, addComment }) {
 	return (
 		<Fragment>
 			<div className="member-img">
-				<img src={user?.imgUrl} alt="member" referrerPolicy="no-referrer" />
+				<img
+					src={user?.imgUrl}
+					alt="member"
+					referrerPolicy="no-referrer"
+					style={{ borderRadius: '50%' }}
+				/>
 			</div>
 			<form>
 				<div className="new-comment-container" style={newCommentContainerStyle}>
