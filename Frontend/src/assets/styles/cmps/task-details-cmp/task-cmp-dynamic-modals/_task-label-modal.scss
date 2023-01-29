@@ -28,12 +28,18 @@
     }
 }
 
+.btn-create-label {
+    font-size: 14px;
+}
+
 .cmp-dynamoic-labels-label {
     flex-grow: 1;
     margin-inline-start: 12px;
     display: flex;
     align-items: center;
     padding-inline-start: 10px;
+    font-size: 14px;
+    color: $t-txt1;
 
     .color-circle {
         margin-inline-end: 10px;
@@ -52,9 +58,15 @@
     width: 32px;
     height: 32px;
     border-radius: 3px;
+    color: $t-txt1;
 
     &:hover {
         background-color: $t-hover3;
+    }
+
+    svg {
+        width: 14px;
+        height: 14px;
     }
 }
 
@@ -62,6 +74,7 @@
 .btn-edit-label-modal {
     display: flex;
     justify-content: space-between;
+    font-size: 14px;
 
     .btn-update-label {
         background-color: $t-btn-bgc;

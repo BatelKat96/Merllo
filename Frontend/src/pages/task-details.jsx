@@ -25,6 +25,8 @@ import Loader from '../assets/img/loader.svg'
 import { TaskDueDate } from '../cmps/task-details-cmp/task-due-date'
 import { TaskAttachmentPreview } from '../cmps/task-details-cmp/task-attachmente-preview'
 import { TaskActivity } from '../cmps/task-details-cmp/task-activity/task-activity'
+import { TaskDynamicLabel } from '../cmps/task-details-cmp/task-dynamic-label'
+import { TaskDynamicMember } from '../cmps/task-details-cmp/task-dynamic-member'
 
 export function TaskDetails() {
 	const { boardId, groupId, taskId } = useParams()
@@ -41,7 +43,39 @@ export function TaskDetails() {
 		attachments,
 	} = task
 	const [modalType, setModalType] = useState()
+	const memberBtn = useRef()
+	const labelBtn = useRef()
+	const checklistBtn = useRef()
+	const datesBtn = useRef()
+	const attachmentBtn = useRef()
 	const coverBtn = useRef()
+	const moveCardBtn = useRef()
+
+
+	function getRefData(type) {
+		switch (type) {
+			case 'members':
+				return memberBtn
+
+			case 'labels':
+				return labelBtn
+
+			case 'checklist':
+				return checklistBtn
+
+			case 'dates':
+				return datesBtn
+
+			case 'attachment':
+				return attachmentBtn
+
+			case 'cover':
+				return coverBtn
+
+			case 'move card':
+				return moveCardBtn
+		}
+	}
 
 	let coverClose = task?.style?.background || task?.style?.backgroundColor ? 'close-hover' : ''
 
@@ -121,8 +155,12 @@ export function TaskDetails() {
 	}
 
 	function onOpenModal(type) {
+		console.log('type task details:', type)
+
 		setModalType(type)
+
 	}
+	console.log('ModalType:', modalType)
 
 	return (
 		<>
@@ -193,35 +231,54 @@ export function TaskDetails() {
 										onSaveEdit={onSaveEdit}
 										task={task}
 										group={getGroup(groupId)}
+										onOpenModal={onOpenModal}
+										moveCardBtn={moveCardBtn}
 									/>
 
 									<div className="task-details-container">
 										<div className="task-details-edit-section">
 											<div className="task-details-edit-item">
 												{memberIds && memberIds.length > 0 && (
-													<TaskDynamicItem
+													<TaskDynamicMember
 														ids={memberIds}
 														board={board}
 														type={'members'}
 														task={task}
 														onSaveTask={onSaveTask}
+														onOpenModal={onOpenModal}
+														memberBtn={memberBtn}
 													/>
 												)}
 												{labelIds && labelIds.length > 0 && (
+													<TaskDynamicLabel
+														ids={labelIds}
+														board={board}
+														type={'labels'}
+														task={task}
+														onSaveTask={onSaveTask}
+														onOpenModal={onOpenModal}
+														labelBtn={labelBtn}
+													/>
+												)}
+												{/* {labelIds && labelIds.length > 0 && (
 													<TaskDynamicItem
 														ids={labelIds}
 														board={board}
 														type={'labels'}
 														task={task}
 														onSaveTask={onSaveTask}
+														onOpenModal={onOpenModal}
+													// labelBtn={labelBtn}
 													/>
-												)}
+												)} */}
 												{dueDate && (
 													<TaskDueDate
 														dueDate={dueDate}
 														isDone={isDone}
 														task={task}
 														onSaveTask={onSaveTask}
+														datesBtn={datesBtn}
+														onOpenModal={onOpenModal}
 													/>
 												)}
 											</div>
@@ -270,17 +327,18 @@ export function TaskDetails() {
                 onOpenModal={onOpenModal}
                 onSaveTask={onSaveTask} />} */}
 
-				{modalType && (
-					<DynamoicModal
-						cmpType={modalType}
-						refDataBtn={coverBtn}
-						task={task}
-						groupId={groupId}
-						boardId={boardId}
-						onOpenModal={onOpenModal}
-						onSaveTask={onSaveTask}
-					/>
-				)}
+				{modalType &&
+					(
+						<DynamoicModal
+							cmpType={modalType}
+							refDataBtn={getRefData(modalType)}
+							task={task}
+							groupId={groupId}
+							boardId={boardId}
+							onOpenModal={onOpenModal}
+							onSaveTask={onSaveTask}
+						/>
+					)}
 			</section>
 		</>
 	)

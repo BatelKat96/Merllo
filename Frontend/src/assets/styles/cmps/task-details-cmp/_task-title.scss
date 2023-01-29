@@ -43,6 +43,10 @@
         padding-block-start: 3px;
         cursor: text;
 
+        .task-details-title-location-link {
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
         .eye-icon {
             margin-inline-start: 12px;

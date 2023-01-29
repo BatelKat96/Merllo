@@ -41,32 +41,25 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
     function setTaskCover(ev, coverColor, coverImg) {
         let style
-
         if (task?.style?.background === coverImg) {
             task.style.background = null
             onSaveTask(ev, task)
         }
-
         else if (task?.style?.backgroundColor === coverColor) {
             task.style.backgroundColor = null
             onSaveTask(ev, task)
         }
-
         else {
-
-        setCoverColor(coverColor)
-        setcoverImg(coverImg)
-
+            setCoverColor(coverColor)
+            setcoverImg(coverImg)
             if (coverColor) {
                 style = { backgroundColor: coverColor }
                 setIsSelected(isSelected)
             }
-
             else {
                 style = { background: `url("${coverImg}") center center / cover` }
                 setIsSelected(isSelected)
             }
-
             task.style = style
             onSaveTask(ev, task)
         }

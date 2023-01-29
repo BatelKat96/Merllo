@@ -1,8 +1,11 @@
 import taskTitle from '../../assets/img/icons-task-details/taskTitle.svg'
 import { AiOutlineEye } from "react-icons/ai";
 
-export function TaskTitle({ handleChange, onSaveEdit, task, group }) {
+export function TaskTitle({ handleChange, onSaveEdit, task, group, onOpenModal, moveCardBtn }) {
 
+    function openMoveModal() {
+        onOpenModal('move card')
+    }
     return <section className='task-title-container'>
         <div>
             <img className='icon-task title-icon' src={taskTitle} />
@@ -18,7 +21,10 @@ export function TaskTitle({ handleChange, onSaveEdit, task, group }) {
                     defaultValue={task.title}
                 />
             </form >
-            <p className='task-details-title-location'>in list {group.title}</p>
+            <p className='task-details-title-location'>in list  <a ref={moveCardBtn} onClick={openMoveModal} className='task-details-title-location-link'>
+                {group.title}
+            </a>
+            </p>
 
         </div>
     </section>
