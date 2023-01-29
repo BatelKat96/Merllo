@@ -1,7 +1,6 @@
 import { boardService } from '../services/board.service'
 import { store } from './store.js'
-// import { userService } from '../services/user.service.js'
-// import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
+
 import {
 	SET_BOARDS,
 	SET_BOARD,
@@ -67,14 +66,11 @@ export async function addBoard(board) {
 }
 
 export async function updateBoard(board) {
-	// console.log('board:', board)
-
 	try {
 		store.dispatch(getActionUpdateBoard(board))
 		await boardService.save(board)
 		// const savedBoard = await boardService.save(board)
 		// return savedBoard
-
 	} catch (err) {
 		console.log('Cannot save board', err)
 		throw err

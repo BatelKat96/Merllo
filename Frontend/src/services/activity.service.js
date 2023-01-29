@@ -1,5 +1,3 @@
-import { updateBoard } from '../store/board.actions'
-import { boardService } from './board.service'
 import { userService } from './user.service'
 import { utilService } from './util.service'
 
@@ -57,12 +55,8 @@ function addActivity(txt, task, boardId, comment, user) {
 		task: miniTask,
 	}
 
-	console.log('activity', activity)
-
 	if (comment) activity.comment = comment
 
 	if (board.activities) board.activities.unshift(activity)
 	else board.activities = [activity]
-
-	console.log('board', board)
 }

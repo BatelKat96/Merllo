@@ -189,4 +189,3 @@ function timeSince(date) {
 	if (Math.floor(seconds) === 0) return 'Just now'
 	return Math.floor(seconds) + ' seconds ago'
 }
-

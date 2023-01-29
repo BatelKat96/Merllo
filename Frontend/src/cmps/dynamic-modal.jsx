@@ -1,20 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
-import { TaskMemberModal } from './task-details-cmp/task-cmp-dynamic-modals/task-member-modal'
-import { TaskLabelModal } from './task-details-cmp/task-cmp-dynamic-modals/task-label-modal'
-import { TaskChecklistModal } from './task-details-cmp/task-cmp-dynamic-modals/task-checklist-modal'
-import { TaskDatesModal } from './task-details-cmp/task-cmp-dynamic-modals/task-dates-modal'
-import { TaskAttachmentModal } from './task-details-cmp/task-cmp-dynamic-modals/task-attachment-modal'
-import { TaskCoverModal } from './task-details-cmp/task-cmp-dynamic-modals/task-cover-modal'
-import { TaskMoveModal } from './task-details-cmp/task-cmp-dynamic-modals/task-move-modal'
-
+import { TaskMemberModal } from './task-details/task-dynamic-modals/task-member-modal'
+import { TaskLabelModal } from './task-details/task-dynamic-modals/task-label-modal'
+import { TaskChecklistModal } from './task-details/task-dynamic-modals/task-checklist-modal'
+import { TaskDatesModal } from './task-details/task-dynamic-modals/task-dates-modal'
+import { TaskAttachmentModal } from './task-details/task-dynamic-modals/task-attachment-modal'
+import { TaskCoverModal } from './task-details/task-dynamic-modals/task-cover-modal'
+import { TaskMoveModal } from './task-details/task-dynamic-modals/task-move-modal'
 
 import Loader from '../assets/img/loader.svg'
 import { IoClose } from 'react-icons/io5'
-import { logDOM } from '@testing-library/react'
 
-export function DynamoicModal({
+export function DynamicModal({
 	cmpType,
 	task,
 	onOpenModal,
@@ -44,6 +42,7 @@ export function DynamoicModal({
 		let bottomModal = ''
 		let leftModal = rect.left
 		let rightModal = rect.right
+		let position = 'absolute'
 
 		if (window.innerHeight < (rect.top + modalHeight)) {
 			topModal = ''
@@ -55,10 +54,30 @@ export function DynamoicModal({
 			rightModal = 20
 		}
 
-		let modalPos = { bottom: bottomModal, top: topModal, left: leftModal, right: rightModal }
+		let modalPos = { bottom: bottomModal, top: topModal, left: leftModal, right: rightModal, position: position }
 
 		return modalPos
 	}
+
+
+
+	// function updateModalPos() {
+	// 	const rect = refDataBtn.current.getBoundingClientRect()
+
+	// 	let topModal = rect.top + rect.height + 5 + 'px'
+	// 	let leftModal = rect.left + 'px'
+
+	// 	let modalPos = { top: topModal, left: leftModal }
+
+	// 	return modalPos
+	// }
+
+	// window.addEventListener('resize', updateModalPos)
+	// window.addEventListener('scroll', updateModalPos)
+
+//   const refDataBtn = useRef(null)
+//   const modalPos = getModalPos(refDataBtn)
+
 
 	function onClose() {
 		onOpenModal()
@@ -89,18 +108,18 @@ export function DynamoicModal({
 		)
 
 	return (
-		<section className="dynamoic-modal"
+		<section className="dynamic-modal"
 			style={getModalPos(refDataBtn)}
 			ref={modalRef}>
 
-			<div className="dynamoic-modal-wrapper">
+			<div className="dynamic-modal-wrapper">
 
 				<a onClick={onClose}>
 					<IoClose className="close-icon" />
 				</a>
 
 
-				<p className="dynamoic-modal-title">{data.title}</p>
+				<p className="dynamic-modal-title">{data.title}</p>
 
 				<div className="dynamic-modal-container">
 

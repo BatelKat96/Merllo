@@ -1,8 +1,4 @@
 
-// import { storageService } from './async-storage.service.js'
-// import { utilService } from './util.service.js'
-// import { userService } from './user.service.js'
-
 import { storageService } from './async-storage.service'
 import { utilService } from './util.service'
 
@@ -22,7 +18,6 @@ function getById(taskId) {
 }
 
 async function remove(taskId) {
-    // throw new Error('Nope')
     await storageService.remove(STORAGE_TASKS_KEY, taskId)
 }
 
@@ -31,7 +26,6 @@ async function save(task) {
     if (task._id) {
         savedtask = await storageService.put(STORAGE_TASKS_KEY, task)
     } else {
-        // task.owner = userService.getLoggedinUser()
         savedtask = await storageService.post(STORAGE_TASKS_KEY, task)
     }
     return savedtask
@@ -89,31 +83,3 @@ function _createTasks() {
         utilService.saveToStorage(STORAGE_TASKS_KEY, tasks)
     }
 }
-
-    // function _createTask(title, description, labelIds, dueDate, byMember, style, comments) {
-    //     return {
-    //         id: utilService.makeId(),
-    //         title,
-    //         description,
-    //         labelIds,
-    //         dueDate,
-    //         byMember,
-    //         style,
-    // comments
-    //     }
-    // }
-
-// function getEmptytask() {
-//     return {
-//         vendor: 'Susita-' + (Date.now() % 1000),
-//         price: utilService.getRandomIntInclusive(1000, 9000),
-//     }
-// }
-
-
-// TEST DATA
-// storageService.post(STORAGE_TASKS_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
-
-
-
-

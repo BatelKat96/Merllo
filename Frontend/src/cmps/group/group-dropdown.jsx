@@ -1,5 +1,7 @@
-import { useClickOutside } from '../../customHooks/is-clicked-outside'
 import { useRef } from 'react'
+
+import { useClickOutside } from '../../customHooks/is-clicked-outside'
+
 import { IoClose } from 'react-icons/io5'
 
 export function GroupDropdown({

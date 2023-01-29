@@ -8,21 +8,17 @@
 @import "basics/helpers";
 @import "basics/layout";
 @import "basics/base";
-@import "basics/links";
 @import "basics/forms";
 
-
 // Views
-@import "pages/about";
 @import "pages/home-page";
 @import "pages/board";
-@import "pages/task-details-copy";
+@import "pages/task-details";
 @import "pages/user-details";
 @import "pages/workspace";
 @import "pages/login-signup";
 
 // Components
-// @import "cmps/app-header";
 @import "cmps/homepage-header";
 @import "cmps/main-header";
 @import "cmps/main-header-workspace";
@@ -33,13 +29,12 @@
 @import "cmps/task-list";
 @import "cmps/task-preview";
 @import "cmps/quick-task-edit";
-@import "cmps/user-msg";
 @import "cmps/homepage-footer";
 @import "cmps/board-create";
 @import "cmps/board-preview";
 @import "cmps/board-side-menu";
 @import "cmps/user-menu";
-@import "cmps/dynamoic-modal";
+@import "cmps/dynamic-modal";
 
 // Task-details-components
 @import "cmps/task-details-cmp/task-description";
@@ -48,17 +43,18 @@
 @import "cmps/task-details-cmp/task-checklist/task-checklist-preview";
 @import "cmps/task-details-cmp/task-checklist/task-checklist-todo-preview";
 @import "cmps/task-details-cmp/task-checklist/task-checklist-progress-bar";
-@import "cmps/task-details-cmp/task-activity";
 
 @import "cmps/task-details-cmp/task-member";
 @import "cmps/task-details-cmp/task-label";
 @import "cmps/task-details-cmp/task-cover-modal";
 @import "cmps/task-details-cmp/task-cover";
-@import "cmps/task-details-cmp/task-side-bar-copy";
+@import "cmps/task-details-cmp/task-side-bar";
 @import "cmps/task-details-cmp/task-title";
-@import "cmps/task-details-cmp/task-cmp-dynamic-copy";
+@import "cmps/task-details-cmp/task-due-date";
+@import "cmps/task-details-cmp/task-attachment/task-attachment-preview";
+@import "cmps/task-details-cmp/task-attachment/task-attachment";
 
-//task-cmp-dynamic-modals
+//task-dynamic-modals
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-label-modal";
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-member-modal";
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-edit-label-modal";
@@ -66,10 +62,3 @@
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-date-modal";
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-move-modal";
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-attachment-modal";
-
-
-
-@import "cmps/task-details-cmp/task-due-date";
-
-@import "cmps/task-details-cmp/task-attachment/task-attachment-preview";
-@import "cmps/task-details-cmp/task-attachment/task-attachment";

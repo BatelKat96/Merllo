@@ -2,21 +2,13 @@ import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { BoardCreate } from '../board-create'
-import { UserMenu } from '../user-menu'
+import { BoardCreate } from '../board/board-create'
+import { UserMenu } from '../board/user-menu'
 import { logout } from '../../store/user.actions'
 import { boardService } from '../../services/board.service'
 
-import Loader from '../../assets/img/loader.svg'
-import { ReactComponent as AppsSvg } from '../../assets/img/icons-header/apps.svg'
-import { ReactComponent as CreateSvg } from '../../assets/img/icons-header/create.svg'
 import { ReactComponent as DownSvg } from '../../assets/img/icons-header/down.svg'
-import { ReactComponent as HelpSvg } from '../../assets/img/icons-header/help.svg'
-import { ReactComponent as NotificationSvg } from '../../assets/img/icons-header/notification.svg'
-import { ReactComponent as SearchSvg } from '../../assets/img/icons-header/search.svg'
 import { ReactComponent as TrelloSvg } from '../../assets/img/icons-header/trello.svg'
-import { ReactComponent as UserSvg } from '../../assets/img/icons-header/user.svg'
-import { AiFillDiff } from 'react-icons/ai'
 
 export function MainHeader() {
 	const board = useSelector((storeState) => storeState.boardModule.board)
