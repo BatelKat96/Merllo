@@ -69,12 +69,12 @@ export function MainHeader() {
 		return yiq >= 160 ? 'light-bg' : 'dark-bg'
 	}
 
-	if (!board)
-		return (
-			<div className="loader-wrapper">
-				<img className="loader" src={Loader} alt="loader" />
-			</div>
-		)
+	if (!board) return
+		// return (
+		// 	<div className="loader-wrapper">
+		// 		<img className="loader" src={Loader} alt="loader" />
+		// 	</div>)
+
 	const headerStyle = getHeaderStyle()
 	const txtStyle = getHeaderTxtStyle(headerStyle)
 
