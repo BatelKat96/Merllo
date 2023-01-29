@@ -1277,3 +1277,14 @@
 29.1.2023, 11:27:02 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
 >>>>>>> f7af9459bdc8383ffaa50deccec48c94437c9fa0
 29.1.2023, 12:55:22 - DEBUG - Getting Boards 
+29.1.2023, 15:03:44 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 15:03:49 - INFO - New connected socket [id: BfqZic8KdOtEia4YAABh] 
+29.1.2023, 15:03:50 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: BfqZic8KdOtEia4YAABh] 
+29.1.2023, 15:03:51 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: BfqZic8KdOtEia4YAABh] 
+29.1.2023, 15:06:12 - DEBUG - auth.service - login with username: drorka 
+29.1.2023, 15:06:13 - INFO - User login:  | {"_id":"63d53f24405315f7da6a0ada","username":"drorka","fullname":"Dror K","imgUrl":"https://res.cloudinary.com/djyjaumko/image/upload/v1674995684/dror_rms18o.jpg"} 
+29.1.2023, 15:06:13 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
+29.1.2023, 15:07:22 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 15:07:29 - INFO - New connected socket [id: IyzudXDRVm4YFQTTAABj] 
+29.1.2023, 15:07:30 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: IyzudXDRVm4YFQTTAABj] 
+29.1.2023, 15:07:30 - DEBUG - Getting Boards (userId: 63d53f24405315f7da6a0ada)
