@@ -1,5 +1,5 @@
 module.exports = {
 	dbURL:
-		'mongodb+srv://theUser:thePass@cluster0-klgzh.mongodb.net/test?retryWrites=true&w=majority',
+		'mongodb+srv://dror:dror123@cluster0.wsdeofi.mongodb.net/?retryWrites=true&w=majority',
 	// dbName: 'merllo_db',
 }
