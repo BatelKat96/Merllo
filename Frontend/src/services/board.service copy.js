@@ -75,7 +75,6 @@ function getEmptyBoard() {
 		labels: [],
 		members: [],
 		groups: [],
-		activities: [],
 	}
 }
 
@@ -124,9 +123,8 @@ async function removeGroup(groupId, boardId) {
 	}
 }
 
-async function saveGroup(group, boardId) {
+async function saveGroup(group, board) {
 	try {
-		let board = await getById(boardId)
 		if (group.id) {
 			const idx = board.groups.findIndex(
 				(currGroup) => currGroup.id === group.id
@@ -215,8 +213,7 @@ function getEmptyTask() {
 		title: '',
 		archivedAt: null,
 		labelIds: [],
-		dueDate: '',
-		// dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
+		dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
 		byMember: {
 			_id: '',
 			username: '',
