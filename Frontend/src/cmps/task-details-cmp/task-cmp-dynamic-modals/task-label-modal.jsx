@@ -135,11 +135,10 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
             />
             <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3>
             <ul className='cmp-dynamoic-options-list clean-list' >
-                {toRender && toRender.map(opt => <>
+                {toRender && toRender.map(opt =>
                     <li key={opt.id} className="cmp-dynamoic-option cmp-dynamoic-option-labels"
                     >
                         <input
-
                             onChange={(ev) => { onToggleLabel(ev, opt.id) }}
                             checked={labelIds?.includes(opt.id)}
                             className="cmp-dynamoic-labels-checkbox"
@@ -155,7 +154,7 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
                             <RxPencil1 />
                         </button>
                     </li>
-                </>
+
                 )}
                 {!toRender.length && <li className="cmp-dynamoic-option">No label by this name</li>}
 

@@ -1,6 +1,6 @@
 const boardService = require('./board.service.js')
 const logger = require('../../services/logger.service')
-const { broadcast } = require('../../services/socket.service.js')
+const { broadcast, emitTo } = require('../../services/socket.service.js')
 const asyncLocalStorage = require('../../services/als.service.js')
 const utilService = require('../../services/util.service.js')
 
@@ -48,12 +48,20 @@ async function addBoard(req, res) {
 async function updateBoard(req, res) {
 	try {
 		const board = req.body
+		console.log('board:', board)
+
 		const updatedBoard = await boardService.update(board)
 		const loggedinUser = asyncLocalStorage.getStore().loggedinUser || {
 			_id: utilService.makeId(),
 		}
 
-		broadcast({
+		// broadcast({
+		// 	type: 'update-board',
+		// 	data: updatedBoard,
+		// 	room: updatedBoard._id,
+		// 	userId: loggedinUser?._id,
+		// })
+		emitTo({
 			type: 'update-board',
 			data: updatedBoard,
 			room: updatedBoard._id,

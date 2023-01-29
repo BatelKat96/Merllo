@@ -48,7 +48,7 @@ export function TaskMemberModal({ task, data, onSaveTask }) {
             autoComplete="off"
         />
         <h3 className='small-headline cmp-dynamoic-options-title'>{data.optionsTitle}</h3>
-        <ul className='cmp-dynamoic-options-list clean-list' >
+        <ul className=' clean-list cmp-dynamoic-options-list' >
             {toRender && toRender.map(opt =>
                 <li key={opt._id} className="cmp-dynamoic-option cmp-dynamoic-option-member" onClick={(ev) => onToggleMember(ev, opt._id)}>
                     <img className='cmp-dynamoic-member-img'

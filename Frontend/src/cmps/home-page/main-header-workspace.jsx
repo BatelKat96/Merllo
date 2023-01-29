@@ -98,7 +98,12 @@ export function MainHeaderWorkspace() {
 				{user && (
 					<button className="btn-member-img" onClick={openUserMenu}>
 						{/* <UserSvg /> */}
-						<img className="member-img" src={user.imgUrl} alt={user.fullname} />
+						<img
+							className="member-img"
+							src={user.imgUrl}
+							alt={user.fullname}
+							style={{ borderRadius: '50%' }}
+						/>
 					</button>
 				)}
 			</div>

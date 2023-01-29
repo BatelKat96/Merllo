@@ -58,43 +58,43 @@ export function TaskList({ group }) {
                 >
                     {(provided, snapshot) => (
 
-                            <ul className="task-list clean-list tasks"
-                                {...provided.droppableProps}
+                        <ul className="task-list clean-list tasks"
+                            {...provided.droppableProps}
                             ref={provided.innerRef}
                         // isDraggingOver={snapshot.isDraggingOver}
                         >
 
-                                {tasks.map((task, index) =>
+                            {tasks.map((task, index) =>
 
-                                    <Draggable
-                                        key={task.id}
-                                        group={group.id}
-                                        type={task}
-                                        draggableId={task.id}
-                                        index={index}>
+                                <Draggable
+                                    key={task.id}
+                                    group={group.id}
+                                    type={task}
+                                    draggableId={task.id}
+                                    index={index}>
 
-                                        {(provided, snapshot) => (
+                                    {(provided, snapshot) => (
 
-                                            <li key={task.id}
-                                                ref={provided.innerRef}
-                                                // isdragging={snapshot.isDragging}
-                                                {...provided.draggableProps}
-                                                {...provided.dragHandleProps}
-                                            >
+                                        <li key={task.id}
+                                            ref={provided.innerRef}
+                                            // isdragging={snapshot.isDragging}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                        >
 
-                                                <TaskPreview
-                                                    group={group}
-                                                    task={task}
-                                                    board={board}
-                                                />
-                                            </li>)}
+                                            <TaskPreview
+                                                group={group}
+                                                task={task}
+                                                board={board}
+                                            />
+                                        </li>)}
 
-                                    </Draggable>
-                                )}
-                                {provided.placeholder}
-                            </ul>
-                        )}
-                    </Droppable>
+                                </Draggable>
+                            )}
+                            {provided.placeholder}
+                        </ul>
+                    )}
+                </Droppable>
                 {/* </DragDropContext> */}
 
             </section>

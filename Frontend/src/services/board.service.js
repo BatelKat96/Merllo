@@ -48,6 +48,8 @@ async function remove(boardId) {
 }
 
 async function save(board) {
+	console.log('board vv:', board)
+
 	var savedBoard
 	if (board._id) {
 		savedBoard = await httpService.put(`board/${board._id}`, board)
@@ -72,7 +74,33 @@ function getEmptyBoard() {
 			thumbnail: '',
 			backgroundColor: '',
 		},
-		labels: [],
+		labels: [
+			{
+				"id": "l101",
+				"title": "UI",
+				"color": "#7bc86c"
+			},
+			{
+				"id": "l102",
+				"title": "Low priority",
+				"color": "#f5dd29"
+			},
+			{
+				"id": "l103",
+				"title": "Medium priority",
+				"color": "#ffaf3f"
+			},
+			{
+				"id": "l104",
+				"title": "High priority",
+				"color": "#ef7564"
+			},
+			{
+				"id": "l105",
+				"title": "Bug",
+				"color": "#cd8de5"
+			}
+		],
 		members: [],
 		groups: [],
 		activities: [],

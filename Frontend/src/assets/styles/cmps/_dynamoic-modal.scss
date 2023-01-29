@@ -64,7 +64,7 @@
             .cmp-dynamoic-options-title {
                 padding-top: 1px;
                 margin-block-end: 7px;
-                background-color: aquamarine;
+                // background-color: aquamarine;
 
             }
 
@@ -82,5 +82,112 @@
             }
 
         }
+
+
     }
+
+
+    .small-headline {
+        font-size: 12px;
+        color: #66748b;
+        font-family: segoe_ui;
+        letter-spacing: 0.04em;
+        width: fit-content;
+        cursor: text;
+        @include margin-titles-task
+    }
+
+    .medium-headline {
+        font-size: 16px;
+        color: #2d3f5d;
+        margin: 0;
+        font-family: segoe_ui;
+        font-weight: bold;
+        letter-spacing: 0.03em;
+        cursor: text;
+    }
+
+
+    .btn-task-details {
+        padding-inline: 12px;
+        padding-block: 6px;
+        color: $t-txt1;
+        background-color: $t-bg5;
+        border-radius: 3px;
+        transition: all 150ms ease-out 0s;
+
+        &:hover {
+            background-color: $t-hover3;
+        }
+    }
+
+    .task-details-edit-item {
+        display: flex;
+        align-items: flex-end;
+        padding-inline-start: 40px;
+        flex-wrap: wrap;
+    }
+
+    .icon-task {
+        width: 32px;
+        height: 32px;
+
+    }
+
+    .btn-task-exit {
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        justify-self: end;
+        border-radius: 50%;
+        display: flex;
+        color: #42526e;
+        padding: 4px;
+        margin: 4px;
+        transition: all 150ms ease-out 0s;
+
+        &:hover {
+            background-color: $t-hover3;
+        }
+
+        &.close-hover {
+            background-color: $t-hover3;
+        }
+
+        .exit-icon {
+            width: 20px;
+            height: 20px;
+            line-height: 32px;
+            padding: 0;
+            margin: auto;
+            font-size: 14px;
+        }
+    }
+
+
+
+    textarea,
+    input {
+        // font-family: inherit;
+        resize: none;
+        // background-color: inherit;
+        border: none;
+        // border-radius: 3px;
+        // margin: 0px;
+        cursor: pointer;
+
+        color: $t-txt1;
+        letter-spacing: 0.03em;
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &:focus {
+            border: none;
+            // box-shadow: rgb(0, 121, 191) 0px 0px 0px 2px inset;
+            background-color: $t-bg3;
+        }
+    }
+
 }
