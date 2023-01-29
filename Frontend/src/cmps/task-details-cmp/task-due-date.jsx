@@ -2,7 +2,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { utilService } from '../../services/util.service';
 
 
-export function TaskDueDate({ task, onSaveTask }) {
+export function TaskDueDate({ task, onSaveTask, datesBtn, onOpenModal }) {
 
     // const taskDuedate = utilService.dueDateFormat(task.dueDate)
     const taskDuedateTime = utilService.dueDateTimeFormat(task.dueDate)
@@ -35,10 +35,8 @@ export function TaskDueDate({ task, onSaveTask }) {
         }
     }
 
-    function open() {
-        console.log('he:')
-        /// add open modal
-
+    function openDateModal() {
+        onOpenModal('dates')
     }
 
 
@@ -52,7 +50,7 @@ export function TaskDueDate({ task, onSaveTask }) {
                 type="checkbox"
                 id={task.id}
             />
-            <button className='clean-btn task-due-date-show' onClick={open}>
+            <button className='clean-btn task-due-date-show' ref={datesBtn} onClick={openDateModal}>
                 <span className='task-due-date-span'>{taskDuedateTime} {getDueWarnSpan(updateTask)}</span>
                 <IoIosArrowDown className='btn-due-date-arrow' />
             </button>

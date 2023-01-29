@@ -8,6 +8,7 @@
 logs/backend.log
 /frontend/node_modules
 /backend/logs
+/Backend/logs
 
 
 # testing

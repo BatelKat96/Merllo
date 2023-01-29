@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 import { updateBoard } from '../../../store/board.actions'
 
-export function TaskMoveModal({ task, data, onSaveTask }) {
+export function TaskMoveModal({ task, data, onSaveTask, onClose }) {
     const board = useSelector((storeState) => storeState.boardModule.board)
     const { boardId, groupId, taskId } = useParams()
 
@@ -49,6 +49,7 @@ export function TaskMoveModal({ task, data, onSaveTask }) {
 
             currGroup.tasks.splice(currTaskIndex, 1)
             newGroup.tasks.splice(selectedTaskPos, 0, currTask)
+            onClose()
             updateBoard(board)
         }
     }
