@@ -145,7 +145,7 @@ export function Workspace() {
 					</div>
 				</div>
 
-				<ul className="board-list clean-list">
+				<ul className="board-list clean-list recently-viewed">
 					{boards.map((board) => (
 						<li key={`recent-${board._id}`}>
 							<a href={`/board/${board._id}`}>

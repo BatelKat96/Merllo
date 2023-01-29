@@ -48,6 +48,7 @@ export function TaskActivity({ task, onSaveTask }) {
 									src={comment.byMember.imgUrl}
 									referrerPolicy="no-referrer"
 									alt="member"
+									style={{ borderRadius: '50%' }}
 								/>
 							</div>
 							<div className="activity-description">

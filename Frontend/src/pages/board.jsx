@@ -194,6 +194,7 @@ export function Board() {
 								<img
 									height="30"
 									width="30"
+									style={{ borderRadius: '50%' }}
 									src={member.imgUrl}
 									alt={member.fullname}
 									title={`${member.fullname} (${member.username})`}

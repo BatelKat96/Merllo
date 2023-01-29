@@ -17,7 +17,7 @@ export function UserMenu({ user, onLogout, closeUserMenu }) {
 			<div className="user-menu-content">
 				<div className="user-menu-preview">
 					<div className="user-img">
-						<img src={user.imgUrl} alt="" />
+						<img src={user.imgUrl} alt="" style={{ borderRadius: '50%' }} />
 					</div>
 					<div className="user-name">{user.fullname}</div>
 				</div>
