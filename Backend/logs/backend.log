@@ -1522,3 +1522,19 @@
 29.1.2023, 15:34:53 - INFO - New connected socket [id: Yw6t4dAPBE9-w1y0AAAB] 
 29.1.2023, 15:34:54 - INFO - Socket is now on board 63d643321cd1ac7a460955c6 [id: Yw6t4dAPBE9-w1y0AAAB] 
 >>>>>>> 92375f104a652d99cf4450e0ffe6ba6870b196f9
+29.1.2023, 19:59:32 - INFO - Server is running on port: 3030 
+29.1.2023, 19:59:36 - INFO - New connected socket [id: YPD1mdfKU1TLqy5ZAAAB] 
+29.1.2023, 19:59:36 - INFO - Setting socket.userId = k0N5Xp for socket [id: YPD1mdfKU1TLqy5ZAAAB] 
+29.1.2023, 19:59:59 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 20:00:02 - INFO - New connected socket [id: jj4nHNe1KwBtseLsAAAD] 
+29.1.2023, 20:00:03 - DEBUG - Getting Boards 
+29.1.2023, 20:00:03 - INFO - Setting socket.userId = GKYnOR for socket [id: jj4nHNe1KwBtseLsAAAD] 
+29.1.2023, 20:00:10 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 20:00:13 - INFO - New connected socket [id: muFw_ExdD5mr4Vc6AAAF] 
+29.1.2023, 20:00:13 - INFO - Setting socket.userId = TLMkKT for socket [id: muFw_ExdD5mr4Vc6AAAF] 
+29.1.2023, 20:00:14 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: muFw_ExdD5mr4Vc6AAAF] 
+29.1.2023, 20:03:44 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 20:03:48 - INFO - New connected socket [id: RYZ_pTjXMiYecrYiAAAH] 
+29.1.2023, 20:03:48 - INFO - Setting socket.userId = I4ZXRe for socket [id: RYZ_pTjXMiYecrYiAAAH] 
+29.1.2023, 20:03:48 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: RYZ_pTjXMiYecrYiAAAH] 
+29.1.2023, 20:08:31 - DEBUG - Getting Boards 
