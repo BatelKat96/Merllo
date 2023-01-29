@@ -171,81 +171,54 @@
                 margin-right: auto;
                 padding-left: 1rem;
                 padding-right: 1rem;
-
-                // justify-content: flex-start;
                 display: flex;
-                // flex-direction: row;
-                // flex-wrap: wrap;
-
                 padding: 1rem 1rem 5rem;
+                justify-content: space-between;
 
-                .prod-cards {
-                    display: block;
-                    // flex: 0 0 auto;
-                    // width: 33.3333%;
+                button {
+                    cursor: pointer;
+                    height: 100%;
+                    padding: 1rem 1rem 1rem 1.5rem;
+                    position: relative;
+                    text-align: left;
+                    margin: 8px;
+                    border: none;
+                    background-color: transparent;
+                    color: rgb(9, 30, 66);
+                    transition: all 150ms ease-out 0s;
 
-                    display: flex;
-                    // flex-direction: column;
-                    justify-content: space-between;
-
-                    button {
-                        cursor: pointer;
-                        height: 100%;
-                        padding: 1rem 1rem 1rem 1.5rem;
-                        position: relative;
-                        text-align: left;
-                        margin: 8px;
-                        border: none;
-                        background-color: transparent;
-                        color: rgb(9, 30, 66);
-                        transition: all 150ms ease-out 0s;
-
-                        h5 {
-                            font-family: charlie-semibold; 
-                            font-size: 1rem; 
-                            margin: 2px;
-                        }
-
-                        p {
-                            font-family: charlie-regular;
-                            font-size: 0.8rem; 
-                            margin: 2px;
-                        }
-
-                    &.cards-btn:focus, 
-                    .cards-btn:hover,
-                    .cards-btn:active {
-                        background-color: rgb(255, 255, 255);
-                        color: rgb(9, 30, 66);
-                        box-shadow: rgb(9 30 66 / 15%) 0px 0.5rem 1rem 0px;
-                        border-radius: 0.3rem;
-                        border: 0px;
-
-                        div{
-                            background-color: rgb(0, 199, 229);
-                            border-radius: 0.3rem 0px 0px 0.3rem;
-                            bottom: 0px;
-                            content: "";
-                            left: 0px;
-                            position: absolute;
-                            top: 0px;
-                            width: 0.5rem;
-                        }
-                        }
-
-
+                    h5 {
+                        font-family: charlie-semibold; 
+                        font-size: 1rem; 
+                        margin: 2px;
                     }
+
+                    p {
+                        font-family: charlie-regular;
+                        font-size: 0.8rem; 
+                        margin: 2px;
+                    }
+
+                &.cards-btn:focus, 
+                .cards-btn:hover,
+                .cards-btn:active {
+                    background-color: rgb(255, 255, 255);
+                    color: rgb(9, 30, 66);
+                    box-shadow: rgb(9 30 66 / 15%) 0px 0.5rem 1rem 0px;
+                    border-radius: 0.3rem;
+                    border: 0px;
+
+                    div{
+                        background-color: rgb(0, 199, 229);                            border-radius: 0.3rem 0px 0px 0.3rem;
+                        bottom: 0px;
+                        content: "";
+                        left: 0px;
+                        position: absolute;
+                        top: 0px;
+                        width: 0.5rem;
+                        }
+                    }   
                 }
-
-                .prod-img {
-                    display: block;
-                    flex: 0 0 auto;
-                    width: 66.6667%;
-                    margin-top: 0px;
-                    padding-top: 1rem;
-
-                }
-
             }
         }
     }

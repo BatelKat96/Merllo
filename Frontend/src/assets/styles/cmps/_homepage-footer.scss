@@ -4,9 +4,17 @@
     background-color: rgb(23, 43, 77);
     text-align: center;
     padding: 2px;
-    
+
+    small {
+        color: #FFFFFF;
+        font-size: 0.7rem;
+        letter-spacing: 0.08rem;
+        text-transform: lowercase;
+    }
+
     a {
         color: #FFFFFF;
-        font-size: 0.8rem;
+        margin: 0 4px;
+        font-size: 0.6rem;
     }
 }
