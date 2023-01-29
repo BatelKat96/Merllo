@@ -53,42 +53,25 @@ export function HomePage() {
 
                         <div className="prod-cards-div">
 
-                            <div className="prod-cards">
-
-                                <button className="cards-btn card-boards" >
-                                    <h5>Boards</h5>
-                                    <p>Merllo boards keep tasks organized and work moving forward. ln a glance, see everything from "things to do" to "aww yeah, we did it!"</p>
-                                    <div></div>
-                                </button>
+                            <button className="cards-btn card-boards" >
+                                <h5>Boards</h5>
+                                <p>Merllo boards keep tasks organized and work moving forward. ln a glance, see everything from "things to do" to "aww yeah, we did it!"</p>
+                                <div></div>
+                            </button>
 
 
-                                <button className="cards-btn card-lists">
-                                    <h5>Lists</h5>
-                                    <p>The different stages of a task. Start as simple as To Do, Doing or Done-or build a workflow custom fit to your team's needs. There's no wrong way to Merllo. </p>
-                                    <div></div>
-                                </button>
+                            <button className="cards-btn card-lists">
+                                <h5>Lists</h5>
+                                <p>The different stages of a task. Start as simple as To Do, Doing or Done-or build a workflow custom fit to your team's needs. There's no wrong way to Merllo. </p>
+                                <div></div>
+                            </button>
 
 
-                                <button className="cards-btn card-cards">
-                                    <h5>Cards</h5>
-                                    <p>Cards represent tasks and ideas and hold all the information to get the job done. As you make progress, move cards across lists to show their status.</p>
-                                    <div></div>
-                                </button>
-
-                            </div>
-
-                            {/* <div className="prod-img">
-
-                                <img className="boards-img"
-                                    src="https://images.ctfassets.net/rz1oowkt5gyp/3N2U3C71rApm61cGFxnc2E/970b010002488a09a420282df5e7b43a/Carousel_Image_Boards_2x.png?w=1536" alt="boards" />
-
-                                <img className="lists-img hide"
-                                    src="https://images.ctfassets.net/rz1oowkt5gyp/4U0VUZYX2tQmB5KVGxBabp/7321ac088fe8ec39dbe3069c47d7df99/Carousel_Image_Lists_2x.png?w=1536&fm=webp" alt="boards" />
-
-                                <img className="cards-img hide"
-                                    src="https://images.ctfassets.net/rz1oowkt5gyp/26CA6JZeRgoOK4nuRHnIlY/060702a80cf7c3be3651d9297d196267/Carousel_Image_Cards_2x.png?w=1536&fm=webp" alt="boards" />
-
-                            </div> */}
+                            <button className="cards-btn card-cards">
+                                <h5>Cards</h5>
+                                <p>Cards represent tasks and ideas and hold all the information to get the job done. As you make progress, move cards across lists to show their status.</p>
+                                <div></div>
+                            </button>
 
                         </div>
                     </section>
