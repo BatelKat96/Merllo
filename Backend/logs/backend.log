@@ -1513,10 +1513,15 @@
 29.1.2023, 15:18:07 - INFO - New connected socket [id: gci5nvmzVjOeB2IyAAAD] 
 29.1.2023, 15:18:08 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: gci5nvmzVjOeB2IyAAAD] 
 29.1.2023, 15:18:10 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: gci5nvmzVjOeB2IyAAAD] 
+<<<<<<< HEAD
+29.1.2023, 15:39:16 - INFO - Server is running on port: 3030 
+29.1.2023, 15:39:17 - INFO - New connected socket [id: 1uWb6FJh41bGICjeAAAB] 
+=======
 >>>>>>> 36e4ff7e16fec4f3f51a1392552b9ccb5f080762
 29.1.2023, 15:34:52 - INFO - Server is running on port: 3030 
 29.1.2023, 15:34:53 - INFO - New connected socket [id: Yw6t4dAPBE9-w1y0AAAB] 
 29.1.2023, 15:34:54 - INFO - Socket is now on board 63d643321cd1ac7a460955c6 [id: Yw6t4dAPBE9-w1y0AAAB] 
+<<<<<<< HEAD
 29.1.2023, 15:36:13 - DEBUG - Getting Boards (userId: 63d53f55405315f7da6a0adc)
 29.1.2023, 15:36:44 - INFO - Socket disconnected [id: undefined] 
 29.1.2023, 15:36:46 - INFO - New connected socket [id: OE1uR-3Sw3a2YrM9AAAD] 
@@ -1536,3 +1541,8 @@
 29.1.2023, 19:48:21 - INFO - Socket disconnected [id: undefined] 
 29.1.2023, 19:48:25 - INFO - New connected socket [id: pcd6AmzSog-u9ypNAAAF] 
 29.1.2023, 19:48:26 - INFO - Setting socket.userId = ivBxP3 for socket [id: pcd6AmzSog-u9ypNAAAF] 
+=======
+>>>>>>> 92375f104a652d99cf4450e0ffe6ba6870b196f9
+>>>>>>> 4113dfe992098a221afd4c4fb6b974563dc49cdb
+29.1.2023, 19:57:37 - INFO - Server is running on port: 3030 
+29.1.2023, 19:57:40 - INFO - New connected socket [id: OT479u_31dUP2SmdAAAB] 
