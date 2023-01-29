@@ -203,6 +203,8 @@ export function TaskDetails() {
 														ids={memberIds}
 														board={board}
 														type={'members'}
+														task={task}
+														onSaveTask={onSaveTask}
 													/>
 												)}
 												{labelIds && labelIds.length > 0 && (
@@ -210,6 +212,8 @@ export function TaskDetails() {
 														ids={labelIds}
 														board={board}
 														type={'labels'}
+														task={task}
+														onSaveTask={onSaveTask}
 													/>
 												)}
 												{dueDate && (

@@ -14,6 +14,9 @@ import { ReactComponent as OpenTaskSvg } from '../../assets/img/icons-task-detai
 export function QuickTaskEdit({ refDataBtn, task, taskId, groupId, boardId, toggleQuickTaskEdit }) {
     const navigate = useNavigate()
     const [taskToEdit, setTaskToEdit] = useState(task)
+    const [modalStyle, setModalStyle] = useState(false)
+    const [modalHeight, setModalHeight] = useState()
+    const [modalType, setModalType] = useState('')
 
     const modalRef = useRef(null)
     const modalBtnsRef = useRef()
@@ -22,10 +25,6 @@ export function QuickTaskEdit({ refDataBtn, task, taskId, groupId, boardId, togg
     const coverBtn = useRef()
     const datesBtn = useRef()
     const moveCardBtn = useRef()
-
-    const [modalStyle, setModalStyle] = useState(false)
-    const [modalHeight, setModalHeight] = useState()
-    const [modalType, setModalType] = useState()
 
 
     function handleChange({ target }) {
@@ -123,7 +122,10 @@ export function QuickTaskEdit({ refDataBtn, task, taskId, groupId, boardId, togg
         navigate(`/board/${boardId}/${groupId}/${taskId}`) 
     }
 
-    function onOpenModal(type) {
+    function onOpenModal(ev, type) {
+        console.log('onOpenModal');
+        ev.stopPropagation()
+        ev.preventDefault()
         setModalType(type)
     }
 
@@ -167,25 +169,25 @@ export function QuickTaskEdit({ refDataBtn, task, taskId, groupId, boardId, togg
 
                     <button className="quick-btn"
                         ref={labelBtn}
-                        onClick={() => onOpenModal('labels')} >
+                        onClick={(ev) => onOpenModal(ev, 'labels')} >
                         <TiTag className="tag-svg" /> Edit labels
                     </button>
 
                     <button className="quick-btn"
                         ref={memberBtn}
-                        onClick={() => onOpenModal('members')} >
+                        onClick={(ev) => onOpenModal(ev, 'members')} >
                         <BsPerson /> Change members
                     </button>
 
                     <button className="quick-btn"
                         ref={coverBtn}
-                        onClick={() => onOpenModal('cover')} >
+                        onClick={(ev) => onOpenModal(ev, 'cover')} >
                         <BsSquareHalf className='cover-svg' /> Change cover
                     </button>
 
                     <button className="quick-btn"
                         ref={moveCardBtn}
-                        onClick={() => onOpenModal('move card')} >
+                        onClick={(ev) => onOpenModal(ev, 'move card')} >
                         <FiArrowRight /> Move
                     </button>
 
@@ -196,7 +198,7 @@ export function QuickTaskEdit({ refDataBtn, task, taskId, groupId, boardId, togg
 
                     <button className="quick-btn"
                         ref={datesBtn}
-                        onClick={() => onOpenModal('dates')}>
+                        onClick={(ev) => onOpenModal(ev, 'dates')}>
                         <AiOutlineClockCircle /> Edit dates
                     </button>
 

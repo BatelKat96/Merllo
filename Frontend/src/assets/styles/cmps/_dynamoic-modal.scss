@@ -61,19 +61,26 @@
                 }
             }
 
-            .cmp-dynamoic-option {
-                display: flex;
-                margin-block: 9px;
-                align-items: center;
-                padding-inline-start: 5px;
-
-            }
-
             .cmp-dynamoic-options-title {
                 padding-top: 1px;
                 margin-block-end: 7px;
+                background-color: aquamarine;
 
             }
+
+            .cmp-dynamoic-options-list {
+
+                .cmp-dynamoic-option {
+                    display: flex;
+                    margin: 0;
+                    padding: 0;
+                    margin-block: 9px;
+                    align-items: center;
+                    padding-inline-start: 5px;
+                    width: 100%;
+                }
+            }
+
         }
     }
 }

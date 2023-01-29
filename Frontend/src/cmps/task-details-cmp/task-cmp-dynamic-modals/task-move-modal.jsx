@@ -43,8 +43,6 @@ export function TaskMoveModal({ task, data, onSaveTask }) {
         if (selectedGroupId && selectedTaskPos !== "") {
             const currGroup = groups.find((group) => group.tasks.find((task) => task.id === taskId))
             const currTask = currGroup.tasks.find((task) => task.id === taskId)
-            console.log(currGroup);
-            console.log(currTask);
 
             const currTaskIndex = currGroup.tasks.findIndex((task) => task.id === taskId)
             const newGroup = board.groups.find((group) => group.id === selectedGroupId)

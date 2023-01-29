@@ -86,7 +86,7 @@ export function MainHeader() {
 					<AppsSvg />
 				</button> */}
 
-					<NavLink to="/" className="header-logo">
+					<NavLink to="/workspace" className="header-logo">
 						<TrelloSvg />
 						<h1 className="merllo-logo">Merllo</h1>
 					</NavLink>
@@ -120,9 +120,9 @@ export function MainHeader() {
 						Search
 					</button>
 
-					<button>
+					{/* <button>
 						<NotificationSvg />
-					</button>
+					</button> */}
 					{/*
 				<button>
 					<HelpSvg />

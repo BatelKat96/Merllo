@@ -87,9 +87,9 @@ export function MainHeaderWorkspace() {
 					Search
 				</button>
 
-				<button>
+				{/* <button>
 					<NotificationSvg />
-				</button>
+				</button> */}
 
 				{/* <button>
 					<HelpSvg />

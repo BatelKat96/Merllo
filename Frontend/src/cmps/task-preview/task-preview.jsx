@@ -6,6 +6,11 @@ import { QuickTaskEdit } from './quick-task-edit'
 import { utilService } from '../../services/util.service'
 import { ReactComponent as EditSvg } from '../../assets/img/icons-task-preview/edit.svg'
 import descriptionIcon from '../../assets/img/icons-task-details/description-icon.svg'
+import { FaRegComment } from 'react-icons/fa'
+import { FiPaperclip } from 'react-icons/fi'
+import { AiOutlineClockCircle } from 'react-icons/ai'
+import { BsCheck2Square } from 'react-icons/bs'
+import { GrTextAlignFull } from 'react-icons/gr'
 
 export function TaskPreview({ group, task, board }) {
 	const { boardId } = useParams()
@@ -18,6 +23,10 @@ export function TaskPreview({ group, task, board }) {
 	const currLabels = task.labelIds
 	const currMembers = task.memberIds
 	const currCover = task.style
+	const currComments = task.comments
+	const currAttach = task?.attachments
+	const currDueDate = task.dueDate
+	const currCheck = task.checklists
 
 
 	var fullMembers = currMembers
@@ -30,7 +39,7 @@ export function TaskPreview({ group, task, board }) {
 
 	function onQuickTaskEdit(ev) {
 		ev.stopPropagation()
-		ev.preventDefault()
+		// ev.preventDefault()
 		toggleQuickTaskEdit(!quickTaskEdit) 
 	}
 
@@ -40,27 +49,47 @@ export function TaskPreview({ group, task, board }) {
 
 	function onLabel(ev) {
 		ev.stopPropagation()
+		// ev.preventDefault()
+	}
+
+	function getDueWarnSpan(task) {
+		if (task.isDone) {
+			return <span className="due-sticker completed">completed</span>
+		}
+		const taskDuedate = new Date(task.dueDate)
+		const now = new Date()
+		const msBetweenDates = taskDuedate.getTime() - now.getTime()
+		const hoursBetweenDates = msBetweenDates / (60 * 60 * 1000)
+
+		if (hoursBetweenDates < 0) {
+			console.log('overdue')
+			return <span className="due-sticker overdue">overdue</span>
+		}
+		if (hoursBetweenDates < 24) {
+			console.log('due soon')
+			return <span className="due-sticker soon">due soon</span>
+		}
 	}
 
 	return (
 		<>
 			<section className="task-preview" onClick={onTask}>
 
-				{task.style?.backgroundColor && (
+				{currCover?.backgroundColor && (
 					<div
 						className="task-preview-cover"
 						style={currCover}>
 					</div>
 				)}
 
-				{task.style?.background && (
+				{currCover?.background && (
 					<div
 						className="task-preview-cover img"
 						style={currCover}>
 					</div>
 				)}
 
-				<a className="edit-btn"
+				<button className="edit-btn"
 					onClick={onQuickTaskEdit}
 					ref={quickEditBtn}>
 					<EditSvg />
@@ -77,7 +106,7 @@ export function TaskPreview({ group, task, board }) {
 							refDataBtn={quickEditBtn}
 						/>
 					)}
-				</a>
+				</button>
 
 				<section className='task-preview-details'>
 
@@ -98,30 +127,70 @@ export function TaskPreview({ group, task, board }) {
 						{task.title}
 					</p>
 
-					<div className="task-preview-actions ">
-						{task.description && (
-							<img className="task-preview-description-icon" src={descriptionIcon} />
-						)}
-						<ul className="task-preview-member-container clean-list">
-							{fullMembers &&
-								fullMembers.map((member) => (
-									<li
-										key={member._id}
-										className="task-preview-member"
-										onClick={onLabel}
-									>
-										<img
-											className="member-img"
-											height="30px"
-											width="30px"
-											src={member.imgUrl}
-											alt={member.fullname}
-											title={member.fullname}
-										/>
-									</li>
-								))}
-						</ul>
-					</div>
+					<div className="task-preview-actions-wrapper">
+
+						<div className="task-preview-actions">
+
+							{currDueDate !== '' && (
+								<span className="task-preview-actions-icons date ">
+									<AiOutlineClockCircle />
+									<p>{utilService.dueDateFormat(currDueDate)}</p>
+								</span>
+							)}
+
+							{task?.description && (
+								<span className="task-preview-actions-icons desc">
+									<GrTextAlignFull size={11} />
+								</span>
+							)}
+
+							{currComments?.length !== 0 && (
+								<span className="task-preview-actions-icons comment">
+									<FaRegComment size={11} />
+									<p>{currComments.length}</p>
+								</span>
+							)}
+
+
+							{currAttach && currAttach.length !== 0 && (
+								<span className="task-preview-actions-icons attach">
+									<FiPaperclip size={11} />
+									<p>{currAttach.length}</p>
+								</span>
+							)}
+
+							{currCheck?.length !== 0 && (
+								<span className="task-preview-actions-icons check">
+									<BsCheck2Square />
+									<p>{currCheck.length}</p>
+								</span>
+							)}
+
+						</div>
+
+
+						<div className='task-preview-actions-member-wrapper'>
+							<ul className="task-preview-member-container clean-list">
+								{fullMembers &&
+									fullMembers.map((member) => (
+										<li
+											key={member._id}
+											className="task-preview-member"
+											onClick={onLabel}
+										>
+											<img
+												className="member-img"
+												height="28px"
+												width="28px"
+												src={member.imgUrl}
+												alt={member.fullname}
+												title={member.fullname}
+											/>
+										</li>
+									))}
+							</ul>
+						</div>
+
 
 					{/* <div className="task-preview-container"> */}
 					{/* <div className="date-container">
@@ -139,6 +208,7 @@ export function TaskPreview({ group, task, board }) {
 					{/* </div> */}
 
 					{/* </div> */}
+					</div>
 				</section>
 			</section>
 		</>
