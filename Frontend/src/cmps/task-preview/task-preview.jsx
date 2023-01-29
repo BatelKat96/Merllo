@@ -2,10 +2,10 @@ import { useState, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { QuickTaskEdit } from './quick-task-edit'
-
+import { saveTask } from '../../store/board.actions'
 import { utilService } from '../../services/util.service'
-import { ReactComponent as EditSvg } from '../../assets/img/icons-task-preview/edit.svg'
-import descriptionIcon from '../../assets/img/icons-task-details/description-icon.svg'
+
+import { BiPencil } from 'react-icons/bi'
 import { FaRegComment } from 'react-icons/fa'
 import { FiPaperclip } from 'react-icons/fi'
 import { AiOutlineClockCircle } from 'react-icons/ai'
@@ -53,23 +53,25 @@ export function TaskPreview({ group, task, board }) {
 	}
 
 	function getDueWarnSpan(task) {
-		if (task.isDone) {
-			return <span className="due-sticker completed">completed</span>
-		}
+		if (task?.isDone) return 'due-sticker completed'
+
 		const taskDuedate = new Date(task.dueDate)
 		const now = new Date()
+
 		const msBetweenDates = taskDuedate.getTime() - now.getTime()
 		const hoursBetweenDates = msBetweenDates / (60 * 60 * 1000)
 
-		if (hoursBetweenDates < 0) {
-			console.log('overdue')
-			return <span className="due-sticker overdue">overdue</span>
-		}
-		if (hoursBetweenDates < 24) {
-			console.log('due soon')
-			return <span className="due-sticker soon">due soon</span>
-		}
+		if (hoursBetweenDates < 0) return 'due-sticker overdue'
+		if (hoursBetweenDates < 24) return 'due-sticker soon'
 	}
+
+	function onToggleDateDone(ev, task) {
+		ev.preventDefault()
+		ev.stopPropagation()
+		task.isDone = !task.isDone
+		saveTask(task, group.Id, boardId)
+	}
+
 
 	return (
 		<>
@@ -92,7 +94,7 @@ export function TaskPreview({ group, task, board }) {
 				<button className="edit-btn"
 					onClick={onQuickTaskEdit}
 					ref={quickEditBtn}>
-					<EditSvg />
+					<BiPencil />
 
 					{quickTaskEdit && (
 						<QuickTaskEdit
@@ -132,9 +134,12 @@ export function TaskPreview({ group, task, board }) {
 						<div className="task-preview-actions">
 
 							{currDueDate !== '' && (
-								<span className="task-preview-actions-icons date ">
-									<AiOutlineClockCircle />
+								<span className={getDueWarnSpan(task)}
+									onClick={(ev) => onToggleDateDone(ev, task)}>
+									<span className='task-preview-actions-icons date'>
+										<AiOutlineClockCircle className='date' />
 									<p>{utilService.dueDateFormat(currDueDate)}</p>
+								</span>
 								</span>
 							)}
 
@@ -190,24 +195,6 @@ export function TaskPreview({ group, task, board }) {
 									))}
 							</ul>
 						</div>
-
-
-					{/* <div className="task-preview-container"> */}
-					{/* <div className="date-container">
-						<button className="due-date-btn">
-							<AiOutlineClockCircle />
-						</button>
-						<span className="due-date-format">
-							22 Jan
-						</span>
-
-						{/* <button className="desc-btn">
-							<descriptionSvg />
-						</button> */}
-
-					{/* </div> */}
-
-					{/* </div> */}
 					</div>
 				</section>
 			</section>

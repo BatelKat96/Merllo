@@ -79,7 +79,6 @@
     }
 
     .task-preview-label-container {
-        // padding: 4px 0 ;
         display: flex;
         gap: 2px;
 
@@ -150,6 +149,43 @@
                     padding-left: 2px;
                 }
 
+                .due-sticker {
+                    border-radius: 3px;
+                    padding: 4px 2px 2px 2px;
+
+                    p {
+                        color: #fafbfc;
+                    }
+                    
+                }
+        
+                .completed {
+                    background-color: #7bc86c;
+                    color: #fafbfc;
+
+                    &:hover {
+                        background-color: #519839
+                    }
+                }
+        
+                .overdue {
+                    background-color: #ec9488;
+                    color: #fafbfc;
+
+                    &:hover {
+                        background-color: #eb5a46;  
+                    }
+                }
+        
+                .soon {
+                    background-color: #f5dd29;
+                    color: #fafbfc;
+
+                    &:hover {
+                        background-color: #ffaf3f;  
+                    }
+                }
+
                 .task-preview-actions-icons {
                     color:#6b778c;
                     margin: 0 4px 4px 0;
@@ -164,7 +200,38 @@
                     padding: 0 4px;
 
                     .date {
+                        color: #fafbfc;
 
+                        .due-sticker {
+                            border-radius: 3px;
+                            padding: 4px 2px 2px 2px;
+        
+                            p {
+                                color: #fafbfc;
+                            }
+                            
+                        }
+                
+                        .completed {
+                            background-color: #7bc86c;
+                            &:hover {
+                                background-color: #519839
+                            }
+                        }
+                
+                        .overdue {
+                            background-color: #ec9488;
+                            &:hover {
+                                background-color: #eb5a46;  
+                            }
+                        }
+                
+                        .soon {
+                            background-color: #f5dd29;
+                            &:hover {
+                                background-color: #9f922b;
+                            }
+                        }
                     }
 
                     .desc {
