@@ -120,9 +120,9 @@ export function MainHeader() {
 						Search
 					</button>
 
-					<button>
+					{/* <button>
 						<NotificationSvg />
-					</button>
+					</button> */}
 					{/*
 				<button>
 					<HelpSvg />
