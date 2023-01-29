@@ -8,17 +8,17 @@ export function HomePageFooter() {
 			<small>
 				Trello clone project by
 
-				<NavLink to="https://github.com/BatelKat96">
+				<a href="https://github.com/BatelKat96" target="_blank">
 					<AiFillGithub className='git-icon' />
-				</NavLink>
+				</a>
 
-				<NavLink to="https://github.com/Drorka">
+				<a href="https://github.com/Drorka" target="_blank">
 					<AiFillGithub className='git-icon' />
-				</NavLink>
+				</a>
 
-				<NavLink to="https://github.com/beta0022">
+				<a href="https://github.com/beta0022" target="_blank">
 					<AiFillGithub className='git-icon' />
-				</NavLink>
+				</a>
 			</small>
 		</footer>
 	)

@@ -1517,3 +1517,22 @@
 29.1.2023, 15:34:52 - INFO - Server is running on port: 3030 
 29.1.2023, 15:34:53 - INFO - New connected socket [id: Yw6t4dAPBE9-w1y0AAAB] 
 29.1.2023, 15:34:54 - INFO - Socket is now on board 63d643321cd1ac7a460955c6 [id: Yw6t4dAPBE9-w1y0AAAB] 
+29.1.2023, 15:36:13 - DEBUG - Getting Boards (userId: 63d53f55405315f7da6a0adc)
+29.1.2023, 15:36:44 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 15:36:46 - INFO - New connected socket [id: OE1uR-3Sw3a2YrM9AAAD] 
+29.1.2023, 15:36:46 - INFO - Socket is now on board 63d541512dc177b41719d5ed [id: OE1uR-3Sw3a2YrM9AAAD] 
+29.1.2023, 15:36:46 - INFO - Setting socket.userId = 63d53f55405315f7da6a0adc for socket [id: OE1uR-3Sw3a2YrM9AAAD] 
+29.1.2023, 15:46:21 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 15:46:23 - INFO - New connected socket [id: D_2-rB9klCn5DYpCAAAF] 
+29.1.2023, 15:46:23 - INFO - Socket is now on board 63d541512dc177b41719d5ed [id: D_2-rB9klCn5DYpCAAAF] 
+29.1.2023, 15:46:23 - INFO - Setting socket.userId = 63d53f55405315f7da6a0adc for socket [id: D_2-rB9klCn5DYpCAAAF] 
+29.1.2023, 15:50:46 - INFO - Server is running on port: 3030 
+29.1.2023, 19:21:47 - INFO - New connected socket [id: zcr0asssZo9upqezAAAB] 
+29.1.2023, 19:21:48 - INFO - Setting socket.userId = ifyjSP for socket [id: zcr0asssZo9upqezAAAB] 
+29.1.2023, 19:22:03 - DEBUG - Getting Boards 
+29.1.2023, 19:47:59 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 19:48:11 - INFO - New connected socket [id: 1QmFUqr9A-pe6NswAAAD] 
+29.1.2023, 19:48:12 - INFO - Setting socket.userId = vHv2mB for socket [id: 1QmFUqr9A-pe6NswAAAD] 
+29.1.2023, 19:48:21 - INFO - Socket disconnected [id: undefined] 
+29.1.2023, 19:48:25 - INFO - New connected socket [id: pcd6AmzSog-u9ypNAAAF] 
+29.1.2023, 19:48:26 - INFO - Setting socket.userId = ivBxP3 for socket [id: pcd6AmzSog-u9ypNAAAF] 
