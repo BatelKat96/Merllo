@@ -55,18 +55,18 @@ async function updateBoard(req, res) {
 			_id: utilService.makeId(),
 		}
 
-		// broadcast({
-		// 	type: 'update-board',
-		// 	data: updatedBoard,
-		// 	room: updatedBoard._id,
-		// 	userId: loggedinUser?._id,
-		// })
-		emitTo({
+		broadcast({
 			type: 'update-board',
 			data: updatedBoard,
 			room: updatedBoard._id,
 			userId: loggedinUser?._id,
 		})
+		// emitTo({
+		// 	type: 'update-board',
+		// 	data: updatedBoard,
+		// 	room: updatedBoard._id,
+		// 	userId: loggedinUser?._id,
+		// })
 		res.json(updatedBoard)
 	} catch (err) {
 		logger.error('Failed to update board', err)

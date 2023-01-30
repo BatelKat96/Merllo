@@ -1,4 +1,5 @@
 import { httpService } from './http.service'
+import { socketService } from './socket.service'
 import { utilService } from './util.service'
 
 const STORAGE_KEY_USERS = 'user'
@@ -57,7 +58,7 @@ async function login(userCred) {
 		// console.log('user', user)
 		const user = await httpService.post('auth/login', userCred)
 		if (user) {
-			// socketService.login(user._id)
+			socketService.login(user._id)
 			return saveLocalUser(user)
 		} else {
 			console.log('else')
@@ -76,7 +77,7 @@ async function signup(userCred) {
 
 	const user = await httpService.post('auth/signup', userCred)
 	// const user = await storageService.post('user', userCred)
-	// socketService.login(user._id)
+	socketService.login(user._id)
 	return saveLocalUser(user)
 }
 
@@ -88,7 +89,7 @@ async function logout() {
 	} catch (err) {
 		console.log('service logout error', err)
 	}
-	// socketService.logout()
+	socketService.logout()
 }
 
 function saveLocalUser(user) {

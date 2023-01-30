@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { loadBoards, updateBoard } from '../store/board.actions'
@@ -19,6 +19,9 @@ export function Workspace() {
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 
 	const starredBoards = getStarredBoards()
+
+	const createBtn = useRef()
+	const refDataBtn = createBtn
 
 	useEffect(() => {
 		loadBoards()
@@ -107,13 +110,17 @@ export function Workspace() {
 						className="board-preview create-new-board"
 						onClick={openBoardComposer}
 						key="001"
+						ref={createBtn}
 					>
 						<span>Create new board</span>
 					</li>
 				</ul>
 
 				{isBoardComposerOpen && (
-					<BoardCreate closeBoardComposer={closeBoardComposer} />
+					<BoardCreate
+						closeBoardComposer={closeBoardComposer}
+						refDataBtn={refDataBtn}
+					/>
 				)}
 			</div>
 

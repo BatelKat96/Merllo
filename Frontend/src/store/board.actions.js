@@ -66,6 +66,7 @@ export async function addBoard(board) {
 }
 
 export async function updateBoard(board) {
+	console.log('action update board', board)
 	try {
 		store.dispatch(getActionUpdateBoard(board))
 		await boardService.save(board)
