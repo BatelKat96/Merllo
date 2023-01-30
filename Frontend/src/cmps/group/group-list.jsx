@@ -153,6 +153,7 @@ export function GroupList() {
 
 	function handleOnDragEnd(result) {
 		const { destination, source, draggableId, type } = result
+		const boardCopy = structuredClone(board)
 
 		if (!destination) return
 
@@ -167,38 +168,38 @@ export function GroupList() {
 			const [reorderedGroups] = newGroups.splice(source.index, 1)
 			newGroups.splice(destination.index, 0, reorderedGroups)
 
-			board.groups = newGroups
-			updateBoard(board)
+			boardCopy.groups = newGroups
+			updateBoard(boardCopy)
 			return
 		}
 
 		if (type === 'tasks') {
-			const sourceGroup = groups.find(
+			const sourceGroup = boardCopy.groups.find(
 				(group) => group.id === source.droppableId
 			)
-			const destinationGroup = groups.find(
+			const destinationGroup = boardCopy.groups.find(
 				(group) => group.id === destination.droppableId
 			)
 
 			if (sourceGroup === destinationGroup) {
-			  const newTasks = [...sourceGroup.tasks]
-			  const [task] = newTasks.splice(source.index, 1)
-			  newTasks.splice(destination.index, 0, task)
+				const newTasks = [...sourceGroup.tasks]
+				const [task] = newTasks.splice(source.index, 1)
+				newTasks.splice(destination.index, 0, task)
 
-			  sourceGroup.tasks = newTasks
-			  updateBoard(board)
-			  return
-		  } else {
-			  const newSourceGroup = [...sourceGroup.tasks]
-			  const newDestinationGroup = [...destinationGroup.tasks]
-			  const [task] = newSourceGroup.splice(source.index, 1)
-			  newDestinationGroup.splice(destination.index, 0, task)
+				sourceGroup.tasks = newTasks
+				updateBoard(boardCopy)
+				return
+			} else {
+				const newSourceGroup = [...sourceGroup.tasks]
+				const newDestinationGroup = [...destinationGroup.tasks]
+				const [task] = newSourceGroup.splice(source.index, 1)
+				newDestinationGroup.splice(destination.index, 0, task)
 
-			  sourceGroup.tasks = newSourceGroup
-			  destinationGroup.tasks = newDestinationGroup
-			  updateBoard(board)
-			  return
-		  }
+				sourceGroup.tasks = newSourceGroup
+				destinationGroup.tasks = newDestinationGroup
+				updateBoard(boardCopy)
+				return
+			}
 		}
 	}
 

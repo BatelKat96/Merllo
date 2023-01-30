@@ -31,12 +31,12 @@ function setupSocketAPI(http) {
 
 		socket.on('update-board', (board) => {
 			logger.info(`setting update board for socket [id: ${socket.id}]`)
-			broadcast({
-				type: 'update-board',
-				data: board,
-				room: socket.myBoardId,
-				userId: user._id,
-			})
+			// broadcast({
+			// 	type: 'update-board',
+			// 	data: board,
+			// 	room: socket.myBoardId,
+			// 	userId: user._id,
+			// })
 		})
 
 		socket.on('chat-send-msg', (msg) => {
