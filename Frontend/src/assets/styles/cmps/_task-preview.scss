@@ -144,6 +144,10 @@
                 max-width: 100%;
                 margin-top: 4px;
 
+                .date {
+                    color:#6b778c;
+                }
+
                 p {
                     font-size: 11px;
                     padding-left: 2px;
@@ -161,7 +165,6 @@
         
                 .completed {
                     background-color: #7bc86c;
-                    color: #fafbfc;
 
                     &:hover {
                         background-color: #519839
@@ -170,7 +173,6 @@
         
                 .overdue {
                     background-color: #ec9488;
-                    color: #fafbfc;
 
                     &:hover {
                         background-color: #eb5a46;  
@@ -179,10 +181,9 @@
         
                 .soon {
                     background-color: #f5dd29;
-                    color: #fafbfc;
 
                     &:hover {
-                        background-color: #ffaf3f;  
+                        background-color: #9f922b;
                     }
                 }
 
@@ -201,37 +202,7 @@
 
                     .date {
                         color: #fafbfc;
-
-                        .due-sticker {
-                            border-radius: 3px;
-                            padding: 4px 2px 2px 2px;
-        
-                            p {
-                                color: #fafbfc;
-                            }
-                            
-                        }
-                
-                        .completed {
-                            background-color: #7bc86c;
-                            &:hover {
-                                background-color: #519839
-                            }
-                        }
-                
-                        .overdue {
-                            background-color: #ec9488;
-                            &:hover {
-                                background-color: #eb5a46;  
-                            }
-                        }
-                
-                        .soon {
-                            background-color: #f5dd29;
-                            &:hover {
-                                background-color: #9f922b;
-                            }
-                        }
+                        color:#6b778c;
                     }
 
                     .desc {

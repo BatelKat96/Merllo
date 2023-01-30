@@ -138,8 +138,8 @@ export function TaskPreview({ group, task, board }) {
 									onClick={(ev) => onToggleDateDone(ev, task)}>
 									<span className='task-preview-actions-icons date'>
 										<AiOutlineClockCircle className='date' />
-									<p>{utilService.dueDateFormat(currDueDate)}</p>
-								</span>
+										<p>{utilService.dueDateFormat(currDueDate)}</p>
+									</span>
 								</span>
 							)}
 
