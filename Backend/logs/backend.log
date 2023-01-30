@@ -2232,9 +2232,75 @@
 30.1.2023, 12:44:09 - INFO - New connected socket [id: oPPxLCYF8WI_iAbWAAAx] 
 30.1.2023, 12:44:09 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: oPPxLCYF8WI_iAbWAAAx] 
 30.1.2023, 12:44:10 - INFO - Setting socket.userId = oTA6vd for socket [id: oPPxLCYF8WI_iAbWAAAx] 
+<<<<<<< HEAD
+30.1.2023, 12:52:20 - DEBUG - Getting Boards 
+30.1.2023, 13:03:26 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 13:03:28 - INFO - New connected socket [id: dI_Ftg2iOZcvMYeiAAAz] 
+30.1.2023, 13:03:28 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: dI_Ftg2iOZcvMYeiAAAz] 
+30.1.2023, 13:03:28 - DEBUG - Getting Boards 
+30.1.2023, 13:03:28 - INFO - Setting socket.userId = MlI1Cu for socket [id: dI_Ftg2iOZcvMYeiAAAz] 
+30.1.2023, 13:03:30 - DEBUG - Getting Boards 
+30.1.2023, 13:03:31 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 13:03:32 - INFO - New connected socket [id: co5B7IppEDWWMl0bAAA1] 
+30.1.2023, 13:03:32 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: co5B7IppEDWWMl0bAAA1] 
+30.1.2023, 13:03:33 - INFO - Setting socket.userId = W7O4h9 for socket [id: co5B7IppEDWWMl0bAAA1] 
+30.1.2023, 13:09:13 - INFO - Server is running on port: 3030 
+30.1.2023, 13:09:14 - INFO - New connected socket [id: cWIW_eiknblZIAJ8AAAB] 
+30.1.2023, 13:11:06 - INFO - Server is running on port: 3030 
+30.1.2023, 13:11:07 - INFO - New connected socket [id: Im_1QXRhtlsHr2MRAAAB] 
+30.1.2023, 13:11:11 - INFO - Server is running on port: 3030 
+30.1.2023, 13:11:12 - INFO - New connected socket [id: oPhSxpH9LWXv4FV0AAAB] 
+30.1.2023, 13:12:22 - DEBUG - Getting Boards 
+30.1.2023, 13:12:25 - DEBUG - Getting Boards 
+30.1.2023, 14:22:28 - INFO - Server is running on port: 3030 
+30.1.2023, 14:22:29 - INFO - New connected socket [id: xBU0-TsT0lf3q4-2AAAB] 
+30.1.2023, 14:22:29 - INFO - Setting socket.userId = hLBvF0 for socket [id: xBU0-TsT0lf3q4-2AAAB] 
+30.1.2023, 14:23:30 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:24:17 - INFO - New connected socket [id: Si5EZZknLbmR-mzGAAAD] 
+30.1.2023, 14:24:17 - DEBUG - Getting Boards 
+30.1.2023, 14:24:17 - INFO - Setting socket.userId = tz6N01 for socket [id: Si5EZZknLbmR-mzGAAAD] 
+30.1.2023, 14:24:27 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:24:28 - INFO - New connected socket [id: PQkjVTnvRDsWw856AAAF] 
+30.1.2023, 14:24:29 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: PQkjVTnvRDsWw856AAAF] 
+30.1.2023, 14:24:29 - INFO - Setting socket.userId = uhjmFa for socket [id: PQkjVTnvRDsWw856AAAF] 
+30.1.2023, 14:26:19 - DEBUG - auth.service - login with username: lirom 
+30.1.2023, 14:26:19 - ERROR - Failed to Login Invalid username or password 
+30.1.2023, 14:26:19 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:26:20 - INFO - New connected socket [id: SvFUlV9AbWZ9m0vbAAAH] 
+30.1.2023, 14:26:20 - INFO - Setting socket.userId = 21WJhI for socket [id: SvFUlV9AbWZ9m0vbAAAH] 
+30.1.2023, 14:31:38 - DEBUG - auth.service - login with username: lirom 
+30.1.2023, 14:31:38 - INFO - User login:  | {"_id":"63d7b822894de745c6123894","username":"lirom","fullname":"Lirom","imgUrl":"https://res.cloudinary.com/djyjaumko/image/upload/v1674995655/tzipi_nhducn.jpg"} 
+30.1.2023, 14:31:38 - DEBUG - Getting Boards (userId: 63d7b822894de745c6123894)
+30.1.2023, 14:31:44 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:31:45 - INFO - New connected socket [id: mKi95Iax7XpDBYCsAAAJ] 
+30.1.2023, 14:31:45 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: mKi95Iax7XpDBYCsAAAJ] 
+30.1.2023, 14:31:45 - INFO - Setting socket.userId = 63d7b822894de745c6123894 for socket [id: mKi95Iax7XpDBYCsAAAJ] 
+30.1.2023, 14:32:02 - DEBUG - Getting Boards (userId: 63d7b822894de745c6123894)
+30.1.2023, 14:32:03 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:32:03 - INFO - New connected socket [id: G0OR9icf4-mvviN3AAAL] 
+30.1.2023, 14:32:03 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: G0OR9icf4-mvviN3AAAL] 
+30.1.2023, 14:32:04 - INFO - Setting socket.userId = 63d7b822894de745c6123894 for socket [id: G0OR9icf4-mvviN3AAAL] 
+30.1.2023, 14:48:35 - DEBUG - Getting Boards (userId: 63d7b822894de745c6123894)
+30.1.2023, 14:48:38 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:48:39 - INFO - New connected socket [id: q8M9taGn5ztQHUxqAAAN] 
+30.1.2023, 14:48:39 - INFO - Socket is now on board 63d541512dc177b41719d5ed [id: q8M9taGn5ztQHUxqAAAN] 
+30.1.2023, 14:48:40 - INFO - Setting socket.userId = 63d7b822894de745c6123894 for socket [id: q8M9taGn5ztQHUxqAAAN] 
+30.1.2023, 14:48:52 - DEBUG - Getting Boards (userId: 63d7b822894de745c6123894)
+30.1.2023, 14:48:54 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:48:54 - INFO - New connected socket [id: E3zRBcETF9ET0bRFAAAP] 
+30.1.2023, 14:48:55 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: E3zRBcETF9ET0bRFAAAP] 
+30.1.2023, 14:48:55 - INFO - Setting socket.userId = 63d7b822894de745c6123894 for socket [id: E3zRBcETF9ET0bRFAAAP] 
+30.1.2023, 14:53:04 - INFO - Server is running on port: 3030 
+30.1.2023, 14:53:05 - INFO - New connected socket [id: rgOIm2iyh0y00HpkAAAB] 
+30.1.2023, 14:53:07 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:53:09 - INFO - New connected socket [id: 5chK19n7IOxx1PTRAAAD] 
+30.1.2023, 14:53:09 - INFO - Setting socket.userId = 63d7b822894de745c6123894 for socket [id: 5chK19n7IOxx1PTRAAAD] 
+30.1.2023, 14:53:10 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: 5chK19n7IOxx1PTRAAAD] 
+=======
 >>>>>>> 1b6bcf93c3cd8679f7b9114df365d99c7035932e
 30.1.2023, 14:55:41 - INFO - Server is running on port: 3030 
 30.1.2023, 14:55:45 - INFO - New connected socket [id: AM_mHONHgRBuCWRMAAAB] 
+<<<<<<< HEAD
 30.1.2023, 14:56:10 - INFO - Socket disconnected [id: undefined] 
 30.1.2023, 14:56:33 - INFO - New connected socket [id: 6cAy6yX89l0wbzYEAAAD] 
 30.1.2023, 14:56:33 - INFO - Setting socket.userId = ACTsbZ for socket [id: 6cAy6yX89l0wbzYEAAAD] 
@@ -2567,3 +2633,6 @@
 30.1.2023, 16:30:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
 30.1.2023, 16:33:07 - INFO - Broadcasting event: update-board 
 30.1.2023, 16:33:07 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+=======
+>>>>>>> 685a2b45bd0611d2f17938484c514a38b3a6b033
+>>>>>>> 1cb62a1fe8ef270e27e5a34093fb86c377501e91
