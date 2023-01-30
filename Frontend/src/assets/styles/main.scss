@@ -43,7 +43,7 @@
 @import "cmps/task-details-cmp/task-checklist/task-checklist-preview";
 @import "cmps/task-details-cmp/task-checklist/task-checklist-todo-preview";
 @import "cmps/task-details-cmp/task-checklist/task-checklist-progress-bar";
-
+@import "cmps/task-details-cmp/task-activity";
 @import "cmps/task-details-cmp/task-member";
 @import "cmps/task-details-cmp/task-label";
 @import "cmps/task-details-cmp/task-cover-modal";
@@ -54,7 +54,7 @@
 @import "cmps/task-details-cmp/task-attachment/task-attachment-preview";
 @import "cmps/task-details-cmp/task-attachment/task-attachment";
 
-//task-dynamic-modals
+//Task-dynamic-modals
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-label-modal";
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-member-modal";
 @import "cmps/task-details-cmp/task-cmp-dynamic-modals/task-edit-label-modal";

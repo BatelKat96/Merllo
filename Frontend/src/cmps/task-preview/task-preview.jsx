@@ -26,8 +26,35 @@ export function TaskPreview({ group, task, board }) {
 	const currComments = task.comments
 	const currAttach = task?.attachments
 	const currDueDate = task.dueDate
-	const currCheck = task.checklists
 
+	let totalTodos
+	let todosStyle
+	getTotalTodos(task)
+
+	function getTotalTodos(task) {
+		const checklistLength = task.checklists.map(currChecklist => {
+			return currChecklist.todos.length
+		})
+		let length = checklistLength.reduce((acc, num) => {
+			return acc + num
+		}, 0)
+
+		let counter = 0
+		task.checklists.map(checklist => {
+			checklist.todos.map(todo => {
+				if (todo.isDone) counter++
+			})
+		})
+
+		totalTodos = counter + '/' + length
+
+		if (counter === length) todosStyle = 'todosDone'
+		else todosStyle = ''
+
+		return {
+			totalTodos, todosStyle
+		}
+	}
 
 	var fullMembers = currMembers
 		? utilService.findDataById(currMembers, board, 'members')
@@ -71,7 +98,6 @@ export function TaskPreview({ group, task, board }) {
 		task.isDone = !task.isDone
 		saveTask(task, group.Id, boardId)
 	}
-
 
 	return (
 		<>
@@ -138,8 +164,8 @@ export function TaskPreview({ group, task, board }) {
 									onClick={(ev) => onToggleDateDone(ev, task)}>
 									<span className='task-preview-actions-icons date'>
 										<AiOutlineClockCircle className='date' />
-									<p>{utilService.dueDateFormat(currDueDate)}</p>
-								</span>
+										<p>{utilService.dueDateFormat(currDueDate)}</p>
+									</span>
 								</span>
 							)}
 
@@ -164,10 +190,12 @@ export function TaskPreview({ group, task, board }) {
 								</span>
 							)}
 
-							{currCheck?.length !== 0 && (
-								<span className="task-preview-actions-icons check">
+							{task.checklists?.length !== 0 && (
+								<span className={todosStyle}>
+									<span className="task-preview-actions-icons check">
 									<BsCheck2Square />
-									<p>{currCheck.length}</p>
+										<p>{totalTodos}</p>
+									</span>
 								</span>
 							)}
 
