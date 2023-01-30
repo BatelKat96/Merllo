@@ -27,31 +27,63 @@ export function BoardCreate({ closeBoardComposer, refDataBtn }) {
 
 	function getModalPos(refDataBtn) {
 		const rect = refDataBtn.current.getBoundingClientRect()
+		let modalPos = {}
 
+		console.log('refDataBtn', refDataBtn)
 		console.log('rect', rect)
 
-		let topModal = rect.top + rect.height + 5
-		let bottomModal = ''
-		let leftModal = rect.left
-		let rightModal = rect.right
-		let position = 'absolute'
+		if (rect.y > 10) {
+			console.log('rect.y > 10')
+			let topModal = '' // rect.top + rect.height + 10
+			let bottomModal = rect.bottom
+			let leftModal = rect.right + 5
+			let rightModal = '' //rect.right
+			let position = 'fixed'
 
-		if (window.innerHeight < rect.top + modalHeight) {
-			topModal = ''
-			bottomModal = 10
-		}
+			if (window.innerHeight < rect.top + modalHeight) {
+				console.log('window hight')
+				topModal = ''
+				bottomModal = 10
+			}
 
-		if (window.innerWidth < rect.left + 304) {
-			leftModal = ''
-			rightModal = 20
-		}
+			if (window.innerWidth < rect.left + 304) {
+				console.log('window width')
+				leftModal = ''
+				rightModal = 20
+			}
 
-		let modalPos = {
-			bottom: bottomModal,
-			top: topModal,
-			left: leftModal,
-			right: rightModal,
-			position: position,
+			modalPos = {
+				bottom: bottomModal,
+				top: topModal,
+				left: leftModal,
+				right: rightModal,
+				position: position,
+			}
+			console.log('modalPos', modalPos)
+		} else {
+			let topModal = rect.top + rect.height + 10
+			let bottomModal = ''
+			let leftModal = rect.left
+			let rightModal = rect.right
+			let position = 'fixed'
+
+			if (window.innerHeight < rect.top + modalHeight) {
+				topModal = ''
+				bottomModal = 10
+			}
+
+			if (window.innerWidth < rect.left + 304) {
+				leftModal = ''
+				rightModal = 20
+			}
+
+			modalPos = {
+				bottom: bottomModal,
+				top: topModal,
+				left: leftModal,
+				right: rightModal,
+				position: position,
+			}
 		}
 
 		return modalPos

@@ -1,10 +1,10 @@
 .create-board-composer {
     position: fixed;
+    // top: 50px;
+    // left: 435px;
     width: 304px;
-    will-change: top, left;
-    top: 50px;
-    left: 435px;
-    height: 350px;
+    height: 285px;
+    will-change: top, left, bottom, right;
     color:#172b4d;
     font-family: 'Segoe UI';
     font-size: 14px;
@@ -301,7 +301,8 @@
             color: #fff;
             height: 32px;
             width: 100%;
-            padding: 4px 12px;
+            // padding: 4px 12px;
+            margin:0;
             line-height: 20px;
             font-size: 14px;
             font-weight: 400;
