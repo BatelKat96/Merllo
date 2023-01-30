@@ -30,4 +30,3 @@ export function showErrorMsg(txt) {
 }
 
 window.showUserMsg = showUserMsg
-

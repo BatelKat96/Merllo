@@ -1,14 +1,15 @@
-import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+
 import { loadBoards, updateBoard } from '../store/board.actions'
 import { boardService } from '../services/board.service'
-import { BoardCreate } from '../cmps/board-create'
-import { BoardPreview } from '../cmps/board-preview'
+
+import { BoardCreate } from '../cmps/board/board-create'
+import { BoardPreview } from '../cmps/board/board-preview'
 
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { HiOutlineStar } from 'react-icons/hi2'
 import { ReactComponent as UserSvg } from '../assets/img/icons-header/user.svg'
-
 import Loader from '../assets/img/loader.svg'
 
 export function Workspace() {
@@ -78,25 +79,6 @@ export function Workspace() {
 										/>
 									</a>
 								</li>
-								// <a href={`/board/${strdBoard._id}`}>
-								// 	<li
-								// 		className={`board-preview`}
-								// 		key={`starred-${strdBoard._id}`}
-								// 		style={boardStyle}
-								// 	>
-								// 		{strdBoard.title}
-								// 	</li>
-								// </a>
-
-								// <Link to={`/board/${strdBoard._id}`}>
-								// 	<li
-								// 		className={`board-preview`}
-								// 		key={`starred-${strdBoard._id}`}
-								// 		style={boardStyle}
-								// 	>
-								// 		{strdBoard.title}
-								// 	</li>
-								// </Link>
 							)
 						})}
 					</ul>

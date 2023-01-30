@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { IoIosArrowBack } from 'react-icons/io'
 import { IoClose } from 'react-icons/io5'
 import { SideMenuBgOptions } from './side-menu-bg-options'
@@ -64,7 +64,7 @@ export function BoardSideMenu({
 				)}
 				<h3 className="board-side-menu-header-title">
 					{title === 'Photos by' ? (
-						<Fragment>
+						<>
 							{title}{' '}
 							<a
 								className="header-unsplash-link"
@@ -74,7 +74,7 @@ export function BoardSideMenu({
 							>
 								Unsplash
 							</a>
-						</Fragment>
+						</>
 					) : (
 						title
 					)}

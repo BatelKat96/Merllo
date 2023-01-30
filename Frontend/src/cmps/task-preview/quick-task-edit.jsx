@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { saveTask, removeTask } from '../../store/board.actions'
-import { DynamoicModal } from '../dynamic-modal'
+import { DynamicModal } from '../dynamic-modal'
 
 import { BsPerson, BsSquareHalf, BsArchive } from "react-icons/bs"
 import { AiOutlineClockCircle } from "react-icons/ai"
@@ -53,16 +53,6 @@ export function QuickTaskEdit({ refDataBtn, task, taskId, groupId, boardId, togg
         let bottomModal = ''
         let leftModal = rect.left - 228
         let rightModal = ''
-
-        // if (window.innerHeight < (rect.top + 284)) {
-        //     topModal = ''
-        //     bottomModal = 10
-        // }
-
-        // if (window.innerWidth < (leftModal + 433)) {
-        //     leftModal = ''
-        //     rightModal = 270
-        // }
 
         let modalPos = { bottom: bottomModal, top: topModal, left: leftModal, right: rightModal }
 
@@ -208,7 +198,7 @@ export function QuickTaskEdit({ refDataBtn, task, taskId, groupId, boardId, togg
                     </button>
 
 
-                    {modalType && <DynamoicModal
+                    {modalType && <DynamicModal
                         cmpType={modalType}
                         refDataBtn={getRefData(modalType)}
                         task={task}

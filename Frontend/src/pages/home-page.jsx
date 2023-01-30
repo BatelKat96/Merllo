@@ -3,9 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { HomePageFooter } from '../cmps/home-page/home-page-footer'
 
-// import heroPng from '../assets/img/TrelloUICollage_4x.webp'
-import productivityPng from '../assets/img/Carousel_Image_Boards_2x.png'
-
 export function HomePage() {
 
     return (

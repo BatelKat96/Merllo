@@ -1,7 +1,7 @@
-.cmp-dynamoic-option-member {
+.cmp-dynamic-option-member {
     color: $t-txt1;
 
-    .cmp-dynamoic-member-img {
+    .cmp-dynamic-member-img {
         width: 32px;
         height: 32px;
         margin-inline-end: 8px;
@@ -9,17 +9,17 @@
         border-radius: 50%;
     }
 
-    .cmp-dynamoic-member-name {
+    .cmp-dynamic-member-name {
         flex-grow: 1;
         font-size: 14px;
     }
 
-    .cmp-dynamoic-member-checked-icon-container {
+    .cmp-dynamic-member-checked-icon-container {
         width: 42px;
         height: 42px;
         padding: 11px;
 
-        .cmp-dynamoic-member-checked-icon {
+        .cmp-dynamic-member-checked-icon {
             width: 16px;
             height: 16px;
         }

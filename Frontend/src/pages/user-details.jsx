@@ -36,7 +36,6 @@ export function UserDetails() {
         <h3>
           {user.fullname}
         </h3>
-        {/* Demo for dynamic images: */}
         <div className="user-img" style={{ backgroundImage: `url('/img/u${0}.png')` }}>
         </div>
         <pre>

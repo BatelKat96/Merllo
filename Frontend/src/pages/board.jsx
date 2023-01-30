@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadBoard, removeBoard, updateBoard } from '../store/board.actions'
@@ -12,8 +12,6 @@ import {
 
 import Loader from '../assets/img/loader.svg'
 import { HiOutlineStar } from 'react-icons/hi2'
-import { BsFilter } from 'react-icons/bs'
-import { MdDelete } from 'react-icons/md'
 import { HiDotsHorizontal } from 'react-icons/hi'
 
 export function Board() {
@@ -183,11 +181,7 @@ export function Board() {
 				</div>
 
 				<div className={`board-top-menu-right ${menuStatus}`}>
-					{/* <button className="btn-board filter">
-					<BsFilter />
-					Filter
-				</button> */}
-					{/* <span></span> */}
+
 					<ul className="board-top-menu-members clean-list">
 						{board.members.map((member, idx) => (
 							<li style={{ zIndex: idx + 5 }} key={member._id}>

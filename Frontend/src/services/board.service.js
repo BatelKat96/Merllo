@@ -1,5 +1,4 @@
 import { utilService } from './util.service.js'
-import { storageService } from './async-storage.service.js'
 import { httpService } from './http.service.js'
 import { userService } from './user.service.js'
 
@@ -33,7 +32,6 @@ window.cs = boardService
 async function query(filterBy = { title: '' }) {
 	return httpService.get(STORAGE_KEY, filterBy)
 	// var boards = await storageService.query(STORAGE_KEY)
-	// // here we will add filters
 	// return boards
 }
 
@@ -107,14 +105,6 @@ function getEmptyBoard() {
 	}
 }
 
-// function _createBoards() {
-// 	let boards = utilService.loadFromStorage(STORAGE_KEY)
-// 	if (!boards) {
-// 		boards = boardsData
-// 		utilService.saveToStorage(STORAGE_KEY, boards)
-// 	}
-// }
-
 // * group service
 async function queryGroups(boardId) {
 	try {
@@ -166,7 +156,6 @@ async function saveGroup(group, boardId) {
 			group.id = utilService.makeId()
 			board.groups.push(group)
 		}
-		// console.log('Saved group in boardService', 'group:', group, 'board:', board)
 		return save(board)
 	} catch (err) {
 		console.log('Failed to save group', err)
@@ -207,10 +196,8 @@ async function getTaskById(taskId, groupId, boardId) {
 async function removeTask(taskId, groupId, boardId) {
 	try {
 		let group = await getGroupById(groupId, boardId)
-		// console.log('group before', group)
 		let updatedTasks = group.tasks.filter((task) => task.id !== taskId)
 		group.tasks = updatedTasks
-		// console.log('group after', group)
 		return await saveGroup(group, boardId)
 	} catch (err) {
 		console.log('Failed to remove task', err)
@@ -230,7 +217,6 @@ async function saveTask(task, groupId, boardId) {
 			task.id = utilService.makeId()
 			group.tasks.push(task)
 		}
-		// console.log('saveGroup in boarService', 'group:', group, 'boardId:', boardId);
 		return await saveGroup(group, boardId)
 	} catch (err) {
 		console.log('Failed to save group', err)
@@ -244,7 +230,6 @@ function getEmptyTask() {
 		archivedAt: null,
 		labelIds: [],
 		dueDate: '',
-		// dueDate: Date.now() + 2 * (24 * 60 * 60 * 1000),
 		byMember: {
 			_id: '',
 			username: '',

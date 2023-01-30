@@ -1,9 +1,22 @@
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useEffect, useState, useRef } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Fragment, useEffect, useState, useRef } from 'react'
 
 import { boardService } from '../services/board.service'
+import { loadBoard, removeTask, saveTask } from '../store/board.actions'
 
+import { DynamicModal } from '../cmps/dynamic-modal'
+import { TaskTitle } from '../cmps/task-details/task-title'
+import { TaskDescription } from '../cmps/task-details/task-description'
+import { TaskSideBar } from '../cmps/task-details/task-side-bar'
+import { TaskChecklistPreview } from '../cmps/task-details/task-checklist/task-checklist-preview'
+import { TaskDueDate } from '../cmps/task-details/task-due-date'
+import { TaskAttachmentPreview } from '../cmps/task-details/task-attachmente-preview'
+import { TaskActivity } from '../cmps/task-details/task-activity/task-activity'
+import { TaskDynamicLabel } from '../cmps/task-details/task-dynamic-label'
+import { TaskDynamicMember } from '../cmps/task-details/task-dynamic-member'
+
+import Loader from '../assets/img/loader.svg'
 import { IoClose } from 'react-icons/io5'
 import {
 	BsArchive,
@@ -12,37 +25,21 @@ import {
 	BsSquareHalf,
 	BsArrowCounterclockwise,
 } from 'react-icons/bs'
-import { DynamoicModal } from '../cmps/dynamic-modal'
-import { loadBoard, removeTask, saveTask } from '../store/board.actions'
-import { TaskTitle } from '../cmps/task-details-cmp/task-title'
-// import { TaskMember } from '../cmps/task-details-cmp/task-member'
-import { TaskDescription } from '../cmps/task-details-cmp/task-description'
-import { TaskSideBar } from '../cmps/task-details-cmp/task-side-bar'
-import { TaskCmpDynamoic } from '../cmps/task-details-cmp/task-cmp-dynamic'
-import { TaskDynamicItem } from '../cmps/task-details-cmp/task-dynamic-item'
-import { TaskChecklistPreview } from '../cmps/task-details-cmp/task-checklist/task-checklist-preview'
-import Loader from '../assets/img/loader.svg'
-import { TaskDueDate } from '../cmps/task-details-cmp/task-due-date'
-import { TaskAttachmentPreview } from '../cmps/task-details-cmp/task-attachmente-preview'
-import { TaskActivity } from '../cmps/task-details-cmp/task-activity/task-activity'
-import { TaskDynamicLabel } from '../cmps/task-details-cmp/task-dynamic-label'
-import { TaskDynamicMember } from '../cmps/task-details-cmp/task-dynamic-member'
 
 export function TaskDetails() {
 	const { boardId, groupId, taskId } = useParams()
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const [task, setTask] = useState('')
+	const [modalType, setModalType] = useState()
 	const {
-		byMember,
 		labelIds,
-		style,
 		checklists,
 		memberIds,
 		dueDate,
 		isDone,
 		attachments,
 	} = task
-	const [modalType, setModalType] = useState()
+
 	const memberBtn = useRef()
 	const labelBtn = useRef()
 	const checklistBtn = useRef()
@@ -116,10 +113,8 @@ export function TaskDetails() {
 			const removedTask = await removeTask(taskId, groupId, boardId)
 			console.log('removedTask:', removedTask)
 			navigate(`/board/${boardId}`)
-			// showSuccessMsg(`Task edited (id: ${removedTask._id})`)
 		} catch (err) {
 			console.log('Cannot remove task ', err)
-			// showErrorMsg('Cannot update task ', err)
 		}
 	}
 
@@ -155,12 +150,8 @@ export function TaskDetails() {
 	}
 
 	function onOpenModal(type) {
-		console.log('type task details:', type)
-
 		setModalType(type)
-
 	}
-	console.log('ModalType:', modalType)
 
 	return (
 		<>
@@ -260,17 +251,6 @@ export function TaskDetails() {
 														labelBtn={labelBtn}
 													/>
 												)}
-												{/* {labelIds && labelIds.length > 0 && (
-													<TaskDynamicItem
-														ids={labelIds}
-														board={board}
-														type={'labels'}
-														task={task}
-														onSaveTask={onSaveTask}
-														onOpenModal={onOpenModal}
-													// labelBtn={labelBtn}
-													/>
-												)} */}
 												{dueDate && (
 													<TaskDueDate
 														dueDate={dueDate}
@@ -318,18 +298,9 @@ export function TaskDetails() {
 					</div>
 				</div>
 
-				{/* {modalType && <TaskCmpDynamoic
-                cmpType={modalType}
-                refDataBtn={coverBtn}
-                task={task}
-                groupId={groupId}
-                boardId={boardId}
-                onOpenModal={onOpenModal}
-                onSaveTask={onSaveTask} />} */}
-
 				{modalType &&
 					(
-						<DynamoicModal
+					<DynamicModal
 							cmpType={modalType}
 							refDataBtn={getRefData(modalType)}
 							task={task}
