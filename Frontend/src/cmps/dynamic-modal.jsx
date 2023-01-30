@@ -59,26 +59,6 @@ export function DynamicModal({
 		return modalPos
 	}
 
-
-
-	// function updateModalPos() {
-	// 	const rect = refDataBtn.current.getBoundingClientRect()
-
-	// 	let topModal = rect.top + rect.height + 5 + 'px'
-	// 	let leftModal = rect.left + 'px'
-
-	// 	let modalPos = { top: topModal, left: leftModal }
-
-	// 	return modalPos
-	// }
-
-	// window.addEventListener('resize', updateModalPos)
-	// window.addEventListener('scroll', updateModalPos)
-
-//   const refDataBtn = useRef(null)
-//   const modalPos = getModalPos(refDataBtn)
-
-
 	function onClose() {
 		onOpenModal()
 	}
