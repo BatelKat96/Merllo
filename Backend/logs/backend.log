@@ -2235,3 +2235,335 @@
 >>>>>>> 1b6bcf93c3cd8679f7b9114df365d99c7035932e
 30.1.2023, 14:55:41 - INFO - Server is running on port: 3030 
 30.1.2023, 14:55:45 - INFO - New connected socket [id: AM_mHONHgRBuCWRMAAAB] 
+30.1.2023, 14:56:10 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 14:56:33 - INFO - New connected socket [id: 6cAy6yX89l0wbzYEAAAD] 
+30.1.2023, 14:56:33 - INFO - Setting socket.userId = ACTsbZ for socket [id: 6cAy6yX89l0wbzYEAAAD] 
+30.1.2023, 14:56:35 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: 6cAy6yX89l0wbzYEAAAD] 
+30.1.2023, 14:56:43 - INFO - Broadcasting event: update-board 
+30.1.2023, 14:56:43 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 14:56:46 - INFO - Broadcasting event: update-board 
+30.1.2023, 14:56:46 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 14:56:49 - INFO - Broadcasting event: update-board 
+30.1.2023, 14:56:49 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:09:37 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:09:37 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:09:37 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:09:37 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:10:38 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:10:38 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:10:38 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:10:38 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:14:02 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 15:14:05 - INFO - New connected socket [id: _70W1Wtml5b16qz9AAAF] 
+30.1.2023, 15:14:05 - INFO - Setting socket.userId = nqEWo0 for socket [id: _70W1Wtml5b16qz9AAAF] 
+30.1.2023, 15:14:05 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: _70W1Wtml5b16qz9AAAF] 
+30.1.2023, 15:15:40 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:15:40 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:15:40 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:15:40 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:16:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:16:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:16:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:16:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:16:14 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:16:14 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:16:14 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:16:14 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:16:19 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:16:19 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:16:19 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:16:19 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:16:51 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 15:16:54 - INFO - New connected socket [id: jiCLuz-iq8bkxnXmAAAH] 
+30.1.2023, 15:16:54 - INFO - Setting socket.userId = sXRkdD for socket [id: jiCLuz-iq8bkxnXmAAAH] 
+30.1.2023, 15:16:54 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: jiCLuz-iq8bkxnXmAAAH] 
+30.1.2023, 15:17:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:17:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:17:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:17:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:17:44 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:17:44 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:17:44 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:17:44 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:18:53 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:18:53 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:18:53 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:18:53 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:20:28 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:20:28 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:20:28 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:20:28 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:21:22 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:21:22 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:21:22 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:21:22 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:22:23 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:22:23 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:22:23 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:22:23 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:22:27 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:22:27 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:22:27 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:22:27 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:23:01 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:23:01 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:23:01 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:23:01 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:23:40 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:23:40 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:23:40 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:23:40 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:23:51 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:23:51 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:23:51 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:23:51 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:24:50 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:24:50 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:24:50 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:24:50 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:25:47 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:25:47 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:25:47 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:25:47 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:27:34 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:27:34 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:27:50 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:27:50 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:28:02 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 15:28:05 - INFO - New connected socket [id: QMRuFvw2D2fq-gr8AAAJ] 
+30.1.2023, 15:28:06 - INFO - Setting socket.userId = GwXl2p for socket [id: QMRuFvw2D2fq-gr8AAAJ] 
+30.1.2023, 15:28:06 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: QMRuFvw2D2fq-gr8AAAJ] 
+30.1.2023, 15:28:42 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:28:42 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:28:45 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:28:45 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:30:19 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:30:19 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:11 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:11 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:38 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:38 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:38 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:38 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:40 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:40 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:41 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:41 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:48 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:48 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:48 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:48 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:31:49 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:31:49 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:36:40 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:36:40 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:36:41 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:36:41 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:36:42 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:36:42 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:36:53 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:36:53 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:37:02 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:37:02 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:38:43 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:38:43 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:38:53 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 15:38:55 - INFO - New connected socket [id: pDuQss164fthBFzKAAAL] 
+30.1.2023, 15:38:55 - INFO - Setting socket.userId = cWOi3g for socket [id: pDuQss164fthBFzKAAAL] 
+30.1.2023, 15:38:56 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: pDuQss164fthBFzKAAAL] 
+30.1.2023, 15:39:05 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:39:05 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:39:35 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:39:35 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:39:38 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:39:38 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:17 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:17 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:19 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:19 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:20 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:20 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:21 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:21 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:23 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:23 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:25 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:25 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:33 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:33 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:41:54 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:41:54 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:10 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:10 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:13 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:13 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:15 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:15 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:17 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:17 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:17 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:17 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:21 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:21 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:21 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:21 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:23 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:23 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:23 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:23 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:26 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:26 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:43:31 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:43:31 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:45:24 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 15:45:30 - INFO - New connected socket [id: cLzOQKxgislWmALpAAAN] 
+30.1.2023, 15:45:30 - INFO - Setting socket.userId = ygBziQ for socket [id: cLzOQKxgislWmALpAAAN] 
+30.1.2023, 15:45:31 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: cLzOQKxgislWmALpAAAN] 
+30.1.2023, 15:45:44 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:45:44 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:15 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:15 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:16 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:16 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:19 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:19 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:21 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:21 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:23 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:23 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:29 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:29 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:41 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:41 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:46:44 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:46:44 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:49:08 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:49:08 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:49:19 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:49:19 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:49:57 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:49:57 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:50:11 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:50:11 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:50:16 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:50:16 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:50:21 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:50:21 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:51:19 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:51:19 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:51:26 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:51:26 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:51:56 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:51:56 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:52:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:52:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:53:00 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:53:00 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:53:06 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:53:06 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:53:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:53:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:56:57 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:56:57 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:57:00 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:57:00 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:57:02 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:57:02 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:57:04 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:57:04 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:57:11 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:57:11 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:57:15 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:57:15 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:57:18 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:57:18 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:58:21 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:58:21 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:58:26 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:58:26 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:58:30 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:58:30 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:58:34 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:58:34 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:58:36 - INFO - Broadcasting event: update-board 
+30.1.2023, 15:58:36 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 15:59:48 - DEBUG - Getting Boards 
+30.1.2023, 15:59:50 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 15:59:56 - INFO - New connected socket [id: rlyomz-sJhjrwmt1AAAP] 
+30.1.2023, 15:59:57 - INFO - Setting socket.userId = 4zzx1v for socket [id: rlyomz-sJhjrwmt1AAAP] 
+30.1.2023, 15:59:58 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: rlyomz-sJhjrwmt1AAAP] 
+30.1.2023, 16:01:23 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:01:23 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+30.1.2023, 16:01:24 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:01:24 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+30.1.2023, 16:01:26 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:01:26 - INFO - Emit to room: 63d541512dc177b41719d5ea 
+30.1.2023, 16:02:03 - DEBUG - Getting Boards 
+30.1.2023, 16:02:06 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 16:02:11 - INFO - New connected socket [id: Ttc4drailQrjXWvFAAAR] 
+30.1.2023, 16:02:11 - INFO - Setting socket.userId = CF237R for socket [id: Ttc4drailQrjXWvFAAAR] 
+30.1.2023, 16:02:12 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: Ttc4drailQrjXWvFAAAR] 
+30.1.2023, 16:23:18 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 16:23:26 - INFO - New connected socket [id: Tnr3x77ZaWiCyxqvAAAT] 
+30.1.2023, 16:23:26 - INFO - Setting socket.userId = me7nz1 for socket [id: Tnr3x77ZaWiCyxqvAAAT] 
+30.1.2023, 16:23:27 - INFO - Socket is now on board 63d541512dc177b41719d5eb [id: Tnr3x77ZaWiCyxqvAAAT] 
+30.1.2023, 16:23:44 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:23:44 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:23:48 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:23:48 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:23:54 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:23:54 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:23:57 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:23:57 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:23:59 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:23:59 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:24:02 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:24:02 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:24:07 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:24:07 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:25:46 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:25:46 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:25:49 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:25:49 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:25:51 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:25:51 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:25:53 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:25:53 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:25:54 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:25:54 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:25:58 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:25:58 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:01 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:01 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:03 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:03 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:06 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:06 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:12 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:12 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:14 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:14 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:16 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:16 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:27 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:27 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:26:34 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:26:34 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:27:52 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:27:52 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:29:26 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:29:26 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:29:30 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:29:30 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:29:32 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:29:32 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:29:34 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:29:34 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:30:07 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:30:07 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:30:09 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:30:09 - INFO - Emit to room: 63d541512dc177b41719d5eb 
+30.1.2023, 16:33:07 - INFO - Broadcasting event: update-board 
+30.1.2023, 16:33:07 - INFO - Emit to room: 63d541512dc177b41719d5eb 
