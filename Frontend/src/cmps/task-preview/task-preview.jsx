@@ -93,10 +93,9 @@ export function TaskPreview({ group, task, board }) {
 	}
 
 	function onToggleDateDone(ev, task) {
-		ev.preventDefault()
 		ev.stopPropagation()
 		task.isDone = !task.isDone
-		saveTask(task, group.Id, boardId)
+		saveTask(task, group.id, boardId)
 	}
 
 	return (
