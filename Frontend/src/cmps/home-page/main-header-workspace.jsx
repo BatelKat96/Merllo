@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -16,6 +16,10 @@ export function MainHeaderWorkspace() {
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 	const user = useSelector((storeState) => storeState.userModule.user)
 	const navigate = useNavigate()
+
+	// for create modal
+	const createBtn = useRef()
+	const refDataBtn = createBtn
 
 	// create board
 	function openBoardComposer() {
@@ -69,7 +73,11 @@ export function MainHeaderWorkspace() {
 					<DownSvg />
 				</button>
 
-				<button className="create-btn" onClick={openBoardComposer}>
+				<button
+					className="create-btn"
+					onClick={openBoardComposer}
+					ref={createBtn}
+				>
 					Create
 					{/* <CreateSvg /> */}
 				</button>
@@ -102,7 +110,10 @@ export function MainHeaderWorkspace() {
 				)}
 			</div>
 			{isBoardComposerOpen && (
-				<BoardCreate closeBoardComposer={closeBoardComposer} />
+				<BoardCreate
+					closeBoardComposer={closeBoardComposer}
+					refDataBtn={refDataBtn}
+				/>
 			)}
 			{user && isUserMenuOpen && (
 				<UserMenu

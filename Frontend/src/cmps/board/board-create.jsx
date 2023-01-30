@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux'
-import { useState } from 'react'
-import { useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useClickOutside } from '../../customHooks/is-clicked-outside'
 import { addBoard } from '../../store/board.actions'
 import { boardService } from '../../services/board.service'
@@ -9,13 +8,55 @@ import { IoClose } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom'
 import { BiCheck } from 'react-icons/bi'
 
-export function BoardCreate({ closeBoardComposer }) {
+export function BoardCreate({ closeBoardComposer, refDataBtn }) {
 	const board = useSelector((storeState) => storeState.boardModule.board)
 	const boards = useSelector((storeState) => storeState.boardModule.boards)
 	const user = useSelector((state) => state.userModule.user)
 	const [boardToEdit, setBoardToEdit] = useState(boardService.getEmptyBoard())
 	const navigate = useNavigate()
-	const modalRef = useRef()
+	// const modalRef = useRef()
+
+	const modalRef = useRef(null)
+	const [modalStyle, setModalStyle] = useState(false)
+	const [modalHeight, setModalHeight] = useState()
+
+	useEffect(() => {
+		setModalStyle(true)
+		setModalHeight(modalRef.current.getBoundingClientRect().height)
+	}, [modalStyle])
+
+	function getModalPos(refDataBtn) {
+		const rect = refDataBtn.current.getBoundingClientRect()
+
+		console.log('rect', rect)
+
+		let topModal = rect.top + rect.height + 5
+		let bottomModal = ''
+		let leftModal = rect.left
+		let rightModal = rect.right
+		let position = 'absolute'
+
+		if (window.innerHeight < rect.top + modalHeight) {
+			topModal = ''
+			bottomModal = 10
+		}
+
+		if (window.innerWidth < rect.left + 304) {
+			leftModal = ''
+			rightModal = 20
+		}
+
+		let modalPos = {
+			bottom: bottomModal,
+			top: topModal,
+			left: leftModal,
+			right: rightModal,
+			position: position,
+		}
+
+		return modalPos
+	}
+
 	useClickOutside(modalRef, closeBoardComposer)
 
 	const bgImgs = [
@@ -89,7 +130,11 @@ export function BoardCreate({ closeBoardComposer }) {
 	}
 
 	return (
-		<section className="create-board-composer" ref={modalRef}>
+		<section
+			className="create-board-composer"
+			ref={modalRef}
+			style={getModalPos(refDataBtn)}
+		>
 			<div className="create-board-composer-header">
 				<h2>Create board</h2>
 				<button
