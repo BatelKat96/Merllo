@@ -92,16 +92,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin: auto;
     padding: 5px;
-    // width: 50px;
+    // width: 300px;
     height: 80vh;
 
 
     img.loader {
-        // margin: auto;
+        // padding: 100px;
         width: 50px;
         height: 50px;
     }
+}
+
+.loader-wrapper-task-deatils {
+    background-color: $t-bg1;
+    margin: auto;
+    grid-column: 2;
+
 }

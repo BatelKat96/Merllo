@@ -164,7 +164,7 @@ export function TaskDetails() {
 						}}
 					>
 						{(!task || !board) && (
-							<div className="loader-wrapper">
+							<div className="loader-wrapper loader-wrapper-task-deatils">
 								<img className="loader" src={Loader} alt="loader" />
 							</div>
 						)}
@@ -300,7 +300,7 @@ export function TaskDetails() {
 
 				{modalType &&
 					(
-					<DynamicModal
+						<DynamicModal
 							cmpType={modalType}
 							refDataBtn={getRefData(modalType)}
 							task={task}

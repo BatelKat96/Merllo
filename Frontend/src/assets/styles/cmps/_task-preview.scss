@@ -12,16 +12,16 @@
     white-space: normal;
     cursor: pointer;
     padding-bottom: 2px;
-    
+
     .task-preview-cover {
         height: 32px;
         border-radius: 3px 3px 0 0;
         display: block;
-        position:static ;
+        position: static;
         padding: 0;
 
         &.img {
-            height: 163px; 
+            height: 163px;
         }
     }
 
@@ -92,7 +92,7 @@
             border-radius: 4px;
             margin-inline-end: 3px;
             transition: all 150ms ease-out 0s;
-    
+
             &:hover,
             :focus {
                 filter: saturate(85%) brightness(92%);
@@ -113,7 +113,7 @@
                 border-radius: 50%;
             }
         }
-    
+
         p {
             margin-block: 0;
         }
@@ -145,7 +145,7 @@
                 margin-top: 4px;
 
                 .date {
-                    color:#6b778c;
+                    color: #6b778c;
                 }
 
                 p {
@@ -153,18 +153,21 @@
                     padding-left: 2px;
                 }
 
-                .due-sticker, .todosDone {
+                .due-sticker,
+                .todosDone {
                     border-radius: 3px;
                     padding: 4px 2px 2px 2px;
+                    margin-inline-end: 4px;
 
                     p {
                         color: #fafbfc;
                     }
-                    
+
                 }
-        
+
                 .completed {
                     background-color: #7bc86c;
+
 
                     svg {
                         color: #fafbfc;
@@ -174,7 +177,7 @@
                         background-color: #519839
                     }
                 }
-        
+
                 .overdue {
                     background-color: #ec9488;
 
@@ -183,10 +186,10 @@
                     }
 
                     &:hover {
-                        background-color: #eb5a46;  
+                        background-color: #eb5a46;
                     }
                 }
-        
+
                 .soon {
                     background-color: #f5dd29;
 
@@ -213,7 +216,7 @@
                 }
 
                 .task-preview-actions-icons {
-                    color:#6b778c;
+                    color: #6b778c;
                     margin: 0 4px 4px 0;
                     overflow: hidden;
                     padding: 2px;
@@ -225,25 +228,15 @@
                     align-items: center;
                     padding: 0 4px;
 
-                    .date {
+                    .date {}
 
-                    }
+                    .desc {}
 
-                    .desc {
-                        
-                    }
+                    .comment {}
 
-                    .comment {
+                    .attach {}
 
-                    }
-
-                    .attach {
-
-                    }
-
-                    .check {
-
-                    }
+                    .check {}
                 }
             }
         }
