@@ -153,7 +153,7 @@
                     padding-left: 2px;
                 }
 
-                .due-sticker {
+                .due-sticker, .todosDone {
                     border-radius: 3px;
                     padding: 4px 2px 2px 2px;
 
@@ -166,6 +166,10 @@
                 .completed {
                     background-color: #7bc86c;
 
+                    svg {
+                        color: #fafbfc;
+                    }
+
                     &:hover {
                         background-color: #519839
                     }
@@ -173,6 +177,10 @@
         
                 .overdue {
                     background-color: #ec9488;
+
+                    svg {
+                        color: #fafbfc;
+                    }
 
                     &:hover {
                         background-color: #eb5a46;  
@@ -182,8 +190,25 @@
                 .soon {
                     background-color: #f5dd29;
 
+                    svg {
+                        color: #fafbfc;
+                    }
+
                     &:hover {
-                        background-color: #9f922b;
+                        background-color: #baa92d;
+                    }
+                }
+
+                .todosDone {
+                    margin: 0 2px;
+                    background-color: #7bc86c;
+
+                    p {
+                        color: #fafbfc;
+                    }
+
+                    svg {
+                        color: #fafbfc;
                     }
                 }
 
@@ -201,8 +226,7 @@
                     padding: 0 4px;
 
                     .date {
-                        color: #fafbfc;
-                        color:#6b778c;
+
                     }
 
                     .desc {
