@@ -65,7 +65,7 @@
 
     .board-top-menu-dark-bg {
         color: $b-txt2;
-        height: 50px;
+        min-height: 50px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -268,13 +268,18 @@
                 }
             }
 
+            @media (max-width: 480px) {
+                ul.board-top-menu-members {
+                    display: none;
+                }
+            }
             
         }
     }
 
     .board-top-menu-light-bg {
         color: $b-txt1;
-        height: 50px;
+        min-height: 50px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -468,6 +473,11 @@
                 li {
                     height: 30px;
                     margin-right: -4px;
+                }
+            }
+            @media (max-width: 480px) {
+                ul.board-top-menu-members {
+                    display: none;
                 }
             }
         }

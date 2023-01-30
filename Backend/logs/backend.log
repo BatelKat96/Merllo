@@ -2642,3 +2642,23 @@
 30.1.2023, 16:48:40 - INFO - Server is running on port: 3030 
 30.1.2023, 16:48:40 - INFO - New connected socket [id: N9Tldynv-ZNTWi4DAAAB] 
 30.1.2023, 16:48:40 - INFO - New connected socket [id: 21uEJLh9_Bq3eTTgAAAD] 
+30.1.2023, 16:49:20 - INFO - New connected socket [id: 0sxmM0U_e0uaW9VfAAAF] 
+30.1.2023, 16:52:21 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 16:52:49 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 18:42:36 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 18:42:57 - INFO - New connected socket [id: ro6g0JCZ1OpssqQbAAAH] 
+30.1.2023, 19:59:11 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 19:59:11 - INFO - Emit to room: 63d541512dc177b41719d5ea (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 19:59:28 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 19:59:28 - INFO - Emit to room: 63d541512dc177b41719d5ea (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 20:00:36 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 20:00:36 - INFO - Emit to room: 63d541512dc177b41719d5ea (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 20:00:38 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 20:00:38 - INFO - Emit to room: 63d541512dc177b41719d5ea (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 20:01:22 - INFO - Broadcasting event: update-board (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 20:01:22 - INFO - Emit to room: 63d541512dc177b41719d5ea (userId: 63d53f24405315f7da6a0ada)
+30.1.2023, 20:01:35 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 20:01:43 - INFO - New connected socket [id: 1oTZJhjUcEkakGp-AAAJ] 
+30.1.2023, 20:01:45 - INFO - Setting socket.userId = 63d53f24405315f7da6a0ada for socket [id: 1oTZJhjUcEkakGp-AAAJ] 
+30.1.2023, 20:01:45 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: 1oTZJhjUcEkakGp-AAAJ] 
+30.1.2023, 20:02:16 - INFO - Socket disconnected [id: undefined] 
