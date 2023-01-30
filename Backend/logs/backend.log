@@ -1546,3 +1546,11 @@
 >>>>>>> 4113dfe992098a221afd4c4fb6b974563dc49cdb
 29.1.2023, 19:57:37 - INFO - Server is running on port: 3030 
 29.1.2023, 19:57:40 - INFO - New connected socket [id: OT479u_31dUP2SmdAAAB] 
+30.1.2023, 8:39:45 - INFO - Server is running on port: 3030 
+30.1.2023, 8:40:28 - INFO - New connected socket [id: gnbxuodqBWUKyEjmAAAB] 
+30.1.2023, 8:40:29 - INFO - Setting socket.userId = iRDruX for socket [id: gnbxuodqBWUKyEjmAAAB] 
+30.1.2023, 8:40:44 - DEBUG - Getting Boards 
+30.1.2023, 8:40:46 - INFO - Socket disconnected [id: undefined] 
+30.1.2023, 8:40:47 - INFO - New connected socket [id: elD907jcjfTGIvT7AAAD] 
+30.1.2023, 8:40:47 - INFO - Socket is now on board 63d541512dc177b41719d5ea [id: elD907jcjfTGIvT7AAAD] 
+30.1.2023, 8:40:47 - INFO - Setting socket.userId = 2acGcD for socket [id: elD907jcjfTGIvT7AAAD] 
