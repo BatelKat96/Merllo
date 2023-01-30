@@ -36,38 +36,43 @@ export function TaskCoverModal({ task, onSaveTask }) {
 
     let selectedCover = (isSelected) ? 'selected' : ''
 
-    function setTaskCover(ev, coverColor, coverImg) {
-        let style
-        if (task?.style?.background === coverImg) {
-            task.style.background = null
-            onSaveTask(ev, task)
-        }
-        else if (task?.style?.backgroundColor === coverColor) {
-            task.style.backgroundColor = null
-            onSaveTask(ev, task)
-        }
-        else {
-            setCoverColor(coverColor)
-            setcoverImg(coverImg)
-            if (coverColor) {
-                style = { backgroundColor: coverColor }
-                setIsSelected(isSelected)
+    function setTaskCover(ev, currColor, currImg) {
+        let updateTask = { ...task }
+        if (currColor) setCoverColor(currColor)
+        if (currImg) setcoverImg(currImg)
+
+        if (!updateTask.style) updateTask.style = {}
+        const taskStyle = updateTask.style
+
+        if (currColor) {
+
+            if (updateTask.style?.backgroundColor === currColor) {
+                updateTask.style.backgroundColor = ''
+                onSaveTask(ev, updateTask)
             }
             else {
-                style = { background: `url("${coverImg}") center center / cover` }
+                updateTask.style.background = ''
+                updateTask.style.backgroundColor = currColor
                 setIsSelected(isSelected)
+                onSaveTask(ev, updateTask)
             }
-            task.style = style
-            onSaveTask(ev, task)
+        } else if (currImg) {
+            if (updateTask.style?.background === `url("${currImg}") center center / cover`) {
+                updateTask.style.background = ''
+                onSaveTask(ev, updateTask)
+            }
+
+            else {
+                updateTask.style.backgroundColor = ''
+                updateTask.style.background = `url("${currImg}") center center / cover`
+                setIsSelected(isSelected)
+                onSaveTask(ev, updateTask)
+            }
         }
+
     }
 
-    // if (!coverColors || !coverImgs)
-    //     return (
-    //         <div className="loader-wrapper">
-    //             <img className="loader" src={Loader} alt="loader" />
-    //         </div>
-    //     )
+
 
     return (
         <section className='cmp-dynamic-options-list cover-section'>
@@ -82,7 +87,7 @@ export function TaskCoverModal({ task, onSaveTask }) {
                     {coverColors.map((coverColor) => (
                         <li key={coverColor}
                             className={coverColor}
-                            onClick={(ev) => setTaskCover(ev, coverColor, undefined)}
+                        // onClick={(ev) => setTaskCover(ev, coverColor, undefined)}
                         >
                             <button
                                 className={`color-btn ${selectedCover}`}
@@ -109,7 +114,7 @@ export function TaskCoverModal({ task, onSaveTask }) {
                 <div className='img-wrapper clean-list'>
                     {coverImgs.map((coverImg) => (
                         <li key={coverImg} className={coverImg}
-                            onClick={(ev) => setTaskCover(ev, undefined, coverImg)}
+                        // onClick={(ev) => setTaskCover(ev, undefined, coverImg)}
                         >
                             <button
                                 className={`img-btn ${selectedCover}`}
