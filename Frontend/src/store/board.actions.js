@@ -129,8 +129,11 @@ export async function removeTask(taskId, groupId, boardId) {
 
 export async function saveTask(task, groupId, boardId) {
 	try {
+		let updateboard = await boardService.getById(boardId)
+		store.dispatch(getActionUpdateBoard(updateboard))
 		const savedBoard = await boardService.saveTask(task, groupId, boardId)
-		store.dispatch(getActionUpdateBoard(savedBoard))
+		// const savedBoard = await boardService.saveTask(task, groupId, boardId)
+		// store.dispatch(getActionUpdateBoard(savedBoard))
 		return task
 	} catch (err) {
 		console.log('Cannot save task', err)
