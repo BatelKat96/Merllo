@@ -1,31 +1,38 @@
-.move-section {
+.task-move-modal-section {
 
-    .move-options {
+    .task-move-modal-options {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
 
-        .select-list, .select-pos {
+        .move-modal-select-list-container,
+        .move-modal-select-pos-container {
             float: left;
-            height: 48px;
+            height: 50px;
             margin-top: 0;
             margin-right: 8px;
             position: relative;
             flex: 3;
-            background-color:#091e420a;
+            background-color: #091e420a;
             border-radius: 3px;
-            padding: 4px;
+            // padding: 4px;
             padding: 6px 12px;
+            text-align: left;
 
-            label {
-                color: var(--ds-text-subtle,#5e6c84);
+            &:hover {
+                background-color: $t-hover3;
+            }
+
+            .move-modal-label {
+                color: var(--ds-text-subtle, #5e6c84);
                 display: block;
                 font-size: 12px;
                 line-height: 16px;
                 margin-bottom: 0;
+                padding-inline-start: 5px;
             }
 
-            select {
+            .move-modal-select {
                 cursor: pointer;
                 display: block;
                 height: 32px;
@@ -34,9 +41,22 @@
                 border: none;
                 background-color: transparent;
                 width: 100%;
+                font-family: inherit;
+                color: $b-txt1 ;
+                font-size: 15px;
+                height: fit-content;
+                padding-inline-start: 0px;
+                margin-inline-start: 0px;
+                appearance: none;
+
+                &:focus-visible {
+                    outline: none;
+                }
 
 
-                option {
+
+
+                .move-modal-select-option {
                     display: block;
                     font-size: 14px;
                     line-height: 20px;
@@ -54,13 +74,13 @@
             }
         }
 
-        .select-pos {
+        .move-modal-select-pos-container {
             flex: 1;
         }
 
     }
 
-    .btn-move {
+    .btn-move-modal {
         margin-top: 12px;
         background-color: $t-btn-bgc;
         color: $clr6;
@@ -69,7 +89,7 @@
         padding: 0 24px;
 
         &:hover {
-            background-color:#046AA7;
+            background-color: #046AA7;
         }
     }
 }

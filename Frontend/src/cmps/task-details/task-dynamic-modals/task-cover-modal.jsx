@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Loader from '../../../assets/img/loader.svg'
 
 export function TaskCoverModal({ task, onSaveTask }) {
 
@@ -61,10 +62,19 @@ export function TaskCoverModal({ task, onSaveTask }) {
         }
     }
 
+    // if (!coverColors || !coverImgs)
+    //     return (
+    //         <div className="loader-wrapper">
+    //             <img className="loader" src={Loader} alt="loader" />
+    //         </div>
+    //     )
 
     return (
         <section className='cmp-dynamic-options-list cover-section'>
-
+            {(!coverColors || !coverImgs) &&
+                <div className="loader-wrapper">
+                    <img className="loader" src={Loader} alt="loader" />
+                </div>}
             <div className='cover-section-block colors'>
                 <h3 className='small-headline cmp-dynamic-options-title'>Colors</h3>
 
@@ -72,6 +82,7 @@ export function TaskCoverModal({ task, onSaveTask }) {
                     {coverColors.map((coverColor) => (
                         <li key={coverColor}
                             className={coverColor}
+                            onClick={(ev) => setTaskCover(ev, coverColor, undefined)}
                         >
                             <button
                                 className={`color-btn ${selectedCover}`}
@@ -98,6 +109,7 @@ export function TaskCoverModal({ task, onSaveTask }) {
                 <div className='img-wrapper clean-list'>
                     {coverImgs.map((coverImg) => (
                         <li key={coverImg} className={coverImg}
+                            onClick={(ev) => setTaskCover(ev, undefined, coverImg)}
                         >
                             <button
                                 className={`img-btn ${selectedCover}`}
