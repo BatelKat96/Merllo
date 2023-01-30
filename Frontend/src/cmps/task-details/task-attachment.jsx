@@ -6,6 +6,7 @@ export function TaskAttachment({ task, attachment, onSaveTask, onDeleteAttachmen
 
     function onToggleTaskCover(ev) {
         let updateTask = { ...task }
+        console.log('updateTask:', updateTask)
 
         if (!updateTask.style) updateTask.style = {}
 

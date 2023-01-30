@@ -55,21 +55,21 @@ export function TaskMoveModal({ task, data, onSaveTask, onClose }) {
     }
 
     return (
-        <section className='cmp-dynamic-options-list move-section'>
+        <section className='cmp-dynamic-options-list task-move-modal-section'>
 
             <h3 className='small-headline cmp-dynamic-options-title'>
                 Select destination
             </h3>
 
-            <div className='move-options'>
+            <div className='task-move-modal-options'>
 
-                <div className="select-list">
-                    <label>List</label>
-                    <select value={selectedGroupId}
+                <div className="move-modal-select-list-container">
+                    <label className="move-modal-label">List</label>
+                    <select className="move-modal-select" value={selectedGroupId}
                         onChange={handleGroupChange}>
 
                         {groups.map((group) => (
-                            <option key={group.id} value={group.id}>
+                            <option className="move-modal-select-option" key={group.id} value={group.id}>
                                 {group.title}
                             </option>
                         ))}
@@ -77,14 +77,14 @@ export function TaskMoveModal({ task, data, onSaveTask, onClose }) {
                     </select>
                 </div>
 
-                <div className="select-pos">
-                    <label>Position</label>
-                    <select value={selectedTaskPos}
+                <div className="move-modal-select-pos-container">
+                    <label className="move-modal-label">Position</label>
+                    <select className="move-modal-select" value={selectedTaskPos}
                         onChange={handleTaskChange}>
 
                         {selectedGroupId && groups.find((group) => group.id === selectedGroupId)
                             .tasks.map((task, index) => (
-                                <option key={index} value={index}>
+                                <option className="move-modal-select-option" key={index} value={index}>
                                     {index + 1}
                                 </option>
                             ))}
@@ -93,7 +93,7 @@ export function TaskMoveModal({ task, data, onSaveTask, onClose }) {
 
             </div>
 
-            <button className='clean-btn btn-task-details btn-move'
+            <button className='clean-btn btn-task-details btn-move-modal'
                 onClick={(ev) => { onMoveBtn() }}>
                 Move
             </button>

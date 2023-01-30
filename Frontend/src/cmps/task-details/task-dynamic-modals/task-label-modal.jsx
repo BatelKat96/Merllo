@@ -22,11 +22,15 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
     async function onToggleLabel(ev, id) {
         let updateLabelIds
         let updateTask
+        console.log('labelIds:', labelIds)
 
+        console.log('id:', id)
+
+        //remove label from task
         if (labelIds?.includes(id)) {
-
             updateLabelIds = labelIds.filter(label => (label !== id))
             updateTask = { ...task, labelIds: updateLabelIds }
+
         } else {
             updateLabelIds = labelIds
             updateLabelIds.push(id)
@@ -64,12 +68,10 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
 
         if (label.id) {
 
-
             //board
             updateLabelsBoard = labels
             let index = updateLabelsBoard.findIndex(lbl => (lbl.id === label.id))
             updateLabelsBoard.splice(index, 1, label)
-
             currUpdateBoard.labels = updateLabelsBoard
 
             //task
@@ -100,8 +102,6 @@ export function TaskLabelModal({ task, data, onSaveTask, setIsAddLabelModalOpen,
             console.log('Cant save label:', err)
         }
     }
-
-
 
 
     async function onRemoveLabel(ev, id) {
