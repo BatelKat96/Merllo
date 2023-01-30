@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5c2a19b6.css",
-    "main.js": "/static/js/main.075ef061.js",
+    "main.css": "/static/css/main.483791c3.css",
+    "main.js": "/static/js/main.bbf25869.js",
     "static/media/NotoSans-Bold.ttf": "/static/media/NotoSans-Bold.23e70cfbbe0783c66804.ttf",
     "static/media/NotoSans-Light.ttf": "/static/media/NotoSans-Light.2cfb54d923b32fbd5525.ttf",
     "static/media/SEGOEUI.TTF": "/static/media/SEGOEUI.904177516a6c6c681d51.TTF",
@@ -13,7 +13,6 @@
     "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "static/media/CharlieDisplay-Bold.ttf": "/static/media/CharlieDisplay-Bold.5a004353b62f47fcd234.ttf",
     "static/media/CharlieDisplay-Semibold.ttf": "/static/media/CharlieDisplay-Semibold.201c3bbd088f77242610.ttf",
-    "static/media/Carousel_Image_Boards_2x.png": "/static/media/Carousel_Image_Boards_2x.743ba4bd63fed147f183.png",
     "static/media/CharlieDisplay-Regular.ttf": "/static/media/CharlieDisplay-Regular.a2a3c582da84941794e4.ttf",
     "static/media/left-loginsignup-hero.svg": "/static/media/left-loginsignup-hero.47238298680cf64177bdb1faa64d3804.svg",
     "service-worker.js": "/service-worker.js",
@@ -21,24 +20,18 @@
     "static/media/NotoSansHebrew-Bold.ttf": "/static/media/NotoSansHebrew-Bold.4e6c809e2d9ca0a6eaba.ttf",
     "static/media/FSegoe-UI-Bold.ttf": "/static/media/FSegoe-UI-Bold.b00928e669b804136004.ttf",
     "static/media/right-loginsignup-hero.svg": "/static/media/right-loginsignup-hero.3a2e83cef20d6bab2dbaf88d4a44819f.svg",
-    "static/media/apps.svg": "/static/media/apps.01c9e9de275e38ef5d180295ce4c8fac.svg",
-    "static/media/help.svg": "/static/media/help.02ade63043982b3e351267847a7761d2.svg",
     "static/media/user.svg": "/static/media/user.4878f16e58957da3eabf777a85beabda.svg",
     "static/media/loader.svg": "/static/media/loader.4ce56a5f125d91cf6f2023fde70ca3d0.svg",
-    "static/media/notification.svg": "/static/media/notification.b2c184049128deed4de732232638c6a9.svg",
     "index.html": "/index.html",
-    "static/media/edit.svg": "/static/media/edit.e97145486731d091acc8a669395cea7b.svg",
     "static/media/trello.svg": "/static/media/trello.df2f21fb5f8da7937f3d9ba85a6e5667.svg",
     "static/media/taskTitle.svg": "/static/media/taskTitle.d3edf4b8a90cff4fe690e2c5acfe54b1.svg",
     "static/media/down.svg": "/static/media/down.063cc4264200574ede0f3a0fe461c7c3.svg",
-    "static/media/create.svg": "/static/media/create.9b575a3c22f8522650a40159fd72bfa0.svg",
-    "static/media/search.svg": "/static/media/search.b1d75172f81590ca3b81ac4898af55bd.svg",
     "static/media/description-icon.svg": "/static/media/description-icon.be93d64c165ecc605083b9908415d295.svg",
-    "main.5c2a19b6.css.map": "/static/css/main.5c2a19b6.css.map",
-    "main.075ef061.js.map": "/static/js/main.075ef061.js.map"
+    "main.483791c3.css.map": "/static/css/main.483791c3.css.map",
+    "main.bbf25869.js.map": "/static/js/main.bbf25869.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c2a19b6.css",
-    "static/js/main.075ef061.js"
+    "static/css/main.483791c3.css",
+    "static/js/main.bbf25869.js"
   ]
 }
